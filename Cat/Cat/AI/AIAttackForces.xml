@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameData>
+	<!--Adding Number of Units Required for AI to attack... I think-->
+	<MultiUnitFormation_SlotEntries>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+	</MultiUnitFormation_SlotEntries>
+</GameData>

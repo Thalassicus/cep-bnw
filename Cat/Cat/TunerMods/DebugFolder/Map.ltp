@@ -1,0 +1,756 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Map</Name>
+  <App>Civ5</App>
+  <EnterAction>if (g_PlopperSettings.EnabledWhenInTab) then
+	if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+		UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+	end
+	
+	UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+end
+	</EnterAction>
+  <ExitAction>if (g_PlopperSettings.EnabledWhenInTab) then
+	UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+end
+</ExitAction>
+  <CompatibleStates>
+    <string>WorldView</string>
+  </CompatibleStates>
+  <Actions>
+    <ActionData>
+      <Name>! Show All Map</Name>
+      <Action>local pPlot;
+
+for iPlotLoop = 0, Map.GetNumPlots()-1, 1 do
+   pPlot = Map.GetPlotByIndex(iPlotLoop);
+
+   if (pPlot:GetVisibilityCount(Game.GetActiveTeam()) &gt; 0) then
+      pPlot:ChangeVisibilityCount(Game.GetActiveTeam(), -1, -1, true);
+   end
+
+   pPlot:SetRevealed(Game.GetActiveTeam(), false);
+
+   pPlot:ChangeVisibilityCount(Game.GetActiveTeam(), 1, -1, true);
+   pPlot:SetRevealed(Game.GetActiveTeam(), true);
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>381</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>! Add All Units</Name>
+      <Action>iUnitTypeCount = 0
+while GameInfo.Units[iUnitTypeCount] ~= nil do
+	iUnitTypeCount = iUnitTypeCount + 1;
+end
+iUnitTypeCount = iUnitTypeCount - 1;
+
+for iUnitType = 0, iUnitTypeCount do
+	g_UnitPlopper.UnitType = iUnitType;
+	kPlot = Map.GetPlotByIndex(iUnitType);
+	g_UnitPlopper.Plop( kPlot );
+end
+</Action>
+      <Location>
+        <X>10</X>
+        <Y>450</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>! Setup Unit Test</Name>
+      <Action>local iUnitTypeCount = 0
+while GameInfo.Units[iUnitTypeCount] ~= nil do
+	iUnitTypeCount = iUnitTypeCount + 1;
+end
+iUnitTypeCount = iUnitTypeCount - 1;
+local player = g_PlopperSettings.Player;
+
+g_PlopperSettings.Player = 0;
+local width, height = Map.GetGridSize();
+local iX= 0;
+local iY = 0;
+for iUnitType = 0, iUnitTypeCount do
+	iY = iY + 1;
+	if( iY &gt;= height ) then
+		iX = iX + 2;
+		iY = 0;
+	end
+	
+	g_UnitPlopper.UnitType = iUnitType;
+	local kPlot = Map.GetPlot(iX, iY);
+	g_UnitPlopper.Plop( kPlot );
+end
+
+g_PlopperSettings.Player = 1;
+local width, height = Map.GetGridSize();
+local iX= 1;
+local iY = 0;
+for iUnitType = 0, iUnitTypeCount do
+	iY = iY + 1;
+	if( iY &gt;= height ) then
+		iX = iX + 2;
+		iY = 0;
+	end
+	
+	g_UnitPlopper.UnitType = iUnitType;
+	local kPlot = Map.GetPlot(iX, iY);
+	g_UnitPlopper.Plop( kPlot );
+end
+
+g_PlopperSettings.Player = player;
+
+</Action>
+      <Location>
+        <X>10</X>
+        <Y>419</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Reveal Terrain</Name>
+      <Action>local pPlot;
+
+for iPlotLoop = 0, Map.GetNumPlots()-1, 1 do
+   pPlot = Map.GetPlotByIndex(iPlotLoop);
+
+   pPlot:SetRevealed(Game.GetActiveTeam(), true);
+end
+
+Map.UpdateDeferredFog();</Action>
+      <Location>
+        <X>10</X>
+        <Y>347</Y>
+      </Location>
+    </ActionData>
+  </Actions>
+  <StringControls />
+  <IntegerControls>
+    <IntegerControlData>
+      <Name>#</Name>
+      <GetFunction>function()
+	return g_ResourcePlopper.ResourceAmount;
+end</GetFunction>
+      <SetFunction>function(value)
+	g_ResourcePlopper.ResourceAmount = value;
+end</SetFunction>
+      <Location>
+        <X>380</X>
+        <Y>36</Y>
+      </Location>
+      <DefaultValue>5</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>XP</Name>
+      <GetFunction>function()
+   return g_UnitPlopper.Experience;
+end</GetFunction>
+      <SetFunction>function(value)
+   g_UnitPlopper.Experience = value;
+end</SetFunction>
+      <Location>
+        <X>790</X>
+        <Y>35</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+  </IntegerControls>
+  <FloatControls />
+  <BooleanControls>
+    <BooleanControlData>
+      <Name>Improve</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_ImprovementPlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+			
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_ImprovementPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_ImprovementPlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>430</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Res</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_ResourcePlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_ResourcePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_ResourcePlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>310</X>
+        <Y>36</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>City</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_CityPlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_CityPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_CityPlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>650</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Unit</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_UnitPlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_UnitPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_UnitPlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>710</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Pillage</Name>
+      <GetFunction>function()
+	return g_ImprovementPlopper.Pillaged;
+end</GetFunction>
+      <SetFunction>function(value)
+	g_ImprovementPlopper.Pillaged = value;
+end</SetFunction>
+      <Location>
+        <X>510</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Embark</Name>
+      <GetFunction>function()
+	return g_UnitPlopper.Embarked;
+end</GetFunction>
+      <SetFunction>function(value)
+	g_UnitPlopper.Embarked = value;
+end</SetFunction>
+      <Location>
+        <X>850</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Feature</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_FeaturePlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_FeaturePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_FeaturePlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>150</X>
+        <Y>222</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Route</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_RoutePlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_RoutePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_RoutePlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>222</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Plot</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_PlotPlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_PlotPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_PlotPlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>36</Y>
+      </Location>
+    </BooleanControlData>
+    <BooleanControlData>
+      <Name>Terrain</Name>
+      <GetFunction>function()
+	return g_PlopperSettings.EnabledWhenInTab and
+	       g_PlopperSettings.Plopper == g_TerrainPlopper;
+end</GetFunction>
+      <SetFunction>function(value)
+	if value then
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_TerrainPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+	else
+		if (g_PlopperSettings.Plopper == g_TerrainPlopper) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+			g_PlopperSettings.EnabledWhenInTab = false;
+		end
+	end
+end</SetFunction>
+      <Location>
+        <X>150</X>
+        <Y>35</Y>
+      </Location>
+    </BooleanControlData>
+  </BooleanControls>
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists>
+    <SelectionListData>
+      <Location>
+        <X>430</X>
+        <Y>70</Y>
+      </Location>
+      <Size>
+        <Width>159</Width>
+        <Height>401</Height>
+      </Size>
+      <Name>Improvements</Name>
+      <PopulateList>function()
+	local listItems = {};
+	
+	local i = 0;
+	while GameInfo.Improvements[i] ~= nil do
+		listItems[i] = string.gsub(GameInfo.Improvements[i].Type, "IMPROVEMENT_", "");
+		i = i + 1;
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	local sImprovementType = "IMPROVEMENT_" .. selection;
+	local i = 0;
+	while GameInfo.Improvements[i] ~= nil do
+		if GameInfo.Improvements[i].Type == sImprovementType then
+			g_ImprovementPlopper.ImprovementType = i;
+			break;
+		end
+		i = i + 1;
+	end
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_ImprovementPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>310</X>
+        <Y>71</Y>
+      </Location>
+      <Size>
+        <Width>112</Width>
+        <Height>400</Height>
+      </Size>
+      <Name>Resources</Name>
+      <PopulateList>function()
+	listItems = {};
+	
+	local i = 0;
+	while GameInfo.Resources[i] ~= nil do
+		listItems[i] = string.gsub(GameInfo.Resources[i].Type, "RESOURCE_", "");
+		i = i + 1;
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	local sResource = "RESOURCE_" .. selection;
+	local i = 0;
+	while GameInfo.Resources[i] ~= nil do
+		if GameInfo.Resources[i].Type == sResource then
+			g_ResourcePlopper.ResourceType = i;
+			break;
+		end
+		i = i + 1;
+	end
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_ResourcePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>600</X>
+        <Y>70</Y>
+      </Location>
+      <Size>
+        <Width>108</Width>
+        <Height>401</Height>
+      </Size>
+      <Name>Players</Name>
+      <PopulateList>function()
+   listItems = {};
+	
+	i = 0;
+	while Players[i] ~= nil do
+		if Players[i]:IsEverAlive()  then
+			local sPlayerName = Players[i]:GetName();
+			listItems[i + 1] = sPlayerName;
+		end
+		i = i + 1;
+	end
+  return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	
+	i = 0;
+	while Players[i] ~= nil do
+		if Players[i]:IsEverAlive() and Players[i]:GetName() == selection then
+			g_PlopperSettings.Player = i;
+			break;
+		end
+		i = i + 1;
+	end
+	
+end
+</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>150</X>
+        <Y>256</Y>
+      </Location>
+      <Size>
+        <Width>151</Width>
+        <Height>217</Height>
+      </Size>
+      <Name>Features</Name>
+      <PopulateList>function()
+	listItems = {};
+	
+	local i = 0;
+	while GameInfo.Features[i] ~= nil do
+		listItems[i] = string.gsub(GameInfo.Features[i].Type, "FEATURE_", "");
+		i = i + 1;
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	if not g_FeaturePlopper then
+		return
+	end
+	local sFeature = "FEATURE_" .. selection;
+	local i = 0;
+	while GameInfo.Features[i] ~= nil do
+		if GameInfo.Features[i].Type == sFeature then
+			g_FeaturePlopper.FeatureType = i;
+			break;
+		end
+		i = i + 1;
+	end
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_FeaturePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>10</X>
+        <Y>257</Y>
+      </Location>
+      <Size>
+        <Width>131</Width>
+        <Height>67</Height>
+      </Size>
+      <Name>Routes</Name>
+      <PopulateList>function()
+	listItems = {};
+	
+	local i = 0;
+	while GameInfo.Routes[i] ~= nil do
+		listItems[i] = string.gsub(GameInfo.Routes[i].Type, "ROUTE_", "");
+		i = i + 1;
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	if not g_RoutePlopper then
+		return
+	end
+	local sRoute = "ROUTE_" .. selection;
+	local i = 0;
+	while GameInfo.Routes[i] ~= nil do
+		if GameInfo.Routes[i].Type == sRoute then
+			g_RoutePlopper.RouteType = i;
+			break;
+		end
+		i = i + 1;
+	end
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_RoutePlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>10</X>
+        <Y>70</Y>
+      </Location>
+      <Size>
+        <Width>133</Width>
+        <Height>99</Height>
+      </Size>
+      <Name>Plot</Name>
+      <PopulateList>function()
+	listItems = {};
+	
+	for k, v in pairs(PlotTypes) do
+		if k ~= "NUM_PLOT_TYPES" and k ~= "NO_PLOT" then
+			listItems[k] = string.gsub(k, "PLOT_", "");
+		end
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	local sPlot = "PLOT_" .. selection;
+	if not g_PlotPlopper then
+		return
+	end
+	for k, v in pairs(PlotTypes) do
+		if k == sPlot then
+			g_PlotPlopper.PlotType = v;
+			break;
+		end
+	end
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_PlotPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end
+</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>150</X>
+        <Y>70</Y>
+      </Location>
+      <Size>
+        <Width>149</Width>
+        <Height>144</Height>
+      </Size>
+      <Name>Terrain</Name>
+      <PopulateList>function()
+	listItems = {};
+	
+	local i = 0;
+	for terrainInfo in GameInfo.Terrains("Type NOT IN ('TERRAIN_HILL', 'TERRAIN_MOUNTAIN')") do
+		listItems[i] = string.gsub(terrainInfo.Type, "TERRAIN_", "");
+		i = i + 1;	
+	end
+
+	return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	local sTerrain = "TERRAIN_" .. selection;
+	if not g_TerrainPlopper then
+		return
+	end
+	g_TerrainPlopper.TerrainType = GameInfo.Terrains[sTerrain].ID
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_TerrainPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>710</X>
+        <Y>70</Y>
+      </Location>
+      <Size>
+        <Width>215</Width>
+        <Height>400</Height>
+      </Size>
+      <Name>Units</Name>
+      <PopulateList>function()
+ listItems = {};
+	
+	local i = 0;
+	for unit in GameInfo.Units() do
+		listItems[i] = string.gsub(unit.Type, "UNIT_", "");
+		i = i + 1;
+	end
+	
+  return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	local unit = GameInfo.Units["UNIT_" .. tostring(selection)];
+	if unit ~= nil then
+		g_UnitPlopper.UnitType = unit.ID;
+	end
+	
+		if (UI.GetInterfaceMode() ~= InterfaceModeTypes.INTERFACEMODE_DEBUG) then
+			UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_DEBUG);
+		end
+		UI.SetInterfaceModeDebugItemID1(6); -- ID1: 6 is Plopper
+		g_PlopperSettings.Plopper = g_UnitPlopper;
+		g_PlopperSettings.EnabledWhenInTab = true;
+
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+  </SelectionLists>
+  <MultiselectLists />
+</PanelData>

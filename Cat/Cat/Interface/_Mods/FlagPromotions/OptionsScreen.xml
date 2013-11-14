@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black" Font="TwCenMT18" FontStyle="Shadow" >
+	<Instance Name="FlagPromotionsOptionsInstance">
+		<CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Anchor="L,C" TextAnchorSide="Right" Font="TwCenMT20" Offset="0,0" TextOffset="60,0" IsChecked="0" ID="RootCheckButton" ConsumeMouse="1" WrapWidth="320" LeadingOffset="-10" />
+	</Instance>
+	<Instance Name="FlagPromotionsOptionsIcon">
+		<Image Size="32,32" Texture="Promotions256.dds" ID="RootIcon" >
+			<ShowOnMouseOver>
+				<!-- Normal Alpha Bounce -->
+				<AlphaAnim Offset="-16,-16" Size="64,64"  TextureOffset="0,64"  Texture="assets\UI\Art\Icons\Units\UnitFlagBase.dds"   Pause="0" Cycle="Bounce" Speed="1" AlphaStart=".99" AlphaEnd=".01" ID="NormalAlphaAnim" />
+				<ScrollAnim Size="64,64" Speed=".5" Texture="assets\UI\Art\Icons\Units\UnitFlagShine.dds"  MaskTexture="assets\UI\Art\Icons\Units\UnitFlagMask.dds" ID="NormalScrollAnim" />
+			</ShowOnMouseOver>
+		</Image>
+	</Instance>
+
+	<!--Size="400,647"-->
+	<Grid Size="600,800" Anchor="C,C" Offset="0,0" ID="MainGrid" Style="Grid9DetailFive140" ConsumeMouse="1" Hidden="True">
+		<!-- Side treatments -->
+		<AlphaAnim  Anchor="R,C"  AnchorSide="O.O"  Offset="-8,0" Size="16,32" TextureOffset="16.0" Texture="Assets/UI/Art/Controls/buttonsidesglow.dds" Pause="0" Cycle="Bounce" Speed="1" AlphaStart=".99" AlphaEnd=".25" Hidden="0"/>
+		<AlphaAnim  Anchor="L,C"  AnchorSide="O.O"  Offset="-8,0" Size="16,32" TextureOffset="0.0" Texture="Assets/UI/Art/Controls/buttonsidesglow.dds" Pause="0" Cycle="Bounce" Speed="1" AlphaStart=".99" AlphaEnd=".25" Hidden="0"/>
+		<Image Anchor="R,C" Offset="-8,0" TextureOffset="8.0" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/buttonsides.dds" Size="8,16" />
+		<Image Anchor="L,C" Offset="-8,0" TextureOffset="0.0" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/buttonsides.dds" Size="8,16" />
+
+		<!-- Top and bottom eye-candy
+		<Image Anchor="C,T" Offset="0,-33" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/topframe.dds" Size="512,128" />
+		<Image Anchor="C,B" Offset="0,-109" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/bottomframe.dds" Size="512,128" />
+		 -->
+		<!-- Title label -->
+		<Label Anchor="C,T" ID="TitleLabel"  Offset="0,19" Font="TwCenMT20" Color1="133.184.186.255" Color2="133.184.186.255" FontStyle="SoftShadow" String="FlagPromotions Options" />
+
+		<!-- Main panel -->
+		<ScrollPanel Anchor="L,T" ID="ScrollPanel1" Vertical="1" Offset="0,55" Size="560,650" AutoScrollBar="1">
+
+			<UpButton Style="ScrollBarUp"  Anchor="R,T" AnchorSide="O,I" />
+			<ScrollBar Style="VertSlider" Length="620" Anchor="R,C" AnchorSide="O,I" />
+			<DownButton Style="ScrollBarDown"  Anchor="R,B" AnchorSide="O,I" />
+
+			<Stack Anchor="L,T" Offset="20,0" Padding="0" StackGrowth="Bottom" ID="CheckTextStack"/>
+			<Stack Anchor="L,T" Offset="48,0" Padding="0" StackGrowth="Bottom" ID="IconsStack"/>
+		</ScrollPanel>
+
+		<!-- Cancel Button  -->
+		<GridButton Anchor="L,B" ID="CancelButton"     Offset="30,54"     Size="150,32"    Style="BaseButton" String="Cancel" ToolTip="Return to the game without saving the FlagPromotions option changes" />
+
+		<!-- Accept Button  -->
+		<GridButton Anchor="R,B" ID="AcceptButton"     Offset="30,54"     Size="150,32"    Style="BaseButton" String="Accept" ToolTip="Save the FlagPromotions option changes and return to the game" />
+	</Grid>
+</Context>

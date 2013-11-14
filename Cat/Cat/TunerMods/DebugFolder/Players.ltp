@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Players</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>WorldView</string>
+  </CompatibleStates>
+  <Actions />
+  <StringControls />
+  <IntegerControls />
+  <FloatControls />
+  <BooleanControls />
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists>
+    <SelectionListData>
+      <Location>
+        <X>60</X>
+        <Y>48</Y>
+      </Location>
+      <Size>
+        <Width>787</Width>
+        <Height>411</Height>
+      </Size>
+      <Name>Player:60;Team:60;Alive:60;Turn Active;Civilization;Nick Name;Handicap</Name>
+      <PopulateList>function()
+   local listItems = {};
+   local i = 0;
+   for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+		    local pPlayer = Players[i];
+		
+		    local str = tostring(i) .. ";" .. tostring(pPlayer:GetTeam()) .. ";";
+		
+	     if pPlayer:IsAlive()  then
+						  str = str .. "true;";				
+			   else
+						  str = str .. "false;";
+		   end
+
+			   if pPlayer:IsTurnActive()  then
+						  str = str .. "true;";				
+			   else
+						  str = str .. "false;";
+		   end
+				
+	     if pPlayer:IsEverAlive()  then
+						  str = str .. pPlayer:GetCivilizationShortDescription() .. ";" .. pPlayer:GetNickName() .. ";" .. PreGame.GetHandicap(i);
+			   else
+						  str = str .. "n/a;n/a;n/a";
+		   end
+		
+		   listItems[i + 1] = str;
+			  i = i + 1;
+   end
+
+  return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+
+end
+</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+  </SelectionLists>
+  <MultiselectLists />
+</PanelData>

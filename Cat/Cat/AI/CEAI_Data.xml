@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<CEP>
+		<Row Type="AI_PURCHASE_BUDGET_HIGH">
+			<Value>2.0</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_BUDGET_LOW">
+			<Value>1.0</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_BUDGET_MINIMUM">
+			<Value>0.5</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_FLAVOR_MAX_ATTEMPTS">
+			<Value>10</Value>
+		</Row>
+	</CEP>
+</GameData>

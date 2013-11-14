@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="InGame" >
+
+	<LuaContext FileName="Assets/UI/Civilopedia/CivilopediaScreen"        ID="CivilopediaScreen"    Hidden="True" />
+
+	<Container Size="F,F" ID="BulkUI" >
+
+		<LuaContext FileName="Assets/UI/InGame/YieldIconManager"    ID="YieldIconManager" Hidden="0" />
+		<LuaContext FileName="Assets/UI/InGame/PlotHelpManager"     ID="PlotHelpManager" />
+		<LuaContext FileName="Assets/UI/InGame/ResourceIconManager" ID="ResourceIconManager" Hidden="0" />
+
+		<LuaContext FileName="Assets/UI/InGame/GenericWorldAnchor" />
+		<LuaContext FileName="Assets/UI/InGame/UnitFlagManager" ID="UnitFlagManager" />
+		<LuaContext FileName="Assets/UI/InGame/CityBannerManager" ID="CityBannerManager"/>
+		<Container ID="SelectedUnitContainer" />
+		<Container ID="PopupTextContainer" />
+
+
+		<LuaContext FileName="Assets/UI/InGame/WorldView/WorldView" ID="WorldView" />
+		<LuaContext FileName="Assets/UI/InGame/CityView/CityView"   ID="CityView"  Hidden="True" />
+
+		<LuaContext FileName="Assets/UI/InGame/TechTree/TechTree"   ID="TechTree"  Hidden="True" />
+
+		<!--<LuaContext FileName="Assets/UI/InGame/Popups/CityPurchasePopup"      ID="CityPurchasePopup"      Hidden="True" />-->
+		<LuaContext FileName="Assets/UI/InGame/Popups/GenericPopup"           ID="GenericPopup"           Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/SocialPolicyPopup"      ID="SocialPolicyPopup"      Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/NotificationLogPopup"   ID="NotificationLogPopup"   Hidden="True" />
+		<!--<LuaContext FileName="Assets/UI/InGame/Popups/MinorCivsListPopup"     ID="MinorCivsListPopup"     Hidden="True" />-->
+		<LuaContext FileName="Assets/UI/InGame/Popups/WhosWinningPopup"       ID="WhosWinningPopup"       Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/NewEraPopup"            ID="NewEraPopup"            Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/NaturalWonderPopup"     ID="NaturalWonderPopup"     Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/GoodyHutPopup"          ID="GoodyHutPopup"          Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/BarbarianCampPopup"     ID="BarbarianCampPopup"     Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/GoldenAgePopup"         ID="GoldenAgePopup"         Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/GreatPersonRewardPopup" ID="GreatPersonRewardPopup" Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/CityStateGreetingPopup" ID="CityStateGreetingPopup" Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/CityStateDiploPopup"    ID="CityStateDiploPopup"    Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/DiploVotePopup"         ID="DiploVotePopup"         Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/VoteResultsPopup"       ID="VoteResultsPopup"       Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/TechAwardPopup"         ID="TechAwardPopup"         Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/WonderPopup"            ID="WonderPopup"            Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/AdvisorInfoPopup"       ID="AdvisorInfoPopup"       Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/AdvisorCounselPopup"    ID="AdvisorCounselPopup"    Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/AdvisorModal"           ID="AdvisorModal"           Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/EconomicOverview"       ID="EconomicOverview"       Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/DiploOverview"          ID="DiploOverview"          Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/MilitaryOverview"       ID="MilitaryOverview"       Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/EndGameMenu"            ID="EndGameMenu"            Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/Demographics"           ID="Demographics"           Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/VictoryProgress"        ID="VictoryProgress"        Hidden="True" />
+
+		<LuaContext FileName="Assets/UI/InGame/Popups/SetUnitName"					  ID="SetUnitName"						Hidden="True" />
+		<LuaContext FileName="Assets/UI/InGame/Popups/SetCityName"					  ID="SetCityName"						Hidden="True" />
+
+		<!-- Emigration -->
+		<LuaContext FileName="Emigration"	ID="Emigration"	Hidden="True" />
+		<LuaContext FileName="StringUtils"	ID="StringUtils"	Hidden="True" />
+		<!-- End Emigration -->
+
+		<LuaContext FileName="Assets/UI/InGame/Popups/ProductionPopup"        ID="ProductionPopup"        Hidden="True" />
+
+		<LuaContext FileName="Assets/UI/InGame/TopPanel" ID="TopPanel" />
+
+		<Stack Anchor="C,T" Size="Full,Full" StackGrowth="B" Padding="16" ID="AlertStack" Offset="0,100"/>
+
+		<LuaContext FileName="Assets/UI/InGame/Menus/GameMenu" ID="GameMenu" Hidden="True" />
+
+		<Container ID="ScreenEdgeScrolling" Size="F,F" >
+
+			<Button Anchor="C,T" Size="F,2"  ID="ScrollTop" />
+			<Button Anchor="C,B" Size="F,2" ID="ScrollBottom" />
+			<Button Anchor="L,C" Size="2,F" ID="ScrollLeft" />
+			<Button Anchor="R,C" Size="2,F" ID="ScrollRight" />
+
+			<!--
+            <Box Anchor="C,T" Size="F,2"  Color="White" />
+            <Box Anchor="C,B" Size="F,2" Color="White" />
+            <Box Anchor="L,C" Size="2,F" Color="White" />
+            <Box Anchor="R,C" Size="2,F" Color="White" />
+            -->
+
+		</Container>
+
+		<LuaContext FileName="Assets/UI/FrontEnd/ExitConfirm" Hidden="1" />
+
+	</Container>
+
+	<LuaContext FileName="Assets/UI/InGame/DebugMenu" ID="DebugMenu" Hidden="True" />
+
+	<Label ID="FPSText"     String="FPS"         Anchor="C,B" Offset="0,60" Hidden="True" />
+	<Label ID="VisInfo"     String="TextureInfo" Anchor="C,B" Offset="0,40" Hidden="True" />
+	<Label ID="DrawCalls"   String="Draw Calls"  Anchor="C,B" Offset="0,20" Hidden="True" />
+
+	<Label ID="SerialEventStream"       String="SerialEventStream"       Anchor="C,B" Offset="0,80" Hidden="True" />
+	<Label ID="NonSerialEventStream"    String="NonSerialEventStream"    Anchor="C,B" Offset="0,100" Hidden="True" />
+	<Label ID="LocalMachineEventStream" String="LocalMachineEventStream" Anchor="C,B" Offset="0,120" Hidden="True" />
+
+	<Label ID="TimerRate"   String="Timer"       Anchor="C,B" Offset="0,140" Hidden="True" />
+
+	<Instance Name="AlertMessageInstance" >
+		<Label ID="AlertMessageLabel" String="" Color0="255,255,200,255" Color1="0,0,0,200" Font="TwCenMT20" FontStyle="Stroke"  Anchor="C,T"/>
+	</Instance>
+
+
+	<Instance Name="PopupText" >
+		<WorldAnchor ID="Anchor" Anchor="c,c" >
+			<SlideAnim Anchor="c,c" End="0,-100" Cycle="once" Speed=".5" ID="SlideAnim" >
+				<AlphaAnim Anchor="c,c" AlphaStart="0" Cycle="once" AlphaEnd="1" ID="AlphaAnimIn" Pause="0" Speed="100" >
+					<AlphaAnim Anchor="c,c" AlphaStart="1" Cycle="once" AlphaEnd="0" ID="AlphaAnimOut" Pause="0.75" Function="Square" >
+						<Label ID="Text" Anchor="c,c" ColorSet="White_Black" Font="TwCenMT22" FontStyle="Stroke"  />
+					</AlphaAnim>
+				</AlphaAnim>
+			</SlideAnim>
+		</WorldAnchor>
+	</Instance>
+
+</Context>

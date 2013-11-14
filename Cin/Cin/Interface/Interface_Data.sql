@@ -1,0 +1,6 @@
+--
+
+--/*
+UPDATE Technologies
+SET Help = "";
+--*/

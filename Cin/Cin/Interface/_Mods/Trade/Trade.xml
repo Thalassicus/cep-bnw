@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Table name="Deals">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Priority" type="integer" default="99"/>
+		<Column name="IconString" type="text" default="" />
+		<Column name="Help" type="text" reference="Language_en_US(Tag)"/>
+	</Table>
+	<Deals>
+		<Row><Type>TRADE_ITEM_PEACE_TREATY</Type>				<Priority>21</Priority>	<IconString>[ICON_TEAM_1]</IconString>		<Help>TXT_KEY_DIPLO_PEACE_TREATY</Help></Row>
+		<Row><Type>TRADE_ITEM_OPEN_BORDERS</Type>				<Priority>31</Priority>	<IconString>[ICON_TRADE]</IconString>		<Help>TXT_KEY_DIPLO_OPEN_BORDERS</Help></Row>
+		<Row><Type>TRADE_ITEM_RESEARCH_AGREEMENT</Type>			<Priority>32</Priority>	<IconString>[ICON_RESEARCH]</IconString>	<Help>TXT_KEY_DIPLO_RESCH_AGREEMENT</Help></Row>
+		<Row><Type>TRADE_ITEM_DEFENSIVE_PACT</Type>				<Priority>33</Priority>	<IconString>[ICON_STRENGTH]</IconString>	<Help>TXT_KEY_DIPLO_DEF_PACT</Help></Row>
+		<Row><Type>TRADE_ITEM_DECLARATION_OF_FRIENDSHIP</Type>	<Priority>34</Priority>	<IconString>[ICON_TEAM_8]</IconString>		<Help>TXT_KEY_DIPLOMACY_FRIENDSHIP_ADV_QUEST</Help></Row>
+		<Row><Type>TRADE_ITEM_ALLOW_EMBASSY</Type>				<Priority>35</Priority>	<IconString>[ICON_CAPITAL]</IconString>		<Help>TXT_KEY_DIPLO_ALLOW_EMBASSY</Help></Row>
+		<Row><Type>TRADE_ITEM_THIRD_PARTY_PEACE</Type>			<Priority>41</Priority>	<IconString>3[ICON_TEAM_1]</IconString>		<Help>TXT_KEY_DIPLO_MAKE_PEACE_WITH</Help></Row>
+		<Row><Type>TRADE_ITEM_THIRD_PARTY_WAR</Type>			<Priority>42</Priority>	<IconString>3[ICON_WAR]</IconString>		<Help>TXT_KEY_DIPLO_DECLARE_WAR_ON</Help></Row>
+		<Row><Type>TRADE_ITEM_CITIES</Type>						<Priority>51</Priority>	</Row>
+		<Row><Type>TRADE_ITEM_RESOURCES</Type>					<Priority>61</Priority>	</Row>
+		<Row><Type>TRADE_ITEM_GOLD</Type>						<Priority>81</Priority>	<IconString>[ICON_GOLD]</IconString>		</Row>
+		<Row><Type>TRADE_ITEM_GOLD_PER_TURN</Type>				<Priority>82</Priority>	<IconString>[ICON_GOLD]/t</IconString>		</Row>
+	</Deals>
+</GameData>

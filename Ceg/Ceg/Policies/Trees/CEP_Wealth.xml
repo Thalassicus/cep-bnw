@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_COMMERCE" />
+			<Set EmbarkedExtraMoves="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_COMMERCE_FINISHER" />
+			<Set ExtraHappinessPerLuxury="1"
+				 TradeMissionGoldModifier="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCANTILISM" />
+			<Set GridX="1"
+				 GridY="1"
+				 PortraitIndex="29"
+				 TradeRouteGoldModifier="25"
+				 RouteGoldMaintenanceMod="-25"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TRADE_UNIONS" />
+			<Set GridX="3"
+				 GridY="1"
+				 Description="TXT_KEY_POLICY_GUILDS"
+				 Civilopedia="TXT_KEY_POLICY_GUILDS_TEXT"
+				 Help="TXT_KEY_POLICY_GUILDS_HELP"
+				 PortraitIndex="19"
+				 RouteGoldMaintenanceMod="0"
+				 OneShot="true"
+				 IncludesOneShotFreeUnits="true"
+				 TradeMissionGoldModifier="100"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PROTECTIONISM" />
+			<Set GridX="5"
+				 GridY="1"
+				 PortraitIndex="11"
+				 ExtraHappinessPerLuxury="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCHANT_NAVY" />
+			<Set GridX="2"
+				 GridY="2"
+				 EmbarkedExtraMoves="1"
+				 PortraitIndex="10"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_NAVAL_TRADITION" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Row>
+			<Type>POLICY_PATENT_LAW</Type>
+			<PolicyBranchType>POLICY_BRANCH_COMMERCE</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_PATENT_LAW</Description>
+			<Civilopedia>TXT_KEY_POLICY_PATENT_LAW_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_PATENT_LAW_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>4</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>51</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+	</Policies>
+	<Policy_ImprovementYieldChanges>
+		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!--
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		-->
+	</Policy_ImprovementYieldChanges>
+	<Policy_CapitalYieldModifiers>
+		<Delete PolicyType="POLICY_COMMERCE" />
+	</Policy_CapitalYieldModifiers>
+	<Policy_CoastalCityYieldChanges>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" />
+		<Row>
+			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Policy_CoastalCityYieldChanges>
+	<Policy_BuildingClassYieldChanges>
+		<Delete PolicyType="POLICY_TRADE_UNIONS" />
+		<Delete PolicyType="POLICY_MERCANTILISM" />
+		<Row>
+			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SEAPORT</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_PlayerYieldModifiers>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>15</YieldMod>
+		</Row>
+	</Policy_PlayerYieldModifiers>
+	<Policy_SpecialistYieldChanges>
+		<!--
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		-->
+	</Policy_SpecialistYieldChanges>
+	<Policy_SpecialistExtraYields>
+		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
+	</Policy_SpecialistExtraYields>
+	<Policy_HurryModifiers>
+		<Delete PolicyType="POLICY_MERCANTILISM" />
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<HurryType>HURRY_GOLD</HurryType>
+			<HurryCostModifier>-10</HurryCostModifier>
+		</Row>
+	</Policy_HurryModifiers>
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_MERCANTILISM</Type>
+			<Description>TXT_KEY_PROMOTION_MERCANTILISM</Description>
+			<Help>TXT_KEY_PROMOTION_MERCANTILISM_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<MovesChange>2</MovesChange>
+			<PortraitIndex>33</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MERCANTILISM</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<Policy_FreePromotions>
+		<Update>
+			<Where PromotionType="PROMOTION_NAVAL_TRADITION" />
+			<Set PolicyType="POLICY_MERCHANT_NAVY" />
+		</Update>
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PromotionType>PROMOTION_MERCANTILISM</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_MERCANTILISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CIVILIAN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MERCANTILISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_DIPLOMACY</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MERCANTILISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_COMMAND</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
+			<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+</GameData>

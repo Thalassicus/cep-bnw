@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" >
+	<Box Style="BGBlock_ClearTopBar" ID="BGBlock" />
+	<Grid Size="560,620" Anchor="C,C" Offset="0,100" Padding="0,0" Style="Grid9DetailFive140" ConsumeMouse="1">
+
+		<!--=======================================================================================================================-->
+		<Image ID="TitleIcon" Anchor="C,T" AnchorSide="I.O"  Offset="0,-36" Texture="Assets/UI/Art/Controls/CityStatePopupTop100.dds" Size="300.200" Hidden="0"/>
+		<Image Anchor="L,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Left.dds" Size="32.64" />
+		<Image Anchor="R,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Right.dds" Size="32.64" />
+
+		<!--=======================================================================================================================-->
+		<!--=======================================================================================================================-->
+		<!--=======================================================================================================================-->
+		<Stack Anchor="C,T" Offset="0,50" Padding="13" StackGrowth="Bottom" >
+
+			<!-- Title -->
+			<Label Anchor="C,T" Offset="0,0" Font="TwCenMT24" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="City State Name and Type" ID="TitleLabel" >
+				<Image Anchor="L,C" AnchorSide="O.I" Offset="0,0" Size="32,32" Texture="Assets/UI/Art/Icons/CivSymbolAtlas32.dds" Color="201,248,255,255" ID="CivIcon" Hidden="0"/>
+			</Label>
+
+			<!-- Body Text -->
+			<Label Anchor="C,T" Offset="0,0" WrapWidth="500" LeadingOffset="-4"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" ID="DescriptionLabel" String="A city-state is an independent country whose territory consists of a city which is not administered as part of another local government."  />
+			<Image Anchor="C,B" Offset="0,0" Texture="bar300x2.dds" Size="300.1">
+				<Image ID="BackgroundImage" Anchor="C,T" Offset="0,0" Color="White.40" Size="526.230" Hidden="0"/>
+			</Image>
+
+			<!-- City State Meters-->
+			<Box Anchor="C,T"  Offset="16,0"   Size="196,30" Color="White.0" >
+				<Image ID="StatusIconBG" Anchor="R,T" Offset="0,24" Texture="Assets/UI/Art/Notification/CityStateMeterBlack32.dds" Size="32.32"  Hidden="0" >
+					<Image ID="StatusIcon" Anchor="C,C" Offset="0.0" Texture="Assets/UI/Art/Notification/CityStateMilitaristic.dds" Size="32.32"  Hidden="0" />
+					<Image Anchor="L,B" Offset="0.20" AnchorSide="O.I" Texture="Assets/UI/Art/Notification/CityStateMeterFrame.dds" Size="158.9"  Hidden="0" >
+
+						<!-- Status -->
+						<Label ID="StatusLabel" AnchorSide="I.O" Anchor="L,T" Offset="0,5" Font="TwCenMT16" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_POP_CSTATE_STATUS">
+							<Label ID="StatusInfo" Anchor="R,T" AnchorSide="O.I" Offset="12,0" Font="TwCenMT16" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+						</Label>
+						<TextureBar ID="StatusMeter" Anchor="C,C" Size="156.7" Direction="Right" Texture="Assets/UI/Art/Notification/CityStateMeterBaseRed.dds" Hidden="0" />
+					</Image>
+				</Image>
+			</Box>
+			<Stack Anchor="C,T" Offset="-64,0" Padding="8" StackGrowth="Bottom" >
+
+				<!-- Trait -->
+				<Label ID="TraitLabel" Anchor="R,T" Offset="0,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_POP_CSTATE_TRAIT">
+					<Label ID="TraitInfo" String="Information" Anchor="R,T" AnchorSide="O.I" Offset="12,0"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+				</Label>
+
+				<!-- Personality  -->
+				<Label ID="PersonalityLabel" Anchor="R,T" Offset="0,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_POP_CSTATE_PERSONALITY">
+					<Label ID="PersonalityInfo" String="Information" Anchor="R,T" AnchorSide="O.I" Offset="12,0"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+				</Label>
+
+				<!-- Ally -->
+				<Label ID="AllyLabel" Anchor="R,T" Offset="0,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_POP_CSTATE_ALLIED_WITH">
+					<Label ID="AllyInfo"  String="Information" Anchor="R,T" AnchorSide="O.I" Offset="12,0"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+				</Label>
+
+				<!-- Protected -->
+				<Label ID="ProtectorsLabel" Anchor="R,T" Offset="0,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_MINORCIV_PROTECTED_BY">
+					<Label ID="ProtectorsInfo" Anchor="R,T" Offset="12,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" AnchorSide="O.I" />
+				</Label>
+			</Stack>
+			<Image Anchor="C,B" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+
+			<!-- Resources -->
+			<Label ID="ResourcesLabel" Anchor="C,T" Offset="0,0" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_POP_CSTATE_RESOURCES"/>
+			<Label ID="ResourcesInfo" String="Information" WrapWidth="500" Anchor="C,T"  Offset="0,0"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+
+			<!-- Yields -->
+			<Label ID="YieldsInfo" WrapWidth="500" Anchor="C,T"  Offset="0,0"  Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
+
+			<!--<Image Anchor="C,B" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />-->
+			<!--=======================================================================================================================-->
+			<ScrollPanel Anchor="L,T" ID="ButtonScrollPanel" Vertical="1" Size="495,200" Offset="0,-14" AutoScrollBar="1">
+
+				<!-- Scroll Controls -->
+				<ScrollBar  Anchor="R,T" Offset="0.18" AnchorSide="O,I" Length="164" Style="VertSlider"/>
+				<UpButton   Anchor="R,T" AnchorSide="O,I" Style="ScrollBarUp"/>
+				<DownButton Anchor="R,T" Offset="0.182"  AnchorSide="O,I" Style="ScrollBarDown"/>
+				<Stack ID="ButtonStack" Anchor="C,T"   Offset="0,0" Size="0,0" StackGrowth="Bottom" Padding="0">
+					<Box Anchor="C,C"  Offset="0,0"   Size="500,14" Color="White.0" />
+					<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+
+					<!-- PEACE BUTTON -->
+					<Button Size="500,32" Hidden="1" Anchor="C,C" Offset="0,0" ID="PeaceButton" >
+						<Label ID="PeaceLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_MAKE_PEACE" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="PeaceAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="PeaceButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- GIFT GOLD BUTTON -->
+					<Button Size="500,32" Anchor="C,C" Offset="0,0" ID="GoldGiftButton" ToolTip="TXT_KEY_POP_CSTATE_GIFT_GOLD_TT" >
+						<Label ID="GoldGift" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_PROVIDE_GOLD_GIFT" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="GoldGiftAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="GoldGiftButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- GIFT UNIT BUTTON -->
+					<Button Size="500,32" Anchor="C,C" Offset="0,0" ID="UnitGiftButton" ToolTip="TXT_KEY_POP_CSTATE_GIFT_UNIT_TT" >
+						<Label ID="UnitGift" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_GIFT_UNIT" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="UnitGiftAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="UnitGiftButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- WAR BUTTON -->
+					<Button Size="500,32" Anchor="C,C" Offset="0,0" ID="WarButton" >
+						<Label ID="WarLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_DECLARE_WAR" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="WarAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="WarButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- PLEDGE BUTTON -->
+					<Button Size="500,32" Anchor="C,C" Offset="0,0" ID="PledgeButton" ToolTip="TXT_KEY_POP_CSTATE_PLEDGE_TT" >
+						<Label ID="PledgeLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_PLEDGE_TO_PROTECT" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="PledgeAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="PledgeButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- NO UNIT SPAWNING BUTTON -->
+					<Button Hidden="0" Size="500,32" Anchor="C,C" Offset="0,0" ID="NoUnitSpawningButton" ToolTip="TXT_KEY_POP_CSTATE_STOP_UNITS_TT" >
+						<Label Anchor="C,C" Offset="0,0" ID="NoUnitSpawningLabel" String="TXT_KEY_POP_CSTATE_STOP_UNIT_SPAWNING"/>
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="NoUnitSpawningAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="NoUnitSpawningButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- IMPROVE RESOURCES BUTTON -->
+					<Button Hidden="1" Size="500,32" Anchor="C,C" Offset="0,0" ID="ImproveResourcesButton" ToolTip="TXT_KEY_POP_CSTATE_IMPROVE_RESOURCES_TT" >
+						<Label Anchor="C,C" Offset="0,0" ID="ImproveResourcesLabel" String="TXT_KEY_POP_CSTATE_IMPROVE_RESOURCES"/>
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="ImproveResourcesAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="ImproveResourcesButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+				</Stack>
+
+				<!--=======================================================================================================================-->
+				<!-- Provide Gift of Gold Buttons for Marc Meyer -->
+				<!--=======================================================================================================================-->
+				<Stack ID="GoldGiftStack" Anchor="C,T"   Offset="0,0" Size="0,0" StackGrowth="Bottom" Padding="0" Hidden="1">
+					<Box Anchor="C,C"  Offset="0,0"   Size="500,14" Color="White.0" />
+					<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+
+					<!-- MINOR_GOLD_GIFT_SMALL -->
+					<Button ID="SmallGiftButton" Size="500,32" Hidden="0" Anchor="C,C" Offset="0,0" ToolTip="TXT_KEY_POP_CSTATE_GOLD_TT" >
+						<Label ID="SmallGift" Anchor="C,C" Offset="0,0" String="MINOR_GOLD_GIFT_SMALL" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="SmallGiftAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="SmallGiftButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- MINOR_GOLD_GIFT_MEDIUM -->
+					<Button ID="MediumGiftButton" Size="500,32" Hidden="0" Anchor="C,C" Offset="0,0" ToolTip="TXT_KEY_POP_CSTATE_GOLD_TT" >
+						<Label ID="MediumGift" Anchor="C,C" Offset="0,0" String="MINOR_GOLD_GIFT_MEDIUM" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="MediumGiftAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid  ID="MediumGiftButtonHL" Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- MINOR_GOLD_GIFT_LARGE -->
+					<Button ID="LargeGiftButton" Size="500,32" Hidden="0" Anchor="C,C" Offset="0,0" ToolTip="TXT_KEY_POP_CSTATE_GOLD_TT" >
+						<Label ID="LargeGift" Anchor="C,C" Offset="0,0" WrapWidth="500" LeadingOffset="-8" String="MINOR_GOLD_GIFT_LARGE" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim ID="LargeGiftAnim" Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid ID="LargeGiftButtonHL"  Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+
+					<!-- BackButton -->
+					<Button Size="500,32" Hidden="0" Anchor="C,C" Offset="0,0" ID="BackButton" >
+						<Label Anchor="C,C" Offset="0,0" String="TXT_KEY_BACK_BUTTON" />
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
+						<ShowOnMouseOver>
+							<AlphaAnim Anchor="C,C" Offset="0,0" Size="500,35" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+								<Grid   Size="500,35" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+							</AlphaAnim>
+						</ShowOnMouseOver>
+					</Button>
+				</Stack>
+
+				<!--=======================================================================================================================-->
+			</ScrollPanel>
+		</Stack>
+
+		<!-- CLOSE BUTTON  -->
+		<Box Anchor="C,B" AnchorSide="I.I" Offset="0,54"   Size="520,56" Color="255,255,255,0" >
+			<GridButton Anchor="L,B"  Style="SmallButton" Size="150,32"  Offset="14,0" StateOffsetIncrement="0,0" ID="CloseButton"  >
+				<Label Anchor="C,C"  Offset="0,0"  String="TXT_KEY_CLOSE" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  />
+			</GridButton>
+			<GridButton Anchor="R,B"  Style="SmallButton" Size="150,32"  Offset="14,0" StateOffsetIncrement="0,0" ID="ViewButton"  >
+				<Label Anchor="C,C"  Offset="0,0"  String="TXT_KEY_VIEW" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  />
+			</GridButton>
+		</Box>
+	</Grid>
+
+	<!-- War Confirmation Popup -->
+	<Box Style="BGBlock" ID="WarConfirm" Hidden="1" ConsumeMouseOver="1">
+		<Grid Size="500,410" Anchor="C,C" Offset="0,0" Padding="0,20" Style="Grid9DetailFive140"  Hidden="0" >
+
+			<!-- Side treatments -->
+			<Image Anchor="L,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Left.dds" Size="32.64" />
+			<Image Anchor="R,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Right.dds" Size="32.64" />
+			<Image Anchor="C,T" AnchorSide="I.O" Offset="0,-27" Size="256,64" Texture="DecTop256x64.dds"  >
+				<Image Anchor="C,C" Offset="0,-6" Size="80,80" Texture="NotificationFrameBase.dds"  >
+					<AlphaAnim Anchor="C,C" Offset="0,0" Size="80.80"  Texture="assets\UI\Art\Notification\NotificationGenericGlow.dds"  Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1" AlphaEnd=".5"/>
+				</Image>
+			</Image>
+			<Label Anchor="C,T"  Offset="0,74"  WrapWidth="440" String="" ID="WarConfirmLabel" Font="TwCenMT22" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  />
+			<Stack Anchor="C,B" Offset="0,80" Padding="24" StackGrowth="Bottom">
+
+				<!-- Yes Button  -->
+				<GridButton Style="BaseButton"  ID="Yes" Size="400,42" Anchor="C,T" Offset="0,0"  Hidden="0">
+					<Label Anchor="C,C" Offset="0,0" String="TXT_KEY_YES_BUTTON" ColorSet="Beige_Black" Font="TwCenMT24" FontStyle="Shadow" />
+				</GridButton>
+
+				<!-- No Button  -->
+				<GridButton  Style="BaseButton" ID="No" Size="400,42" Anchor="C,T" Offset="0,0"  Hidden="0">
+					<Label Anchor="C,C" Offset="0,0" String="TXT_KEY_NO_BUTTON" ColorSet="Beige_Black" Font="TwCenMT24" FontStyle="Shadow" />
+				</GridButton>
+			</Stack>
+		</Grid>
+	</Box>
+</Context>

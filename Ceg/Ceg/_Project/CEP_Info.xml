@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<Row Name="LOADED_CEP">
+			<Value>1</Value>
+		</Row>
+		<Row Name="CEP_VERSION">
+			<Value>3.0.5b</Value>
+		</Row>
+	</Defines>
+	<Defines>
+		<Update>
+			<Where Name="SCORE_POPULATION_FACTOR" />
+			<Set Value="5000" />
+			<!-- 5000 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_LAND_FACTOR" />
+			<Set Value="2000" />
+			<!-- 2000 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_WONDER_FACTOR" />
+			<Set Value="1000" />
+			<!-- 1000 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_TECH_FACTOR" />
+			<Set Value="2000" />
+			<!-- 2000 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_CITY_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_POPULATION_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_LAND_MULTIPLIER" />
+			<Set Value="0.5" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_WONDER_MULTIPLIER" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_TECH_MULTIPLIER" />
+			<Set Value="8" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_FUTURE_TECH_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_POLICY_MULTIPLIER" />
+			<Set Value="4" />
+			<!--4  -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_GREAT_WORK_MULTIPLIER" />
+			<Set Value="8" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_BELIEF_MULTIPLIER" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="SCORE_RELIGION_CITIES_MULTIPLIER" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+	</Defines>
+	<HistoricRankings>
+		<Delete />
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_1</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_1_QUOTE</LeaderQuote>
+			<LeaderScore>8000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_2</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_2_QUOTE</LeaderQuote>
+			<LeaderScore>7000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_3</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_3_QUOTE</LeaderQuote>
+			<LeaderScore>6100</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_4</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_4_QUOTE</LeaderQuote>
+			<LeaderScore>5300</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_5</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_5_QUOTE</LeaderQuote>
+			<LeaderScore>4600</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_6</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_6_QUOTE</LeaderQuote>
+			<LeaderScore>4000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_7</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_7_QUOTE</LeaderQuote>
+			<LeaderScore>3500</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_8</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_8_QUOTE</LeaderQuote>
+			<LeaderScore>3000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_9</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_9_QUOTE</LeaderQuote>
+			<LeaderScore>2600</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_10</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_10_QUOTE</LeaderQuote>
+			<LeaderScore>2300</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_11</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_11_QUOTE</LeaderQuote>
+			<LeaderScore>2000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_12</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_12_QUOTE</LeaderQuote>
+			<LeaderScore>1800</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_13</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_13_QUOTE</LeaderQuote>
+			<LeaderScore>1600</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_14</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_14_QUOTE</LeaderQuote>
+			<LeaderScore>1400</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_15</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_15_QUOTE</LeaderQuote>
+			<LeaderScore>1200</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_16</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_16_QUOTE</LeaderQuote>
+			<LeaderScore>1000</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_17</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_17_QUOTE</LeaderQuote>
+			<LeaderScore>750</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_18</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_18_QUOTE</LeaderQuote>
+			<LeaderScore>500</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_19</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_19_QUOTE</LeaderQuote>
+			<LeaderScore>250</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_20</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_20_QUOTE</LeaderQuote>
+			<LeaderScore>100</LeaderScore>
+		</Row>
+		<Row>
+			<HistoricLeader>TXT_KEY_DQ_LEADER_NAME_21</HistoricLeader>
+			<LeaderQuote>TXT_KEY_DQ_LEADER_NAME_21_QUOTE</LeaderQuote>
+			<LeaderScore>0</LeaderScore>
+		</Row>
+	</HistoricRankings>
+</GameData>

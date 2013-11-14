@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{f5cc480e-a19a-4f20-b5aa-76bf3688e8cb}</ProjectGuid>
+    <Name>Communitas Interface</Name>
+    <Guid>12d204a2-f197-4abc-8381-a077e2ebde73</Guid>
+    <ModVersion>3</ModVersion>
+    <Stability>Beta</Stability>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.6.1[NEWLINE][ENDCOLOR]   Enhances the visual interface of BNW</Teaser>
+    <Description>CAT includes a broad variety of tools useful for mod authors, and expands the AI. There are as few gameplay changes as possible. Civup follows the footsteps of unofficial patches like Civ 4 BTS Unaltered Gameplay and the Skyrim Unofficial Patch. If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE][NEWLINE]This is part of the Civ V: Communitas Expansion Pack. If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links below. It's impractical to track multiple topics of conversation in the Workshop comments. Thank you![NEWLINE][NEWLINE]Features: communitas.wikia.com[NEWLINE]Discuss: forums.civfanatics.com/forumdisplay.php?f=429[NEWLINE]Bugs: bit.ly/bugreporting[NEWLINE]News: civmodding.wordpress.com[NEWLINE]Credits: civmodding.wordpress.com/credits[NEWLINE][NEWLINE][NEWLINE]The Communitas Expansion Pack is a collaboration of work from 38 main authors and an incredible community of forumgoers on CivFanatics.com. You can see the other parts of CEP here:[NEWLINE][NEWLINE]http://steamcommunity.com/id/thalassicus/myworkshopfiles[NEWLINE][NEWLINE][NEWLINE][NEWLINE]Please view the readme in the Civup folder, which includes important information about using Civ 5 mods. Modders can easily use the Civup Toolkit within your own project by including Civup as a dependency in ModBuddy project associations.[NEWLINE][NEWLINE]NOTE: Exit to the main menu to load or start games. Loading or regenerating the map within an active game breaks all mods which use lua code.[NEWLINE][NEWLINE]REQUIRES: Brave New World Expansion.</Description>
+    <Authors>[COLOR_CYAN]Thalassicus</Authors>
+    <SpecialThanks>Please see [COLOR_YELLOW]readme[/COLOR] included in mod folder.</SpecialThanks>
+    <Categories>$Categories$</Categories>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>Mod Template</AssemblyName>
+    <RootNamespace>Mod Template</RootNamespace>
+    <ModActions />
+    <Homepage>http://civmodding.wordpress.com/</Homepage>
+    <ModContent>
+    </ModContent>
+    <ModReferences>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Communitas Enhanced Gameplay</Name>
+        <Id>828b5b4b-7c62-4afb-a43f-034b596ef5e4</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModReferences>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <ModProperties>
+    </ModProperties>
+    <ModDependencies>
+      <Association xmlns="">
+        <Type>Mod</Type>
+        <Name>Communitas AI and Tools</Name>
+        <Id>faae7417-d08c-49ec-8a2c-8f00c17fa056</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModDependencies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Cin_Options.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Sorting\ChoosePantheonPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Sorting\ChooseReligionPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\FP_Data.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager_addin.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_Features.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_QuestionsComments.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_ReportBug.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_Translations.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_Website.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="README.txt">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface" />
+    <Folder Include="Interface\FlagPromotions" />
+    <Folder Include="Interface\Sorting" />
+    <Folder Include="Text" />
+    <Folder Include="Text\EN_US" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

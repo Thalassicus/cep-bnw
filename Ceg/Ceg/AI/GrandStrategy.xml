@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--Grand Strategies-->
+	<AIGrandStrategy_Flavors>
+		<Update>
+			<Where AIGrandStrategyType="AIGRANDSTRATEGY_CONQUEST" />
+			<Set Flavor="11" />
+		</Update>
+		<Update>
+			<Where AIGrandStrategyType="AIGRANDSTRATEGY_CULTURE" />
+			<Set Flavor="11" />
+		</Update>
+		<Update>
+			<Where AIGrandStrategyType="AIGRANDSTRATEGY_UNITED_NATIONS" />
+			<Set Flavor="10" />
+		</Update>
+		<Update>
+			<Where AIGrandStrategyType="AIGRANDSTRATEGY_SPACESHIP" />
+			<Set Flavor="11" />
+		</Update>
+	</AIGrandStrategy_Flavors>
+	<!--Grand Strategy Leader Adjustments and Additions-->
+	<AIGrandStrategy_FlavorMods>
+		<Update>
+			<Where AIGrandStrategyType="AIGRANDSTRATEGY_CONQUEST" FlavorType="FLAVOR_MILITARY_TRAINING" />
+			<Set Flavor="2" />
+		</Update>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_CONQUEST</AIGrandStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_CONQUEST</AIGrandStrategyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_CULTURE</AIGrandStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_CULTURE</AIGrandStrategyType>
+			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_CULTURE</AIGrandStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_UNITED_NATIONS</AIGrandStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_UNITED_NATIONS</AIGrandStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_UNITED_NATIONS</AIGrandStrategyType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_SPACESHIP</AIGrandStrategyType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_SPACESHIP</AIGrandStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		<Row>
+			<AIGrandStrategyType>AIGRANDSTRATEGY_SPACESHIP</AIGrandStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+	</AIGrandStrategy_FlavorMods>
+	
+</GameData>

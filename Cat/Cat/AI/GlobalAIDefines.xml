@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<Update>
+			<Where Name="AI_ATTEMPT_RUSH_OVER_X_TURNS_TO_BUILD" />
+			<Set Value="15" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PRODUCTION_WEIGHT_MOD_PER_TURN_LEFT" />
+			<Set Value="0.015" />
+			<!-- 0.015 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PRODUCTION_WEIGHT_BASE_MOD" />
+			<Set Value="0.15" />
+			<!-- 0.15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_RESEARCH_WEIGHT_MOD_PER_TURN_LEFT" />
+			<Set Value="0.015" />
+			<!-- 0.015 -->
+		</Update>
+		<Update>
+			<Where Name="AI_RESEARCH_WEIGHT_BASE_MOD" />
+			<Set Value="0.15" />
+			<!-- 0.15 -->
+		</Update>
+		<Update>
+			<Where Name="INITIAL_AI_CITY_PRODUCTION" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CAN_DISBAND_UNITS" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_SHOULDNT_MANAGE_PLOT_ASSIGNMENT" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_WEIGHT_PROPAGATION_PERCENT" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_WEIGHT_PROPAGATION_LEVELS" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_WEIGHT_PERCENT_DROP_NEW_BRANCH" />
+			<Set Value="78" />
+			<!-- 78 -->
+		</Update>
+		<Update>
+			<Where Name="TECH_WEIGHT_PROPAGATION_PERCENT" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="TECH_WEIGHT_PROPAGATION_LEVELS" />
+			<Set Value="3" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where Name="TECH_PRIORITY_UNIQUE_ITEM" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_VALUE_OF_YIELD_GOLD" />
+			<Set Value="10" />
+			<!-- 7 -->
+		</Update>
+		<Update>
+			<Where Name="AI_VALUE_OF_YIELD_PRODUCTION" />
+			<Set Value="10" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_VALUE_OF_YIELD_SCIENCE" />
+			<Set Value="10" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="DEFAULT_FLAVOR_VALUE" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="PERSONALITY_FLAVOR_MAX_VALUE" />
+			<Set Value="1000" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="PERSONALITY_FLAVOR_MIN_VALUE" />
+			<Set Value="-1000" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="FLAVOR_MIN_VALUE" />
+			<Set Value="-1000" />
+			<!-- -1000 -->
+		</Update>
+		<Update>
+			<Where Name="FLAVOR_MAX_VALUE" />
+			<Set Value="1000" />
+			<!-- 1000 -->
+		</Update>
+		<Update>
+			<Where Name="FLAVOR_RANDOMIZATION_RANGE" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="FLAVOR_STANDARD_LOG10_TILES_PER_PLAYER" />
+			<Set Value="2.1" />
+			<!-- 2.1 -->
+		</Update>
+		<Update>
+			<Where Name="FLAVOR_EXPANDGROW_COEFFICIENT" />
+			<Set Value="8" />
+			<!-- 8 -->
+		</Update>
+		<!-- AI Player Grand Strategy Defines-->
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_NUM_TURNS_STRATEGY_MUST_BE_ACTIVE" />
+			<Set Value="20" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_RAND_ROLL" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CURRENT_STRATEGY_WEIGHT" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_GUESS_NO_CLUE_WEIGHT" />
+			<Set Value="40" />
+			<!-- 40 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_GUESS_POSITIVE_THRESHOLD" />
+			<Set Value="120" />
+			<!-- 120 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_GUESS_LIKELY_THRESHOLD" />
+			<Set Value="70" />
+			<!-- 70 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_OTHER_PLAYERS_GS_MULTIPLIER" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CONQUEST_NOBODY_MET_FIRST_TURN" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_NOBODY_MET_WEIGHT" />
+			<Set Value="-50" />
+			<!-- -50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_AT_WAR_WEIGHT" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CONQUEST_MILITARY_STRENGTH_FIRST_TURN" />
+			<Set Value="60" />
+			<!-- 60 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_POWER_RATIO_MULTIPLIER" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_CRAMPED_WEIGHT" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_WEIGHT_PER_MINOR_ATTACKED" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_WEIGHT_PER_MINOR_CONQUERED" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_WEIGHT_PER_MAJOR_ATTACKED" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_WEIGHT_PER_MAJOR_CONQUERED" />
+			<Set Value="15" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_RATIO_MULTIPLIER" />
+			<Set Value="150" />
+			<!-- 150 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_RATIO_EARLY_TURN_THRESHOLD" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_RATIO_EARLY_DIVISOR" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_MAX_CITIES" />
+			<Set Value="6" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_MAX_CITIES_MODIFIER" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_CULTURE_POLICY_BRANCH_MOD" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GRAND_STRATEGY_UN_EACH_MINOR_ATTACKED_WEIGHT" />
+			<Set Value="-30" />
+			<!-- -30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_UN_SECURED_VOTE_MOD" />
+			<Set Value="300" />
+			<!-- 300 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_SS_HAS_APOLLO_PROGRAM" />
+			<Set Value="150" />
+			<!-- 150 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GS_SS_TECH_PROGRESS_MOD" />
+			<Set Value="300" />
+			<!-- 300 -->
+		</Update>
+		<!-- Economic AI Defines-->
+		<Update>
+			<Where Name="AI_STRATEGY_EARLY_EXPLORATION_STARTING_WEIGHT" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_EARLY_EXPLORATION_EXPLORERS_WEIGHT_DIVISOR" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_EARLY_EXPLORATION_WEIGHT_PER_FLAVOR" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_EARLY_EXPANSION_NUM_UNOWNED_TILES_REQUIRED" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_EARLY_EXPANSION_NUM_CITIES_LIMIT" />
+			<Set Value="8" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_NEED_IMPROVEMENT_CITY_RATIO" />
+			<Set Value="0.34" />
+			<!-- 0.34 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_ISLAND_START_COAST_REVEAL_PERCENT" />
+			<Set Value="80" />
+			<!-- 80 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_AREA_IS_FULL_PERCENT" />
+			<Set Value="75" />
+			<!-- 75 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_MINIMUM_SETTLE_FERTILITY" />
+			<Set Value="5000" />
+			<!-- 5000 -->
+		</Update>
+		<Update>
+			<Where Name="AI_BUY_PLOT_TEST_PROBES" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_STRATEGIC_RESOURCE" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_LUXURY_RESOURCE" />
+			<Set Value="40" />
+			<!-- 40 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_SPECIALIZATION_MULTIPLIER" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_YIELD_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_DEFICIENT_YIELD_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_FIERCE_DISPUTE" />
+			<Set Value="6" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_STRONG_DISPUTE" />
+			<Set Value="4" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="AI_PLOT_VALUE_WEAK_DISPUTE" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_MINIMUM_PLOT_BUY_VALUE" />
+			<Set Value="275" />
+			<!-- 275 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_BALANCE_TO_HALVE_PLOT_BUY_MINIMUM" />
+			<Set Value="1000" />
+			<!-- 1000 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_UPGRADE_BASE" />
+			<Set Value="150" />
+			<!-- 150 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_UPGRADE_PER_FLAVOR_POINT" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_DIPLOMACY_BASE" />
+			<Set Value="150" />
+			<!-- 150 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_DIPLOMACY_PER_FLAVOR_POINT" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_UNIT" />
+			<Set Value="500" />
+			<!-- 500 -->
+		</Update>
+		<Update>
+			<Where Name="AI_GOLD_PRIORITY_DEFENSIVE_BUILDING" />
+			<Set Value="400" />
+			<!-- 400 -->
+		</Update>
+		<!-- Builder Tasking AI Defines -->
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_FOOD" />
+			<Set Value="3" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_PRODUCTION" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_GOLD" />
+			<Set Value="2" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_SCIENCE" />
+			<Set Value="2" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_CULTURE" />
+			<Set Value="2" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_LUXURY_RESOURCE" />
+			<Set Value="50000" />
+			<!-- 50000 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_IMPROVE_RESOURCE_TENDENCY" />
+			<Set Value="15.0" />
+			<!-- 15.0 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BUILD_ROUTE_TENDENCY" />
+			<Set Value="100.0" />
+			<!-- 100.0 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_DIRECTIVES_TO_EVALUATE" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_BUILD_IMPROVEMENTS" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_BUILD_RESOURCE_IMPROVEMENTS" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_BUILD_ROUTES" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_REPAIR" />
+			<Set Value="200" />
+			<!-- 200 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_SCRUB_FALLOUT" />
+			<Set Value="10000" />
+			<!-- 10000 -->
+		</Update>
+		<Update>
+			<Where Name="BUILDER_TASKING_BASELINE_ADDS_CULTURE" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<!-- Military AI Defines-->
+		<Update>
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_MINOR" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_MAJOR" />
+			<Set Value="3" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_SEVERE" />
+			<Set Value="6" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_CRITICAL" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_DEFEND_MY_LANDS_UNITS_PER_CITY" />
+			<Set Value="1.0" />
+			<!-- 1.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_NAVAL_UNITS_PER_CITY" />
+			<Set Value="0.67" />
+			<!-- 0.67 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_DEFEND_MY_LANDS_BASE_UNITS" />
+			<Set Value="3" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where Name="AI_STRATEGY_MILITARY_RESERVE_PERCENTAGE" />
+			<Set Value="35" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="AI_MILITARY_CITY_THREAT_WEIGHT_CAPITAL" />
+			<Set Value="125" />
+			<!-- 125 -->
+		</Update>
+		<Update>
+			<Where Name="AI_MILITARY_BARBARIANS_FOR_MINOR_THREAT" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<!-- City Specialization Defines -->
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_EARLIEST_TURN" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_REEVALUATION_INTERVAL" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_GENERAL_ECONOMIC_WEIGHT" />
+			<Set Value="200" />
+			<!-- 200 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_FLAVOR_EXPANSION" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_PERCENT_CONTINENT_UNOWNED" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_NUM_CITIES" />
+			<Set Value="-50" />
+			<!-- -50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_NUM_SETTLERS" />
+			<Set Value="-40" />
+			<!-- -40 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_EARLY_EXPANSION" />
+			<Set Value="500" />
+			<!-- 500 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_OPERATIONAL_UNITS_REQUESTED" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_CIVS_AT_WAR_WITH" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_WAR_MOBILIZATION" />
+			<Set Value="300" />
+			<!-- 300 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_EMPIRE_DEFENSE" />
+			<Set Value="300" />
+			<!-- 300 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_EMPIRE_DEFENSE_CRITICAL" />
+			<Set Value="1000" />
+			<!-- 1000 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_CAPITAL_THREAT" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_NEED_NAVAL_UNITS" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_NEED_NAVAL_UNITS_CRITICAL" />
+			<Set Value="250" />
+			<!-- 250 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_FLAVOR_WONDER" />
+			<Set Value="500" />
+			<!-- 200 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_NEXT_WONDER" />
+			<Set Value="0.2" />
+			<!-- 0.2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_FLAVOR_SPACESHIP" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_TRAINING_PER_OFFENSE" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_TRAINING_PER_PERSONALITY" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_GOLD_WEIGHT_FLAVOR_GOLD" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_GOLD_WEIGHT_LAND_DISPUTE" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_SCIENCE_WEIGHT_FLAVOR_SCIENCE" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_SCIENCE_WEIGHT_FLAVOR_SPACESHIP" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_YIELD_WEIGHT_FIRST_RING" />
+			<Set Value="8" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_YIELD_WEIGHT_SECOND_RING" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_YIELD_WEIGHT_THIRD_RING" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITY_SPECIALIZATION_YIELD_NUM_TILES_CONSIDERED" />
+			<Set Value="18" />
+			<!-- 18 -->
+		</Update>
+		<!-- AI City Strategy Defines -->
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_SMALL_CITY_POP_THRESHOLD" />
+			<Set Value="4" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_MEDIUM_CITY_POP_THRESHOLD" />
+			<Set Value="8" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_LARGE_CITY_POP_THRESHOLD" />
+			<Set Value="12" />
+			<!-- 12 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_NEED_TILE_IMPROVERS_CITY_THRESHOLD" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_NEED_TILE_IMPROVERS_WORKER_MOD" />
+			<Set Value="200" />
+			<!-- 200 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_NEED_TILE_IMPROVERS_DESPERATE_TURN" />
+			<Set Value="30" />
+			<!-- 30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_WANT_TILE_IMPROVERS_MINIMUM_SIZE" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_YIELD_DEFICIENT_FOOD" />
+			<Set Value="2.0" />
+			<!-- 2.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_YIELD_DEFICIENT_PRODUCTION" />
+			<Set Value="0.8" />
+			<!-- 0.8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_YIELD_DEFICIENT_GOLD" />
+			<Set Value="0.0" />
+			<!-- 0.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_YIELD_DEFICIENT_SCIENCE" />
+			<Set Value="0.0" />
+			<!-- 0.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_OPERATION_UNIT_BASE_WEIGHT" />
+			<Set Value="900" />
+			<!-- 900 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITYSTRATEGY_OPERATION_UNIT_FLAVOR_MULTIPLIER" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<!--City Citizen AI-->
+		<Update>
+			<Where Name="AI_CITIZEN_VALUE_FOOD" />
+			<Set Value="6" />
+			<!-- 12 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_VALUE_PRODUCTION" />
+			<Set Value="6" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_VALUE_GOLD" />
+			<Set Value="6" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_VALUE_SCIENCE" />
+			<Set Value="6" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_VALUE_CULTURE" />
+			<Set Value="6" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_FOOD_MOD_SIZE_CUTOFF" />
+			<Set Value="6" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_FOOD_MOD_SIZE_EXPONENT" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_MOD_FOOD_DEFICIT" />
+			<Set Value="300" />
+			<!-- 300 -->
+		</Update>
+		<Update>
+			<Where Name="AI_CITIZEN_MOD_PRODUCTION_DEFICIT" />
+			<Set Value="250" />
+			<!-- 250 -->
+		</Update>
+		<!-- Operation AI Defines-->
+		<Update>
+			<Where Name="AI_OPERATIONAL_BARBARIAN_CAMP_DEPLOY_RANGE" />
+			<Set Value="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_CITY_ATTACK_DEPLOY_RANGE" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_PILLAGE_ENEMY_DEPLOY_RANGE" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_NAVAL_BOMBARDMENT_DEPLOY_RANGE" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_PERCENT_DANGER_FOR_FORWARD_MUSTER" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_PERCENT_HEALTH_FOR_OPERATION" />
+			<Set Value="75" />
+			<!-- 80 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_MAX_RECRUIT_TURNS_DEFAULT" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_OPERATIONAL_MAX_RECRUIT_TURNS_ENEMY_TERRITORY" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<!-- Tactical Analysis Map Defines-->
+		<Update>
+			<Where Name="AI_TACTICAL_MAP_UNIT_STRENGTH_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_MAP_DOMINANCE_PERCENTAGE" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_MAP_TEMP_ZONE_RADIUS" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_MAP_TEMP_ZONE_TURNS" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_MAP_BOMBARDMENT_ZONE_TURNS" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<!-- Tactical AI Defines-->
+		<Update>
+			<Where Name="AI_TACTICAL_RECRUIT_RANGE" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_REPOSITION_RANGE" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_OVERKILL_PERCENT" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_BARBARIAN_RELEASE_VARIATION" />
+			<Set Value="15" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_FLAVOR_DAMPENING_FOR_MOVE_PRIORITIZATION" />
+			<Set Value="0.3" />
+			<!-- 0.3 -->
+		</Update>
+		<Update>
+			<Where Name="AI_TACTICAL_MOVE_PRIORITY_RANDOMNESS" />
+			<Set Value="1" />
+			<!-- 6 -->
+		</Update>
+		<!-- Homeland AI Defines-->
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_RANDOMNESS" />
+			<Set Value="2" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MAX_UPGRADE_MOVE_TURNS" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MAX_DEFENSIVE_MOVE_TURNS" />
+			<Set Value="4" />
+			<!-- 4 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_ESTIMATE_TURNS_DISTANCE" />
+			<Set Value="8" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_SETTLE" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_HEAL" />
+			<Set Value="30" />
+			<!-- 30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_TO_SAFETY" />
+			<Set Value="30" />
+			<!-- 30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_WORKER" />
+			<Set Value="30" />
+			<!-- 30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_WORKER_SEA" />
+			<Set Value="30" />
+			<!-- 30 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_EXPLORE" />
+			<Set Value="35" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_EXPLORE_SEA" />
+			<Set Value="35" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_SENTRY" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_MOBILE_RESERVE" />
+			<Set Value="15" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_GARRISON" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_PATROL" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_UPGRADE" />
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_ANCIENT_RUINS" />
+			<Set Value="40" />
+			<!-- 40 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_GARRISON_CITY_STATE" />
+			<Set Value="40" />
+			<!-- 40 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_ARTIST_GOLDEN_AGE" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_SCIENTIST_FREE_TECH" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_ENGINEER_HURRY" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_GENERAL_GARRISON" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_AIRCRAFT_TO_THE_FRONT" />
+			<Set Value="50" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_SPACESHIP_PART" />
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_TREASURE" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="AI_HOMELAND_GREAT_PERSON_TURNS_TO_WAIT" />
+			<Set Value="10" />
+			<!-- 10 -->
+		</Update>
+		<!-- Diplo AI Defines-->
+		<Update>
+			<Where Name="AI_DIPLO_PLOT_RANGE_FROM_CITY_HOME_FRONT" />
+			<Set Value="4" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DIPLO_LAND_DISPUTE_WEIGHT_WEAK" />
+			<Set Value="1" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DIPLO_LAND_DISPUTE_WEIGHT_STRONG" />
+			<Set Value="3" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DIPLO_LAND_DISPUTE_WEIGHT_FIERCE" />
+			<Set Value="5" />
+			<!-- 5 -->
+		</Update>
+		<!-- Danger Value defines-->
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_WAR" />
+			<Set Value="1.0" />
+			<!-- 1.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_HOSTILE" />
+			<Set Value="0.2" />
+			<!-- 0.2 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_DECEPTIVE" />
+			<Set Value="0.1" />
+			<!-- 0.1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_GUARDED" />
+			<Set Value="0.5" />
+			<!-- 0.5 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_AFRAID" />
+			<Set Value="0.9" />
+			<!-- 0.9 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_FRIENDLY" />
+			<Set Value="0.0" />
+			<!-- 0.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MAJOR_APPROACH_NEUTRAL" />
+			<Set Value="0.1" />
+			<!-- 0.1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MINOR_APPROACH_NEUTRAL" />
+			<Set Value="0.1" />
+			<!-- 0.1 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MINOR_APPROACH_FRIENDLY" />
+			<Set Value="0.0" />
+			<!-- 0.0 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MINOR_APPROACH_BULLY" />
+			<Set Value="0.9" />
+			<!-- 0.9 -->
+		</Update>
+		<Update>
+			<Where Name="AI_DANGER_MINOR_APPROACH_CONQUEST" />
+			<Set Value="1.0" />
+			<!-- 1.0 -->
+		</Update>
+		<!-- Quests Disabled? -->
+		<Update>
+			<Where Name="QUEST_DISABLED_ROUTE" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_KILL_CAMP" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_CONNECT_RESOURCE" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_CONSTRUCT_WONDER" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_GREAT_PERSON" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_KILL_CITY_STATE" />
+			<Set Value="1" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_FIND_PLAYER" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+		<Update>
+			<Where Name="QUEST_DISABLED_NATURAL_WONDER" />
+			<Set Value="0" />
+			<!-- 0 -->
+		</Update>
+	</Defines>
+</GameData>

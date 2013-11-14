@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_AUTOCRACY" />
+			<Set UnitGoldMaintenanceMod="0"
+				 CulturalPlunderMultiplier="0"
+				 ExtraHappinessPerCity="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_POLICE_STATE" />
+			<Set GridX="1"
+				 GridY="1"
+				 PortraitIndex="56"
+				 UnitGoldMaintenanceMod="0"
+				 StealTechSlowerModifier="0"
+				 CatchSpiesModifier="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MILITARISM" />
+			<Set GridX="3"
+				 GridY="1"
+				 PortraitIndex="5"
+				 CityCaptureCulture="0"
+				 CityCaptureCulturePerPop="0"
+				 CityCaptureCulturePerEra="0"
+				 FreeExperience="0"
+				 GlobalExperience="0"
+				 StrategicResourceMod="0"
+				 UnitGoldMaintenanceMod="-25"
+				 UnitPurchaseCostModifier="-25"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_POPULISM" />
+			<Set GridX="5"
+				 GridY="1"
+				 PortraitIndex="28"
+				 Description="TXT_KEY_POLICY_NATIONALISM"
+				 Civilopedia="TXT_KEY_POLICY_NATIONALISM_TEXT"
+				 Help="TXT_KEY_POLICY_NATIONALISM_HELP"
+				 WoundedUnitDamageMod="0"
+				 MilitaryProductionModifier="0"
+				 UnitPurchaseCostModifier="0"
+				 HalfSpecialistUnhappiness="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FASCISM" />
+			<Set GridX="2"
+				 GridY="2"
+				 StrategicResourceMod="0"
+				 UnitGoldMaintenanceMod="0"
+				 HalfSpecialistUnhappiness="0"
+				 CityCaptureCulture="200"
+				 CityCaptureCulturePerPop="20"
+				 CityCaptureCulturePerEra="200"
+				 CityResistTimeMod="-50"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TOTAL_WAR" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Row>
+			<Type>POLICY_CONSCRIPTION</Type>
+			<PolicyBranchType>POLICY_BRANCH_AUTOCRACY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_CONSCRIPTION</Description>
+			<Civilopedia>TXT_KEY_POLICY_CONSCRIPTION_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_CONSCRIPTION_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>4</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Update>
+			<Where Type="POLICY_AUTOCRACY_FINISHER" />
+			<Set FreeExperience="30"
+				 AttackBonusTurns="0"
+				 OneShot="0"
+				 IncludesOneShotFreeUnits="0"
+				 />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_POLICE_STATE" />
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_POLICE_STATE" />
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_CONSCRIPTION</Type>
+			<Description>TXT_KEY_PROMOTION_CONSCRIPTION</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_CONSCRIPTION</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_CONSCRIPTION_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<EnemyHealChange>10</EnemyHealChange>
+			<NeutralHealChange>10</NeutralHealChange>
+			<FriendlyHealChange>10</FriendlyHealChange>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+		</Row>
+	</UnitPromotions>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_AUTOCRACY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+</GameData>

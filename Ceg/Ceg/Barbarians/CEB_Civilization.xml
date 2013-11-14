@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Civilization_UnitClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_PIKEMAN</UnitType>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_LONGSWORDSMAN</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_LONGSWORDSMAN</UnitType>
+		</Row>
+		<Update>
+			<Where CivilizationType="CIVILIZATION_BARBARIAN" UnitClassType="UNITCLASS_CHARIOT_ARCHER"/>
+			<Set UnitType="UNIT_BARBARIAN_CHARIOT_ARCHER"/>
+		</Update>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_HORSEMAN</UnitType>
+		</Row>
+		<Update>
+			<Where CivilizationType="CIVILIZATION_BARBARIAN" UnitClassType="UNITCLASS_KNIGHT"/>
+			<Set UnitType="UNIT_BARBARIAN_KNIGHT"/>
+		</Update>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_TRIREME</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_TRIREME</UnitType>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_CROSSBOWMAN</UnitType>
+		</Row>
+	</Civilization_UnitClassOverrides>
+</GameData>

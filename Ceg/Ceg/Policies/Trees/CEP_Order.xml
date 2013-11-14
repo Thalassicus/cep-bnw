@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_ORDER" />
+			<Set ExtraHappinessPerCity="0"
+				 OneShot="1"
+				 IncludesOneShotFreeUnits="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PLANNED_ECONOMY" />
+			<Set GridX="2"
+				 GridY="1"
+				 PortraitIndex="0"
+				 IconAtlas="CEP_POLICY_ATLAS"
+				 IconAtlasAchieved="CEP_POLICY_ATLAS_ACTIVE"
+				 BuildingGoldMaintenanceMod="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SOCIALISM" />
+			<Set GridX="4"
+				 GridY="1"
+				 PortraitIndex="34"
+				 BuildingGoldMaintenanceMod="-25" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_NATIONALISM" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Row>
+			<Type>POLICY_LABOR_UNIONS</Type>
+			<PolicyBranchType>POLICY_BRANCH_ORDER</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_LABOR_UNIONS</Description>
+			<Civilopedia>TXT_KEY_POLICY_LABOR_UNIONS_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_LABOR_UNIONS_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>32</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Update>
+			<Where Type="POLICY_COMMUNISM" />
+			<Set GridX="3"
+				 GridY="2"
+				 BuildingProductionModifier="0" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_UNITED_FRONT" />
+			<Set GridX="5"
+				 GridY="2"
+				 CityStateUnitFrequencyModifier="0"
+				 CatchSpiesModifier="25"
+				 StealTechSlowerModifier="-25"
+				 />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<PrereqPolicy>POLICY_PLANNED_ECONOMY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<PrereqPolicy>POLICY_SOCIALISM</PrereqPolicy>
+		</Row>		
+	</Policy_PrereqPolicies>
+	<Policy_CityYieldChanges>
+		<Delete PolicyType="POLICY_COMMUNISM" />
+		<Delete PolicyType="POLICY_ORDER_FINISHER" />
+	</Policy_CityYieldChanges>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_PLANNED_ECONOMY" />
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HYDRO_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NUCLEAR_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SOLAR_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WINDMILL</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WATERMILL</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SEAPORT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SPACESHIP_FACTORY</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_YieldModifiers>
+		<Row>
+			<PolicyType>POLICY_ORDER</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>10</Yield>
+		</Row>
+	</Policy_YieldModifiers>
+	<Policy_InstantYieldTurns>
+		<Row>
+			<PolicyType>POLICY_ORDER_FINISHER</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Turns>10</Turns>
+		</Row>
+	</Policy_InstantYieldTurns>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassYieldModifiers>
+		<Delete PolicyType="POLICY_PLANNED_ECONOMY" />
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>10</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMUNISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>10</YieldMod>
+		</Row>
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_ImprovementYieldChanges>
+		<Delete PolicyType="POLICY_COMMUNISM" />
+		<Row>
+			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
+			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
+			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
+			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+	<Policy_FreePromotions>
+		<Delete PromotionType="PROMOTION_NATIONALISM" />
+	</Policy_FreePromotions>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_NATIONALISM" />
+			<Set FriendlyLandsAttackModifier="25" />
+		</Update>
+	</UnitPromotions>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_ORDER</PolicyType>
+			<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>	
+	<Policy_FreeBuildingFlavor>
+		<!--
+		<Row>
+			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<NumCities>-1</NumCities>
+		</Row>
+		-->
+	</Policy_FreeBuildingFlavor>
+</GameData>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_NATIONAL_EPIC" />
+			<Set GreatPeopleRateModifier="25"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_NATIONAL_TREASURY" />
+			<Set TradeRouteModifier="25"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_HERMITAGE" />
+			<Set CultureRateModifier="0"
+				 FreePolicies="1"
+				 />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_TREASURY" YieldType="YIELD_GOLD" />
+			<Set Yield="8" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_IRONWORKS" YieldType="YIELD_PRODUCTION" />
+			<Set Yield="8" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_COLLEGE" YieldType="YIELD_SCIENCE" />
+			<Set Yield="8" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_EPIC" YieldType="YIELD_CULTURE" />
+			<Set Yield="10" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_HERMITAGE" YieldType="YIELD_CULTURE" />
+			<Set Yield="1" />
+		</Update>
+		<Delete BuildingType="BUILDING_OXFORD_UNIVERSITY" />
+	</Building_YieldChanges>
+	<Building_YieldModifiers>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>20</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>25</Yield>
+		</Row>
+		<!--
+		<Row>
+			<BuildingType>BUILDING_HERMITAGE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>25</Yield>
+		</Row>
+		-->
+		<Row>
+			<BuildingType>BUILDING_GRAND_TEMPLE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>25</Yield>
+		</Row>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_COLLEGE" YieldType="YIELD_SCIENCE" />
+			<Set Yield="25" />
+		</Update>
+	</Building_YieldModifiers>
+	<Civilization_BuildingClassOverrides>
+	
+	</Civilization_BuildingClassOverrides>	
+	<Building_ClassesNeededInCity>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_EPIC" />
+			<Set BuildingClassType="BUILDINGCLASS_AMPHITHEATER" />
+		</Update>
+	</Building_ClassesNeededInCity>
+</GameData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<MultiUnitFormation_SlotEntries>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_QUICK_COLONY_SETTLER</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_DEFENSE</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_COUNTER</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Update>
+			<Where MultiUnitFormationType="MUFORMATION_SETTLER_ESCORT" />
+			<Set RequiredSlot="1" />
+		</Update>
+	</MultiUnitFormation_SlotEntries>
+</GameData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Font="TwCenMT16" FontStyle="Base" Color="Beige" ColorSet="Beige_Black">
+	<Image Anchor="C,T" Texture="assets\UI\Art\WorldView\TopPanelBar.dds" Size="Full.32" ConsumeMouse="true"/>
+	<Stack Anchor="L,T" Offset="10,6" Padding="6" StackGrowth="Right" ID="TopPanelInfoStack">
+		<TextButton Anchor="C,T" Offset="0,0" String=" " Color="Science" ID="SciencePerTurn" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" Offset="-0,0" String=" " ColorLayer0="255,235,0,255" ID="GoldPerTurn" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="HappinessString" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,255,255" ID="GoldenAgeString" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="CultureString" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255"  ID="FaithString" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="GreatPeopleString" ToolTipType="TooltipTypeTopPanel"/>
+		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="ResourceString" ToolTipType="TooltipTypeTopPanel"/>
+		<!--<TextButton Anchor="C,C" String="TXT_KEY_UNIT_SUPPLY_REACHED" ID="UnitSupplyString" Hidden="1"/>-->
+		<Image Anchor="C,T" Offset="0,-3" Texture="assets\UI\Art\WorldView\OverSupplyLimit.dds" Size="20.20" ID="UnitSupplyString"/>
+	</Stack>
+	<Stack Anchor="R,T" Offset="10,4" Padding="6" StackGrowth="Left">
+		<TextButton Anchor="C,C" String="TXT_KEY_MENU_CAPS" Font="TwCenMT20" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="Beige_Black_Alpha" ID="MenuButton" ToolTip="TXT_KEY_MENU_TOOLTIP"/>
+		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
+		<TextButton Anchor="C,C" String="TXT_KEY_HELP_CAPS" Font="TwCenMT20" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="Beige_Black_Alpha" ID="CivilopediaButton" ToolTip="TXT_KEY_CIVILOPEDIA_TOOLTIP"/>
+		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
+		<TextButton Anchor="C,C" String="+" Font="TwCenMT20" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="Beige_Black_Alpha" ID="DebugButton" ToolTip="Save debug information to lua.log"/>
+		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
+		<TextButton Anchor="C,C" String="Clock" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="TopPanelClock" ToolTip="Click to toggle 12/24 hour clock."/>
+		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
+		<TextButton Anchor="C,C" String="Date: 2100 AD" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentDate" ToolTip="InfoAddict"/>
+		<TextButton Anchor="C,C" String="Turn: 1" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentTurn" ToolTip="InfoAddict"/>
+	</Stack>
+	<ToolTipType Name="TooltipTypeTopPanel">
+		<Grid Size="530,90" Offset="8.0" Padding="8,8" Style="GridBlack8" ID="TopPanelMouseover" NoClip="1">
+			<Label Offset="12,12" Font="TwCenMT16" ID="TooltipLabel" String="Brief description" LeadingOffset="-5" WrapWidth="512"/>
+		</Grid>
+	</ToolTipType>
+</Context>

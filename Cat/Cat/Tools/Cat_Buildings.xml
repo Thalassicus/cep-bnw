@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_HARBOR" />
+			<Set Strategy="TXT_KEY_BUILDING_EFFECT_CAPITAL_FOOT" />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_WINDMILL" />
+			<Set Description="TXT_KEY_BUILDING_WORKSHOP"
+				 Strategy="TXT_KEY_BUILDING_WORKSHOP_STRATEGY"
+				 Civilopedia="TXT_KEY_CIV5_BUILDINGS_WORKSHOP_TEXT"
+				 PortraitIndex="28"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_FORGE" />
+			<Set IconAtlas="TECH_ATLAS_1"
+				 PortraitIndex="14"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_WORKSHOP" />
+			<Set Description="TXT_KEY_BUILDING_SMITH"
+				 Strategy="TXT_KEY_BUILDING_SMITH_STRATEGY"
+				 Civilopedia="TXT_KEY_BUILDING_SMITH_PEDIA"
+				 PortraitIndex="2"
+				 />
+		</Update>
+	</Buildings>
+
+
+
+	<!--
+			Happiness
+	-->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_HAPPINESS_NATIONAL</Type>
+			<DefaultBuilding>BUILDING_HAPPINESS_NATIONAL</DefaultBuilding>
+			<Description>TXT_KEY_HAPPINESS_NATIONAL</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_HAPPINESS_CITY</Type>
+			<DefaultBuilding>BUILDING_HAPPINESS_CITY</DefaultBuilding>
+			<Description>TXT_KEY_HAPPINESS_CITY</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_HAPPINESS_NATIONAL</Type>
+			<BuildingClass>BUILDINGCLASS_HAPPINESS_NATIONAL</BuildingClass>
+			<Cost>-1</Cost>
+			<Description>TXT_KEY_HAPPINESS_NATIONAL</Description>
+			<Help>TXT_KEY_HAPPINESS_NATIONAL_HELP</Help>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<UnmoddedHappiness>1</UnmoddedHappiness>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>1</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+			<CheckWithYieldLibrary>0</CheckWithYieldLibrary>
+		</Row>
+		<Row>
+			<Type>BUILDING_HAPPINESS_CITY</Type>
+			<BuildingClass>BUILDINGCLASS_HAPPINESS_CITY</BuildingClass>
+			<Cost>-1</Cost>
+			<Description>TXT_KEY_HAPPINESS_CITY</Description>
+			<Help>TXT_KEY_HAPPINESS_CITY_HELP</Help>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<Happiness>1</Happiness>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>1</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+			<CheckWithYieldLibrary>0</CheckWithYieldLibrary>
+		</Row>
+	</Buildings>
+
+
+
+	<!--
+			AI Yields
+	-->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_AI_GOLD</Type>
+			<DefaultBuilding>BUILDING_AI_GOLD</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_AI_GOLD</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_AI_PRODUCTION</Type>
+			<DefaultBuilding>BUILDING_AI_PRODUCTION</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_AI_PRODUCTION</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_AI_SCIENCE</Type>
+			<DefaultBuilding>BUILDING_AI_SCIENCE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_AI_SCIENCE</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_AI_CULTURE</Type>
+			<DefaultBuilding>BUILDING_AI_CULTURE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_AI_CULTURE</Description>
+			<MaxPlayerInstances>0</MaxPlayerInstances>
+			<NoLimit>true</NoLimit>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_AI_GOLD</Type>
+			<BuildingClass>BUILDINGCLASS_AI_GOLD</BuildingClass>
+			<Cost>0</Cost>
+			<Description>TXT_KEY_BUILDING_AI_GOLD</Description>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>0</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+		</Row>
+		<Row>
+			<Type>BUILDING_AI_PRODUCTION</Type>
+			<BuildingClass>BUILDINGCLASS_AI_PRODUCTION</BuildingClass>
+			<Cost>0</Cost>
+			<Description>TXT_KEY_BUILDING_AI_PRODUCTION</Description>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>0</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+		</Row>
+		<Row>
+			<Type>BUILDING_AI_SCIENCE</Type>
+			<BuildingClass>BUILDINGCLASS_AI_SCIENCE</BuildingClass>
+			<Cost>0</Cost>
+			<Description>TXT_KEY_BUILDING_AI_SCIENCE</Description>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>0</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+		</Row>
+		<Row>
+			<Type>BUILDING_AI_CULTURE</Type>
+			<BuildingClass>BUILDINGCLASS_AI_CULTURE</BuildingClass>
+			<Cost>0</Cost>
+			<Description>TXT_KEY_BUILDING_AI_CULTURE</Description>
+			<AlwaysShowHelp>true</AlwaysShowHelp>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<DisplayPosition>32</DisplayPosition>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<IsVisible>0</IsVisible>
+			<ShowInPedia>0</ShowInPedia>
+		</Row>
+	</Buildings>
+</GameData>

@@ -1,0 +1,90 @@
+<GameData>
+	<!-- Table definition -->
+	<Table name="Immigration">
+		<Column name="Type" type="text"/>
+		<Column name="Value" type="variant" default="0"/>
+	</Table>
+	<Table name="Immigration_Weights">
+		<Column name="Type" type="text"/>
+		<Column name="IsCityStatus" type="boolean" default="false"/>
+		<Column name="IsOriginMod" type="boolean" default="false"/>
+		<Column name="Value" type="variant" default="0"/>
+	</Table>
+	<Table name="Immigration_Weight_Policy_Requirements">
+		<Column name="WeightType" type="text"/>
+		<Column name="PolicyType" type="text"/>
+		<Column name="ExcludesWeight" type="boolean" default="false"/>
+	</Table>
+	<!-- Table data -->
+	<Immigration>
+		<Row>
+			<Type>Debug</Type>
+			<Value>0</Value>
+		</Row>
+		<Row>
+			<Type>HappinessAverageTurns</Type>
+			<Value>10</Value>
+		</Row>
+		<Row>
+			<Type>MaxPasses</Type>
+			<Value>3</Value>
+		</Row>
+		<Row>
+			<Type>NumEmigrantsDenominator</Type>
+			<Value>10</Value>
+		</Row>
+	</Immigration>
+	<Immigration_Weights>
+		<Row>
+			<Type>EmigratedOnceAlready</Type>
+			<Value>0.5</Value>
+		</Row>
+		<Row>
+			<Type>Culture</Type>
+			<Value>1.0</Value>
+		</Row>
+		<Row>
+			<Type>IsRazing</Type>
+			<IsCityStatus>true</IsCityStatus>			
+			<Value>0.0</Value>
+		</Row>
+		<Row>
+			<Type>IsResistance</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.0</Value>
+		</Row>
+		<Row>
+			<Type>IsPuppet</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>2.0</Value>
+		</Row>
+		<Row>
+			<Type>IsOccupied</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.5</Value>
+		</Row>
+		<Row>
+			<Type>IsBlockaded</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>0.5</Value>
+		</Row>
+		<Row>
+			<Type>IsCapital</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<IsOriginMod>true</IsOriginMod>
+			<Value>0.5</Value>
+		</Row>
+		<Row>
+			<Type>GetGarrisonedUnit</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<IsOriginMod>true</IsOriginMod>
+			<Value>0.5</Value>
+		</Row>
+	</Immigration_Weights>
+	<Immigration_Weight_Policy_Requirements>
+		<Row>
+			<WeightType>GetGarrisonedUnit</WeightType>
+			<PolicyType>POLICY_MILITARY_CASTE</PolicyType>
+		</Row>
+	</Immigration_Weight_Policy_Requirements>
+</GameData>

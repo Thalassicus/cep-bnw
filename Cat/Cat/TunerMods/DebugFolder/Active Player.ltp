@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Active Player</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>WorldView</string>
+  </CompatibleStates>
+  <Actions>
+    <ActionData>
+      <Name>Grant All Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+local pTeamTechs = pTeam:GetTeamTechs();
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   pTeamTechs:SetHasTech(iTechLoop, true);
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>55</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Ancient Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 0) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>132</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Classical Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 1) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>156</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Remove All Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+local pTeamTechs = pTeam:GetTeamTechs();
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   pTeamTechs:SetHasTech(iTechLoop, false);
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>79</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Medieval Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 2) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>180</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Renaissance Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 3) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>203</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Industrial Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 4) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>225</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Modern Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 5) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>247</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Atomic Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 6) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>269</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Grant All Techs (All Players)</Name>
+      <Action>i = 0;
+for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	if Players[i]:IsEverAlive()  then
+
+		local pPlayer = Players[i];
+		local pTeam = Teams[pPlayer:GetTeam()];
+		local pTeamTechs = pTeam:GetTeamTechs();
+		
+		local iTechLoop = 0;
+		local pTechInfo = GameInfo.Technologies[iTechLoop];
+		
+		while( pTechInfo~= nil ) do
+		   pTeamTechs:SetHasTech(iTechLoop, true);
+		   iTechLoop = iTechLoop + 1;
+		   pTechInfo= GameInfo.Technologies[iTechLoop];
+		end
+		   
+	end
+	
+	i = i + 1;
+end
+</Action>
+      <Location>
+        <X>180</X>
+        <Y>57</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Information Era Techs (All Players)</Name>
+      <Action>i = 0;
+for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	if Players[i]:IsEverAlive()  then
+		
+		local pPlayer = Players[i];
+		local pTeam = Teams[pPlayer:GetTeam()];
+		
+		local iTechLoop = 0;
+		local pTechInfo = GameInfo.Technologies[iTechLoop];
+		
+		while( pTechInfo~= nil ) do
+		   
+		   if (GameInfoTypes[pTechInfo.Era] &lt;= 7) then
+		      pTeam:SetHasTech(iTechLoop, true);
+		   end
+		
+		   iTechLoop = iTechLoop + 1;
+		   pTechInfo= GameInfo.Technologies[iTechLoop];
+		   
+		end
+	end
+	
+	i = i + 1;
+end		</Action>
+      <Location>
+        <X>180</X>
+        <Y>291</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Classical Era Techs (All Players)</Name>
+      <Action>i = 0;
+for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	if Players[i]:IsEverAlive()  then
+		
+		local pPlayer = Players[i];
+		local pTeam = Teams[pPlayer:GetTeam()];
+		
+		local iTechLoop = 0;
+		local pTechInfo = GameInfo.Technologies[iTechLoop];
+		
+		while( pTechInfo~= nil ) do
+		   
+		   if (GameInfoTypes[pTechInfo.Era] &lt;= 1) then
+		      pTeam:SetHasTech(iTechLoop, true);
+		   end
+		
+		   iTechLoop = iTechLoop + 1;
+		   pTechInfo= GameInfo.Technologies[iTechLoop];
+		   
+		end
+	end
+	
+	i = i + 1;
+end		</Action>
+      <Location>
+        <X>180</X>
+        <Y>154</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Remove All Techs (All Players)</Name>
+      <Action>i = 0;
+for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	if Players[i]:IsEverAlive()  then
+
+		local pPlayer = Players[i];
+		local pTeam = Teams[pPlayer:GetTeam()];
+		local pTeamTechs = pTeam:GetTeamTechs();
+		
+		local iTechLoop = 0;
+		local pTechInfo = GameInfo.Technologies[iTechLoop];
+		
+		while( pTechInfo~= nil ) do
+		   pTeamTechs:SetHasTech(iTechLoop, false);
+		   iTechLoop = iTechLoop + 1;
+		   pTechInfo= GameInfo.Technologies[iTechLoop];
+		end
+		   
+	end
+	
+	i = i + 1;
+end
+</Action>
+      <Location>
+        <X>180</X>
+        <Y>80</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>1000 Gold</Name>
+      <Action>Players[Game.GetActivePlayer()]:ChangeGold(1000);
+</Action>
+      <Location>
+        <X>430</X>
+        <Y>92</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>1000 Culture</Name>
+      <Action>Players[Game.GetActivePlayer()]:ChangeJONSCulture(1000);
+</Action>
+      <Location>
+        <X>520</X>
+        <Y>94</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Add One Tech</Name>
+      <Action>local player = Players[Game.GetActivePlayer()];
+local team = Teams[player:GetTeam()];
+
+local quickestToResearchTech = nil;
+local quickestResearchTurnsLeft = nil;
+
+for tech in GameInfo.Technologies() do
+	if(player:CanResearch(tech.ID) and not team:IsHasTech(tech.ID)) then
+		local researchTurnsLeft = player:GetResearchTurnsLeft(tech.ID, false);
+		if(quickestResearchTurnsLeft == nil or researchTurnsLeft &lt; quickestResearchTurnsLeft) then
+			quickestToResearchTech = tech;
+			quickestResearchTurnsLeft = researchTurnsLeft;
+		end
+	end
+end
+
+if(quickestToResearchTech ~= nil) then
+	team:SetHasTech(quickestToResearchTech .ID, true);
+end</Action>
+      <Location>
+        <X>20</X>
+        <Y>413</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Renaissance Era Techs (All Players)</Name>
+      <Action>i = 0;
+for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+	if Players[i]:IsEverAlive()  then
+		
+		local pPlayer = Players[i];
+		local pTeam = Teams[pPlayer:GetTeam()];
+		
+		local iTechLoop = 0;
+		local pTechInfo = GameInfo.Technologies[iTechLoop];
+		
+		while( pTechInfo~= nil ) do
+		   
+		   if (GameInfoTypes[pTechInfo.Era] &lt;= 3) then
+		      pTeam:SetHasTech(iTechLoop, true);
+		   end
+		
+		   iTechLoop = iTechLoop + 1;
+		   pTechInfo= GameInfo.Technologies[iTechLoop];
+		   
+		end
+	end
+	
+	i = i + 1;
+end		</Action>
+      <Location>
+        <X>180</X>
+        <Y>204</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Player 1 DoW</Name>
+      <Action>Teams[1]:DeclareWar(0);</Action>
+      <Location>
+        <X>580</X>
+        <Y>205</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Recalc Building Maint</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+
+pPlayer:SetBaseBuildingGoldMaintenance(0);
+
+for pCity in pPlayer:Cities() do
+	
+	local iLoop = 0;
+	local pInfo = GameInfo.Buildings[iLoop];
+	
+	while( pInfo ~= nil ) do
+	   
+	   if (pCity:IsHasBuilding(iLoop)) then
+	      pPlayer:ChangeBaseBuildingGoldMaintenance(pInfo.GoldMaintenance);
+			end
+	
+	   iLoop = iLoop + 1;
+	   pInfo = GameInfo.Buildings[iLoop];
+	   
+	end
+end</Action>
+      <Location>
+        <X>420</X>
+        <Y>204</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>100 Faith</Name>
+      <Action>Players[Game.GetActivePlayer()]:ChangeFaith(100);
+</Action>
+      <Location>
+        <X>620</X>
+        <Y>94</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Information Era Techs</Name>
+      <Action>local pPlayer = Players[Game.GetActivePlayer()];
+local pTeam = Teams[pPlayer:GetTeam()];
+
+local iTechLoop = 0;
+local pTechInfo = GameInfo.Technologies[iTechLoop];
+
+while( pTechInfo~= nil ) do
+   
+   if (GameInfoTypes[pTechInfo.Era] &lt;= 7) then
+      pTeam:SetHasTech(iTechLoop, true);
+   end
+
+   iTechLoop = iTechLoop + 1;
+   pTechInfo= GameInfo.Technologies[iTechLoop];
+   
+end</Action>
+      <Location>
+        <X>10</X>
+        <Y>291</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>-1000 Culture</Name>
+      <Action>Players[Game.GetActivePlayer()]:ChangeJONSCulture(-1000);
+</Action>
+      <Location>
+        <X>520</X>
+        <Y>118</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>-100 Faith</Name>
+      <Action>Players[Game.GetActivePlayer()]:ChangeFaith(-100);
+</Action>
+      <Location>
+        <X>620</X>
+        <Y>118</Y>
+      </Location>
+    </ActionData>
+  </Actions>
+  <StringControls />
+  <IntegerControls>
+    <IntegerControlData>
+      <Name>Current Research ID</Name>
+      <GetFunction>function()
+  local pPlayer = Players[Game.GetActivePlayer()];
+  local eCurrentTech = pPlayer:GetCurrentResearch();
+  return eCurrentTech;
+end</GetFunction>
+      <SetFunction>function(value)
+   Players[Game.GetActivePlayer()]:PushResearch(value, 1);
+end</SetFunction>
+      <Location>
+        <X>20</X>
+        <Y>324</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Research Progress</Name>
+      <GetFunction>function()
+  local pPlayer = Players[Game.GetActivePlayer()];
+  local pTeam = Teams[pPlayer:GetTeam()];
+  local pTeamTechs = pTeam:GetTeamTechs();
+  local eCurrentTech = pPlayer:GetCurrentResearch();
+  return pTeamTechs:GetResearchProgress(eCurrentTech);
+end</GetFunction>
+      <SetFunction>function(value)
+  local pPlayer = Players[Game.GetActivePlayer()];
+  local pTeam = Teams[pPlayer:GetTeam()];
+  local pTeamTechs = pTeam:GetTeamTechs();
+  local eCurrentTech = pPlayer:GetCurrentResearch();
+  pTeamTechs:SetResearchProgress(eCurrentTech, value);
+end</SetFunction>
+      <Location>
+        <X>20</X>
+        <Y>359</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Gold</Name>
+      <GetFunction>function()
+  return Players[Game.GetActivePlayer()]:GetGold();
+end</GetFunction>
+      <SetFunction>function(value)
+   Players[Game.GetActivePlayer()]:SetGold(value);
+end</SetFunction>
+      <Location>
+        <X>430</X>
+        <Y>48</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Culture</Name>
+      <GetFunction>function()
+  return Players[Game.GetActivePlayer()]:GetJONSCulture();
+end</GetFunction>
+      <SetFunction>function(value)
+   Players[Game.GetActivePlayer()]:SetJONSCulture(value);
+end</SetFunction>
+      <Location>
+        <X>520</X>
+        <Y>48</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Faith</Name>
+      <GetFunction>function()
+  return Players[Game.GetActivePlayer()]:GetFaith();
+end</GetFunction>
+      <SetFunction>function(value)
+   Players[Game.GetActivePlayer()]:SetFaith(value);
+end</SetFunction>
+      <Location>
+        <X>620</X>
+        <Y>48</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+  </IntegerControls>
+  <FloatControls />
+  <BooleanControls />
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists />
+  <MultiselectLists />
+</PanelData>

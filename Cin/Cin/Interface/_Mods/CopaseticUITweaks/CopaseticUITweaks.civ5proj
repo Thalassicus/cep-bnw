@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{d323e198-8e40-43b5-8825-d378850cfebe}</ProjectGuid>
+    <Name>Copasetic UI Tweaks</Name>
+    <Guid>f47f6bcb-a08d-4ce4-848c-6ac41880ac18</Guid>
+    <ModVersion>4</ModVersion>
+    <Stability>Beta</Stability>
+    <Teaser>Improves and adds several features to the UI.</Teaser>
+    <Description>This mod adds several features to the UI and improves a few others. [COLOR_PLAYER_CYAN]See the link below for a complete list of changes, or to make suggestions![ENDCOLOR] Some changes so far include:
+[NEWLINE][NEWLINE]
+- City banner displays culture meter and turns until pop falls if city is starving[NEWLINE]
+- Moving the mouse over a city with the SHIFT key pressed shows plot yields and worked tiles in both World and Strategic views [NEWLINE]
+- Diplomacy window shows the protectors of each city state [NEWLINE]
+- Easier selecting between stacked units [NEWLINE]
+- Holding CONTROL will cause plot tooltips to appear immediately [NEWLINE]
+- [COLOR_POSITIVE_TEXT]AND AT LEAST TWO OTHER THINGS![ENDCOLOR][NEWLINE][NEWLINE]
+[COLOR_PLAYER_CYAN]forums.civfanatics.com/showthread.php?p=9711096[ENDCOLOR]</Description>
+    <Authors>copasetic</Authors>
+    <SpecialThanks>Please see [COLOR_YELLOW]readme[/COLOR] included in mod folder.</SpecialThanks>
+    <Categories>$Categories$</Categories>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>Mod Template</AssemblyName>
+    <RootNamespace>Mod Template</RootNamespace>
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>NewText.xml</FileName>
+      </Action>
+    </ModActions>
+    <Homepage>http://forums.civfanatics.com/showthread.php?p=9711096</Homepage>
+    <ModContent>
+    </ModContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="CityBannerManager.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="CityBannerManager.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="DiploRelationships.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="DiploRelationships.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Feature Finder.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="InGame.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="NewText.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="PlotHelpText.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UnitFlagManager.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

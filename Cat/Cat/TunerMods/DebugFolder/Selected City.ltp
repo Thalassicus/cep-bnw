@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Selected City</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>CityView</string>
+  </CompatibleStates>
+  <Actions>
+    <ActionData>
+      <Name>Increase Pop</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+end
+if pCity ~= nil then
+	pCity:ChangePopulation(1, true);
+end</Action>
+      <Location>
+        <X>180</X>
+        <Y>338</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Decrease Pop</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+end
+if pCity ~= nil then
+	pCity:ChangePopulation(-1, true);
+end</Action>
+      <Location>
+        <X>180</X>
+        <Y>367</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>AI Focus: None</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+Network.SendSetCityAIFocus(pCity :GetID(), CityAIFocusTypes.NO_CITY_AI_FOCUS_TYPE);</Action>
+      <Location>
+        <X>290</X>
+        <Y>336</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>AI Focus: Food</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+Network.SendSetCityAIFocus(pCity :GetID(), CityAIFocusTypes.CITY_AI_FOCUS_TYPE_FOOD);</Action>
+      <Location>
+        <X>290</X>
+        <Y>368</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>AI Focus: Production</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+Network.SendSetCityAIFocus(pCity :GetID(), CityAIFocusTypes.CITY_AI_FOCUS_TYPE_PRODUCTION);</Action>
+      <Location>
+        <X>290</X>
+        <Y>400</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>AI Focus: Gold</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+Network.SendSetCityAIFocus(pCity :GetID(), CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GOLD);</Action>
+      <Location>
+        <X>290</X>
+        <Y>433</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>AI Focus: Great People</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+Network.SendSetCityAIFocus(pCity :GetID(), CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GREAT_PEOPLE);</Action>
+      <Location>
+        <X>290</X>
+        <Y>464</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Create Apollo Program</Name>
+      <Action>	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+if (pCity ~= nil ) then
+	pCity:CreateApolloProgram()
+end
+</Action>
+      <Location>
+        <X>290</X>
+        <Y>498</Y>
+      </Location>
+    </ActionData>
+  </Actions>
+  <StringControls />
+  <IntegerControls>
+    <IntegerControlData>
+      <Name>City Food</Name>
+      <GetFunction>function()
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   return pCity:GetFood();
+	else
+		return 0;
+	end
+end</GetFunction>
+      <SetFunction>function(value)
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   pCity:SetFood(value);
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>325</Y>
+      </Location>
+      <DefaultValue>10</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>City Population</Name>
+      <GetFunction>function()
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   return pCity:GetPopulation();
+	else
+		return 0;
+	end
+end</GetFunction>
+      <SetFunction>function(value)
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   pCity:SetPopulation(value, true);
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>361</Y>
+      </Location>
+      <DefaultValue>1</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>WLTKD Turns</Name>
+      <GetFunction>function()
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   return pCity:GetWeLoveTheKingDayCounter();
+	else
+		return 0;
+	end
+end</GetFunction>
+      <SetFunction>function(value)
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   pCity:SetWeLoveTheKingDayCounter(value);
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>400</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Damage</Name>
+      <GetFunction>function()
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   return pCity:GetDamage();
+	else
+		return 0;
+	end
+end</GetFunction>
+      <SetFunction>function(value)
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   pCity:SetDamage(value);
+	end
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>438</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+  </IntegerControls>
+  <FloatControls>
+    <FloatControlData>
+      <Name>Gold Yield Modifier</Name>
+      <GetFunction>function(value)
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	if (pCity ~= nil) then
+   return pCity:GetYieldRateModifier(2);
+	else
+		return 0;
+	end
+end</GetFunction>
+      <SetFunction>function(value)
+
+end</SetFunction>
+      <Location>
+        <X>10</X>
+        <Y>481</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </FloatControlData>
+  </FloatControls>
+  <BooleanControls />
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists>
+    <SelectionListData>
+      <Location>
+        <X>10</X>
+        <Y>36</Y>
+      </Location>
+      <Size>
+        <Width>803</Width>
+        <Height>286</Height>
+      </Size>
+      <Name>ID:50;Name:120;X:40;Y:40;Civilization;Nick Name:200;Prev Owner:120;Orig Owner:120</Name>
+      <PopulateList>function()
+	local listItems = {};
+	local i = 0;
+	local z = 1;
+	for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+		local pPlayer = Players[i];
+
+		if pPlayer:IsEverAlive()  then
+			local strPlayer = pPlayer:GetCivilizationShortDescription() .. ";" .. pPlayer:GetNickName();				
+			for pCity in pPlayer:Cities() do
+				local prevOwner = pCity:GetPreviousOwner();
+				local prevOwnerStr = "none";
+				if prevOwner ~= -1 then
+					prevOwnerStr = Players[prevOwner]:GetCivilizationShortDescription();
+				end
+				local origOwner = pCity:GetOriginalOwner();
+				local origOwnerStr = "none";
+				if origOwner ~= -1 then
+					origOwnerStr = Players[origOwner]:GetCivilizationShortDescription();
+				end
+				local str = pPlayer:GetID() .. "," .. pCity:GetID() .. ";" .. pCity:GetName() .. ";" .. pCity:GetX() .. ";" .. pCity:GetY() .. ";" .. strPlayer .. ";" .. prevOwnerStr .. ";" .. origOwnerStr;
+				listItems[z] = str;
+				z = z + 1;			
+			end		
+		end
+	end
+
+  return listItems;
+end</PopulateList>
+      <OnSelection>function(selection)
+	local selectionParts = {};
+	-- No split available?
+	local str1 = string.match(selection, "%d+");
+	local str2 = string.match(selection, "%d+", string.len(str1) + 1);
+	
+	g_TunerSelectedCityPlayerID = tonumber(str1);
+	g_TunerSelectedCityID = tonumber(str2);	
+end</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+    <SelectionListData>
+      <Location>
+        <X>10</X>
+        <Y>543</Y>
+      </Location>
+      <Size>
+        <Width>404</Width>
+        <Height>180</Height>
+      </Size>
+      <Name>Revealed to Civilization:200;Name:120</Name>
+      <PopulateList>function()
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	
+	local listItems = {};
+	if pCity ~= nil then
+		local i = 0;
+		local z = 1;
+		for i = 0, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+			local pPlayer = Players[i];
+
+			if pPlayer:IsEverAlive() then
+					if pCity:IsRevealed(i) then
+						local str = pPlayer:GetCivilizationShortDescription() .. ";" .. pPlayer:GetNickName();
+				 		listItems[z] = str;
+				 		z = z + 1;			
+					end		
+			end
+	 end
+	end
+	
+	return listItems;
+end</PopulateList>
+      <OnSelection>function(selection)
+
+end
+</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+  </SelectionLists>
+  <MultiselectLists>
+    <MultiselectListData>
+      <Location>
+        <X>570</X>
+        <Y>331</Y>
+      </Location>
+      <Size>
+        <Width>243</Width>
+        <Height>418</Height>
+      </Size>
+      <Name>Buildings</Name>
+      <PopulateList>function()
+	local listItems = {};
+	
+	local pCity = nil;
+	local pPlayer = Players[g_TunerSelectedCityPlayerID];
+	if pPlayer ~= nil then
+		pCity = pPlayer:GetCityByID(g_TunerSelectedCityID);
+	end		
+	if pCity == nil then
+		pCity = UI:GetHeadSelectedCity();
+	end
+	
+	local i = 0;
+	for building in GameInfo.Buildings() do
+		local item = {};
+		item["Text"] = string.gsub(building.Type, "BUILDING_", "");
+		if (pCity ~= nil and pCity:GetNumRealBuilding(building.ID) &gt; 0) then
+			item["Selected"] = true;
+		else
+			item["Selected"] = false;
+		end
+		
+		listItems[i] = item;
+		i = i + 1;
+	end
+	
+	return listItems;
+end
+</PopulateList>
+      <OnSelected>function(selection)
+	local buildingType = "BUILDING_" .. tostring(selection);
+	local pCity = UI:GetHeadSelectedCity();
+	if (pCity == nil ) then
+		return;
+	end
+	
+	
+	local building = GameInfo.Buildings[buildingType];
+	if(building ~= nil) then
+		pCity:SetNumRealBuilding(building.ID, 1);
+	end
+end</OnSelected>
+      <OnDeselected>function(selection)
+	local buildingType = "BUILDING_" .. tostring(selection);
+	local building = GameInfo.Buildings[buildingType];
+	if(building ~= nil) then
+		local pCity = UI:GetHeadSelectedCity();
+		if(pCity ~= nil) then
+			pCity:SetNumRealBuilding(building.ID, 0);
+		end
+	end
+end</OnDeselected>
+    </MultiselectListData>
+  </MultiselectLists>
+</PanelData>

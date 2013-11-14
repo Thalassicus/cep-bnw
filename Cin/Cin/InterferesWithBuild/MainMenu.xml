@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT22" FontStyle="Shadow" Name="MainMenu" >
+
+  <Image Anchor="R,T" Offset="0,0"  Size="630,200" Texture="CivilzationV_Logo.dds" ID="Civ5Logo" Hidden="0" />
+
+  <Grid Size="480,480" Anchor="C,C" Offset="0.32" Padding="0,0" Style="Grid9Detail140" >
+
+
+    <Box Color="Black.200" Anchor="C,T" Offset="0.44" Size="320.393" Hidden="0" >
+
+      <Grid Size="48,393" Anchor="L,T" AnchorSide="O.I" Offset="0.0" Padding="0,0" Style="WindowGrid" />
+      <Grid Size="48,393" Anchor="R,T" AnchorSide="O.I" Offset="0.0" Padding="0,0" Style="WindowGrid" />
+
+
+    </Box>
+
+    <Image Anchor="C,T" Offset="0,-33" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/topframe.dds" Size="512,128" />
+    <Image Anchor="C,B" Offset="0,-109" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/bottomframe.dds" Size="512,128" />
+
+    <Stack Anchor="C,T" Offset="0,54" Padding="0" StackGrowth="Bottom" ID="MainStack" >
+
+      <GridButton Anchor="C,T" ID="SinglePlayerButton"  Size="320,45"    Style="ZoomButton" String="TXT_KEY_MODDING_SINGLE_PLAYER" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+
+        </ShowOnMouseOver>
+      </GridButton>
+
+      <GridButton Anchor="C,T" ID="MultiplayerButton"   Size="320,45"    Style="ZoomButton" String="TXT_KEY_MULTIPLAYER" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+
+        </ShowOnMouseOver>
+
+        <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+      </GridButton>
+
+      <GridButton Anchor="C,T" ID="ModsButton"          Size="320,45"    Style="ZoomButton" String="TXT_KEY_MODS" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+
+        </ShowOnMouseOver>
+        <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+      </GridButton>
+
+      <GridButton Anchor="C,T" ID="OptionsButton"       Size="320,45"    Style="ZoomButton" String="TXT_KEY_OPTIONS" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+
+
+        </ShowOnMouseOver>
+        <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+      </GridButton>
+
+      <GridButton Anchor="C,T" ID="OtherButton"         Size="320,45"    Style="ZoomButton" String="TXT_KEY_OTHER" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+
+        </ShowOnMouseOver>
+        <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+      </GridButton>
+
+      <GridButton Anchor="C,T" ID="ExpansionRulesSwitch" Offset="0,0" Size="320,45" Style="ZoomButton" String="TXT_KEY_LOAD_MENU_DLC" >
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+            <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+
+          <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+            <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="WindowGlowRight.dds" Size="42,86" />
+            <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="WindowGlowLeft.dds" Size="42,86" />
+          </AlphaAnim>
+        </ShowOnMouseOver>
+
+        <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+      </GridButton>
+
+    </Stack>
+
+
+    <GridButton Anchor="C,B" ID="ExitButton" Offset="0,44" Size="320,45" Style="ZoomButton" String="TXT_KEY_EXIT_BUTTON" >
+      <ShowOnMouseOver>
+        <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1.5" AlphaEnd="1">
+          <Grid   Size="320,48" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+        </AlphaAnim>
+
+
+        <AlphaAnim Anchor="L,T" Size="320,48" Pause="0" Cycle="Once" Speed="1" AlphaStart=".2" AlphaEnd="0">
+          <Image Anchor="R,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowRight.dds" Size="42,86" />
+          <Image Anchor="L,C" Offset="0,0" AnchorSide="O.I" Texture="Assets/UI/Art/WorldView/WindowGlowLeft.dds" Size="42,86" />
+        </AlphaAnim>
+
+
+
+      </ShowOnMouseOver>
+
+      <Image Anchor="C,T" AnchorSide="I.O" Offset="0,0" Texture="bar300x2.dds" Size="300.1" />
+    </GridButton>
+
+    <Image Anchor="C,T" Offset="-184,44"  Texture="Assets/UI/Art/WorldView/WindowTrimLeft.dds" Size="98,394" />
+    <Image Anchor="C,T" Offset="184,44"  Texture="Assets/UI/Art/WorldView/WindowTrimRight.dds" Size="98,394" />
+
+  </Grid>
+
+  <!-- Version Information  -->
+  <Label Anchor="C,B" Offset="0,12" String="InvalidVersionNumber" Font="TwCenMT16" ID="VersionNumber"/>
+  <Button Anchor="R,B" Size="128,128" TextureOffset="384,128" ToolTip="TXT_KEY_TOUCH_HELP" Texture="Civ5_TouchIconAtlas_128.dds" NoStateChange="1" ID="TouchHelpButton" />
+
+
+  <!-- Child Screens -->
+  <LuaContext FileName="Assets/UI/Options/OptionsMenu" ID="OptionsMenu_FrontEnd" Hidden="1" />
+
+  <LuaContext FileName="Assets/UI/FrontEnd/SinglePlayer" ID="SinglePlayerScreen" Hidden="1"/>
+  <LuaContext FileName="Assets/UI/FrontEnd/Multiplayer/MultiplayerSelect" ID="MultiplayerSelectScreen" Hidden="1"/>
+  <!-- cep -->
+  <LuaContext FileName="Assets/UI/FrontEnd/Modding/ModsBrowser" ID="ModsEULAScreen" Hidden="1" />
+
+  <LuaContext FileName="Assets/UI/FrontEnd/OtherMenu" ID="Other" Hidden="1" />
+  <LuaContext FileName="Assets/UI/FrontEnd/Multiplayer/JoiningRoom" ID="JoinScreen" Hidden="1" />
+
+  <LuaContext FileName="Assets/UI/FrontEnd/Multiplayer/StagingRoom" ID="StagingRoomScreen" DeferLoad="1" Hidden="1" />
+  <LuaContext FileName="Assets/UI/FrontEnd/PremiumContentMenu" ID="PremiumContentScreen" Hidden="1" />
+
+  <LuaContext FileName="Assets/UI/FrontEnd/Multiplayer/DedicatedServer" ID="DedicatedServerScreen" Hidden="1"/>
+  <LuaContext FileName="Assets/UI/FrontEnd/TouchControlsMenu" ID="TouchControlsMenu" DeferLoad="1" Hidden="1" />
+
+
+</Context>

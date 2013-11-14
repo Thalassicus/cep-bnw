@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Builds>
+		<Update>
+			<Where Type="BUILD_TRADING_POST" />
+			<Set HotKey="KB_V" />
+		</Update>
+	</Builds>
+</GameData>

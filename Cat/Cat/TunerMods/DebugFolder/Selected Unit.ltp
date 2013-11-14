@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Selected Unit</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>DebugMenu</string>
+  </CompatibleStates>
+  <Actions>
+    <ActionData>
+      <Name>Set Unit Action</Name>
+      <Action>local unit = UI.GetHeadSelectedUnit();
+local player = Players[Game.GetActivePlayer()];
+SetUnitActionCodeDebug(player:GetID(), unit:GetID(), g_UnitAction);</Action>
+      <Location>
+        <X>390</X>
+        <Y>34</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Embark</Name>
+      <Action>local unit = UI.GetHeadSelectedUnit();
+unit:SetEmbarked(not unit:IsEmbarked())</Action>
+      <Location>
+        <X>270</X>
+        <Y>226</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>CanPromote</Name>
+      <Action>local unit = UI.GetHeadSelectedUnit();
+unit:SetPromotionReady(not unit:IsPromotionReady());</Action>
+      <Location>
+        <X>270</X>
+        <Y>140</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>CanAttack</Name>
+      <Action>local unit = UI.GetHeadSelectedUnit();
+unit:SetMadeAttack(not unit:IsCanAttack());
+unit:SetMoves(unit:GetMoves() + GameDefines.MOVE_DENOMINATOR)</Action>
+      <Location>
+        <X>270</X>
+        <Y>166</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>H</Name>
+      <Action>local unit = UI.GetHeadSelectedUnit();
+unit:SetDamage(unit:GetDamage() - 25)</Action>
+      <Location>
+        <X>330</X>
+        <Y>75</Y>
+      </Location>
+    </ActionData>
+  </Actions>
+  <StringControls />
+  <IntegerControls>
+    <IntegerControlData>
+      <Name>HP</Name>
+      <GetFunction>function()
+	local unit = UI.GetHeadSelectedUnit()
+	if unit then
+   return GameDefines.MAX_HIT_POINTS - unit:GetDamage();
+	end
+	return "-"
+end</GetFunction>
+      <SetFunction>function(value)
+	local unit = UI.GetHeadSelectedUnit()
+	if unit then
+		unit:SetDamage(GameDefines.MAX_HIT_POINTS - value)
+	end
+end</SetFunction>
+      <Location>
+        <X>270</X>
+        <Y>72</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>XP</Name>
+      <GetFunction>function()
+	local unit = UI.GetHeadSelectedUnit();
+	if unit then	
+   return UI.GetHeadSelectedUnit():GetExperience();
+	end
+	return "-"
+end</GetFunction>
+      <SetFunction>function(value)
+	local unit = UI.GetHeadSelectedUnit();
+	if unit then
+		unit:SetExperience(value);
+		unit:SetPromotionReady(unit:GetExperience() &gt;= unit:ExperienceNeeded())
+	end
+end</SetFunction>
+      <Location>
+        <X>270</X>
+        <Y>39</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+    <IntegerControlData>
+      <Name>Moves</Name>
+      <GetFunction>function()
+	local unit = UI.GetHeadSelectedUnit();
+	if unit then	
+		--return UI.GetHeadSelectedUnit():GetMoves() 
+   return math.floor(1000*unit:GetMoves() / GameDefines["MOVE_DENOMINATOR"])/1000
+	end
+	return "-"
+end</GetFunction>
+      <SetFunction>function(value)
+	local unit = UI.GetHeadSelectedUnit();
+	if unit then
+		unit:SetMoves(value * GameDefines["MOVE_DENOMINATOR"]);
+	end
+end</SetFunction>
+      <Location>
+        <X>270</X>
+        <Y>103</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+  </IntegerControls>
+  <FloatControls />
+  <BooleanControls />
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists>
+    <SelectionListData>
+      <Location>
+        <X>390</X>
+        <Y>62</Y>
+      </Location>
+      <Size>
+        <Width>256</Width>
+        <Height>388</Height>
+      </Size>
+      <Name>Unit Action</Name>
+      <PopulateList>function()
+	g_Unit_Action_Presets =
+	{
+		IDLE = 1000,
+		ATTACK = 1100,
+		DEATH = 1200,
+		RUN = 1400,
+		START_RUN = 10000,
+		FORTIFY = 1500,
+		BOMBARD_DEFEND = 1280,
+		BOMBARD = 1180,
+		COMBAT_READY = 1600,
+		ATTACK_CHARGE = 1140,
+		RUN_CHARGE = 1120,
+		WORK = 1900,
+		SHOVEL = 1910,
+		RAKE = 1920,
+		AXE = 1930,
+		PICKAXE = 1940,
+		HAMMER = 1950,
+		CAPTURED = 1195,
+		ACTIVATE = 1990,
+		SHUFFLE = 1450,
+	 ATTACK_ANIT_AIR = 1130
+	}
+	
+	local presetNames = {}
+	local iCount = 0;
+	for k, v in pairs(g_Unit_Action_Presets) do
+		iCount = iCount + 1;
+		presetNames[iCount] = k;
+	end
+	
+	return presetNames;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	g_UnitAction = g_Unit_Action_Presets[selection];
+end
+</OnSelection>
+      <Sorted>true</Sorted>
+    </SelectionListData>
+  </SelectionLists>
+  <MultiselectLists>
+    <MultiselectListData>
+      <Location>
+        <X>10</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <Width>252</Width>
+        <Height>443</Height>
+      </Size>
+      <Name>Promotions</Name>
+      <PopulateList>function()
+	local listItems = {};
+	local unit = UI.GetHeadSelectedUnit()
+	if unit then
+		for promotion in GameInfo.UnitPromotions() do
+			local item = {}
+			item["Text"] = string.gsub(promotion.Type, "PROMOTION_", "");
+			item["Selected"] = unit:IsHasPromotion(promotion.ID)			
+			table.insert(listItems, item)
+		end
+	end
+	return listItems;
+end</PopulateList>
+      <OnSelected>function(selection)
+	local promotionInfo = GameInfo.UnitPromotions["PROMOTION_"..tostring(selection)]
+	local unit = UI.GetHeadSelectedUnit()
+	if unit and promotionInfo then
+		unit:SetHasPromotion(promotionInfo.ID, true)
+	end
+end
+</OnSelected>
+      <OnDeselected>function(selection)
+	local promotionInfo = GameInfo.UnitPromotions["PROMOTION_"..tostring(selection)]
+	local unit = UI.GetHeadSelectedUnit()
+	if unit and promotionInfo then
+		unit:SetHasPromotion(promotionInfo.ID, false)
+	end
+end
+</OnDeselected>
+    </MultiselectListData>
+  </MultiselectLists>
+</PanelData>

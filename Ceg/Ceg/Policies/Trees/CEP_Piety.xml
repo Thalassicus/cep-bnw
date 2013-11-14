@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_PIETY" />
+			<Set ExtraHappiness="5" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PIETY_FINISHER" />
+			<Set FaithCostModifier="-25" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ORGANIZED_RELIGION" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_THEOCRACY" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MANDATE_OF_HEAVEN" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_REFORMATION" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FREE_RELIGION" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Row>
+			<Type>POLICY_INSPIRATION</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_INSPIRATION</Description>
+			<Civilopedia>TXT_KEY_POLICY_INSPIRATION_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_INSPIRATION_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>CEP_POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>CEP_POLICY_ATLAS_ACTIVE</IconAtlasAchieved>
+			<NumFreePolicies>1</NumFreePolicies>
+			<IncludesOneShotFreeUnits>false</IncludesOneShotFreeUnits>
+			<OneShot>true</OneShot>
+		</Row>
+		<Row>
+			<Type>POLICY_UNITY</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_UNITY</Description>
+			<Civilopedia>TXT_KEY_POLICY_UNITY_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_UNITY_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>3</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>46</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<GoldenAgeTurns>10</GoldenAgeTurns>
+			<GoldenAgeMeterMod>-25</GoldenAgeMeterMod>
+		</Row>
+		<Row>
+			<Type>POLICY_TOLERANCE</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_TOLERANCE</Description>
+			<Civilopedia>TXT_KEY_POLICY_TOLERANCE_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_TOLERANCE_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>5</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>44</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Row>
+			<Type>POLICY_CHARITY</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_CHARITY</Description>
+			<Civilopedia>TXT_KEY_POLICY_CHARITY_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_CHARITY_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>2</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>43</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Row>
+			<Type>POLICY_DEVOTION</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_DEVOTION</Description>
+			<Civilopedia>TXT_KEY_POLICY_DEVOTION_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_DEVOTION_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>4</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>45</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+	</Policies>
+	<Policy_FreeUnitClasses>
+		<!--
+		<Row>
+			<PolicyType>POLICY_INSPIRATION</PolicyType>
+			<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+			<Count>1</Count>
+		</Row>
+		-->
+	</Policy_FreeUnitClasses>
+	<Policy_CityYieldChanges>
+		<Row>
+			<PolicyType>POLICY_DEVOTION</PolicyType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Policy_CityYieldChanges>
+	<Policy_CapitalYieldChanges>
+		<Row>
+			<PolicyType>POLICY_DEVOTION</PolicyType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>5</Yield>
+		</Row>
+	</Policy_CapitalYieldChanges>
+	<Policy_InstantYield>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>50</Yield>
+		</Row>
+	</Policy_InstantYield>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_TOLERANCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TOLERANCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_PIETY" />
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_ImprovementYieldChanges>
+		<Delete PolicyType="POLICY_PIETY_FINISHER" />
+	</Policy_ImprovementYieldChanges>
+</GameData>

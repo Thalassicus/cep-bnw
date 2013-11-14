@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<AIMilitaryStrategies>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_RANGED" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_MILITARY_UNITS" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<Advisor>ECONOMIC</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_ENOUGH_MILITARY_UNITS</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_EMPIRE_DEFENSE" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+				<Advisor>MILITARY</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_EMPIRE_DEFENSE</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>30</FirstTurnExecuted>
+				<!--<NoMinorCivs>true</NoMinorCivs>-->
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+				<Advisor>MILITARY</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL</AdvisorCounsel>
+				<AdvisorCounselImportance>3</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_NAVAL_UNITS" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>50</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_NAVAL_UNITS" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>50</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_NAVAL_UNITS_CRITICAL" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>50</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_AT_WAR" />
+			<Set>
+				<CheckTriggerTurnCount>50</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>10</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+				<Advisor>MILITARY</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_AT_WAR</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_WAR_MOBILIZATION" />
+			<Set>
+				<CheckTriggerTurnCount>50</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>15</MinimumNumTurnsExecuted>
+				<WeightThreshold>100</WeightThreshold>
+				<NoMinorCivs>true</NoMinorCivs>
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_RANGED_EARLY" />
+			<Set>
+				<CheckTriggerTurnCount>5</CheckTriggerTurnCount>
+				<NoMinorCivs>true</NoMinorCivs>
+				<TechObsolete>TECH_ARCHERY</TechObsolete>
+				<UpdateCitySpecializations>true</UpdateCitySpecializations>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_RANGED" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_MINOR_CIV_GENERAL_DEFENSE" />
+			<Set>
+				<CheckTriggerTurnCount>50</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>50</MinimumNumTurnsExecuted>
+				<OnlyMinorCivs>true</OnlyMinorCivs>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_MINOR_CIV_THREAT_ELEVATED" />
+			<Set>
+				<CheckTriggerTurnCount>5</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+				<OnlyMinorCivs>true</OnlyMinorCivs>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_MINOR_CIV_THREAT_CRITICAL" />
+			<Set>
+				<CheckTriggerTurnCount>5</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+				<OnlyMinorCivs>true</OnlyMinorCivs>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ERADICATE_BARBARIANS" />
+			<Set>
+				<CheckTriggerTurnCount>5</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>15</FirstTurnExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<WeightThreshold>75</WeightThreshold>
+				<Advisor>MILITARY</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_ERADICATE_BARBARIANS</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_WINNING_WARS" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<Advisor>MILITARY</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_WINNING_WARS</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_LOSING_WARS" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<Advisor>FOREIGN</Advisor>
+				<AdvisorCounsel>TXT_KEY_MILITARYAISTRATEGY_LOSING_WARS</AdvisorCounsel>
+				<AdvisorCounselImportance>1</AdvisorCounselImportance>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_MOBILE" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<!-- <TechObsolete>TECH_COMBUSTION</TechObsolete> -->
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_MOBILE" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<!-- <TechObsolete>TECH_COMBUSTION</TechObsolete> -->
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_AIR" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<TechPrereq>TECH_FLIGHT</TechPrereq>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_NUKE" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<TechPrereq>TECH_ATOMIC_THEORY</TechPrereq>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_AIR" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<NoMinorCivs>true</NoMinorCivs>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<TechPrereq>TECH_FLIGHT</TechPrereq>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_NEED_ANTIAIR" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<TechPrereq>TECH_RADIO</TechPrereq>
+			</Set>
+		</Update>
+		<Update>
+			<Where Type="MILITARYAISTRATEGY_ENOUGH_ANTIAIR" />
+			<Set>
+				<CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+				<MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+				<FirstTurnExecuted>25</FirstTurnExecuted>
+				<TechPrereq>TECH_RADIO</TechPrereq>
+			</Set>
+		</Update>
+	</AIMilitaryStrategies>
+	<AIMilitaryStrategy_Player_Flavors>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_MILITARY_UNITS"		FlavorType="FLAVOR_OFFENSE" />				<Set Flavor="-100" />	<!-- -100 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_MILITARY_UNITS"		FlavorType="FLAVOR_DEFENSE" />				<Set Flavor="-100" />	<!-- -100 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 0" />		<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 20" />	<!--  25 --></Update>
+		<Row><AIMilitaryStrategyType>MILITARYAISTRATEGY_EMPIRE_DEFENSE</AIMilitaryStrategyType>	<FlavorType>FLAVOR_RANGED</FlavorType>			  <Flavor>20</Flavor></Row>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 20" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_MILITARY_TRAINING" />	<Set Flavor=" 0" />		<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_EXPANSION" />			<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE"				FlavorType="FLAVOR_TILE_IMPROVEMENT" />		<Set Flavor="-5" />		<!-- -5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 15" />	<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 60" />	<!--  60 --></Update>
+		<Row><AIMilitaryStrategyType>MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL</AIMilitaryStrategyType><FlavorType>FLAVOR_RANGED</FlavorType>	  <Flavor>60</Flavor></Row>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_NAVAL" />				<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_NAVAL_RECON" />			<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_RECON" />				<Set Flavor="40" />		<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_EXPANSION" />			<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_TILE_IMPROVEMENT" />		<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_INFRASTRUCTURE" />		<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_CULTURE" />				<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_EMPIRE_DEFENSE_CRITICAL"		FlavorType="FLAVOR_WONDER" />				<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_NAVAL_UNITS"			FlavorType="FLAVOR_NAVAL" />				<Set Flavor="-100" />	<!-- -100 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_NAVAL_UNITS"			FlavorType="FLAVOR_NAVAL_RECON" />			<Set Flavor="-100" />	<!-- -100 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS"				FlavorType="FLAVOR_NAVAL" />				<Set Flavor=" 40" />	<!--  40 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS"				FlavorType="FLAVOR_NAVAL_RECON" />			<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS"				FlavorType="FLAVOR_OFFENSE" />				<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS"				FlavorType="FLAVOR_DEFENSE" />				<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS_CRITICAL"	FlavorType="FLAVOR_NAVAL" />				<Set Flavor=" 70" />	<!--  70 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS_CRITICAL"	FlavorType="FLAVOR_NAVAL_RECON" />			<Set Flavor=" 25" />	<!--  25 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS_CRITICAL"	FlavorType="FLAVOR_OFFENSE" />				<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NAVAL_UNITS_CRITICAL"	FlavorType="FLAVOR_DEFENSE" />				<Set Flavor="-20" />	<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 5" />		<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_MOBILE" />				<Set Flavor=" 5" />		<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 5" />		<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_RANGED" />				<Set Flavor=" 5" />		<!--  15 --></Update>
+		<Row><AIMilitaryStrategyType>MILITARYAISTRATEGY_AT_WAR</AIMilitaryStrategyType>			<FlavorType>FLAVOR_RECON</FlavorType>			  <Flavor>5</Flavor></Row>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_NAVAL" />				<Set Flavor=" 5" />		<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_AIR" />					<Set Flavor=" 10" />	<!--  20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 10" />	<!--  20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_WONDER" />				<Set Flavor=" 0" />		<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_AT_WAR"						FlavorType="FLAVOR_EXPANSION" />			<Set Flavor=" 0" />		<!-- -20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 10" />	<!--  15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 0" />		<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_RANGED" />				<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Row><AIMilitaryStrategyType>MILITARYAISTRATEGY_WAR_MOBILIZATION</AIMilitaryStrategyType><FlavorType>FLAVOR_RECON</FlavorType>			  <Flavor>10</Flavor></Row>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_MOBILE" />				<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_NAVAL" />				<Set Flavor=" 5" />		<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_MILITARY_TRAINING" />	<Set Flavor=" 25" />	<!--  25 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_WONDER" />				<Set Flavor="-250" />	<!-- -250 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_GROWTH" />				<Set Flavor="-5" />		<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_EXPANSION" />			<Set Flavor="-5" />		<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_TILE_IMPROVEMENT" />		<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WAR_MOBILIZATION"				FlavorType="FLAVOR_CULTURE" />				<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_RANGED_EARLY"			FlavorType="FLAVOR_RANGED" />				<Set Flavor=" 100" />	<!--  100 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_GENERAL_DEFENSE"	FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 6" />		<!--  6 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_GENERAL_DEFENSE"	FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_THREAT_ELEVATED"	FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_THREAT_ELEVATED"	FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 20" />	<!--  20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_THREAT_CRITICAL"	FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 20" />	<!--  20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_THREAT_CRITICAL"	FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 20" />	<!--  20 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_MINOR_CIV_THREAT_CRITICAL"	FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 40" />	<!--  40 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ERADICATE_BARBARIANS"			FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ERADICATE_BARBARIANS"			FlavorType="FLAVOR_MOBILE" />				<Set Flavor=" 10" />	<!--  10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ERADICATE_BARBARIANS"			FlavorType="FLAVOR_RANGED" />				<Set Flavor=" 5" />		<!--  5 --></Update>
+		<Row><AIMilitaryStrategyType>MILITARYAISTRATEGY_ERADICATE_BARBARIANS</AIMilitaryStrategyType><FlavorType>FLAVOR_RECON</FlavorType>		  <Flavor>5</Flavor></Row>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WINNING_WARS"					FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 5" />		<!--  5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_WINNING_WARS"					FlavorType="FLAVOR_DEFENSE" />				<Set Flavor="-5" />		<!-- -5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_OFFENSE" />				<Set Flavor="-5" />		<!-- -5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 5" />		<!--  5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_CITY_DEFENSE" />			<Set Flavor=" 25" />	<!--  25 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_EXPANSION" />			<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_TILE_IMPROVEMENT" />		<Set Flavor="-25" />	<!-- -25 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_RECON" />				<Set Flavor=" 0" />		<!-- -15 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_LOSING_WARS"					FlavorType="FLAVOR_WONDER" />				<Set Flavor="-25" />	<!-- -25 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_RANGED"					FlavorType="FLAVOR_OFFENSE" />				<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_RANGED"					FlavorType="FLAVOR_DEFENSE" />				<Set Flavor="-10" />	<!-- -10 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_RANGED"					FlavorType="FLAVOR_RANGED" />				<Set Flavor=" 75" />	<!--  75 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_RANGED"				FlavorType="FLAVOR_OFFENSE" />				<Set Flavor=" 0" />		<!--  5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_RANGED"				FlavorType="FLAVOR_DEFENSE" />				<Set Flavor=" 0" />		<!--  5 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_RANGED"				FlavorType="FLAVOR_RANGED" />				<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_MOBILE"					FlavorType="FLAVOR_MOBILE" />				<Set Flavor=" 75" />	<!--  75 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_MOBILE"				FlavorType="FLAVOR_MOBILE" />				<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_AIR"						FlavorType="FLAVOR_AIR" />					<Set Flavor=" 150" />	<!--  150 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_NUKE"					FlavorType="FLAVOR_NUKE" />					<Set Flavor=" 200" />	<!--  200 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_AIR"					FlavorType="FLAVOR_AIR" />					<Set Flavor="-50" />	<!-- -50 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_ANTIAIR"					FlavorType="FLAVOR_ANTIAIR" />				<Set Flavor=" 50" />	<!--  75 --></Update>
+		<Update><Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_ANTIAIR"				FlavorType="FLAVOR_ANTIAIR" />				<Set Flavor="-100" />	<!-- -100 --></Update>
+	</AIMilitaryStrategy_Player_Flavors>
+</GameData>

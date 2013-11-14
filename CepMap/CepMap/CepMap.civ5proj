@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{90ff01ab-6d95-433c-bf31-0291ebb9dc1b}</ProjectGuid>
+    <Name>Communitas Map</Name>
+    <Guid>a4117a74-1a55-413d-bc64-88efa3cb37e3</Guid>
+    <ModVersion>1</ModVersion>
+    <Stability>Beta</Stability>
+    <Teaser>[COLOR_CYAN]   v1.4.4[NEWLINE][ENDCOLOR]   Equip for +10 map fun and realism</Teaser>
+    <Description>This map creates several continents and numerous offshore islands, with realistic climate and many advanced features.  The goal is a middle ground between aesthetic realism and gameplay balance.[NEWLINE][NEWLINE][ICON_BULLET] Islands reward naval exploration.[NEWLINE][ICON_BULLET] Deep ocean rifts require Astronomy to cross.[NEWLINE][ICON_BULLET] Mountains affect rain and snow.[NEWLINE][ICON_BULLET] Natural wonders appear at good spots.[NEWLINE][ICON_BULLET] Rivers flow through lakes into oceans.[NEWLINE][NEWLINE][ICON_BULLET] Game setup options adjust basic settings.[NEWLINE][ICON_BULLET] More settings at the top of the map file provide extensive customization.[NEWLINE][ICON_BULLET] The normal Continents-style option balances the two parts of the world.[NEWLINE][ICON_BULLET] The Terra-style custom map option creates more Earthlike old and new worlds.[NEWLINE][NEWLINE][NEWLINE]Features: communitas.wikia.com/wiki/Map[NEWLINE]Download: communitas.wikia.com/wiki/Install[NEWLINE]Discuss:  forums.civfanatics.com/forumdisplay.php?f=429[NEWLINE]Tech Support: forums.civfanatics.com/showthread.php?p=10221327#post10221327[NEWLINE][NEWLINE][NEWLINE]This map is compatible with BNW and GNK.[NEWLINE][NEWLINE]To play the map normally:[NEWLINE]1. Activate the map in the ingame Mods list, then click Next.[NEWLINE]2. Choose 'Communitas' from the game setup map list that follows.[NEWLINE][NEWLINE]If you wish to use the map in unmodded singleplayer or multiplayer, copy the map from folder 1 to 2, and select it from the advanced game setup.[NEWLINE]1: \Documents\My Games\Sid Meier's Civilization 5\MODS\Communitas Map\Communitas.lua[NEWLINE]2: \Documents\My Games\Sid Meier's Civilization 5\Maps\Communitas.lua[NEWLINE][NEWLINE][NEWLINE][NEWLINE]Information[NEWLINE][NEWLINE]Please visit this thread if map creation ever fails (blank map with no units):[NEWLINE]forums.civfanatics.com/showthread.php?t=507076[NEWLINE][NEWLINE]If you like this map, try the rest of the Communitas Expansion Pack available at:[NEWLINE]ommunitas.wikia.com[NEWLINE][NEWLINE][NEWLINE]Credits[NEWLINE][NEWLINE][ICON_BULLET] Cephalo[NEWLINE]Perlin landform, elevation and rainfall creation[NEWLINE][ICON_BULLET] Sirian[NEWLINE]Island creation, some code from Continents and Terra scripts[NEWLINE][ICON_BULLET] WHoward69[NEWLINE]Mountain-pass finding algorithm[NEWLINE][ICON_BULLET] Bobert13[NEWLINE]Code fixes and optimizations[NEWLINE][ICON_BULLET] Thalassicus[NEWLINE]Ocean rifts, rivers through lakes, natural wonder placement, resource placement, terrain blending, map options, inland seas, map balancing, aesthetic polishing[NEWLINE]</Description>
+    <Authors>Cephalo, Thalassicus, Bobert13, Sirian, WHoward69</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <Categories>$Categories$</Categories>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>Mod Template</AssemblyName>
+    <RootNamespace>Mod Template</RootNamespace>
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/DE_DE/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/en_US/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/ES_ES/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/FR_FR/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/IT_IT/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/JA_JP/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/PL_PL/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/RU_RU/Text.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/ZH_CN/Text.sql</FileName>
+      </Action>
+    </ModActions>
+    <Homepage>http://civmodding.wordpress.com</Homepage>
+    <ModContent>
+      <Content>
+        <Type>MapScript</Type>
+        <Name>Communitas</Name>
+        <Description>Communitas</Description>
+        <FileName>Communitas.lua</FileName>
+      </Content>
+    </ModContent>
+    <ModReferences>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Communitas Expansion Pack</Name>
+        <Id>828b5b4b-7c62-4afb-a43f-034b596ef5e4</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModReferences>
+    <SupportsHotSeat>true</SupportsHotSeat>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Communitas.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_QuestionsComments.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_ReportBug.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Link_Website.url">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="README.txt">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Text\en_US\Text.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Text" />
+    <Folder Include="Text\en_US" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

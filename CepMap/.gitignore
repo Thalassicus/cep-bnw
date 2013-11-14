@@ -1,0 +1,9 @@
+/Packages
+/Build
+/Lua
+/doc
+*civ5suo*
+*.bak*
+*.modinfo
+*.~lock.*
+*desktop.ini*

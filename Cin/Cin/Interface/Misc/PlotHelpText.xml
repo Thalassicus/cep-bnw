@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+	<Grid Hidden="1" Padding="8,8" Style="GridBlack8" Anchor="R,B" AnchorSide="O.I" Offset="-345,250" ID="TextBox" Color="White,200" >
+		<Label Anchor="C,C" String="Help text!" Font="TwCenMT16" FontStyle="Shadow" ColorSet="Beige_Black" ID="Text" />
+	</Grid>
+</Context>

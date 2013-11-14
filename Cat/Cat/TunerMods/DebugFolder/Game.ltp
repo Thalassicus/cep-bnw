@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Game</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>InGame</string>
+  </CompatibleStates>
+  <Actions>
+    <ActionData>
+      <Name>Autoplay 200</Name>
+      <Action>Game.SetAIAutoPlay(200,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>241</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Stop AutoPlay</Name>
+      <Action>Game.SetAIAutoPlay(1,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>383</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 100</Name>
+      <Action>Game.SetAIAutoPlay(100,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>183</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 50</Name>
+      <Action>Game.SetAIAutoPlay(50,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>152</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 10</Name>
+      <Action>Game.SetAIAutoPlay(10,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>122</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 5</Name>
+      <Action>Game.SetAIAutoPlay(5,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>93</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 1</Name>
+      <Action>Game.SetAIAutoPlay(1,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>62</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Win Game - Time</Name>
+      <Action>Game.SetWinner(0, 0);</Action>
+      <Location>
+        <X>480</X>
+        <Y>148</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Win Game - Tech</Name>
+      <Action>Game.SetWinner(0, 1);</Action>
+      <Location>
+        <X>480</X>
+        <Y>177</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Win Game - Domination</Name>
+      <Action>Game.SetWinner(0, 2);</Action>
+      <Location>
+        <X>480</X>
+        <Y>212</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Win Game - Culture</Name>
+      <Action>Game.SetWinner(0, 3);</Action>
+      <Location>
+        <X>480</X>
+        <Y>242</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Win Game - Diplomacy</Name>
+      <Action>Game.SetWinner(0, 4);</Action>
+      <Location>
+        <X>480</X>
+        <Y>272</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 300</Name>
+      <Action>Game.SetAIAutoPlay(300,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>270</Y>
+      </Location>
+    </ActionData>
+    <ActionData>
+      <Name>Autoplay 150</Name>
+      <Action>Game.SetAIAutoPlay(150,g_ReturnAfterAutoplayPlayer)</Action>
+      <Location>
+        <X>40</X>
+        <Y>212</Y>
+      </Location>
+    </ActionData>
+  </Actions>
+  <StringControls />
+  <IntegerControls>
+    <IntegerControlData>
+      <Name>Autoplay Turns</Name>
+      <GetFunction>function()
+  Game.GetAIAutoPlay()
+end</GetFunction>
+      <SetFunction>function(value)
+   Game.SetAIAutoPlay(value)
+end</SetFunction>
+      <Location>
+        <X>460</X>
+        <Y>59</Y>
+      </Location>
+      <DefaultValue>0</DefaultValue>
+    </IntegerControlData>
+  </IntegerControls>
+  <FloatControls />
+  <BooleanControls />
+  <TableViews />
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists>
+    <SelectionListData>
+      <Location>
+        <X>180</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <Width>220</Width>
+        <Height>231</Height>
+      </Size>
+      <Name>Return After Autoplay As...</Name>
+      <PopulateList>function()
+   listItems = {};
+		
+	local i = 0;
+	local numAdded = 0;
+	
+	numAdded = numAdded + 1;
+	listItems[numAdded] = "OBSERVER";
+
+	while Players[i] ~= nil do
+		if Players[i]:IsEverAlive()  then
+			if not Players[i]:IsMinorCiv() then
+				if not Players[i]:IsBarbarian() then
+					if Players[i]:GetNumCities() &gt; 0 or Game.GetGameTurn() == 0 then
+				  local sPlayerName = Players[i]:GetName();
+					 numAdded = numAdded + 1;
+			    listItems[numAdded] = sPlayerName;
+					end
+				end
+			end
+		end
+		i = i + 1;
+	end
+	
+  return listItems;
+end
+</PopulateList>
+      <OnSelection>function(selection)
+	
+	if (selection == "OBSERVER") then
+		g_ReturnAfterAutoplayPlayer = -1;
+	else
+	 local i = 0;
+	 while Players[i] ~= nil do
+		 if Players[i]:IsEverAlive() and Players[i]:GetName() == selection then
+			 g_ReturnAfterAutoplayPlayer = i;
+			 break;
+		 end
+		 i = i + 1;
+	 end
+ end
+end
+</OnSelection>
+      <Sorted>false</Sorted>
+    </SelectionListData>
+  </SelectionLists>
+  <MultiselectLists />
+</PanelData>

@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy for robk on 11/17/2010 7:47:07 PM -->
+
+<GameData>
+  <Language_es_ES>
+    
+    
+    <!-- Titles in the main info addict screen -->
+    <Row Tag="TXT_KEY_INFOADDICT_MAIN_TITLE">
+      <Text>Info Adicción</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_HISTORICAL_TITLE">
+      <Text>Datos Históricos</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_FACTBOOK_TITLE">
+      <Text>Estadísticas Mundiales</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_GLOBALRELATIONS_TITLE">
+      <Text>Relaciones Globales</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_TITLE">
+      <Text>Opciones</Text>
+    </Row>
+    
+    
+    <!-- This is text for the reset selections button in the graph screens-->
+    <Row Tag="TXT_KEY_INFOADDICT_RESET_SELECTIONS">
+      <Text>Resetear Selecciones</Text>
+    </Row>
+    
+    <!-- Text displayed when no data is available -->
+    <Row Tag="TXT_KEY_INFOADDICT_NODATA">
+      <Text>Sin datos todavía</Text>
+    </Row>
+    
+    <!-- Button text during leader discussions -->
+    <Row Tag="TXT_KEY_INFOADDICT_CHECK_INFOADDICT">
+      <Text>Comprobar Info Adicción</Text>
+    </Row>
+
+    <!-- "of the" used when building a leader title, as in "Bismark of the German Empire" -->
+    <Row Tag="TXT_KEY_INFOADDICT_OF_THE">
+      <Text>del</Text>
+    </Row>
+
+    <!-- "Turn" as in "Turn 145 of the game" -->
+    <Row Tag="TXT_KEY_INFOADDICT_TURN">
+      <Text>Turno</Text>
+    </Row>
+
+    <!-- "Next", as in, "next page" -->
+    <Row Tag="TXT_KEY_INFOADDICT_NEXT">
+      <Text>Next</Text>
+    </Row>
+
+    <!-- "Previous", as in, "previous page" -->
+    <Row Tag="TXT_KEY_INFOADDICT_PREVIOUS">
+      <Text>Previous</Text>
+    </Row>
+    
+    
+
+    <!-- Category titles for the historical graphs -->
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_SCORE">
+      <Text>Puntuación</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_MILITARY">
+      <Text>Ejército</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_NETGOLD">
+      <Text>Oro Neto</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_GNP">
+      <Text>PNB</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_TREASURY">
+      <Text>Treasury</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_HAPPINESS">
+      <Text>Felicidad</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_SCIENCE">
+      <Text>Ciencia</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_CULTURE">
+      <Text>Cultura</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_MANUFACTURING">
+      <Text>Producción</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_POPULATION">
+      <Text>Población</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_CROPYIELD">
+      <Text>Rend. de cosechas</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_LANDAREA">
+      <Text>Área Terrestre</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_NUMCITIES">
+      <Text>Ciudades</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_TECHS">
+      <Text>Tecnologías</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_POLICIES">
+      <Text>Políticas</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_WONDERS">
+      <Text>Maravillas</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_INCOME">
+      <Text>Income</Text>
+    </Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_CATEGORY_FAITH">
+		<Text>Total Faith</Text>
+	</Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_CATEGORY_FAITHPERTURN">
+		<Text>Faith Gain</Text>
+	</Row>
+	  
+	  
+    <!-- Headers for the rank tables in the world factbook -->
+    <Row Tag="TXT_KEY_INFOADDICT_HEADER_RANK">
+      <Text>Rango</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_HEADER_EMPIRE">
+      <Text>Imperio</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_HEADER_VALUE">
+      <Text>Valor</Text>
+    </Row>
+    
+    
+    
+    <!-- Rank titles in the world factbook (left bar menu and table title) -->
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_POPULATION">
+      <Text>Población</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_CROPYIELD">
+      <Text>Rendimiento de cosechas</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_MANUFACTUREDGOODS">
+      <Text>Productos Manufacturados</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_GNP">
+      <Text>PNB</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_LANDAREA">
+      <Text>Área Terrestre</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_MILITARYMANPOWER">
+      <Text>Poder Militar</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_APPROVAL">
+      <Text>Aprobación</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_LITERACY">
+      <Text>Alfabetización</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_SOCIALSTANDING">
+      <Text>Posición Social</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_HAPPINESS">
+      <Text>Felicidad</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_TECHNOLOGIES">
+      <Text>Tecnologías</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_NETGOLD">
+      <Text>Oro Neto</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_NUMCITIES">
+      <Text>Ciudades</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_SCIENCE">
+      <Text>Ciencia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_CULTURE">
+      <Text>Cultura</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_WONDERS">
+      <Text>Maravillas</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_TREASURY">
+      <Text>Treasury</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_INCOME">
+      <Text>Income</Text>
+    </Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_FAITH">
+		<Text>Total Faith</Text>
+	</Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_FAITHPERTURN">
+		<Text>Faith Gain</Text>
+	</Row>
+	  
+	  
+    <!-- Rank units in the world factbook (shows up as table header) -->
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_PEOPLE">
+      <Text>Población</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_BUSHELS">
+      <Text>Fanegas (millones)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_TONS">
+      <Text>Toneladas (millones)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_GOLD">
+      <Text>Oro (millones)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_SQUAREKILOMETERS">
+      <Text>Kilómetros cuadrados</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_SOLDIERS">
+      <Text>Soldados</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_PERCENTOFPOP">
+      <Text>Porcentaje de Población</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_POLICIESADOPTED">
+      <Text>Políticas Adoptadas</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_NETHAPPY">
+      <Text>Felicidad Neta</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_TECHDISCOVERED">
+      <Text>Tecnologías Descubiertas</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_NUMCITIES">
+      <Text>Número de Ciudades</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_SCIENCE">
+      <Text>Producción de Ciencia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_CULTURE">
+      <Text>Producción de Cultura</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_WONDERS">
+      <Text>Maravillas en Posesión</Text>
+    </Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_FAITH">
+		<Text>Faith</Text>
+	</Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_RANKUNITS_FAITHPERTURN">
+		<Text>Faith Gain</Text>
+	</Row>	  
+	
+	  
+    <!-- Menu titles for the world factbook (left bar) -->
+    <Row Tag="TXT_KEY_INFOADDICT_MENUTITLE_WORLDRANKINGS">
+      <Text>Rankings Mundiales</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_MENUTITLE_EMPIRES">
+      <Text>Imperios</Text>
+    </Row>
+    
+    
+    
+    <!-- Attribute names in the Empire factbook screen -->
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_HEADOFSTATE">
+      <Text>Jefe de Estado</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_POPULATION">
+      <Text>Población</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_LANDAREA">
+      <Text>Área Terrestre (Km&#178;)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_GNP">
+      <Text>PNB (millones de oro)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_NETGOLD">
+      <Text>Oro Neto (millones de oro)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_MILITARY">
+      <Text>Servicio Militar Activo</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_CROPYIELD">
+      <Text>Rend. de Cosechas (mill. de fanegas)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_INDUSTRIALOUTPUT">
+      <Text>Producción Industrial (mill. de toneladas)</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_APPROVALRATE">
+      <Text>Tasa de Aprobación del Jefe de Estado</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_NETHAPPY">
+      <Text>Felicidad Neta</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_LITERACY">
+      <Text>Tasa de Alfabetización</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_TECHDISCOVERED">
+      <Text>Tecnologías Descubiertas</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_POLICIES">
+      <Text>Políticas Sociales Establecidas</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_NUMCITIES">
+      <Text>Número de Ciudades</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_SCIENCE">
+      <Text>Producción de Ciencia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_CULTURE">
+      <Text>Producción de Cultura</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_WONDERS">
+      <Text>Maravillas en Posesión</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_TREASURY">
+      <Text>Gold in Treasury (millions of gold)</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_INCOME">
+      <Text>Income (millions of gold)</Text>
+    </Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_FAITH">
+		<Text>Total Faith</Text>
+	</Row>
+
+	<Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_FAITHPERTURN">
+		<Text>Net Faith Gain</Text>
+	</Row>
+	  
+
+    <!-- Relationship view titles -->
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONVIEW_ECONOMIC">
+      <Text>Económica</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONVIEW_POLITICAL">
+      <Text>Política</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONVIEW_ATTITUDE">
+      <Text>Actitud</Text>
+    </Row>
+    
+
+
+    <!-- Relationship view key (bottom right) -->
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_WAR">
+      <Text>Guerra</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_OPEN_BORDERS">
+      <Text>Fronteras Abiertas</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_DECLARATION_OF_FRIENDSHIP">
+      <Text>Declaración de Amistad</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_DENOUNCEMENT">
+      <Text>Denuncia</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_DEFENSIVE_PACT">
+      <Text>Pacto Defensivo</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_RESEARCH_AGREEMENT">
+      <Text>Acuerdo de Investigación</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_GPT">
+      <Text>Oro por Turno</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_RESOURCE">
+      <Text>Recursos</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_HOSTILE">
+      <Text>Hostil</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_GUARDED">
+      <Text>Cauteloso</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_AFRAID">
+      <Text>Temeroso</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_FRIENDLY">
+      <Text>Amistoso</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONKEY_NEUTRAL">
+      <Text>Neutral</Text>
+    </Row>
+    
+    
+    
+    <!-- Tooltip text fragments for the relationship graphs -->
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_GPT_TO">
+      <Text>oro por turno a</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_GPT_FROM">
+      <Text>oro por turno de</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_RESEARCH_WITH">
+      <Text>Acuerdo de investigación con</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_TO">
+      <Text>a</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_FROM">
+      <Text>de</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_EXPORTS">
+      <Text>Exporta</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_IMPORTS">
+      <Text>Importa</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_RESEARCH_AGREEMENTS">
+      <Text>Acuerdos de Investigación</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_HOSTILE">
+      <Text>Hostil hacia</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_GUARDED">
+      <Text>Cauteloso hacia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_AFRAID">
+      <Text>Temeroso de</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_FRIENDLY">
+      <Text>Amistoso con</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RELATIONTOOLTIP_NEUTRAL">
+      <Text>Neutral hacia</Text>
+    </Row>
+
+    
+    <!-- Text for the options screen -->
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_FIELD_TOOLTIPS">
+      <Text>Patalla Interactiva del Gráfico Histórico</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_FIELD_TOOLTIPS_TT">
+      <Text>Activa el valor de la ventana emergente y los resalta cuando pasas el ratón sobre los gráficos históricos.</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_YAXIS">
+      <Text>Eje Y del Gráfico Histórico</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_YAXIS_TT">
+      <Text>Muestra un eje Y en el lado izquierdo de los gráficos históricos.</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_XAXIS_LABEL_COUNT">
+      <Text>Etiquetas Eje X: {1_Num}</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_XAXIS_LABEL_COUNT_TT">
+      <Text>Número de etiquetas del Eje X a mostrar en los gráficos históricos.</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_YAXIS_LABEL_COUNT">
+      <Text>Etiquetas Eje Y: {1_Num}</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_YAXIS_LABEL_COUNT_TT">
+      <Text>Número de etiquetas del Eje Y a mostrar en los gráficos históricos.</Text>
+    </Row>
+    
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_TREASURY">
+      <Text>Tesoro</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_INCOME">
+      <Text>Ganancia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_CATEGORY_INCOME">
+      <Text>Ganancia</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_INCOME">
+      <Text>Ganancia (millones)</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_LINEOFFSET_TT">
+      <Text>Añade una pequeña compensación a cada línea en los datos históricos para hacer cada línea visible cuando los valores entre dos civilizaciones son iguales.</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_EMPIREATTR_TREASURY">
+      <Text>Oro en Tesoreria (millones)</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_NEXT">
+      <Text>Siguiente</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_OPTIONS_HISTORICAL_LINEOFFSET">
+      <Text>Compensación de la linea de Datos Historicos</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_RANKTITLE_TREASURY">
+      <Text>Tesoro</Text>
+    </Row>
+
+    <Row Tag="TXT_KEY_INFOADDICT_PREVIOUS">
+      <Text>Anterior</Text>
+    </Row>
+    
+  </Language_es_ES>
+</GameData>

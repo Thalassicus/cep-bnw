@@ -1,0 +1,94 @@
+'''Gem 1.14 (Cep 2.6) Beta 3'''
+
+This file is in "MediaWiki format" (google it for details). The most important formatting options are:
+Header:     === text ===
+List item:  * item
+Icon:       [[File:Food.png]
+
+Available icons:
+
+[[File:Food.png]] [[File:Production.png]] [[File:Gold.png]] [[File:Science.png]] [[File:Culture.png]] [[File:Faith.png]] [[File:GoldenAge.png]] [[File:Happy.png]] [[File:Unhappy.png]] [[File:Angry.png]] [[File:GreatPerson.png]] [[File:Citizen.png]] [[File:War.png]]
+
+[[File:Moves.png]] [[File:Strength.png]] [[File:RangedStrength.png]] [[File:Capital.png]] [[File:CityState.png]] [[File:Influence.png]] [[File:Trade.png]] [[File:Razing.png]] [[File:Occupied.png]] [[File:Puppet.png]] [[File:Plus.png]] [[File:Minus.png]]
+
+
+===AI===
+*b3 +4[[File:Happy.png]] free happiness (was 0) (allows AIs to build 1 extra city in the early game).
+*Reduced the quantity of vanguard units AIs aim for in wartime.
+*Minimum AI army composition changes to a new set of units after gunpowder units appear.
+
+===Armies===
+*-10% combat penalty when resources get pillaged (was 20%) (penalty mostly hurt AIs).
+*+100% [[File:War.png]] experience and -10% strength with Blitz (was 100, -25).
+*+25% defense with Trenches and Guerrilla ranks 1, 2, 3 (was 15, 15, 20).
+*Recon 2 allows use of enemy roads.
+*Moved faster pillaging from Survivalist to Recon 2.
+*Removed Survivalist.
+
+===Cities===
+*_
+
+===Barbarians===
+*Camps are defended by Chariot units less often.
+
+===Faith===
+*Merged the Missionary and Great Prophet (mostly redundant).
+*Merged the offense and defense enhanced beliefs (too specialized individually).
+
+===Leaders===
+*Half maintenance for unique warriors (Aztec and Polynesian).
+*Carthage starts with a Trireme.
+*Carthaginian civilians can embark from the start of the game.
+*Carthaginian Cothons (harbor) give 1 Tyrian Purple luxury resource (Phoenicians were earliest traders of this luxury).
+*b2 Chinese Citadels now start with 1[[File:Production.png]][[File:Science.png]], and gain +2 with the Training tech (was 3, 0).
+*Byzantine Basilica (temple) gives instant faith and unlocks early.
+*b2 Egyptian War Chariot is 125% of Chariot (was 140%).
+*Ethiopia gets faster [[File:GreatPerson.png]] rate from each Alliance, and higher [[File:Strength.png]] vs civs with more cities (peaceful tall).
+*Ethiopian Stele (monument) gives [[File:Faith.png]] from [[File:Citizen.png]] population (peaceful tall).
+*German Panzers (tank) are stronger.
+*Korean Hwach'a (trebuchet) are 10% weaker outside friendly territory (isolationist).
+*Ottoman Janissaries (musketman) heal every turn, and gain a bonus near friendly military units (quickly replaced losses).
+*Songhai ranged units move faster, and vanguard units see farther (mobility).
+*Swedish Allotment gives +1[[File:Production.png]] from Farms ([http://en.wikipedia.org/wiki/Swedish_allotment_system military history]).
+*Swedish Folkskola (public school) gets extra [[File:Science.png]] and appears earlier (one of the earliest public systems).
+*Swedish Carolean (musketman) heals after destroying enemies (known for their charges).
+*b3 American NASA Center added, unique research lab which gives free technology and space factory. (Replaces Minuteman)
+
+===Policies===
+*Spoils of War: Killing units salvages gold, and +25% rewards from capturing Citystates.
+
+===Research===
+*Increased late tech costs 10%.
+*Theology no longer requires Currency.
+*Trade no longer requires Pottery.
+*Moved Villages back to Trade (original location).
+*Moved the freshwater village bonus to Optics (was Sailing).
+*Shrines, Wealth, and Research have no tech prerequisite (early game options were restrictive).
+
+===Terrain===
+*b2 Slightly reduced the amount of territory people start with when surrounded by lots of inhospitable land like Snow (too many barbarians).
+
+===Misc===
+*City-health defense buildings should now correctly increase max city health in loaded games.
+*Lines on building tooltips which change mid-game should show correctly now.
+*Disabling gold gifts in the Cep_Options file is now independent of the "using CSD" option.
+*Oral Tradition and Monument to the Gods pantheon effects should now match the tooltips.
+*Buildings which increase river yields should show their ability correctly now (hydro plant, indus sanitation).
+*The faith cost to purchase units with the Holy Warrior belief now reliably depends on unit production costs.
+*Fixed bugs causing AIs to have more happiness than intended, and less of other yields than intended.
+*Liturgical Drama should now correctly list the Theater as its connected building (not Amphitheater).
+*Made changes to improve compatibility between this project and [http://forums.civfanatics.com/showthread.php?t=397387 Gedemon's Earth maps].
+*Humans and AIs now use different technology_flavor tables, allowing more fine-tune control of AI tech choices.
+*Corrected costs for Theatre, Smith, and Workshop.
+*Removed Air Repair (redundant with March).
+*Fixed "good for" mistakes with Stone Works, Merchant Navy, Seaport, national wonders, and policies.
+*Sistine Chapel should now work correctly.
+*Mongol Khans can now start golden ages, like normal great generals.
+*Buildings which give a city instant food/prod/culture/population should now work correctly.
+*b2 Smith now has cost appropriate for its tech level.
+*b2 Possibly fixed a bug involving strange happiness and yield effects.
+*b2 Panzers now have equal strength as Modern Armor (not equal cost).
+*b2 "Play speech" settings in Cep_Options now works correctly (on/off flag was reversed).
+*b3 Fixed several typos with AI leader personality and flavor data.
+*b3 Re-enabled the feature where happiness contributes to golden ages during a golden age (temporarily disabled for testing).
+*b3 Setting the minute-based autosave to 0 should now correctly disable it.

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<Update>
+			<Where Name="BASE_POLICY_COST" />
+			<Set Value="100" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_COST_INCREASE_TO_BE_EXPONENTED" />
+			<Set Value="1" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_COST_EXPONENT" />
+			<Set Value="2.5" />
+			<!-- 2.01 -->
+		</Update>
+		<Update>
+			<Where Name="POLICY_COST_VISIBLE_DIVISOR" />
+			<Set Value="10" />
+			<!-- 5 -->
+		</Update>
+	</Defines>
+	<!-- Change Tradition Finisher -->
+	<Policies>
+		<Update>
+			<Where Type="POLICY_TRADITION_FINISHER" />
+			<Set NumCitiesFreeFoodBuilding = "0" />
+			<!-- 4 -->
+		</Update>
+	</Policies>
+	<Policy_CityYieldChanges>
+		<Row>
+			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</Policy_CityYieldChanges>
+	<Policy_PrereqPolicies>
+		<Delete />
+	</Policy_PrereqPolicies>
+</GameData>

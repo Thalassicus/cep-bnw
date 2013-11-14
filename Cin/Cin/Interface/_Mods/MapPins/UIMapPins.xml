@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Concepts>
+		<Row>
+			<Type>CONCEPT_TERRAIN_MAP_PINS</Type>
+			<Topic>TXT_KEY_TOPIC_TERRAIN</Topic>
+			<Description>TXT_KEY_TERRAIN_MAP_PINS_HEADING3_TITLE</Description>
+			<Summary>TXT_KEY_TERRAIN_MAP_PINS_HEADING3_BODY</Summary>
+			<AdvisorQuestion>TXT_KEY_TERRAIN_MAP_PINS_ADV_QUEST</AdvisorQuestion>
+			<Advisor>SCIENCE</Advisor>
+			<CivilopediaPage>12</CivilopediaPage>
+			<CivilopediaPageText>TXT_KEY_CIVILOPEDIA_SHORTCUT_TERRAIN_LIST</CivilopediaPageText>
+			<CivilopediaHeaderType>HEADER_TERRAIN</CivilopediaHeaderType>
+		</Row>
+	</Concepts>
+</GameData>

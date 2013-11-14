@@ -1,0 +1,26 @@
+--· EN_US/MapPins.sql
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_CONTEXT_EDIT', 'Edit', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_CONTEXT_MOVE', 'Move', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_CONTEXT_DELETE', 'Delete', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_POPUP_EDIT_TITLE', 'Enter the pin details', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_POPUP_DELETE_TITLE', 'Delete this pin?', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_TT', 'Click to view, right-click to edit, shift-right-click to delete', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_TYPE', 'Type', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_SORT_TYPE', 'Sort by type', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_TEXT', 'Notes', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_SORT_TEXT', 'Sort by notes', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_LIST_TOGGLE_TT', 'Show/Hide pins', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TERRAIN_MAP_PINS_ADV_QUEST', 'How can I make notes on the map?', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TERRAIN_MAP_PINS_HEADING3_BODY', 'Map pins enable you to add notes to the maps (both in main and strategic views).[NEWLINE][NEWLINE]Press Control-X and then click on the map to place one or more pins.  Press Control-X again to return to normal map mode.[NEWLINE][NEWLINE]Hover over a pin to read its note.  Right-click the pin to edit, move or delete it.[NEWLINE][NEWLINE]Press Shift-X to toggle all pins on or off.', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TERRAIN_MAP_PINS_HEADING3_TITLE', 'Map Pins', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_UNKNOWN', '[ICON_TEAM_11]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_1', '[ICON_TEAM_2]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_2', '[ICON_TEAM_3]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_3', '[ICON_TEAM_9]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_4', '[ICON_TEAM_5]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_5', '[ICON_TEAM_7]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_6', '[ICON_WAR]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_7', '[ICON_CITY_STATE]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_8', '[ICON_CAPITAL]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_9', '[ICON_HAPPINESS_1]', '', '');
+INSERT INTO Civup_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_MAPPINS_FLAG_10', '[ICON_STAR]', '', '');

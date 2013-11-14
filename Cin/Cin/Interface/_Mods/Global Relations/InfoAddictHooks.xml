@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by robk on 7/9/2012 6:12:54 PM -->
+<Context>
+  <GridButton Style="FrameButton200"  Anchor="R,B" Offset="40,40" String="TXT_KEY_INFOADDICT_CHECK_INFOADDICT" Font="TwCenMT14" ID="IAB_DiploTrade" />
+  <GridButton Style="FrameButton200"  Anchor="R,B" Offset="40,40" String="TXT_KEY_INFOADDICT_CHECK_INFOADDICT" Font="TwCenMT14" ID="IAB_DiscussionDialog" />
+  <GridButton Style="FrameButton200"  Anchor="R,B" Offset="40,40" String="TXT_KEY_INFOADDICT_CHECK_INFOADDICT" Font="TwCenMT14" ID="IAB_DiscussLeader" />
+</Context>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_HONOR" />
+			<Set BarbarianCombatBonus="10"
+				 CultureFromBarbarianKills="500"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_SPOILS_OF_WAR</Type>
+			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_SPOILS_OF_WAR</Description>
+			<Civilopedia>TXT_KEY_POLICY_SPOILS_OF_WAR_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_SPOILS_OF_WAR_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>7</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<GoldFromKills>200</GoldFromKills>
+			<CitystateCaptureYieldTurns>10</CitystateCaptureYieldTurns>
+		</Row>
+		<Update>
+			<Where Type="POLICY_MILITARY_TRADITION" />
+			<Set PolicyBranchType="POLICY_BRANCH_HONOR"
+				 GridX="3"
+				 GridY="1"
+				 PortraitIndex="4"
+				 ExpModifier="0"
+				 MilitaryProductionModifier="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_DISCIPLINE" />
+			<Set GridX="5"
+				 GridY="1"
+				 PortraitIndex="33"
+				 IncludesOneShotFreeUnits="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PROFESSIONAL_ARMY" />
+			<Set GridX="1"
+				 GridY="2"
+				 GoldFromKills="0"
+				 UnitGoldMaintenanceMod="-25"
+				 UnitUpgradeCostMod="-50"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_WAR_EPICS</Type>
+			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_WAR_EPICS</Description>
+			<Civilopedia>TXT_KEY_POLICY_WAR_EPICS_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_WAR_EPICS_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>4</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>22</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Update>
+			<Where Type="POLICY_WARRIOR_CODE" />
+			<Set PolicyBranchType="NULL"
+				 GridX="1"
+				 GridY="1"
+				 PortraitIndex="4"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MILITARY_CASTE" />
+			<Set PolicyBranchType="NULL"
+				 GridX="3"
+				 GridY="1"
+				 />
+		</Update>
+		<!--
+		<Update>
+			<Where Type="POLICY_MILITARY_CASTE" />
+			<Set GridX="3"
+				 GridY="3"
+				 HappinessPerGarrisonedUnit="0"
+				 GoldFromKills="0.25"
+				 CityCaptureCulture="50"
+				 CityCaptureCulturePerPop="10"
+				 CityCaptureCulturePerEra="50"
+				 PortraitIndex="21"
+				 />
+		</Update>
+		-->
+		<Update>
+			<Where Type="POLICY_HONOR_FINISHER" />
+			<Set GoldFromKills="0"
+				 HappinessPerGarrisonedUnit="1"
+				 CulturePerGarrisonedUnit="2"
+				 />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Row>
+			<PolicyType>POLICY_WAR_EPICS</PolicyType>
+			<PrereqPolicy>POLICY_MILITARY_TRADITION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WAR_EPICS</PolicyType>
+			<PrereqPolicy>POLICY_DISCIPLINE</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+	<Policy_UnitCombatProductionModifiers>
+		<Delete PolicyType="POLICY_WARRIOR_CODE" />
+	</Policy_UnitCombatProductionModifiers>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_ADJACENT_BONUS" />
+			<Set AdjacentMod="15" />
+		</Update>
+	</UnitPromotions>
+	<Policy_FreeUnitFlavor>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitFlavor>
+	<Policy_FreeUnitClasses>
+		<Update>
+			<Where PolicyType="POLICY_WARRIOR_CODE" />
+			<Set PolicyType="POLICY_DISCIPLINE" />
+		</Update>		
+	</Policy_FreeUnitClasses>
+	<Policy_FreePromotionUnitClasses>
+		<Row>
+			<PolicyType>POLICY_DISCIPLINE</PolicyType>
+			<UnitClass>UNITCLASS_GREAT_GENERAL</UnitClass>
+			<PromotionType>PROMOTION_MOBILITY_1</PromotionType>
+		</Row>
+	</Policy_FreePromotionUnitClasses>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
+		<Delete PolicyType="POLICY_HONOR_FINISHER" />
+		<Row>
+			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+</GameData>

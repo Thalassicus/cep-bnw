@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <string>Active Player.ltp</string>
+  <string>Game.ltp</string>
+  <string>Map.ltp</string>
+  <string>Selected City.ltp</string>
+  <string>Selected Unit.ltp</string>
+</ArrayOfString>

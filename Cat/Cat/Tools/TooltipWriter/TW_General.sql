@@ -1,0 +1,1 @@
+-- must have at least 1 line in a sql file or the Civ zip extractor crashes!

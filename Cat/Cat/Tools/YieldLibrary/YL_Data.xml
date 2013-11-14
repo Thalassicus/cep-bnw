@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2011 12:20:40 AM -->
+<GameData>
+	<Table name="Yield_Flavors">
+		<Column name="YieldType" type="text" reference="Yields(Type)"/>
+		<Column name="FlavorType" type="text" reference="Flavors(Type)"/>
+		<Column name="Flavor" type="integer" notnull="true"/>
+	</Table>
+	<Table name="Mission_Yield">
+		<Column name="MissionType" type="text" />
+		<Column name="YieldType" type="text" />
+		<Column name="YieldConstant" type="variant" default="0"/>
+		<Column name="YieldLinear" type="variant" default="0"/>
+		<Column name="YieldPowerBase" type="variant" default="0"/>
+		<Column name="YieldPowerExp" type="variant" default="1"/>
+		<Column name="YieldExponential" type="variant" default="0"/>
+	</Table>
+	<Table name="Building_YieldSurplusModifiers">
+		<Column name="BuildingType" type="text" reference="Buildings(Type)"/>
+		<Column name="YieldType" type="text" reference="Yields(Type)"/>
+		<Column name="Yield" type="integer"/>
+	</Table>
+	<Table name="CityWeights">
+		<Column name="Type" type="text"/>
+		<Column name="IsCityStatus" type="boolean" default="false"/>
+		<Column name="Value" type="variant" default="0"/>
+		<Column name="Description" type="text" default="NULL"/>
+	</Table>
+	<!--
+	<Table name="Policy_BuildingClassConstructionModifiers">
+		<Column name="PolicyType" type="text" reference="Policies(Type)"/>
+		<Column name="BuildingClassType" type="text" reference="BuildingClasses(Type)"/>
+		<Column name="YieldMod" type="integer"/>
+	</Table>
+	-->
+	<Table name="MinorCivTrait_Yields">
+		<Column name="TraitType" type="text" reference="MinorCivTraits(Type)"/>
+		<Column name="FriendLevel" type="integer" default="0"/>
+		<Column name="YieldType" type="text" reference="Yields(Type)"/>
+		<Column name="Yield" type="variant" default="0"/>
+		<Column name="YieldPerEra" type="variant" default="0"/>
+	</Table>
+	<Table name="Policy_MinorCivBonuses">
+		<Column name="PolicyType" type="text" reference="Policies(Type)"/>
+		<Column name="FriendLevel" type="integer" default="0"/>
+		<Column name="YieldType" type="text" reference="Yields(Type)"/>
+		<Column name="Yield" type="variant" default="0"/>
+		<Column name="YieldPerEra" type="variant" default="0"/>
+	</Table>
+	
+
+	<Defines>
+		<Update>
+			<Where Name="MAX_UNIT_SUPPLY_PRODMOD" />
+			<Set Value="100" />
+		</Update>
+	</Defines>
+	<Cep>
+		<Row Type="SUPPLY_BASE">
+			<Value>10</Value>
+		</Row>
+		<Row Type="SUPPLY_PER_CITY">
+			<Value>1</Value>
+		</Row>
+		<Row Type="SUPPLY_PER_POP">
+			<Value>0.15</Value>
+		</Row>
+		<Row Type="SUPPLY_PENALTY_PER_UNIT_PERCENT">
+			<Value>5</Value>
+		</Row>
+		<Row Type="SUPPLY_PENALTY_MAX">
+			<Value>-25</Value>
+		</Row>
+		<Row Type="OPEN_BORDERS_GOLD_RATE_PERCENT">
+			<Value>0</Value>
+		</Row>
+		<Row Type="RESEARCH_AGREEMENT_SCIENCE_RATE_PERCENT">
+			<Value>0</Value>
+		</Row>
+		<Row Type="FRIENDSHIP_TRADE_BONUS_PERCENT">
+			<Value>0</Value>
+		</Row>
+		<Row Type="MINOR_CIV_MILITARISTIC_REWARD_NEEDED">
+			<Value>0</Value>
+		</Row>
+		<Row Type="MINOR_CIV_GREAT_PERSON_REWARD_NEEDED">
+			<Value>0</Value>
+		</Row>
+		<Row Type="AI_CAPITAL_YIELDS_PERCENT">
+			<Value>0</Value>
+		</Row>
+		<Row Type="AI_CAPITAL_YIELDS_MILITARISTIC_PERCENT">
+			<Value>0</Value>
+		</Row>
+	</Cep>
+
+	<!-- 
+		Several vanilla functions are bugged and read this whole table,
+		without checking to make sure other vanilla functions can accept the values.
+		This will take a while to fix.
+	-->
+	<Yields>
+		<Update>
+			<Where Type="YIELD_FOOD" />
+			<Set Color="COLOR_YIELD_FOOD"
+				 AIWeightPercent="150"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas.dds"
+				 FlavorType="FLAVOR_GROWTH"
+				 />
+		</Update>
+		<Update>
+			<Where Type="YIELD_PRODUCTION" />
+			<Set Color="COLOR_YIELD_PRODUCTION"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas.dds"
+				 FlavorType="FLAVOR_PRODUCTION"
+				 />
+		</Update>
+		<Update>
+			<Where Type="YIELD_GOLD" />
+			<Set Color="COLOR_YIELD_GOLD"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas.dds"
+				 FlavorType="FLAVOR_GOLD"
+				 />
+		</Update>
+		<Update>
+			<Where Type="YIELD_SCIENCE" />
+			<Set Color="COLOR_RESEARCH_STORED"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas.dds"
+				 FlavorType="FLAVOR_SCIENCE"
+				 />
+		</Update>
+		<Update>
+			<Where Type="YIELD_CULTURE" />
+			<Set Color="COLOR_MAGENTA"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas_128_Culture.dds"
+				 FlavorType="FLAVOR_CULTURE"
+				 />
+		</Update>
+		<Update>
+			<Where Type="YIELD_FAITH" />
+			<Set Color="COLOR_WHITE"
+				 IsTileYield="1"
+				 TileTexture="YieldAtlas_128_Faith.dds"
+				 FlavorType="FLAVOR_RELIGION"
+				 />
+		</Update>
+		<Row>
+			<Type>YIELD_HAPPINESS_CITY</Type>
+			<Description>TXT_KEY_HAPPINESS_CITY</Description>
+			<IconString>[ICON_HAPPINESS_1]</IconString>
+			<IsTileYield>1</IsTileYield>
+			<TileTexture>YieldAtlas_Cep.dds</TileTexture>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>500</AIWeightPercent>
+			<Color>COLOR_YIELD_GOLD</Color>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_HAPPINESS_NATIONAL</Type>
+			<Description>TXT_KEY_HAPPINESS_NATIONAL</Description>
+			<IconString>[ICON_HAPPINESS_1]</IconString>
+			<IsTileYield>0</IsTileYield>
+			<TileTexture>YieldAtlas_Cep.dds</TileTexture>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>500</AIWeightPercent>
+			<Color>COLOR_YIELD_GOLD</Color>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_GREAT_PEOPLE</Type>
+			<Description>TXT_KEY_CITYVIEW_GREAT_PEOPLE_TEXT</Description>
+			<IconString>[ICON_GREAT_PEOPLE]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>200</AIWeightPercent>
+			<Color>COLOR_PLAYER_PURPLE</Color>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_EXPERIENCE</Type>
+			<Description>TXT_KEY_TOPIC_EXPERIENCE</Description>
+			<IconString>[ICON_WAR]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>100</AIWeightPercent>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_LAW</Type>
+			<Description>TXT_KEY_TOPIC_LAW</Description>
+			<IconString>[ICON_PEACE]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>100</AIWeightPercent>
+			<FlavorType>FLAVOR_INFRASTRUCTURE</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_CS_MILITARY</Type>
+			<Description>TXT_KEY_TOPIC_CS_MILITARY</Description>
+			<IconString>[ICON_WAR]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>100</AIWeightPercent>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_CS_GREAT_PEOPLE</Type>
+			<Description>TXT_KEY_TOPIC_GREAT_PERSON</Description>
+			<IconString>[ICON_GREAT_PEOPLE]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>100</AIWeightPercent>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+		</Row>
+		<Row>
+			<Type>YIELD_POPULATION</Type>
+			<Description>TXT_KEY_TOPIC_POPULATION</Description>
+			<IconString>[ICON_CITIZEN]</IconString>
+			<MinCity>0</MinCity>
+			<AIWeightPercent>300</AIWeightPercent>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+		</Row>
+	</Yields>
+	<!--
+	<Specialists>
+		<Update>
+			<Where Type="SPECIALIST_ARTIST" />
+			<Set CulturePerTurn="0" />
+		</Update>
+	</Specialists>
+	<SpecialistYields>
+		<Row>
+			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</SpecialistYields>
+	-->
+	<Yield_Flavors>
+		<Row><YieldType>YIELD_FOOD</YieldType>             <FlavorType>FLAVOR_GROWTH</FlavorType>            <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_PRODUCTION</YieldType>       <FlavorType>FLAVOR_PRODUCTION</FlavorType>        <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_GOLD</YieldType>             <FlavorType>FLAVOR_GOLD</FlavorType>              <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_SCIENCE</YieldType>          <FlavorType>FLAVOR_SCIENCE</FlavorType>           <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_CULTURE</YieldType>          <FlavorType>FLAVOR_CULTURE</FlavorType>           <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_FAITH</YieldType>            <FlavorType>FLAVOR_RELIGION</FlavorType>          <Flavor>4</Flavor></Row>
+		<!--
+		<Row><YieldType>YIELD_HAPPINESS_CITY</YieldType>   <FlavorType>FLAVOR_HAPPINESS</FlavorType>		 <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_GREAT_PEOPLE</YieldType>     <FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>      <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_EXPERIENCE</YieldType>       <FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType> <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_CS_MILITARY</YieldType>      <FlavorType>FLAVOR_DIPLOMACY</FlavorType>         <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_CS_GREAT_PEOPLE</YieldType>  <FlavorType>FLAVOR_DIPLOMACY</FlavorType>         <Flavor>4</Flavor></Row>
+		<Row><YieldType>YIELD_POPULATION</YieldType>       <FlavorType>FLAVOR_GROWTH</FlavorType>            <Flavor>4</Flavor></Row>
+		-->
+	</Yield_Flavors>
+	<CityWeights>
+		<Row>
+			<Type>NotConnected</Type>
+			<Value>0.5</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_NOT_CONNECTED</Description>
+		</Row>
+		<Row>
+			<Type>CityFocus</Type>
+			<Value>2.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_FOCUS</Description>
+		</Row>
+		<!--
+		<Row>
+			<Type>GetPopulation</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_POPULATION</Description>
+		</Row>
+		-->
+		<Row>
+			<Type>IsRazing</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>0.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_RAZING</Description>
+		</Row>
+		<Row>
+			<Type>IsResistance</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>2.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_RESISTANCE</Description>
+		</Row>
+		<Row>
+			<Type>IsPuppet</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>0.5</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_PUPPET</Description>
+		</Row>
+		<!--<Row>
+			<Type>IsOccupied</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_OCCUPIED</Description>
+		</Row>
+		<Row>
+			<Type>IsBlockaded</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.0</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_BLOCKADED</Description>
+		</Row>
+		<Row>
+			<Type>IsCapital</Type>
+			<IsCityStatus>true</IsCityStatus>
+			<Value>1.5</Value>
+			<Description>TXT_KEY_CITYSTATE_MODIFIER_IS_CAPITAL</Description>
+		</Row>
+		-->
+	</CityWeights>
+	<LoadedFile>
+		<Update>
+			<Where Type="YL_General.xml"/>
+			<Set Value="1"/>
+		</Update>
+	</LoadedFile>
+</GameData>

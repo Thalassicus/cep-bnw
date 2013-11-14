@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<PanelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Table Browser</Name>
+  <App>Civ5</App>
+  <EnterAction />
+  <ExitAction />
+  <CompatibleStates>
+    <string>AT_Init</string>
+    <string>Main State</string>
+    <string>WorldPicker</string>
+    <string>MultiplayerDebug</string>
+    <string>OptionsMenu</string>
+    <string>GridExamples</string>
+    <string>UITestMenu</string>
+    <string>LoadGame</string>
+    <string>StagingRoom</string>
+    <string>LANLobby</string>
+    <string>StagingRoom</string>
+    <string>InternetLobby</string>
+    <string>MultiplayerSelect</string>
+    <string>MainMenu</string>
+    <string>YieldIconManager</string>
+    <string>ResourceIconManager</string>
+    <string>UnitFlagManager</string>
+    <string>CityBannerManager</string>
+    <string>UnitPanel</string>
+    <string>EnemyUnitPanel</string>
+    <string>MiniMapPanel</string>
+    <string>PlotHelpText</string>
+    <string>NotificationPanel</string>
+    <string>ActionInfoPanel</string>
+    <string>DiplomacyPopup</string>
+    <string>DiploAndAdvisors</string>
+    <string>Tutorial</string>
+    <string>UnitMemberOverlay</string>
+    <string>WorldView</string>
+    <string>SpecialistsPopup</string>
+    <string>CityView</string>
+    <string>TechPopup</string>
+    <string>TechPanel</string>
+    <string>TopPanel</string>
+    <string>ProductionPopup</string>
+    <string>CityPurchasePopup</string>
+    <string>GenericPopup</string>
+    <string>SocialPolicyPopup</string>
+    <string>NotificationLogPopup</string>
+    <string>MinorCivsListPopup</string>
+    <string>GraphicsPanel</string>
+    <string>DebugMenu</string>
+    <string>LoadMenu</string>
+    <string>OptionsMenu</string>
+    <string>GameMenu</string>
+    <string>InGame</string>
+    <string>DiscussLeader</string>
+    <string>DiscussionDialog</string>
+    <string>LeaderHeadRoot</string>
+  </CompatibleStates>
+  <Actions />
+  <StringControls />
+  <IntegerControls />
+  <FloatControls />
+  <BooleanControls />
+  <TableViews>
+    <TableViewData>
+      <Table />
+      <Fixed>false</Fixed>
+      <OnRefresh />
+      <Location>
+        <X>20</X>
+        <Y>38</Y>
+      </Location>
+      <Size>
+        <Width>905</Width>
+        <Height>742</Height>
+      </Size>
+    </TableViewData>
+  </TableViews>
+  <DataViews />
+  <StatTrackers />
+  <SelectionLists />
+  <MultiselectLists />
+</PanelData>

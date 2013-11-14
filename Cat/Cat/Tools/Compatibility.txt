@@ -1,0 +1,41 @@
+Thread: http://forums.civfanatics.com/showthread.php?p=9705176#post9705176
+E-mail: Thalassicus@hotmail.com
+
+If you are a modder and would like to use some of the tools of Cep in your mod, please contact me if you encounter any difficulties with compatibility. I'm glad to help out, and can make any changes necessary in Cep so it's easily compatible with your mod.
+
+To use a table in Cep, follow two steps in your sql file:
+1) If Cep does not exist, add to the vanilla tables.
+2) Create the Cep tables and add to those.
+
+Here is a sql example from the Citystate Diplomacy Mod, where Gazebo adds 2 national wonders to the percentage-based national wonder table:
+
+
+
+-- Step 1) Vanilla
+
+INSERT INTO Building_PrereqBuildingClasses (
+  BuildingType, BuildingClassType, NumBuildingNeeded)
+SELECT 'BUILDING_GREAT_HALL', 'BUILDINGCLASS_HALL', '-1'
+WHERE NOT EXISTS (SELECT * FROM sqlite_master WHERE name='Building_PrereqBuildingClassesPercentage');
+
+INSERT INTO Building_PrereqBuildingClasses (
+  BuildingType, BuildingClassType, NumBuildingNeeded)
+SELECT 'BUILDING_NEWSPAPER', 'BUILDINGCLASS_PRESS', '-1'
+WHERE NOT EXISTS (SELECT * FROM sqlite_master WHERE name='Building_PrereqBuildingClassesPercentage');
+
+
+-- Step 2) Cep Compatibility
+
+CREATE TABLE IF NOT EXISTS Building_PrereqBuildingClassesPercentage (
+  BuildingType text,
+  BuildingClassType text,
+  PercentBuildingNeeded integer default 0
+);
+
+INSERT INTO Building_PrereqBuildingClassesPercentage (
+  BuildingType, BuildingClassType, PercentBuildingNeeded)
+SELECT 'BUILDING_GREAT_HALL', 'BUILDINGCLASS_HALL', '75';
+
+INSERT INTO Building_PrereqBuildingClassesPercentage (
+  BuildingType, BuildingClassType, PercentBuildingNeeded)
+SELECT 'BUILDING_FOREIGN_OFFICE', 'BUILDINGCLASS_PRESS', '75';

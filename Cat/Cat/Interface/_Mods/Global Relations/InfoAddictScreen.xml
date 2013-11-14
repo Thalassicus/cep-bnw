@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy for robk on 10/7/2010 10:36:39 PM -->
+
+<Context Color0="Beige" Color1="Black,256" Font="TwCenMT16" FontStyle="Shadow" >
+
+	<!-- Blanks out the background -->
+	<Box Anchor="C,C" Size="Full,Full" Color="0,0,0,160" ConsumeMouse="1" ID="BackDrop"/>	
+	
+	<!-- The main box where all our stuff lives. All of this just sets the main frame and top panel text -->
+	<Grid Size="990,653" Anchor="C,C" Offset="0,42" Style="Grid9DetailFive140" ConsumeMouse="1">
+
+		<!-- Panel Header Text -->
+		<Label String="TXT_KEY_INFOADDICT_MAIN_TITLE" ID="TitleLabel" Anchor="C,T" Offset="0,19" Font="TwCenMT20" Color0="30.50.80.255" Color1="133.184.186.255" Color2="133.184.186.255" FontStyle="SoftShadow"  />
+
+		<!-- Left and right frames -->
+		<Image Anchor="L,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Left.dds" Size="32.64" />
+		<Image Anchor="R,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Right.dds" Size="32.64" />
+
+		<!-- Mmmm, fancy trim -->
+		<Image Anchor="C,T" AnchorSide="I.O" Size="256,64" Offset="0,-16"  Texture="assets\UI\Art\Icons\Top512IconTrim.dds" >
+			<Image ID="CivIconBG" Size="64.64" Anchor="C,C" Offset="-1,-1" TextureOffset="77,0" Texture="CivIconBGSizes.dds" />
+			<Image ID="CivIconShadow" Size="48.48" Anchor="C,C" Offset="0,0" Texture="CivSymbolAtlas48.dds" Color="Black.128"/>
+			<Image ID="Icon" Size="48,48" Offset="-1,-1"  Anchor="C,C" Texture="CivSymbolsColor512.dds" />
+		</Image>
+
+
+		<!-- Top Panel  -->
+		<Box Anchor="C,T" Size="971,32" Offset="0,44" Color="0.0.0.128" >
+
+			<Stack Anchor="C,T" Size="971,32" Offset="0,0" Padding="0" StackGrowth="Right">
+
+				
+
+        
+
+        <!-- Button for civ relationships -->
+        <Button  Anchor="L,T" Size="250,24" Offset="0,0" String="TXT_KEY_INFOADDICT_GLOBALRELATIONS_TITLE" ID="CivRelationsButton" >
+          <ShowOnMouseOver>
+            <AlphaAnim Anchor="L,C" Size="250,27" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1"  >
+              <Grid   Size="250,27" Offset="0,2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+            </AlphaAnim>
+          </ShowOnMouseOver>
+          <!-- Selected State  -->
+          <Grid Anchor="C,C" Offset="0,1" Size="250,26"  Style="Grid9FrameTurns" Hidden="1" ID="CivRelationsSelectHighlight" />
+        </Button>
+
+        
+        
+
+      </Stack>
+			<Image Anchor="C,B" Offset="0,0" Texture="HorizontalTrim.dds" Size="971.5" />
+
+		</Box>
+
+
+		<!-- The box at the bottom along with the close button -->
+		<Box Anchor="C,B" AnchorSide="I.I" Offset="0,54"   Size="960,56" Color="255,255,255,0" />
+    <Button Anchor="R,T" Size="32,32" Offset="26.6" TextureOffset="28,-2" Texture="CloseMinButtons.dds"  ToolTip="TXT_KEY_ESC_TO_EXIT" ID="CloseButton" Hidden="0"/>
+
+  </Grid>
+
+	
+	<LuaContext FileName="Lua/InfoAddictCivRelations" ID="CivRelationsPanel" Hidden="0" />
+ 
+	
+</Context>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<Update>
+			<Where Name="FRIENDSHIP_THRESHOLD_MAX" />
+			<Set Value="200" />
+			<!-- 120 -->
+		</Update>
+	</Defines>
+	<Cep>
+		<Row Type="AVOID_GROWTH_FULL_EFFECT_CUTOFF">
+			<Value>50</Value>
+		</Row>
+		<Row Type="MINOR_CIV_LIBERATED_FRIENDSHIP_MAX">
+			<Value>50</Value>
+		</Row>
+		<Row Type="UNIT_SETTLER_BASE_COST">
+			<Value>105</Value>
+		</Row>
+		<Row Type="UNIT_LEVEL_UP_HEAL_PERCENT">
+			<Value>0</Value>
+		</Row>
+		<Row Type="PUPPET_UNHAPPINESS_MOD">
+			<Value>0</Value>
+		</Row>
+		<Row Type="EVENTS_EARLIEST_TURN">
+			<Value>0</Value>
+		</Row>
+		<Row Type="PERCENT_SCIENCE_FOR_1_SURPLUS_HAPPINESS">
+			<Value>0</Value>
+		</Row>
+		<Row Type="CITYSTATE_RESOURCE_IMPROVEMENT_COST">
+			<Value>200</Value>
+		</Row>
+		<Row Type="MIN_RESOURCE_QUANTITY_FREE_FLAVOR_BUILDINGS">
+			<Value>5</Value>
+		</Row>
+	</Cep>
+	<GameOptions>
+		<Update>
+			<Where Type="GAMEOPTION_QUICK_COMBAT" />
+			<Set Visible="0" />
+		</Update>
+	</GameOptions>
+	<Plots>
+		<Row>
+			<ID>0</ID>
+			<Type>PLOT_MOUNTAIN</Type>
+			<Description>TXT_KEY_TERRAIN_MOUNTAIN</Description>
+			<Civilopedia>TXT_KEY_CIV5_SPECIALTERRAIN_MOUNTAINS_TEXT</Civilopedia>
+		</Row>
+		<Row>
+			<Type>PLOT_HILLS</Type>
+			<Description>TXT_KEY_CIV5_SPECIALTERRAIN_HILLS</Description>
+			<Civilopedia>TXT_KEY_CIV5_SPECIALTERRAIN_HILLS_TEXT</Civilopedia>
+		</Row>
+		<Row>
+			<Type>PLOT_LAND</Type>
+			<Description>TXT_KEY_CIV5_SPECIALTERRAIN_LAND</Description>
+			<Civilopedia>TXT_KEY_CIV5_SPECIALTERRAIN_LAND_TEXT</Civilopedia>
+		</Row>
+		<Row>
+			<Type>PLOT_OCEAN</Type>
+			<Description>TXT_KEY_CIV5_SPECIALTERRAIN_SEA</Description>
+			<Civilopedia>TXT_KEY_CIV5_SPECIALTERRAIN_SEA_TEXT</Civilopedia>
+		</Row>		
+	</Plots>
+	<PromotionClasses>
+		<Row ID="0" Type="PROMOTION_CLASS_PERSISTANT" />
+		<Row Type="PROMOTION_CLASS_ATTRIBUTE_POSITIVE" />
+		<Row Type="PROMOTION_CLASS_ATTRIBUTE_NEGATIVE" />
+	</PromotionClasses>
+	<Personalities>
+		<Row Type="PERSONALITY_CONQUEROR" />
+		<Row Type="PERSONALITY_COALITION" />
+		<Row Type="PERSONALITY_DIPLOMAT" />
+		<Row Type="PERSONALITY_EXPANSIONIST" />
+		<Row Type="PERSONALITY_NONE" />
+	</Personalities>
+	<Leaders>
+		<Update>
+			<Set Personality="PERSONALITY_NONE" />
+		</Update>
+	</Leaders>
+	<Traits>
+		<Row>
+			<Type>TRAIT_NONE</Type>
+			<Description>TXT_KEY_SV_ICONS_NONE</Description>
+			<ShortDescription>TXT_KEY_SV_ICONS_NONE</ShortDescription>
+		</Row>
+	</Traits>
+	<Leader_Traits>
+		<Row>
+			<LeaderType>LEADER_BARBARIAN</LeaderType>
+			<TraitType>TRAIT_NONE</TraitType>
+		</Row>
+	</Leader_Traits>
+	<Trait_MovesChangeUnitCombats>
+		<Row>
+			<TraitType>TRAIT_TERROR</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_ARCHER</UnitCombatType>
+			<MovesChange>1</MovesChange>
+		</Row>
+	</Trait_MovesChangeUnitCombats>
+	<Units>
+		<!--
+		<Update>
+			<Where Class="UNITCLASS_SUBMARINE"/>
+			<Set CombatClass="UNITCOMBAT_SUBMARINE"/>
+		</Update>
+		<Update>
+			<Where Class="UNITCLASS_NUCLEAR_SUBMARINE"/>
+			<Set CombatClass="UNITCOMBAT_SUBMARINE"/>
+		</Update>
+		-->
+		<Update>
+			<Where Type="UNIT_MONGOLIAN_KESHIK"/>
+			<Set Moves="4"/>
+		</Update>
+		<Update>
+			<Where Type="UNIT_MUSKETMAN"/>
+			<Set Description="TXT_KEY_UNIT_ARQUEBUSIER"
+				 Help="TXT_KEY_UNIT_ARQUEBUSIER_HELP"
+				 Strategy="TXT_KEY_UNIT_ARQUEBUSIER_STRATEGY"
+				 Civilopedia="TXT_KEY_UNIT_ARQUEBUSIER_PEDIA"
+				 />
+		</Update>
+		<Update>
+			<Where Type="UNIT_RIFLEMAN"/>
+			<Set Description="TXT_KEY_UNIT_MUSKETMAN"
+				 Help="TXT_KEY_UNIT_HELP_MUSKETMAN"
+				 Strategy="TXT_KEY_UNIT_MUSKETMAN_STRATEGY"
+				 Civilopedia="TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_MUSKETMAN_TEXT"
+				 />
+		</Update>
+		<Update>
+			<Where Type="UNIT_GREAT_WAR_INFANTRY"/>
+			<Set Description="TXT_KEY_UNIT_RIFLEMAN"
+				 Help="TXT_KEY_UNIT_HELP_RIFLEMAN"
+				 Strategy="TXT_KEY_UNIT_RIFLEMAN_STRATEGY"
+				 Civilopedia="TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_RIFLEMEN_TEXT"
+				 />
+		</Update>
+	</Units>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_STATUE_ZEUS"/>
+			<Set PortraitIndex="42"/>
+		</Update>
+	</UnitPromotions>
+	<Specialists>
+		<Update><Where Type="SPECIALIST_ENGINEER"/>		<Set IconString="[ICON_ENGINEER]"/></Update>
+		<Update><Where Type="SPECIALIST_MERCHANT"/>		<Set IconString="[ICON_MERCHANT]"/></Update>
+		<Update><Where Type="SPECIALIST_SCIENTIST"/>	<Set IconString="[ICON_SCIENTIST]"/></Update>
+		<Update><Where Type="SPECIALIST_ARTIST"/>		<Set IconString="[ICON_ARTIST]"/></Update>
+		<Update><Where Type="SPECIALIST_WRITER"/>		<Set IconString="[ICON_ARTIST]"/></Update>
+		<Update><Where Type="SPECIALIST_MUSICIAN"/>		<Set IconString="[ICON_ARTIST]"/></Update>
+	</Specialists>
+	<Flavors>
+		<Update><Where Type="FLAVOR_MILITARY_TRAINING"/>		<Set Description="TXT_KEY_FLAVOR_MILITARY_TRAINING"			 IconString="[ICON_WAR]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_OFFENSE"/>					<Set Description="TXT_KEY_FLAVOR_OFFENSE"					 IconString="[ICON_RESISTANCE]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_DEFENSE"/>					<Set Description="TXT_KEY_FLAVOR_DEFENSE"					 IconString="[ICON_DEFENSE]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_SOLDIER"/>					<Set Description="TXT_KEY_FLAVOR_SOLDIER"					 IconString="[ICON_STRENGTH]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_MOBILE"/>					<Set Description="TXT_KEY_FLAVOR_MOBILE"					 IconString="[ICON_MOVES]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_ANTI_MOBILE"/>				<Set Description="TXT_KEY_FLAVOR_ANTI_MOBILE"				 IconString="[ICON_ANTI_MOBILE]"	 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RECON"/>					<Set Description="TXT_KEY_FLAVOR_RECON"						 IconString="[ICON_SIGHT_LAND]"		 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_HEALING"/>					<Set Description="TXT_KEY_FLAVOR_HEALING"					 IconString="[ICON_HEAL]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_PILLAGE"/>					<Set Description="TXT_KEY_FLAVOR_PILLAGE"					 IconString="[ICON_BLOCKADED]"		 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_MELEE"/>					<Set Description="TXT_KEY_FLAVOR_MELEE"						 IconString="[ICON_STRENGTH]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RANGED"/>					<Set Description="TXT_KEY_FLAVOR_RANGED"					 IconString="[ICON_RANGE_STRENGTH]"	 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_SIEGE"/>					<Set Description="TXT_KEY_FLAVOR_SIEGE"						 IconString="[ICON_RAZING]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_NAVAL"/>					<Set Description="TXT_KEY_FLAVOR_NAVAL"						 IconString="[ICON_NAVAL]"			 PurchasePriority="30"/></Update>
+		<Update><Where Type="FLAVOR_NAVAL_BOMBARDMENT"/>		<Set Description="TXT_KEY_FLAVOR_NAVAL_BOMBARDMENT"			 IconString="[ICON_BOMBARD]"		 PurchasePriority="30"/></Update>
+		<Update><Where Type="FLAVOR_NAVAL_RECON"/>				<Set Description="TXT_KEY_FLAVOR_NAVAL_RECON"				 IconString="[ICON_SIGHT_SEA]"		 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_NAVAL_GROWTH"/>				<Set Description="TXT_KEY_FLAVOR_NAVAL_GROWTH"				 IconString="[ICON_NAVAL]"			 PurchasePriority="40"/></Update>
+		<Update><Where Type="FLAVOR_NAVAL_TILE_IMPROVEMENT"/>	<Set Description="TXT_KEY_FLAVOR_NAVAL_TILE_IMPROVEMENT"	 IconString="[ICON_NAVAL]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_AIRLIFT"/>					<Set Description="TXT_KEY_FLAVOR_AIRLIFT"					 IconString="[ICON_AIR]"			 PurchasePriority="100"/></Update>
+		<Update><Where Type="FLAVOR_AIR"/>						<Set Description="TXT_KEY_FLAVOR_AIR"						 IconString="[ICON_AIR]"			 PurchasePriority="100"/></Update>
+		<Update><Where Type="FLAVOR_AIR_CARRIER"/>				<Set Description="TXT_KEY_FLAVOR_AIR_CARRIER"				 IconString="[ICON_AIR]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_ANTIAIR"/>					<Set Description="TXT_KEY_FLAVOR_ANTIAIR"					 IconString="[ICON_AIR]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_NUKE"/>						<Set Description="TXT_KEY_FLAVOR_NUKE"						 IconString="[ICON_RES_URANIUM]"	 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_EXPANSION"/>				<Set Description="TXT_KEY_FLAVOR_EXPANSION"					 IconString="[ICON_TRADE]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_HAPPINESS"/>				<Set Description="TXT_KEY_FLAVOR_HAPPINESS"					 IconString="[ICON_HAPPINESS_1]"	 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_PRODUCTION"/>				<Set Description="TXT_KEY_FLAVOR_PRODUCTION"				 IconString="[ICON_PRODUCTION]"		 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_GOLD"/>						<Set Description="TXT_KEY_FLAVOR_GOLD"						 IconString="[ICON_GOLD]"			 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_GROWTH"/>					<Set Description="TXT_KEY_FLAVOR_GROWTH"					 IconString="[ICON_FOOD]"			 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_SCIENCE"/>					<Set Description="TXT_KEY_FLAVOR_SCIENCE"					 IconString="[ICON_RESEARCH]"		 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_CULTURE"/>					<Set Description="TXT_KEY_FLAVOR_CULTURE"					 IconString="[ICON_CULTURE]"		 PurchasePriority="20"/></Update>
+		<Update><Where Type="FLAVOR_GREAT_PEOPLE"/>				<Set Description="TXT_KEY_FLAVOR_GREAT_PEOPLE"				 IconString="[ICON_GREAT_PEOPLE]"	 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_CITY_DEFENSE"/>				<Set Description="TXT_KEY_FLAVOR_CITY_DEFENSE"				 IconString="[ICON_CITY_DEFENSE]"	 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_TILE_IMPROVEMENT"/>			<Set Description="TXT_KEY_FLAVOR_TILE_IMPROVEMENT"			 IconString="[ICON_WORKER]"			 PurchasePriority="0"/></Update>
+		<Update><Where Type="FLAVOR_INFRASTRUCTURE"/>			<Set Description="TXT_KEY_FLAVOR_INFRASTRUCTURE"			 IconString="[ICON_WORKER]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_WATER_CONNECTION"/>			<Set Description="TXT_KEY_FLAVOR_WATER_CONNECTION"			 IconString="[ICON_CONNECTED]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_WONDER"/>					<Set Description="TXT_KEY_FLAVOR_WONDER"					 IconString="[ICON_GOLDEN_AGE]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_DIPLOMACY"/>				<Set Description="TXT_KEY_FLAVOR_DIPLOMACY"					 IconString="[ICON_FLOWER]"			 PurchasePriority="100"/></Update>
+		<Update><Where Type="FLAVOR_SPACESHIP"/>				<Set Description="TXT_KEY_FLAVOR_SPACESHIP"					 IconString="[ICON_RESEARCH]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_ESPIONAGE"/>				<Set Description="TXT_KEY_FLAVOR_ESPIONAGE"					 IconString="[ICON_SPY]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RELIGION"/>					<Set Description="TXT_KEY_FLAVOR_RELIGION"					 IconString="[ICON_PEACE]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_TOURISM"/>					<Set Description="TXT_KEY_FLAVOR_TOURISM"					 IconString="[ICON_TOURISM]"		 PurchasePriority="10"/></Update>
+		
+		<Update><Where Type="FLAVOR_I_LAND_TRADE_ROUTE"/>		<Set Description="TXT_KEY_FLAVOR_I_LAND_TRADE_ROUTE"		 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_I_SEA_TRADE_ROUTE"/>		<Set Description="TXT_KEY_FLAVOR_I_SEA_TRADE_ROUTE"			 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_I_TRADE_ORIGIN"/>			<Set Description="TXT_KEY_FLAVOR_I_TRADE_ORIGIN"			 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_I_TRADE_DESTINATION"/>		<Set Description="TXT_KEY_FLAVOR_I_TRADE_DESTINATION"		 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_ARCHAEOLOGY"/>				<Set Description="TXT_KEY_FLAVOR_ARCHAEOLOGY"				 IconString="[ICON_RES_ARTIFACTS]"		 PurchasePriority="10"/></Update>
+
+		<Update><Where Type="FLAVOR_RES_STRATEGIC"/>			<Set Description="TXT_KEY_FLAVOR_RES_STRATEGIC"				 IconString="[ICON_WAR]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_LUXURY"/>				<Set Description="TXT_KEY_FLAVOR_RES_LUXURY"				 IconString="[ICON_HAPPINESS_1]"	 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_SEA"/>					<Set Description="TXT_KEY_FLAVOR_RES_SEA"					 IconString="[ICON_NAVAL]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_GRAINS"/>				<Set Description="TXT_KEY_FLAVOR_RES_GRAINS"				 IconString="[ICON_FOOD]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_RELIGIOUS"/>			<Set Description="TXT_KEY_FLAVOR_RES_RELIGIOUS"				 IconString="[ICON_PEACE]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_EXOTIC"/>				<Set Description="TXT_KEY_FLAVOR_RES_EXOTIC"				 IconString="[ICON_FOOD]"			 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_COSTUME"/>				<Set Description="TXT_KEY_FLAVOR_RES_COSTUME"				 IconString="[ICON_CULTURE]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_ORE"/>					<Set Description="TXT_KEY_FLAVOR_RES_ORE"					 IconString="[ICON_PRODUCTION]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_RES_CURRENCY"/>				<Set Description="TXT_KEY_FLAVOR_RES_CURRENCY"				 IconString="[ICON_GOLD]"			 PurchasePriority="10"/></Update>
+	</Flavors>
+	<LoadedFile>
+		<Update>
+			<Where Type="MT_Data.xml"/>
+			<Set Value="1"/>
+		</Update>
+	</LoadedFile>
+</GameData>

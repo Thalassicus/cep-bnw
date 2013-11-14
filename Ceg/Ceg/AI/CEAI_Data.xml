@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<CEP>
+		<Row Type="AI_PURCHASE_BUDGET_HIGH">
+			<Value>2.0</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_BUDGET_LOW">
+			<Value>1.0</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_BUDGET_MINIMUM">
+			<Value>0.5</Value>
+		</Row>
+		<Row Type="AI_PURCHASE_FLAVOR_MAX_ATTEMPTS">
+			<Value>5</Value>
+		</Row>
+	</CEP>
+	<Resource_Flavors>
+		<Row>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+	</Resource_Flavors>
+	<Project_Flavors>
+		<Delete />
+		<Row>
+			<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>256</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_UTOPIA_PROJECT</ProjectType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>256</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_UTOPIA_PROJECT</ProjectType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_MANHATTAN_PROJECT</ProjectType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>256</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_MANHATTAN_PROJECT</ProjectType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_MANHATTAN_PROJECT</ProjectType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>16</Flavor>
+		</Row>
+	</Project_Flavors>	
+</GameData>

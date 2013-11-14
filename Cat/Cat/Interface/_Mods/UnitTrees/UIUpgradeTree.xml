@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Table name="UpgradeInfosEx">
+		<Column name="CombatClass" type="text" reference="UnitCombatInfos(Type)" default="NULL"/>
+		<Column name="DefaultUnitType" type="text" reference="Units(Type)"/>
+		<Column name="IsDefault" type="boolean" default="false"/>
+	</Table>
+
+	<UpgradeInfosEx>
+		<Row>
+			<CombatClass>UNITCOMBAT_RECON</CombatClass>
+			<DefaultUnitType>UNIT_SCOUT</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_ARCHER</CombatClass>
+			<DefaultUnitType>UNIT_ARCHER</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_MOUNTED</CombatClass>
+			<DefaultUnitType>UNIT_HORSEMAN</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_MOUNTED_ARCHER</CombatClass>
+			<DefaultUnitType>UNIT_CHARIOT_ARCHER</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_MELEE</CombatClass>
+			<DefaultUnitType>UNIT_SWORDSMAN</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_SIEGE</CombatClass>
+			<DefaultUnitType>UNIT_CANNON</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_GUN</CombatClass>
+			<DefaultUnitType>UNIT_RIFLEMAN</DefaultUnitType>
+			<IsDefault>true</IsDefault>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_ARMOR</CombatClass>
+			<DefaultUnitType>UNIT_TANK</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_HELICOPTER</CombatClass>
+			<DefaultUnitType>UNIT_HELICOPTER_GUNSHIP</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_NAVALRANGED</CombatClass>
+			<DefaultUnitType>UNIT_FRIGATE</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_SUBMARINE</CombatClass>
+			<DefaultUnitType>UNIT_SUBMARINE</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_FIGHTER</CombatClass>
+			<DefaultUnitType>UNIT_FIGHTER</DefaultUnitType>
+		</Row>
+		<Row>
+			<CombatClass>UNITCOMBAT_BOMBER</CombatClass>
+			<DefaultUnitType>UNIT_BOMBER</DefaultUnitType>
+		</Row>
+	</UpgradeInfosEx>
+</GameData>

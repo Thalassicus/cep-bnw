@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Units>
+		<Update>
+			<Where Class="UNITCLASS_SETTLER" />
+			<Set HurryCostModifier="50" />
+		</Update>
+		<Update>
+			<Where Class="UNITCLASS_WORKER" />
+			<Set HurryCostModifier="0" />
+		</Update>
+		<Update>
+			<Where Class="UNITCLASS_WORKBOAT" />
+			<Set Cost="40" HurryCostModifier="0" />
+		</Update>
+		<Update>
+			<Where Type="UNIT_CARAVAN" />
+			<Set Cost="50" />
+		</Update>
+		<Update>
+			<Where Type="UNIT_CARGO_SHIP" />
+			<Set Cost="100" />
+		</Update>
+	</Units>
+	<Defines>
+		<Update>
+			<Where name="RELIGION_MAX_MISSIONARIES" />
+			<Set Value="2" />
+			<!-- 4 -->
+		</Update>
+	</Defines>
+	<UnitClasses>
+		<Update>
+			<Where Type="UNITCLASS_MISSIONARY" />
+			<Set MaxPlayerInstances="2" />
+		</Update>
+	</UnitClasses>
+</GameData>

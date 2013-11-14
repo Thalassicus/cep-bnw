@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<TacticalMoves>
+		<Update>
+			<Where Type="TACTICAL_PILLAGE" />
+			<Set Priority="110"
+				 OffenseFlavorWeight="110"
+				 />
+		</Update>
+		<Update>
+			<Where Type="TACTICAL_GARRISON_TO_ALLOW_BOMBARD" />
+			<Set Priority="40"
+				 />
+		</Update>
+	</TacticalMoves>
+	<AIMilitaryStrategy_Player_Flavors>
+		<Update>
+			<Where AIMilitaryStrategyType="MILITARYAISTRATEGY_NEED_ANTIAIR" FlavorType="FLAVOR_ANTIAIR" />
+			<Set Flavor="25" />
+			<!-- 75 -->
+		</Update>
+		<Update>
+			<Where AIMilitaryStrategyType="MILITARYAISTRATEGY_ENOUGH_ANTIAIR" FlavorType="FLAVOR_ANTIAIR" />
+			<Set Flavor="-50" />
+			<!-- -75 -->
+		</Update>
+	</AIMilitaryStrategy_Player_Flavors>
+</GameData>

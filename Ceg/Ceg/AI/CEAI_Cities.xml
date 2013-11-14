@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_AI_GOLD</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_AI_PRODUCTION</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_AI_SCIENCE</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_AI_CULTURE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Defines>
+		<Update>
+			<Where name="SETTLER_EVALUATION_DISTANCE" />
+			<Set Value="30" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_DISTANCE_DROPOFF_MODIFIER" />
+			<Set Value="50" />
+			<!-- 75 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_BUILD_ON_COAST_PERCENT" />
+			<Set Value="50" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where name="BUILD_ON_RESOURCE_PERCENT" />
+			<Set Value="0" />
+			<!-- -50 -->
+		</Update>
+		<Update>
+			<Where name="BUILD_ON_RIVER_PERCENT" />
+			<Set Value="100" />
+			<!-- 50 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_FOOD_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_HAPPINESS_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 8 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_PRODUCTION_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_GOLD_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_SCIENCE_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_RESOURCE_MULTIPLIER" />
+			<Set Value="10" />
+			<!-- 3 -->
+		</Update>
+		<Update>
+			<Where name="SETTLER_STRATEGIC_MULTIPLIER" />
+			<Set Value="5" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where name="ALREADY_OWNED_STRATEGIC_VALUE" />
+			<Set Value="5" />
+			<!-- -1000 -->
+		</Update>
+	</Defines>
+	
+
+	
+	<!--
+			City Strategies
+	-->
+	<AICityStrategy_Flavors>
+		<Delete AICityStrategyType="AICITYSTRATEGY_RIVER_CITY" />
+		<!--
+		All improvements get bonuses near rivers in VEM.
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_RIVER_CITY"  FlavorType="FLAVOR_GROWTH" />
+			<Set Flavor="3" />
+			 5 
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_RIVER_CITY"  FlavorType="FLAVOR_GOLD" />
+			<Set Flavor="3" />
+			 5 
+		</Update>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_RIVER_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		-->
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_MOUNTAIN_CITY"  FlavorType="FLAVOR_SCIENCE" />
+			<Set Flavor="5" />
+			<!-- 10 -->
+		</Update>
+
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_OFFENSE" />
+			<Set Flavor="2" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_DEFENSE" />
+			<Set Flavor="2" />
+			<!-- 6 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_RANGED" />
+			<Set Flavor="2" />
+			<!-- 2 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_RECON" />
+			<Set Flavor="2" />
+			<!-- -6 -->
+		</Update>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HAVE_TRAINING_FACILITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HAVE_TRAINING_FACILITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_TILE_IMPROVEMENT" />
+			<Set Flavor="0" />
+			<!-- -3 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_EXPANSION" />
+			<Set Flavor="0" />
+			<!-- -3 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_GROWTH" />
+			<Set Flavor="0" />
+			<!-- -3 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HAVE_TRAINING_FACILITY"  FlavorType="FLAVOR_HAPPINESS" />
+			<Set Flavor="0" />
+			<!-- -3 -->
+		</Update>
+		
+		
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_FOREST_CITY"  FlavorType="FLAVOR_PRODUCTION" />
+			<Set Flavor="5" />
+			<!-- 10 -->
+		</Update>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_FOREST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_HILL_CITY"  FlavorType="FLAVOR_PRODUCTION" />
+			<Set Flavor="5" />
+			<!-- 10 -->
+		</Update>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_HILL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>-1</Flavor>
+		</Row>
+		
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_JUNGLE_CITY"  FlavorType="FLAVOR_SCIENCE" />
+			<Set Flavor="2" />
+			<!-- 10 -->
+		</Update>
+		<Update>
+			<Where AICityStrategyType="AICITYSTRATEGY_COAST_CITY"  FlavorType="FLAVOR_GOLD" />
+			<Set Flavor="2" />
+			<!-- 10 -->
+		</Update>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_COAST_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+	</AICityStrategy_Flavors>
+	<AICityStrategy_Flavors>
+		<Delete AICityStrategyType="AICITYSTRATEGY_TINY_CITY" />
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>50</Flavor>
+			<!-- 10 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>-2</Flavor>
+			<!-- -2 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>-4</Flavor>
+			<!-- -4 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>-4</Flavor>
+			<!-- -4 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>-5</Flavor>
+			<!-- -10 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>-5</Flavor>
+			<!-- -100 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
+			<Flavor>-3</Flavor>
+			<!-- -3 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>-6</Flavor>
+			<!-- -6 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>-5</Flavor>
+			<!-- -5 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_TINY_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Delete AICityStrategyType="AICITYSTRATEGY_SMALL_CITY" />
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_SMALL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_SMALL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_SMALL_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<Flavor>-300</Flavor>
+			<!-- -300 -->
+		</Row>
+		<Delete AICityStrategyType="AICITYSTRATEGY_MEDIUM_CITY" />
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_MEDIUM_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>5</Flavor>
+			<!-- 10 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_MEDIUM_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>-100</Flavor>
+			<!-- -100 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_MEDIUM_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>-200</Flavor>
+			<!-- -200 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_MEDIUM_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<Flavor>-50</Flavor>
+			<!-- -50 -->
+		</Row>
+		<Delete AICityStrategyType="AICITYSTRATEGY_LARGE_CITY" />
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_LARGE_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>10</Flavor>
+			<!-- 15 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_LARGE_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>5</Flavor>
+			<!-- 0 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_LARGE_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>5</Flavor>
+			<!-- 25 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_LARGE_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>5</Flavor>
+			<!-- 25 -->
+		</Row>
+		<Row>
+			<AICityStrategyType>AICITYSTRATEGY_LARGE_CITY</AICityStrategyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>5</Flavor>
+			<!-- 15 -->
+		</Row>
+	</AICityStrategy_Flavors>
+</GameData>

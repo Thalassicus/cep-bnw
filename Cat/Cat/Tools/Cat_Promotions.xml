@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<UnitCombatInfos>
+		<Update>
+			<Where Type="UNITCOMBAT_MELEE" />
+			<Set PromotionCategory="Melee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_MOUNTED" />
+			<Set PromotionCategory="Melee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_GUN" />
+			<Set PromotionCategory="Melee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_ARMOR" />
+			<Set PromotionCategory="Melee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_HELICOPTER" />
+			<Set PromotionCategory="Melee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_MACHINE_GUN" />
+			<Set PromotionCategory="Machine" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_ARCHER" />
+			<Set PromotionCategory="Ranged" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_MOUNTED_ARCHER" />
+			<Set PromotionCategory="Ranged" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_SIEGE" />
+			<Set PromotionCategory="Ranged" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_RECON" />
+			<Set PromotionCategory="Vanguard" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_NAVALMELEE" />
+			<Set PromotionCategory="NavalMelee" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_NAVALRANGED" />
+			<Set PromotionCategory="NavalRanged" />
+		</Update>
+		<Update>
+			<Where Type="UNITCOMBAT_SUBMARINE" />
+			<Set PromotionCategory="Submarine" />
+		</Update>
+	</UnitCombatInfos>
+	<UnitPromotions_Equivilancy>
+		<Row>
+			<Melee>PROMOTION_SHOCK_1</Melee>
+			<Ranged>PROMOTION_ACCURACY_1</Ranged>
+			<Vanguard>PROMOTION_SCOUTING_1</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_SHOCK_2</Melee>
+			<Ranged>PROMOTION_ACCURACY_2</Ranged>
+			<Vanguard>PROMOTION_SCOUTING_2</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_SHOCK_3</Melee>
+			<Ranged>PROMOTION_ACCURACY_3</Ranged>
+			<Vanguard>PROMOTION_SCOUTING_3</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_DRILL_1</Melee>
+			<Ranged>PROMOTION_BARRAGE_1</Ranged>
+			<Vanguard>PROMOTION_SURVIVALISM_1</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_DRILL_2</Melee>
+			<Ranged>PROMOTION_BARRAGE_2</Ranged>
+			<Vanguard>PROMOTION_SURVIVALISM_2</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_DRILL_3</Melee>
+			<Ranged>PROMOTION_BARRAGE_3</Ranged>
+			<Vanguard>PROMOTION_SURVIVALISM_3</Vanguard>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_COVER_1</Melee>
+			<Ranged>PROMOTION_COVER_1</Ranged>
+		</Row>
+		<!--
+		<Row>
+			<Melee>PROMOTION_MARCH</Melee>
+			<Ranged>PROMOTION_MARCH_RANGED</Ranged>
+		</Row>
+		-->
+		<Row>
+			<Melee>PROMOTION_BLITZ</Melee>
+			<Ranged>PROMOTION_AIR_LOGISTICS</Ranged>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_CHARGE</Melee>
+			<Ranged>PROMOTION_RANGE</Ranged>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_AMBUSH_1</Melee>
+			<Ranged>PROMOTION_VOLLEY</Ranged>
+		</Row>
+		<Row>
+			<Melee>PROMOTION_MEDIC</Melee>
+			<Ranged>PROMOTION_MEDIC</Ranged>
+			<Vanguard>PROMOTION_MEDIC</Vanguard>
+		</Row>
+	</UnitPromotions_Equivilancy>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_DEFENSE_PENALTY"/>
+			<Set Help="TXT_KEY_PROMOTION_DEFENSE_PENALTY_50" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_MOUNTED_PENALTY"/>
+			<Set Help="TXT_KEY_PROMOTION_MOUNTED_PENALTY" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_HOVERING_UNIT" />
+			<Set Amphib="true" River="true" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_MORALE" />
+			<Set PortraitIndex="23" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_EMBARKATION" />
+			<Set PortraitIndex="59" />
+		</Update>
+		<Row>
+			<Type>PROMOTION_HILL_FIGHTER</Type>
+			<Description>TXT_KEY_PROMOTION_HILL_FIGHTER</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_HILL_FIGHTER</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_HILL_FIGHTER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_SHOCK_3</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL_3</PromotionPrereqOr2>
+			<PromotionPrereqOr3>PROMOTION_COVER_2</PromotionPrereqOr3>
+			<PromotionPrereqOr4>PROMOTION_AMBUSH_2</PromotionPrereqOr4>
+			<HillsDoubleMove>true</HillsDoubleMove>
+			<OrderPriority>3</OrderPriority>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>NEW_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+		</Row>
+		<Update>
+			<Where Type="PROMOTION_WOODSMAN" />
+			<Set PromotionPrereqOr1="PROMOTION_SHOCK_3"
+				 PromotionPrereqOr2="PROMOTION_DRILL_3"
+				 PromotionPrereqOr3="PROMOTION_COVER_2"
+				 PromotionPrereqOr4="PROMOTION_AMBUSH_2"
+				 PortraitIndex="1"
+				 IconAtlas="NEW_PROMOTION_ATLAS"
+				 PediaType="PEDIA_SHARED"
+				 />
+		</Update>
+		<Row>
+			<Type>PROMOTION_ARCTIC_POWER</Type>
+			<Description>TXT_KEY_PROMOTION_ARCTIC_POWER</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_ARCTIC_POWER</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_ARCTIC_POWER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_SHOCK_3</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL_3</PromotionPrereqOr2>
+			<PromotionPrereqOr3>PROMOTION_COVER_2</PromotionPrereqOr3>
+			<PromotionPrereqOr4>PROMOTION_AMBUSH_2</PromotionPrereqOr4>
+			<OrderPriority>3</OrderPriority>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>NEW_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+		</Row>
+		<Row>
+			<Type>PROMOTION_DESERT_POWER</Type>
+			<Description>TXT_KEY_PROMOTION_DESERT_POWER</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_DESERT_POWER</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_DESERT_POWER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_SHOCK_3</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL_3</PromotionPrereqOr2>
+			<PromotionPrereqOr3>PROMOTION_COVER_2</PromotionPrereqOr3>
+			<PromotionPrereqOr4>PROMOTION_AMBUSH_2</PromotionPrereqOr4>
+			<OrderPriority>3</OrderPriority>
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>NEW_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+		</Row>
+		<Row>
+			<Type>PROMOTION_HANDICAP</Type>
+			<Description>TXT_KEY_PROMOTION_HANDICAP</Description>
+			<Help>TXT_KEY_PROMOTION_HANDICAP_HELP</Help>
+			<PediaEntry>TXT_KEY_PROMOTION_HANDICAP</PediaEntry>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<VisibilityChange>2</VisibilityChange>
+			<CityAttack>25</CityAttack>
+			<ExperiencePercent>-25</ExperiencePercent>
+			<FreePillageMoves>true</FreePillageMoves>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+		</Row>
+		<Row>
+			<Type>PROMOTION_NEW_UNIT</Type>
+			<Description>TXT_KEY_PROMOTION_NEW_UNIT</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_NEW_UNIT</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_NEW_UNIT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>NONE</PediaType>
+		</Row>
+		<Row>
+			<Type>PROMOTION_FREE_UPGRADES</Type>
+			<Description>TXT_KEY_PROMOTION_FREE_UPGRADES</Description>
+			<Help>TXT_KEY_PROMOTION_FREE_UPGRADES_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<UpgradeDiscount>100</UpgradeDiscount>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>NULL</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_FREE_UPGRADES</PediaEntry>
+		</Row>
+		<Row>
+			<Type>PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE</Type>
+			<Description>TXT_KEY_PROMOTION_IGNORE_TERRAIN_COST</Description>
+			<Help>TXT_KEY_PROMOTION_IGNORE_TERRAIN_COST_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<IgnoreTerrainCost>true</IgnoreTerrainCost>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PEDIA_PROMOTION_IGNORE_TERRAIN_COST</PediaEntry>
+		</Row>
+		<Row>
+			<Type>PROMOTION_EMBARKED_DEFENSE</Type>
+			<Description>TXT_KEY_PROMOTION_EMBARKED_DEFENSE</Description>
+			<Help>TXT_KEY_PROMOTION_EMBARKED_DEFENSE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<EmbarkDefenseModifier>100</EmbarkDefenseModifier>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_EMBARKED_DEFENSE</PediaEntry>
+		</Row>
+		<Row>
+			<Type>PROMOTION_NATIONAL_PROTECTION</Type>
+			<Description>TXT_KEY_PROMOTION_NATIONAL_PROTECTION</Description>
+			<Help>TXT_KEY_PROMOTION_NATIONALISM_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<FriendlyLandsAttackModifier>15</FriendlyLandsAttackModifier>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_NATIONAL_PROTECTION</PediaEntry>
+		</Row>
+		<Row>
+			<Type>PROMOTION_MOUNTAINEER</Type>
+			<Description>TXT_KEY_PROMOTION_MOUNTAINEER</Description>
+			<Help>TXT_KEY_PROMOTION_MOUNTAINEER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CanMoveAllTerrain>true</CanMoveAllTerrain>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MOUNTAINEER</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<Unit_FreePromotions>
+		<Update>
+			<Where UnitType="UNIT_SCOUT" PromotionType="PROMOTION_IGNORE_TERRAIN_COST" />
+			<Set PromotionType="PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE" />
+		</Update>
+	</Unit_FreePromotions>
+	<UnitPromotions_Terrains>
+		<Row>
+			<PromotionType>PROMOTION_DESERT_POWER</PromotionType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARCTIC_POWER</PromotionType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARCTIC_POWER</PromotionType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+	</UnitPromotions_Terrains>
+	<UnitPromotions_Features>
+		<Row>
+			<PromotionType>PROMOTION_DESERT_POWER</PromotionType>
+			<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DESERT_POWER</PromotionType>
+			<FeatureType>FEATURE_OASIS</FeatureType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+	</UnitPromotions_Features>
+</GameData>

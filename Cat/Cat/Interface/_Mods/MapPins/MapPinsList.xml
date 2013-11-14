@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
+  <Instance Name="PinInstance">
+    <Box Anchor="L,C" Color="255.255.255.0" Offset="0,0" Size="355,24" ID="Root">
+      <Button Size="335,24" Offset="20,0" Anchor="L,C" ID="Button" ToolTip="TXT_KEY_MAPPINS_LIST_TT">
+        <Box Anchor="L,C" Color="255.255.255.0" Offset="0,0" Size="45,24">
+          <Label Anchor="C,C" ID="Type" Offset="0,0" ColorSet="Beige_Black_Alpha" Font="TwCenMT18" FontStyle="Shadow" />
+        </Box>
+        <Box Anchor="L,C" Color="255.255.255.0" Offset="45,0" Size="290,24">
+          <Label Anchor="L,C" ID="Text" Offset="0,0" TruncateWidth="290" ColorSet="Beige_Black_Alpha" Font="TwCenMT18" FontStyle="Shadow" />
+        </Box>
+        <ShowOnMouseOver>
+          <AlphaAnim Anchor="L,C" Size="355,24" Offset="-10,0" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+            <Grid Size="355,28" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+          </AlphaAnim>
+        </ShowOnMouseOver>
+      </Button>
+    </Box>
+  </Instance>
+
+
+  <Grid Size="390,369" Anchor="L,T" Offset="-7,4" Style="Grid9DetailFive140" ConsumeMouse="1" >
+    <Box Offset="18,44" Anchor="L,T" Size="355,24" Color="255,255,255,0" >
+      <Box Offset="20,0" Anchor="L,T" Size="335,24" Color="255,255,255,0" >
+        <Button Offset="15,0" Anchor="L,C" Size="45,24" ID="SortType" ToolTip="TXT_KEY_MAPPINS_LIST_SORT_TYPE">
+          <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MAPPINS_LIST_TYPE" ColorSet="Beige_Black_Alpha" Font="TwCenMT20" FontStyle="Shadow" />
+          <ShowOnMouseOver>
+            <AlphaAnim Anchor="C,C" Size="75,32" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+              <Grid Size="75,32" Padding="0,0" Style="Grid9FrameTurnsHL" />
+            </AlphaAnim>
+          </ShowOnMouseOver>
+        </Button>
+
+        <Button Offset="45,0" Anchor="L,C" Size="265,24" ID="SortText" ToolTip="TXT_KEY_MAPPINS_LIST_SORT_TEXT">
+          <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MAPPINS_LIST_TEXT" ColorSet="Beige_Black_Alpha" Font="TwCenMT20" FontStyle="Shadow" />
+          <ShowOnMouseOver>
+            <AlphaAnim Anchor="C,C" Size="275,32" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+              <Grid Size="275,32" Padding="0,0" Style="Grid9FrameTurnsHL" />
+            </AlphaAnim>
+          </ShowOnMouseOver>
+        </Button>
+      </Box>
+
+      <CheckBox Style="SquareCheck" Anchor="R,C" Offset="-4,0" IsChecked="0" ToolTip="TXT_KEY_MAPPINS_LIST_TOGGLE_TT" ID="TogglePins"/>
+
+      <Image Anchor="L,T" Offset="0,24" Texture="HorizontalTrim.dds" Size="355.5" />
+    </Box>
+
+    <ScrollPanel Anchor="L,T" Offset="18,72" Size="355,250" Vertical="1" ID="ScrollPanel" >
+      <Stack Anchor="L,T" Size="0,0" Offset="0,0" StackGrowth="Bottom" Padding="0" ID="PinStack" />
+
+      <ScrollBar Offset="0,0" Style="VertSlider" Anchor="L,T" Length="255" ID="ScrollBar" />
+      <UpButton Offset="-222,0" Style="ScrollBarUp" Anchor="L,T" ID="UpButton" />
+      <DownButton Offset="-222,261" Style="ScrollBarDown" Anchor="L,T" ID="DownButton" />
+    </ScrollPanel>
+
+    <TextButton Offset="29,27" Anchor="R.B" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" String="TXT_KEY_CLOSE" ToolTip="TXT_KEY_CLOSE" FontStyle="Shadow" MouseOverStyle="SoftShadow" ConsumeMouse="1" ID="CloseButton" Hidden="0" />
+  </Grid>
+</Context>
