@@ -272,6 +272,8 @@ function BuildingCreated(player, city, buildingID)
 	local query			= ""
 	local trait			= player:GetTraitInfo()
 	
+	log:Warn("%s built %s in %s", player:GetName(), buildingInfo.Type, city:GetName())
+	
 	--[[
 	local improvementType = buildingInfo.MountainImprovement
 	if improvementType then

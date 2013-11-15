@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # ModBuddy Solution File, Format Version 11.00
-Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Ceg", "Ceg\Ceg.civ5proj", "{AA8D3F9B-6E18-4483-A160-C2943E6E3FE0}"
+Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "CepBasic", "Cep\CepBasic.civ5proj", "{AA8D3F9B-6E18-4483-A160-C2943E6E3FE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

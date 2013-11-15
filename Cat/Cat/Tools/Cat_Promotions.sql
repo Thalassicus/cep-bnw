@@ -16,12 +16,6 @@ OR Type IN (
 	'PROMOTION_NO_DEFENSIVE_BONUSES'
 );
 
-UPDATE UnitPromotions SET IsVisibleAboveFlag = 1
-WHERE Class = 'PROMOTION_CLASS_PERSISTANT'
-OR Type IN (
-	'PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE'		
-);
-
 
 UPDATE UnitPromotions
 SET LostWithUpgrade = 1
@@ -58,22 +52,6 @@ WHERE UnitCombatType = 'UNITCOMBAT_SUBMARINE' AND PromotionType IN (
 	'PROMOTION_INDIRECT_FIRE',
 	'PROMOTION_SUPPLY'
 );
-
-UPDATE UnitPromotions
-SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
-WHERE Type REGEXP '.*\d';
-
-UPDATE UnitPromotions
-SET RankList = 'BUFFALO', RankNumber = 1
-WHERE Type = 'PROMOTION_BUFFALO_HORNS';
-
-UPDATE UnitPromotions
-SET RankList = 'BUFFALO', RankNumber = 2
-WHERE Type = 'PROMOTION_BUFFALO_CHEST';
-
-UPDATE UnitPromotions
-SET RankList = 'BUFFALO', RankNumber = 3
-WHERE Type = 'PROMOTION_BUFFALO_LOINS';
 
 /*
 
