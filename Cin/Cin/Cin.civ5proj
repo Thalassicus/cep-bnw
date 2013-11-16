@@ -67,6 +67,22 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\FlagPromotions\FP_Data.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\FlagPromotions\UnitFlagManager_addin.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="Link_Features.url">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -94,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface" />
+    <Folder Include="Interface\FlagPromotions" />
     <Folder Include="Interface\Sorting" />
     <Folder Include="Text" />
     <Folder Include="Text\EN_US" />

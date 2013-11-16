@@ -1,21 +1,18 @@
 -- UnitFlagManager_addin
--- Author: Erendir
+-- Authors: Thalassicus, Erendir, Xienwolf, tothink
 -- DateCreated: 1/23/2011 12:37:36 AM
 --------------------------------------------------------------
-local _VERBOSE = false
---local print
---if not _VERBOSE then print = function() end end
 
 include("ModTools.lua")
 local log = Events.LuaLogger:New()
-log:SetLevel("WARN")
+log:SetLevel("DEBUG")
 log:Info("Loading UnitFlagManager_addin.lua A")
 
 include("ModUserData")
-local ModID				= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
-local ModVersion		= ModVersion --Modding.GetActivatedModVersion(modID) or 1
-local ModUserData		= ModUserData --Modding.OpenUserData(modID, modVersion)
-local ignorePromotion	= assert(ignorePromotion, 'ModUserData.lua is not properly loaded')
+--local ModID				= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
+--local ModVersion		= ModVersion --Modding.GetActivatedModVersion(modID) or 1
+--local ModUserData		= ModUserData --Modding.OpenUserData(modID, modVersion)
+--local ignorePromotion	= assert(ignorePromotion, 'ModUserData.lua is not properly loaded')
 local OFFSET_NORMAL		= Vector2(0,-28)
 local OFFSET_STACK_1	= Vector2(0,0)
 local OFFSET_STACK_2	= Vector2(0,-12)
@@ -29,6 +26,25 @@ g_UnitFlagClass.UpdatePromotionsOffset = g_UnitFlagClass.UpdatePromotionsOffset 
 -- Shared locals
 local bHideAllUnitIcons = false
 local bDisplayAllFlagPromotions = true
+
+
+function AddButton(control, tooltip, texture)
+	local button = {}
+	texture = texture or "Promotions128.dds"
+	ContextPtr:BuildInstanceForControl("PromotionButtonInstance", button, control)
+	
+	if tooltip then
+		tooltip = tostring(tooltip)
+		if string.find(tooltip, "TXT_KEY") then
+			button.Button:LocalizeAndSetToolTip(tooltip)
+		else
+			button.Button:SetToolTipString(tooltip)
+		end
+	else
+		button.Button:SetToolTipString("")
+	end
+	return button
+end
 
 
 LuaEvents.ToggleHideUnitIcon.Add(
@@ -65,32 +81,24 @@ end
 
 log:Info("Loading UnitFlagManager_addin.lua B")
 
---------------------------------
--- FlagPromotions v.2 by Erendir
---------------------------------
-
 -- Options
-local iPromotionsStackMax = 9 -- how many promotions are allowed?
+local iPromotionsStackMax = 9
 
-
--- generate helper table, garbage collected just after few lines (hopefully)
 local unitPromotions, PromotionIDfromType = {}, {}
-local PromotionIDlist = {} -- make it global for use in Options window
-for P in GameInfo.UnitPromotions() do
-	unitPromotions[#unitPromotions+1] = {Type=P.Type, ID = P.ID}
-	PromotionIDfromType[P.Type]=P.ID -- map types to IDs
-	PromotionIDlist[P.ID]=true
+local PromotionIDlist = {}
+for promo in GameInfo.UnitPromotions() do
+	unitPromotions[#unitPromotions+1] = {Type=promo.Type, ID = promo.ID}
+	PromotionIDfromType[promo.Type]=promo.ID -- map types to IDs
+	PromotionIDlist[promo.ID]=true
 end
 
---- build list of promotions with levels:
 local isPromotionwithlevels = {}
-for _,P in pairs(unitPromotions) do
-	local ty = P.Type
-	local name, suffix = string.match(ty,'(.+)_([^_]+)$')
-	--@tothink: looks like the promotions with roman numbers are truly different, and not just stages of one
-	if not string.find(suffix,'%D') --[[or not string.find(suffix,'[^IVX]')]] then -- i.e. suffix is a number or small roman number
-		local id = P.ID
-		suffix = tonumber(suffix)-- or Rnumber_to_number[suffix]
+for _, promo in pairs(unitPromotions) do
+	local promoType = promo.Type
+	local name, suffix = string.match(promoType,'(.+)_([^_]+)$')
+	if not string.find(suffix,'%D') then
+		local id = promo.ID
+		suffix = tonumber(suffix)
 		isPromotionwithlevels[id]={Pclass=name, suffix=suffix} -- map id's to Promotion class and place in that class
 	
 		local t = isPromotionwithlevels[name] or {}
@@ -99,11 +107,7 @@ for _,P in pairs(unitPromotions) do
 	end
 end
 
---[[ Modified by Xienwolf 10/10/2010, heavily modified by Erendir 23.01.2011 ]]
---[[ Displays the Promotions a unit possesses below his Unit Icon ]]
 --[[ Currently a hardcoded 9 promotions are available, need to figure out a variable expression for the XML container to allow adjustable rows/columns ]]
---[[ Currently the promotions will not re-locate themselves along with the unit icon (when in a city for example), this would be an improvement worth adding ]]
---[[ If you hide the Unit Icon, it will hide the promotion displays as well. ]]
 
 log:Info("Loading UnitFlagManager_addin.lua C")
 
