@@ -12,7 +12,7 @@ This project is organized in four parts:
 - **Communitas Map** - This map creates several continents with realistic climate, and numerous offshore islands.  
 - **Communitas AI and Tools (Cat)** - Expands the AI and mod tools of Civ V: Brave New World. Both the expansion pack and interface changes below require the tools.  
 - **Communitas Enhanced Gameplay (Ceg)** - Improves the fun and strategic balance of BNW gameplay.  
-- **Communitas Interface (Cin)** - Improves the visual interface of the game. This will be cross-compatible between all expansions.  
+- **Communitas Interface (Cin)** - Improves the visual interface of the game.
 
 
 Contributing to the project is simple! See the collaboration guide for details:  
