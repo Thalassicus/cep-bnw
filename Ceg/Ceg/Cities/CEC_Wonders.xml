@@ -22,7 +22,6 @@
 	</Building_SpecialistYieldChanges>
 
 
-	<!--
 	<Buildings>
 		<Row>
 			<Type>BUILDING_BANAUE_RICE_TERRACES</Type>
@@ -664,5 +663,6 @@
 			<UnitType>UNIT_GREAT_ADMIRAL</UnitType>
 		</Row>
 	</UnitPromotions_CivilianUnitType>
+	<!--
 	-->
 </GameData>
