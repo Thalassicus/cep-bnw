@@ -59,9 +59,11 @@ WHERE UnitCombatType = 'UNITCOMBAT_SUBMARINE' AND PromotionType IN (
 	'PROMOTION_SUPPLY'
 );
 
+/*
 UPDATE UnitPromotions
 SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
 WHERE Type REGEXP '.*\d';
+*/
 
 UPDATE UnitPromotions
 SET RankList = 'BUFFALO', RankNumber = 1

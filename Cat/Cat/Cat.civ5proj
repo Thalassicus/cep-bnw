@@ -48,7 +48,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Tools/CAT_Misc.sql</FileName>
+        <FileName>Tools/Cat_Misc.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -713,14 +713,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Cat_Details.xls">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Cat_Language.xls">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
     <Content Include="AI\CEAI_Armies.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -738,10 +730,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="AI\CEAI_LeaderPersonalities.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Cat_LeadersAI.xls">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
