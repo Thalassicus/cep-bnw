@@ -684,6 +684,7 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	if specialistID == nil then
 		log:Fatal("City_GetSpecialistYield specialistID=nil")
 	end
+
 	if type(specialistID) ~= "number" and type(specialistID) ~= "string" then
 		log:Fatal("City_GetSpecialistYield specialistID=%s", specialistID)
 	end

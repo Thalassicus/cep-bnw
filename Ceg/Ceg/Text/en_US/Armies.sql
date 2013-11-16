@@ -199,7 +199,7 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_PUPPET', 'Mercy', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_PUPPET_HELP', 'Avoid casualties or destruction. Lingering dissent reduces your unhappiness by {1_num}[ICON_HAPPINESS_4].', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_PILLAGE', 'Force', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_PILLAGE_HELP', 'Kill all dissenters, immediately losing half the population. Your happiness drops to by {1_num}[ICON_HAPPINESS_4].', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_PILLAGE_HELP', 'Kill all dissenters, immediately losing half the population. Your happiness drops by {1_num}[ICON_HAPPINESS_4].', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_RAZE', 'Wrath', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-08'), 'TXT_KEY_CAPTURE_RAZE_HELP', 'Immediately kill half the population, then burn the city to the ground. Your happiness temporarily drops by {1_num}[ICON_HAPPINESS_4], then slowly recovers as you raze the city.', '', '');
 
