@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 3/9/2012 4:03:32 PM -->
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_LIBERTY" />
@@ -90,17 +92,7 @@
 	</Policy_FreeBuildingClass>
 	<Policy_CityYieldChanges>
 		<Delete PolicyType="POLICY_REPUBLIC" />
-		<!--
-		<Update>
-			<Where PolicyType="POLICY_REPUBLIC" YieldType="YIELD_PRODUCTION" />
-			<Set Yield="2" />
-		</Update>
-		<Row>
-			<PolicyType>POLICY_MERITOCRACY</PolicyType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
+		
 	</Policy_CityYieldChanges>
 	<Policy_UnitClassProductionModifiers>
 		<Row>
@@ -119,15 +111,9 @@
 			<NumCities>-1</NumCities>
 		</Row>
 	</Policy_FreeBuildingFlavor>
-	<!--
 	<Policy_SpecialistExtraYields>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
+		
 	</Policy_SpecialistExtraYields>
-	-->
 	<Policy_CityWithSpecialistYieldChanges>
 		<Row>
 			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
@@ -144,4 +130,5 @@
 			<Count>2</Count>
 		</Row>
 	</Policy_FreeUnitClasses>
+	-->
 </GameData>

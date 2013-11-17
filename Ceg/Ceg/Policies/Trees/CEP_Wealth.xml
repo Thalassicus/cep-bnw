@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_COMMERCE" />
@@ -77,14 +79,7 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<!--
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		-->
+		
 	</Policy_ImprovementYieldChanges>
 	<Policy_CapitalYieldModifiers>
 		<Delete PolicyType="POLICY_COMMERCE" />
@@ -127,14 +122,7 @@
 		</Row>
 	</Policy_PlayerYieldModifiers>
 	<Policy_SpecialistYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_MERCANTILISM</PolicyType>
-			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		-->
+	
 	</Policy_SpecialistYieldChanges>
 	<Policy_SpecialistExtraYields>
 		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
@@ -192,4 +180,5 @@
 			<Count>1</Count>
 		</Row>
 	</Policy_FreeUnitClasses>
+	-->
 </GameData>

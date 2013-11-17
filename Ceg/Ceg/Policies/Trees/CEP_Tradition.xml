@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_TRADITION" />
@@ -74,13 +76,7 @@
 	</Policy_BuildingClassCultureChanges>
 	<Policy_CityYieldChanges>
 		<Delete PolicyType="POLICY_TRADITION_FINISHER" />
-		<!--
-		<Row>
-			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
+		
 	</Policy_CityYieldChanges>
 	<Policy_CapitalYieldChanges>
 		<Delete PolicyType="POLICY_LANDED_ELITE" />
@@ -97,27 +93,10 @@
 		
 	</Policy_BuildingClassYieldChanges>
 	<Policy_YieldModifiers>
-		<!--
-		<Row>
-			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>15</Yield>
-		</Row>
-		-->
+		
 	</Policy_YieldModifiers>
 	<Policy_BuildingClassHappiness>
-		<!--
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-		-->
+		
 	</Policy_BuildingClassHappiness>
 	<Policy_FreeBuildingFlavor>
 		<Row>
@@ -162,13 +141,7 @@
 		
 	</Policy_YieldModifiers>
 	<Policy_ImprovementYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
+		
 	</Policy_ImprovementYieldChanges>
+	-->
 </GameData>

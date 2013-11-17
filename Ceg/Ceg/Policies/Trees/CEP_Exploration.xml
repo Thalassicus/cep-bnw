@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_ORDER" />
@@ -240,12 +242,7 @@
 		</Row>
 	</Policy_FreeUnitClasses>	
 	<Policy_FreeBuildingFlavor>
-		<!--
-		<Row>
-			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<NumCities>-1</NumCities>
-		</Row>
-		-->
+	
 	</Policy_FreeBuildingFlavor>
+	-->
 </GameData>

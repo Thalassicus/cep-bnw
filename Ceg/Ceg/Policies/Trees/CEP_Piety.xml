@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_PIETY" />
@@ -101,13 +103,7 @@
 		</Row>
 	</Policies>
 	<Policy_FreeUnitClasses>
-		<!--
-		<Row>
-			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-			<Count>1</Count>
-		</Row>
-		-->
+	
 	</Policy_FreeUnitClasses>
 	<Policy_CityYieldChanges>
 		<Row>
@@ -156,4 +152,5 @@
 	<Policy_ImprovementYieldChanges>
 		<Delete PolicyType="POLICY_PIETY_FINISHER" />
 	</Policy_ImprovementYieldChanges>
+	-->
 </GameData>

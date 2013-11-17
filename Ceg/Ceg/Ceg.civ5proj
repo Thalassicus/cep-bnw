@@ -338,7 +338,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Policies/Trees/CEP_Freedom.xml</FileName>
+        <FileName>Policies/Trees/CEP_Aesthetics.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -358,7 +358,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Policies/Trees/CEP_Order.xml</FileName>
+        <FileName>Policies/Trees/CEP_Exploration.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1754,6 +1754,46 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Leaders\CEL__J_Z.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Aesthetics.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Honor.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Knowledge_.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Liberty.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Exploration.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Patronage_.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Piety.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Power.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Tradition.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\Trees\CEP_Wealth.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_HONOR" />
@@ -77,20 +79,6 @@
 				 GridY="1"
 				 />
 		</Update>
-		<!--
-		<Update>
-			<Where Type="POLICY_MILITARY_CASTE" />
-			<Set GridX="3"
-				 GridY="3"
-				 HappinessPerGarrisonedUnit="0"
-				 GoldFromKills="0.25"
-				 CityCaptureCulture="50"
-				 CityCaptureCulturePerPop="10"
-				 CityCaptureCulturePerEra="50"
-				 PortraitIndex="21"
-				 />
-		</Update>
-		-->
 		<Update>
 			<Where Type="POLICY_HONOR_FINISHER" />
 			<Set GoldFromKills="0"
@@ -155,4 +143,5 @@
 			<YieldChange>2</YieldChange>
 		</Row>
 	</Policy_BuildingClassYieldChanges>
+	-->
 </GameData>

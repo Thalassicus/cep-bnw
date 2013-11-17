@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by ModBuddy on 3/9/2012 4:05:02 PM -->
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_FREEDOM" />
@@ -88,10 +89,6 @@
 				 BorderObstacle="0"
 				 />
 		</Update>
-		<!--
-				 ESPIONAGE_INFLUENCE_GAINED_FOR_RIGGED_ELECTION="40"
-				 ESPIONAGE_COUP_OTHER_PLAYERS_INFLUENCE_DROP="40"
-		-->
 	</Policies>
 	<Policy_InstantYield>
 		<Row>
@@ -231,12 +228,7 @@
 		</Row>
 	</UnitPromotions>
 	<Policy_FreePromotions>
-		<!--
-		<Row>
-			<PolicyType>POLICY_FREEDOM_FINISHER</PolicyType>
-			<PromotionType>PROMOTION_FREEDOM</PromotionType>
-		</Row>
-		-->
+		
 	</Policy_FreePromotions>
 	<UnitPromotions_UnitCombats>
 		<Row>
@@ -288,4 +280,5 @@
 			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
 		</Row>
 	</UnitPromotions_UnitCombats>
+	-->
 </GameData>

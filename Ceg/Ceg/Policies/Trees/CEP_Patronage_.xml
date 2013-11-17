@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 3/9/2012 4:04:09 PM -->
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_PATRONAGE" />
@@ -106,4 +108,5 @@
 			<Yield>3</Yield>
 		</Row>
 	</Policy_MinorCivBonuses>
+	-->
 </GameData>

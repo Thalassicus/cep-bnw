@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_RATIONALISM" />
@@ -43,29 +45,13 @@
 		</Update>
 	</Policies>
 	<Policy_SpecialistYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_SECULARISM</PolicyType>
-			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
+		
 	</Policy_SpecialistYieldChanges>
 	<Policy_SpecialistExtraYields>
-		<!--
-		<Delete PolicyType="POLICY_SECULARISM" />
-		-->
+		
 	</Policy_SpecialistExtraYields>
 	<Policy_ImprovementYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_SECULARISM</PolicyType>
-			<ImprovementType>IMPROVEMENT_ACADEMY</ImprovementType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>5</Yield>
-		</Row>
-		-->
+		
 	</Policy_ImprovementYieldChanges>
 	<Policy_FreeUnitClasses>
 		<Row>
@@ -108,32 +94,7 @@
 		</Row>
 	</Policy_BuildingClassYieldModifiers>
 	<Policy_BuildingClassProductionModifiers>
-		<!--
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_MENTORS_HALL</BuildingClassType>
-			<ProductionModifier>50</ProductionModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
-			<ProductionModifier>50</ProductionModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
-			<ProductionModifier>50</ProductionModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
-			<ProductionModifier>50</ProductionModifier>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
-			<ProductionModifier>50</ProductionModifier>
-		</Row>
-		-->
+		
 	</Policy_BuildingClassProductionModifiers>
+	-->
 </GameData>
