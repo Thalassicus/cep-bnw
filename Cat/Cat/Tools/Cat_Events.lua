@@ -792,23 +792,16 @@ function DoPolicyEffects(player, policyID)
 	DoPolicyFreeBuildingClasses(player, policyID)
 	DoPolicyFreeBuildingFlavors(player, policyID)
 	DoPolicyInstantYield(player, policyID)
+	DoPolicyBuildingUnlocks(player, policyID)
 end
 LuaEvents.NewPolicy.Add( DoPolicyEffects )
 
-function DoPolicyBuildingUnlocks(player, policyID) --rough code, there's definitely a better way to do this
-	if(GameInfo.Policies[policyID].Type == "POLICY_LEGALISM") then
-		player:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_LEGALISM"].ID, true, false)
+function DoPolicyBuildingUnlocks(player, policyID)
+	local policyType = GameInfo.Policies[policyID].Type
+	for building in GameInfo.Buildings{PolicyType = policyType} do
+		player:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes[policyType].ID, true, false)
 	end
-	if(GameInfo.Policies[policyID].Type == "POLICY_LANDED_ELITE") then
-		player:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_LANDED_ELITE"].ID, true, false)
-	end
-	
-	--used for human player only in SocialPolicyPopup.lua:OnYes()
-	--if(m_gAdoptingPolicy and GameInfo.Policies[m_gPolicyID].Type == "POLICY_LEGALISM") then
-	--	Network.SendUpdatePolicies(GameInfo.PolicyBranchTypes["POLICY_BRANCH_LEGALISM"].ID, false, true);
-	--end
 end
-LuaEvents.NewPolicy.Add( DoPolicyBuildingUnlocks )
 
 function CheckPerTurnPolicyEffects(player)
 	DoPolicyFreeBuildingClasses(player)

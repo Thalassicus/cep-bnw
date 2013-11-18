@@ -61,13 +61,13 @@
 	
 	<PolicyBranchTypes>
 		<Row>
-			<Type>POLICY_BRANCH_LEGALISM</Type>
+			<Type>POLICY_LEGALISM</Type>
 			<Description>TXT_KEY_POLICY_LEGALISM</Description>
 			<Help>TXT_KEY_POLICY_LEGALISM_HELP</Help>
 			<Title>TXT_KEY_TRADITION_TITLE</Title>
 		</Row>
 		<Row>
-			<Type>POLICY_BRANCH_LANDED_ELITE</Type>
+			<Type>POLICY_LANDED_ELITE</Type>
 			<Description>TXT_KEY_POLICY_LANDED_ELITE</Description>
 			<Help>TXT_KEY_POLICY_LANDED_ELITE_HELP</Help>
 			<Title>TXT_KEY_TRADITION_TITLE</Title>
@@ -82,14 +82,14 @@
 		</Update>
 		<Update>
 			<Where Type="BUILDING_ORACLE" />
-			<Set PolicyBranchType="POLICY_BRANCH_LEGALISM"
+			<Set PolicyType="POLICY_LEGALISM"
 				 />
 		</Update>
-		<!--<Update>
+		<Update>
 			<Where Type="BUILDING_BANAUE_RICE_TERRACES" />
-			<Set PolicyBranchType="POLICY_BRANCH_LANDED_ELITE"
+			<Set PolicyType="POLICY_LANDED_ELITE"
 				 />
-		</Update>-->
+		</Update>
 	</Buildings>
 
 	<!-- GEM Policies
