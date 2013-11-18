@@ -37,6 +37,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_BROADCAST_TOWER'	
 );
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -53,6 +54,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_ARSENAL'			,
 	'BUILDINGCLASS_MILITARY_BASE'	
 );
+*/
 
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
@@ -198,6 +200,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_BROADCAST_TOWER'	
 );
 
+/*
 INSERT INTO Policy_BuildingClassHappiness
 	(PolicyType, BuildingClassType, Happiness)
 SELECT DISTINCT
@@ -214,7 +217,9 @@ FROM Buildings WHERE BuildingClass IN (
 ) AND NOT BuildingClass IN (
 	SELECT BuildingClass FROM Buildings WHERE IsVisible = 0
 );
+*/
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges
 	(PolicyType, BuildingClassType, YieldType, YieldChange)
 SELECT DISTINCT
@@ -231,6 +236,6 @@ FROM Buildings WHERE BuildingClass IN (
 ) AND NOT BuildingClass IN (
 	SELECT BuildingClass FROM Buildings WHERE IsVisible = 0
 );
-
+*/
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEP_P_End.sql';

@@ -1,7 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_TRADITION" /> 
+			<Set PlotCultureExponentModifier="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ARISTOCRACY" />
+			<Set GridX="4"
+				 GridY="2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_OLIGARCHY" />
+			<Set GridX="2"
+				 GridY="2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_LEGALISM" />
+			<Set GridX="1"
+				 GridY="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_LANDED_ELITE" />
+			<Set CapitalGrowthMod="0"
+				 CityGrowthMod="15"
+				 GridX="5"
+				 GridY="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MONARCHY" />
+			<Set GridX="3"
+				 GridY="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TRADITION_FINISHER" />
+			<Set CityGrowthMod="0"
+				 NumCitiesFreeFoodBuilding="0"
+				 PlotCultureExponentModifier="-25"
+				 />
+		</Update>
+	</Policies>
 	
-	<!--
+	<Policy_CapitalYieldChanges>
+		<Delete PolicyType="POLICY_LANDED_ELITE" />
+	</Policy_CapitalYieldChanges>
+	
+	<Policy_CityYieldChanges>
+		<Row>
+			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Policy_CityYieldChanges>
+	
+	<PolicyBranchTypes>
+		<Row>
+			<Type>POLICY_BRANCH_LEGALISM</Type>
+			<Description>TXT_KEY_POLICY_LEGALISM</Description>
+			<Help>TXT_KEY_POLICY_LEGALISM_HELP</Help>
+			<Title>TXT_KEY_TRADITION_TITLE</Title>
+		</Row>
+		<Row>
+			<Type>POLICY_BRANCH_LANDED_ELITE</Type>
+			<Description>TXT_KEY_POLICY_LANDED_ELITE</Description>
+			<Help>TXT_KEY_POLICY_LANDED_ELITE_HELP</Help>
+			<Title>TXT_KEY_TRADITION_TITLE</Title>
+		</Row>
+	</PolicyBranchTypes>
+	
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_HANGING_GARDEN" />
+			<Set PolicyBranchType="NULL"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_ORACLE" />
+			<Set PolicyBranchType="POLICY_BRANCH_LEGALISM"
+				 />
+		</Update>
+		<!--<Update>
+			<Where Type="BUILDING_BANAUE_RICE_TERRACES" />
+			<Set PolicyBranchType="POLICY_BRANCH_LANDED_ELITE"
+				 />
+		</Update>-->
+	</Buildings>
+
+	<!-- GEM Policies
 	<Policies>
 		<Update>
 			<Where Type="POLICY_TRADITION" />
