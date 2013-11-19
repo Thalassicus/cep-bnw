@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 
 include("MT_LuaLogger.lua")
+include("FLuaVector.lua")
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")
 
