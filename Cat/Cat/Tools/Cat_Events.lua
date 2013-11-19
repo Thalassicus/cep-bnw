@@ -797,9 +797,9 @@ end
 LuaEvents.NewPolicy.Add( DoPolicyEffects )
 
 function DoPolicyBuildingUnlocks(player, policyID)
-	local policyType = GameInfo.Policies[policyID].Type
-	for building in GameInfo.Buildings{PolicyType = policyType} do
-		player:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes[policyType].ID, true, false)
+	local policyBranch = GameInfo.PolicyBranchTypes[GameInfo.Policies[policyID].Type]
+	if policyBranch then
+		player:SetPolicyBranchUnlocked(policyBranch.ID, true, false)
 	end
 end
 

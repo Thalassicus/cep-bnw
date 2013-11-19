@@ -82,12 +82,12 @@
 		</Update>
 		<Update>
 			<Where Type="BUILDING_ORACLE" />
-			<Set PolicyType="POLICY_LEGALISM"
+			<Set PolicyBranchType="POLICY_LEGALISM"
 				 />
 		</Update>
 		<Update>
 			<Where Type="BUILDING_BANAUE_RICE_TERRACES" />
-			<Set PolicyType="POLICY_LANDED_ELITE"
+			<Set PolicyBranchType="POLICY_LANDED_ELITE"
 				 />
 		</Update>
 	</Buildings>
