@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_RATIONALISM" />
+			<Set HappinessToScience="0"	
+				 OneShot="1"
+				 IncludesOneShotFreeUnits="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SCIENTIFIC_REVOLUTION" />
+			<Set GridX="1" GridY="1"
+				 MedianTechPercentChange="0"
+				 HappinessToScience="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_HUMANISM" />
+			<Set GridX="3" GridY="1"  />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SOVEREIGNTY" />
+			<Set GridX="5" GridY="1"
+				 HappinessToScience="15"
+				 OneShot="0"
+				 IncludesOneShotFreeUnits="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FREE_THOUGHT" />
+			<Set GridX="2" GridY="2" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SECULARISM" />
+			<Set GridX="4" GridY="2"  />
+		</Update>
+		<Update>
+			<Where Type="POLICY_RATIONALISM_FINISHER" />
+			<Set OneShot="true"
+				 NumFreeTechs="2"
+				 />
+		</Update>
+	</Policies>
+	<Policy_SpecialistYieldChanges>
+		<!--
+		<Row>
+			<PolicyType>POLICY_SECULARISM</PolicyType>
+			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		-->
+	</Policy_SpecialistYieldChanges>
+	<Policy_SpecialistExtraYields>
+		<!--
+		<Delete PolicyType="POLICY_SECULARISM" />
+		-->
+	</Policy_SpecialistExtraYields>
+	<Policy_ImprovementYieldChanges>
+		<!--
+		<Row>
+			<PolicyType>POLICY_SECULARISM</PolicyType>
+			<ImprovementType>IMPROVEMENT_ACADEMY</ImprovementType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		-->
+	</Policy_ImprovementYieldChanges>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_RATIONALISM</PolicyType>
+			<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_FreeBuildingFlavor>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<NumCities>4</NumCities>
+		</Row>
+	</Policy_FreeBuildingFlavor>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_HUMANISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_BuildingClassYieldChanges>
+		<Delete PolicyType="POLICY_RATIONALISM_FINISHER" />
+		<Delete PolicyType="POLICY_SOVEREIGNTY" />
+		<Row>
+			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassYieldModifiers>
+		<Delete BuildingClassType="BUILDINGCLASS_UNIVERSITY" />
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>15</YieldMod>
+		</Row>
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_BuildingClassProductionModifiers>
+		<!--
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MENTORS_HALL</BuildingClassType>
+			<ProductionModifier>50</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+			<ProductionModifier>50</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+			<ProductionModifier>50</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
+			<ProductionModifier>50</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
+			<ProductionModifier>50</ProductionModifier>
+		</Row>
+		-->
+	</Policy_BuildingClassProductionModifiers>
+</GameData>
