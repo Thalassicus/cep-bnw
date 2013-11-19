@@ -1765,7 +1765,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Policies\Trees\CEP_Knowledge_.xml">
+    <Content Include="Policies\Trees\CEP_Knowledge.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -1777,7 +1777,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Policies\Trees\CEP_Patronage_.xml">
+    <Content Include="Policies\Trees\CEP_Patronage.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
