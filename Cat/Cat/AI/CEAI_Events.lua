@@ -28,13 +28,13 @@ The AI faces two questions:
 	2)  How much gold will I spend?
 		The budget is (goldStored - goldMin), stopping when under goldLow
 	
-An AI with +20g per turn, 400g stored and a 500g threshold decides:		
+An AI with +20g per turn, 400 goldStored and a 500 goldHigh threshold decides:
 	1)  I will not spend gold.
 	
-An AI with -10g per turn, 800g stored and a 500g threshold decides:		
+An AI with -10g per turn, 800 goldStored and a 500 goldHigh threshold decides:
 	1)  I will not spend gold.
 	
-An AI with +20g per turn, 800g stored and a 500g threshold decides:		
+An AI with +20g per turn, 800 goldStored and a 500 goldHigh threshold decides:
 	1)  I will spend gold.
 	2)  My budget is 700 gold (800-100).
 	3)  I will continue purchasing things until I spend 700 gold,
@@ -44,26 +44,26 @@ An AI with +20g per turn, 800g stored and a 500g threshold decides:
 --]]
 
 local warUnitFlavorsEarly = {
-	{FlavorType="FLAVOR_MOBILE",			Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID}}		,
-	{FlavorType="FLAVOR_MELEE",				Num=3, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID}}		,
-	{FlavorType="FLAVOR_SIEGE",				Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_SIEGE.ID}}			,
-	{FlavorType="FLAVOR_RANGED",			Num=2, Promos={GameInfo.UnitPromotions.PROMOTION_BARRAGE_1.ID}}		,
-	{FlavorType="FLAVOR_NAVAL_BOMBARDMENT",	Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_1.ID}}	,
-	{FlavorType="FLAVOR_ANTI_MOBILE",		Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID}}		
+	{FlavorType="FLAVOR_MOBILE",			Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID}}		,
+	{FlavorType="FLAVOR_MELEE",				Mult=3, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID}}		,
+	{FlavorType="FLAVOR_SIEGE",				Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SIEGE.ID}}			,
+	{FlavorType="FLAVOR_RANGED",			Mult=2, Promos={GameInfo.UnitPromotions.PROMOTION_BARRAGE_1.ID}}		,
+	{FlavorType="FLAVOR_NAVAL_BOMBARDMENT",	Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_1.ID}}	,
+	{FlavorType="FLAVOR_ANTI_MOBILE",		Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID}}
 }
 
 local warUnitFlavorsLate = {
-	{FlavorType="FLAVOR_MOBILE",			Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_SHOCK_2.ID}}			,
-	{FlavorType="FLAVOR_AIR",				Num=1, Promos={}},
-	{FlavorType="FLAVOR_MELEE",				Num=3, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID,		GameInfo.UnitPromotions.PROMOTION_DRILL_2.ID}}			,
-	{FlavorType="FLAVOR_SIEGE",				Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_ACCURACY_1.ID,		GameInfo.UnitPromotions.PROMOTION_SIEGE.ID}}			,
-	{FlavorType="FLAVOR_RANGED",			Num=2, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID,		GameInfo.UnitPromotions.PROMOTION_DRILL_2.ID}}			,
-	{FlavorType="FLAVOR_NAVAL_BOMBARDMENT",	Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_1.ID,	GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_2.ID}}	,
-	{FlavorType="FLAVOR_ANTI_MOBILE",		Num=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_AMBUSH_VANGUARD_1.ID}},
-	{FlavorType="FLAVOR_ANTIAIR",			Num=1, Promos={}}			
+	{FlavorType="FLAVOR_MOBILE",			Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_SHOCK_2.ID}}			,
+	{FlavorType="FLAVOR_AIR",				Mult=1, Promos={}},
+	{FlavorType="FLAVOR_MELEE",				Mult=3, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID,		GameInfo.UnitPromotions.PROMOTION_DRILL_2.ID}}			,
+	{FlavorType="FLAVOR_SIEGE",				Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_ACCURACY_1.ID,		GameInfo.UnitPromotions.PROMOTION_SIEGE.ID}}			,
+	{FlavorType="FLAVOR_RANGED",			Mult=2, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID,		GameInfo.UnitPromotions.PROMOTION_DRILL_2.ID}}			,
+	{FlavorType="FLAVOR_NAVAL_BOMBARDMENT",	Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_1.ID,	GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_2.ID}}	,
+	{FlavorType="FLAVOR_ANTI_MOBILE",		Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_AMBUSH_VANGUARD_1.ID}},
+	{FlavorType="FLAVOR_ANTIAIR",			Mult=1, Promos={}}			
 }
 
-function SpendAIGold(player)		
+function SpendAIGold(player)
 	if (player:IsHuman()
 			or not player:GetCapitalCity() 
 			or player:IsBudgetGone(0)
@@ -970,7 +970,7 @@ function AIPerTurnBonuses(player)
 	--]]
 end
 
-LuaEvents.ActivePlayerTurnEnd_Player.Add(AIPerTurnBonuses)
+--LuaEvents.ActivePlayerTurnEnd_Player.Add(AIPerTurnBonuses)
 --]=]
 
 --]==]
@@ -1253,7 +1253,7 @@ function ClearCamps()
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
+LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
 
 function ClearCampsCity(city, player)
 	if player:IsHuman() or player:IsMinorCiv() then

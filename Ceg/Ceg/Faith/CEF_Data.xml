@@ -274,10 +274,12 @@
 		</Row>
 	</Belief_YieldChangeWorldWonder>
 	<Belief_TerrainYieldChanges>
-		<Update>
-			<Where BeliefType="BELIEF_DANCE_AURORA" />
-			<Set Yield="2" YieldType="YIELD_FAITH" />
-		</Update>
+		<Row>
+			<BeliefType>BELIEF_DANCE_AURORA</BeliefType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
 	</Belief_TerrainYieldChanges>
 	<Belief_FeatureYieldChanges>
 		<!--

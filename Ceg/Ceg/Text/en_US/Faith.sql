@@ -4,7 +4,7 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_CHORAL_MUSIC', '+6 [ICON_CULTURE] Culture from Temples in cities with 5+ followers', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_CHURCH_PROPERTY', '+3 [ICON_GOLD] Gold for each city following this religion', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_GOD_OF_ABUNDANCE', '+2 [ICON_PRODUCTION] Production from open Tundra', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DANCE_AURORA', '+2 [ICON_PEACE] Faith from open Tundra', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DANCE_AURORA', '+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture from open Tundra', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-07-11'), 'TXT_KEY_BELIEF_TRANQUIL_REFUGE_SHORT', 'Tranquil Refuge', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-07-11'), 'TXT_KEY_BELIEF_TRANQUIL_REFUGE', '+2 [ICON_FOOD][ICON_CULTURE] Food and Culture from Oasis', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DEFENDER_FAITH', '+40% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion', '', '');

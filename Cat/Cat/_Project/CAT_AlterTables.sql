@@ -281,7 +281,6 @@ CREATE TABLE IF NOT EXISTS
 	ProductionModifier	integer
 );
 	
-	
 CREATE TABLE IF NOT EXISTS
 	UnitPromotions_Equivilancy (
 	Melee			text,
@@ -488,7 +487,10 @@ ALTER TABLE UnitPromotions	ADD IsMove								boolean;
 ALTER TABLE UnitPromotions	ADD IsOther								boolean;
 ALTER TABLE UnitPromotions	ADD SimpleHelpText						boolean;
 ALTER TABLE UnitPromotions	ADD FullMovesAfterAttack				boolean;
+ALTER TABLE UnitPromotions	ADD IsVisibleAboveFlag					boolean;
 ALTER TABLE UnitPromotions	ADD GoldenPoints						integer default 0;
+ALTER TABLE UnitPromotions	ADD RankList							text;
+ALTER TABLE UnitPromotions	ADD RankNumber							integer default 0;
 ALTER TABLE UnitPromotions	ADD Class								text default 'PROMOTION_CLASS_PERSISTANT';
 
 ALTER TABLE Worlds			ADD AISearchRange						integer default 0;

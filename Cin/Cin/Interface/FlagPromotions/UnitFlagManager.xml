@@ -80,6 +80,11 @@
 		</Button>
 		-->
 	</Instance>
+	<Instance Name="PromotionButtonInstance" >
+		<Button ID="Button" Anchor="L,C" Size="16,16" >
+			<Label ID="Label" Anchor="C,C" />
+		</Button>
+	</Instance>
 	<Instance Name="NewUnitFlag">
 		<WorldAnchor ID="Anchor">
 			<!-- Status controls:
@@ -135,21 +140,26 @@
 						<Image Anchor="C,C" Size="32,32" Offset="1,-1" Texture="Assets/UI/Art/Icons/Units/UnitFlagAtlasWhite.dds" Color="240,199,0,255" ID="UnitIcon" ToolTip=""/>
 					</Image>
 				</AlphaAnim>
+				<!-- Unit Promotions -->
+				<Stack ID="PromotionStackV" StackGrowth="Bottom" Anchor="C,B" Padding="-2" Offset="0,-26">
+					<Stack ID="PromotionStackH" StackGrowth="Right" Anchor="C,C" Padding="-2"/>
+				</Stack>
+				<!--
+				<Stack Offset="0,-26" StackGrowth="Right" Anchor="C,C" ID="EarnedPromotionStack1" Padding="-2">
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion1" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion2" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion3" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion4" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion5" Hidden="1"/>
+				</Stack>
+				<Stack Offset="0,-40" StackGrowth="Right" Anchor="C,C" ID="EarnedPromotionStack2" Padding="-2">
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion6" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion7" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion8" Hidden="1"/>
+					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion9" Hidden="1"/>
+				</Stack>
+				-->
 			</Image>
-			<!-- Unit Promotions -->
-			<Stack Offset="0,-26" StackGrowth="Right" Anchor="C,C" ID="EarnedPromotionStack1" Padding="-2">
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion1" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion2" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion3" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion4" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion5" Hidden="1"/>
-			</Stack>
-			<Stack Offset="0,-40" StackGrowth="Right" Anchor="C,C" ID="EarnedPromotionStack2" Padding="-2">
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion6" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion7" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion8" Hidden="1"/>
-				<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion9" Hidden="1"/>
-			</Stack>
 		</WorldAnchor>
 	</Instance>
 </Context>
