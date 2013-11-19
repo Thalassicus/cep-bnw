@@ -624,7 +624,15 @@
         <FileName>Tools/Cat_Events.lua</FileName>
       </Content>
     </ModContent>
-    <ModReferences />
+    <ModReferences>
+      <Association>
+        <Type>Dlc</Type>
+        <Name>Enhanced UI by BC1</Name>
+        <Id>570f793e-fc33-417f-ae19-7cecccdd5f85</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModReferences>
     <SupportsHotSeat>true</SupportsHotSeat>
     <ModProperties>
       <Property>

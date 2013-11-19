@@ -3,10 +3,12 @@
 	<!--	America
 	-->
 	<Leader_Traits>
+		<!--
 		<Update>
 			<Where LeaderType="LEADER_WASHINGTON" />
 			<Set TraitType="TRAIT_AMERICAN_DREAM" />
 		</Update>
+		-->
 	</Leader_Traits>
 	<Traits>
 		<Row>
