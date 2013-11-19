@@ -145,4 +145,9 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-18'), 'TXT_KEY_BUILDING_BASIN_IRRIGATION_TEXT', 'Ancient Egyptians practiced Basin irrigation using the flooding of the Nile to inundate land plots which had been surrounded by dykes. The flood water was held until the fertile sediment had settled before the surplus was returned to the watercourse.[NEWLINE]There is evidence of the ancient Egyptian pharaoh Amenemhet III in the twelfth dynasty (about 1800 BCE) using the natural lake of the Faiyum Oasis as a reservoir to store surpluses of water for use during the dry seasons, the lake swelled annually from flooding of the Nile.', '', '');
 
 
+/* Policies - needs to be deleted when policies are reactivated*/
+/* Tradition */
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-10-06'), 'TXT_KEY_POLICY_BRANCH_TRADITION_HELP', '[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the Hanging Gardens.[NEWLINE][NEWLINE]Adopting all Policies in the Tradition tree will grant +3 [ICON_FOOD] and +15% [ICON_FOOD] Growth in call your cities. It also allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era.', '', '');
+
+
 UPDATE LoadedFile SET Value=1 WHERE Type='Leaders.sql';
