@@ -970,7 +970,7 @@ function AIPerTurnBonuses(player)
 	--]]
 end
 
---LuaEvents.ActivePlayerTurnEnd_Player.Add(AIPerTurnBonuses)
+LuaEvents.ActivePlayerTurnEnd_Player.Add(AIPerTurnBonuses)
 --]=]
 
 --]==]
