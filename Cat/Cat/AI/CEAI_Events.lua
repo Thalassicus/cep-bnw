@@ -1253,7 +1253,7 @@ function ClearCamps()
 		end
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
+--LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
 
 function ClearCampsCity(city, player)
 	if player:IsHuman() or player:IsMinorCiv() then
