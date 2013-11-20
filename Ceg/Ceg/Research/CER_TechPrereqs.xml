@@ -347,38 +347,6 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 			<TechType>TECH_RAILROAD</TechType>
 		</Row>
 		<Row>
-			<PrereqTech>TECH_BIOLOGY</PrereqTech>
-			<TechType>TECH_REFRIGERATION</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<TechType>TECH_REFRIGERATION</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<TechType>TECH_RADIO</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<TechType>TECH_REPLACEABLE_PARTS</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_INDUSTRIALIZATION</PrereqTech>
-			<TechType>TECH_REPLACEABLE_PARTS</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_INDUSTRIALIZATION</PrereqTech>
-			<TechType>TECH_FLIGHT</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_INDUSTRIALIZATION</PrereqTech>
-			<TechType>TECH_RAILROAD</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_DYNAMITE</PrereqTech>
-			<TechType>TECH_RAILROAD</TechType>
-		</Row>
-		<Row>
 			<PrereqTech>TECH_RADIO</PrereqTech>
 			<TechType>TECH_PLASTIC</TechType>
 		</Row>
