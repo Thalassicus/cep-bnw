@@ -2565,7 +2565,8 @@ CivilopediaCategory[CategoryTech].SelectArticle = function( techID, shouldAddToL
 			UpdateTextBlock( Locale.ConvertTextKey( abilitiesString ), Controls.AbilitiesLabel, Controls.AbilitiesInnerFrame, Controls.AbilitiesFrame );
 		else
 			--Cep
-			Controls.SpecialFrame:SetHide( true );			
+			Controls.AbilitiesFrame:SetHide( true );
+			--Controls.SpecialFrame:SetHide( true );			
 		end
 		
 		-- update the historical info
@@ -6777,7 +6778,7 @@ function ClearArticle()
 	Controls.SpecialFrame:SetHide( true );		
 	Controls.QuoteFrame:SetHide( true );
 	Controls.SilentQuoteFrame:SetHide( true );
-	--Controls.AbilitiesFrame:SetHide( true );			
+	Controls.AbilitiesFrame:SetHide( true );			
 	Controls.HistoryFrame:SetHide( true );
 	Controls.StrategyFrame:SetHide( true );
 	Controls.RelatedImagesFrame:SetHide( true );		
