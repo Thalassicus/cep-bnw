@@ -22,9 +22,4 @@
 			<!-- 5 -->
 		</Update>
 	</Defines>
-	<Policy_PrereqPolicies>
-		<Delete />
-	</Policy_PrereqPolicies>
-	<!--
-	-->
 </GameData>

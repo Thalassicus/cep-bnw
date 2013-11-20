@@ -1,5 +1,6 @@
 --
 
+DELETE FROM Policy_PrereqPolicies;
 
 --
 -- Culture Scaling

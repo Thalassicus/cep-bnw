@@ -7,6 +7,13 @@ include( "IconSupport" );
 include( "InstanceManager" );
 include( "CommonBehaviors" );
 
+--modchange
+include("YieldLibrary.lua");
+include("MT_Events.lua");
+
+local log = Events.LuaLogger:New()
+log:SetLevel("WARN")
+
 local m_PopupInfo = nil;
 
 local g_LibertyPipeManager = InstanceManager:new( "ConnectorPipe", "ConnectorImage", Controls.LibertyPanel );
@@ -226,6 +233,8 @@ function UpdateDisplay()
 	print ("In UpdateDisplay()");
 
     local pTeam = Teams[player:GetTeam()];
+	--modchange
+	local culturePerTurn = Game.Round(player:GetYieldRate(YieldTypes.YIELD_CULTURE));
     
     if player == nil then
 		return;
@@ -235,26 +244,24 @@ function UpdateDisplay()
     
     local bShowAll = OptionsManager.GetPolicyInfo();
     
-    local szText = Locale.ConvertTextKey("TXT_KEY_NEXT_POLICY_COST_LABEL", player:GetNextPolicyCost());
-    Controls.NextCost:SetText(szText);
-    
-    szText = Locale.ConvertTextKey("TXT_KEY_CURRENT_CULTURE_LABEL", player:GetJONSCulture());
-    Controls.CurrentCultureLabel:SetText(szText);
-    
-    szText = Locale.ConvertTextKey("TXT_KEY_CULTURE_PER_TURN_LABEL", player:GetTotalJONSCulturePerTurn());
-    Controls.CulturePerTurnLabel:SetText(szText);
+	--modchange
+    local szText = "";
+    Controls.NextCost:SetText(Locale.ConvertTextKey("TXT_KEY_NEXT_POLICY_COST_LABEL", player:GetYieldNeeded(YieldTypes.YIELD_CULTURE)));
+    Controls.CurrentCultureLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CURRENT_CULTURE_LABEL", player:GetYieldStored(YieldTypes.YIELD_CULTURE)));
+    Controls.CulturePerTurnLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CULTURE_PER_TURN_LABEL", culturePerTurn));
     
     local iTurns;
-    local iCultureNeeded = player:GetNextPolicyCost() - player:GetJONSCulture();
+	--modchange
+    local iCultureNeeded = player:GetYieldNeeded(YieldTypes.YIELD_CULTURE) - player:GetYieldStored(YieldTypes.YIELD_CULTURE);
     if (iCultureNeeded <= 0) then
 		iTurns = 0;
     else
-		if (player:GetTotalJONSCulturePerTurn() == 0) then
+		--modchange
+		if (culturePerTurn == 0) then
 			iTurns = "?";
 		else
-			iTurns = iCultureNeeded / player:GetTotalJONSCulturePerTurn();
-			iTurns = iTurns + 1;
-			iTurns = math.floor(iTurns);
+			iTurns = iCultureNeeded / culturePerTurn;
+			iTurns = math.ceil(iTurns);
 		end
     end
     szText = Locale.ConvertTextKey("TXT_KEY_NEXT_POLICY_TURN_LABEL", iTurns);
@@ -319,13 +326,33 @@ function UpdateDisplay()
 			local thisImageMask = Controls[ImageMaskName];
 			local thisDisabledMask = Controls[DisabledMaskName];
 			
+			--modchange
+			local policyInfo = GameInfo.Policies[policyBranchInfo.FreePolicy]
+			
 			
 			if(thisImageMask == nil) then
 				print(ImageMaskName);
 			end
 			--local thisEraLabel = Controls[EraLabelName];
 			
-			local strToolTip = Locale.ConvertTextKey(policyBranchInfo.Help);
+			--modchange
+			local strToolTip = string.format("%s[NEWLINE]----------------", Locale.ConvertTextKey(policyBranchInfo.Description))
+			
+			if Cep.SHOW_GOOD_FOR_POLICIES == 1 then
+				strToolTip = strToolTip .. Game.GetFlavors("Policy_Flavors", "PolicyType", policyInfo.Type)
+			end
+			
+			local helpExtra = (Cep.USING_CSD == 1) and Locale.ConvertTextKey((policyBranchInfo.Description or "") .. "_HELP_EXTRA") or ""
+			if helpExtra == (policyBranchInfo.Description or "") .. "_HELP_EXTRA" then
+				helpExtra = ""
+			end
+			
+			strToolTip = string.format("%s[NEWLINE][NEWLINE]%s[NEWLINE]%s",
+				strToolTip,
+				Locale.ConvertTextKey(policyBranchInfo.Help or ""),
+				helpExtra
+			)
+			
 			
 			-- Era Prereq
 			local iEraPrereq = GameInfoTypes[policyBranchInfo.EraPrereq]
@@ -462,7 +489,24 @@ function UpdateDisplay()
 			local thisPolicyIcon = policyIcons[i];
 			
 			-- Tooltip
-			local strTooltip = Locale.ConvertTextKey( policyInfo.Help );
+			--modchange
+			local strToolTip = string.format("%s[NEWLINE]----------------", Locale.ConvertTextKey(policyInfo.Description))
+			
+			if Cep.SHOW_GOOD_FOR_POLICIES == 1 then
+				strToolTip = strToolTip .. Game.GetFlavors("Policy_Flavors", "PolicyType", policyInfo.Type)
+			end
+			
+			local helpExtra = (Cep.USING_CSD == 1) and Locale.ConvertTextKey((policyInfo.Description or "") .. "_HELP_EXTRA") or ""
+			if helpExtra == (policyInfo.Description or "") .. "_HELP_EXTRA" then
+				helpExtra = ""
+			end
+			
+			strToolTip = string.format("%s[NEWLINE][NEWLINE]%s[NEWLINE]%s%s",
+				strToolTip,
+				Locale.ConvertTextKey("TXT_KEY_TOOLTIP_ABILITIES"),
+				Locale.ConvertTextKey(policyInfo.Help or ""),
+				helpExtra
+			)
 			
 			-- Player already has Policy
 			if player:HasPolicy( i ) then
@@ -483,7 +527,8 @@ function UpdateDisplay()
 				thisPolicyIcon.PolicyImage:SetColor( fadeColorRV );
 				IconHookup( policyInfo.PortraitIndex, 64, policyInfo.IconAtlas, thisPolicyIcon.PolicyImage );
 				-- Tooltip
-				strTooltip = strTooltip .. "[NEWLINE][NEWLINE]"
+				--modchange
+				--strToolTip = strToolTip .. "[NEWLINE][NEWLINE]"
 			
 			-- Can adopt the Policy right now
 			elseif player:CanAdoptPolicy( i ) then
@@ -510,7 +555,7 @@ function UpdateDisplay()
 				thisPolicyIcon.PolicyImage:SetColor( fadeColorRV );
 				IconHookup( policyInfo.PortraitIndex, 64, policyInfo.IconAtlas, thisPolicyIcon.PolicyImage );
 				-- Tooltip
-				strTooltip = strTooltip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_BRANCH_CANNOT_UNLOCK_CULTURE", player:GetNextPolicyCost());
+				strToolTip = strToolTip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_BRANCH_CANNOT_UNLOCK_CULTURE", player:GetNextPolicyCost());
 			else
 				--thisPolicyIcon.Lock:SetTexture( lockTexture ); 
 				thisPolicyIcon.MouseOverContainer:SetHide( true );
@@ -521,7 +566,7 @@ function UpdateDisplay()
 				thisPolicyIcon.PolicyImage:SetColor( fadeColorRV );
 				IconHookup( policyInfo.PortraitIndex, 64, policyInfo.IconAtlas, thisPolicyIcon.PolicyImage );
 				-- Tooltip
-				strTooltip = strTooltip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_CANNOT_UNLOCK");
+				strToolTip = strToolTip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_CANNOT_UNLOCK");
 			end
 			
 			-- Policy is Blocked
@@ -531,11 +576,11 @@ function UpdateDisplay()
 				
 				-- Update tooltip if we have this Policy
 				if player:HasPolicy( i ) then
-					strTooltip = strTooltip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_BRANCH_BLOCKED");
+					strToolTip = strToolTip .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_POLICY_BRANCH_BLOCKED");
 				end
 			end
 				
-			thisPolicyIcon.PolicyIcon:SetToolTipString( strTooltip );
+			thisPolicyIcon.PolicyIcon:SetToolTipString( strToolTip );
 		end
 		
 		i = i + 1;
@@ -1199,20 +1244,26 @@ function Init()
 	
 end
 
+--modchange
+Events.PolicyAdopted = Events.PolicyAdopted or function(policyID, isPolicy) end
+
 function OnYes( )
 	Controls.PolicyConfirm:SetHide(true);
 	Controls.BGBlock:SetHide(false);
 	
 	Network.SendUpdatePolicies(m_gPolicyID, m_gAdoptingPolicy, true);
-	Events.AudioPlay2DSound("AS2D_INTERFACE_POLICY");		
-	--Game.DoFromUIDiploEvent( FromUIDiploEventTypes.FROM_UI_DIPLO_EVENT_HUMAN_DECLARES_WAR, g_iAIPlayer, 0, 0 );
-	
+	--modchange
+	Events.PolicyAdopted(m_gPolicyID, m_gAdoptingPolicy);
+	Events.AudioPlay2DSound("AS2D_INTERFACE_POLICY");
+
 	if m_gAdoptingPolicy then
-		local policyBranch = GameInfo.PolicyBranchTypes[GameInfo.Policies[m_gPolicyID].Type]
-		if policyBranch then
-			Network.SendUpdatePolicies(policyBranch.ID, false, true);
+		local policyBranchType = GameInfo.Policies[m_gPolicyID].PolicyBranchType
+		--log:Debug("m_gPolicyID=%s type=%s policyBranchType = %s", m_gPolicyID, GameInfo.Policies[m_gPolicyID].Type, policyBranchType)
+		if HasFinishedBranch(Players[Game.GetActivePlayer()], policyBranchType, m_gPolicyID) then
+			Events.PolicyAdopted(GetBranchFinisherID(policyBranchType), true);
 		end
 	end
+	--Game.DoFromUIDiploEvent( FromUIDiploEventTypes.FROM_UI_DIPLO_EVENT_HUMAN_DECLARES_WAR, g_iAIPlayer, 0, 0 );
 end
 Controls.Yes:RegisterCallback( Mouse.eLClick, OnYes );
 

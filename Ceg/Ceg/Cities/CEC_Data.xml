@@ -9,7 +9,7 @@
 		</Update>
 		<Update>
 			<Where Type="YIELD_PRODUCTION" />
-			<Set MinCity="4"
+			<Set MinCity="3"
 				 AIWeightPercent="100"
 				 />
 		</Update>

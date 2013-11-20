@@ -8,7 +8,7 @@
 		<Update>
 			<Where Type="POLICY_PIETY_FINISHER" />
 			<Set AddReformationBelief="1"
-			 IncludesOneShotFreeUnits ="0"
+				 IncludesOneShotFreeUnits ="0"
 			/>
 		</Update>
 		<Update>

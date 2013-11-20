@@ -4,8 +4,7 @@
 	<Policies>
 		<Update>
 			<Where Type="POLICY_LIBERTY" />
-			<Set CulturePerCity="1"
-				 ProductionPerCity="1"
+			<Set CulturePerCity="0"
 				 />
 		</Update>
 		<Update>
@@ -13,7 +12,7 @@
 			<Set GridX="1"
 				 GridY="1"
 				 NumCitiesPolicyCostDiscount="-33"
-				 GoldenAgeTurns="10"
+				 GoldenAgeTurns="0"
 				 PortraitIndex="9"
 				 />
 		</Update>
@@ -36,7 +35,7 @@
 		</Update>
 		<Update>
 			<Where Type="POLICY_REPRESENTATION" />
-			<Set GridX="1"
+			<Set GridX="2"
 				 GridY="2"
 				 HappinessPerTradeRoute="100"
 				 ExtraHappiness="1"
@@ -49,7 +48,7 @@
 			<Set GridX="4"
 				 GridY="2"
 				 PortraitIndex="14"
-				 BuidingProductionModifier="0"
+				 BuildingProductionModifier="0"
 				 />
 		</Update>
 		<Update>
@@ -59,8 +58,23 @@
 		</Update>
 	</Policies>
 	<Policy_CityYieldChanges>
-		<Delete PolicyType="POLICY_REPUBLIC" />
+		<Row>
+			<PolicyType>POLICY_LIBERTY</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Update>
+			<Where PolicyType="POLICY_REPUBLIC" />
+			<Set PolicyType="POLICY_LIBERTY" />
+		</Update>
 	</Policy_CityYieldChanges>
+	<Policy_InstantYieldEra>
+		<Row>
+			<PolicyType>POLICY_MERITOCRACY</PolicyType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>200</Yield>
+		</Row>
+	</Policy_InstantYieldEra>
 	<Policy_FreeBuildingFlavor>
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
@@ -68,16 +82,6 @@
 			<NumCities>-1</NumCities>
 		</Row>
 	</Policy_FreeBuildingFlavor>
-	<!--
-	<Policy_CityWithSpecialistYieldChanges>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<SpecialistCount>1</SpecialistCount>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>3</Yield>
-		</Row>
-	</Policy_CityWithSpecialistYieldChanges>
-	-->
 	<Policy_FreeUnitClasses>
 		<Delete PolicyType="POLICY_CITIZENSHIP" />
 		<Row>

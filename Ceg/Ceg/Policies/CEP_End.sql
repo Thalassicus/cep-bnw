@@ -1,5 +1,9 @@
 -- 
 
+
+
+-- Policy changes from pre-BNW
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -56,6 +60,7 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -159,7 +164,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_NUCLEAR_PLANT'
 );
 */
-
+/*
 INSERT INTO Policy_BuildingClassYieldModifiers(
 	PolicyType, 
 	BuildingClassType, 
