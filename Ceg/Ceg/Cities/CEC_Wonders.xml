@@ -395,6 +395,11 @@
 		</Row>
 		-->
 		<Row>
+			<BuildingType>BUILDING_GREAT_WALL</BuildingType>
+			<UnitType>UNIT_GREAT_GENERAL</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
 			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
 			<UnitType>UNIT_MISSIONARY</UnitType>
 			<NumUnits>1</NumUnits>
