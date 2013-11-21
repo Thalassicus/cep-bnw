@@ -7,20 +7,26 @@
 				 />
 		</Update>
 		<Update>
-			<Where Type="POLICY_ARISTOCRACY" />
-			<Set GridX="4"
-				 GridY="2"
-				 />
-		</Update>
-		<Update>
-			<Where Type="POLICY_OLIGARCHY" />
-			<Set GridX="2"
-				 GridY="2"
-				 />
-		</Update>
-		<Update>
 			<Where Type="POLICY_LEGALISM" />
-			<Set GridX="1"
+			<Set PolicyBranchType="NIL"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_CEREMONIAL_RITES</Type>
+			<PolicyBranchType>POLICY_BRANCH_TRADITION</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_CEREMONIAL_RITES</Description>
+			<Civilopedia>TXT_KEY_POLICY_CEREMONIAL_RITES_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_CEREMONIAL_RITES_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>47</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Update>
+			<Where Type="POLICY_MONARCHY" />
+			<Set GridX="3"
 				 GridY="1"
 				 />
 		</Update>
@@ -33,9 +39,15 @@
 				 />
 		</Update>
 		<Update>
-			<Where Type="POLICY_MONARCHY" />
-			<Set GridX="3"
-				 GridY="1"
+			<Where Type="POLICY_OLIGARCHY" />
+			<Set GridX="2"
+				 GridY="2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ARISTOCRACY" />
+			<Set GridX="4"
+				 GridY="2"
 				 />
 		</Update>
 		<Update>
@@ -47,6 +59,14 @@
 		</Update>
 	</Policies>
 	
+	<Policy_FreeBuildingFlavor>
+		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<NumCities>4</NumCities>
+		</Row>
+	</Policy_FreeBuildingFlavor>
+
 	<Policy_CapitalYieldChanges>
 		<Delete PolicyType="POLICY_LANDED_ELITE" />
 	</Policy_CapitalYieldChanges>
@@ -61,9 +81,9 @@
 	
 	<PolicyBranchTypes>
 		<Row>
-			<Type>POLICY_LEGALISM</Type>
-			<Description>TXT_KEY_POLICY_LEGALISM</Description>
-			<Help>TXT_KEY_POLICY_LEGALISM_HELP</Help>
+			<Type>POLICY_CEREMONIAL_RITES</Type>
+			<Description>TXT_KEY_POLICY_CEREMONIAL_RITES</Description>
+			<Help>TXT_KEY_POLICY_CEREMONIAL_RITES_HELP</Help>
 			<Title>TXT_KEY_TRADITION_TITLE</Title>
 		</Row>
 		<Row>
@@ -77,7 +97,7 @@
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_ORACLE" />
-			<Set PolicyBranchType="POLICY_LEGALISM"
+			<Set PolicyBranchType="POLICY_CEREMONIAL_RITES"
 				 />
 		</Update>
 		<Update>
