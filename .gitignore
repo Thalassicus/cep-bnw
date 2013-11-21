@@ -1,7 +1,7 @@
-*/Packages
-*/Build
-*/Lua
-*/doc
+*Packages/
+*Build/
+*Lua/
+*Doc/
 *.civ5suo*
 *.bak*
 *.~lock.*
