@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>		
 <!-- 		
 CER_Unlocks.xml from:		
-TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).		
+TechUnlocks tab of Techs spreadsheet:		
+https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dDE2TURZSnJSdzE2REx3XzNPY3RVZmc		
 -->		
 <GameData>		
 	<Resources>	
@@ -43,7 +44,7 @@ TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).
 		<Update><Where BuildingClass="BUILDINGCLASS_MEDICAL_LAB"/>              <Set PrereqTech="TECH_ECOLOGY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_MILITARY_BASE"/>            <Set PrereqTech="TECH_RADIO"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_OPERA_HOUSE"/>              <Set PrereqTech="TECH_ARCHITECTURE"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_SHRINE"/>                   <Set PrereqTech="NULL"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_SHRINE"/>                   <Set PrereqTech="TECH_NULL"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_SPACESHIP_FACTORY"/>        <Set PrereqTech="TECH_NUCLEAR_FISSION"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_STONEWORKS"/>               <Set PrereqTech="TECH_MASONRY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_STABLE"/>                   <Set PrereqTech="TECH_THE_WHEEL"/></Update>
@@ -62,7 +63,7 @@ TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).
 		<Update><Where BuildingClass="BUILDINGCLASS_WRITERS_GUILD"/>            <Set PrereqTech="TECH_PHILOSOPHY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_ALHAMBRA"/>                 <Set PrereqTech="TECH_PHYSICS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_ANGKOR_WAT"/>               <Set PrereqTech="TECH_GUILDS"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_BANAUE_RICE_TERRACES"/>     <Set PrereqTech="TECH_BRONZE_WORKING"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_BANAUE_RICE_TERRACES"/>     <Set PrereqTech="TECH_ENGINEERING"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_BIG_BEN"/>                  <Set PrereqTech="TECH_ECONOMICS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_BROADWAY"/>                 <Set PrereqTech="TECH_REPLACEABLE_PARTS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_CHICHEN_ITZA"/>             <Set PrereqTech="TECH_CIVIL_SERVICE"/></Update>
@@ -71,11 +72,11 @@ TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).
 		<Update><Where BuildingClass="BUILDINGCLASS_CRISTO_REDENTOR"/>          <Set PrereqTech="TECH_ECOLOGY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_EIFFEL_TOWER"/>             <Set PrereqTech="TECH_ELECTRICITY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_FORBIDDEN_PALACE"/>         <Set PrereqTech="TECH_PRINTING_PRESS"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_GLOBE_THEATER"/>            <Set PrereqTech="TECH_ARCHITECTURE"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_GLOBE_THEATER"/>            <Set PrereqTech="TECH_POLITICAL_SCIENCE"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_GREAT_LIGHTHOUSE"/>         <Set PrereqTech="TECH_OPTICS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_GREAT_WALL"/>               <Set PrereqTech="TECH_MASONRY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_HAGIA_SOPHIA"/>             <Set PrereqTech="TECH_CONSTRUCTION"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_HANGING_GARDEN"/>           <Set PrereqTech="TECH_ENGINEERING"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_HANGING_GARDEN"/>           <Set PrereqTech="TECH_CONSTRUCTION"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_HIMEJI_CASTLE"/>            <Set PrereqTech="TECH_CHIVALRY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_HOLLYWOOD"/>                <Set PrereqTech="TECH_REPLACEABLE_PARTS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_HUBBLE"/>                   <Set PrereqTech="TECH_ROCKETRY"/></Update>
@@ -85,10 +86,10 @@ TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).
 		<Update><Where BuildingClass="BUILDINGCLASS_LEANING_TOWER"/>            <Set PrereqTech="TECH_BANKING"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_MACHU_PICHU"/>              <Set PrereqTech="TECH_ENGINEERING"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_MAUSOLEUM_HALICARNASSUS"/>  <Set PrereqTech="TECH_HORSEBACK_RIDING"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_NEUSCHWANSTEIN"/>           <Set PrereqTech="TECH_REPLACEABLE_PARTS"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_NEUSCHWANSTEIN"/>           <Set PrereqTech="TECH_RADIO"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_ORACLE"/>                   <Set PrereqTech="TECH_DRAMA"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_PANAMA_CANAL"/>             <Set PrereqTech="TECH_DYNAMITE"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_PARTHENON"/>                <Set PrereqTech="TECH_PHILOSOPHY"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_PARTHENON"/>                <Set PrereqTech="TECH_DRAMA"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_PETRA"/>                    <Set PrereqTech="TECH_CONSTRUCTION"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_PORCELAIN_TOWER"/>          <Set PrereqTech="TECH_EDUCATION"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_PRORA_RESORT"/>             <Set PrereqTech="TECH_REPLACEABLE_PARTS"/></Update>
@@ -100,7 +101,7 @@ TechUnlocks tab of CEM_Info_PoliciesTechsOther.xls (in mod folder).
 		<Update><Where BuildingClass="BUILDINGCLASS_TAJ_MAHAL"/>                <Set PrereqTech="TECH_PRINTING_PRESS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_TERRACOTTA_ARMY"/>          <Set PrereqTech="TECH_CALENDAR"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_UFFIZI"/>                   <Set PrereqTech="TECH_ACOUSTICS"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_WAT_PHRA_KAEW"/>            <Set PrereqTech="TECH_ACOUSTICS"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_WAT_PHRA_KAEW"/>            <Set PrereqTech="TECH_ARCHITECTURE"/></Update>
 		
 	</Buildings>	
 	<Buildings>	

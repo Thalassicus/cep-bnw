@@ -156,7 +156,7 @@ INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  2
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  3, 1, 'PopCostMod'                  , 'Game.GetDefaultBuildingStatText');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  4, 1, 'HurryCostModifier'           , 'Game.GetDefaultBuildingStatText');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  5, 1, 'GoldMaintenance'             , 'Game.GetDefaultBuildingStatText');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  6, 0, 'UnlockedByBelief'            , 'cepObjectInfo.UnlockedByBelief');
+--INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  6, 0, 'UnlockedByBelief'            , 'cepObjectInfo.UnlockedByBelief');
 
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  7, 0, 'NationalLimit'               , 'cepClassInfo.MaxPlayerInstances');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5,  8, 0, 'TeamLimit'                   , 'cepClassInfo.MaxTeamInstances');
