@@ -49,23 +49,23 @@ function City_Capture(city, player, captureType)
 		City_SetResistanceTurns(city, city:GetPopulation())
 		City_SetRazingTurns(city, city:GetPopulation())
 		city:SetPuppet(false)	
-		city:SetOccupied(true)
+		--city:SetOccupied(true)
 	elseif captureType == "CAPTURE_SACK" then
 		city:ChangePopulation(math.ceil(city:GetPopulation() * Cep.SACKED_CITY_POPULATION_CHANGE / 100), true)
 		City_SetResistanceTurns(city, math.ceil( city:GetResistanceTurns() * (1 + Cep.SACKED_CITY_RESISTANCE_CHANGE / 100) ))
 		City_SetRazingTurns(city, 0)
-		city:SetOccupied(false)
+		--city:SetOccupied(false)
 		city:SetPuppet(true)
 	elseif captureType == "CAPTURE_PUPPET" then
 		City_SetResistanceTurns(city, 0)
 		City_SetRazingTurns(city, 0)
-		city:SetOccupied(false)
+		--city:SetOccupied(false)
 		city:SetPuppet(true)
 	else
-		City_SetResistanceTurns(city, 0)
-		City_SetRazingTurns(city, 0)
-		city:SetOccupied(false)
-		city:SetPuppet(false)
+		--City_SetResistanceTurns(city, 0)
+		--City_SetRazingTurns(city, 0)
+		--city:SetOccupied(false)
+		--city:SetPuppet(false)
 	end
 end
 
