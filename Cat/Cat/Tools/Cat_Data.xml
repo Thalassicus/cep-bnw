@@ -191,12 +191,13 @@
 		<Update><Where Type="FLAVOR_TILE_IMPROVEMENT"/>			<Set Description="TXT_KEY_FLAVOR_TILE_IMPROVEMENT"			 IconString="[ICON_WORKER]"			 PurchasePriority="0"/></Update>
 		<Update><Where Type="FLAVOR_INFRASTRUCTURE"/>			<Set Description="TXT_KEY_FLAVOR_INFRASTRUCTURE"			 IconString="[ICON_WORKER]"			 PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_WATER_CONNECTION"/>			<Set Description="TXT_KEY_FLAVOR_WATER_CONNECTION"			 IconString="[ICON_CONNECTED]"		 PurchasePriority="10"/></Update>
-		<Update><Where Type="FLAVOR_WONDER"/>					<Set Description="TXT_KEY_FLAVOR_WONDER"					 IconString="[ICON_GOLDEN_AGE]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_WONDER"/>					<Set Description="TXT_KEY_FLAVOR_WONDER"					 IconString="[ICON_GREAT_ENGINEER]"	 PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_DIPLOMACY"/>				<Set Description="TXT_KEY_FLAVOR_DIPLOMACY"					 IconString="[ICON_FLOWER]"			 PurchasePriority="100"/></Update>
 		<Update><Where Type="FLAVOR_SPACESHIP"/>				<Set Description="TXT_KEY_FLAVOR_SPACESHIP"					 IconString="[ICON_RESEARCH]"		 PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_ESPIONAGE"/>				<Set Description="TXT_KEY_FLAVOR_ESPIONAGE"					 IconString="[ICON_SPY]"			 PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_RELIGION"/>					<Set Description="TXT_KEY_FLAVOR_RELIGION"					 IconString="[ICON_PEACE]"			 PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_TOURISM"/>					<Set Description="TXT_KEY_FLAVOR_TOURISM"					 IconString="[ICON_TOURISM]"		 PurchasePriority="10"/></Update>
+		<Update><Where Type="FLAVOR_GOLDEN_AGE"/>				<Set Description="TXT_KEY_FLAVOR_GOLDEN_AGE"				 IconString="[ICON_GOLDEN_AGE]"		 PurchasePriority="10"/></Update>
 		
 		<Update><Where Type="FLAVOR_I_LAND_TRADE_ROUTE"/>		<Set Description="TXT_KEY_FLAVOR_I_LAND_TRADE_ROUTE"		 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>
 		<Update><Where Type="FLAVOR_I_SEA_TRADE_ROUTE"/>		<Set Description="TXT_KEY_FLAVOR_I_SEA_TRADE_ROUTE"			 IconString="[ICON_INTERNATIONAL_TRADE]" PurchasePriority="10"/></Update>

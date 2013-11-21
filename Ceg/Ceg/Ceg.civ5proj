@@ -473,11 +473,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_Buildings.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>AI/CEP_AI_Cities.xml</FileName>
       </Action>
       <Action>

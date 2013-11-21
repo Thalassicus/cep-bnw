@@ -146,6 +146,7 @@ UPDATE Buildings SET Happiness = 0;
 -- Flavors
 --
 
+INSERT INTO Flavors (Type) VALUES ('FLAVOR_GOLDEN_AGE');
 INSERT INTO Flavors (Type) VALUES ('FLAVOR_TOURISM');
 INSERT INTO Flavors (Type) VALUES ('FLAVOR_SOLDIER');
 INSERT INTO Flavors (Type) VALUES ('FLAVOR_SIEGE');

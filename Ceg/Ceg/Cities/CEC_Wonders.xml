@@ -66,6 +66,7 @@
 			<PortraitIndex>6</PortraitIndex>
 			<WonderSplashImage>splash_Lalibela.dds</WonderSplashImage>
 			<WonderSplashAnchor>L,B</WonderSplashAnchor>
+			<ExtraMissionarySpreads>1</ExtraMissionarySpreads>
 		</Row>
 		<Row>
 			<Type>BUILDING_HOLLYWOOD</Type>
@@ -101,7 +102,7 @@
 			<Quote>TXT_KEY_WONDER_ITAIPU_DAM_QUOTE</Quote>
 			<MaxStartEra>ERA_MODERN</MaxStartEra>
 			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-			<GreatPeopleRateChange>2</GreatPeopleRateChange>
+			<SpecialistCount>2</SpecialistCount>
 			<River>true</River>
 			<NukeImmune>true</NukeImmune>
 			<HurryCostModifier>-1</HurryCostModifier>
@@ -193,6 +194,7 @@
 		<Update>
 			<Where Type="BUILDING_BRANDENBURG_GATE" />
 			<Set FreeBuildingThisCity="BUILDINGCLASS_MILITARY_ACADEMY"
+				 Experience="0"
 				 GlobalExperience="20"
 				 />
 		</Update>
@@ -210,7 +212,7 @@
 		<Update>
 			<Where Type="BUILDING_FORBIDDEN_PALACE" />
 			<Set UnhappinessModifier="-10"
-				 Happiness="5"
+				 Happiness="0"
 				 />
 		</Update>
 		<Update>
@@ -220,13 +222,18 @@
 				 />
 		</Update>
 		<Update>
+			<Where Type="BUILDING_GREAT_LIBRARY" />
+			<Set GreatPeopleRateChange="0"
+				 />
+		</Update>
+		<Update>
 			<Where Type="BUILDING_HAGIA_SOPHIA" />
 			<Set FreeBuildingThisCity="NULL"
-				 Happiness="6" />
+				 Happiness="0" />
 		</Update>
 		<Update>
 			<Where Type="BUILDING_HANGING_GARDEN" />
-			<Set Happiness="3" />
+			<Set Happiness="6" />
 		</Update>
 		<Update>
 			<Where Type="BUILDING_HUBBLE" />
@@ -235,7 +242,7 @@
 				 />
 		</Update>
 		<Update>
-			<Where Type="BUILDING_KREMLIN" />
+			<Where Type="BUILDING_RED_FORT" />
 			<Set GlobalInstantBorderRadius="2"
 				 GlobalPlotCultureCostModifier="-25"
 				 GlobalPlotBuyCostModifier="-25"
@@ -268,7 +275,9 @@
 		</Update>
 		<Update>
 			<Where Type="BUILDING_MOSQUE_OF_DJENNE" />
-			<Set FreeBuildingThisCity="NULL" />
+			<Set FreeBuildingThisCity="NULL"
+				 ExtraMissionarySpreads="0"
+				 />
 		</Update>
 		<Update>
 			<Where Type="BUILDING_PETRA" />
@@ -290,10 +299,6 @@
 			<Set InstantMilitaryIncrease="1"
 				 GreatGeneralRateChange="1"
 				 FreePromotion="NULL"
-				 IconAtlas="CEP_WONDER_ATLAS"
-				 PortraitIndex="7"
-				 WonderSplashImage="Parthenon_splash.dds"
-				 WonderSplashAnchor="R,B"
 				 />
 		</Update>
 		<Update>
@@ -306,12 +311,14 @@
 			<Set FreePolicies="2"
 				 />
 		</Update>
+		<!--
 		<Update>
 			<Where Type="BUILDING_TAJ_MAHAL" />
 			<Set Happiness="0"
 				 GoldenAgePoints="4"
 				 />
 		</Update>
+		-->
 		<Update>
 			<Where Type="BUILDING_TERRACOTTA_ARMY" />
 			<Set InstantMilitaryIncrease="0"
@@ -380,9 +387,16 @@
 			<UnitType>UNIT_SETTLER</UnitType>
 			<NumUnits>1</NumUnits>
 		</Row>
+		<!--
 		<Row>
 			<BuildingType>BUILDING_STATUE_ZEUS</BuildingType>
 			<UnitType>UNIT_GREAT_GENERAL</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		-->
+		<Row>
+			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
+			<UnitType>UNIT_MISSIONARY</UnitType>
 			<NumUnits>1</NumUnits>
 		</Row>
 		<Row>
@@ -399,6 +413,27 @@
 			<BuildingType>BUILDING_ITAIPU_DAM</BuildingType>
 			<UnitType>UNIT_ENGINEER</UnitType>
 			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
+			<UnitType>UNIT_ARTIST</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
+			<UnitType>UNIT_WRITER</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
+			<UnitType>UNIT_MUSICIAN</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Delete BuildingType="BUILDING_LOUVRE" />
+		<Row>
+			<BuildingType>BUILDING_LOUVRE</BuildingType>
+			<UnitType>UNIT_ARCHAEOLOGIST</UnitType>
+			<NumUnits>2</NumUnits>
 		</Row>
 	</Building_FreeUnits>
 	<Building_ResourceQuantity>
@@ -456,6 +491,7 @@
 		</Row>
 	</Building_NearestPlotYieldChanges>
 	<Building_PlotYieldChanges>
+		<!--
 		<Row>
 			<BuildingType>BUILDING_BANAUE_RICE_TERRACES</BuildingType>
 			<PlotType>PLOT_HILLS</PlotType>
@@ -468,47 +504,65 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>1</Yield>
 		</Row>
+		-->
 	</Building_PlotYieldChanges>
 
 	<Building_YieldChanges>
 		<Delete BuildingType="BUILDING_GREAT_LIBRARY" />
-		<Update>
-			<Where BuildingType="BUILDING_HANGING_GARDEN" YieldType="YIELD_FOOD" />
-			<Set Yield="6" />
-		</Update>
-		<Update>
-			<Where BuildingType="BUILDING_COLOSSUS" YieldType="YIELD_GOLD" />
-			<Set Yield="10" />
-		</Update>
-		<Delete BuildingType="BUILDING_MACHU_PICHU" />
+		<Delete BuildingType="BUILDING_HANGING_GARDEN" />
 		<Row>
-			<BuildingType>BUILDING_BANAUE_RICE_TERRACES</BuildingType>
+			<BuildingType>BUILDING_HANGING_GARDEN</BuildingType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_MACHU_PICHU" />
+		<Row>
+			<BuildingType>BUILDING_MACHU_PICHU</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_HAGIA_SOPHIA" />
+		<Row>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_ORACLE" />
+		<Row>
+			<BuildingType>BUILDING_ORACLE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_MOSQUE_OF_DJENNE" />
+		<Row>
+			<BuildingType>BUILDING_MOSQUE_OF_DJENNE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_TERRACOTTA_ARMY" />
+		<Row>
+			<BuildingType>BUILDING_TERRACOTTA_ARMY</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>5</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_BANAUE_RICE_TERRACES</BuildingType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>4</Yield>
+			<Yield>10</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_BANAUE_RICE_TERRACES</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_WAT_PHRA_KAEW</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_WAT_PHRA_KAEW</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
@@ -516,28 +570,6 @@
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_MACHU_PICHU</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>4</Yield>
-		</Row>
-		<Update>
-			<Where BuildingType="BUILDING_HAGIA_SOPHIA" YieldType="YIELD_FAITH" />
-			<Set Yield="2" />
-		</Update>
-		<Update>
-			<Where BuildingType="BUILDING_ORACLE" YieldType="YIELD_CULTURE" />
-			<Set Yield="5" />
-		</Update>
-		<Update>
-			<Where BuildingType="BUILDING_TERRACOTTA_ARMY" YieldType="YIELD_CULTURE" />
-			<Set Yield="5" />
-		</Update>
 	</Building_YieldChanges>
 	<Building_GlobalYieldModifiers>
 		<Row>
@@ -545,11 +577,13 @@
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>15</Yield>
 		</Row>
+		<!--
 		<Row>
-			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>10</Yield>
+			<Yield>25</Yield>
 		</Row>
+		-->
 	</Building_GlobalYieldModifiers>
 	<Building_HurryModifiers>
 		<Update>
@@ -559,29 +593,47 @@
 	</Building_HurryModifiers>
 	<Building_SpecialistYieldChanges>
 		<Row>
-			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
-			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_CITIZEN</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
 			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
-			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_CRISTO_REDENTOR</BuildingType>
-			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>2</Yield>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
+			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>		
 	</Building_SpecialistYieldChanges>
 	<Building_BuildingClassYieldModifiers>
 		<Row>
