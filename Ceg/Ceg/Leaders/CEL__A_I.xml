@@ -217,6 +217,13 @@
 			<Set GreatScientistRateModifier="25" />
 		</Update>
 	</Traits>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_WALLS_OF_BABYLON</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Building_YieldChanges>
 
 
 
@@ -398,7 +405,7 @@
 	<Traits>
 		<Update>
 			<Where Type="TRAIT_FAITH_FROM_NATURE" />
-			<Set NaturalWonderYieldModifier="100"
+			<Set NaturalWonderYieldModifier="50"
 				 FaithFromUnimprovedForest="0"
 				 />
 		</Update>

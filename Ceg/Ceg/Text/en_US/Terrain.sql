@@ -12,7 +12,7 @@ INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_CIV5_FEATURES_ATOLL_TEXT', 'An island is any piece of sub-continental land that is surrounded by water. Very small islands can be called isles, cays or keys.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-20'), 'TXT_KEY_SPECIALISTSANDGP_CITADEL_HEADING4_BODY', '{TXT_KEY_BUILD_CITADEL_HELP}', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-20'), 'TXT_KEY_BUILD_CITADEL_HELP', '[ICON_STRENGTH] +100% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on this tile.[NEWLINE][ICON_RANGE_STRENGTH] Deals 30 [COLOR_POSITIVE_TEXT]Damage[ENDCOLOR] per turn to nearby enemies.[NEWLINE][ICON_CULTURE] Expands borders to nearby tiles.[NEWLINE][ICON_LOCKED] Requires friendly territory.', '', '');
-
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-11-22'), 'TXT_KEY_CIV5_IMPROVEMENTS_POLDER_HELP', '[ICON_FOOD] Food: +2[NEWLINE][ICON_LOCKED] Requires: Coastal Land', '', '');
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='Terrain.sql';

@@ -219,6 +219,7 @@
 			<Where Type="BUILDING_GREAT_WALL" />
 			<Set GreatGeneralRateChange="1"
 				 GreatPeopleRateChange="0"
+				 FreeBuildingThisCity="null"
 				 />
 		</Update>
 		<Update>

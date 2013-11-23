@@ -72,7 +72,7 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dDE2TURZSnJSdzE2REx3XzN
 		<Update><Where BuildingClass="BUILDINGCLASS_CRISTO_REDENTOR"/>          <Set PrereqTech="TECH_ECOLOGY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_EIFFEL_TOWER"/>             <Set PrereqTech="TECH_ELECTRICITY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_FORBIDDEN_PALACE"/>         <Set PrereqTech="TECH_PRINTING_PRESS"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_GLOBE_THEATER"/>            <Set PrereqTech="TECH_POLITICAL_SCIENCE"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_GLOBE_THEATER"/>            <Set PrereqTech="TECH_BANKING"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_GREAT_LIGHTHOUSE"/>         <Set PrereqTech="TECH_OPTICS"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_GREAT_WALL"/>               <Set PrereqTech="TECH_MASONRY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_HAGIA_SOPHIA"/>             <Set PrereqTech="TECH_CONSTRUCTION"/></Update>
