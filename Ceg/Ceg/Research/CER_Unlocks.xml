@@ -44,7 +44,7 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dDE2TURZSnJSdzE2REx3XzN
 		<Update><Where BuildingClass="BUILDINGCLASS_MEDICAL_LAB"/>              <Set PrereqTech="TECH_ECOLOGY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_MILITARY_BASE"/>            <Set PrereqTech="TECH_RADIO"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_OPERA_HOUSE"/>              <Set PrereqTech="TECH_ARCHITECTURE"/></Update>
-		<Update><Where BuildingClass="BUILDINGCLASS_SHRINE"/>                   <Set PrereqTech="TECH_NULL"/></Update>
+		<Update><Where BuildingClass="BUILDINGCLASS_SHRINE"/>                   <Set PrereqTech="NULL"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_SPACESHIP_FACTORY"/>        <Set PrereqTech="TECH_NUCLEAR_FISSION"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_STONEWORKS"/>               <Set PrereqTech="TECH_MASONRY"/></Update>
 		<Update><Where BuildingClass="BUILDINGCLASS_STABLE"/>                   <Set PrereqTech="TECH_THE_WHEEL"/></Update>
