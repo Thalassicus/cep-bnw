@@ -65,6 +65,11 @@
 			<!-- 40 -->
 		</Update>
 		<Update>
+			<Where Name="EMBARKED_UNIT_MOVEMENT" />
+			<Set Value="3" />
+			<!-- 2 -->
+		</Update>
+		<Update>
 			<Where Name="MAX_CITY_HIT_POINTS" />
 			<Set Value="300" />
 			<!-- 200 -->
