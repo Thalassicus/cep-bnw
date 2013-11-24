@@ -146,7 +146,7 @@
 			<UnitType>UNIT_BIREME</UnitType>
 			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
 		</Row>
-		<Row>
+		<!--<Row>
 			<UnitType>UNIT_SHIP_OF_THE_LINE</UnitType>
 			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
 		</Row>
@@ -157,7 +157,7 @@
 		<Row>
 			<UnitType>UNIT_SHIP_OF_THE_LINE</UnitType>
 			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
-		</Row>
+		</Row>-->
 		<Row>
 			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
 			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
@@ -347,22 +347,22 @@
 			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
 		</Row>
 		-->
-		<Row>
+		<!--<Row>
 			<UnitType>UNIT_MILITIA</UnitType>
 			<UnitAIType>UNITAI_ATTACK</UnitAIType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_MILITIA</UnitType>
 			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
-		</Row>
-		<Row>
+		</Row>-->
+		<!--<Row>
 			<UnitType>UNIT_CONSCRIPT</UnitType>
 			<UnitAIType>UNITAI_ATTACK</UnitAIType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_CONSCRIPT</UnitType>
 			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
-		</Row>
+		</Row>-->
 	</Unit_AITypes>
 	<UnitGameplay2DScripts>
 		<!--
