@@ -9,6 +9,7 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 	local iCaptureGreatWorks    = popupInfo.Data4;
 	local iLiberatedPlayer		= popupInfo.Data5;
 	local bMinorCivBuyout		= popupInfo.Option1;
+	local bConquest				= popupInfo.Option2;
 	
 	local activePlayer	= Players[Game.GetActivePlayer()];
 	local newCity		= activePlayer:GetCityByID(cityID);
@@ -16,6 +17,9 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 	if newCity == nil then
 		return false;
 	end
+
+	local iPreviousOwner = newCity:GetPreviousOwner();
+
 
 	--if (0 ~= GameDefines["PLAYER_ALWAYS_RAZES_CITIES"]) then
 	--
@@ -41,7 +45,7 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 	SetPopupText(popupText);
 	
 	-- Calculate Happiness info	
-	local iUnhappinessForSacking = -1 * City_GetYieldChangeForAction(newCity, activePlayer, "CAPTURE_SACK")
+	local iUnhappinessForSacking = -1 * City_GetYieldChangeForAction(newCity, activePlayer, "CAPTURE_SACK");
 	local iUnhappinessForPuppeting = -1 * City_GetYieldChangeForAction(newCity, activePlayer, "CAPTURE_PUPPET");
 	
 	-- Initialize 'Liberate' button.
@@ -52,6 +56,8 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 		
 		local buttonText = Locale.ConvertTextKey("TXT_KEY_POPUP_LIBERATE_CITY");
 		local strToolTip = Locale.ConvertTextKey("TXT_KEY_POPUP_CITY_CAPTURE_INFO_LIBERATE", Players[iLiberatedPlayer]:GetNameKey());
+		strToolTip = strToolTip .. "[NEWLINE][NEWLINE]"
+		strToolTip = strToolTip .. activePlayer:GetLiberationPreviewString(iLiberatedPlayer);
 		AddButton(buttonText, OnLiberateClicked, strToolTip);
 	end
 	
@@ -63,6 +69,10 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 	
 	buttonText = Locale.ConvertTextKey("TXT_KEY_CAPTURE_PUPPET");
 	strToolTip = Locale.ConvertTextKey("TXT_KEY_CAPTURE_PUPPET_HELP", iUnhappinessForPuppeting);
+	if (newCity:GetOriginalOwner() ~= Game.GetActivePlayer() and bConquest == true) then
+		strToolTip = strToolTip .. "[NEWLINE][NEWLINE]"
+		strToolTip = strToolTip .. activePlayer:GetWarmongerPreviewString(iPreviousOwner);
+	end
 	AddButton(buttonText, OnPuppetClicked, strToolTip);
 	
 	-- Initialize 'Sack' button.
@@ -75,6 +85,10 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 	
 	local buttonText = Locale.ConvertTextKey("TXT_KEY_CAPTURE_PILLAGE");
 	local strToolTip = Locale.ConvertTextKey("TXT_KEY_CAPTURE_PILLAGE_HELP", iUnhappinessForSacking);
+	if (newCity:GetOriginalOwner() ~= Game.GetActivePlayer() and bConquest == true) then
+		strToolTip = strToolTip .. "[NEWLINE][NEWLINE]"
+		strToolTip = strToolTip .. activePlayer:GetWarmongerPreviewString(iPreviousOwner);
+	end
 	AddButton(buttonText, OnSackClicked, strToolTip);
 	
 	-- Initialize 'Raze' button.
@@ -87,6 +101,10 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 		
 		buttonText = Locale.ConvertTextKey("TXT_KEY_CAPTURE_RAZE");
 		strToolTip = Locale.ConvertTextKey("TXT_KEY_CAPTURE_RAZE_HELP", iUnhappinessForSacking);
+		if (newCity:GetOriginalOwner() ~= Game.GetActivePlayer() and bConquest == true) then
+			strToolTip = strToolTip .. "[NEWLINE][NEWLINE]"
+			strToolTip = strToolTip .. activePlayer:GetWarmongerPreviewString(iPreviousOwner);
+		end
 		AddButton(buttonText, OnRazeClicked, strToolTip);
 	end
 

@@ -13,10 +13,12 @@ UPDATE Units SET GoodyHutUpgradeUnitClass = NULL WHERE Type IN (
 	'UNIT_MAYAN_ATLATLIST'			
 );
 
+/*
 INSERT INTO Trait_FreeUnitAtTech
 		(TraitType, TechType, UnitClassType)
 SELECT	'TRAIT_INGENIOUS', 'TECH_WRITING', 'UNITCLASS_SCIENTIST'
 WHERE EXISTS (SELECT * FROM Traits WHERE Type='TRAIT_INGENIOUS');
+*/
 
 INSERT INTO Trait_FreeUnitAtTech
 		(TraitType, TechType, UnitClassType, PromotionType)
@@ -243,9 +245,9 @@ INSERT INTO Unit_FreePromotions
 SELECT	'UNIT_BABYLONIAN_BOWMAN', 'PROMOTION_DESERT_POWER'
 WHERE EXISTS (SELECT * FROM Units WHERE Type='UNIT_BABYLONIAN_BOWMAN');
 
-INSERT INTO Unit_FreePromotions
+/*INSERT INTO Unit_FreePromotions
 		(UnitType, PromotionType)
-SELECT	'UNIT_AMERICAN_PIONEER', 'PROMOTION_SCOUTING_1';
+SELECT	'UNIT_AMERICAN_PIONEER', 'PROMOTION_SCOUTING_1';*/
 
 INSERT INTO Unit_FreePromotions
 		(UnitType, PromotionType)

@@ -109,7 +109,8 @@ FROM Units WHERE Class IN (
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_NAVAL', 1
 FROM Units WHERE CombatClass IN (
-	'UNITCOMBAT_NAVALMELEE'				
+	'UNITCOMBAT_NAVALMELEE'				,
+	'UNITCOMBAT_SUBMARINE'				
 ) AND NOT Class IN (
 	'UNITCLASS_CARRIER'				
 );

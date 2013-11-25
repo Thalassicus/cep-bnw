@@ -144,5 +144,4 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-18'), 'TXT_KEY_BUILDING_BASIN_IRRIGATION', 'Basin Irrigation', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-18'), 'TXT_KEY_BUILDING_BASIN_IRRIGATION_TEXT', 'Ancient Egyptians practiced Basin irrigation using the flooding of the Nile to inundate land plots which had been surrounded by dykes. The flood water was held until the fertile sediment had settled before the surplus was returned to the watercourse.[NEWLINE]There is evidence of the ancient Egyptian pharaoh Amenemhet III in the twelfth dynasty (about 1800 BCE) using the natural lake of the Faiyum Oasis as a reservoir to store surpluses of water for use during the dry seasons, the lake swelled annually from flooding of the Nile.', '', '');
 
-
 UPDATE LoadedFile SET Value=1 WHERE Type='Leaders.sql';

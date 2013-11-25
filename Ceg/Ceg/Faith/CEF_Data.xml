@@ -274,10 +274,12 @@
 		</Row>
 	</Belief_YieldChangeWorldWonder>
 	<Belief_TerrainYieldChanges>
-		<Update>
-			<Where BeliefType="BELIEF_DANCE_AURORA" />
-			<Set Yield="2" YieldType="YIELD_FAITH" />
-		</Update>
+		<Row>
+			<BeliefType>BELIEF_DANCE_AURORA</BeliefType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
 	</Belief_TerrainYieldChanges>
 	<Belief_FeatureYieldChanges>
 		<!--
@@ -343,32 +345,32 @@
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_ONE_WITH_NATURE</BeliefType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 	</Belief_YieldChangeNaturalWonder>
 	<Belief_YieldChangeAnySpecialist>

@@ -98,7 +98,7 @@ function DoImmigration()
 	SaveGameData()
 end
 
-Events.ActivePlayerTurnStart.Add( DoImmigration )
+--Events.ActivePlayerTurnStart.Add( DoImmigration )
 
 --
 -- Utility Functions

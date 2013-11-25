@@ -1,5 +1,13 @@
 --
 
+INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
+SELECT DISTINCT Type, 'PROMOTION_CARGO_I'
+FROM Units WHERE CombatClass IN (
+	'UNITCOMBAT_NAVALMELEE'		,
+	'UNITCOMBAT_NAVALRANGED'	,
+	'UNITCOMBAT_SUBMARINE'		
+) AND EXISTS (SELECT * FROM Cep WHERE Type = 'SHIP_BOARDING' AND Value = 1);
+
 --UPDATE UnitPromotions
 --SET CargoChange = CargoChange + 2 WHERE CargoChange > 0;
 

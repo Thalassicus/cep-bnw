@@ -5,6 +5,9 @@ include( "IconSupport" );
 include( "InfoTooltipInclude" );
 include("MT_LuaLogger.lua")
 
+local log = Events.LuaLogger:New()
+log:SetLevel("WARN")
+
 -- List the textures that we will need here
 local defaultErrorTextureSheet;
 

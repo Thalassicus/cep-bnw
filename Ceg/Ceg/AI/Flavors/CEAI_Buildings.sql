@@ -56,7 +56,7 @@ WHERE Cost = -1;
 
 INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SPACESHIP', 128
-FROM Projects WHERE VictoryPrereq = 'VICTORY_SPACE_RACE' AND Spaceship = 0;
+FROM Projects WHERE VictoryPrereq = 'VICTORY_SPACE_RACE';
 
 INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SPACESHIP', 4
@@ -87,12 +87,17 @@ FROM Buildings WHERE (
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
-SELECT Type, 'FLAVOR_GROWTH', 8
+SELECT Type, 'FLAVOR_GOLDEN_AGE', 8
 FROM Buildings WHERE (
 	   GoldenAge = 1
 	OR GoldenAgePoints > 0
 	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+);
+
+INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
+SELECT Type, 'FLAVOR_GROWTH', 8
+FROM Buildings WHERE (
+	   InstantHappiness <> 0
 	OR FoodKept <> 0
 	OR GlobalPopulationChange <> 0
 	OR AllowsFoodTradeRoutes <> 0
@@ -101,10 +106,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_PRODUCTION', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR BuildingProductionModifier <> 0
 	OR AllowsProductionTradeRoutes <> 0
 );
@@ -112,10 +114,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_GOLD', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR GreatPersonExpendGold <> 0
 	OR UnitUpgradeCostMod <> 0
 	OR CityConnectionTradeRouteModifier <> 0
@@ -129,10 +128,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SCIENCE', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR TechShare <> 0
 	OR FreeTechs <> 0
 	OR MedianTechPercentChange <> 0
@@ -142,10 +138,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_CULTURE', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR CultureRateModifier <> 0
 	OR GlobalCultureRateModifier <> 0
 	OR PolicyCostModifier <> 0
@@ -475,10 +468,7 @@ UPDATE Building_Flavors SET Flavor = 32
 	WHERE (building.BuildingClass = class.Type
 	AND   (class.MaxPlayerInstances = 1
 	)
-	AND   (building.GoldenAge = 1
-		OR building.GoldenAgePoints > 0
-		OR building.GoldenAgeModifier <> 0
-		OR building.InstantHappiness <> 0
+	AND   (building.InstantHappiness <> 0
 		OR building.CultureRateModifier <> 0
 		OR building.GlobalCultureRateModifier <> 0
 		OR building.PolicyCostModifier <> 0
@@ -523,10 +513,7 @@ UPDATE Building_Flavors SET Flavor = 32
 	AND   (class.MaxGlobalInstances = 1
 		OR class.MaxTeamInstances = 1
 	)
-	AND   (building.GoldenAge = 1
-		OR building.GoldenAgePoints > 0
-		OR building.GoldenAgeModifier <> 0
-		OR building.InstantHappiness <> 0
+	AND   (building.InstantHappiness <> 0
 		OR building.CultureRateModifier <> 0
 		OR building.GlobalCultureRateModifier <> 0
 		OR building.PolicyCostModifier <> 0
@@ -570,6 +557,27 @@ INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 UPDATE Building_Flavors SET Flavor = Flavor * 2
 	WHERE BuildingType = 'BUILDING_GREAT_LIBRARY'
 	AND FlavorType = 'FLAVOR_SCIENCE';
+
+-- This CEAI_Buildings.sql data automatically created by:
+-- Buildings_Specific tab of "Good For Priorities" spreadsheet:
+-- https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04tQWN0V2c
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_GRANARY',                  'FLAVOR_RES_GRAINS',               8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_LIGHTHOUSE',               'FLAVOR_RES_SEA',                  8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CARAVANSARY',              'FLAVOR_RES_LUXURY',               8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_BARRACKS',                 'FLAVOR_RES_STRATEGIC',            8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_TEMPLE',                   'FLAVOR_RES_RELIGIOUS',            8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_AQUEDUCT',                 'FLAVOR_RES_EXOTIC',               8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_AMPHITHEATER',             'FLAVOR_RES_COSTUME',              8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_STONE_WORKS',              'FLAVOR_RES_ORE',                  8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_MINT',                     'FLAVOR_RES_CURRENCY',             8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_MACHU_PICHU',              'FLAVOR_GROWTH',                   32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_MACHU_PICHU',              'FLAVOR_GOLD',                     32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_MACHU_PICHU',              'FLAVOR_CULTURE',                  32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_MACHU_PICHU',              'FLAVOR_RELIGION',                 32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_HIMEJI_CASTLE',            'FLAVOR_DEFENSE',                  32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_WAT_PHRA_KAEW',            'FLAVOR_GOLD',                     32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_WAT_PHRA_KAEW',            'FLAVOR_CULTURE',                  32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_PANAMA_CANAL',             'FLAVOR_NAVAL_RECON',              32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_HOLLYWOOD',                'FLAVOR_HAPPINESS',                32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_NEUSCHWANSTEIN',           'FLAVOR_CITY_DEFENSE',             32);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_CULTURE',                  32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_TOURISM',                  32);
+
 
 
 /*
@@ -643,14 +651,7 @@ WHERE BuildingType IN (
 UPDATE Building_Flavors
 SET Flavor = Flavor / 8
 WHERE BuildingType IN (
-	'BUILDING_TEMPLE_ARTEMIS'	
-);
-
-DELETE FROM Building_Flavors
-WHERE FlavorType IN (
-	'FLAVOR_EXPANSION'			,
-	'FLAVOR_TILE_IMPROVEMENT'
-) AND BuildingType IN (
 	'BUILDING_TERRACOTTA_ARMY'	,
-	'BUILDING_PYRAMID'			
+	'BUILDING_PYRAMID'			,
+	'BUILDING_TEMPLE_ARTEMIS'	
 );

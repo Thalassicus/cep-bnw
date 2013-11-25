@@ -7,7 +7,7 @@
     <Guid>828b5b4b-7c62-4afb-a43f-034b596ef5e4</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Beta</Stability>
-    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.7[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.8[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
     <Description>We started this expansion pack because we believe Civilization is a fantastic game, and we want to perfect it while remaining as close to the core experience as possible. CEP does this for Civ 5.[NEWLINE][NEWLINE]We think games should be intuitive to learn, challenging to master, and rewards should match the difficulty to complete tasks. We believe in finding balance between extremes. We set a high bar for adding new things to the game, and instead improve or replace existing objects when possible. [NEWLINE][NEWLINE]If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE][NEWLINE]This is the "basic" version of the Civ V: Communitas Expansion Pack. This version maximizes compatability, reliability, and simplicity by changing as few core files as possible. The full version of Communitas adds innovative new features not possible with the normal Civilization files. If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links below.[NEWLINE][NEWLINE]Features: communitas.wikia.com[NEWLINE]Discuss: forums.civfanatics.com/forumdisplay.php?f=429[NEWLINE]Bugs: bit.ly/bugreporting[NEWLINE]News: civmodding.wordpress.com[NEWLINE]Credits: civmodding.wordpress.com/credits[NEWLINE][NEWLINE][NEWLINE]The Communitas Expansion Pack is a collaboration of work from 38 main authors and an incredible community of forumgoers on CivFanatics.com.[NEWLINE][NEWLINE]Please view the readme in the mod folder, which includes important information about using Civ 5 mods.</Description>
     <Authors>[COLOR_CYAN]Thalassicus</Authors>
     <SpecialThanks>Check the readme in the mod folder for credits.</SpecialThanks>
@@ -898,7 +898,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Text_Faith.sql</FileName>
+        <FileName>Text/en_US/Faith.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1908,7 +1908,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Text\en_US\Text_Faith.sql">
+    <Content Include="Text\en_US\Faith.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

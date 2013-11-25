@@ -35,13 +35,13 @@ UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_EMPEROR';
 UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_IMMORTAL';
 UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_DEITY';
 
-UPDATE Defines SET Value = 90 WHERE Name = 'BARBARIAN_MAX_XP_VALUE';
+UPDATE Defines SET Value = 90 WHERE Name = 'BARBARIAN_MAX_XP_VALUE'; -- default 90
 
 
 /*
 Minimum distance (in tiles) between cities.
 */
-UPDATE Defines SET Value = 3 WHERE Name = 'MIN_CITY_RANGE';
+UPDATE Defines SET Value = 3 WHERE Name = 'MIN_CITY_RANGE'; -- default 3
 
 
 /*
@@ -52,9 +52,18 @@ UPDATE GameSpeeds SET CulturePercent=300, ResearchPercent=300, FaithPercent=300 
 
 
 /*
-Higher number if you want more natural wonders, or negative if you want fewer.
+Add a higher number if you want more natural wonders, or subtract if you want fewer.
 */
-UPDATE Worlds SET NumNaturalWonders = NumNaturalWonders + 1;
+UPDATE Worlds SET NumNaturalWonders = NumNaturalWonders + 1; -- default +1
+
+
+/*
+Ship Boarding
+1 = land units can board military ships
+0 = land units can not board military ships
+*/
+INSERT INTO Cep (Type, Value)
+VALUES ('SHIP_BOARDING', 1); -- default 1
 
 
 

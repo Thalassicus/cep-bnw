@@ -1,5 +1,7 @@
 --
 
+DELETE FROM Building_DomainFreeExperiences;
+
 --
 -- Global Mods
 --
@@ -111,7 +113,7 @@ WHERE EXISTS (SELECT * FROM Buildings WHERE Type='BUILDING_TEMPLE_ARTEMIS' );
 
 INSERT INTO Building_UnitCombatFreeExperiences
 	(BuildingType, UnitCombatType, Experience)
-SELECT 'BUILDING_TEMPLE_ARTEMIS', 'UNITCOMBAT_MOUNTED_ARCHER', '20'
+SELECT 'BUILDING_TEMPLE_ARTEMIS', 'UNITCOMBAT_GUN', '20'
 WHERE EXISTS (SELECT * FROM Buildings WHERE Type='BUILDING_TEMPLE_ARTEMIS' );
 
 INSERT INTO Building_FreeUnits

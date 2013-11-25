@@ -87,12 +87,17 @@ FROM Buildings WHERE (
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
-SELECT Type, 'FLAVOR_GROWTH', 8
+SELECT Type, 'FLAVOR_GOLDEN_AGE', 8
 FROM Buildings WHERE (
 	   GoldenAge = 1
 	OR GoldenAgePoints > 0
 	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+);
+
+INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
+SELECT Type, 'FLAVOR_GROWTH', 8
+FROM Buildings WHERE (
+	   InstantHappiness <> 0
 	OR FoodKept <> 0
 	OR GlobalPopulationChange <> 0
 	OR AllowsFoodTradeRoutes <> 0
@@ -101,10 +106,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_PRODUCTION', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR BuildingProductionModifier <> 0
 	OR AllowsProductionTradeRoutes <> 0
 );
@@ -112,10 +114,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_GOLD', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR GreatPersonExpendGold <> 0
 	OR UnitUpgradeCostMod <> 0
 	OR CityConnectionTradeRouteModifier <> 0
@@ -129,10 +128,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SCIENCE', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR TechShare <> 0
 	OR FreeTechs <> 0
 	OR MedianTechPercentChange <> 0
@@ -142,10 +138,7 @@ FROM Buildings WHERE (
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_CULTURE', 8
 FROM Buildings WHERE (
-	   GoldenAge = 1
-	OR GoldenAgePoints > 0
-	OR GoldenAgeModifier <> 0
-	OR InstantHappiness <> 0
+	   InstantHappiness <> 0
 	OR CultureRateModifier <> 0
 	OR GlobalCultureRateModifier <> 0
 	OR PolicyCostModifier <> 0
@@ -475,10 +468,7 @@ UPDATE Building_Flavors SET Flavor = 32
 	WHERE (building.BuildingClass = class.Type
 	AND   (class.MaxPlayerInstances = 1
 	)
-	AND   (building.GoldenAge = 1
-		OR building.GoldenAgePoints > 0
-		OR building.GoldenAgeModifier <> 0
-		OR building.InstantHappiness <> 0
+	AND   (building.InstantHappiness <> 0
 		OR building.CultureRateModifier <> 0
 		OR building.GlobalCultureRateModifier <> 0
 		OR building.PolicyCostModifier <> 0
@@ -523,10 +513,7 @@ UPDATE Building_Flavors SET Flavor = 32
 	AND   (class.MaxGlobalInstances = 1
 		OR class.MaxTeamInstances = 1
 	)
-	AND   (building.GoldenAge = 1
-		OR building.GoldenAgePoints > 0
-		OR building.GoldenAgeModifier <> 0
-		OR building.InstantHappiness <> 0
+	AND   (building.InstantHappiness <> 0
 		OR building.CultureRateModifier <> 0
 		OR building.GlobalCultureRateModifier <> 0
 		OR building.PolicyCostModifier <> 0
