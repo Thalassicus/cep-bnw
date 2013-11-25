@@ -1283,6 +1283,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Policies/CEP_WonderUnlocks.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Research/CER_End.sql</FileName>
       </Action>
       <Action>
@@ -1773,6 +1778,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Policies\CEP_End.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Policies\CEP_WonderUnlocks.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
