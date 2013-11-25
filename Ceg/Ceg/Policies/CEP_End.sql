@@ -1,4 +1,8 @@
--- 
+--
+
+INSERT INTO PolicyBranchTypes(Type, Description, EraPrereq, AIMutuallyExclusive)
+SELECT Type, Description, 'ERA_FUTURE', 1
+FROM Policies;
 
 
 

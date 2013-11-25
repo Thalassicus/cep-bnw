@@ -95,20 +95,6 @@
 			<Count>1</Count>
 		</Row>
 	</Policy_FreeUnitClasses>
-	<PolicyBranchTypes>
-		<Row>
-			<Type>POLICY_MERITOCRACY</Type>
-			<Description>TXT_KEY_POLICY_MERITOCRACY</Description>
-			<Help>TXT_KEY_POLICY_MERITOCRACY_HELP</Help>
-			<Title>TXT_KEY_LIBERTY_TITLE</Title>
-		</Row>
-		<Row>
-			<Type>POLICY_REPUBLIC</Type>
-			<Description>TXT_KEY_POLICY_REPUBLIC</Description>
-			<Help>TXT_KEY_POLICY_REPUBLIC_HELP</Help>
-			<Title>TXT_KEY_LIBERTY_TITLE</Title>
-		</Row>
-	</PolicyBranchTypes>
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_PYRAMID" />
