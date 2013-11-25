@@ -171,7 +171,7 @@ function UpdatePuppetOccupyStatus(city, player, isForced)
 			isPuppet		= false
 			isOccupied		= false
 			city:SetPuppet(false)
-			city:SetOccupied(false)	
+			--city:SetOccupied(false)	
 			log:Info("Courthouse is in %s %s", player:GetName(), city:GetName())	
 		else
 			city:SetNumRealBuilding(governorID, 1)
@@ -217,7 +217,7 @@ function FixGameCoreCaptureBug(hexPos, lostPlayerID, cityID, wonPlayerID)
 		log:Warn("%s wonPlayerID=%s original=%s", city:GetName(), wonPlayerID, city:GetOriginalOwner())
 		if wonPlayerID ~= city:GetOriginalOwner() then
 			city:SetPuppet(true)
-			city:SetOccupied(false)
+			--city:SetOccupied(false)
 			city:ChooseProduction()
 			log:Warn("Set %s to puppet", city:GetName())
 		end
@@ -284,7 +284,7 @@ function BuildingCreated(player, city, buildingID)
 	local endOccupy = buildingInfo.NoOccupiedUnhappinessFixed
 	if endOccupy then
 		city:SetPuppet(false)
-		city:SetOccupied(false)
+		--city:SetOccupied(false)
 		log:Info("Courthouse built in %s %s", player:GetName(), city:GetName())
 	end
 	
