@@ -189,7 +189,7 @@ function City_DoRefugees(cityPlot, city, cityName, lostPlayer, wonPlayer)
 	
 	if city:GetResistanceTurns() > 0 and wonPlayer:IsHuman() then
 		-- work around occupation bug
-		city:SetOccupied(false)
+		--city:SetOccupied(false)
 		city:SetPuppet(true)
 	end
 	
