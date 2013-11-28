@@ -288,10 +288,14 @@ function GetUnitTip(args)
 		
 		-- Obsolescence
 		local pObsolete = unitInfo.ObsoleteTech
-		if pObsolete ~= nil and pObsolete ~= "" then
-			pObsolete = Locale.ConvertTextKey(GameInfo.Technologies[pObsolete].Description)
-			textBody = textBody .. "[NEWLINE]"
-			textBody = textBody .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_UNIT_OBSOLETE_TECH", pObsolete)
+		if pObsolete and pObsolete ~= "" then
+			if GameInfo.Technologies[pObsolete] then
+				pObsolete = Locale.ConvertTextKey(GameInfo.Technologies[pObsolete].Description)
+				textBody = textBody .. "[NEWLINE]"
+				textBody = textBody .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_UNIT_OBSOLETE_TECH", pObsolete)
+			else
+				log:Warn("%s obsolete tech %s does not exist", unitInfo.Type, unitInfo.ObsoleteTech)
+			end
 		end
 		
 		-- Limit

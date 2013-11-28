@@ -8,7 +8,7 @@
 		</Update>
 		<Update>
 			<Where Type="POLICY_LEGALISM" />
-			<Set PolicyBranchType="NIL"
+			<Set PolicyBranchType="NULL"
 				 />
 		</Update>
 		<Row>

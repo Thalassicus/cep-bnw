@@ -1,5 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_COMMERCE" />
+			<Set EmbarkedExtraMoves="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_COMMERCE_FINISHER" />
+			<Set TradeMissionGoldModifier="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PROTECTIONISM" />
+			<Set GridX="1"
+				 GridY="1"
+				 PortraitIndex="11"
+				 ExtraHappinessPerLuxury="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CARAVANS" />
+			<Set GridX="3"
+				 GridY="1"
+				 SeaTradeRouteGoldChange="100"
+				 RouteGoldMaintenanceMod="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MARITIME_INFRASTRUCTURE" />
+			<Set PolicyBranchType="POLICY_BRANCH_COMMERCE"
+				 GridX="5"
+				 GridY="1"
+				 PortraitIndex="6"
+				 IconAtlas="POLICY_ATLAS_EXP2"
+				 IconAtlasAchieved="POLICY_A_ATLAS_EXP2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TRADE_UNIONS" /> <!-- Mercenary Army -->
+			<Set GridX="2"
+				 GridY="2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ENTREPRENEURSHIP" />
+			<Set GridX="4"
+				 GridY="2"
+				 EmbarkedExtraMoves="0"
+				 />
+		</Update>
+	</Policies>
+
+	<Policy_BuildingClassYieldChanges>
+		<Delete PolicyType="POLICY_MERCANTILISM" />
+		<Row>
+			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SEAPORT</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_CapitalYieldModifiers>
+		<Delete PolicyType="POLICY_COMMERCE" />
+	</Policy_CapitalYieldModifiers>
+	<Policy_YieldModifiers>
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>10</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>10</Yield>
+		</Row>
+	</Policy_YieldModifiers>
+	<!--
+	<Policy_PlayerYieldModifiers>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>15</YieldMod>
+		</Row>
+	</Policy_PlayerYieldModifiers>
+	-->
+	<Policy_ImprovementYieldChanges>
+		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
+			<UnitClassType>UNITCLASS_GERMAN_LANDSKNECHT</UnitClassType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
 	
 	<!--
 	<Policies>

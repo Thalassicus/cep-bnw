@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_EXPLORATION" />
+			<Set EmbarkedExtraMoves="2" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_EXPLORATION_FINISHER" />
+			<Set ExtraHappinessPerLuxury="1"
+			/>
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCHANT_NAVY" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_NAVIGATION_SCHOOL" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TREASURE_FLEETS" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_NAVAL_TRADITION" />
+			<Set GridX="2"
+				 GridY="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCANTILISM" />
+			<Set GridX="4"
+				 GridY="1"
+				 BuildingGoldMaintenanceMod="-25"
+				 PolicyBranchType="POLICY_BRANCH_EXPLORATION"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_COLONIZATION</Type>
+			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_COLONIZATION</Description>
+			<Civilopedia>TXT_KEY_POLICY_COLONIZATION_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_COLONIZATION_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>44</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<NewCityExtraPopulation>5</NewCityExtraPopulation>
+		</Row>
+		<Row>
+			<Type>POLICY_PIONEER_SPIRIT</Type>
+			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_PIONEER_SPIRIT</Description>
+			<Civilopedia>TXT_KEY_POLICY_PIONEER_SPIRIT_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_PIONEER_SPIRIT_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>3</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>44</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<IncludesOneShotFreeUnits>true</IncludesOneShotFreeUnits>
+			<OneShot>true</OneShot>
+			<RevealMap>true</RevealMap>
+		</Row>
+		<Row>
+			<Type>POLICY_HOMESTEAD_ACT</Type>
+			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_HOMESTEAD_ACT</Description>
+			<Civilopedia>TXT_KEY_POLICY_HOMESTEAD_ACT_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_HOMESTEAD_ACT_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>5</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>44</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+	</Policies>
+	<Policy_FreePromotions>
+		<Update>
+			<Where PromotionType="PROMOTION_FAST_ADMIRAL"/>
+			<Set PolicyType="POLICY_EXPLORATION"/>
+		</Update>
+	</Policy_FreePromotions>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_NAVAL_TRADITION"/>
+			<Set MovesChange="0"/>
+		</Update>
+	</UnitPromotions>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+			<Count>2</Count>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_FreeUnitFlavor>
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitFlavor>
 	
 	<!--
 	<Policies>
