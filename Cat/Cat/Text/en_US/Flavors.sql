@@ -46,6 +46,7 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_ESPIONAGE', 'Espionage', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_RELIGION', 'Religion', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_TOURISM', 'Tourism', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_GOLDEN_AGE', 'Golden Age', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_I_LAND_TRADE_ROUTE', 'Land Trade', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_I_SEA_TRADE_ROUTE', 'Sea Trade', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-08-26'), 'TXT_KEY_FLAVOR_I_TRADE_DESTINATION', 'Trade Destination', '', '');
