@@ -5,7 +5,7 @@
 			<Type>TECH_CARVEL_HULLS</Type>
 			<Description>TXT_KEY_TECH_CARVEL_HULLS</Description>
 			<Civilopedia>TXT_KEY_TECH_CARVEL_HULLS_PEDIA</Civilopedia>
-			<Help></Help>
+			<Help>TXT_KEY_GENERIC_HELP_FIELD</Help>
 			<Trade>true</Trade>
 			<Quote>TXT_KEY_TECH_CARVEL_HULLS_QUOTE</Quote>
 			<PortraitIndex>13</PortraitIndex>
