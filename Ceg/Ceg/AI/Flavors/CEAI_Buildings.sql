@@ -56,7 +56,7 @@ WHERE Cost = -1;
 
 INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SPACESHIP', 128
-FROM Projects WHERE VictoryPrereq = 'VICTORY_SPACE_RACE';
+FROM Projects WHERE VictoryPrereq = 'VICTORY_SPACE_RACE' AND Spaceship = 0;
 
 INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SPACESHIP', 4
