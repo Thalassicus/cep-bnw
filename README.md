@@ -4,7 +4,7 @@
  ~ [Discussion] (http://tinyurl.com/communitas-mod)
  ~ [Support] (https://github.com/Thalassicus/cep-bnw/issues)
  ~ [News] (http://civmodding.wordpress.com)
- ~ [Credits] (http://communitas.wikia.com/wiki/Credits)
+ ~ [Credits] (https://github.com/Thalassicus/cep-bnw/wiki/Credits)
  ~ 
 
 This project is organized in four parts:
