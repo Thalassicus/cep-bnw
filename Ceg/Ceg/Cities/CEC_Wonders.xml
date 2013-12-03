@@ -270,7 +270,7 @@
 				 FreeBuildingThisCity="BUILDINGCLASS_COLOSSEUM"
 				 IconAtlas="CEP_WONDER_ATLAS"
 				 PortraitIndex="3"
-				 WonderSplashImage="flavian_splash.dds"
+				 WonderSplashImage="splash_flavian.dds"
 				 WonderSplashAnchor="R,B"
 				 />
 		</Update>
