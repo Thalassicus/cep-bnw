@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 3/9/2012 4:04:09 PM -->
 <GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_PATRONAGE" />
+			<Set MinorFriendshipDecayMod="0"
+				 CityStateTradeChange="200"
+				 RevealMinorCapitals="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PHILANTHROPY" />
+			<Set GridX="2"
+				 GridY="1"
+				 MinorInfluence="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CONSULATES" />
+			<Set GridX="4"
+				 GridY="1"
+				 MinorInfluence="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SCHOLASTICISM" />
+			<Set GridX="1"
+				 GridY="2"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_SPECIAL_RELATIONSHIP</Type>
+			<Description>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP</Description>
+			<Civilopedia>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_PATRONAGE</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<GridX>3</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>41</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<MinorFriendshipDecayMod>-25</MinorFriendshipDecayMod>
+			<OtherPlayersMinorFriendshipDecayMod>10</OtherPlayersMinorFriendshipDecayMod>
+		</Row>
+		<Update>
+			<Where Type="POLICY_CULTURAL_DIPLOMACY" />
+			<Set GridX="5"
+				 GridY="2"
+				 MinorResourceBonus="0"
+				 MinorGreatPeopleAllies="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCHANT_CONFEDERACY" />
+			<Set PolicyBranchType="NULL"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PATRONAGE_FINISHER" />
+			<Set MinorResourceBonus="1"
+				 MinorGreatPeopleAllies="0"
+				 />
+		</Update>
+	</Policies>
 	
 	<!--
 	<Policies>

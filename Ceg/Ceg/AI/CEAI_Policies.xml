@@ -9,18 +9,28 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_LIBERTY" />
 		<Row>
 			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_LIBERTY</PolicyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
-			<Flavor>8</Flavor>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LIBERTY</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>8</Flavor>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_LIBERTY</PolicyType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LIBERTY</PolicyType>
@@ -32,17 +42,12 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
+		<Row>
+			<PolicyType>POLICY_LIBERTY</PolicyType>
+			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
 		<Delete PolicyType="POLICY_COLLECTIVE_RULE" />
-		<Row>
-			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Row>
 			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
@@ -51,22 +56,12 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_MERITOCRACY" />
 		<Row>
 			<PolicyType>POLICY_MERITOCRACY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERITOCRACY</PolicyType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MERITOCRACY</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERITOCRACY</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
@@ -75,16 +70,6 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_CITIZENSHIP" />
-		<Row>
-			<PolicyType>POLICY_CITIZENSHIP</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_CITIZENSHIP</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Row>
 			<PolicyType>POLICY_CITIZENSHIP</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
@@ -98,23 +83,8 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_REPUBLIC" />
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_REPUBLIC</PolicyType>
 			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
 			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_REPUBLIC</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_REPUBLIC</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
@@ -124,40 +94,15 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_REPRESENTATION" />
 		<Row>
 			<PolicyType>POLICY_REPRESENTATION</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_REPRESENTATION</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_REPRESENTATION</PolicyType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_REPRESENTATION</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_LIBERTY_FINISHER" />
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
+		<Delete PolicyType="POLICY_LIBERTY_FINISHER" />
 		<Row>
 			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
@@ -171,13 +116,13 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_TRADITION" />
 		<Row>
 			<PolicyType>POLICY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
-			<Flavor>8</Flavor>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION</PolicyType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>8</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION</PolicyType>
@@ -186,15 +131,20 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_WONDER</FlavorType>
-			<Flavor>8</Flavor>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_CEREMONIAL_RITES" />
 		<Row>
-			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_CEREMONIAL_RITES" />
 		<Row>
 			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -208,39 +158,19 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_MONARCHY" />
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_LANDED_ELITE" />
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
@@ -250,12 +180,12 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_ARISTOCRACY" />
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>2</Flavor>
 		</Row>
 		<Row>
@@ -266,192 +196,47 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_OLIGARCHY" />
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_OLIGARCHY</PolicyType>
 			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<FlavorType>FLAVOR_WONDER</FlavorType>
-			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_TRADITION_FINISHER" />
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
 			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>8</Flavor>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_WONDER</FlavorType>
-			<Flavor>8</Flavor>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_HONOR" />
-		<Row>
-			<PolicyType>POLICY_HONOR</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR</PolicyType>
-			<FlavorType>FLAVOR_DEFENSE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_MILITARY_TRADITION" />
-		<Row>
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_DEFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_SPOILS_OF_WAR" />
-		<Row>
-			<PolicyType>POLICY_SPOILS_OF_WAR</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SPOILS_OF_WAR</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SPOILS_OF_WAR</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_WAR_EPICS" />
-		<Row>
-			<PolicyType>POLICY_WAR_EPICS</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_WAR_EPICS</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_WAR_EPICS</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_WAR_EPICS</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_WAR_EPICS</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_DISCIPLINE" />
-		<Row>
-			<PolicyType>POLICY_DISCIPLINE</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_DISCIPLINE</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_DISCIPLINE</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
-		<Row>
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_HONOR_FINISHER" />
-		<Row>
-			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_PIETY" />
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PIETY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
@@ -460,13 +245,8 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PIETY</PolicyType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>4</Flavor>
+			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_CHARITY" />
 		<Row>
@@ -476,53 +256,18 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CHARITY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_CHARITY</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_INSPIRATION" />
 		<Row>
 			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_INSPIRATION</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_TOLERANCE" />
 		<Row>
 			<PolicyType>POLICY_TOLERANCE</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TOLERANCE</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TOLERANCE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TOLERANCE</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
@@ -531,53 +276,13 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_UNITY" />
+		<Delete PolicyType="POLICY_MEDITATION" />
 		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
+			<PolicyType>POLICY_MEDITATION</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITY</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>4</Flavor>
+			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_DEVOTION" />
-		<Row>
-			<PolicyType>POLICY_DEVOTION</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
 		<Row>
 			<PolicyType>POLICY_DEVOTION</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -586,19 +291,49 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_PIETY_FINISHER" />
 		<Row>
 			<PolicyType>POLICY_PIETY_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PIETY_FINISHER</PolicyType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_PATRONAGE" />
 		<Row>
 			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PATRONAGE</PolicyType>
@@ -608,64 +343,49 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Delete PolicyType="POLICY_PHILANTHROPY" />
 		<Row>
 			<PolicyType>POLICY_PHILANTHROPY</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PHILANTHROPY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PHILANTHROPY</PolicyType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_CULTURAL_DIPLOMACY" />
 		<Row>
 			<PolicyType>POLICY_CULTURAL_DIPLOMACY</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_CULTURAL_DIPLOMACY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CULTURAL_DIPLOMACY</PolicyType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_AESTHETICS" />
+		<Delete PolicyType="POLICY_CONSULATES" />
 		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_EDUCATED_ELITE" />
+		<Delete PolicyType="POLICY_SPECIAL_RELATIONSHIP" />
 		<Row>
-			<PolicyType>POLICY_EDUCATED_ELITE</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_EDUCATED_ELITE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_EDUCATED_ELITE</PolicyType>
+			<PolicyType>POLICY_SPECIAL_RELATIONSHIP</PolicyType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
@@ -677,19 +397,14 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SCHOLASTICISM</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCHOLASTICISM</PolicyType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_PATRONAGE_FINISHER" />
 		<Row>
 			<PolicyType>POLICY_PATRONAGE_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PATRONAGE_FINISHER</PolicyType>
@@ -702,529 +417,219 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_AESTHETICS" />
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS</PolicyType>
-			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_FREE_TRADE" />
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_TRADE</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_UNIVERSAL_SUFFRAGE" />
-		<Row>
-			<PolicyType>POLICY_UNIVERSAL_SUFFRAGE</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNIVERSAL_SUFFRAGE</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNIVERSAL_SUFFRAGE</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNIVERSAL_SUFFRAGE</PolicyType>
-			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_FREE_SPEECH" />
-		<Row>
-			<PolicyType>POLICY_FREE_SPEECH</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_SPEECH</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_SPEECH</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_SPEECH</PolicyType>
-			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_DEMOCRACY" />
-		<Row>
-			<PolicyType>POLICY_DEMOCRACY</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_DEMOCRACY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_DEMOCRACY</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_IMMIGRATION" />
-		<Row>
-			<PolicyType>POLICY_IMMIGRATION</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_IMMIGRATION</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_IMMIGRATION</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_IMMIGRATION</PolicyType>
-			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_AESTHETICS_FINISHER" />
-		<Row>
-			<PolicyType>POLICY_AESTHETICS_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_GROWTH</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_AESTHETICS_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
 		<Delete PolicyType="POLICY_EXPLORATION" />
 		<Row>
 			<PolicyType>POLICY_EXPLORATION</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_EXPLORATION</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_EXPLORATION</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_EXPLORATION</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
+			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_EXPLORATION</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_PLANNED_ECONOMY" />
-		<Row>
-			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_NAVAL_TRADITION" />
 		<Row>
-			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PLANNED_ECONOMY</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_SOCIALISM" />
-		<Row>
-			<PolicyType>POLICY_SOCIALISM</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOCIALISM</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOCIALISM</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOCIALISM</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOCIALISM</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_LABOR_UNIONS" />
-		<Row>
-			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_LABOR_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_COMMUNISM" />
-		<Row>
-			<PolicyType>POLICY_COMMUNISM</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMUNISM</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMUNISM</PolicyType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMUNISM</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMUNISM</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_UNITED_FRONT" />
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_TOURISM</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
-			<FlavorType>FLAVOR_ARCHAEOLOGY</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_EXPLORATION_FINISHER" />
-		<Row>
-			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_COMMERCE" />
-		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
 			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
-			<FlavorType>FLAVOR_RELIGION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE</PolicyType>
-			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_MERCANTILISM" />
 		<Row>
 			<PolicyType>POLICY_MERCANTILISM</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERCANTILISM</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERCANTILISM</PolicyType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>4</Flavor>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MERCANTILISM</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_COLONIZATION" />
 		<Row>
-			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PolicyType>POLICY_COLONIZATION</PolicyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Delete PolicyType="POLICY_PIONEER_SPIRIT" />
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
 			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_TRADE_UNIONS" />
+		<Delete PolicyType="POLICY_HOMESTEAD_ACT" />
 		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<PolicyType>POLICY_HOMESTEAD_ACT</PolicyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_HOMESTEAD_ACT</PolicyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Delete PolicyType="POLICY_EXPLORATION_FINISHER" />
+		<Row>
+			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Delete PolicyType="POLICY_COMMERCE" />
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COMMERCE</PolicyType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_PROTECTIONISM" />
 		<Row>
 			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_CARAVANS" />
 		<Row>
-			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
-			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_MERCHANT_NAVY" />
-		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<PolicyType>POLICY_CARAVANS</PolicyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<PolicyType>POLICY_CARAVANS</PolicyType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
+			<PolicyType>POLICY_CARAVANS</PolicyType>
+			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CARAVANS</PolicyType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Delete PolicyType="POLICY_MARITIME_INFRASTRUCTURE" />
+		<Row>
+			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
 			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_MERCENARY_ARMY" />
 		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_TILE_IMPROVEMENT</FlavorType>
+			<PolicyType>POLICY_MERCENARY_ARMY</PolicyType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
+			<PolicyType>POLICY_MERCENARY_ARMY</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Delete PolicyType="POLICY_ENTREPRENEURSHIP" />
+		<Row>
+			<PolicyType>POLICY_ENTREPRENEURSHIP</PolicyType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>2</Flavor>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MERCHANT_NAVY</PolicyType>
-			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_PATENT_LAW" />
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<FlavorType>FLAVOR_EXPANSION</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
-			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
+			<PolicyType>POLICY_ENTREPRENEURSHIP</PolicyType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
 		<Row>
 			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_OFFENSE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_GOLD</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_RATIONALISM" />
@@ -1240,23 +645,13 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_RATIONALISM</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_RATIONALISM</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+			<Flavor>2</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_RATIONALISM</PolicyType>
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_RATIONALISM</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_SCIENTIFIC_REVOLUTION" />
 		<Row>
@@ -1266,44 +661,19 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
+		<Delete PolicyType="POLICY_COUNTERINTELLIGENCE" />
 		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Delete PolicyType="POLICY_SOVEREIGNTY" />
-		<Row>
-			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
-			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
-			<Flavor>2</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
-			<Flavor>2</Flavor>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_FREE_THOUGHT" />
 		<Row>
@@ -1314,64 +684,19 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Row>
 			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
-			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
 			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
-			<FlavorType>FLAVOR_WATER_CONNECTION</FlavorType>
-			<Flavor>4</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_HUMANISM" />
 		<Row>
 			<PolicyType>POLICY_HUMANISM</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HUMANISM</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HUMANISM</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_HUMANISM</PolicyType>
-			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_SECULARISM" />
 		<Row>
 			<PolicyType>POLICY_SECULARISM</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SECULARISM</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_SECULARISM</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
+			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SECULARISM</PolicyType>
@@ -1383,16 +708,6 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<PolicyType>POLICY_RATIONALISM_FINISHER</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>8</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_RATIONALISM_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
-			<Flavor>4</Flavor>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_RATIONALISM_FINISHER</PolicyType>
-			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<Flavor>1</Flavor>
 		</Row>
 	</Policy_Flavors>
 </GameData>

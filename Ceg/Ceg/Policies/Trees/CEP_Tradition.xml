@@ -33,7 +33,7 @@
 		<Update>
 			<Where Type="POLICY_LANDED_ELITE" />
 			<Set CapitalGrowthMod="0"
-				 CityGrowthMod="15"
+				 CityGrowthMod="25"
 				 GridX="5"
 				 GridY="1"
 				 />

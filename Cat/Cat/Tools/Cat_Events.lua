@@ -578,7 +578,7 @@ function NewCity(hexPos, playerID, cityID, cultureType, eraType, continent, popu
 		end
 	end
 
-	CheckPerTurnPolicyEffects(player)
+	DoPerTurnPolicyEffects(player)
 end
 
 Events.SerialEventCityCreated.Add( NewCity )
@@ -778,36 +778,56 @@ LuaEvents.ActivePlayerTurnStart_Player.Add( CheckPerTurnTechEffects )
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 
+function DoPerTurnPolicyEffects(player)
+	SafeCall(DoPolicyFreeBuildingClasses,	player)
+	SafeCall(DoPolicyFreeBuildingFlavors,	player)
+end
+LuaEvents.ActivePlayerTurnStart_Player.Add( DoPerTurnPolicyEffects )
+
 function DoPolicyEffects(player, policyID)
 	if not policyID then
 		log:Error("DoPolicyEffects policyID=%s", policyID)
 		return nil
 	end
 	local policyInfo = GameInfo.Policies[policyID]
+	if not policyID then
+		log:Error("DoPolicyEffects policyID=%s", policyID)
+		return nil
+	end
 	log:Info("DoPolicyEffects %s %s", player:GetName(), policyInfo.Type)
-	DoPolicyExperience(player, policyInfo)
-	DoPolicyBorderObstacle(player, policyInfo)
-	DoPolicyInfluence(player, policyInfo)
-	DoPolicyFreeUnits(player, policyID)
-	DoPolicyFreeBuildingClasses(player, policyID)
-	DoPolicyFreeBuildingFlavors(player, policyID)
-	DoPolicyInstantYield(player, policyID)
-	DoPolicyBuildingUnlocks(player, policyID)
-end
-LuaEvents.NewPolicy.Add( DoPolicyEffects )
 
-function DoPolicyBuildingUnlocks(player, policyID)
-	local policyBranch = GameInfo.PolicyBranchTypes[GameInfo.Policies[policyID].Type]
+	SafeCall(DoPolicyExperience,			player, policyInfo)
+	SafeCall(DoPolicyBorderObstacle,		player, policyInfo)
+	SafeCall(DoPolicyInfluence,				player, policyInfo)
+	SafeCall(DoPolicyInstantYield,			player, policyInfo)
+	SafeCall(DoPolicyBuildingUnlocks,		player, policyInfo)
+	SafeCall(DoPolicyReveals,				player, policyInfo)
+	SafeCall(DoPolicyFreeUnits,				player, policyID)
+	SafeCall(DoPolicyFreeBuildingClasses,	player, policyID)
+	SafeCall(DoPolicyFreeBuildingFlavors,	player, policyID)
+end
+LuaEvents.NewPolicy.Add(function(player, policyID) return SafeCall(DoPolicyEffects, player, policyID) end)
+
+function DoPolicyReveals(player, policyInfo)
+	if not policyInfo.RevealAllCapitals then
+		return
+	end
+	local teamID = player:GetTeam()
+	for minorCivID, minorCiv in pairs(Players) do
+		if minorCiv:IsAliveCiv() and minorCiv:IsMinorCiv() then
+			for nearPlot in Plot_GetPlotsInCircle(minorCiv:GetCapitalCity():Plot(), 0, 3) do
+				nearPlot:SetRevealed(teamID, true)
+			end
+		end		
+	end
+end
+
+function DoPolicyBuildingUnlocks(player, policyInfo)
+	local policyBranch = GameInfo.PolicyBranchTypes[policyInfo.Type]
 	if policyBranch then
 		player:SetPolicyBranchUnlocked(policyBranch.ID, true, false)
 	end
 end
-
-function CheckPerTurnPolicyEffects(player)
-	DoPolicyFreeBuildingClasses(player)
-	DoPolicyFreeBuildingFlavors(player)
-end
-LuaEvents.ActivePlayerTurnStart_Player.Add( CheckPerTurnPolicyEffects )
 	
 function DoPolicyFreeUnits(player, policyID)
 	--log:Info("DoPolicyFreeUnits")
@@ -984,8 +1004,8 @@ function DoPolicyInfluence(player, policyInfo)
 	end
 end
 
-function DoPolicyInstantYield(player, policyID)
-	local policyType = GameInfo.Policies[policyID].Type
+function DoPolicyInstantYield(player, policyInfo)
+	local policyType = policyInfo.Type
 	log:Debug("DoPolicyInstantYield %s %s", player:GetName(), policyType)
 	
 	for info in GameInfo.Policy_InstantYield{PolicyType = policyType} do
@@ -1042,7 +1062,7 @@ if not MapModData.Cep_FreeFlavorBuilding then
 	MapModData.Cep_PlayerFreeBuildings.Buildings = {}
 	MapModData.Cep_PlayerFreeBuildings.Flavors = {}
 	startClockTime = os.clock()
-	for playerID,player in pairs(Players) do
+	for playerID, player in pairs(Players) do
 		MapModData.Cep_PlayerFreeBuildings.Buildings[playerID] = {}
 		if UI:IsLoadedGame() then
 			for city in player:Cities() do

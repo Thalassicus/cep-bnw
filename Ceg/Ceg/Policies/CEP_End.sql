@@ -26,6 +26,17 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_COLOSSEUM'	
 );
 
+INSERT INTO Policy_BuildingClassYieldChanges
+	(PolicyType, BuildingClassType, YieldType, YieldChange)
+SELECT DISTINCT
+	'POLICY_CULTURAL_CENTERS', BuildingClass, 'YIELD_CULTURE', 2
+FROM Buildings WHERE BuildingClass IN (
+	SELECT Type FROM BuildingClasses
+	WHERE (MaxPlayerInstances = 1) AND NOT Type IN (
+		'BUILDINGCLASS_PALACE'
+	)
+);
+
 -- Policy changes from pre-BNW
 /*
 INSERT INTO Policy_BuildingClassYieldChanges(

@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-	
+
+	<Policies>
+		<Update>
+			<Where Type="POLICY_AESTHETICS" />
+			<Set GreatWriterRateModifier="0"
+				 GreatArtistRateModifier="0"
+				 GreatMusicianRateModifier="0" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_AESTHETICS_FINISHER" />
+			<Set ThemingBonusMultiplier="0" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FLOURISHING_OF_ARTS" />
+			<Set CultureWonderMultiplier="0"
+				 GoldenAgeMeterMod="-25"
+				 GridX="1"
+				 GridY="1" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FINE_ARTS" />
+			<Set GridX="3"
+				 GridT="1" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CULTURAL_CENTERS" />
+			<Set GridX="2"
+				 GridY="2" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ARTISTIC_GENIUS" />
+			<Set GridX="5"
+				 GridY="1"
+				 GreatWriterRateModifier="0"
+				 GreatArtistRateModifier="0"
+				 GreatMusicianRateModifier="0" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CULTURAL_EXCHANGE" />
+			<Set GridX="4"
+				 GridY="2"
+				 ThemingBonusMultiplier="100" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Update>
+			<Where Type="POLICY_CULTURAL_CENTERS" />
+			<Set Type="POLICY_AESTHETICS" />
+		</Update>
+	</Policy_BuildingClassProductionModifiers>
+	<Resources>
+		<Update>
+			<Where PolicyReveal="POLICY_EXPLORATION_FINISHER" />
+			<Set PolicyReveal="POLICY_AESTHETICS_FINISHER" />
+		</Update>
+	</Resources>
 	<!--
 	<Policies>
 		<Update>
