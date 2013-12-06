@@ -15,7 +15,7 @@
 			<Where Type="POLICY_PROTECTIONISM" />
 			<Set GridX="1"
 				 GridY="1"
-				 PortraitIndex="11"
+				 PortraitIndex="17"
 				 ExtraHappinessPerLuxury="0"
 				 />
 		</Update>

@@ -40,7 +40,7 @@
 			<CultureCost>10</CultureCost>
 			<GridX>1</GridX>
 			<GridY>1</GridY>
-			<PortraitIndex>44</PortraitIndex>
+			<PortraitIndex>43</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<SecondReligionPantheon>true</SecondReligionPantheon>
@@ -54,34 +54,21 @@
 			<CultureCost>10</CultureCost>
 			<GridX>3</GridX>
 			<GridY>1</GridY>
-			<PortraitIndex>46</PortraitIndex>
-			<IconAtlas>POLICY_ATLAS</IconAtlas>
-			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-		</Row>
-		<Row>
-			<Type>POLICY_DEVOTION</Type>
-			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
-			<Description>TXT_KEY_POLICY_DEVOTION</Description>
-			<Civilopedia>TXT_KEY_POLICY_DEVOTION_PEDIA</Civilopedia>
-			<Help>TXT_KEY_POLICY_DEVOTION_HELP</Help>
-			<CultureCost>10</CultureCost>
-			<GridX>5</GridX>
-			<GridY>1</GridY>
-			<PortraitIndex>45</PortraitIndex>
+			<PortraitIndex>44</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<FaithCostModifier>-20</FaithCostModifier>
 		</Row>
 		<Row>
-			<Type>POLICY_CHARITY</Type>
+			<Type>POLICY_UNITY</Type>
 			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
-			<Description>TXT_KEY_POLICY_CHARITY</Description>
-			<Civilopedia>TXT_KEY_POLICY_CHARITY_PEDIA</Civilopedia>
-			<Help>TXT_KEY_POLICY_CHARITY_HELP</Help>
+			<Description>TXT_KEY_POLICY_UNITY</Description>
+			<Civilopedia>TXT_KEY_POLICY_UNITY_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_UNITY_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>1</GridX>
-			<GridY>2</GridY>
-			<PortraitIndex>43</PortraitIndex>
+			<GridX>5</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>46</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 		</Row>
@@ -92,23 +79,36 @@
 			<Civilopedia>TXT_KEY_POLICY_INSPIRATION_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_INSPIRATION_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>4</GridX>
+			<GridX>2</GridX>
 			<GridY>2</GridY>
-			<PortraitIndex>2</PortraitIndex>
-			<IconAtlas>CEP_POLICY_ATLAS</IconAtlas>
-			<IconAtlasAchieved>CEP_POLICY_ATLAS_ACTIVE</IconAtlasAchieved>
+			<PortraitIndex>45</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<IncludesOneShotFreeUnits>true</IncludesOneShotFreeUnits>
 			<OneShot>true</OneShot>
+		</Row>
+		<Row>
+			<Type>POLICY_CHARITY</Type>
+			<PolicyBranchType>POLICY_BRANCH_PIETY</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_CHARITY</Description>
+			<Civilopedia>TXT_KEY_POLICY_CHARITY_PEDIA</Civilopedia>
+			<Help>TXT_KEY_POLICY_CHARITY_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>4</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>11</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 		</Row>
 	</Policies>
 	<Policy_PrereqPolicies>
 		<Row>
 			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<PrereqPolicy>POLICY_MEDITATION</PrereqPolicy>
+			<PrereqPolicy>POLICY_TOLERANCE</PrereqPolicy>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_INSPIRATION</PolicyType>
-			<PrereqPolicy>POLICY_DEVOTION</PrereqPolicy>
+			<PrereqPolicy>POLICY_MEDITATION</PrereqPolicy>
 		</Row>
 	</Policy_PrereqPolicies>
 	<Policy_FreeUnitClasses>
@@ -209,14 +209,6 @@
 			<Yield>3</Yield>
 		</Row>
 	</Policy_ImprovementYieldChanges>
-	<PolicyBranchTypes>
-		<Row>
-			<Type>POLICY_TOLERANCE</Type>
-			<Description>TXT_KEY_POLICY_TOLERANCE</Description>
-			<Help>TXT_KEY_POLICY_TOLERANCE_HELP</Help>
-			<Title>TXT_KEY_PIETY_TITLE</Title>
-		</Row>
-	</PolicyBranchTypes>
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_HAGIA_SOPHIA" />

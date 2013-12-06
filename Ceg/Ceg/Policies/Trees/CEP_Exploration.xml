@@ -32,6 +32,7 @@
 			<Where Type="POLICY_MERCANTILISM" />
 			<Set GridX="4"
 				 GridY="1"
+				 PortraitIndex="11"
 				 BuildingGoldMaintenanceMod="-25"
 				 PolicyBranchType="POLICY_BRANCH_EXPLORATION"
 				 />
@@ -45,9 +46,9 @@
 			<CultureCost>10</CultureCost>
 			<GridX>1</GridX>
 			<GridY>2</GridY>
-			<PortraitIndex>44</PortraitIndex>
-			<IconAtlas>POLICY_ATLAS</IconAtlas>
-			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
 			<NewCityExtraPopulation>5</NewCityExtraPopulation>
 		</Row>
 		<Row>
@@ -59,7 +60,7 @@
 			<CultureCost>10</CultureCost>
 			<GridX>3</GridX>
 			<GridY>2</GridY>
-			<PortraitIndex>44</PortraitIndex>
+			<PortraitIndex>32</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<IncludesOneShotFreeUnits>true</IncludesOneShotFreeUnits>
@@ -75,7 +76,7 @@
 			<CultureCost>10</CultureCost>
 			<GridX>5</GridX>
 			<GridY>2</GridY>
-			<PortraitIndex>44</PortraitIndex>
+			<PortraitIndex>27</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 		</Row>

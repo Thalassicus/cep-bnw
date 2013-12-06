@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-
+	<PolicyBranchTypes>
+		<Update>
+			<Where Type="POLICY_BRANCH_AESTHETICS" />
+			<Set EraPrereq="ERA_MEDIEVAL" />
+		</Update>
+	</PolicyBranchTypes>
 	<Policies>
 		<Update>
 			<Where Type="POLICY_AESTHETICS" />
@@ -13,43 +18,83 @@
 			<Set ThemingBonusMultiplier="0" />
 		</Update>
 		<Update>
-			<Where Type="POLICY_FLOURISHING_OF_ARTS" />
-			<Set CultureWonderMultiplier="0"
-				 GoldenAgeMeterMod="-25"
-				 GridX="1"
-				 GridY="1" />
-		</Update>
-		<Update>
 			<Where Type="POLICY_FINE_ARTS" />
-			<Set GridX="3"
-				 GridY="1" />
+			<Set GridX="2"
+				 GridY="1" 
+				 PortraitIndex="4"
+				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_ARTISTIC_GENIUS" />
-			<Set GridX="5"
+			<Set GridX="4"
 				 GridY="1"
 				 GreatWriterRateModifier="0"
 				 GreatArtistRateModifier="0"
-				 GreatMusicianRateModifier="0" />
+				 GreatMusicianRateModifier="0"
+				 PortraitIndex="0"
+				 IconAtlas="POLICY_ATLAS_EXP2"
+				 IconAtlasAchieved="POLICY_A_ATLAS_EXP2"
+				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_CULTURAL_CENTERS" />
-			<Set GridX="2"
-				 GridY="2" />
+			<Set GridX="1"
+				 GridY="2"
+				 PortraitIndex="5"
+				 IconAtlas="POLICY_ATLAS_EXP2"
+				 IconAtlasAchieved="POLICY_A_ATLAS_EXP2"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FLOURISHING_OF_ARTS" />
+			<Set CultureWonderMultiplier="0"
+				 GoldenAgeTurns="0"
+				 GoldenAgeMeterMod="0"
+				 GridX="3"
+				 GridY="2"
+				 PortraitIndex="47"
+				 IconAtlas="POLICY_ATLAS"
+				 IconAtlasAchieved="POLICY_A_ATLAS"
+				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_ETHICS" />
-			<Set GridX="4"
+			<Set GridX="5"
 				 GridY="2"
-				 ThemingBonusMultiplier="100" />
+				 SharedReligionTourismModifier="25"
+				 TradeRouteTourismModifier="25"
+				 OpenBordersTourismModifier="25"
+				 ThemingBonusMultiplier="100"
+				 PortraitIndex="16"
+				 IconAtlas="POLICY_ATLAS"
+				 IconAtlasAchieved="POLICY_A_ATLAS"
+				 />
 		</Update>
 	</Policies>
+	<Policy_PrereqPolicies>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_FINE_ARTS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_ARTISTIC_GENIUS</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+	
 	<Policy_BuildingClassProductionModifiers>
 		<Update>
 			<Where PolicyType="POLICY_CULTURAL_CENTERS" />
 			<Set PolicyType="POLICY_AESTHETICS" />
 		</Update>
 	</Policy_BuildingClassProductionModifiers>
+	<Policy_UnitClassProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<UnitClassType>UNITCLASS_ARCHAEOLOGIST</UnitClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_UnitClassProductionModifiers>
 	<Resources>
 		<Update>
 			<Where PolicyReveal="POLICY_EXPLORATION_FINISHER" />

@@ -40,14 +40,14 @@
 				 HappinessPerTradeRoute="100"
 				 ExtraHappiness="1"
 				 UnhappinessMod="-5"
-				 PortraitIndex="27"
+				 PortraitIndex="29"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_REPUBLIC" />
 			<Set GridX="4"
 				 GridY="2"
-				 PortraitIndex="14"
+				 PortraitIndex="31"
 				 BuildingProductionModifier="0"
 				 />
 		</Update>

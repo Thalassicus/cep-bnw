@@ -19,6 +19,7 @@
 			<Set GridX="4" GridY="1"
 				 HappinessToScience="10"
 				 GreatScientistRateModifier="0"
+				 PortraitIndex="50"
 				 />
 		</Update>
 		<Update>
@@ -48,7 +49,7 @@
 			<CultureCost>10</CultureCost>
 			<GridX>1</GridX> 
 			<GridY>2</GridY>
-			<PortraitIndex>50</PortraitIndex>
+			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<StealTechSlowerModifier>25</StealTechSlowerModifier>
@@ -109,20 +110,6 @@
 	<Policy_BuildingClassProductionModifiers>
 		
 	</Policy_BuildingClassProductionModifiers>
-	<PolicyBranchTypes>
-		<Row>
-			<Type>POLICY_COUNTERINTELLIGENCE</Type>
-			<Description>TXT_KEY_POLICY_COUNTERINTELLIGENCE</Description>
-			<Help>TXT_KEY_POLICY_COUNTERINTELLIGENCE_HELP</Help>
-			<Title>TXT_KEY_RATIONALISM_TITLE</Title>
-		</Row>
-		<Row>
-			<Type>POLICY_SCIENTIFIC_REVOLUTION</Type>
-			<Description>TXT_KEY_POLICY_SCIENTIFIC_REVOLUTION</Description>
-			<Help>TXT_KEY_POLICY_SCIENTIFIC_REVOLUTION_HELP</Help>
-			<Title>TXT_KEY_KNOWLEDGE_TITLE</Title>
-		</Row>
-	</PolicyBranchTypes>
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_GREAT_FIREWALL" />

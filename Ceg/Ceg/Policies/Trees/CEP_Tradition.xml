@@ -20,9 +20,9 @@
 			<CultureCost>10</CultureCost>
 			<GridX>1</GridX>
 			<GridY>1</GridY>
-			<PortraitIndex>47</PortraitIndex>
-			<IconAtlas>POLICY_ATLAS</IconAtlas>
-			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
 		</Row>
 		<Update>
 			<Where Type="POLICY_MONARCHY" />
@@ -42,6 +42,7 @@
 			<Where Type="POLICY_OLIGARCHY" />
 			<Set GridX="2"
 				 GridY="2"
+				 PortraitIndex="28"
 				 />
 		</Update>
 		<Update>
@@ -79,21 +80,6 @@
 			<Yield>2</Yield>
 		</Row>
 	</Policy_CityYieldChanges>
-	
-	<PolicyBranchTypes>
-		<Row>
-			<Type>POLICY_CEREMONIAL_RITES</Type>
-			<Description>TXT_KEY_POLICY_CEREMONIAL_RITES</Description>
-			<Help>TXT_KEY_POLICY_CEREMONIAL_RITES_HELP</Help>
-			<Title>TXT_KEY_TRADITION_TITLE</Title>
-		</Row>
-		<Row>
-			<Type>POLICY_LANDED_ELITE</Type>
-			<Description>TXT_KEY_POLICY_LANDED_ELITE</Description>
-			<Help>TXT_KEY_POLICY_LANDED_ELITE_HELP</Help>
-			<Title>TXT_KEY_TRADITION_TITLE</Title>
-		</Row>
-	</PolicyBranchTypes>
 	
 	<Buildings>
 		<Update>

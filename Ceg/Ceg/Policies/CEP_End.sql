@@ -37,7 +37,25 @@ FROM Buildings WHERE BuildingClass IN (
 	)
 );
 
--- Policy changes from pre-BNW
+INSERT INTO Policy_BuildingClassYieldChanges(
+	PolicyType, 
+	BuildingClassType, 
+	YieldType,
+	YieldChange)
+SELECT DISTINCT
+	'POLICY_CEREMONIAL_RITES', 
+	BuildingClass, 
+	'YIELD_CULTURE',
+	1
+FROM Buildings WHERE BuildingClass IN (
+	'BUILDINGCLASS_MONUMENT'		,
+	'BUILDINGCLASS_AMPHITHEATER'	,
+	'BUILDINGCLASS_OPERA_HOUSE'		,
+	'BUILDINGCLASS_MUSEUM'			,
+	'BUILDINGCLASS_BROADCAST_TOWER'	
+);
+
+-- Policy changes from pre-BNW for reference
 /*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
@@ -56,24 +74,6 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_CATHEDRAL',
 	'BUILDINGCLASS_MONASTERY',
 	'BUILDINGCLASS_MOSQUE'
-);
-
-INSERT INTO Policy_BuildingClassYieldChanges(
-	PolicyType, 
-	BuildingClassType, 
-	YieldType,
-	YieldChange)
-SELECT DISTINCT
-	'POLICY_CEREMONIAL_RITES', 
-	BuildingClass, 
-	'YIELD_CULTURE',
-	2
-FROM Buildings WHERE BuildingClass IN (
-	'BUILDINGCLASS_MONUMENT'		,
-	'BUILDINGCLASS_AMPHITHEATER'	,
-	'BUILDINGCLASS_OPERA_HOUSE'		,
-	'BUILDINGCLASS_MUSEUM'			,
-	'BUILDINGCLASS_BROADCAST_TOWER'	
 );
 
 /*
