@@ -22,12 +22,7 @@
 		<Update>
 			<Where Type="POLICY_FINE_ARTS" />
 			<Set GridX="3"
-				 GridT="1" />
-		</Update>
-		<Update>
-			<Where Type="POLICY_CULTURAL_CENTERS" />
-			<Set GridX="2"
-				 GridY="2" />
+				 GridY="1" />
 		</Update>
 		<Update>
 			<Where Type="POLICY_ARTISTIC_GENIUS" />
@@ -38,7 +33,12 @@
 				 GreatMusicianRateModifier="0" />
 		</Update>
 		<Update>
-			<Where Type="POLICY_CULTURAL_EXCHANGE" />
+			<Where Type="POLICY_CULTURAL_CENTERS" />
+			<Set GridX="2"
+				 GridY="2" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ETHICS" />
 			<Set GridX="4"
 				 GridY="2"
 				 ThemingBonusMultiplier="100" />
@@ -46,8 +46,8 @@
 	</Policies>
 	<Policy_BuildingClassProductionModifiers>
 		<Update>
-			<Where Type="POLICY_CULTURAL_CENTERS" />
-			<Set Type="POLICY_AESTHETICS" />
+			<Where PolicyType="POLICY_CULTURAL_CENTERS" />
+			<Set PolicyType="POLICY_AESTHETICS" />
 		</Update>
 	</Policy_BuildingClassProductionModifiers>
 	<Resources>

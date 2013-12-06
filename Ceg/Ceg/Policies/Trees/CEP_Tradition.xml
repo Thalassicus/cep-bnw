@@ -55,6 +55,7 @@
 			<Set CityGrowthMod="0"
 				 NumCitiesFreeFoodBuilding="0"
 				 PlotCultureExponentModifier="-25"
+				 GreatPeopleRateModifier="50"
 				 />
 		</Update>
 	</Policies>

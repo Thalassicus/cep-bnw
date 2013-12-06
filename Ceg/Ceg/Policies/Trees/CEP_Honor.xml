@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_HONOR" />
+			<Set BarbarianCombatBonus="10"
+				 CultureFromBarbarianKills="500"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MILITARY_CASTE" />
+			<Set GridX="1"
+				 GridY="1"
+				 HappinessPerGarrisonedUnit="1"
+				 CulturePerGarrisonedUnit="2"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_GLADIATORS</Type>
+			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_GLADIATORS</Description>
+			<Civilopedia>TXT_KEY_POLICY_GLADIATORS_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_GLADIATORS_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>3</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>22</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+		</Row>
+		<Row>
+			<Type>POLICY_SPOILS_OF_WAR</Type>
+			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType>
+			<Description>TXT_KEY_POLICY_SPOILS_OF_WAR</Description>
+			<Civilopedia>TXT_KEY_POLICY_SPOILS_OF_WAR_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_SPOILS_OF_WAR_HELP</Help>
+			<CultureCost>10</CultureCost>
+			<GridX>5</GridX>
+			<GridY>1</GridY>
+			<PortraitIndex>7</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<GoldFromKills>200</GoldFromKills>
+			<CitystateCaptureYieldTurns>10</CitystateCaptureYieldTurns>
+		</Row>
+		<Update>
+			<Where Type="POLICY_PROFESSIONAL_ARMY" />
+			<Set GridX="2"
+				 GridY="2"
+				 MilitaryProductionModifier="15"
+				 UnitUpgradeCostMod="-50"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_DISCIPLINE" />
+			<Set GridX="4"
+				 GridY="2"
+				 PortraitIndex="33"
+				 IncludesOneShotFreeUnits="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MILITARY_TRADITION" />
+			<Set PolicyBranchType="NULL"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_WARRIOR_CODE" />
+			<Set PolicyBranchType="NULL"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_HONOR_FINISHER" />
+			<Set GoldFromKills="0"
+				 />
+		</Update>
+	</Policies>
+	<Policy_FreePromotionUnitClasses>
+		<Row>
+			<PolicyType>POLICY_DISCIPLINE</PolicyType>
+			<UnitClass>UNITCLASS_GREAT_GENERAL</UnitClass>
+			<PromotionType>PROMOTION_MOBILITY_1</PromotionType>
+		</Row>
+	</Policy_FreePromotionUnitClasses>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_GLADIATORS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_HONOR_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
 	
 	<!--
 	<Policies>
