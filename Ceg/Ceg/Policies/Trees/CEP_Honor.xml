@@ -4,7 +4,7 @@
 		<Update>
 			<Where Type="POLICY_HONOR" />
 			<Set BarbarianCombatBonus="10"
-				 CultureFromBarbarianKills="500"
+				 CultureFromBarbarianKills="200"
 				 />
 		</Update>
 		<Update>
