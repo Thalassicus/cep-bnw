@@ -4,17 +4,15 @@
 	<Policies>
 		<Update>
 			<Where Type="POLICY_LIBERTY" />
-			<Set CulturePerCity="1"
-				 NumCitiesPolicyCostDiscount="0"
+			<Set CulturePerCity="0"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_MERITOCRACY" />
 			<Set GridX="1"
 				 GridY="1"
-				 HappinessPerTradeRoute="0"
-				 UnhappinessMod="0"
-				 NumCitiesPolicyCostDiscount="-20"
+				 NumCitiesPolicyCostDiscount="-33"
+				 GoldenAgeTurns="0"
 				 PortraitIndex="9"
 				 />
 		</Update>
@@ -22,7 +20,6 @@
 			<Where Type="POLICY_CITIZENSHIP" />
 			<Set GridX="3"
 				 GridY="1"
-				 CapitalSettlerProductionModifier="0"
 				 WorkerSpeedModifier="25"
 				 />
 		</Update>
@@ -33,47 +30,44 @@
 				 PortraitIndex="1"
 				 IconAtlas="CEP_POLICY_ATLAS"
 				 IconAtlasAchieved="CEP_POLICY_ATLAS_ACTIVE"
-				 CapitalSettlerProductionModifier="0"
-				 SettlerProductionModifier="0"
+				 SettlerProductionModifier="25"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_REPRESENTATION" />
-			<Set GridX="1"
+			<Set GridX="2"
 				 GridY="2"
-				 NumCitiesPolicyCostDiscount="0"
-				 GoldenAgeTurns="0"
 				 HappinessPerTradeRoute="100"
 				 ExtraHappiness="1"
 				 UnhappinessMod="-5"
-				 PortraitIndex="27"
+				 PortraitIndex="29"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_REPUBLIC" />
 			<Set GridX="4"
 				 GridY="2"
+				 PortraitIndex="31"
 				 BuildingProductionModifier="0"
-				 PortraitIndex="14"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_LIBERTY_FINISHER" />
 			<Set IncludesOneShotFreeUnits="1"
-				 NumFreeGreatPeople="1"
-				 NumCitiesPolicyCostDiscount="0"
-				 />
+				 NumFreeGreatPeople="1" />
 		</Update>
 	</Policies>
-	<Policy_PrereqPolicies>
+	<Policy_CityYieldChanges>
 		<Row>
-			<PolicyType>POLICY_REPRESENTATION</PolicyType>
-			<PrereqPolicy>POLICY_MERITOCRACY</PrereqPolicy>
+			<PolicyType>POLICY_LIBERTY</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
 		</Row>
-	</Policy_PrereqPolicies>
-	<Policy_InstantYieldTurns>
-		
-	</Policy_InstantYieldTurns>
+		<Update>
+			<Where PolicyType="POLICY_REPUBLIC" />
+			<Set PolicyType="POLICY_LIBERTY" />
+		</Update>
+	</Policy_CityYieldChanges>
 	<Policy_InstantYieldEra>
 		<Row>
 			<PolicyType>POLICY_MERITOCRACY</PolicyType>
@@ -81,37 +75,6 @@
 			<Yield>200</Yield>
 		</Row>
 	</Policy_InstantYieldEra>
-	<Policy_FreeBuildingClass>
-		<Row>
-			<PolicyType>POLICY_LIBERTY</PolicyType>
-			<BuildingClass>BUILDINGCLASS_CEP_PALACE</BuildingClass>
-			<NumCities>3</NumCities>
-		</Row>
-	</Policy_FreeBuildingClass>
-	<Policy_CityYieldChanges>
-		<Delete PolicyType="POLICY_REPUBLIC" />
-		<!--
-		<Update>
-			<Where PolicyType="POLICY_REPUBLIC" YieldType="YIELD_PRODUCTION" />
-			<Set Yield="2" />
-		</Update>
-		<Row>
-			<PolicyType>POLICY_MERITOCRACY</PolicyType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
-	</Policy_CityYieldChanges>
-	<Policy_UnitClassProductionModifiers>
-		<Row>
-			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
-			<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
-			<ProductionModifier>20</ProductionModifier>
-		</Row>
-	</Policy_UnitClassProductionModifiers>
-	<Policy_BuildingClassYieldChanges>
-		
-	</Policy_BuildingClassYieldChanges>
 	<Policy_FreeBuildingFlavor>
 		<Row>
 			<PolicyType>POLICY_REPUBLIC</PolicyType>
@@ -119,23 +82,6 @@
 			<NumCities>-1</NumCities>
 		</Row>
 	</Policy_FreeBuildingFlavor>
-	<!--
-	<Policy_SpecialistExtraYields>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
-		</Row>
-	</Policy_SpecialistExtraYields>
-	-->
-	<Policy_CityWithSpecialistYieldChanges>
-		<Row>
-			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
-			<SpecialistCount>1</SpecialistCount>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>3</Yield>
-		</Row>
-	</Policy_CityWithSpecialistYieldChanges>
 	<Policy_FreeUnitClasses>
 		<Delete PolicyType="POLICY_CITIZENSHIP" />
 		<Row>
@@ -143,5 +89,20 @@
 			<UnitClassType>UNITCLASS_WORKER</UnitClassType>
 			<Count>2</Count>
 		</Row>
+		<Row>
+			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
+			<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+			<Count>1</Count>
+		</Row>
 	</Policy_FreeUnitClasses>
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_PYRAMID" />
+			<Set PolicyBranchType="POLICY_MERITOCRACY" />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_GREAT_WALL" />
+			<Set PolicyBranchType="POLICY_REPUBLIC" />
+		</Update>
+	</Buildings>
 </GameData>

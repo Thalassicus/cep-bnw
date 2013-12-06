@@ -1,5 +1,62 @@
--- 
+--
 
+INSERT INTO PolicyBranchTypes(Type, Description, EraPrereq, AIMutuallyExclusive)
+SELECT DISTINCT Type, Description, 'ERA_FUTURE', 1
+FROM Policies;
+
+
+INSERT INTO Policy_FreeBuildingClass(
+	PolicyType, 
+	BuildingClass, 
+	NumCities
+SELECT DISTINCT
+	'POLICY_HOMESTEAD_ACT', 
+	BuildingClass, 
+	-1
+FROM Buildings WHERE BuildingClass IN (
+	'BUILDINGCLASS_MONUMENT'	,
+	'BUILDINGCLASS_GRANARY'		,
+	'BUILDINGCLASS_BARRACKS'	,
+	'BUILDINGCLASS_LIGHTHOUSE'	,
+	'BUILDINGCLASS_LIBRARY'		,
+	'BUILDINGCLASS_CARAVANSARY'	,
+	'BUILDINGCLASS_STABLE'		,
+	'BUILDINGCLASS_SMITH'		,
+	'BUILDINGCLASS_WALLS'		,
+	'BUILDINGCLASS_COLOSSEUM'	
+);
+
+INSERT INTO Policy_BuildingClassYieldChanges
+	(PolicyType, BuildingClassType, YieldType, YieldChange)
+SELECT DISTINCT
+	'POLICY_CULTURAL_CENTERS', BuildingClass, 'YIELD_CULTURE', 2
+FROM Buildings WHERE BuildingClass IN (
+	SELECT Type FROM BuildingClasses
+	WHERE (MaxPlayerInstances = 1) AND NOT Type IN (
+		'BUILDINGCLASS_PALACE'
+	)
+);
+
+INSERT INTO Policy_BuildingClassYieldChanges(
+	PolicyType, 
+	BuildingClassType, 
+	YieldType,
+	YieldChange)
+SELECT DISTINCT
+	'POLICY_CEREMONIAL_RITES', 
+	BuildingClass, 
+	'YIELD_CULTURE',
+	1
+FROM Buildings WHERE BuildingClass IN (
+	'BUILDINGCLASS_MONUMENT'		,
+	'BUILDINGCLASS_AMPHITHEATER'	,
+	'BUILDINGCLASS_OPERA_HOUSE'		,
+	'BUILDINGCLASS_MUSEUM'			,
+	'BUILDINGCLASS_BROADCAST_TOWER'	
+);
+
+-- Policy changes from pre-BNW for reference
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -19,24 +76,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_MOSQUE'
 );
 
-INSERT INTO Policy_BuildingClassYieldChanges(
-	PolicyType, 
-	BuildingClassType, 
-	YieldType,
-	YieldChange)
-SELECT DISTINCT
-	'POLICY_CEREMONIAL_RITES', 
-	BuildingClass, 
-	'YIELD_CULTURE',
-	2
-FROM Buildings WHERE BuildingClass IN (
-	'BUILDINGCLASS_MONUMENT'		,
-	'BUILDINGCLASS_AMPHITHEATER'	,
-	'BUILDINGCLASS_OPERA_HOUSE'		,
-	'BUILDINGCLASS_MUSEUM'			,
-	'BUILDINGCLASS_BROADCAST_TOWER'	
-);
-
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -53,7 +93,9 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_ARSENAL'			,
 	'BUILDINGCLASS_MILITARY_BASE'	
 );
+*/
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -157,7 +199,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_NUCLEAR_PLANT'
 );
 */
-
+/*
 INSERT INTO Policy_BuildingClassYieldModifiers(
 	PolicyType, 
 	BuildingClassType, 
@@ -198,6 +240,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_BROADCAST_TOWER'	
 );
 
+/*
 INSERT INTO Policy_BuildingClassHappiness
 	(PolicyType, BuildingClassType, Happiness)
 SELECT DISTINCT
@@ -214,7 +257,9 @@ FROM Buildings WHERE BuildingClass IN (
 ) AND NOT BuildingClass IN (
 	SELECT BuildingClass FROM Buildings WHERE IsVisible = 0
 );
+*/
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges
 	(PolicyType, BuildingClassType, YieldType, YieldChange)
 SELECT DISTINCT
@@ -231,6 +276,6 @@ FROM Buildings WHERE BuildingClass IN (
 ) AND NOT BuildingClass IN (
 	SELECT BuildingClass FROM Buildings WHERE IsVisible = 0
 );
-
+*/
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEP_P_End.sql';

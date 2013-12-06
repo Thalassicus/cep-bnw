@@ -22,24 +22,4 @@
 			<!-- 5 -->
 		</Update>
 	</Defines>
-	<!-- Change Tradition Finisher -->
-	<Policies>
-		<Update>
-			<Where Type="POLICY_TRADITION_FINISHER" />
-			<Set NumCitiesFreeFoodBuilding = "0" />
-			<!-- 4 -->
-		</Update>
-	</Policies>
-	<Policy_CityYieldChanges>
-		<Row>
-			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>3</Yield>
-		</Row>
-	</Policy_CityYieldChanges>
-	<!--
-	<Policy_PrereqPolicies>
-		<Delete />
-	</Policy_PrereqPolicies>
-	-->
 </GameData>

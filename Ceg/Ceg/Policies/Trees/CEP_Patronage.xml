@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/9/2012 4:04:09 PM -->
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_PATRONAGE" />
+			<Set MinorFriendshipDecayMod="0"
+				 CityStateTradeChange="200"
+				 RevealMinorCapitals="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PHILANTHROPY" />
+			<Set GridX="2"
+				 GridY="1"
+				 MinorInfluence="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CONSULATES" />
+			<Set GridX="4"
+				 GridY="1"
+				 MinorInfluence="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SCHOLASTICISM" />
+			<Set GridX="1"
+				 GridY="2"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_SPECIAL_RELATIONSHIP</Type>
+			<Description>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP</Description>
+			<Civilopedia>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_SPECIAL_RELATIONSHIP_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_PATRONAGE</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<GridX>3</GridX>
+			<GridY>2</GridY>
+			<PortraitIndex>41</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<MinorFriendshipDecayMod>-25</MinorFriendshipDecayMod>
+			<OtherPlayersMinorFriendshipDecayMod>10</OtherPlayersMinorFriendshipDecayMod>
+		</Row>
+		<Update>
+			<Where Type="POLICY_CULTURAL_DIPLOMACY" />
+			<Set GridX="5"
+				 GridY="2"
+				 MinorResourceBonus="0"
+				 MinorGreatPeopleAllies="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_MERCHANT_CONFEDERACY" />
+			<Set PolicyBranchType="NULL"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PATRONAGE_FINISHER" />
+			<Set MinorResourceBonus="1"
+				 MinorGreatPeopleAllies="0"
+				 />
+		</Update>
+	</Policies>
+	
+	<!--
+	<Policies>
+		<Update>
+			<Where Type="POLICY_PATRONAGE" />
+			<Set MinorFriendshipDecayMod="0"
+				 MinorFriendshipMinimum="20"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PHILANTHROPY" />
+			<Set GridX="1"
+				 GridY="1"
+				 PortraitIndex="40"
+				 MinorFriendshipDecayMod="0"
+				 MinorGoldFriendshipMod="33"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_CULTURAL_DIPLOMACY" />
+			<Set GridX="3"
+				 GridY="1"
+				 PortraitIndex="38"
+				 MinorResourceBonus="0"
+				 MinorFriendshipDecayMod="-33"
+				 MinorGoldFriendshipMod="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_AESTHETICS" />
+			<Set GridX="5"
+				 GridY="1"
+				 PortraitIndex="37"
+				 MinorInfluence="20"
+				 MinorFriendshipMinimum="0"
+				 OtherPlayersMinorFriendshipDecayMod="25"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_EDUCATED_ELITE" />
+			<Set GridX="2"
+				 GridY="2"
+				 PortraitIndex="41"
+				 MinorGreatPeopleAllies="false"
+				 Description="TXT_KEY_POLICY_TRADE_PACT"
+				 Civilopedia="TXT_KEY_POLICY_TRADE_PACT_TEXT"
+				 Help="TXT_KEY_POLICY_TRADE_PACT_HELP"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SCHOLASTICISM" />
+			<Set GridX="4"
+				 GridY="2"
+				 MinorScienceAllies="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_PATRONAGE_FINISHER" />
+			<Set OtherPlayersMinorFriendshipDecayMod="0"
+				 />
+		</Update>
+	</Policies>
+	<Policy_UnitCombatProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE</PolicyType>
+			<UnitCombatType>UNITCOMBAT_DIPLOMACY</UnitCombatType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_UnitCombatProductionModifiers>
+	<Policy_MinorCivBonuses>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE_FINISHER</PolicyType>
+			<FriendLevel>1</FriendLevel>
+			<YieldType>YIELD_HAPPINESS_NATIONAL</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PATRONAGE_FINISHER</PolicyType>
+			<FriendLevel>2</FriendLevel>
+			<YieldType>YIELD_HAPPINESS_NATIONAL</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_EDUCATED_ELITE</PolicyType>
+			<FriendLevel>1</FriendLevel>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_EDUCATED_ELITE</PolicyType>
+			<FriendLevel>2</FriendLevel>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCHOLASTICISM</PolicyType>
+			<FriendLevel>1</FriendLevel>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SCHOLASTICISM</PolicyType>
+			<FriendLevel>2</FriendLevel>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</Policy_MinorCivBonuses>
+	-->
+</GameData>

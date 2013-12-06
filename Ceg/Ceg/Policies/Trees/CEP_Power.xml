@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_AUTOCRACY" />
@@ -201,4 +203,5 @@
 			<Happiness>1</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
+	-->
 </GameData>

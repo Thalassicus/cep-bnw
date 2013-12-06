@@ -2,14 +2,14 @@
 <GameData>
 	<Policies>
 		<Update>
-			<Where Type="POLICY_TRADITION" />
-			<Set HappinessToCulture="100"
-				 PlotCultureExponentModifier="0"
+			<Where Type="POLICY_TRADITION" /> 
+			<Set PlotCultureExponentModifier="0"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_LEGALISM" />
-			<Set PolicyBranchType="NULL" />
+			<Set PolicyBranchType="NULL"
+				 />
 		</Update>
 		<Row>
 			<Type>POLICY_CEREMONIAL_RITES</Type>
@@ -20,155 +20,77 @@
 			<CultureCost>10</CultureCost>
 			<GridX>1</GridX>
 			<GridY>1</GridY>
-			<PortraitIndex>47</PortraitIndex>
-			<IconAtlas>POLICY_ATLAS</IconAtlas>
-			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
 		</Row>
 		<Update>
 			<Where Type="POLICY_MONARCHY" />
 			<Set GridX="3"
 				 GridY="1"
-				 CapitalUnhappinessMod="0"
-				 PortraitIndex="59"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_LANDED_ELITE" />
-			<Set GridX="5"
+			<Set CapitalGrowthMod="0"
+				 CityGrowthMod="25"
+				 GridX="5"
 				 GridY="1"
-				 CapitalGrowthMod="0"
-				 CityGrowthMod="20"
-				 PlotCultureExponentModifier="0"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_OLIGARCHY" />
 			<Set GridX="2"
 				 GridY="2"
-				 PortraitIndex="2"
-				 GarrisonedCityRangeStrikeModifier="50"
-				 GarrisonFreeMaintenance="1"
-				 GarrisonedExperience="0.2"
+				 PortraitIndex="28"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_ARISTOCRACY" />
 			<Set GridX="4"
 				 GridY="2"
-				 WonderProductionModifier="20"
-				 CapitalUnhappinessMod="0"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_TRADITION_FINISHER" />
-			<Set HappinessPerXPopulation="0"
-				 CityGrowthMod="0"
+			<Set CityGrowthMod="0"
 				 NumCitiesFreeFoodBuilding="0"
-				 PlotCultureExponentModifier="-5"
+				 PlotCultureExponentModifier="-25"
 				 GreatPeopleRateModifier="50"
 				 />
 		</Update>
 	</Policies>
-	<Policy_BuildingClassCultureChanges>
-		<Delete PolicyType="POLICY_TRADITION" />
-	</Policy_BuildingClassCultureChanges>
-	<Policy_CityYieldChanges>
-		<Delete PolicyType="POLICY_TRADITION_FINISHER" />
-		<!--
-		<Row>
-			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
-	</Policy_CityYieldChanges>
-	<Policy_CapitalYieldChanges>
-		<Delete PolicyType="POLICY_LANDED_ELITE" />
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>5</Yield>
-		</Row>
-	</Policy_CapitalYieldChanges>
-	<Policy_CapitalYieldPerPopChanges>
-		<Delete PolicyType="POLICY_MONARCHY" />
-	</Policy_CapitalYieldPerPopChanges>
-	<Policy_BuildingClassYieldChanges>
-		
-	</Policy_BuildingClassYieldChanges>
-	<Policy_YieldModifiers>
-		<!--
-		<Row>
-			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>15</Yield>
-		</Row>
-		-->
-	</Policy_YieldModifiers>
-	<Policy_BuildingClassHappiness>
-		<!--
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-		-->
-	</Policy_BuildingClassHappiness>
+	
 	<Policy_FreeBuildingFlavor>
 		<Row>
 			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
-			<NumCities>5</NumCities>
+			<NumCities>4</NumCities>
 		</Row>
 	</Policy_FreeBuildingFlavor>
-	<Policy_BuildingClassYieldModifiers>
+
+	<Policy_CapitalYieldChanges>
+		<Delete PolicyType="POLICY_LANDED_ELITE" />
+	</Policy_CapitalYieldChanges>
+	
+	<Policy_CityYieldChanges>
 		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_MENTORS_HALL</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldMod>5</YieldMod>
+			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
 		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldMod>5</YieldMod>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldMod>5</YieldMod>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldMod>5</YieldMod>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldMod>5</YieldMod>
-		</Row>
-	</Policy_BuildingClassYieldModifiers>
-	<Policy_YieldModifiers>
-		
-	</Policy_YieldModifiers>
-	<Policy_ImprovementYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
-	</Policy_ImprovementYieldChanges>
+	</Policy_CityYieldChanges>
+	
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_ORACLE" />
+			<Set PolicyBranchType="POLICY_CEREMONIAL_RITES"
+				 />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_BANAUE_RICE_TERRACES" />
+			<Set PolicyBranchType="POLICY_LANDED_ELITE"
+				 />
+		</Update>
+	</Buildings>
 </GameData>

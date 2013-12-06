@@ -185,6 +185,6 @@ INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 28
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 29, 0, 'MinAreaSize'                 , '(cepObjectInfo.MinAreaSize ~= -1) and cepObjectInfo.MinAreaSize');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 30, 0, 'CitiesPrereq'                , 'cepObjectInfo.CitiesPrereq');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 31, 0, 'LevelPrereq'                 , 'cepObjectInfo.LevelPrereq');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 32, 0, 'PolicyBranchType'            , 'cepObjectInfo.PolicyBranchType and Locale.ConvertTextKey(GameInfo.PolicyBranchTypes[cepObjectInfo.PolicyBranchType].Description)');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (5, 32, 0, 'PolicyBranchType'            , 'cepObjectInfo.PolicyBranchType and Locale.ConvertTextKey(GameInfo.PolicyBranchTypes[cepObjectInfo.PolicyBranchType] and GameInfo.PolicyBranchTypes[cepObjectInfo.PolicyBranchType].Description or cepObjectInfo.PolicyBranchType)');
 
 UPDATE LoadedFile SET Value=1 WHERE Type='TW_BuildingStats.sql';

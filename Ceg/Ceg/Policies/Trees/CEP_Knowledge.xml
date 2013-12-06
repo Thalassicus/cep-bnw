@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Policies>
+		<Update>
+			<Where Type="POLICY_RATIONALISM" />
+			<Set HappinessToScience="0"	
+				 OneShot="1"
+				 IncludesOneShotFreeUnits="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SCIENTIFIC_REVOLUTION" />
+			<Set GridX="5" GridY="2"
+				 HappinessToScience="0"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_HUMANISM" />
+			<Set GridX="4" GridY="1"
+				 HappinessToScience="10"
+				 GreatScientistRateModifier="0"
+				 PortraitIndex="50"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SOVEREIGNTY" />
+			<Set PolicyBranchType="NULL" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_FREE_THOUGHT" />
+			<Set GridX="2" GridY="1" />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SECULARISM" />
+			<Set GridX="3" GridY="2"  />
+		</Update>
+		<Update>
+			<Where Type="POLICY_RATIONALISM_FINISHER" />
+			<Set OneShot="true"
+				 NumFreeTechs="1"
+				 />
+		</Update>
+		<Row>
+			<Type>POLICY_COUNTERINTELLIGENCE</Type>
+			<Description>TXT_KEY_POLICY_COUNTERINTELLIGENCE</Description>
+			<Civilopedia>TXT_KEY_POLICY_COUNTERINTELLIGENCE_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_COUNTERINTELLIGENCE_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_RATIONALISM</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<GridX>1</GridX> 
+			<GridY>2</GridY>
+			<PortraitIndex>4</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<StealTechSlowerModifier>25</StealTechSlowerModifier>
+			<CatchSpiesModifier>25</CatchSpiesModifier>
+		</Row>
+	</Policies>
+	<Policy_SpecialistYieldChanges>
+		
+	</Policy_SpecialistYieldChanges>
+	<Policy_SpecialistExtraYields>
+		
+	</Policy_SpecialistExtraYields>
+	<Policy_ImprovementYieldChanges>
+		
+	</Policy_ImprovementYieldChanges>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_RATIONALISM</PolicyType>
+			<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_FreeBuildingFlavor>
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<NumCities>4</NumCities>
+		</Row>
+	</Policy_FreeBuildingFlavor>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_HUMANISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_BuildingClassYieldChanges>
+		<Delete PolicyType="POLICY_RATIONALISM_FINISHER" />
+		<Delete PolicyType="POLICY_SOVEREIGNTY" />
+		<Row>
+			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassYieldModifiers>
+		<Delete BuildingClassType="BUILDINGCLASS_UNIVERSITY" />
+		<!--
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>15</YieldMod>
+		</Row>
+		-->
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_BuildingClassProductionModifiers>
+		
+	</Policy_BuildingClassProductionModifiers>
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_GREAT_FIREWALL" />
+			<Set PolicyBranchType="POLICY_COUNTERINTELLIGENCE" />
+		</Update>
+		<Update>
+			<Where Type="BUILDING_PORCELAIN_TOWER" />
+			<Set PolicyBranchType="POLICY_SCIENTIFIC_REVOLUTION" />
+		</Update>
+	</Buildings>
+</GameData>

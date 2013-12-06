@@ -442,6 +442,8 @@ ALTER TABLE Policies		ADD OpenBordersGoldModifier				integer default 0;
 ALTER TABLE Policies		ADD FirstSpecialistYieldChange			integer default 0;
 ALTER TABLE Policies		ADD CityResistTimeMod					integer default 0;
 ALTER TABLE Policies		ADD CitystateCaptureYieldTurns			integer default 0;
+ALTER TABLE Policies		ADD RevealMap							boolean;
+ALTER TABLE Policies		ADD RevealMinorCapitals					boolean;
 
 ALTER TABLE Resources		ADD NumPerTerritory						variant default 0;
 ALTER TABLE Resources		ADD MutuallyExclusiveGroup				integer default -1;
