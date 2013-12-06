@@ -110,7 +110,7 @@
 	<Policy_BuildingClassProductionModifiers>
 		
 	</Policy_BuildingClassProductionModifiers>
-	<Buildings>
+	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_GREAT_FIREWALL" />
 			<Set PolicyBranchType="POLICY_COUNTERINTELLIGENCE" />
@@ -119,5 +119,5 @@
 			<Where Type="BUILDING_PORCELAIN_TOWER" />
 			<Set PolicyBranchType="POLICY_SCIENTIFIC_REVOLUTION" />
 		</Update>
-	</Buildings>
+	</Buildings>-->
 </GameData>

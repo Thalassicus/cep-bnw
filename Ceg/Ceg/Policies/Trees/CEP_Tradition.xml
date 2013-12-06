@@ -81,7 +81,7 @@
 		</Row>
 	</Policy_CityYieldChanges>
 	
-	<Buildings>
+	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_ORACLE" />
 			<Set PolicyBranchType="POLICY_CEREMONIAL_RITES"
@@ -92,5 +92,5 @@
 			<Set PolicyBranchType="POLICY_LANDED_ELITE"
 				 />
 		</Update>
-	</Buildings>
+	</Buildings>-->
 </GameData>

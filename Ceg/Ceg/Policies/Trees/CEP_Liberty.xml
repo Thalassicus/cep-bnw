@@ -95,7 +95,7 @@
 			<Count>1</Count>
 		</Row>
 	</Policy_FreeUnitClasses>
-	<Buildings>
+	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_PYRAMID" />
 			<Set PolicyBranchType="POLICY_MERITOCRACY" />
@@ -104,5 +104,5 @@
 			<Where Type="BUILDING_GREAT_WALL" />
 			<Set PolicyBranchType="POLICY_REPUBLIC" />
 		</Update>
-	</Buildings>
+	</Buildings>-->
 </GameData>

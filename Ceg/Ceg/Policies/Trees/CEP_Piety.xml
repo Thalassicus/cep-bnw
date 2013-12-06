@@ -209,7 +209,7 @@
 			<Yield>3</Yield>
 		</Row>
 	</Policy_ImprovementYieldChanges>
-	<Buildings>
+	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_HAGIA_SOPHIA" />
 			<Set PolicyBranchType="POLICY_TOLERANCE" />
@@ -218,5 +218,5 @@
 			<Where Type="BUILDING_STONEHENGE" />
 			<Set PolicyBranchType="POLICY_PIETY" />
 		</Update>
-	</Buildings>
+	</Buildings>-->
 </GameData>
