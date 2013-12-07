@@ -1,18 +1,6 @@
 -- CEP_WonderUnlocks.sql created by Wonder_Unlocks tab of Wonders spreadsheet:
 -- https://drive.google.com/folderview?id=0B58Ehya83q19eVlvWXdmLXZ6UUE
 
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_PYRAMID';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_HANGING_GARDEN';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_PORCELAIN_TOWER';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_KREMLIN';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_FORBIDDEN_PALACE';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_BIG_BEN';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_LOUVRE';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_STATUE_OF_LIBERTY';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_STATUE_ZEUS';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_MOSQUE_OF_DJENNE';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_UFFIZI';
-UPDATE Buildings SET PolicyBranchType='NULL'                         WHERE BuildingClass='BUILDINGCLASS_PRORA_RESORT';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_TRADITION'         WHERE BuildingClass='BUILDINGCLASS_GREAT_LIBRARY';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_LIBERTY'           WHERE BuildingClass='BUILDINGCLASS_TERRACOTTA_ARMY';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_HONOR'             WHERE BuildingClass='BUILDINGCLASS_TEMPLE_ARTEMIS';
