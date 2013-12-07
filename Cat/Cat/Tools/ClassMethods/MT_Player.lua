@@ -356,10 +356,13 @@ function PlayerClass.GetPersonalityInfo(player)
 	local leaderInfo = GameInfo.Leaders[player:GetLeaderType()]
 	if not leaderInfo then
 		log:Error("%s is not a leader", player:GetName())
-		return nil
+		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
 	elseif not leaderInfo.Personality then
 		log:Error("%s has no personality", player:GetName())
-		return nil
+		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
+	elseif not GameInfo.Personalities[leaderInfo.Personality] then
+		log:Error("%s %s is not a personality type", player:GetName(), leaderInfo.Personality)
+		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
 	end
 	return GameInfo.Personalities[leaderInfo.Personality]
 end

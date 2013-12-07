@@ -2055,7 +2055,7 @@ function GetImprovementExtraYield(improvementID, yieldID, player)
 	return yield
 end
 
-function Plot_GetYield(plot, yieldID)
+function Plot_GetYield(plot, yieldID, isWithoutUpgrade)
 	local yield = 0
 	local plotID = Plot_GetID(plot)
 	if yieldID == YieldTypes.YIELD_HAPPINESS_CITY then
@@ -2072,7 +2072,7 @@ function Plot_GetYield(plot, yieldID)
 	elseif yieldID == YieldTypes.YIELD_HAPPINESS_NATIONAL then
 		-- todo
 	else
-		yield = plot:CalculateYield(yieldID, true)
+		yield = plot:CalculateYield(yieldID, not isWithoutUpgrade)
 	end
 	--[[
 	if (yieldID == YieldTypes.YIELD_FOOD
