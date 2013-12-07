@@ -18,4 +18,4 @@ function FirstFewCitiesBonus(hexPos, playerID, cityID, newPlayerID)
 		city:SetNumRealBuilding(GameInfo.Buildings.BUILDING_GREAT_HALL.ID, 1)
 	end
 end
-LuaEvents.NewCity.Add(function(hexPos, playerID, cityID, newPlayerID) return SafeCall(FirstFewCitiesBonus, hexPos, playerID, cityID, newPlayerID) end)
+--LuaEvents.NewCity.Add(function(hexPos, playerID, cityID, newPlayerID) return SafeCall(FirstFewCitiesBonus, hexPos, playerID, cityID, newPlayerID) end)

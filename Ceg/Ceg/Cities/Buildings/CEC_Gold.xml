@@ -2,7 +2,7 @@
 <GameData>
 	<Buildings>
 		<Update>
-			<Where BuildingClass="BUILDINGCLASS_CARAVANSARY"/>
+			<Where Type="BUILDING_CARAVANSARY"/>
 			<Set Cost="140"
 				 TradeRouteLandDistanceModifier="100"
 				 />
@@ -11,6 +11,11 @@
 	<Building_YieldChanges>
 		<Row>
 			<BuildingType>BUILDING_CARAVANSARY</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TRADE_OFFICE</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>

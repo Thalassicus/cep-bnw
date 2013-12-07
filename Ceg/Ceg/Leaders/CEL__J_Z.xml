@@ -324,7 +324,44 @@
 			<IsVisible>0</IsVisible>
 			<ShowInPedia>false</ShowInPedia>
 		</Row>
+		<Row>
+			<Type>BUILDING_TRADE_OFFICE</Type>
+			<BuildingClass>BUILDINGCLASS_CARAVANSARY</BuildingClass>
+			<Cost>140</Cost>
+			<PrereqTech>TECH_TRAPPING</PrereqTech>
+			<Description>TXT_KEY_BUILDING_TRADE_OFFICE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TRADE_OFFICE_PEDIA</Civilopedia>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<MinAreaSize>-1</MinAreaSize>
+			<ConquestProb>66</ConquestProb>
+			<HurryCostModifier>25</HurryCostModifier>
+			<DisplayPosition>32</DisplayPosition>
+			<IconAtlas>EXPANSION_TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>2</PortraitIndex>
+			<IsVisible>1</IsVisible>
+			<ShowInPedia>true</ShowInPedia>
+			<TradeRouteLandGoldBonus>200</TradeRouteLandGoldBonus>
+			<TradeRouteLandDistanceModifier>150</TradeRouteLandDistanceModifier>
+		</Row>
 	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_TRADE_OFFICE</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TRADE_OFFICE</BuildingType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TRADE_OFFICE</BuildingType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+	</Building_Flavors>
 	<Building_GlobalYieldModifiers>
 		<Row>
 			<BuildingType>BUILDING_AMSTERDAM_BOURSE</BuildingType>
@@ -332,6 +369,13 @@
 			<Yield>1</Yield>
 		</Row>
 	</Building_GlobalYieldModifiers>
+	<Civilization_BuildingClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_NETHERLANDS</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_CARAVANSARY</BuildingClassType>
+			<BuildingType>BUILDING_TRADE_OFFICE</BuildingType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
 	<Builds>
 		<Update>
 			<Where Type="BUILD_POLDER" />
@@ -394,6 +438,17 @@
 	<Civilization_Start_Region_Priority>
 		<Delete CivilizationType="CIVILIZATION_NETHERLANDS"/>
 	</Civilization_Start_Region_Priority>
+
+ 	<Civilization_UnitClassOverrides>
+		<Delete UnitType="UNIT_DUTCH_SEA_BEGGAR" />
+	</Civilization_UnitClassOverrides>
+
+	<Units>
+		<Update>
+			<Where Type="UNIT_DUTCH_SEA_BEGGAR" />
+			<Set ShowInPedia="0" />
+		</Update>
+	</Units>
 
 
 

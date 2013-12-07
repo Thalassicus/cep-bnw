@@ -20,6 +20,6 @@ SET CultureAdjacentSameType = 1 * CultureAdjacentSameType;
 UPDATE Policies
 SET CulturePerGarrisonedUnit = 1 * CulturePerGarrisonedUnit;
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEP_Start.sql';
-
 UPDATE Buildings SET PolicyBranchType = NULL;
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEP_Start.sql';
