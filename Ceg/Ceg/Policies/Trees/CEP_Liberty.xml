@@ -38,6 +38,7 @@
 			<Set GridX="2"
 				 GridY="2"
 				 HappinessPerTradeRoute="100"
+				 GoldenAgeTurns="0"
 				 ExtraHappiness="1"
 				 UnhappinessMod="-5"
 				 PortraitIndex="29"

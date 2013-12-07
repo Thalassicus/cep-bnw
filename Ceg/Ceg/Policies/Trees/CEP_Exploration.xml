@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<PolicyBranchTypes>
+		<Update>
+			<Where Type="POLICY_BRANCH_EXPLORATION" />
+			<Set EraPrereq="ERA_RENAISSANCE" />
+		</Update>
+	</PolicyBranchTypes>
 	<Policies>
 		<Update>
 			<Where Type="POLICY_EXPLORATION" />

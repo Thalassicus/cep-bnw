@@ -1472,7 +1472,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_LAND_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
@@ -1519,7 +1519,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_SEA_TRADE_ROUTE', Type, 4 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
@@ -1566,7 +1566,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRAD
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_DESTINATION', Type, 4 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
@@ -1613,7 +1613,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRAD
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_I_TRADE_ORIGIN', Type, 4 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
@@ -1660,7 +1660,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD',
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GOLD', Type, 4 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
@@ -1707,7 +1707,7 @@ INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_ISABELLA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_NAPOLEON';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_ODA_NOBUNAGA';
-INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
+INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 8 FROM Leaders WHERE Type = 'LEADER_ENRICO_DANDOLO';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_SHAKA';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_COALITION';
 INSERT INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT 'FLAVOR_GREAT_PEOPLE', Type, 2 FROM Leaders WHERE Type = 'LEADER_ALEXANDER';
