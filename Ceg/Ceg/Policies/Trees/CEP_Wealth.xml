@@ -94,19 +94,19 @@
 	<Policy_ImprovementYieldChanges>
 		<Delete PolicyType="POLICY_COMMERCE_FINISHER" />
 		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
 			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_PATENT_LAW</PolicyType>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
 			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
@@ -115,7 +115,7 @@
 	<Policy_FreeUnitClasses>
 		<Row>
 			<PolicyType>POLICY_TRADE_UNIONS</PolicyType>
-			<UnitClassType>UNITCLASS_GERMAN_LANDSKNECHT</UnitClassType>
+			<UnitClassType>UNITCLASS_LANDSKNECHT</UnitClassType>
 			<Count>2</Count>
 		</Row>
 	</Policy_FreeUnitClasses>

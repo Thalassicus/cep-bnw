@@ -8,7 +8,7 @@ FROM Policies;
 INSERT INTO Policy_FreeBuildingClass(
 	PolicyType, 
 	BuildingClass, 
-	NumCities
+	NumCities)
 SELECT DISTINCT
 	'POLICY_HOMESTEAD_ACT', 
 	BuildingClass, 
