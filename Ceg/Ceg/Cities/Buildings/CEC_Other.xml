@@ -19,7 +19,6 @@
 				 ExtraCityHitPoints="100"
 				 IconAtlas="EXPANSION_SCEN_BUILDING_ATLAS"
 				 PortraitIndex="1"
-				 FreeBuildingThisCity="BUILDINGCLASS_GREAT_HALL"
 				 UnmoddedHappiness="6"
 				 />
 		</Update>
