@@ -70,7 +70,7 @@ UPDATE BuildFeatures SET Remove = 0 WHERE FeatureType = 'FEATURE_JUNGLE' AND Bui
 UPDATE BuildFeatures SET Time = 400 WHERE (FeatureType = 'FEATURE_JUNGLE' AND Time <> 0 AND Remove = 0);
 UPDATE BuildFeatures SET Time = 600 WHERE (FeatureType = 'FEATURE_JUNGLE' AND Time <> 0 AND Remove = 1);
 UPDATE BuildFeatures SET Time = 200 WHERE BuildType = 'BUILD_REMOVE_JUNGLE';
-UPDATE BuildFeatures SET Production = 100 WHERE FeatureType = 'FEATURE_FOREST' AND Remove = 1;
+UPDATE BuildFeatures SET Production = 80 WHERE FeatureType = 'FEATURE_FOREST' AND Remove = 1;
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CET_Start.sql';
