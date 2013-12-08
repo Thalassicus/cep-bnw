@@ -63,7 +63,7 @@ Ship Boarding
 0 = land units can not board military ships
 */
 INSERT INTO Cep (Type, Value)
-VALUES ('SHIP_BOARDING', 1); -- default 1
+VALUES ('SHIP_BOARDING', 0); -- default 1
 
 
 
