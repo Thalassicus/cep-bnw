@@ -3,6 +3,9 @@
 This is the changelog from version 3.9 onward.
 Where possible the line that describes the change will have the same or similar wording to the commit that it is tied to.
 
+A more generalized overview of changes to the mod can be found on the [Releases](https://github.com/Thalassicus/cep-bnw/releases) tab.
+For the average user this changelog will describe things that may not be of concern.
+
 If you wish to see the changes from previous versions there are a couple of options available:
 
 + Build a time machine and go back and write this file as new changes occur. (may incur a paradox issue)
