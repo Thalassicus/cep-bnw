@@ -655,3 +655,12 @@ WHERE BuildingType IN (
 	'BUILDING_PYRAMID'			,
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
+
+--
+-- AI specific changes for the Great Hall
+-- If these values are not changed, some policy code will select this building and not the desired type.
+--
+UPDATE Building_Flavors
+SET Flavor = 2
+WHERE BuildingType = 'BUILDING_GREAT_HALL'
+AND FlavorType > 0;
