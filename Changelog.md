@@ -15,6 +15,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
+* Great Hall Flavor change -- This was made to help the lua code for the policies to not view this building as avaliable
 *	Minor changes -- Barbarian camp changes to spawn rate and distance. 'Unit boarding' changed to 'OFF' by default
 
 **3.9.4** -- Merge of branches and some minor production changes to 'Forests'
