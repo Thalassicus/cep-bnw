@@ -1,6 +1,6 @@
 --· EN_US/Faith.sql
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_ANCESTOR_WORSHIP', '+2 [ICON_CULTURE] Culture from Shrines', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-09-19'), 'TXT_KEY_BELIEF_CEREMONIAL_BURIAL', '+1 [ICON_HAPPINESS_1] National Happiness for each city following this religion', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-12-09'), 'TXT_KEY_BELIEF_CEREMONIAL_BURIAL', '+1 [ICON_HAPPINESS_1] National Happiness for every 2 cities following this religion', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_CHORAL_MUSIC', '+6 [ICON_CULTURE] Culture from Temples in cities with 5+ followers', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_CHURCH_PROPERTY', '+3 [ICON_GOLD] Gold for each city following this religion', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_GOD_OF_ABUNDANCE', '+2 [ICON_PRODUCTION] Production from open Tundra', '', '');
