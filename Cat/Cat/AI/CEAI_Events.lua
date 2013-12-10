@@ -1216,7 +1216,7 @@ function DoAICaptureDecision(city, player)
 	local valTotal		= valPop + valPlots + valBuildings
 	local valRequired	= Cep.AI_CAPTURE_VALUE_MULTIPLIER * (happyTarget - math.min(happyTarget, happiness)) ^ Cep.AI_CAPTURE_VALUE_EXPONENT + Cep.AI_CAPTURE_VALUE_CONSTANT
 	
-	if valTotal < valRequired then
+	if player:CanRaze(city, false) and (valTotal < valRequired) then
 		log:Info("%s captured %s decision: raze (happiness=%s valPop=%s valPlots=%s valBuildings=%s valRequired=%s)", player:GetName(), city:GetName(), happiness, valPop, valPlots, valBuildings, valRequired)
 		City_Capture(city, player, "CAPTURE_RAZE")
 	elseif happiness < happyTarget then
@@ -1224,7 +1224,7 @@ function DoAICaptureDecision(city, player)
 		City_Capture(city, player, "CAPTURE_SACK")
 	else
 		log:Info("%s captured %s decision: intact (happiness=%s valPop=%s valPlots=%s valBuildings=%s valRequired=%s)", player:GetName(), city:GetName(), happiness, valPop, valPlots, valBuildings, valRequired)
-		--City_Capture(city, player, "CAPTURE_PUPPET")
+		City_Capture(city, player, "CAPTURE_PUPPET")
 	end
 end
 LuaEvents.AICaptureDecision.Add(function(city, player) return SafeCall(DoAICaptureDecision, city, player) end)
