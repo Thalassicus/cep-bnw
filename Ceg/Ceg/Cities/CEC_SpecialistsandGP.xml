@@ -2,6 +2,16 @@
 <GameData>
 	<Defines>
 		<Update>
+			<Where Name="GREAT_PERSON_THRESHOLD_BASE" />
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="GREAT_PERSON_THRESHOLD_INCREASE" />
+			<Set Value="150" />
+			<!-- 150 -->
+		</Update>
+		<Update>
 			<Where Name="MIN_UNIT_GOLDEN_AGE_TURNS" />
 			<Set Value="2" />
 			<!-- 3 -->
