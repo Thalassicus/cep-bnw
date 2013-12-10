@@ -51,4 +51,7 @@ UPDATE sqlite_sequence SET seq = (SELECT COUNT(ID) FROM Technologies)-1 WHERE na
 --TECH_NULL to NULL
 UPDATE Buildings SET PrereqTech = NULL WHERE PrereqTech = 'TECH_NULL';
 
+--Sync EnhancedYieldTech with PrereqTech
+UPDATE Buildings SET EnhancedYieldTech = PrereqTech WHERE BuildingClass = 'BUILDINGCLASS_EIFFEL_TOWER';
+
 UPDATE LoadedFile SET Value=1 WHERE Type='CER_End.sql';
