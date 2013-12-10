@@ -18,7 +18,14 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
-* Great Hall Flavor change -- This was made to help the lua code for the policies to not view this building as avaliable
+*	City-State greeting -- Changed the text to read the same regardless of whether you are first or not
+*	Phalanx promotion -- Changed it to 'Bonus against Mounted'
+*	AI Raze check -- The AI now checks whether it is possible to raze before taken that action
+*	Mongol UA fix -- Raised the military might needed allowing greater bullying of CS. Fixed the Liberate call for CS taken with this UA
+*	Jesuit Education fix -- Added the Library to the belief, missing in the vanilla code
+*	Eiffel Tower fix -- Synced the +12 Tourism enhanced yield to the prerequisite tech
+*	Ceremonial Burial fix -- Corrected the text to show +1 Happiness per 2 cities
+*	Great Hall Flavor change -- This was made to help the lua code for the policies to not view this building as avaliable
 *	Minor changes -- Barbarian camp changes to spawn rate and distance. 'Unit boarding' changed to 'OFF' by default
 
 **3.9.4** -- Merge of branches and some minor production changes to 'Forests'
