@@ -19,8 +19,9 @@
 		</Update>
 		<Update>
 			<Where Name="BARBARIAN_CAMP_ODDS_OF_NEW_CAMP_SPAWNING" />
-			<Set Value="20" />
-			<!-- 50 -->
+			<Set Value="100" />
+			<!-- 1 in N odds of a camp NOT spawning each turn -->
+			<!-- was 1 in 2 -->
 		</Update>
 		<Update>
 			<Where Name="MAX_BARBARIANS_FROM_CAMP_NEARBY" />

@@ -1262,6 +1262,7 @@ function ClearCampsCity(city, player)
 	
 	local searchRange = Game.GetWorldInfo().AISearchRange
 	local campID = GameInfo.Improvements.IMPROVEMENT_BARBARIAN_CAMP.ID
+	local clearOdds = 5
 	log:Debug("ClearCampsCity %s %s distance=%s", player:GetName(), city:GetName(), searchRange)
 	for nearPlot, distance in Plot_GetPlotsInCircle(city:Plot(), 2, searchRange) do
 		local impID = nearPlot:GetImprovementType()
@@ -1274,12 +1275,14 @@ function ClearCampsCity(city, player)
 			if Plot_IsNearHuman(nearPlot, 2 * distance) then
 				log:Debug("ClearCampsCity aborting: near human", player:GetName(), city:GetName())
 			elseif (not campUnit) or campUnit:FortifyModifier() > GameDefines.FORTIFY_MODIFIER_PER_TURN then  -- barb has been here a while
-				ClearCamp(player, nearPlot)
+				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
+					ClearCamp(player, nearPlot)
+				end
 			end
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
+LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
 
 function ClearCampsUnit(unit)
 	local player = Players[unit:GetOwner()]
@@ -1289,27 +1292,30 @@ function ClearCampsUnit(unit)
 	
 	local searchRange = Game.GetWorldInfo().AISearchRange
 	local campID = GameInfo.Improvements.IMPROVEMENT_BARBARIAN_CAMP.ID
+	local clearOdds = 5
 	for nearPlot in Plot_GetPlotsInCircle(unit:GetPlot(), 1, 1) do
 		if nearPlot:GetImprovementType() == campID then
 			if nearPlot:IsVisibleToWatchingHuman() then
 				log:Info("ClearCampsUnit aborting: visible to human", player:GetName(), unit:GetName())
 			else
-				log:Debug("ClearCampsUnit %s %s", player:GetName(), unit:GetName())
-				ClearCamp(player, nearPlot)
-				for i=0, nearPlot:GetNumUnits()-1 do
-					local nearUnit = nearPlot:GetUnit(i)
-					if Players[nearUnit:GetOwner()]:IsBarbarian() and nearUnit:IsCombatUnit() then
-						nearUnit:Kill()
-						unit:ChangeExperience(10)
-						log:Info("Killed barbarian %s with 10 experience for %s", nearUnit:GetName(), unit:GetName())
-						break
+				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
+					log:Debug("ClearCampsUnit %s %s", player:GetName(), unit:GetName())
+					ClearCamp(player, nearPlot)
+					for i=0, nearPlot:GetNumUnits()-1 do
+						local nearUnit = nearPlot:GetUnit(i)
+						if Players[nearUnit:GetOwner()]:IsBarbarian() and nearUnit:IsCombatUnit() then
+							nearUnit:Kill()
+							unit:ChangeExperience(10)
+							log:Info("Killed barbarian %s with 10 experience for %s", nearUnit:GetName(), unit:GetName())
+							break
+						end
 					end
 				end
 			end
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
 
 function ClearCamp(player, plot)
 	local campGold = Game.GetHandicapInfo().BarbCampGold
