@@ -102,6 +102,14 @@
 	</HandicapInfo_Goodies>
 	<Defines>
 		<Update>
+			<Where Name="GREAT_PERSON_THRESHOLD_BASE" />
+			<Set Value="100" />
+		</Update>
+		<Update>
+			<Where Name="GREAT_PERSON_THRESHOLD_INCREASE" />
+			<Set Value="100" />
+		</Update>
+		<Update>
 			<Where Name="UNIT_SETTLER_BASE_COST" />
 			<Set Value="105" />
 		</Update>
