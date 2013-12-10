@@ -164,6 +164,10 @@
 	</Belief_YieldChangeTradeRoute>
 	<Belief_BuildingClassFaithPurchase>
 		<Row>
+			<BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+		</Row>
+		<Row>
 			<BeliefType>BELIEF_WORK_ETHIC</BeliefType>
 			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
 		</Row>
