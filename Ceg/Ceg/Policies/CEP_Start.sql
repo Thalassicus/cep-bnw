@@ -22,4 +22,6 @@ SET CulturePerGarrisonedUnit = 1 * CulturePerGarrisonedUnit;
 
 UPDATE Buildings SET PolicyBranchType = NULL;
 
+UPDATE Defines SET NUM_POLICY_BRANCHES_ALLOWED = 4; --2
+
 UPDATE LoadedFile SET Value=1 WHERE Type='CEP_Start.sql';
