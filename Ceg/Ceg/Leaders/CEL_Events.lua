@@ -312,12 +312,12 @@ function DoCitystateSurrender(player)
 	local playerID = player:GetID()
 	local activePlayer = Players[Game.GetActivePlayer()]
 	for csID, cs in pairs(Players) do
-		if cs:IsAliveCiv() and cs:IsMinorCiv() and cs:CanMajorBullyGold(playerID) and cs:IsAtPeace(player) then
+		if cs:IsAliveCiv() and cs:IsMinorCiv() and cs:CanMajorBullyUnit(playerID) and cs:IsAtPeace(player) then
 			local capital = cs:GetCapitalCity()
 				local alertText = string.format("%s surrenders in fear to %s!", cs:GetName(), player:GetName())
 				log:Info(alertText)
 				for city in cs:Cities() do
-					player:AcquireCity(city)
+					player:AcquireCity(city, true, false)
 				end
 				if activePlayer:HasMet(cs) then
 					Events.GameplayAlertMessage(alertText, player)
