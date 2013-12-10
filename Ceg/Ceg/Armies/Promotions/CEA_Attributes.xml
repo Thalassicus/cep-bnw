@@ -387,7 +387,7 @@
 	<UnitPromotions_UnitCombatMods>
 		<Row>
 			<PromotionType>PROMOTION_PHALANX</PromotionType>
-			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
 			<Modifier>50</Modifier>
 		</Row>
 		<Row>
