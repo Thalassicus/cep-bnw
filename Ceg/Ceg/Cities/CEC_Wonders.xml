@@ -325,7 +325,7 @@
 			<Where Type="BUILDING_TERRACOTTA_ARMY" />
 			<Set InstantMilitaryIncrease="0"
 				 InstantBorderRadius="3"
-				 GreatPeopleRateChange="1"
+				 GreatPeopleRateChange="0"
 				 />
 		</Update>
 	</Buildings>
