@@ -307,7 +307,7 @@ Controls.EditButton:RegisterCallback( Mouse.eLClick, OnEditNameClick );
 function AddBuildingButton( pCity, building )
 	local buildingID= building.ID;
 	--cep
-	if not pCity:IsHasBuilding(buildingID) then
+	if not (pCity:IsHasBuilding(buildingID) and building.IsVisible) then
 		return
 	end
 		
