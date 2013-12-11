@@ -15,8 +15,6 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BARRACKS</ArtDefineTag>
 			<Experience>10</Experience>
 			<ExperiencePerTurn>1</ExperiencePerTurn>
-			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-			<SpecialistCount>1</SpecialistCount>
 			<MinAreaSize>-1</MinAreaSize>
 			<NeverCapture>true</NeverCapture>
 			<IconAtlas>CEP_BUILDING_ATLAS</IconAtlas>
@@ -960,8 +958,6 @@
 			<Description>TXT_KEY_BUILDING_FOLKSKOLA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_FOLKSKOLA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_PUBLIC_SCHOOL</ArtDefineTag>
-			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
-			<SpecialistCount>1</SpecialistCount>
 			<GreatScientistBeakerModifier>5</GreatScientistBeakerModifier>
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>66</ConquestProb>

@@ -393,6 +393,54 @@ WHERE					building.BuildingClass IN (
 
 
 
+--
+-- Specialists
+--
+
+UPDATE Specialists
+SET GreatPeopleRateChange = 3
+WHERE GreatPeopleRateChange > 0;
+
+UPDATE Buildings
+SET SpecialistType = 'SPECIALIST_ENGINEER', SpecialistCount = 1
+WHERE BuildingClass IN (
+	'BUILDINGCLASS_WORKSHOP'			,
+	'BUILDINGCLASS_WALLS'				,
+	'BUILDINGCLASS_CASTLE'				,
+	'BUILDINGCLASS_FACTORY'				,
+	'BUILDINGCLASS_IRONWORKS'			
+);
+
+UPDATE Buildings
+SET SpecialistType = 'SPECIALIST_MERCHANT', SpecialistCount = 1
+WHERE BuildingClass IN (
+	'BUILDINGCLASS_CARAVANSARY'			,
+	'BUILDINGCLASS_MARKET'				,
+	'BUILDINGCLASS_BANK'				,
+	'BUILDINGCLASS_STOCK_EXCHANGE'		,
+	'BUILDINGCLASS_NATIONAL_TREASURY'	
+);
+
+UPDATE Buildings
+SET SpecialistType = 'SPECIALIST_SCIENTIST', SpecialistCount = 1
+WHERE BuildingClass IN (
+	'BUILDINGCLASS_LIBRARY'				,
+	'BUILDINGCLASS_UNIVERSITY'			,
+	'BUILDINGCLASS_PUBLIC_SCHOOL'		,
+	'BUILDINGCLASS_LABORATORY'			,
+	'BUILDINGCLASS_OXFORD_UNIVERSITY'	
+);
+
+UPDATE Buildings
+SET SpecialistType = NULL, SpecialistCount = 0
+WHERE BuildingClass IN (
+	'BUILDINGCLASS_WINDMILL'
+);
+
+UPDATE Buildings
+SET SpecialistType = 'SPECIALIST_SCIENTIST', SpecialistCount = 2
+WHERE Type = 'BUILDING_WALLS_OF_BABYLON';
+
 
 --
 -- Remove Buildings

@@ -50,6 +50,13 @@
 			<Set Movement="3" SeeFrom="2" />
 		</Update>
 	</Terrains>
+	<Terrain_Yields>
+		<!-- Improve the value of coastal cities -->
+		<Update>
+			<Where Type="TERRAIN_COAST" YieldType="YIELD_FOOD" />
+			<Set Yield="2" />
+		</Update>
+	</Terrain_Yields>
 	<Defines>
 		<Update>
 			<Where Name="FLAT_LAND_EXTRA_DEFENSE" />

@@ -1,6 +1,6 @@
 --
 
---UPDATE Worlds SET FogTilesPerBarbarianCamp = FogTilesPerBarbarianCamp * 0.25;
+UPDATE Worlds SET FogTilesPerBarbarianCamp = FogTilesPerBarbarianCamp * 0.25;
 
 /*
 INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
