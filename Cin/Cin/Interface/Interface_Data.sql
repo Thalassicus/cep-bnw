@@ -2,5 +2,5 @@
 
 --/*
 UPDATE Technologies
-SET Help = "";
+SET Help = 'TXT_KEY_GENERIC';
 --*/
