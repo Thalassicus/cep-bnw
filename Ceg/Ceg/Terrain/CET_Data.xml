@@ -53,7 +53,7 @@
 	<Terrain_Yields>
 		<!-- Improve the value of coastal cities -->
 		<Update>
-			<Where Type="TERRAIN_COAST" YieldType="YIELD_FOOD" />
+			<Where TerrainType="TERRAIN_COAST" YieldType="YIELD_FOOD" />
 			<Set Yield="2" />
 		</Update>
 	</Terrain_Yields>
