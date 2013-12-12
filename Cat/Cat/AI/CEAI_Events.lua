@@ -789,10 +789,6 @@ function PlayerStartBonuses(player)
 		player:InitUnitClass("UNITCLASS_WARRIOR", startPlot)
 	end
 
-	if leaderInfo.Type == "LEADER_GENGHIS_KHAN" then
-		startPlot:SetResourceType(GameInfo.Resources.RESOURCE_HORSE.ID, 1)
-		player:SetHasTech(GameInfo.Technologies.TECH_ANIMAL_HUSBANDRY.ID, true)
-	end
 	--print("PlayerStartBonuses "..player:GetName().." Done")
 end
 

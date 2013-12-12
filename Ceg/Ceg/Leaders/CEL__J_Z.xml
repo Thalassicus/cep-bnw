@@ -235,6 +235,12 @@
 				 />
 		</Update>
 	</Traits>
+	<Civilization_FreeTechs>
+		<Row>
+			<CivilizationType>CIVILIZATION_MONGOL</CivilizationType>
+			<TechType>TECH_ANIMAL_HUSBANDRY</TechType>
+		</Row>
+	</Civilization_FreeTechs>
 	<Trait_MovesChangeUnitCombats>
 		<Row>
 			<TraitType>TRAIT_TERROR</TraitType>
