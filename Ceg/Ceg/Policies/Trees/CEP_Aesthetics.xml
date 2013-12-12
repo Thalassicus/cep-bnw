@@ -38,7 +38,8 @@
 		</Update>
 		<Update>
 			<Where Type="POLICY_CULTURAL_CENTERS" />
-			<Set GridX="1"
+			<Set CultureWonderMultiplier="33"
+				 GridX="1"
 				 GridY="2"
 				 PortraitIndex="5"
 				 IconAtlas="POLICY_ATLAS_EXP2"
