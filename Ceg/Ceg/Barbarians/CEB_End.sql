@@ -134,5 +134,6 @@ WHERE UnitType IN (
 	'UNIT_TRIREME'
 );
 
+UPDATE Units SET Moves = 2 WHERE Type = 'UNIT_BARBARIAN_AXMAN';
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEB_End.sql';
