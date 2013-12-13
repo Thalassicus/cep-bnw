@@ -60,6 +60,7 @@
 			<NukeImmune>true</NukeImmune>
 			<HurryCostModifier>-1</HurryCostModifier>
 			<MinAreaSize>-1</MinAreaSize>
+			<HolyCity>true</HolyCity>
 			<ConquestProb>100</ConquestProb>
 			<ArtDefineTag>ART_DEF_BUILDING_FORGE</ArtDefineTag>
 			<IconAtlas>CEP_WONDER_ATLAS</IconAtlas>
