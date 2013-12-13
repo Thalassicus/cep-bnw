@@ -916,6 +916,10 @@
 	<Civilization_Start_Along_Ocean>
 		<Delete CivilizationType="CIVILIZATION_SPAIN" />
 	</Civilization_Start_Along_Ocean>
+
+<!--    The Conquistador just dies after a couple of turns with the 'Unwelcome Evangelist' promotion
+		and is thus impotent as a military unit. The religion spread code is useless without the promotion though. 
+		It really needs a new special ability or just left as vanilla.
 	<Units>
 		<Update>
 			<Where Type="UNIT_SPANISH_CONQUISTADOR" />
@@ -935,6 +939,7 @@
 			<PromotionType>PROMOTION_RIVAL_TERRITORY</PromotionType>
 		</Row>
 	</Unit_FreePromotions>
+-->
 
 
 

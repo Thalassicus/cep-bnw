@@ -18,6 +18,18 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
+
+*	Cultural Centers & Unity -- Fixed more code with these policies
+*	Churches of Lalibela -- Added the prerequisite of being in the Holy City, to stop it being built without religion
+*	Flourishing Arts policy -- Changed the text to match the effect and changed the FLAVOR to Archaeology & Tourism
+*	Conquistador fix -- Removed the modded changes which rendered the unit impotent as a military unit
+*	Mongol Code -- Moved the Mongol trait code back into xml away from lua code
+*	TerrainType fix -- Coastal tiles should now give +2 Food
+**3.10** -- GP spawn rate lowered, Gardens increase that rate, Specialists are available from more buildings
+*	Hand-Axe movement fix -- The Hand-axe was incorrectly set the movement rate of a 'chariot'
+*	Terracotta Army GP -- This Wonder had a GP rate but no GP was set
+*	Syntax fix -- Corrected sql syntax in the CEP_Start.sql
+*	IsVisible Check -- CityView.lua wasn't making the check for the tag 'IsVisible'
 *	City-State greeting -- Changed the text to read the same regardless of whether you are first or not
 *	Phalanx promotion -- Changed it to 'Bonus against Mounted'
 *	AI Raze check -- The AI now checks whether it is possible to raze before taken that action
