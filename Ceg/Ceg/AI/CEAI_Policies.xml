@@ -526,11 +526,16 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 		<Row>
 			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<FlavorType>FLAVOR_ARCHAEOLOGY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
-			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Delete PolicyType="POLICY_FINE_ARTS" />
