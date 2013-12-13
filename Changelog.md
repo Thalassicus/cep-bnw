@@ -25,7 +25,9 @@ Newer changes are made at the top and the oldest is at the bottom.
 *	Conquistador fix -- Removed the modded changes which rendered the unit impotent as a military unit
 *	Mongol Code -- Moved the Mongol trait code back into xml away from lua code
 *	TerrainType fix -- Coastal tiles should now give +2 Food
+	
 **3.10** -- GP spawn rate lowered, Gardens increase that rate, Specialists are available from more buildings
+
 *	Hand-Axe movement fix -- The Hand-axe was incorrectly set the movement rate of a 'chariot'
 *	Terracotta Army GP -- This Wonder had a GP rate but no GP was set
 *	Syntax fix -- Corrected sql syntax in the CEP_Start.sql
