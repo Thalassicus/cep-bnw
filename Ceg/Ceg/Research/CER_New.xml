@@ -10,7 +10,7 @@
 			<Quote>TXT_KEY_TECH_CARVEL_HULLS_QUOTE</Quote>
 			<PortraitIndex>13</PortraitIndex>
 			<IconAtlas>TECH_ATLAS_1</IconAtlas>
-			<AudioIntro>AS2D_TECH_COMPASS</AudioIntro>
+			<AudioIntro></AudioIntro>
 			<AudioIntroHeader>TXT_KEY_TECH_CARVEL_HULLS_QUOTE</AudioIntroHeader>
 		</Row>
 		<!--
