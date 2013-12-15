@@ -19,6 +19,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Polder -- Added the polder to the BuildFeatures table. Jungle/forest must now be cleared first.
 *	Carvel Hulls -- Removed the audio from this tech to match the options
 *	Trade Office -- Fixed the costing error
 *	Policy - Discipline -- Now provides a Great General upon selection

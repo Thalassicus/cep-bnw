@@ -65,6 +65,12 @@ UPDATE Resources SET TechCityTrade = 'TECH_ARCHERY' WHERE TechCityTrade = 'TECH_
 INSERT INTO BuildFeatures (BuildType, FeatureType, PrereqTech, Time, Remove)
 VALUES ('BUILD_CAMP', 'FEATURE_MARSH', 'TECH_MASONRY', '600', 1);
 
+-- Polder specific code lacking in the BuildFeatures table
+INSERT INTO BuildFeatures (BuildType, FeatureType, PrereqTech, Time, Production, Remove)
+VALUES ('BUILD_POLDER', 'FEATURE_JUNGLE', 'TECH_THE_WHEEL', '600', '',1);
+INSERT INTO BuildFeatures (BuildType, FeatureType, PrereqTech, Time, Production, Remove)
+VALUES ('BUILD_POLDER', 'FEATURE_FOREST', 'TECH_ANIMAL_HUSBANDRY', '400', '80', 1);
+
 UPDATE BuildFeatures SET Remove = 1 WHERE FeatureType = 'FEATURE_MARSH' AND BuildType NOT IN ('BUILD_POLDER');
 UPDATE BuildFeatures SET Remove = 0 WHERE FeatureType = 'FEATURE_JUNGLE' AND BuildType IN ('BUILD_PLANTATION');
 UPDATE BuildFeatures SET Time = 400 WHERE (FeatureType = 'FEATURE_JUNGLE' AND Time <> 0 AND Remove = 0);
