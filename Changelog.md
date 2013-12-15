@@ -19,6 +19,9 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Carvel Hulls -- Removed the audio from this tech to match the options
+*	Trade Office -- Fixed the costing error
+*	Policy - Discipline -- Now provides a Great General upon selection
 *	Cultural Centers & Unity -- Fixed more code with these policies
 *	Churches of Lalibela -- Added the prerequisite of being in the Holy City, to stop it being built without religion
 *	Flourishing Arts policy -- Changed the text to match the effect and changed the FLAVOR to Archaeology & Tourism
