@@ -336,7 +336,7 @@
 			<Description>TXT_KEY_BUILDING_TRADE_OFFICE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRADE_OFFICE_PEDIA</Civilopedia>
 			<ArtDefineTag>PALACE</ArtDefineTag>
-			<NukeImmune>true</NukeImmune>
+			<NukeImmune>false</NukeImmune>
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>66</ConquestProb>
 			<HurryCostModifier>25</HurryCostModifier>

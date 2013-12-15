@@ -7,6 +7,10 @@
 				 TradeRouteLandDistanceModifier="100"
 				 />
 		</Update>
+		<Update>
+			<Where Type="BUILDING_TRADE_OFFICE"/>
+			<Set Cost="160"/>
+		</Update>
 	</Buildings>
 	<Building_YieldChanges>
 		<Row>
