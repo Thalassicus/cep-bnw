@@ -19,6 +19,12 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	CN Tower -- Moved it TECH_ELECTRONICS as the required tech as it currently is 4 tiers away from the free building it grants
+*	Minor text fixes -- Marine & Anti-Tank no longer show in pedia, Bireme & Projects have minor visual changes in the TECH tree
+*	Wealth policy -- The opening pick now gives the +15% to Gold & Production
+*	Smith -- Minor fixes
+*	Steam Mill -- Fixed some requirements that it lacked as a Factory replacement
+*	Workshop -- Fixed the TXT_KEY reference, moved it to Metal Casting, removed the "On Flat" requirement, and other minor tweaks
 *	Polder -- Added the polder to the BuildFeatures table. Jungle/forest must now be cleared first.
 *	Carvel Hulls -- Removed the audio from this tech to match the options
 *	Trade Office -- Fixed the costing error

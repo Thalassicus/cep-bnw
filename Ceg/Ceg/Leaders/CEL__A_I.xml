@@ -719,19 +719,34 @@
 		<Row>
 			<Type>BUILDING_ENGLISH_STEAM_MILL</Type>
 			<BuildingClass>BUILDINGCLASS_FACTORY</BuildingClass>
-			<Cost>120</Cost>
-			<GoldMaintenance>2</GoldMaintenance>
+			<Cost>390</Cost>
+			<GoldMaintenance>3</GoldMaintenance>
 			<PrereqTech>TECH_STEAM_POWER</PrereqTech>
 			<Description>TXT_KEY_BUILDING_STEAM_MILL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STEAM_MILL_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_BUILDING_FACTORY</ArtDefineTag>
-			<XBuiltTriggersIdeologyChoice>2</XBuiltTriggersIdeologyChoice>
+			<XBuiltTriggersIdeologyChoice>3</XBuiltTriggersIdeologyChoice>
+			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 			<MinAreaSize>-1</MinAreaSize>
 			<ConquestProb>66</ConquestProb>
 			<IconAtlas>BW_ATLAS_1</IconAtlas>
 			<PortraitIndex>4</PortraitIndex>
 		</Row>
 	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Row>
+			<BuildingType>BUILDING_ENGLISH_STEAM_MILL</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+		</Row>
+	</Building_ClassesNeededInCity>
+	<Building_ResourceQuantityRequirements>
+		<Row>
+			<BuildingType>BUILDING_ENGLISH_STEAM_MILL</BuildingType>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<Cost>1</Cost>
+		</Row>
+	</Building_ResourceQuantityRequirements>
+
 	<Civilization_UnitClassOverrides>
 		<Delete UnitType="UNIT_ENGLISH_SHIPOFTHELINE" />
 	</Civilization_UnitClassOverrides>

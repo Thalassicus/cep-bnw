@@ -431,11 +431,16 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_OXFORD_UNIVERSITY'	
 );
 
+/*
 UPDATE Buildings
 SET SpecialistType = NULL, SpecialistCount = 0
 WHERE BuildingClass IN (
 	'BUILDINGCLASS_WINDMILL'
 );
+*/
+UPDATE Buildings
+SET Flat = 0
+WHERE Type = 'BUILDING_WINDMILL';
 
 UPDATE Buildings
 SET SpecialistType = 'SPECIALIST_SCIENTIST', SpecialistCount = 2
@@ -496,7 +501,7 @@ UPDATE Buildings SET Description='TXT_KEY_BUILDING_CINEMA',              Civilop
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_VACCINATIONS',        Civilopedia='TXT_KEY_BUILDING_VACCINATIONS_PEDIA'         WHERE Type = 'BUILDING_MEDICAL_LAB';
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_SUPERMAX_PRISON',     Civilopedia='TXT_KEY_BUILDING_SUPERMAX_PRISON_PEDIA'      WHERE Type = 'BUILDING_POLICE_STATION';
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_CAPITAL_BUILDING',    Civilopedia='TXT_KEY_BUILDING_CAPITAL_BUILDING_PEDIA'     WHERE Type = 'BUILDING_PALACE';
-UPDATE Buildings SET Description='TXT_KEY_BUILDING_WORKSHOP',            Civilopedia='TXT_KEY_BUILDING_WORKSHOP_PEDIA'             WHERE Type = 'BUILDING_WINDMILL';
+UPDATE Buildings SET Description='TXT_KEY_BUILDING_WORKSHOP',            Civilopedia='TXT_KEY_CIV5_BUILDINGS_WORKSHOP_TEXT'             WHERE Type = 'BUILDING_WINDMILL';
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_SMITH',               Civilopedia='TXT_KEY_BUILDING_SMITH_PEDIA'                WHERE Type = 'BUILDING_WORKSHOP';
 
 UPDATE BuildingClasses SET Description = (SELECT Description FROM Buildings b WHERE BuildingClasses.DefaultBuilding = b.Type);

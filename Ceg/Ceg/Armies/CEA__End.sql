@@ -134,7 +134,7 @@ UPDATE Units SET UnitArtInfo = 'ART_DEF_UNIT_PARATROOPER'
 WHERE Class = 'UNITCLASS_INFANTRY';
 */
 
-UPDATE Units SET Cost = -1, ShowInPedia = 0, PrereqTech = 'TECH_FUTURE_TECH' WHERE Class IN (
+UPDATE Units SET Cost = -1, ShowInPedia = 0, PrereqTech = '' WHERE Class IN (
 	'UNITCLASS_ANTI_TANK_GUN'		,
 	--'UNITCLASS_PARATROOPER'			,
 	'UNITCLASS_MARINE'				

@@ -65,7 +65,7 @@
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BIREME</Description>
-			<Help>-</Help>
+			<Help>TXT_KEY_GENERIC</Help>
 			<Civilopedia>TXT_KEY_UNIT_BIREME_PEDIA</Civilopedia>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
