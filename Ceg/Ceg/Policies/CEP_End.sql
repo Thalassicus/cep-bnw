@@ -1,9 +1,11 @@
 --
-/* temporary fix since wonders unlocks are in the openers for now
+
 INSERT INTO PolicyBranchTypes(Type, Description, EraPrereq, AIMutuallyExclusive)
 SELECT DISTINCT Type, Description, 'ERA_FUTURE', 1
-FROM Policies;
-*/
+FROM Policies WHERE NOT (
+   Type IN (SELECT FreePolicy FROM PolicyBranchTypes)
+OR Type IN (SELECT FreeFinishingPolicy FROM PolicyBranchTypes)
+);
 
 INSERT INTO Policy_FreeBuildingClass(
 	PolicyType, 

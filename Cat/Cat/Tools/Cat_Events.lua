@@ -809,7 +809,7 @@ end
 LuaEvents.NewPolicy.Add(function(player, policyID) return SafeCall(DoPolicyEffects, player, policyID) end)
 
 function DoPolicyReveals(player, policyInfo)
-	if not policyInfo.RevealAllCapitals then
+	if not policyInfo.RevealMinorCapitals then
 		return
 	end
 	local teamID = player:GetTeam()
