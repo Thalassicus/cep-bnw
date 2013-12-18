@@ -206,6 +206,11 @@
 				 />
 		</Update>
 		<Update>
+			<Where Type="BUILDING_CN_TOWER" />
+			<Set PrereqTech="TECH_ELECTRONICS"
+				/>
+		</Update>
+		<Update>
 			<Where Type="BUILDING_CRISTO_REDENTOR" />
 			<Set PolicyCostModifier="0"
 				 />
