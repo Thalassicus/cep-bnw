@@ -3,7 +3,7 @@
 	<Buildings>
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_WINDMILL" />
-			<Set Cost="150" />
+			<Set Cost="220" />
 		</Update>
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_BARRACKS" />

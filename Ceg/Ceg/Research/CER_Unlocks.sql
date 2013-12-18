@@ -45,7 +45,7 @@ UPDATE Buildings SET PrereqTech='TECH_REPLACEABLE_PARTS'        WHERE BuildingCl
 UPDATE Buildings SET PrereqTech='TECH_ELECTRONICS'              WHERE BuildingClass='BUILDINGCLASS_STOCK_EXCHANGE';
 UPDATE Buildings SET PrereqTech='TECH_MASONRY'                  WHERE BuildingClass='BUILDINGCLASS_STONE_WORKS';
 UPDATE Buildings SET PrereqTech='TECH_MASONRY'                  WHERE BuildingClass='BUILDINGCLASS_WALLS';
-UPDATE Buildings SET PrereqTech='TECH_STEAM_POWER'              WHERE BuildingClass='BUILDINGCLASS_WINDMILL';
+UPDATE Buildings SET PrereqTech='TECH_METAL_CASTING'            WHERE BuildingClass='BUILDINGCLASS_WINDMILL';
 UPDATE Buildings SET PrereqTech='TECH_BRONZE_WORKING'           WHERE BuildingClass='BUILDINGCLASS_WORKSHOP';
 UPDATE Buildings SET PrereqTech='TECH_HORSEBACK_RIDING'         WHERE BuildingClass='BUILDINGCLASS_CIRCUS_MAXIMUS';
 UPDATE Buildings SET PrereqTech='TECH_THEOLOGY'                 WHERE BuildingClass='BUILDINGCLASS_GRAND_TEMPLE';

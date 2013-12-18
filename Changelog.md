@@ -18,7 +18,9 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
-
+*	Smith -- Minor fixes
+*	Steam Mill -- Fixed some requirements that it lacked as a Factory replacement
+*	Workshop -- Fixed the TXT_KEY reference, moved it to Metal Casting, removed the "On Flat" requirement, and other minor tweaks
 *	Polder -- Added the polder to the BuildFeatures table. Jungle/forest must now be cleared first.
 *	Carvel Hulls -- Removed the audio from this tech to match the options
 *	Trade Office -- Fixed the costing error
