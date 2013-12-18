@@ -18,6 +18,8 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
+
+*	Minor text fixes -- Marine & Anti-Tank no longer show in pedia, Bireme & Projects have minor visual changes in the TECH tree
 *	Wealth policy -- The opening pick now gives the +15% to Gold & Production
 *	Smith -- Minor fixes
 *	Steam Mill -- Fixed some requirements that it lacked as a Factory replacement

@@ -650,6 +650,16 @@ function GetHelpTextForProject(iProjectID, showRequirementsInfo)
 	-- Name
 	textFoot = textFoot .. Locale.ToUpper(Locale.ConvertTextKey( objectInfo.Description ))
 
+	-- Pre-written Help text
+	local textHeader = Locale.ConvertTextKey( objectInfo.Help )
+	if (textHeader ~= nil and textHeader ~= "") then
+		-- Separator
+		textFoot = textFoot .. "[NEWLINE]----------------[NEWLINE]"
+		textFoot = textFoot .. textHeader
+	end
+
+	textFoot = textFoot .. "[NEWLINE]----------------"
+
 	if Cep.SHOW_GOOD_FOR_BUILDINGS == 1 then
 		local textFlavors = Game.GetFlavors("Project_Flavors", "ProjectType", objectInfo.Type)
 		if textFlavors ~= "" then
@@ -662,13 +672,7 @@ function GetHelpTextForProject(iProjectID, showRequirementsInfo)
 	textFoot = textFoot .. "[NEWLINE]----------------[NEWLINE]"
 	textFoot = textFoot .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_COST", iCost)
 	
-	-- Pre-written Help text
-	local textHeader = Locale.ConvertTextKey( objectInfo.Help )
-	if (textHeader ~= nil and textHeader ~= "") then
-		-- Separator
-		textFoot = textFoot .. "[NEWLINE]----------------[NEWLINE]"
-		textFoot = textFoot .. textHeader
-	end
+
 	
 	-- Requirements?
 	if (showRequirementsInfo) then
