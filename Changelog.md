@@ -18,6 +18,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 
 ==================================================================
 
+*	Wealth policy -- The opening pick now gives the +15% to Gold & Production
 *	Smith -- Minor fixes
 *	Steam Mill -- Fixed some requirements that it lacked as a Factory replacement
 *	Workshop -- Fixed the TXT_KEY reference, moved it to Metal Casting, removed the "On Flat" requirement, and other minor tweaks
