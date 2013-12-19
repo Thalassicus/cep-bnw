@@ -4,7 +4,7 @@
 		<Update>
 			<Where Type="YIELD_FOOD" />
 			<Set MinCity="3"
-				 AIWeightPercent="100"
+				 AIWeightPercent="125"
 				 />
 		</Update>
 		<Update>
@@ -16,7 +16,7 @@
 		<Update>
 			<Where Type="YIELD_GOLD" />
 			<Set MinCity="1"
-				 AIWeightPercent="200"
+				 AIWeightPercent="100"
 				 />
 		</Update>
 		<Update>
@@ -148,7 +148,7 @@
 		</Update>		
 		<Update>
 			<Where Name="TRADE_ROUTE_BASE_GOLD"/>
-			<Set Value="400"/>
+			<Set Value="500"/>
 			<!-- -130 -->
 		</Update>
 		<Update>
@@ -158,7 +158,7 @@
 		</Update>
 		<Update>
 			<Where Name="TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER"/>
-			<Set Value="20"/>
+			<Set Value="50"/>
 			<!-- 120 -->
 		</Update>
 		<Update>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" >
+	<Box ID="Background" Anchor="C,C" Hidden="1" >
+		<Grid ID="MainBox" Anchor="C,T" Size="600,300" Offset="0,200" Style="Grid9DetailFive140" >
+			<Image Anchor="L,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Left.dds" Size="32.64" />
+			<Image Anchor="R,C" AnchorSide="O.I"  Offset="-17,0" Texture="Dec32x64Right.dds" Size="32.64" />
+
+			<Image ID="CivIconFrame" Anchor="C,T" AnchorSide="I.O" Size="256,64" Offset="0,-16"  Texture="assets\UI\Art\Icons\Top512IconTrim.dds" >
+				<Image ID="CivIconBG" Size="64.64" Anchor="C,C" Offset="-1,-1" TextureOffset="77,0" Texture="CivIconBGSizes.dds" />
+				<Image ID="CivIconShadow" Size="48.48" Anchor="C,C" Texture="CivSymbolAtlas48.dds" Color="Black.128"/>
+				<Image ID="CivIcon" Size="48,48" Offset="-1,-1"  Anchor="C,C" Texture="CivSymbolsColor512.dds" />
+			</Image>
+
+			<Stack ID="MainStack" Anchor="C,C" Padding="10" >
+				<Label ID="TriggerTitle" Anchor="C,C" Font="TwCenMT24" />
+				<Label ID="TriggerDescription" Anchor="C,C" WrapWidth="560" />
+				<Image Texture="bar340x2.dds" Anchor="C,C" Size="340.1"/>
+				<Stack ID="OutcomeStack" Anchor="C,C" />
+			</Stack>
+		</Grid>
+	</Box>
+	
+	<Instance Name="OutcomeInstance" >
+		<Button ID="Button" Anchor="C,T" Size="560,32" >
+			<Label ID="Name" Anchor="C,C" WrapWidth="560" />
+			<ShowOnMouseOver>
+				<Container ID="MouseOverContainer" Anchor="C,C" Size="600,32">
+					<AlphaAnim ID="MouseOverAnim" Anchor="C,C" Size="600,32" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+						<Grid ID="MouseOverGrid" Anchor="C,C" Size="600,32" Style="Grid9FrameTurnsHL" />
+					</AlphaAnim>
+				</Container>
+			</ShowOnMouseOver>
+		</Button>
+	</Instance>
+</Context>

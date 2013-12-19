@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Table name="Triggers">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Weight" type="integer" default="10" />
+		<Column name="PrereqTech" type="text" reference="Technologies(Type)" />
+		<Column name="CanRepeat" type="boolean" default="false"/>
+		<Column name="Turn" type="integer" />
+		<Column name="EraType" type="text" reference="Eras(Type)" default="ERA_MEDIEVAL" />
+		<Column name="UnitClass" type="text" reference="UnitClasses(Type)" />
+		<Column name="BuildingClass" type="text" reference="BuildingClasses(Type)" />
+		<Column name="ImprovementType" type="text" reference="Improvements(Type)" />
+		<Column name="PolicyType" type="text" reference="Policies(Type)" />
+		<Column name="Target" type="text" reference="Trigger_Targets(Type)" />
+	</Table>
+	<Table name="Trigger_Targets">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+	</Table>
+	<Trigger_Targets>
+		<Row>
+			<Type>TARGET_CITY</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_OWNED_PLOT</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_ANY_PLOT</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_UNIT</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_ANY_UNIT</Type>
+		</Row>		
+		<Row>
+			<Type>TARGET_POLICY</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_PLAYER</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_CITYSTATE</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_TURN</Type>
+		</Row>
+		<Row>
+			<Type>TARGET_CUSTOM</Type>
+		</Row>
+	</Trigger_Targets>	
+</GameData>

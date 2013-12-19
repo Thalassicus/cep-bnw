@@ -1,4 +1,4 @@
---· EN_US/Opportunities.sql
+--· EN_US/Stories.sql
 /* TERRAIN */
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RIVER_FLOODING', 'River Flooding', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RIVER_FLOODING_DESC', 'Frequent seasonal floods of this river provide unusually fertile topsoil for farming.', '', '');

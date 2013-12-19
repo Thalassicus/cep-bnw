@@ -2,8 +2,7 @@
 -- Author: veyDer
 --------------------------------------------------------------
 
-include("Trigger.lua")
-include("ModTools.lua")
+include("MT_Events.lua")
 include("FLuaVector")
 
 local log = Events.LuaLogger:New()

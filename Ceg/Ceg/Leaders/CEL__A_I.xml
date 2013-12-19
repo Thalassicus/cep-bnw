@@ -321,7 +321,7 @@
 			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<Cost>75</Cost>
-			<GoldMaintenance>1</GoldMaintenance>
+			<GoldMaintenance>3</GoldMaintenance>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<Description>TXT_KEY_BUILDING_COTHON</Description>
 			<Civilopedia>TXT_KEY_BUILDING_COTHON_PEDIA</Civilopedia>

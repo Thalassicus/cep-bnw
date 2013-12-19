@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Table name="Outcomes">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Order" type="integer" default="1" />
+		<Column name="TriggerType" type="text" reference="Triggers(Type)"/>
+		<Column name="Condition" type="text" default="Game.TrigCondition.HasCapital" />
+		<Column name="GoldCost" type="integer" default="0" />
+		<Column name="Action" type="text" default="Game.TrigAction.ChangePlotYield" />
+		<Column name="YieldType" type="text" reference="Yields(Type)" />
+		<Column name="Yield" type="integer" default="0" />
+	</Table>
+	<Table name="Outcome_Flavors">
+		<Column name="OutcomeType" type="text" notnull="true" unique="true"/>
+		<Column name="FlavorType" type="text" reference="Flavors(Type)"/>
+	</Table>
+	<Cep>
+		<Row Type="OUTCOME_FLAVOR_MULTIPLIER">
+			<Value>0.1</Value>
+		</Row>
+		<Row Type="OUTCOME_FLAVOR_CONSTANT">
+			<Value>0.5</Value>
+		</Row>
+	</Cep>
+</GameData>

@@ -181,6 +181,11 @@ FROM					Buildings
 WHERE					BuildingClass = 'BUILDINGCLASS_AQUEDUCT';
 */
 
+INSERT INTO				Building_LakePlotYieldChanges (BuildingType, YieldType, Yield) 
+SELECT					Type, 'YIELD_FOOD', 1
+FROM					Buildings
+WHERE					BuildingClass = 'BUILDINGCLASS_AQUEDUCT';
+
 
 --
 -- Resources

@@ -7,7 +7,7 @@
     <Guid>828b5b4b-7c62-4afb-a43f-034b596ef5e4</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Beta</Stability>
-    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.10.2[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.11[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
     <Description>We started this expansion pack because we believe Civilization is a fantastic game, and we want to perfect it while remaining as close to the core experience as possible. CEP does this for Civ 5.[NEWLINE][NEWLINE]We think games should be intuitive to learn, challenging to master, and rewards should match the difficulty to complete tasks. We believe in finding balance between extremes. We set a high bar for adding new things to the game, and instead improve or replace existing objects when possible. [NEWLINE][NEWLINE]If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE][NEWLINE]This is the "basic" version of the Civ V: Communitas Expansion Pack. This version maximizes compatability, reliability, and simplicity by changing as few core files as possible. The full version of Communitas adds innovative new features not possible with the normal Civilization files. If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links below.[NEWLINE][NEWLINE]Features: communitas.wikia.com[NEWLINE]Discuss: forums.civfanatics.com/forumdisplay.php?f=429[NEWLINE]Bugs: bit.ly/bugreporting[NEWLINE]News: civmodding.wordpress.com[NEWLINE]Credits: civmodding.wordpress.com/credits[NEWLINE][NEWLINE][NEWLINE]The Communitas Expansion Pack is a collaboration of work from 38 main authors and an incredible community of forumgoers on CivFanatics.com.[NEWLINE][NEWLINE]Please view the readme in the mod folder, which includes important information about using Civ 5 mods.</Description>
     <Authors>[COLOR_CYAN]Thalassicus</Authors>
     <SpecialThanks>Check the readme in the mod folder for credits.</SpecialThanks>
@@ -64,6 +64,11 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>Leaders/CEL__J_Z.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Stories\CES_Stories.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -308,7 +313,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Opportunities/CEO_Opportunities.xml</FileName>
+        <FileName>Stories/CES_Stories.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -718,7 +723,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Opportunities.sql</FileName>
+        <FileName>Text/en_US/Stories.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -799,6 +804,51 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>Text/ZH_CN/Leaders.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\DE_DE\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/en_US/Stories.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\ES_ES\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\FR_FR\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\IT_IT\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\JA_JP\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\PL_PL\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\RU_RU\Opportunities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text\ZH_CN\Opportunities.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1381,6 +1431,12 @@
       </Content>
       <Content>
         <Type>InGameUIAddin</Type>
+        <Name>CES_Events.lua</Name>
+        <Description />
+        <FileName>Stories/CES_Events.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
         <Name>CET_Events</Name>
         <Description>CET_Events</Description>
         <FileName>Terrain/CET_Events.lua</FileName>
@@ -1436,7 +1492,7 @@
     <Folder Include="Research\" />
     <Folder Include="Research\Art" />
     <Folder Include="Terrain\" />
-    <Folder Include="Opportunities\" />
+    <Folder Include="Stories" />
     <Folder Include="Text" />
     <Folder Include="Text\DE_DE" />
     <Folder Include="Text\en_US" />
@@ -1761,6 +1817,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="Stories\CES_Events.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Stories\CES_Stories.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Policies\Art\CEP_Art.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -1882,6 +1946,10 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Terrain\IslandMaker.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Text\en_US\Stories.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

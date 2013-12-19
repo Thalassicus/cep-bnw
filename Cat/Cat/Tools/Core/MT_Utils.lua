@@ -358,6 +358,20 @@ function Game.GetRandomWeighted(list, size)
 end
 
 ------------------------------------------------------------------
+-- Game.GetDistributedWeight(listIn, value, size) returns a table with "value" distributed according to the weighted "listIn" table
+--
+function Game.GetDistributedWeight(listIn, value, size)
+	size = size or 100
+	local weightIDs = Game.GetWeightedTable(listIn, size)
+	local listOut = {}
+
+	for _, index in ipairs(weightIDs) do
+		listOut[index] = listOut[index] + weight / size
+	end
+	return listOut
+end
+
+------------------------------------------------------------------
 -- Game.GetWeightedTable(list, size) returns a table with key blocks sized proportionately to a weighted list
 --
 function Game.GetWeightedTable(list, size)
