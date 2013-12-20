@@ -19,6 +19,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Blank TECH fix -- The removal of the TECH_FUTURE_TECH from the Marine & Anti-Tank had unexpected consequences
 *	CN Tower -- Moved it TECH_ELECTRONICS as the required tech as it currently is 4 tiers away from the free building it grants
 *	Minor text fixes -- Marine & Anti-Tank no longer show in pedia, Bireme & Projects have minor visual changes in the TECH tree
 *	Wealth policy -- The opening pick now gives the +15% to Gold & Production
