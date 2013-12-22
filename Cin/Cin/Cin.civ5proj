@@ -81,11 +81,11 @@
     </Content>
     <Content Include="Interface\FlagPromotions\UnitFlagManager.lua">
       <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Interface\FlagPromotions\UnitFlagManager.xml">
       <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Link_Features.url">
       <SubType>Lua</SubType>
