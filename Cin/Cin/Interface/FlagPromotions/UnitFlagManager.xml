@@ -141,10 +141,11 @@
 					</Image>
 				</AlphaAnim>
 				<!-- Unit Promotions -->
+				<!--
 				<Stack ID="PromotionStackV" StackGrowth="Bottom" Anchor="C,B" Padding="-2" Offset="0,-26">
 					<Stack ID="PromotionStackH" StackGrowth="Right" Anchor="C,C" Padding="-2"/>
 				</Stack>
-				<!--
+				-->
 				<Stack Offset="0,-26" StackGrowth="Right" Anchor="C,C" ID="EarnedPromotionStack1" Padding="-2">
 					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion1" Hidden="1"/>
 					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion2" Hidden="1"/>
@@ -158,7 +159,6 @@
 					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion8" Hidden="1"/>
 					<Image Size="16,16" Texture="Promotions128.dds" ID="Promotion9" Hidden="1"/>
 				</Stack>
-				-->
 			</Image>
 		</WorldAnchor>
 	</Instance>

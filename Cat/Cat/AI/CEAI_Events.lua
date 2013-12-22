@@ -59,7 +59,7 @@ local warUnitFlavorsLate = {
 	{FlavorType="FLAVOR_SIEGE",				Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_ACCURACY_1.ID,		GameInfo.UnitPromotions.PROMOTION_SIEGE.ID}}			,
 	{FlavorType="FLAVOR_RANGED",			Mult=2, Promos={GameInfo.UnitPromotions.PROMOTION_DRILL_1.ID,		GameInfo.UnitPromotions.PROMOTION_DRILL_2.ID}}			,
 	{FlavorType="FLAVOR_NAVAL_BOMBARDMENT",	Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_1.ID,	GameInfo.UnitPromotions.PROMOTION_BOMBARDMENT_2.ID}}	,
-	{FlavorType="FLAVOR_ANTI_MOBILE",		Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_AMBUSH_VANGUARD_1.ID}},
+	{FlavorType="FLAVOR_ANTI_MOBILE",		Mult=1, Promos={GameInfo.UnitPromotions.PROMOTION_SHOCK_1.ID,		GameInfo.UnitPromotions.PROMOTION_AMBUSH_1.ID}},
 	{FlavorType="FLAVOR_ANTIAIR",			Mult=1, Promos={}}			
 }
 

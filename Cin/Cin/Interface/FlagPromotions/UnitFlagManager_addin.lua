@@ -67,7 +67,7 @@ g_UnitFlagClass.UpdateVisibility = function ( self )
     	end
 	end
     self.m_Instance.FlagShadow:SetHide(not self.m_IsUnitIconDisplayed)
-	if (not bDisplayAllFlagPromotions) and self.m_Promotion and self.m_Promotions[1] then
+	if (not bDisplayAllFlagPromotions) and self.m_Promotion then
 		self:SetHideAllPromotions(true)
 	end
 	self:UpdatePromotions()
@@ -84,6 +84,7 @@ log:Info("Loading UnitFlagManager_addin.lua B")
 -- Options
 local iPromotionsStackMax = 9
 
+--[[
 local unitPromotions, PromotionIDfromType = {}, {}
 local PromotionIDlist = {}
 for promo in GameInfo.UnitPromotions() do
@@ -106,42 +107,104 @@ for _, promo in pairs(unitPromotions) do
 		isPromotionwithlevels[name] = t
 	end
 end
+--]]
 
---[[ Currently a hardcoded 9 promotions are available, need to figure out a variable expression for the XML container to allow adjustable rows/columns ]]
+--[[
+Currently a hardcoded 9 promo slots are available in 2 horizontal stacks of fixed size.
+Ideally, the display would have horizontal and vertical stacks of adjustable size.
+--]]
 
 log:Info("Loading UnitFlagManager_addin.lua C")
 
 ------------------------------------------------------------------
 ------------------------------------------------------------------
-g_UnitFlagClass.UpdatePromotions = function( self, promotionType )
+function g_UnitFlagClass.UpdatePromotions( self, promoType )
+	local player = Players[self.m_PlayerID]
+	local unit = player:GetUnitByID(self.m_UnitID)
+	if not (unit and bDisplayAllFlagPromotions) then
+		return
+	end
+	
+	local iconPositionID	= 1
+	local newPromotionID	= promoType and GameInfo.UnitPromotions[promoType].ID
+	local promos			= {}
+	
+	for promo in GameInfo.UnitPromotions{IsVisibleAboveFlag = 1} do
+		local promoID = promo.ID
+		if unit:IsHasPromotion(promoID) or newPromotionID == promoID then
+			table.insert(promos, promoID)
+		end
+	end
+	
+	table.sort(promos, function(a, b)
+		return GameInfo.UnitPromotions[a].OrderPriority > GameInfo.UnitPromotions[b].OrderPriority
+	end)
+	
+	for iconPositionID = 1, iPromotionsStackMax do
+		local button = self.m_Instance['Promotion'..iconPositionID]
+		if promos[iconPositionID] then
+			self:AddPromotionIcon(promos[iconPositionID], iconPositionID)
+			button:SetHide(false)
+		else
+			button:SetHide(true)
+		end
+	end
+	
+	self.m_Instance.EarnedPromotionStack1:CalculateSize()
+	self.m_Instance.EarnedPromotionStack1:ReprocessAnchoring()
+	
+	self.m_Instance.EarnedPromotionStack2:CalculateSize()
+	self.m_Instance.EarnedPromotionStack2:ReprocessAnchoring()
+end
+
+function g_UnitFlagClass.AddPromotionIcon(self, promoID, iconPositionID)
+	local button = self.m_Instance['Promotion'..iconPositionID]
+	local promo = GameInfo.UnitPromotions[promoID]
+	
+	IconHookup( promo.PortraitIndex, 16, promo.IconAtlas, button )
+	
+	local hoverText = ""
+	if promo.SimpleHelpText then
+		hoverText = Locale.ConvertTextKey(promo.Help)
+	else
+		hoverText = string.format("[COLOR_YELLOW]%s[ENDCOLOR][NEWLINE]%s",
+			Locale.ConvertTextKey(promo.Description),
+			Locale.ConvertTextKey(promo.Help)
+		)
+	end	
+	button:SetToolTipString(hoverText)
+end
+
+--[[
+g_UnitFlagClass.UpdatePromotions = function( self, promoType )
 	local player = Players[self.m_PlayerID]
 	local unit = player:GetUnitByID(self.m_UnitID)
 	if not (unit and bDisplayAllFlagPromotions and self.m_Promotions) then
 		return
 	end
 	
-	--log:Debug("UpdatePromotions %15s %15s %15s", player:GetName(), GameInfo.Units[unit:GetUnitType()].Type, promotionType)
+	--log:Debug("UpdatePromotions %15s %15s %15s", player:GetName(), GameInfo.Units[unit:GetUnitType()].Type, promoType)
 	
-	local promotionIndex	= 1
+	local iconPositionID	= 1
 	local best_id			= {}
 	local checked			= {}
-	local newPromotionID	= promotionType and GameInfo.UnitPromotions[promotionType].ID
+	local newPromotionID	= promoType and GameInfo.UnitPromotions[promoType].ID
 	if newPromotionID then
-		--log:Debug("New  %15s %15s %s", Players[unit:GetOwner()]:GetName(), unit:GetName(), promotionType)
+		--log:Debug("New  %15s %15s %s", Players[unit:GetOwner()]:GetName(), unit:GetName(), promoType)
 	end
 	for k,v in ipairs(self.m_Promotions) do
 		v.IsVisible = false
 	end
-	for promotion in GameInfo.UnitPromotions() do
-		local promotionID = promotion.ID
-		if not (ignorePromotion[promotionID] or checked[promotionID]) then
-			self.m_Promotions[promotionIndex].IsVisible = true
-			if not best_id[promotionID] then
-				----log:Trace("  Check         :: "..promotion.Type)
+	for promo in GameInfo.UnitPromotions() do
+		local promoID = promo.ID
+		if not (ignorePromotion[promoID] or checked[promoID]) then
+			self.m_Promotions[iconPositionID].IsVisible = true
+			if not best_id[promoID] then
+				----log:Trace("  Check         :: "..promo.Type)
 				-- handle promotions with levels
-				local Plvl = isPromotionwithlevels[promotionID]
+				local Plvl = isPromotionwithlevels[promoID]
 				if Plvl then -- is it one of them?
-					----log:Trace("        Leveled :: "..promotion.Type)
+					----log:Trace("        Leveled :: "..promo.Type)
 					local t_Pclass = isPromotionwithlevels[ Plvl.Pclass ] -- get the whole list
 					-- find best promo
 					local i = #t_Pclass
@@ -154,7 +217,7 @@ g_UnitFlagClass.UpdatePromotions = function( self, promotionType )
 					if levelID then
 						best_id[levelID]=i
 					end
-					self.m_Promotions[promotionIndex].IsVisible = (levelID==promotionID)
+					self.m_Promotions[iconPositionID].IsVisible = (levelID==promoID)
 					
 					-- mark lower promotions also as checked
 					i=i-1 levelID = t_Pclass[i] -- skip current, best one
@@ -164,49 +227,49 @@ g_UnitFlagClass.UpdatePromotions = function( self, promotionType )
 						levelID = t_Pclass[i]
 					end -- mark
 				else
-					----log:Trace("            Not :: "..promotion.Type)
-					self.m_Promotions[promotionIndex].IsVisible = unit:IsHasPromotion(promotionID) or newPromotionID == promotionID
+					----log:Trace("            Not :: "..promo.Type)
+					self.m_Promotions[iconPositionID].IsVisible = unit:IsHasPromotion(promoID) or newPromotionID == promoID
 				end
 			end
-			if self.m_Promotions[promotionIndex].IsVisible then
-				if self.m_Promotions[promotionIndex].ID ~= promotionID then
-					----log:Trace("self.m_Instance['Promotion'.."..promotionIndex.."]:SetHide( false ) :: IconAtlas="..promotion.IconAtlas.."  PortraitIndex="..promotion.PortraitIndex)
-					self.m_Promotions[promotionIndex].ID = promotionID
-					IconHookup( promotion.PortraitIndex, 16, promotion.IconAtlas, self.m_Instance['Promotion'..promotionIndex] )
-				
+			if self.m_Promotions[iconPositionID].IsVisible then
+				if self.m_Promotions[iconPositionID].ID ~= promoID then
+					--log:Trace("self.m_Instance['Promotion'.."..iconPositionID.."]:SetHide( false ) :: IconAtlas="..promo.IconAtlas.."  PortraitIndex="..promo.PortraitIndex)
+					self.m_Promotions[iconPositionID].ID = promoID
+					IconHookup( promo.PortraitIndex, 16, promo.IconAtlas, self.m_Instance['Promotion'..iconPositionID] )
+					
 					-- Tooltip
-					local strToolTip = ""
-					if promotion.SimpleHelpText then
-						strToolTip = Locale.ConvertTextKey(promotion.Help)
+					local hoverText = ""
+					if promo.SimpleHelpText then
+						hoverText = Locale.ConvertTextKey(promo.Help)
 					else
-						strToolTip = string.format("[COLOR_YELLOW]%s[ENDCOLOR][NEWLINE]%s",
-							Locale.ConvertTextKey(promotion.Description),
-							Locale.ConvertTextKey(promotion.Help)
+						hoverText = string.format("[COLOR_YELLOW]%s[ENDCOLOR][NEWLINE]%s",
+							Locale.ConvertTextKey(promo.Description),
+							Locale.ConvertTextKey(promo.Help)
 						)
 					end
-					local best_pos = best_id[promotionID]
+					local best_pos = best_id[promoID]
 					if best_pos and best_pos>1 then
-						local t_Pclass = isPromotionwithlevels[ isPromotionwithlevels[promotionID].Pclass ]
+						local t_Pclass = isPromotionwithlevels[ isPromotionwithlevels[promoID].Pclass ]
 						-- local i = #t_Pclass
 						-- local id = t_Pclass[i]
-						-- while id and not (unit:IsHasPromotion(id) or (promotionType and unit:IsHasPromotion(GameInfo.UnitPromotions[promotionType].ID))) do checked[id]=true i=i-1 id = t_Pclass[i] end
+						-- while id and not (unit:IsHasPromotion(id) or (promoType and unit:IsHasPromotion(GameInfo.UnitPromotions[promoType].ID))) do checked[id]=true i=i-1 id = t_Pclass[i] end
 					
 						local ids = tostring(t_Pclass[1])
 						for i = 2,best_pos-1 do
 							ids = ids ..','.. t_Pclass[i]
 						end
-							-- strToolTip = strToolTip..'[COLOR_YELLOW]'..i..'[ENDCOLOR]'..'[NEWLINE]'
+							-- hoverText = hoverText..'[COLOR_YELLOW]'..i..'[ENDCOLOR]'..'[NEWLINE]'
 						ids = '('..ids..')'
 						local sql = string.format("select Description, Help from UnitPromotions where ID in "..ids)
 						for res in DB.Query(sql) do
-							strToolTip = strToolTip..'[NEWLINE][COLOR_YELLOW]'..Locale.ConvertTextKey(res.Description)..'[ENDCOLOR]'..'[NEWLINE]'..Locale.ConvertTextKey(res.Help)
+							hoverText = hoverText..'[NEWLINE][COLOR_YELLOW]'..Locale.ConvertTextKey(res.Description)..'[ENDCOLOR]'..'[NEWLINE]'..Locale.ConvertTextKey(res.Help)
 						end
 					end
-					self.m_Instance['Promotion'..promotionIndex]:SetToolTipString(strToolTip)
+					self.m_Instance['Promotion'..iconPositionID]:SetToolTipString(hoverText)
 				end
 				
-				promotionIndex = promotionIndex + 1
-				if promotionIndex > iPromotionsStackMax then
+				iconPositionID = iconPositionID + 1
+				if iconPositionID > iPromotionsStackMax then
 					break -- stop the for cycle
 				end
 			end
@@ -232,6 +295,7 @@ g_UnitFlagClass.UpdatePromotions = function( self, promotionType )
 	self.m_Instance.EarnedPromotionStack2:CalculateSize()
 	self.m_Instance.EarnedPromotionStack2:ReprocessAnchoring()
 end
+--]]
 
 log:Info("Loading UnitFlagManager_addin.lua D")
 
@@ -259,6 +323,7 @@ end
 
 log:Info("Loading UnitFlagManager_addin.lua F")
 
+--[[
 local OldInitialize = g_UnitFlagClass.Initialize
 
 g_UnitFlagClass.Initialize = function( o, playerID, unitID, fogState, invisible )
@@ -274,6 +339,7 @@ g_UnitFlagClass.Initialize = function( o, playerID, unitID, fogState, invisible 
 	end
 	--o:UpdatePromotions()
 end
+--]]
 
 log:Info("Loading UnitFlagManager_addin.lua G")
 
@@ -341,8 +407,8 @@ log:Info("Loading UnitFlagManager_addin.lua H")
 
 -- Independent Events
 
-function OnPromotionEvent(unit, promotionType)
-	--log:Debug( "%15s %15s ActiveUnitRefreshFlag", unit, promotionType )
+function OnPromotionEvent(unit, promoType)
+	--log:Debug( "%15s %15s ActiveUnitRefreshFlag", unit, promoType )
 
 	if not unit then
 		return
@@ -358,7 +424,7 @@ function OnPromotionEvent(unit, promotionType)
 	
 	local flag = g_MasterList[playerID][unitID]
 	if flag then
-		flag:UpdatePromotions(promotionType)
+		flag:UpdatePromotions(promoType)
 	else
 		log:Fatal( "Flag not found for PromotionEvent: Player[%i] Unit[%i]", playerID, unitID )
 	end

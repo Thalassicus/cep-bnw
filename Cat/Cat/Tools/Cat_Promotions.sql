@@ -60,10 +60,23 @@ WHERE UnitCombatType = 'UNITCOMBAT_SUBMARINE' AND PromotionType IN (
 );
 
 /*
+-- REGEXP not available in this version of SQLite Spy?
 UPDATE UnitPromotions
 SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
 WHERE Type REGEXP '.*\d';
 */
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_1';
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_2';
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_3';
 
 UPDATE UnitPromotions
 SET RankList = 'BUFFALO', RankNumber = 1
