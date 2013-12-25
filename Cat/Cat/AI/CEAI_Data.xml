@@ -14,4 +14,78 @@
 			<Value>10</Value>
 		</Row>
 	</CEP>
+	<Defines>
+		<Update>
+			<Where Name="WARMONGER_THREAT_PER_TURN_DECAY" />
+			<Set Value="-7" />
+			<!-- -5 -->
+		</Update>
+		
+		<Update>
+			<Where Name="OPINION_WEIGHT_DENOUNCED_ME_FRIENDS"/>
+			<Set Value="25" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_DENOUNCED_ME"/>
+			<Set Value="25" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_DENOUNCED_THEM"/>
+			<Set Value="25" />
+			<!-- 35 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_DENOUNCED_FRIEND"/>
+			<Set Value="10" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_DENOUNCED_BY_FRIEND_EACH"/>
+			<Set Value="15" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_WAR_ME_FRIENDS"/>
+			<Set Value="45" />
+			<!-- 60 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_WAR_FRIEND_EACH"/>
+			<Set Value="30" />
+			<!-- 40 -->
+		</Update>
+
+		<Update>
+			<Where Name="OPINION_WEIGHT_LIBERATED_ONE_CITY"/>
+			<Set Value="-20" />
+			<!-- -30 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_LIBERATED_TWO_CITIES"/>
+			<Set Value="-35" />
+			<!-- -50 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_LIBERATED_THREE_CITIES"/>
+			<Set Value="-45" />
+			<!-- -60 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_LIBERATED_CITY"/>
+			<Set Value="-30" />
+			<!-- -40 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_LIBERATED_CAPITAL"/>
+			<Set Value="-60" />
+			<!-- -80 -->
+		</Update>
+		<Update>
+			<Where Name="OPINION_WEIGHT_CAPTURED_CAPITAL"/>
+			<Set Value="60" />
+			<!-- 80 -->
+		</Update>
+	</Defines>
 </GameData>

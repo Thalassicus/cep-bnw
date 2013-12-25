@@ -10,44 +10,6 @@
 			<Set Key="HANDICAP_AI_DEFAULT" />
 		</Update>
 	</PostDefines>
-	<Worlds>
-		<Update>
-			<Where Type="WORLDSIZE_DUEL" />
-			<Set>
-				<AISearchRange>2</AISearchRange>
-			</Set>
-		</Update>
-		<Update>
-			<Where Type="WORLDSIZE_TINY" />
-			<Set>
-				<AISearchRange>4</AISearchRange>
-			</Set>
-		</Update>
-		<Update>
-			<Where Type="WORLDSIZE_SMALL" />
-			<Set>
-				<AISearchRange>6</AISearchRange>
-			</Set>
-		</Update>
-		<Update>
-			<Where Type="WORLDSIZE_STANDARD" />
-			<Set>
-				<AISearchRange>8</AISearchRange>
-			</Set>
-		</Update>
-		<Update>
-			<Where Type="WORLDSIZE_LARGE" />
-			<Set>
-				<AISearchRange>10</AISearchRange>
-			</Set>
-		</Update>
-		<Update>
-			<Where Type="WORLDSIZE_HUGE" />
-			<Set>
-				<AISearchRange>12</AISearchRange>
-			</Set>
-		</Update>
-	</Worlds>
 	<HandicapInfo_AIFreeTechs>
 		<Delete />
 	</HandicapInfo_AIFreeTechs>
