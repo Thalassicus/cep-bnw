@@ -8,7 +8,7 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-07-11'), 'TXT_KEY_BELIEF_TRANQUIL_REFUGE_SHORT', 'Tranquil Refuge', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-07-11'), 'TXT_KEY_BELIEF_TRANQUIL_REFUGE', '+2 [ICON_FOOD][ICON_CULTURE] Food and Culture from Oasis', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DEFENDER_FAITH', '+40% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DIVINE_INSPIRATION', '+2 [ICON_TOURISM][ICON_PEACE] Tourism and Faith from each World Wonder', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_BELIEF_DIVINE_INSPIRATION', '+1 [ICON_TOURISM] Tourism and +2 [ICON_PEACE] Faith from each World Wonder', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-21'), 'TXT_KEY_BELIEF_FERTILITY_RITES', '+25% [ICON_FOOD] Surplus Food in cities', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-21'), 'TXT_KEY_BELIEF_FEED_WORLD', '+3 [ICON_FOOD] Food from Shrines and Temples', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-23'), 'TXT_KEY_BELIEF_FORMAL_LITURGY', '+1 [ICON_CULTURE][ICON_PEACE] Culture and Faith for each Gold and Silver', '', '');
