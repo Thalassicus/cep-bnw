@@ -7,20 +7,18 @@
 				 TradeRouteSeaDistanceModifier="100"
 				 />
 		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_SEAPORT" />
+			<Set GoldMaintenance="4"
+				 />
+		</Update>
 	</Buildings>
 	<Building_SeaPlotYieldChanges>
-		<!--
 		<Row>
 			<BuildingType>BUILDING_SEAPORT</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_SEAPORT</BuildingType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
 	</Building_SeaPlotYieldChanges>
 	<Building_ResourceYieldChanges>
 		

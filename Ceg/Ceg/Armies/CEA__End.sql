@@ -1,13 +1,5 @@
 --
 
-INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
-SELECT DISTINCT Type, 'PROMOTION_CARGO_I'
-FROM Units WHERE CombatClass IN (
-	'UNITCOMBAT_NAVALMELEE'		,
-	'UNITCOMBAT_NAVALRANGED'	,
-	'UNITCOMBAT_SUBMARINE'		
-) AND EXISTS (SELECT * FROM Cep WHERE Type = 'SHIP_BOARDING' AND Value = 1);
-
 --UPDATE UnitPromotions
 --SET CargoChange = CargoChange + 2 WHERE CargoChange > 0;
 
@@ -138,6 +130,24 @@ UPDATE Units SET Cost = -1, ShowInPedia = 0, PrereqTech = 'TECH_FUTURE_TECH' WHE
 	'UNITCLASS_ANTI_TANK_GUN'		,
 	--'UNITCLASS_PARATROOPER'			,
 	'UNITCLASS_MARINE'				
+);
+
+
+--
+-- Other
+--
+
+INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
+SELECT DISTINCT Type, 'PROMOTION_CARGO_I'
+FROM Units WHERE CombatClass IN (
+	'UNITCOMBAT_NAVALMELEE'		,
+	'UNITCOMBAT_NAVALRANGED'	,
+	'UNITCOMBAT_SUBMARINE'		
+) AND EXISTS (SELECT * FROM Cep WHERE Type = 'SHIP_BOARDING' AND Value = 1);
+
+UPDATE Units SET GoodyHutUpgradeUnitClass = NULL WHERE Class IN (
+	'UNITCLASS_WARRIOR'			,
+	'UNITCLASS_ARCHER'			
 );
 
 

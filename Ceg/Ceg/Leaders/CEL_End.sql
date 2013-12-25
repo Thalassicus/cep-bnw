@@ -6,6 +6,7 @@ FROM Resources res, Yields yield
 WHERE res.Happiness <> 0 AND yield.Type IN ('YIELD_GOLD', 'YIELD_PRODUCTION');
 
 UPDATE Units SET GoodyHutUpgradeUnitClass = NULL WHERE Type IN (
+	'UNIT_EGYPTIAN_WARCHARIOT'		,
 	'UNIT_PERSIAN_IMMORTAL'			,
 	'UNIT_HUN_HORSE_ARCHER'			,
 	'UNIT_IROQUOIAN_MOHAWKWARRIOR'	,

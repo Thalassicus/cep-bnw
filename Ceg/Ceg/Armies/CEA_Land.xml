@@ -2,16 +2,8 @@
 <GameData>
 	<Units>
 		<Update>
-			<Where Class="UNITCLASS_WARRIOR" />
-			<Set GoodyHutUpgradeUnitClass="NULL" />
-		</Update>
-		<Update>
 			<Where Class="UNITCLASS_PIKEMAN" />
 			<Set GoodyHutUpgradeUnitClass="UNITCLASS_MUSKETMAN" />
-		</Update>
-		<Update>
-			<Where Class="UNITCLASS_ARCHER" />
-			<Set GoodyHutUpgradeUnitClass="NULL" />
 		</Update>
 		<Update>
 			<Where Class="UNITCLASS_GUIDED_MISSILE" />
