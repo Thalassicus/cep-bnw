@@ -196,9 +196,17 @@ WHERE BuildingType IN (
 	'BUILDING_GRANARY'		,
 	'BUILDING_STABLE'		,
 	'BUILDING_DUCAL_STABLE'	,
-	--'BUILDING_FORGE'		,
+	'BUILDING_LIGHTHOUSE'	,
+	'BUILDING_COTHON'	,
 	'BUILDING_MINT'
 );
+
+INSERT OR REPLACE INTO	Building_ResourceYieldChanges
+						(BuildingType, ResourceType, YieldType, Yield) 
+SELECT					building.Type, res.Type, 'YIELD_PRODUCTION', 1
+FROM					Buildings building, Resources res
+WHERE					building.BuildingClass = 'BUILDINGCLASS_LIGHTHOUSE'
+						AND res.TechCityTrade = 'TECH_SAILING';
 
 INSERT OR REPLACE INTO	Building_ResourceYieldChanges
 						(BuildingType, ResourceType, YieldType, Yield) 

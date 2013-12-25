@@ -21,7 +21,7 @@
 		</Row>
 	</Building_SeaPlotYieldChanges>
 	<Building_ResourceYieldChanges>
-		
+		<Delete BuildingType="BUILDING_SEAPORT" />
 	</Building_ResourceYieldChanges>
 	<Building_YieldChanges>
 		<Delete BuildingType="BUILDING_SEAPORT" />
