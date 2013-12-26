@@ -19,6 +19,17 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+
+*	Stories -- Scout story updrade to 'Sentinel' error
+*	Syntax fix -- Production queue problem due to syntax error
+*	Adjusted AI -- Diplomatic weightings are adjusted
+*	Lighthouse fix
+*	Minor fixes -- Less Tourism & more Culture
+*	Minor fixes -- Egyptian Chariot doesn't 'goodyhutupgrade', lower vanguard costs, changes to seaports
+
+**3.11** -- Flag Promotions
+
+*	Stories -- Stories reactivated, minor adjustments to AI Gold, aqueducts on lakes
 *	Blank TECH fix -- The removal of the TECH_FUTURE_TECH from the Marine & Anti-Tank had unexpected consequences
 *	CN Tower -- Moved it TECH_ELECTRONICS as the required tech as it currently is 4 tiers away from the free building it grants
 *	Minor text fixes -- Marine & Anti-Tank no longer show in pedia, Bireme & Projects have minor visual changes in the TECH tree
