@@ -211,7 +211,7 @@ AdvancedStartPointsMod         = 80,
 EstimatedNumCities             = 10,
 PortraitIndex                  = 0,
 AISearchRange                  = 4,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 GameInfoCep.Worlds[1] = {
 ID                             = 1,
@@ -240,7 +240,7 @@ AdvancedStartPointsMod         = 85,
 EstimatedNumCities             = 19,
 PortraitIndex                  = 1,
 AISearchRange                  = 5,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 GameInfoCep.Worlds[2] = {
 ID                             = 2,
@@ -269,7 +269,7 @@ AdvancedStartPointsMod         = 90,
 EstimatedNumCities             = 29,
 PortraitIndex                  = 2,
 AISearchRange                  = 6,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 GameInfoCep.Worlds[3] = {
 ID                             = 3,
@@ -298,7 +298,7 @@ AdvancedStartPointsMod         = 100,
 EstimatedNumCities             = 38,
 PortraitIndex                  = 3,
 AISearchRange                  = 7,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 GameInfoCep.Worlds[4] = {
 ID                             = 4,
@@ -327,7 +327,7 @@ AdvancedStartPointsMod         = 110,
 EstimatedNumCities             = 47,
 PortraitIndex                  = 4,
 AISearchRange                  = 8,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 GameInfoCep.Worlds[5] = {
 ID                             = 5,
@@ -356,7 +356,7 @@ AdvancedStartPointsMod         = 120,
 EstimatedNumCities             = 57,
 PortraitIndex                  = 5,
 AISearchRange                  = 9,
-IconAtlas                      = "WORLDSIZE_ATLAS",
+IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 
 
