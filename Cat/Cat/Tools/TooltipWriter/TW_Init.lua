@@ -185,6 +185,9 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 	elseif lineType == "YieldModInAllCities" then
 		return GetYieldInfo{table="Building_GlobalYieldModifiers"}
 
+	elseif lineType == "YieldFromLakes" then
+		return GetYieldInfo{table="Building_LakePlotYieldChanges"}
+
 	elseif lineType == "YieldFromPlots" then
 		return GetYieldInfo{table="Building_PlotYieldChanges", tableExtra="Plots", cellExtra="PlotType"}
 

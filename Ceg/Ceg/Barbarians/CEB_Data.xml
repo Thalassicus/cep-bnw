@@ -14,7 +14,7 @@
 	<Defines>
 		<Update>
 			<Where Name="BARBARIAN_CAMP_FIRST_TURN_PERCENT_OF_TARGET_TO_ADD" />
-			<Set Value="25" />
+			<Set Value="33" />
 			<!-- 33 -->
 		</Update>
 		<Update>

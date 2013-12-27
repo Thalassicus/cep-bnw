@@ -3,6 +3,7 @@
 --------------------------------------------------------------
 
 include("MT_Events.lua")
+include("YieldLibrary.lua")
 include("FLuaVector")
 
 local log = Events.LuaLogger:New()
