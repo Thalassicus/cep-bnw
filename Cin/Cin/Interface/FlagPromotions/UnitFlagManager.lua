@@ -534,7 +534,7 @@ g_UnitFlagClass =  --@was: local -- Modified by Erendir
 		if buildType ~= -1 then
 			string = string .. "[NEWLINE]";
 			string = string ..  Locale.ConvertTextKey(GameInfo.Builds[buildType].Description);
-			string = string .. " ("..tostring(PlotGetBuildTurnsLeft(pUnit:GetPlot(), buildType))..")";
+			string = string .. " ("..tostring(Plot_GetBuildTurnsLeft(pUnit:GetPlot(), buildType))..")";
 		end
 				
 		if not OptionsManager.IsNoBasicHelp() then

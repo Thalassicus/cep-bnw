@@ -8,7 +8,7 @@ include("ModTools.lua")
 --print("Init MT_Events.lua")
 
 local log = Events.LuaLogger:New()
-log:SetLevel("INFO")
+log:SetLevel("WARN")
 
 --
 -- Initialize data

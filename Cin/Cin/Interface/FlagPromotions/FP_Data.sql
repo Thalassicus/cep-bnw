@@ -5,21 +5,22 @@ UPDATE UnitPromotions SET IsVisibleAboveFlag = 0;
 UPDATE UnitPromotions SET IsVisibleAboveFlag = 1
 WHERE Type IN (
 	'PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE'	, --not on all units
-	'PROMOTION_IGNORE_TERRAIN_COST'		, --not on all units
-	'PROMOTION_SKIRMISH' 				, --earned
-	'PROMOTION_MORALE' 					, --not on all units
-	'PROMOTION_STATUE_ZEUS' 			, --not on all units
-	'PROMOTION_MERCENARY' 				, --Germans
-	'PROMOTION_DESERT_POWER'			, --barbarians
-	'PROMOTION_ARCTIC_POWER'			, --barbarians
-	'PROMOTION_HILL_FIGHTER'			, --barbarians
-	'PROMOTION_WOODSMAN' 				, --barbarians
-	'PROMOTION_BOMBARDMENT_1'			, --
-	'PROMOTION_BOMBARDMENT_2'			, --
-	'PROMOTION_BOMBARDMENT_3'			, --
-	'PROMOTION_BLITZ'					, --
-	'PROMOTION_LOGISTICS'				, --
-	'PROMOTION_EXTRA_MOVES_I'			 --
+	'PROMOTION_IGNORE_TERRAIN_COST'				, --not on all units
+	'PROMOTION_SKIRMISH' 						, --earned
+	'PROMOTION_MORALE' 							, --not on all units
+	'PROMOTION_STATUE_ZEUS' 					, --not on all units
+	'PROMOTION_MERCENARY' 						, --Germans
+	'PROMOTION_DESERT_POWER'					, --barbarians
+	'PROMOTION_ARCTIC_POWER'					, --barbarians
+	'PROMOTION_HILL_FIGHTER'					, --barbarians
+	'PROMOTION_WOODSMAN' 						, --barbarians
+	'PROMOTION_BOMBARDMENT_1'					, --
+	'PROMOTION_BOMBARDMENT_2'					, --
+	'PROMOTION_BOMBARDMENT_3'					, --
+	'PROMOTION_BLITZ'							, --
+	'PROMOTION_LOGISTICS'						, --
+	'PROMOTION_EXTRA_SIGHT_NOUPGRADE_II'		, --China
+	'PROMOTION_EXTRA_MOVES_I'					--
 ) OR (Class = 'PROMOTION_CLASS_PERSISTANT' AND NOT (
 	   Type LIKE '%PENALTY%'
 	OR Type LIKE '%NOUPGRADE%'

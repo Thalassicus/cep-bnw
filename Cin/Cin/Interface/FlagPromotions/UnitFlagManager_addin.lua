@@ -70,7 +70,7 @@ g_UnitFlagClass.UpdateVisibility = function ( self )
 		self:SetHideAllPromotions(true)
 	end
 	self:UpdatePromotions()
-	self:UpdatePromotionsOffset()
+	--self:UpdatePromotionsOffset()
 end
 
 
@@ -377,13 +377,15 @@ end
 
 log:Info("Loading UnitFlagManager_addin.lua G")
 
+--[[
 local OldUpdateFlagOffset = g_UnitFlagClass.UpdateFlagOffset
 
 g_UnitFlagClass.UpdateFlagOffset = function( self )
 	OldUpdateFlagOffset(self)
 	self:UpdatePromotions()
-	self:UpdatePromotionsOffset()
+	--self:UpdatePromotionsOffset()
 end
+--]]
 
 g_UnitFlagClass.UpdatePromotionsOffset = function( self )
 	local pUnit = Players[ self.m_PlayerID ]:GetUnitByID( self.m_UnitID )
