@@ -1,41 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Units>
-		<!--
-		<Update>
-			<Where Type="UNIT_BARBARIAN_WARRIOR"/>
-			<Set BarbUpgradeType="UNIT_BARBARIAN_SWORDSMAN"
-				 ObsoleteTech="TECH_IRON_WORKING"
-				 Cost="80"
-				 />
-		</Update>
-		<Update>
-			<Where Type="UNIT_BARBARIAN_ARCHER"/>
-			<Set PrereqTech="TECH_AGRICULTURE"
-				 BarbUpgradeType="UNIT_BARBARIAN_CHARIOT_ARCHER"
-				 Cost="80"
-				 Combat="6"
-				 RangedCombat="6"
-				 Description="TXT_KEY_UNIT_BARBARIAN_ARCHER"
-				 />
-		</Update>
-		<Update>
-			<Where Type="UNIT_BARBARIAN_SPEARMAN"/>
-			<Set PrereqTech="TECH_BRONZE_WORKING"
-				 BarbUpgradeType="UNIT_BARBARIAN_PIKEMAN"
-				 Cost="100"
-				 Description="TXT_KEY_UNIT_BARBARIAN_SPEARMAN"
-				 />
-		</Update>
-		<Update>
-			<Where Type="UNIT_BARBARIAN_SWORDSMAN"/>
-			<Set PrereqTech="TECH_IRON_WORKING"
-				 BarbUpgradeType="UNIT_BARBARIAN_LONGSWORDSMAN"
-				 Cost="150"
-				 Description="TXT_KEY_UNIT_BARBARIAN_SWORDSMAN"
-				 />
-		</Update>
-		-->
 		<Update>
 			<Where Type="UNIT_GALLEY"/>
 			<Set ShowInPedia="0"/>
