@@ -3,6 +3,7 @@
 --------------------------------------------------------------
 
 include("MT_Events.lua")
+include("YieldLibrary.lua")
 include("FLuaVector")
 
 local log = Events.LuaLogger:New()
@@ -179,7 +180,7 @@ end
 
 function Game.TrigAction.ScoutStories2(playerID, trigID, targetID, outID)
 	local unit = Players[playerID]:GetUnitByID(targetID)
-	local newUnit = Unit_Replace(unit, "UNITCLASS_SENTINEL")
+	local newUnit = Unit_Replace(unit, "UNITCLASS_SPEARMAN")
 	newUnit:SetDamage(0)
 	--newUnit:ChangeExperience(15)
 end

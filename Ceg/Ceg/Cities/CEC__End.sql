@@ -196,9 +196,17 @@ WHERE BuildingType IN (
 	'BUILDING_GRANARY'		,
 	'BUILDING_STABLE'		,
 	'BUILDING_DUCAL_STABLE'	,
-	--'BUILDING_FORGE'		,
+	'BUILDING_LIGHTHOUSE'	,
+	'BUILDING_COTHON'		,
 	'BUILDING_MINT'
 );
+
+INSERT OR REPLACE INTO	Building_ResourceYieldChanges
+						(BuildingType, ResourceType, YieldType, Yield) 
+SELECT					building.Type, res.Type, 'YIELD_PRODUCTION', 1
+FROM					Buildings building, Resources res
+WHERE					building.BuildingClass = 'BUILDINGCLASS_LIGHTHOUSE'
+						AND res.TechCityTrade = 'TECH_SAILING';
 
 INSERT OR REPLACE INTO	Building_ResourceYieldChanges
 						(BuildingType, ResourceType, YieldType, Yield) 
@@ -335,33 +343,12 @@ WHERE					building.BuildingClass IN (
 						'BUILDINGCLASS_FORGE'
 						);
 
-/*
-The OR conditional command cannot be used on this table as it lacks a Primary or Unique Key.
-The other uses of the OR conditional command in this file all work simply because the INSERT adds rows that
-are not in the existing table.
-This block of code produces duplicate entries for the buildings with YIELD_CULTURE.
-The UPDATE command in the next code block accomplishes the same task.
-
-INSERT OR REPLACE INTO	Building_YieldChanges(BuildingType, YieldType, Yield) 
-SELECT					building.Type, 'YIELD_CULTURE', 2
-FROM					Buildings building
-WHERE					building.BuildingClass IN (
-						'BUILDINGCLASS_MONUMENT'		,
-						'BUILDINGCLASS_AMPHITHEATER'	,
-						--'BUILDINGCLASS_OPERA_HOUSE'		,
-						--'BUILDINGCLASS_MUSEUM'			,
-						'BUILDINGCLASS_BROADCAST_TOWER'				
-						);*/
-
-
+						
 UPDATE					Building_YieldChanges
-SET						Yield = 2
+SET						Yield = 3
 WHERE					(YieldType = 'YIELD_CULTURE'
 AND						BuildingType IN (SELECT Type FROM Buildings WHERE BuildingClass IN (
-						'BUILDINGCLASS_MONUMENT'		,
 						'BUILDINGCLASS_AMPHITHEATER'	,
-						--'BUILDINGCLASS_OPERA_HOUSE'		,
-						--'BUILDINGCLASS_MUSEUM'			,
 						'BUILDINGCLASS_BROADCAST_TOWER'	
 						)));
 

@@ -7178,7 +7178,9 @@ function BuffDeserts(plot)
 	if plot:IsFreshWater() then
 		Game.SetPlotExtraYield( x, y, YieldTypes.YIELD_FOOD, 1)
 	elseif resInfo then
-		if resInfo.ResourceClassType == "RESOURCECLASS_BONUS" and resInfo.Type ~= "RESOURCE_STONE" then
+		if resInfo.Type == "RESOURCE_STONE" then
+			Game.SetPlotExtraYield( x, y, YieldTypes.YIELD_PRODUCTION, 2)
+		elseif resInfo.ResourceClassType == "RESOURCECLASS_BONUS" then
 			Game.SetPlotExtraYield( x, y, YieldTypes.YIELD_FOOD, 1)
 		elseif resInfo.Happiness > 0 then
 			Game.SetPlotExtraYield( x, y, YieldTypes.YIELD_GOLD, 1)

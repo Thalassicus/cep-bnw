@@ -17,7 +17,7 @@ AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
 
 
 UPDATE Buildings
-SET Cost = ROUND((Cost * 1.8) / 10, 0) * 10
+SET Cost = ROUND((Cost * 2) / 10, 0) * 10
 WHERE Cost > 0 AND NOT BuildingClass IN (
 	SELECT Type FROM BuildingClasses
 	WHERE (
@@ -28,7 +28,7 @@ WHERE Cost > 0 AND NOT BuildingClass IN (
 );
 
 UPDATE Buildings
-SET Cost = ROUND((Cost * 1.2) / 10, 0) * 10
+SET Cost = ROUND((Cost * 1.4) / 10, 0) * 10
 WHERE Cost > 0 AND BuildingClass IN (
 	SELECT Type FROM BuildingClasses
 	WHERE (
@@ -59,7 +59,7 @@ WHERE YieldType='YIELD_CULTURE' AND Yield >= 1 AND Yield <= 3 AND BuildingType I
 );
 
 UPDATE Projects
-SET Cost = Cost * 1.2
+SET Cost = Cost * 1.4
 WHERE Cost > 0;
 
 UPDATE Buildings

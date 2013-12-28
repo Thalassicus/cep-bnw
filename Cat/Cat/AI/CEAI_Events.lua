@@ -1249,7 +1249,7 @@ function ClearCamps()
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
+LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
 
 function ClearCampsCity(city, player)
 	if player:IsHuman() or player:IsMinorCiv() then
@@ -1278,7 +1278,7 @@ function ClearCampsCity(city, player)
 		end
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
+--LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
 
 function ClearCampsUnit(unit)
 	local player = Players[unit:GetOwner()]
@@ -1311,7 +1311,7 @@ function ClearCampsUnit(unit)
 		end
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
+--LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
 
 function ClearCamp(player, plot)
 	local campGold = Game.GetHandicapInfo().BarbCampGold

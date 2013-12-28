@@ -1,7 +1,7 @@
 --
 
 INSERT INTO Belief_BuildingClassTourism(BeliefType, BuildingClassType, Tourism)
-SELECT 'BELIEF_DIVINE_INSPIRATION', Type, 2
+SELECT 'BELIEF_DIVINE_INSPIRATION', Type, 1
 FROM BuildingClasses WHERE (
 	MaxGlobalInstances = 1
 );

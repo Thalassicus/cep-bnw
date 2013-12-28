@@ -271,7 +271,7 @@ INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_OUTCOME_2', 'Provide the scout with new training and new weapons.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_OUTCOME_3', 'Allow the scout to tell their stories, then move on.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_TIP_1', '[ICON_CULTURE] Culture: +100', '', '');
-INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_TIP_2', 'Heals and upgrades to a Sentinel.', '', '');
+INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_TIP_2', 'Heals and upgrades to a Spearman.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_TIP_3', '[ICON_CULTURE] Culture: +30', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_ALERT_1', '[ICON_TEAM_3] Epic poems of a Scout''s travels increased the [ICON_CULTURE] Culture of {1_player}.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_SCOUT_STORIES_ALERT_2', '[ICON_TEAM_3] A scout of {1_player} upgraded to new armor and weapons.', '', '');

@@ -16,12 +16,6 @@ OR Type IN (
 	'PROMOTION_NO_DEFENSIVE_BONUSES'
 );
 
-UPDATE UnitPromotions SET IsVisibleAboveFlag = 1
-WHERE Class = 'PROMOTION_CLASS_PERSISTANT'
-OR Type IN (
-	'PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE'		
-);
-
 
 UPDATE UnitPromotions
 SET LostWithUpgrade = 1
