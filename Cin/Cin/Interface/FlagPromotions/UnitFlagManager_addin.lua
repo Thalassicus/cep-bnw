@@ -131,7 +131,19 @@ function g_UnitFlagClass.UpdatePromotions( self, promoType )
 	for promo in GameInfo.UnitPromotions{IsVisibleAboveFlag = 1} do
 		local promoID = promo.ID
 		if unit:IsHasPromotion(promoID) or newPromotionID == promoID then
-			table.insert(promos, promoID)
+			local showPromo = true
+			if promo.RankList then
+				-- hide promotion if the unit has a higher rank of that promotion (eg. hide Drill 1 if we have Drill 2)
+				for nextPromo in GameInfo.UnitPromotions{RankList = promo.RankList, RankNumber = promo.RankNumber + 1} do
+					if unit:IsHasPromotion(nextPromo.ID) or newPromotionID == nextPromo.ID then
+						showPromo = false
+						break
+					end
+				end
+			end	
+			if showPromo then
+				table.insert(promos, promoID)
+			end
 		end
 	end
 	
@@ -171,6 +183,29 @@ function g_UnitFlagClass.AddPromotionIcon(self, promoID, iconPositionID)
 			Locale.ConvertTextKey(promo.Help)
 		)
 	end	
+	
+	if promo.RankList then
+		-- add earlier rank promotions to the tooltip (eg add Drill 1 if we have Drill 2)
+		local rankNum = promo.RankNumber - 1
+		while rankNum > 0 do
+			for nextPromo in GameInfo.UnitPromotions{RankList = promo.RankList, RankNumber = rankNum} do
+				if nextPromo.SimpleHelpText then
+					hoverText = string.format("%s[NEWLINE]%s",
+						hoverText,
+						Locale.ConvertTextKey(nextPromo.Help)
+					)
+				else
+					hoverText = string.format("%s[NEWLINE][COLOR_YELLOW]%s[ENDCOLOR][NEWLINE]%s",
+						hoverText,
+						Locale.ConvertTextKey(nextPromo.Description),
+						Locale.ConvertTextKey(nextPromo.Help)
+					)
+				end
+			end
+			rankNum = rankNum - 1
+		end
+	end	
+	
 	button:SetToolTipString(hoverText)
 end
 

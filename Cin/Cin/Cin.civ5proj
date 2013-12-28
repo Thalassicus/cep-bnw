@@ -19,7 +19,13 @@
     <SupportsMac>true</SupportsMac>
     <AssemblyName>Mod Template</AssemblyName>
     <RootNamespace>Mod Template</RootNamespace>
-    <ModActions />
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Interface\FlagPromotions\FP_Data.sql</FileName>
+      </Action>
+    </ModActions>
     <Homepage>http://civmodding.wordpress.com/</Homepage>
     <ModContent>
     </ModContent>
@@ -58,10 +64,6 @@
     <Content Include="Cin_Options.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Interface\FlagPromotions\UnitFlagManager_addin.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Interface\SocialPolicyPopup.lua">
       <SubType>Lua</SubType>
