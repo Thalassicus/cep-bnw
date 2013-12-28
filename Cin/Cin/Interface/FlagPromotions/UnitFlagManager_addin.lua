@@ -8,8 +8,7 @@ local log = Events.LuaLogger:New()
 log:SetLevel("DEBUG")
 log:Info("Loading UnitFlagManager_addin.lua A")
 
-include("ModUserData")
---local ModID				= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
+--local ModID			= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
 --local ModVersion		= ModVersion --Modding.GetActivatedModVersion(modID) or 1
 --local ModUserData		= ModUserData --Modding.OpenUserData(modID, modVersion)
 --local ignorePromotion	= assert(ignorePromotion, 'ModUserData.lua is not properly loaded')
