@@ -276,6 +276,7 @@ FROM Civilizations WHERE Type IN (
 INSERT INTO Civilization_FreeUnits (UnitClassType, UnitAIType, Count, CivilizationType)
 SELECT 'UNITCLASS_BIREME', 'UNITAI_EXPLORE_SEA', 1, Type 
 FROM Civilizations WHERE Type IN (
+	'CIVILIZATION_CARTHAGE'		,
 	'CIVILIZATION_VENICE'		
 );
 
