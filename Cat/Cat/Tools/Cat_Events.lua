@@ -796,7 +796,6 @@ function DoPolicyEffects(player, policyID)
 	end
 	log:Info("DoPolicyEffects %s %s", player:GetName(), policyInfo.Type)
 
-	SafeCall(DoPolicyExperience,			player, policyInfo)
 	SafeCall(DoPolicyBorderObstacle,		player, policyInfo)
 	SafeCall(DoPolicyInfluence,				player, policyInfo)
 	SafeCall(DoPolicyInstantYield,			player, policyInfo)
@@ -805,6 +804,11 @@ function DoPolicyEffects(player, policyID)
 	SafeCall(DoPolicyFreeUnits,				player, policyID)
 	SafeCall(DoPolicyFreeBuildingClasses,	player, policyID)
 	SafeCall(DoPolicyFreeBuildingFlavors,	player, policyID)
+	
+	for unit in player:Units() do
+		SafeCall(DoPolicyPromotions,		player, policyInfo, unit)
+		SafeCall(DoPolicyExperience,		player, policyInfo, unit)
+	end
 end
 LuaEvents.NewPolicy.Add(function(player, policyID) return SafeCall(DoPolicyEffects, player, policyID) end)
 
@@ -959,15 +963,13 @@ function DoPolicyFreeBuildingFlavors(player, policyID)
 	end
 end
 
-function DoPolicyExperience(player, policyInfo)
+function DoPolicyExperience(player, policyInfo, unit)
 	local experience = policyInfo.FreeExperience
-	if not experience then
+	if not experience or not unit:IsCombatUnit() then
 		return
 	end
-	for unit in player:Units() do
-		if unit:IsCombatUnit() then
-			unit:ChangeExperience(experience)
-		end
+	if unit:IsCombatUnit() then
+		unit:ChangeExperience(experience)
 	end
 end
 
@@ -1140,6 +1142,50 @@ function PlaceBuildingOfFlavor(city, flavorType)
 		MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] = MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] + 1
 		if player:IsHuman() then
 			log:Debug("%45s recieved building", " ", " ")
+		end
+	end
+end
+
+function GivePolicyPromotionsToUnit_Created( playerID,
+					unitID,
+					hexVec,
+					unitType,
+					cultureType,
+					civID,
+					primaryColor,
+					secondaryColor,
+					unitFlagIndex,
+					fogState,
+					selected,
+					military,
+					notInvisible )
+	log:Info("DoFreePromotionUnitClasses")
+	local player = Players[playerID]
+    if not player or not player:IsAlive() or player:IsMinorCiv() or player:IsBarbarian() then
+		return
+	end
+
+	local unit = Players[ playerID ]:GetUnitByID( unitID )
+	if unit == nil or unit:IsDead() then
+        return
+    end
+	
+	DoPolicyPromotions(player, nil, unit)
+end
+LuaEvents.NewUnit.Add( GivePolicyPromotionsToUnit_Created )
+
+function DoPolicyPromotions(player, policyInfo, unit)
+	if policyInfo then
+		for policyPromo in GameInfo.Policy_FreePromotionUnitClasses{PolicyType = policyInfo.Type, UnitClass = GameInfo.Units[unit:GetUnitType()].Class} do
+			unit:SetHasPromotion(GameInfo.UnitPromotions[policyPromo.PromotionType].ID, true)
+			return
+		end
+	else
+		for policyPromo in GameInfo.Policy_FreePromotionUnitClasses{UnitClass = GameInfo.Units[unit:GetUnitType()].Class} do
+			if player:HasPolicy(GameInfo.Policies[policyPromo.PolicyType].ID) then
+				unit:SetHasPromotion(GameInfo.UnitPromotions[policyPromo.PromotionType].ID, true)
+				return
+			end
 		end
 	end
 end

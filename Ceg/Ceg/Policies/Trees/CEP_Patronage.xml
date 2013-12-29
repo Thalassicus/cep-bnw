@@ -20,7 +20,7 @@
 			<Where Type="POLICY_CONSULATES" />
 			<Set GridX="4"
 				 GridY="1"
-				 MinorInfluence="20"
+				 MinorFriendshipMinimum="20"
 				 />
 		</Update>
 		<Update>
