@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Buildings>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_AQUEDUCT" />
+			<Set FoodKept="30" />
+		</Update>
 		<!--
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_HOSPITAL" />
@@ -9,10 +13,6 @@
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_MEDICAL_LAB" />
 			<Set Happiness="1" />
-		</Update>
-		<Update>
-			<Where BuildingClass="BUILDINGCLASS_AQUEDUCT" />
-			<Set FoodKept="50" />
 		</Update>
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_MEDICAL_LAB" />

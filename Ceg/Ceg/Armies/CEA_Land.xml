@@ -9,8 +9,19 @@
 			<Where Class="UNITCLASS_GUIDED_MISSILE" />
 			<Set Range="6" />
 		</Update>
+		<Update>
+			<Where Class="UNITCLASS_MACHINE_GUN" />
+			<Set Description="TXT_KEY_UNIT_AT_GUN"
+				 Civilopedia="TXT_KEY_CIV5_INDUSTRIAL_ANTITANKGUN_TEXT"
+				 UnitArtInfo="ART_DEF_UNIT_ANTI_TANK_GUN"
+				 UnitFlagIconOffset="60"
+				 IconAtlas="UNIT_ATLAS_2"
+				 PortraitIndex="15"
+				 MoveRate="WHEELED"
+				 />
+		</Update>
 	</Units>
-
+	
 
 
 

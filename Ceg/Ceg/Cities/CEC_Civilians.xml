@@ -15,7 +15,7 @@
 		</Update>
 		<Update>
 			<Where Type="UNIT_CARAVAN" />
-			<Set Cost="50" />
+			<Set Cost="40" />
 		</Update>
 		<Update>
 			<Where Type="UNIT_CARGO_SHIP" />
