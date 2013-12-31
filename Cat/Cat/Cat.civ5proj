@@ -7,7 +7,7 @@
     <Guid>faae7417-d08c-49ec-8a2c-8f00c17fa056</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Beta</Stability>
-    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.12[NEWLINE][ENDCOLOR]   Expands the AI and mod tools of BNW</Teaser>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.12.1[NEWLINE][ENDCOLOR]   Expands the AI and mod tools of BNW</Teaser>
     <Description>We believe Civilization is a fantastic game, and want to perfect it while remaining as close to the core experience as possible.[NEWLINE][NEWLINE]CAT makes the AI "smarter not harder." It improves the intelligence of the AI, while reducing its bonuses. Cat also adds many tools essential for modders. The other parts of the Communitas Expansion Pack (Ceg and Cin) use these tools. [NEWLINE][NEWLINE]If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE]Expansion Pack Parts:[NEWLINE][NEWLINE][ICON_BULLET]Communitas Map[NEWLINE]This map creates several continents with realistic climate, and numerous offshore islands.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas AI and Tools (Cat)[NEWLINE]Expands the AI and mod tools of Civ V: Brave New World. Both the expansion pack and interface changes below require the tools.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Enhanced Gameplay (Ceg)[NEWLINE]Improves the fun and strategic balance of BNW gameplay.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Interface (Cin)[NEWLINE]Improves the visual interface of the game.[NEWLINE][NEWLINE][NEWLINE]The expansion is a collaboration of work from over 40 main authors, and an incredible community of forumgoers on CivFanatics.com.[NEWLINE][NEWLINE]If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links.[NEWLINE][NEWLINE]Please glance at the Common Checklist, which has important information about using Civ 5 mods.</Description>
     <Authors>[COLOR_CYAN]Thalassicus</Authors>
     <SpecialThanks>Please see [COLOR_YELLOW]readme[/COLOR] included in mod folder.</SpecialThanks>
@@ -109,6 +109,11 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>Tools/Cat__End.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Fixes/Cat_Fixes.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>

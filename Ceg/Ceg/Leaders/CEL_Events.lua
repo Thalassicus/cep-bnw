@@ -403,8 +403,8 @@ function UpdateTribute(player)
 	for routeID, route in ipairs(player:GetTradeRoutes()) do
 		if route.FromID == route.ToID then
 			-- domestic route
-			local cityID = City_GetID(route.FromCity)
-			tributeCities[cityID] = (tributeCities[cityID] or 0) + 5 + player:GetCurrentEra()
+			local cityID = City_GetID(route.ToCity)
+			tributeCities[cityID] = (tributeCities[cityID] or 0) + 5 + 2 * player:GetCurrentEra()
 		end
 	end
 
