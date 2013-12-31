@@ -22,7 +22,18 @@
 			<Set Value="10" />
 			<!-- 5 -->
 		</Update>
+		<Update>
+			<Where name="RELIGION_MAX_MISSIONARIES" />
+			<Set Value="2" />
+			<!-- 4 -->
+		</Update>
 	</Defines>
+	<UnitClasses>
+		<Update>
+			<Where Type="UNITCLASS_MISSIONARY" />
+			<Set MaxPlayerInstances="2" />
+		</Update>
+	</UnitClasses>
 	<Beliefs>
 		<Row>
 			<Type>BELIEF_SACRED_ISLES</Type>

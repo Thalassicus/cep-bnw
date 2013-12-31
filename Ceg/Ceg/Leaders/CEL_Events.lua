@@ -404,7 +404,7 @@ function UpdateTribute(player)
 		if route.FromID == route.ToID then
 			-- domestic route
 			local cityID = City_GetID(route.FromCity)
-			tributeCities[cityID] = (tributeCities[cityID] or 0) + 1
+			tributeCities[cityID] = (tributeCities[cityID] or 0) + 5 + player:GetCurrentEra()
 		end
 	end
 

@@ -7,7 +7,7 @@
 			<Type>BUILDING_JAPANESE_DOJO</Type>
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<Cost>50</Cost>
+			<Cost>150</Cost>
 			<GoldMaintenance>1</GoldMaintenance>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<Description>TXT_KEY_BUILDING_DOJO</Description>
@@ -331,7 +331,7 @@
 		<Row>
 			<Type>BUILDING_TRADE_OFFICE</Type>
 			<BuildingClass>BUILDINGCLASS_CARAVANSARY</BuildingClass>
-			<Cost>140</Cost>
+			<Cost>120</Cost>
 			<PrereqTech>TECH_TRAPPING</PrereqTech>
 			<Description>TXT_KEY_BUILDING_TRADE_OFFICE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRADE_OFFICE_PEDIA</Civilopedia>
@@ -459,6 +459,12 @@
 
 	<!--	Ottomans
 	-->
+	<Leader_Traits>
+		<Update>
+			<Where LeaderType="LEADER_SULEIMAN" />
+			<Set TraitType="TRAIT_TRIBUTE" />
+		</Update>
+	</Leader_Traits>
 	<Traits>
 		<Row>
 			<Type>TRAIT_TRIBUTE</Type>
@@ -519,7 +525,7 @@
 		<Row>
 			<BuildingType>BUILDING_TRIBUTE</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>5</Yield>
+			<Yield>1</Yield>
 		</Row>
 	</Building_YieldChanges>
 	<Civilization_BuildingClassOverrides>
@@ -559,7 +565,7 @@
 			<Where Type="BUILDING_SATRAPS_COURT" />
 			<Set BuildingClass="BUILDINGCLASS_MARKET"
 				 PrereqTech="TECH_CURRENCY"
-				 Cost="120"
+				 Cost="200"
 				 ArtDefineTag="ART_DEF_BUILDING_MARKET"
 				 />
 		</Update>
@@ -630,7 +636,7 @@
 			<Type>UNIT_ROMAN_LIBURNA</Type>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<Combat>13</Combat>
-			<Cost>45</Cost>
+			<Cost>50</Cost>
 			<Moves>4</Moves>
 			<CombatClass>UNITCOMBAT_NAVALMELEE</CombatClass>
 			<Domain>DOMAIN_SEA</Domain>

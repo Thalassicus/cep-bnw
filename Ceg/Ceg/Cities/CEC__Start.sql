@@ -2,6 +2,7 @@
 
 DELETE FROM Building_DomainFreeExperiences;
 
+
 --
 -- Global Mods
 --
@@ -17,7 +18,7 @@ AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
 
 
 UPDATE Buildings
-SET Cost = ROUND((Cost * 2) / 10, 0) * 10
+SET Cost = Cost * 2
 WHERE Cost > 0 AND NOT BuildingClass IN (
 	SELECT Type FROM BuildingClasses
 	WHERE (
@@ -28,7 +29,7 @@ WHERE Cost > 0 AND NOT BuildingClass IN (
 );
 
 UPDATE Buildings
-SET Cost = ROUND((Cost * 1.4) / 10, 0) * 10
+SET Cost = Cost * 1.4
 WHERE Cost > 0 AND BuildingClass IN (
 	SELECT Type FROM BuildingClasses
 	WHERE (
@@ -37,6 +38,14 @@ WHERE Cost > 0 AND BuildingClass IN (
 		OR MaxPlayerInstances = 1
 	)
 );
+
+UPDATE Projects
+SET Cost = Cost * 1.4
+WHERE Cost > 0;
+
+UPDATE Buildings
+SET Cost = Cost * 0.5, NumCityCostMod = 25
+WHERE NumCityCostMod > 0;
 
 UPDATE Buildings
 SET GreatPeopleRateChange = 1
@@ -57,14 +66,6 @@ WHERE YieldType='YIELD_CULTURE' AND Yield >= 1 AND Yield <= 3 AND BuildingType I
 		OR MaxPlayerInstances = 1
 	)
 );
-
-UPDATE Projects
-SET Cost = Cost * 1.4
-WHERE Cost > 0;
-
-UPDATE Buildings
-SET Cost = 100, NumCityCostMod = 25
-WHERE NumCityCostMod > 0;
 
 UPDATE Buildings
 SET HurryCostModifier = 0

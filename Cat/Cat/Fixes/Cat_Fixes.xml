@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<UnitClasses>
+		<Row>
+			<Type>UNITCLASS_AXMAN</Type>
+			<Description>TXT_KEY_UNIT_AXMAN</Description>
+			<DefaultUnit>NONE</DefaultUnit>
+		</Row>
+	</UnitClasses>
+	<Units>
+		<Update>
+			<Where Type="UNIT_BARBARIAN_AXMAN" />
+			<Set Class="UNITCLASS_AXMAN" />
+		</Update>		
+	</Units>
+	<Civilization_UnitClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<UnitClassType>UNITCLASS_AXMAN</UnitClassType>
+			<UnitType>UNIT_BARBARIAN_AXMAN</UnitType>
+		</Row>
+	</Civilization_UnitClassOverrides>
+</GameData>

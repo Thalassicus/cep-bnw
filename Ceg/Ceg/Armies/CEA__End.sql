@@ -8,13 +8,23 @@
 --
 
 UPDATE Units
+SET HurryCostModifier = 0
+WHERE (Combat = 0 AND RangedCombat = 0) AND HurryCostModifier >= 0;
+
+UPDATE Units
 SET HurryCostModifier = 50
 WHERE (Combat > 0 OR RangedCombat > 0) AND HurryCostModifier >= 0;
+
+UPDATE Units
+SET HurryCostModifier = 50
+WHERE (Found = 1) AND HurryCostModifier >= 0;
 
 UPDATE Units
 SET HurryCostModifier = -1
 WHERE Special = 'SPECIALUNIT_PEOPLE'
 AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
+
+
 /*
 UPDATE Units
 SET ExtraMaintenanceCost = 3

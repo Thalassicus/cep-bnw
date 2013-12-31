@@ -1,4 +1,4 @@
--- CER_Unlocks.sql created by Tech_Unlocks tab of Techs spreadsheet:
+-- CER_Unlocks.sql created by Techs spreadsheet, Unlocks tab:
 -- https://drive.google.com/folderview?id=0B58Ehya83q19eVlvWXdmLXZ6UUE
 
 UPDATE Resources SET TechReveal='TECH_MINING',                   TechCityTrade='TECH_MINING'                   WHERE Type='RESOURCE_IRON';

@@ -89,6 +89,22 @@ UPDATE Buildings SET Cost = Cost * 1.042, GoldMaintenance = 2  WHERE BuildingCla
 UPDATE Buildings SET Cost = Cost * 0.741, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_BARRACKS';
 
 
+*/
+
+UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
+UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_CARAVANSARY';
+
+--
+-- Unique Buildings
+--
+
+UPDATE Buildings SET Cost = (SELECT b.Cost FROM Buildings b, BuildingClasses class WHERE (
+	Buildings.BuildingClass = b.BuildingClass
+	AND class.Type = b.BuildingClass
+	AND class.DefaultBuilding = b.Type
+));
+
+
 UPDATE Buildings SET GoldMaintenance = MAX(0, ROUND(GoldMaintenance, 0)) WHERE GoldMaintenance <> 0;
 
 UPDATE Buildings
@@ -98,7 +114,6 @@ WHERE Cost > 0;
 UPDATE Projects
 SET Cost = ROUND(Cost / 50, 0) * 50
 WHERE Cost > 0;
-*/
 
 UPDATE Buildings SET UnlockedByBelief = 1, FaithCost = 1 * Cost
 WHERE (FaithCost > 0 AND Cost > 0)

@@ -717,6 +717,7 @@
     <PackageMod>false</PackageMod>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Fixes" />
     <Folder Include="_Project" />
     <Folder Include="AI" />
     <Folder Include="AI\Flavors" />
@@ -803,6 +804,10 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="AI\CEAI_Worlds.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Fixes\Cat_Fixes.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
