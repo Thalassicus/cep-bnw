@@ -403,6 +403,8 @@ ALTER TABLE Flavors			ADD PurchasePriority					variant default 0;
 ALTER TABLE GameOptions		ADD Reverse								boolean;
 
 ALTER TABLE HandicapInfos	ADD AIFreeXPPerEra						integer default 0;
+ALTER TABLE HandicapInfos	ADD AIFreeXPPerTurn						variant default 0;
+ALTER TABLE HandicapInfos	ADD AIFreeXPMax							integer default 0;
 ALTER TABLE HandicapInfos	ADD AIFreePromotion						text;
 ALTER TABLE HandicapInfos	ADD AIResearchPercent					variant default 0;
 ALTER TABLE HandicapInfos	ADD AIResearchPercentPerEra				variant default 0;
@@ -412,6 +414,8 @@ ALTER TABLE HandicapInfos	ADD AISearchRange						integer default 0;
 ALTER TABLE HandicapInfos	ADD AICapitalYieldPeaceful				integer default 0;
 ALTER TABLE HandicapInfos	ADD AICapitalYieldMilitaristic			integer default 0;
 UPDATE HandicapInfos		SET AIFreeXPPerEra						= 0;
+UPDATE HandicapInfos		SET AIFreeXPPerTurn						= 0;
+UPDATE HandicapInfos		SET AIFreeXPMax							= 0;
 UPDATE HandicapInfos		SET AIFreePromotion						= "";
 UPDATE HandicapInfos		SET AIResearchPercent					= 0;
 UPDATE HandicapInfos		SET AIResearchPercentPerEra				= 0;

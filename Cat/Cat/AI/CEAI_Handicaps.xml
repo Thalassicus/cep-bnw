@@ -15,11 +15,9 @@
 	</HandicapInfo_AIFreeTechs>
 
 
+	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worls_Speeds spreadhsset
+https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 
-	<!--
-    This CEAI_Handicaps.xml data automatically created by:
-    Handicaps tab of CEP_LeadersAI.xls
--->
 	<HandicapInfos>
 		<Update>
 			<Where Type="HANDICAP_SETTLER" />
@@ -46,7 +44,8 @@
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
 			AIFreeXP                       = "0"
-			AIFreeXPPerEra                 = "0"
+			AIFreeXPPerTurn                = "0"
+			AIFreeXPMax                    = "0"
 
 			AIWorkRateModifier             = "0"
 
@@ -122,24 +121,25 @@
 			AIUnitCostPercent              = "100"
 			AIUnitUpgradePercent           = "50"
 			AIUnitSupplyPercent            = "0"
-    
+
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
 			AIFreeXP                       = "0"
-			AIFreeXPPerEra                 = "0"
-    
+			AIFreeXPPerTurn                = "0"
+			AIFreeXPMax                    = "0"
+
 			AIWorkRateModifier             = "0"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "0"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "0"
 			AICapitalYieldMilitaristic     = "0"
-    
+
 			AttitudeChange                 = "1"
 			AIDeclareWarProb               = "75"
 			AIUnhappinessPercent           = "100"
@@ -202,24 +202,25 @@
 			AIUnitCostPercent              = "100"
 			AIUnitUpgradePercent           = "100"
 			AIUnitSupplyPercent            = "0"
-    
+
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
-			AIFreeXP                       = "15"
-			AIFreeXPPerEra                 = "4"
-    
+			AIFreeXP                       = "10"
+			AIFreeXPPerTurn                = "0.1"
+			AIFreeXPMax                    = "20"
+
 			AIWorkRateModifier             = "0"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "0"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "0"
 			AICapitalYieldMilitaristic     = "2"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -269,7 +270,7 @@
 			NumCitiesUnhappinessMod        = "100"
 			PopulationUnhappinessMod       = "100"
 			AIGrowthPercent                = "100"
-			AIResearchPercent              = "0"
+			AIResearchPercent              = "18"
 			AIResearchPercentPerEra        = "4"
 			AITrainPercent                 = "100"
 			AIConstructPercent             = "50"
@@ -285,21 +286,22 @@
 			AIFreePromotion                = "PROMOTION_HANDICAP"
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
-			AIFreeXP                       = "30"
-			AIFreeXPPerEra                 = "8"
-    
+			AIFreeXP                       = "14"
+			AIFreeXPPerTurn                = "0.2"
+			AIFreeXPMax                    = "28"
+
 			AIWorkRateModifier             = "20"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "0"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "2"
 			AICapitalYieldMilitaristic     = "4"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -349,7 +351,7 @@
 			NumCitiesUnhappinessMod        = "100"
 			PopulationUnhappinessMod       = "100"
 			AIGrowthPercent                = "100"
-			AIResearchPercent              = "0"
+			AIResearchPercent              = "36"
 			AIResearchPercentPerEra        = "8"
 			AITrainPercent                 = "100"
 			AIConstructPercent             = "50"
@@ -365,21 +367,22 @@
 			AIFreePromotion                = "PROMOTION_HANDICAP"
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
-			AIFreeXP                       = "35"
-			AIFreeXPPerEra                 = "12"
-    
+			AIFreeXP                       = "18"
+			AIFreeXPPerTurn                = "0.3"
+			AIFreeXPMax                    = "36"
+
 			AIWorkRateModifier             = "50"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "1"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "2"
 			AICapitalYieldMilitaristic     = "5"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -429,7 +432,7 @@
 			NumCitiesUnhappinessMod        = "100"
 			PopulationUnhappinessMod       = "100"
 			AIGrowthPercent                = "100"
-			AIResearchPercent              = "0"
+			AIResearchPercent              = "54"
 			AIResearchPercentPerEra        = "12"
 			AITrainPercent                 = "100"
 			AIConstructPercent             = "50"
@@ -445,21 +448,22 @@
 			AIFreePromotion                = "PROMOTION_HANDICAP"
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "25"
-			AIFreeXP                       = "40"
-			AIFreeXPPerEra                 = "16"
-    
+			AIFreeXP                       = "22"
+			AIFreeXPPerTurn                = "0.4"
+			AIFreeXPMax                    = "44"
+
 			AIWorkRateModifier             = "75"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "1"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "3"
 			AICapitalYieldMilitaristic     = "6"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -509,11 +513,11 @@
 			NumCitiesUnhappinessMod        = "100"
 			PopulationUnhappinessMod       = "100"
 			AIGrowthPercent                = "100"
-			AIResearchPercent              = "0"
+			AIResearchPercent              = "72"
 			AIResearchPercentPerEra        = "16"
 			AITrainPercent                 = "100"
 			AIConstructPercent             = "50"
-			AIWorldConstructPercent        = "95"
+			AIWorldConstructPercent        = "85"
 			AICreatePercent                = "100"
 			AIProductionPercentPerEra      = "4"
 			AIWorldTrainPercent            = "100"
@@ -525,21 +529,22 @@
 			AIFreePromotion                = "PROMOTION_HANDICAP"
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "50"
-			AIFreeXP                       = "50"
-			AIFreeXPPerEra                 = "20"
-    
+			AIFreeXP                       = "26"
+			AIFreeXPPerTurn                = "0.5"
+			AIFreeXPMax                    = "52"
+
 			AIWorkRateModifier             = "100"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "1"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "4"
 			AICapitalYieldMilitaristic     = "7"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -589,7 +594,7 @@
 			NumCitiesUnhappinessMod        = "100"
 			PopulationUnhappinessMod       = "100"
 			AIGrowthPercent                = "100"
-			AIResearchPercent              = "0"
+			AIResearchPercent              = "200"
 			AIResearchPercentPerEra        = "20"
 			AITrainPercent                 = "100"
 			AIConstructPercent             = "50"
@@ -605,21 +610,22 @@
 			AIFreePromotion                = "PROMOTION_HANDICAP"
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "100"
-			AIFreeXP                       = "60"
-			AIFreeXPPerEra                 = "30"
-    
+			AIFreeXP                       = "30"
+			AIFreeXPPerTurn                = "0.6"
+			AIFreeXPMax                    = "60"
+
 			AIWorkRateModifier             = "150"
-    
-    
+
+
 			AIStartingDefenseUnits         = "1"
 			AIStartingWorkerUnits          = "2"
 			AIStartingExploreUnits         = "2"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "100"
-    
+
 			AICapitalYieldPeaceful         = "5"
 			AICapitalYieldMilitaristic     = "10"
-    
+
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
@@ -686,20 +692,21 @@
 			AIBarbarianBonus               = "50"
 			AIFreeXPPercent                = "0"
 			AIFreeXP                       = "0"
-			AIFreeXPPerEra                 = "0"
-    
+			AIFreeXPPerTurn                = "0"
+			AIFreeXPMax                    = "0"
+
 			AIWorkRateModifier             = "0"
-    
-    
+
+
 			AIStartingDefenseUnits         = "0"
 			AIStartingWorkerUnits          = "0"
 			AIStartingExploreUnits         = "0"
 			AIStartingUnitMultiplier       = "0"
 			AIGold                         = "0"
-    
+
 			AICapitalYieldPeaceful         = "0"
 			AICapitalYieldMilitaristic     = "0"
-    
+
 			AttitudeChange                 = "1"
 			AIDeclareWarProb               = "100"
 			AIUnhappinessPercent           = "100"
