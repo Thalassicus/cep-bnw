@@ -194,7 +194,7 @@ CivilopediaCategory[CategoryTerrain].buttonTexture = "Assets/UI/Art/Civilopedia/
 CivilopediaCategory[CategoryResources].buttonTexture = "Assets/UI/Art/Civilopedia/CivilopediaTopButtonsResourcesImprovements.dds";
 CivilopediaCategory[CategoryImprovements].buttonTexture = "Assets/UI/Art/Civilopedia/CivilopediaTopButtonsImprovements.dds";
 CivilopediaCategory[CategoryBeliefs].buttonTexture = "CivilopediaTopButtonsReligion.dds";
-CivilopediaCategory[CategoryWorldCongress].buttonTexture = "CivilopediaTopButtonsWorldCongress.dds";
+CivilopediaCategory[CategoryWorldCongress].buttonTexture = "Assets/UI/Art/Civilopedia/CivilopediaTopButtonsGameplay.dds";--"CivilopediaTopButtonsWorldCongress.dds"; --trying to load CivilopediaTopButtonsWorldCongress appears to crash some people
 
 CivilopediaCategory[CategoryHomePage].labelString = Locale.ConvertTextKey( "TXT_KEY_PEDIA_CATEGORY_1_LABEL" );
 CivilopediaCategory[CategoryGameConcepts].labelString = Locale.ConvertTextKey( "TXT_KEY_PEDIA_CATEGORY_2_LABEL" );
