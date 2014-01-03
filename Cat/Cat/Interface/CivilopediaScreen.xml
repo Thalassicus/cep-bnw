@@ -535,7 +535,7 @@
 				<Button Anchor="C,T" ID="CategoryButton13" Size="46,50" Offset="0,-10" Texture="CivilopediaTopButtonsResourcesImprovements.dds" ToolTip="TXT_KEY_PEDIA_CATEGORY_13_LABEL"/>
 				<Button Anchor="C,T" ID="CategoryButton14" Size="46,50" Offset="0,-10" Texture="CivilopediaTopButtonsImprovements.dds" ToolTip="TXT_KEY_PEDIA_CATEGORY_14_LABEL"/>
 				<Button Anchor="C,T" ID="CategoryButton15" Size="46,50" Offset="0,-10" Texture="CivilopediaTopButtonsReligion.dds" ToolTip="TXT_KEY_PEDIA_CATEGORY_15_LABEL"/>
-				<Button Anchor="C,T" ID="CategoryButton16" Size="46,50" Offset="0,-10" Texture="CivilopediaTopButtonsGameplay.dds" ToolTip="TXT_KEY_PEDIA_CATEGORY_16_LABEL"/>
+				<Button Anchor="C,T" ID="CategoryButton16" Size="46,50" Offset="0,-10" Texture="CivilopediaTopButtonsWorldCongress.dds" ToolTip="TXT_KEY_PEDIA_CATEGORY_16_LABEL"/>
 			</Stack>
 			<!-- Selected Button -->
 			<Stack Anchor="L,T" Offset="38,-35" Size="64,64" StackGrowth="Right" Padding="1">
