@@ -759,6 +759,13 @@
 			<Set Yield="1"/>
 		</Update>
 	</Building_YieldChanges>
+	<Building_YieldChangesPerPop>
+		<Row>
+			<BuildingType>BUILDING_STELE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChangesPerPop>
 	<Traits>
 		<Update>
 			<Where Type="TRAIT_BONUS_AGAINST_TECH" />
