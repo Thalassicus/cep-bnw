@@ -98,6 +98,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Diplomacy/CED__Start.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Policies/CEP_Start.sql</FileName>
       </Action>
       <Action>
