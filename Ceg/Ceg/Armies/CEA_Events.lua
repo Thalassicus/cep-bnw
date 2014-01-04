@@ -291,9 +291,12 @@ function City_DoCitystateCapture(cityPlot, city, cityName, lostPlayerID, wonPlay
 	
 	--local captureBonusTurns = 0
 	for policyInfo in GameInfo.Policies("CitystateCaptureYieldTurns > 0") do
-		log:Warn("%s CitystateCaptureYieldTurns=%s", policyInfo.Type, policyInfo.CitystateCaptureYieldTurns)
+		log:Info("%s CitystateCaptureYieldTurns=%s", policyInfo.Type, policyInfo.CitystateCaptureYieldTurns)
 		if wonPlayer:HasPolicy(policyInfo.ID) then
 			captureBonusTurns = captureBonusTurns + policyInfo.CitystateCaptureYieldTurns
+			log:Info("  - Has Policy")
+		else
+			log:Info("  - Does not have policy")
 		end
 	end
 
