@@ -378,9 +378,11 @@ INSERT INTO Trait_ImprovementYieldChanges
 SELECT 'TRAIT_SCHOLARS_JADE_HALL', 'IMPROVEMENT_FARM', 'YIELD_SCIENCE', 2
 WHERE EXISTS (SELECT * FROM Traits WHERE Type='TRAIT_SCHOLARS_JADE_HALL');
 
+/*
 INSERT INTO Trait_ImprovementYieldChanges
 		(TraitType, ImprovementType, YieldType, Yield)
 SELECT 'TRAIT_ALLOTMENT', 'IMPROVEMENT_FARM', 'YIELD_PRODUCTION', 1;
+*/
 
 INSERT INTO Improvement_Flavors
 		(ImprovementType, FlavorType, Flavor)

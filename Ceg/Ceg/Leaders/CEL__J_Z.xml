@@ -554,6 +554,30 @@
 			<Set PromotionType="PROMOTION_CAMARADERIE" />
 		</Update>
 	</Unit_FreePromotions>
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_PRIZE_SHIPS" />
+			<Set CannotBeChosen="1" />
+		</Update>
+	</UnitPromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_PRIZE_SHIPS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_PRIZE_SHIPS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_PRIZE_SHIPS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_PRIZE_SHIPS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
 
 
 

@@ -677,6 +677,9 @@
 			<Experience>30</Experience>
 		</Row>
 	</Trait_FreeExperience_Domains>
+	<Trait_FreePromotionUnitCombats>
+		<Delete TraitType="TRAIT_OCEAN_MOVEMENT" />
+	</Trait_FreePromotionUnitCombats>
 	<Units>
 		<Update>
 			<Where Type="UNIT_ENGLISH_LONGBOWMAN" />
