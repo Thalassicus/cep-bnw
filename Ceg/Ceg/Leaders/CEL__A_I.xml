@@ -677,6 +677,9 @@
 			<Experience>30</Experience>
 		</Row>
 	</Trait_FreeExperience_Domains>
+	<Trait_FreePromotionUnitCombats>
+		<Delete TraitType="TRAIT_OCEAN_MOVEMENT" />
+	</Trait_FreePromotionUnitCombats>
 	<Units>
 		<Update>
 			<Where Type="UNIT_ENGLISH_LONGBOWMAN" />
@@ -759,6 +762,13 @@
 			<Set Yield="1"/>
 		</Update>
 	</Building_YieldChanges>
+	<Building_YieldChangesPerPop>
+		<Row>
+			<BuildingType>BUILDING_STELE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChangesPerPop>
 	<Traits>
 		<Update>
 			<Where Type="TRAIT_BONUS_AGAINST_TECH" />

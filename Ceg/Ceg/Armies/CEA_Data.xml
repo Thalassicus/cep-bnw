@@ -115,7 +115,7 @@
 		</Update>
 		<Update>
 			<Where Name="CITY_STRENGTH_POPULATION_CHANGE" />
-			<Set Value="25" />
+			<Set Value="33" />
 			<!-- 40 -->
 		</Update>
 		<Update>

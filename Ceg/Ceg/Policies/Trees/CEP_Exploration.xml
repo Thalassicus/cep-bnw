@@ -55,7 +55,7 @@
 			<PortraitIndex>1</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
-			<NewCityExtraPopulation>5</NewCityExtraPopulation>
+			<NewCityExtraPopulation>4</NewCityExtraPopulation>
 		</Row>
 		<Row>
 			<Type>POLICY_PIONEER_SPIRIT</Type>

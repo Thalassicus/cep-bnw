@@ -100,6 +100,39 @@ function Plot_FindPlotType(startPlot, plotType)
 end
 
 
+--[[
+	Replaces the bugged vanilla version
+	Arguments:
+		pPlot: Plot. The plot
+		iBuildID: num. The ID of the build to check
+	Returns:
+		num. The number of turns left to finish the build
+]]--
+Plot_GetBuildTurnsLeft = function(pPlot, iBuildID, iWorkRate)
+	local workerSpeed = 100 + Players[Game.GetActivePlayer()]:GetWorkerSpeedModifier()
+	local progress = pPlot:GetBuildProgress(iBuildID)
+	local futureProgressThisTurn
+	if iWorkRate then
+		futureProgressThisTurn = iWorkRate * ((progress == 0) and 2 or 1)
+		--log:Debug("futureProgressThisTurn = %s", futureProgressThisTurn)
+	else
+		for i=0, pPlot:GetNumUnits()-1 do
+			local pUnit = pPlot:GetUnit( i )
+			if iBuildID == pUnit:GetBuildType() then
+				if pUnit:MovesLeft() > 0 then
+					futureProgressThisTurn = pUnit:WorkRate(true, iBuildID)
+				else
+					futureProgressThisTurn = 0
+				end
+			end
+		end
+	end
+	progress = progress + futureProgressThisTurn
+	local turnsRemaining = math.ceil((pPlot:GetBuildTime(iBuildID) - progress) / workerSpeed)
+	return (turnsRemaining == -0) and 0 or turnsRemaining
+end
+
+
 --[[ Plot_GetCombatUnit(plot) usage example:
 local capturingUnit = Plot_GetCombatUnit(plot)
 ]]

@@ -276,6 +276,7 @@ FROM Civilizations WHERE Type IN (
 INSERT INTO Civilization_FreeUnits (UnitClassType, UnitAIType, Count, CivilizationType)
 SELECT 'UNITCLASS_BIREME', 'UNITAI_EXPLORE_SEA', 1, Type 
 FROM Civilizations WHERE Type IN (
+	'CIVILIZATION_CARTHAGE'		,
 	'CIVILIZATION_VENICE'		
 );
 
@@ -377,9 +378,11 @@ INSERT INTO Trait_ImprovementYieldChanges
 SELECT 'TRAIT_SCHOLARS_JADE_HALL', 'IMPROVEMENT_FARM', 'YIELD_SCIENCE', 2
 WHERE EXISTS (SELECT * FROM Traits WHERE Type='TRAIT_SCHOLARS_JADE_HALL');
 
+/*
 INSERT INTO Trait_ImprovementYieldChanges
 		(TraitType, ImprovementType, YieldType, Yield)
 SELECT 'TRAIT_ALLOTMENT', 'IMPROVEMENT_FARM', 'YIELD_PRODUCTION', 1;
+*/
 
 INSERT INTO Improvement_Flavors
 		(ImprovementType, FlavorType, Flavor)

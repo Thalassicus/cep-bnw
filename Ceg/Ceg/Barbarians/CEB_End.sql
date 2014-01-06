@@ -134,8 +134,6 @@ WHERE UnitType IN (
 	'UNIT_TRIREME'
 );
 
-UPDATE Units SET Moves = 2 WHERE Type = 'UNIT_BARBARIAN_AXMAN';
-
 DELETE FROM Unit_AITypes		WHERE UnitType NOT IN (SELECT Type FROM Units);
 DELETE FROM Unit_FreePromotions	WHERE UnitType NOT IN (SELECT Type FROM Units);
 DELETE FROM Unit_ClassUpgrades	WHERE UnitType NOT IN (SELECT Type FROM Units);

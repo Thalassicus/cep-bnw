@@ -626,6 +626,9 @@ INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor) SELECT ProjectType
 DROP TABLE CEP_Collisions;
 
 
+-- Dummy buildings automatically assigned to cities
+DELETE FROM Building_Flavors WHERE Cost = 0 OR Cost = -1;
+
 --
 -- AI specific changes
 --
@@ -655,10 +658,6 @@ WHERE BuildingType IN (
 	'BUILDING_PYRAMID'			,
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
-
--- Dummy building automatically assigned to cities
-DELETE FROM Building_Flavors
-WHERE BuildingType = 'BUILDING_GREAT_HALL';
 
 
 DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildings);

@@ -287,12 +287,16 @@ function City_DoCitystateCapture(cityPlot, city, cityName, lostPlayerID, wonPlay
 	local minorTrait		= lostPlayer:GetMinorCivTrait()
 	local traitCaptureBonus	= 1 + wonPlayer:GetTraitInfo().MinorCivCaptureBonus / 100
 	local captureBonusTurns	= Cep.MINOR_CIV_CAPTURE_BONUS_TURNS
+	local simpleYieldSplit	= true
 	
-	local captureBonusTurns = 0
+	--local captureBonusTurns = 0
 	for policyInfo in GameInfo.Policies("CitystateCaptureYieldTurns > 0") do
-		log:Warn("%s CitystateCaptureYieldTurns=%s", policyInfo.Type, policyInfo.CitystateCaptureYieldTurns)
+		log:Info("%s CitystateCaptureYieldTurns=%s", policyInfo.Type, policyInfo.CitystateCaptureYieldTurns)
 		if wonPlayer:HasPolicy(policyInfo.ID) then
 			captureBonusTurns = captureBonusTurns + policyInfo.CitystateCaptureYieldTurns
+			log:Info("  - Has Policy")
+		else
+			log:Info("  - Does not have policy")
 		end
 	end
 
@@ -306,9 +310,16 @@ function City_DoCitystateCapture(cityPlot, city, cityName, lostPlayerID, wonPlay
 		log:Debug(" Maritime")
 		local yieldID = YieldTypes.YIELD_FOOD
 		local yieldLoot = captureBonusTurns * traitCaptureBonus * wonPlayer:GetCitystateYields(minorTrait, 2)[yieldID]
-		for city in wonPlayer:Cities() do
-			City_ChangeYieldStored(city, yieldID, yieldLoot * City_GetWeight(city, yieldID)/wonPlayer:GetTotalWeight(yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100) )
-		end			
+		if simpleYieldSplit then
+			local yieldPerCity = Game.Round(yieldLoot / wonPlayer:GetNumCities(), 0)
+			for city in wonPlayer:Cities() do
+				City_ChangeYieldStored(city, yieldID, yieldPerCity)
+			end
+		else
+			for city in wonPlayer:Cities() do
+				City_ChangeYieldStored(city, yieldID, yieldLoot * City_GetWeight(city, yieldID)/wonPlayer:GetTotalWeight(yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100) )
+			end
+		end
 		if Game.GetActivePlayer() == wonPlayerID then
 			CustomNotification(
 				"CapturedMaritime",
@@ -324,11 +335,19 @@ function City_DoCitystateCapture(cityPlot, city, cityName, lostPlayerID, wonPlay
 		log:Debug(" Cultural")
 		local yieldID = YieldTypes.YIELD_CULTURE
 		local yieldLoot = captureBonusTurns * traitCaptureBonus * wonPlayer:GetCitystateYields(minorTrait, 2)[yieldID]
-		local totalCulture = 0
-		for targetCity in wonPlayer:Cities() do
-			local cityCulture = yieldLoot * City_GetWeight(targetCity, yieldID)/wonPlayer:GetTotalWeight(yieldID) * (1 + City_GetBaseYieldRateModifier(targetCity, yieldID)/100)
-			totalCulture = totalCulture + cityCulture
-			City_ChangeYieldStored(targetCity, yieldID, cityCulture)
+		local totalCulture = yieldLoot
+		if simpleYieldSplit then
+			local yieldPerCity = Game.Round(yieldLoot / wonPlayer:GetNumCities(), 0)
+			for city in wonPlayer:Cities() do
+				City_ChangeYieldStored(city, yieldID, yieldPerCity)
+			end
+		else
+			totalCulture = 0
+			for city in wonPlayer:Cities() do
+				local cityCulture = yieldLoot * City_GetWeight(city, yieldID)/wonPlayer:GetTotalWeight(yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100)
+				totalCulture = totalCulture + cityCulture
+				City_ChangeYieldStored(city, yieldID, cityCulture)
+			end
 		end
 			
 		if Game.GetActivePlayer() == wonPlayerID then
@@ -449,7 +468,7 @@ function CityCaptured (plot, lostPlayerID, cityID, wonPlayerID)
 	
 	City_DoRefugees(lostCityPlot, lostCity, lostCityName, lostPlayer, wonPlayer)
 	
-	--[[
+	--
 	if not capitalCity and lostPlayer:IsMinorCiv() and lostPlayer:GetNumCities() <= 0 then
 		City_DoCitystateCapture(lostCityPlot, lostCity, lostCityName, lostPlayerID, wonPlayerID, capturingUnit)
 	end

@@ -276,7 +276,10 @@ end
 function Game.TrigAction.LandGrab1(playerID, trigID, targetID, outID)
 	local player = Players[playerID]
 	local city = Map_GetCity(targetID)
-	local nearPlots = Plot_GetPlotsInCircle(city:Plot(), 2, 5)
+	local nearPlots = {}
+	for adjPlot in Plot_GetPlotsInCircle(city:Plot(), 2, 5) do
+		table.insert(nearPlots, adjPlot)
+	end
 	table.sort(nearPlots,
 		function(a, b)
 			if a:GetOwner() == -1 and b:GetOwner() == -1 then
@@ -306,7 +309,10 @@ end
 function Game.TrigAction.LandGrab3(playerID, trigID, targetID, outID)
 	local player = Players[playerID]
 	local city = Map_GetCity(targetID)
-	local nearPlots = Plot_GetPlotsInCircle(city:Plot(), 2, 5)
+	local nearPlots = {}
+	for adjPlot in Plot_GetPlotsInCircle(city:Plot(), 2, 5) do
+		table.insert(nearPlots, adjPlot)
+	end
 	table.sort(nearPlots,
 		function(a, b)
 			if a:GetOwner() == -1 and b:GetOwner() == -1 then

@@ -96,6 +96,15 @@ UPDATE Units SET Cost = Cost * 1.235, Combat = 13 , RangedCombat = 0  , Range = 
 UPDATE Units SET Cost = 100         , Combat = 10 , RangedCombat = 13 , Range = 2, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 3  WHERE Class = 'UNITCLASS_BIREME';
 UPDATE Units SET Cost = 80          , Combat = 8  , RangedCombat = 10 , Range = 2, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 3  WHERE Class = 'UNITCLASS_GALLEY';
 
+
+--
+-- Civilians
+--
+
+UPDATE Units SET Cost = Cost * 0.500 WHERE Class = 'UNITCLASS_WORKBOAT';
+UPDATE Units SET Cost = Cost * 0.333 WHERE Class = 'UNITCLASS_CARAVAN';
+UPDATE Units SET Cost = Cost * 0.750 WHERE Class = 'UNITCLASS_CARGO_SHIP';
+
 --
 -- Global Mods
 --
@@ -121,6 +130,19 @@ UPDATE Units SET         Cost = ROUND((Cost * 2) / 10, 0) * 10  WHERE         Co
 	'UNITCLASS_BIREME',
 	'UNITCLASS_SHIP_OF_THE_LINE',
 	'UNITCLASS_MISSILE_DESTROYER'
+);
+
+
+--
+-- Combat Classes
+--
+
+UPDATE Units
+SET CombatClass = 'UNITCOMBAT_MELEE'
+WHERE Class IN (
+	'UNITCLASS_GATLINGGUN'	,
+	'UNITCLASS_MACHINE_GUN'	,
+	'UNITCLASS_BAZOOKA'		
 );
 
 /*

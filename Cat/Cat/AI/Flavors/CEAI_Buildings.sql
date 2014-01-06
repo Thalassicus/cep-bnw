@@ -605,6 +605,9 @@ INSERT INTO Project_Flavors (ProjectType, FlavorType, Flavor) SELECT ProjectType
 DROP TABLE CEP_Collisions;
 
 
+-- Dummy buildings automatically assigned to cities
+DELETE FROM Building_Flavors WHERE Cost = 0 OR Cost = -1;
+
 --
 -- AI specific changes
 --

@@ -73,11 +73,13 @@
 		</Row>
 	</Policy_FreeUnitClasses>
 	<Policy_FreeBuildingFlavor>
+		<!--
 		<Row>
 			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<NumCities>4</NumCities>
 		</Row>
+		-->
 	</Policy_FreeBuildingFlavor>
 	<Policy_BuildingClassHappiness>
 		<Row>

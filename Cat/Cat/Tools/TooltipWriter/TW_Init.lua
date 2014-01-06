@@ -112,8 +112,10 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 		})
 		
 	elseif lineType == "Cost" then
-		lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
-		InsertBuildingSubStat()
+		if GameInfo.Buildings[objectID].Cost > 0 then
+			lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
+			InsertBuildingSubStat()
+		end
 		
 	elseif lineType == "FaithCost" then
 		lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
