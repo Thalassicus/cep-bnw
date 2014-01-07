@@ -32,7 +32,7 @@ UPDATE Buildings SET PrereqTech='TECH_ACOUSTICS'                WHERE BuildingCl
 UPDATE Buildings SET PrereqTech='TECH_HORSEBACK_RIDING'         WHERE BuildingClass='BUILDINGCLASS_CIRCUS';
 UPDATE Buildings SET PrereqTech='TECH_INDUSTRIALIZATION'        WHERE BuildingClass='BUILDINGCLASS_FACTORY';
 UPDATE Buildings SET PrereqTech='TECH_TRAPPING'                 WHERE BuildingClass='BUILDINGCLASS_CARAVANSARY';
-UPDATE Buildings SET PrereqTech='TECH_SAILING'                  WHERE BuildingClass='BUILDINGCLASS_LIGHTHOUSE';
+UPDATE Buildings SET PrereqTech='TECH_OPTICS'                   WHERE BuildingClass='BUILDINGCLASS_LIGHTHOUSE';
 UPDATE Buildings SET PrereqTech='TECH_CURRENCY'                 WHERE BuildingClass='BUILDINGCLASS_MARKET';
 UPDATE Buildings SET PrereqTech='TECH_ECOLOGY'                  WHERE BuildingClass='BUILDINGCLASS_MEDICAL_LAB';
 UPDATE Buildings SET PrereqTech='TECH_RADIO'                    WHERE BuildingClass='BUILDINGCLASS_MILITARY_BASE';
@@ -111,9 +111,9 @@ UPDATE Units SET PrereqTech='TECH_BRONZE_WORKING'           WHERE Type='UNIT_ROM
 
 
 
-UPDATE Units SET PrereqTech='TECH_OPTICS'                   WHERE Class='UNITCLASS_CARGO_SHIP';
-UPDATE Units SET PrereqTech='TECH_CARVEL_HULLS'             WHERE Class='UNITCLASS_CARAVEL';
-UPDATE Units SET PrereqTech='TECH_CARVEL_HULLS'             WHERE Class='UNITCLASS_GALLEASS';
+UPDATE Units SET PrereqTech='TECH_SAILING'                  WHERE Class='UNITCLASS_CARGO_SHIP';
+UPDATE Units SET PrereqTech='TECH_COMPASS'                  WHERE Class='UNITCLASS_CARAVEL';
+UPDATE Units SET PrereqTech='TECH_COMPASS'                  WHERE Class='UNITCLASS_GALLEASS';
 UPDATE Units SET PrereqTech='TECH_MINING'                   WHERE Class='UNITCLASS_SENTINEL';
 UPDATE Units SET PrereqTech='TECH_MATHEMATICS'              WHERE Class='UNITCLASS_COMPOSITE_BOWMAN';
 UPDATE Units SET PrereqTech='TECH_METAL_CASTING'            WHERE Class='UNITCLASS_PIKEMAN';

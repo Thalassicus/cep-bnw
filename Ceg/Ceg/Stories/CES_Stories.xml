@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Eras>
-		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
 	</Eras>
 	<Triggers>
 		<Row><Type>COMMERCIAL_FARMING</Type>		<ImprovementType>IMPROVEMENT_FARM</ImprovementType>				</Row>
@@ -49,85 +49,85 @@
 	</Triggers>
 	<Outcomes>
 		<!-- Terrain -->
-		<Row><Type>RIVER_FLOODING_1</Type>           <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyRiver</Condition>		<Order>1</Order><TriggerType>RIVER_FLOODING</TriggerType></Row>
-		<Row><Type>RIVER_FLOODING_2</Type>           <Yield>4</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyRiver</Condition>		<Order>2</Order><TriggerType>RIVER_FLOODING</TriggerType></Row>
+		<Row><Type>RIVER_FLOODING_1</Type>           <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyRiver</Condition>		<Order>1</Order><TriggerType>RIVER_FLOODING</TriggerType></Row>
+		<Row><Type>RIVER_FLOODING_2</Type>           <Yield>3</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyRiver</Condition>		<Order>2</Order><TriggerType>RIVER_FLOODING</TriggerType></Row>
 		<Row><Type>RIVER_FLOODING_3</Type>           <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsEmptyRiver</Condition>		<Order>3</Order><TriggerType>RIVER_FLOODING</TriggerType></Row>
-		<Row><Type>DESERT_ADOBE_1</Type>             <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyDesert</Condition>		<Order>1</Order><TriggerType>DESERT_ADOBE</TriggerType></Row>
-		<Row><Type>DESERT_ADOBE_2</Type>             <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyDesert</Condition>		<Order>2</Order><TriggerType>DESERT_ADOBE</TriggerType></Row>
+		<Row><Type>DESERT_ADOBE_1</Type>             <Yield>5</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyDesert</Condition>		<Order>1</Order><TriggerType>DESERT_ADOBE</TriggerType></Row>
+		<Row><Type>DESERT_ADOBE_2</Type>             <Yield>5</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyDesert</Condition>		<Order>2</Order><TriggerType>DESERT_ADOBE</TriggerType></Row>
 		<Row><Type>DESERT_ADOBE_3</Type>             <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsEmptyDesert</Condition>		<Order>3</Order><TriggerType>DESERT_ADOBE</TriggerType></Row>
-		<Row><Type>SNOW_SLEDS_1</Type>               <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptySnow</Condition>		<Order>1</Order><TriggerType>SNOW_SLEDS</TriggerType></Row>
-		<Row><Type>SNOW_SLEDS_2</Type>               <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptySnow</Condition>		<Order>2</Order><TriggerType>SNOW_SLEDS</TriggerType></Row>
+		<Row><Type>SNOW_SLEDS_1</Type>               <Yield>5</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptySnow</Condition>		<Order>1</Order><TriggerType>SNOW_SLEDS</TriggerType></Row>
+		<Row><Type>SNOW_SLEDS_2</Type>               <Yield>5</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptySnow</Condition>		<Order>2</Order><TriggerType>SNOW_SLEDS</TriggerType></Row>
 		<Row><Type>SNOW_SLEDS_3</Type>               <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsEmptySnow</Condition>		<Order>3</Order><TriggerType>SNOW_SLEDS</TriggerType></Row>
-		<Row><Type>MOUNTAIN_REFUGE_1</Type>          <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyMountain</Condition>	<Order>1</Order><TriggerType>MOUNTAIN_REFUGE</TriggerType></Row>
-		<Row><Type>MOUNTAIN_REFUGE_2</Type>          <Yield>6</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyMountain</Condition>	<Order>2</Order><TriggerType>MOUNTAIN_REFUGE</TriggerType></Row>
+		<Row><Type>MOUNTAIN_REFUGE_1</Type>          <Yield>5</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyMountain</Condition>	<Order>1</Order><TriggerType>MOUNTAIN_REFUGE</TriggerType></Row>
+		<Row><Type>MOUNTAIN_REFUGE_2</Type>          <Yield>5</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Condition>Game.TrigCondition.IsEmptyMountain</Condition>	<Order>2</Order><TriggerType>MOUNTAIN_REFUGE</TriggerType></Row>
 		<Row><Type>MOUNTAIN_REFUGE_3</Type>          <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsEmptyMountain</Condition>	<Order>3</Order><TriggerType>MOUNTAIN_REFUGE</TriggerType></Row>
 		
 		<!-- Improvements -->
-		<Row><Type>COMMERCIAL_FARMING_1</Type>       <Yield>4</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>COMMERCIAL_FARMING</TriggerType></Row>
-		<Row><Type>COMMERCIAL_FARMING_2</Type>       <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>COMMERCIAL_FARMING</TriggerType></Row>
+		<Row><Type>COMMERCIAL_FARMING_1</Type>       <Yield>3</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>COMMERCIAL_FARMING</TriggerType></Row>
+		<Row><Type>COMMERCIAL_FARMING_2</Type>       <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>COMMERCIAL_FARMING</TriggerType></Row>
 		<Row><Type>COMMERCIAL_FARMING_3</Type>       <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>COMMERCIAL_FARMING</TriggerType></Row>
 		<Row><Type>MINE_EXPANSION_1</Type>           <Yield>1</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>150</GoldCost><Order>1</Order><TriggerType>MINE_EXPANSION</TriggerType></Row>
-		<Row><Type>MINE_EXPANSION_2</Type>           <Yield>4</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>MINE_EXPANSION</TriggerType></Row>
+		<Row><Type>MINE_EXPANSION_2</Type>           <Yield>3</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>MINE_EXPANSION</TriggerType></Row>
 		<Row><Type>MINE_EXPANSION_3</Type>           <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>MINE_EXPANSION</TriggerType></Row>
-		<Row><Type>VILLAGE_PROTESTS_1</Type>         <Yield>4</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>VILLAGE_PROTESTS</TriggerType></Row>
+		<Row><Type>VILLAGE_PROTESTS_1</Type>         <Yield>3</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>VILLAGE_PROTESTS</TriggerType></Row>
 		<Row><Type>VILLAGE_PROTESTS_2</Type>         <Yield>1</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>150</GoldCost><Order>2</Order><TriggerType>VILLAGE_PROTESTS</TriggerType></Row>
 		<Row><Type>VILLAGE_PROTESTS_3</Type>         <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>VILLAGE_PROTESTS</TriggerType></Row>
 		<Row><Type>PLANTATION_DEMAND_1</Type>        <Yield>1</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>150</GoldCost><Order>1</Order><TriggerType>PLANTATION_DEMAND</TriggerType></Row>
-		<Row><Type>PLANTATION_DEMAND_2</Type>        <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>PLANTATION_DEMAND</TriggerType></Row>
+		<Row><Type>PLANTATION_DEMAND_2</Type>        <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>PLANTATION_DEMAND</TriggerType></Row>
 		<Row><Type>PLANTATION_DEMAND_3</Type>        <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>PLANTATION_DEMAND</TriggerType></Row>
-		<Row><Type>EXOTIC_CAMP_ANIMALS_1</Type>      <Yield>4</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>EXOTIC_CAMP_ANIMALS</TriggerType></Row>
-		<Row><Type>EXOTIC_CAMP_ANIMALS_2</Type>      <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>EXOTIC_CAMP_ANIMALS</TriggerType></Row>
+		<Row><Type>EXOTIC_CAMP_ANIMALS_1</Type>      <Yield>3</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>EXOTIC_CAMP_ANIMALS</TriggerType></Row>
+		<Row><Type>EXOTIC_CAMP_ANIMALS_2</Type>      <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>EXOTIC_CAMP_ANIMALS</TriggerType></Row>
 		<Row><Type>EXOTIC_CAMP_ANIMALS_3</Type>      <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>EXOTIC_CAMP_ANIMALS</TriggerType></Row>
-		<Row><Type>QUALITY_QUARRY_1</Type>           <Yield>4</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>QUALITY_QUARRY</TriggerType></Row>
-		<Row><Type>QUALITY_QUARRY_2</Type>           <Yield>4</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>QUALITY_QUARRY</TriggerType></Row>
+		<Row><Type>QUALITY_QUARRY_1</Type>           <Yield>3</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>QUALITY_QUARRY</TriggerType></Row>
+		<Row><Type>QUALITY_QUARRY_2</Type>           <Yield>3</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>QUALITY_QUARRY</TriggerType></Row>
 		<Row><Type>QUALITY_QUARRY_3</Type>           <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>QUALITY_QUARRY</TriggerType></Row>
-		<Row><Type>EXOTIC_LUMBER_1</Type>            <Yield>4</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>EXOTIC_LUMBER</TriggerType></Row>
-		<Row><Type>EXOTIC_LUMBER_2</Type>            <Yield>4</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>EXOTIC_LUMBER</TriggerType></Row>
+		<Row><Type>EXOTIC_LUMBER_1</Type>            <Yield>3</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>EXOTIC_LUMBER</TriggerType></Row>
+		<Row><Type>EXOTIC_LUMBER_2</Type>            <Yield>3</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>EXOTIC_LUMBER</TriggerType></Row>
 		<Row><Type>EXOTIC_LUMBER_3</Type>            <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>EXOTIC_LUMBER</TriggerType></Row>
-		<Row><Type>PASTURE_FENCING_1</Type>          <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>1</Order><TriggerType>PASTURE_FENCING</TriggerType></Row>
-		<Row><Type>PASTURE_FENCING_2</Type>          <Yield>4</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>PASTURE_FENCING</TriggerType></Row>
+		<Row><Type>PASTURE_FENCING_1</Type>          <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>1</Order><TriggerType>PASTURE_FENCING</TriggerType></Row>
+		<Row><Type>PASTURE_FENCING_2</Type>          <Yield>3</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>150</GoldCost><Order>2</Order><TriggerType>PASTURE_FENCING</TriggerType></Row>
 		<Row><Type>PASTURE_FENCING_3</Type>          <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>PASTURE_FENCING</TriggerType></Row>
-		<Row><Type>FISHING_DEMAND_1</Type>           <Yield>4</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>FISHING_DEMAND</TriggerType></Row>
-		<Row><Type>FISHING_DEMAND_2</Type>           <Yield>4</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>FISHING_DEMAND</TriggerType></Row>
+		<Row><Type>FISHING_DEMAND_1</Type>           <Yield>3</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>150</GoldCost><Order>1</Order><TriggerType>FISHING_DEMAND</TriggerType></Row>
+		<Row><Type>FISHING_DEMAND_2</Type>           <Yield>3</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>150</GoldCost><Order>2</Order><TriggerType>FISHING_DEMAND</TriggerType></Row>
 		<Row><Type>FISHING_DEMAND_3</Type>           <Yield>2</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>FISHING_DEMAND</TriggerType></Row>
-		<Row><Type>WELL_EXPANSION_1</Type>           <Yield>8</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
-		<Row><Type>WELL_EXPANSION_2</Type>           <Yield>8</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
-		<Row><Type>WELL_EXPANSION_3</Type>           <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
-		<Row><Type>PLATFORM_DECOMMISSIONING_1</Type> <Yield>8</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>200</GoldCost><Order>1</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
-		<Row><Type>PLATFORM_DECOMMISSIONING_2</Type> <Yield>8</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
-		<Row><Type>PLATFORM_DECOMMISSIONING_3</Type> <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
-		<Row><Type>FORT_EXPANSION_1</Type>           <Yield>8</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>300</GoldCost><Order>1</Order><TriggerType>FORT_EXPANSION</TriggerType></Row>
+		<Row><Type>WELL_EXPANSION_1</Type>           <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
+		<Row><Type>WELL_EXPANSION_2</Type>           <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
+		<Row><Type>WELL_EXPANSION_3</Type>           <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>WELL_EXPANSION</TriggerType></Row>
+		<Row><Type>PLATFORM_DECOMMISSIONING_1</Type> <Yield>6</Yield><YieldType>YIELD_FOOD</YieldType>         <GoldCost>200</GoldCost><Order>1</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
+		<Row><Type>PLATFORM_DECOMMISSIONING_2</Type> <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
+		<Row><Type>PLATFORM_DECOMMISSIONING_3</Type> <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>PLATFORM_DECOMMISSIONING</TriggerType></Row>
+		<Row><Type>FORT_EXPANSION_1</Type>           <Yield>6</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>300</GoldCost><Order>1</Order><TriggerType>FORT_EXPANSION</TriggerType></Row>
 		<Row><Type>FORT_EXPANSION_2</Type>           <Action>Game.TrigAction.FortExpansion2</Action>           <GoldCost>300</GoldCost><Order>2</Order><TriggerType>FORT_EXPANSION</TriggerType></Row>
-		<Row><Type>FORT_EXPANSION_3</Type>           <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>FORT_EXPANSION</TriggerType></Row>
+		<Row><Type>FORT_EXPANSION_3</Type>           <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>FORT_EXPANSION</TriggerType></Row>
 		
 		<!-- Buildings -->
 		<Row><Type>GRANARY_POPULATION_BOOM_1</Type>  <Action>Game.TrigAction.GranaryPopulationBoom1</Action>   <GoldCost>200</GoldCost><Order>1</Order><TriggerType>GRANARY_POPULATION_BOOM</TriggerType></Row>
 		<Row><Type>GRANARY_POPULATION_BOOM_2</Type>  <Action>Game.TrigAction.GranaryPopulationBoom2</Action>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>GRANARY_POPULATION_BOOM</TriggerType></Row>
-		<Row><Type>GRANARY_POPULATION_BOOM_3</Type>  <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>		   <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>GRANARY_POPULATION_BOOM</TriggerType></Row>
-		<Row><Type>SMITHY_DEVELOPMENT_1</Type>       <Yield>8</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
-		<Row><Type>SMITHY_DEVELOPMENT_2</Type>       <Yield>8</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
-		<Row><Type>SMITHY_DEVELOPMENT_3</Type>       <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
+		<Row><Type>GRANARY_POPULATION_BOOM_3</Type>  <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>		   <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>GRANARY_POPULATION_BOOM</TriggerType></Row>
+		<Row><Type>SMITHY_DEVELOPMENT_1</Type>       <Yield>6</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
+		<Row><Type>SMITHY_DEVELOPMENT_2</Type>       <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
+		<Row><Type>SMITHY_DEVELOPMENT_3</Type>       <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>SMITHY_DEVELOPMENT</TriggerType></Row>
 		<Row><Type>MARKET_MONOPOLY_1</Type>          <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Order>1</Order><TriggerType>MARKET_MONOPOLY</TriggerType></Row>
-		<Row><Type>MARKET_MONOPOLY_2</Type>          <Yield>8</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>2</Order><TriggerType>MARKET_MONOPOLY</TriggerType></Row>
-		<Row><Type>MARKET_MONOPOLY_3</Type>          <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>MARKET_MONOPOLY</TriggerType></Row>
-		<Row><Type>LIBRARY_CONTROVERSY_1</Type>      <Yield>8</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>LIBRARY_CONTROVERSY</TriggerType></Row>
+		<Row><Type>MARKET_MONOPOLY_2</Type>          <Yield>6</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>2</Order><TriggerType>MARKET_MONOPOLY</TriggerType></Row>
+		<Row><Type>MARKET_MONOPOLY_3</Type>          <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>MARKET_MONOPOLY</TriggerType></Row>
+		<Row><Type>LIBRARY_CONTROVERSY_1</Type>      <Yield>6</Yield><YieldType>YIELD_SCIENCE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>LIBRARY_CONTROVERSY</TriggerType></Row>
 		<Row><Type>LIBRARY_CONTROVERSY_2</Type>      <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Order>2</Order><TriggerType>LIBRARY_CONTROVERSY</TriggerType></Row>
-		<Row><Type>LIBRARY_CONTROVERSY_3</Type>      <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>LIBRARY_CONTROVERSY</TriggerType></Row>
-		<Row><Type>MONUMENT_CONTROVERSY_1</Type>     <Yield>8</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>MONUMENT_CONTROVERSY</TriggerType></Row>
+		<Row><Type>LIBRARY_CONTROVERSY_3</Type>      <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>LIBRARY_CONTROVERSY</TriggerType></Row>
+		<Row><Type>MONUMENT_CONTROVERSY_1</Type>     <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>MONUMENT_CONTROVERSY</TriggerType></Row>
 		<Row><Type>MONUMENT_CONTROVERSY_2</Type>     <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Order>2</Order><TriggerType>MONUMENT_CONTROVERSY</TriggerType></Row>
-		<Row><Type>MONUMENT_CONTROVERSY_3</Type>     <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>MONUMENT_CONTROVERSY</TriggerType></Row>
-		<Row><Type>WALLED_SLUMS_1</Type>             <Yield>8</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
-		<Row><Type>WALLED_SLUMS_2</Type>             <Yield>8</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
-		<Row><Type>WALLED_SLUMS_3</Type>             <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
+		<Row><Type>MONUMENT_CONTROVERSY_3</Type>     <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>MONUMENT_CONTROVERSY</TriggerType></Row>
+		<Row><Type>WALLED_SLUMS_1</Type>             <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>1</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
+		<Row><Type>WALLED_SLUMS_2</Type>             <Yield>6</Yield><YieldType>YIELD_PRODUCTION</YieldType>   <GoldCost>200</GoldCost><Order>2</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
+		<Row><Type>WALLED_SLUMS_3</Type>             <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>WALLED_SLUMS</TriggerType></Row>
 		<Row><Type>BARRACKS_RECRUITMENT_1</Type>     <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Order>1</Order><TriggerType>BARRACKS_RECRUITMENT</TriggerType></Row>
 		<Row><Type>BARRACKS_RECRUITMENT_2</Type>     <Action>Game.TrigAction.BarracksRecruitment2</Action>     <GoldCost>200</GoldCost><Order>2</Order><TriggerType>BARRACKS_RECRUITMENT</TriggerType></Row>
-		<Row><Type>BARRACKS_RECRUITMENT_3</Type>     <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>BARRACKS_RECRUITMENT</TriggerType></Row>
+		<Row><Type>BARRACKS_RECRUITMENT_3</Type>     <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>BARRACKS_RECRUITMENT</TriggerType></Row>
 		<Row><Type>STABLE_BREED_1</Type>             <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Condition>Game.TrigCondition.CanTrain2Horses</Condition>		<Order>1</Order><TriggerType>STABLE_BREED</TriggerType></Row>
 		<Row><Type>STABLE_BREED_2</Type>             <Action>Game.TrigAction.StableBreed2</Action>             <GoldCost>200</GoldCost><Condition>Game.TrigCondition.CanTrain2Horses</Condition>		<Order>2</Order><TriggerType>STABLE_BREED</TriggerType></Row>
-		<Row><Type>STABLE_BREED_3</Type>             <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.CanTrain2Horses</Condition>		<Order>3</Order><TriggerType>STABLE_BREED</TriggerType></Row>
+		<Row><Type>STABLE_BREED_3</Type>             <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.CanTrain2Horses</Condition>		<Order>3</Order><TriggerType>STABLE_BREED</TriggerType></Row>
 		<Row><Type>COLOSSEUM_ATTENDANCE_1</Type>     <Yield>2</Yield><YieldType>YIELD_HAPPINESS_CITY</YieldType><GoldCost>200</GoldCost><Order>1</Order><TriggerType>COLOSSEUM_ATTENDANCE</TriggerType></Row>
-		<Row><Type>COLOSSEUM_ATTENDANCE_2</Type>     <Yield>8</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>2</Order><TriggerType>COLOSSEUM_ATTENDANCE</TriggerType></Row>
-		<Row><Type>COLOSSEUM_ATTENDANCE_3</Type>     <Yield>4</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>COLOSSEUM_ATTENDANCE</TriggerType></Row>
+		<Row><Type>COLOSSEUM_ATTENDANCE_2</Type>     <Yield>6</Yield><YieldType>YIELD_CULTURE</YieldType>      <GoldCost>200</GoldCost><Order>2</Order><TriggerType>COLOSSEUM_ATTENDANCE</TriggerType></Row>
+		<Row><Type>COLOSSEUM_ATTENDANCE_3</Type>     <Yield>3</Yield><YieldType>YIELD_GOLD</YieldType>         <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>COLOSSEUM_ATTENDANCE</TriggerType></Row>
 		
 		<!-- Units -->
 		<Row><Type>SCOUT_SAVIOR_1</Type>             <Action>Game.TrigAction.ScoutSavior1</Action>             <GoldCost>100</GoldCost><Condition>Game.TrigCondition.UnitUnownedTerritory</Condition>	<Order>1</Order><TriggerType>SCOUT_SAVIOR</TriggerType></Row>
@@ -161,8 +161,8 @@
 		<Row><Type>LAND_GRAB_1</Type>                <Action>Game.TrigAction.LandGrab1</Action>                <GoldCost>100</GoldCost><Order>1</Order><TriggerType>LAND_GRAB</TriggerType></Row>
 		<Row><Type>LAND_GRAB_2</Type>                <Action>Game.TrigAction.LandGrab2</Action>                <GoldCost>100</GoldCost><Order>2</Order><TriggerType>LAND_GRAB</TriggerType></Row>
 		<Row><Type>LAND_GRAB_3</Type>                <Action>Game.TrigAction.LandGrab3</Action>                <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>LAND_GRAB</TriggerType></Row>
-		<Row><Type>BARBARIAN_MERCENARIES_1</Type>    <Action>Game.TrigAction.BarbarianMercenaries1</Action>    <GoldCost>100</GoldCost><Order>1</Order><TriggerType>BARBARIAN_MERCENARIES</TriggerType></Row>
-		<Row><Type>BARBARIAN_MERCENARIES_2</Type>    <Action>Game.TrigAction.BarbarianMercenaries2</Action>    <GoldCost>100</GoldCost><Order>2</Order><TriggerType>BARBARIAN_MERCENARIES</TriggerType></Row>
+		<Row><Type>BARBARIAN_MERCENARIES_1</Type>    <Action>Game.TrigAction.BarbarianMercenaries1</Action>    <GoldCost>150</GoldCost><Order>1</Order><TriggerType>BARBARIAN_MERCENARIES</TriggerType></Row>
+		<Row><Type>BARBARIAN_MERCENARIES_2</Type>    <Action>Game.TrigAction.BarbarianMercenaries2</Action>    <GoldCost>150</GoldCost><Order>2</Order><TriggerType>BARBARIAN_MERCENARIES</TriggerType></Row>
 		<Row><Type>BARBARIAN_MERCENARIES_3</Type>    <Action>Game.TrigAction.BarbarianMercenaries3</Action>    <GoldCost>  0</GoldCost><Order>3</Order><TriggerType>BARBARIAN_MERCENARIES</TriggerType></Row>
 	</Outcomes>
 	<Outcome_Flavors>

@@ -275,8 +275,23 @@ function DoLeaderCaptureBonuses(city, player)
 end
 LuaEvents.CityCaptureBonuses.Add(function(city, player) return SafeCall(DoLeaderCaptureBonuses, city, player) end)
 
+function DoReligiousUnitSafety(unit)
+	local unitInfo = GameInfo.Units[unit:GetUnitType()]
+	
+	if unitInfo.ReligionSpreads == 0 then
+		return
+	end
+	
+	if not unit:IsCombatUnit() or unit:GetSpreadsLeft() > 1 then
+		-- missionary, or safe number of spreads remaining
+		return
+	end
+	
+	Unit_ReplaceWithType(unit, unitInfo.Type .. "_NO_RELIGION")
+end
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(DoReligiousUnitSafety, unit) end)
 
-function DoLeaderBonuses(player)
+function DoLeaderStartBonuses(player)
 	if Game.GetGameTurn() > 10 then
 		DoImmigration(player)
 		DoCitystateSurrender(player)
@@ -293,7 +308,7 @@ function DoLeaderBonuses(player)
 		end
 	end
 end
-LuaEvents.ActivePlayerTurnStart_Player.Add(function(player) return SafeCall(DoLeaderBonuses, player) end)
+LuaEvents.ActivePlayerTurnStart_Player.Add(function(player) return SafeCall(DoLeaderStartBonuses, player) end)
 
 function DoImmigration(player)
 	local immigrationFrequency = player:GetTraitInfo().ImmigrationFrequency

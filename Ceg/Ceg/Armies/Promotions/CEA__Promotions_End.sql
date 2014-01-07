@@ -309,6 +309,12 @@ FROM Units WHERE CombatClass IN (
 	'UNITCOMBAT_BOMBER'
 );
 
+INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
+SELECT DISTINCT Type, 'PROMOTION_SEA_BONUS_II'
+FROM Units WHERE CombatClass IN (
+	'UNITCOMBAT_BOMBER'
+);
+
 DELETE FROM Unit_FreePromotions
 WHERE PromotionType = 'PROMOTION_ANTI_AIR_II';
 

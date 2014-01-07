@@ -81,6 +81,19 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SEA_BONUS_II</PediaEntry>
 		</Row>
 		<Row>
+			<Type>PROMOTION_ANTI_SIEGE_II</Type>
+			<Description>TXT_KEY_PROMOTION_ANTI_SIEGE_II</Description>
+			<Help>TXT_KEY_PROMOTION_ANTI_SIEGE_II_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<OrderPriority>2</OrderPriority>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ANTI_SIEGE_II</PediaEntry>
+		</Row>
+		<Row>
 			<Type>PROMOTION_CITY_ATTACK_II</Type>
 			<Description>TXT_KEY_PROMOTION_CITY_ATTACK_II</Description>
 			<Help>TXT_KEY_PROMOTION_CITY_ATTACK_II_HELP</Help>
@@ -398,6 +411,11 @@
 		<Row>
 			<PromotionType>PROMOTION_ANTI_MOUNTED_NOUPGRADE_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ANTI_SIEGE_II</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 			<Modifier>50</Modifier>
 		</Row>
 		<Update>
