@@ -443,16 +443,19 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_OXFORD_UNIVERSITY'	
 );
 
-/*
+--/*
 UPDATE Buildings
 SET SpecialistType = NULL, SpecialistCount = 0
 WHERE BuildingClass IN (
 	'BUILDINGCLASS_WINDMILL'
 );
-*/
+--*/
+
+/*
 UPDATE Buildings
 SET Flat = 0
 WHERE Type = 'BUILDING_WINDMILL';
+*/
 
 UPDATE Buildings
 SET SpecialistType = 'SPECIALIST_SCIENTIST', SpecialistCount = 2

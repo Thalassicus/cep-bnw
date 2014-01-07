@@ -78,12 +78,20 @@
 			<Set InternationalTradeRoutesChange="0"/>
 		</Update>
 		<Update>
-			<Where Type="TECH_OPTICS" />
+			<Where Type="TECH_SAILING" />
 			<Set InternationalTradeRoutesChange="1"/>
 		</Update>
 		<Update>
-			<Where Type="TECH_SAILING" />
+			<Where Type="TECH_OPTICS" />
 			<Set InternationalTradeRoutesChange="0"/>
+		</Update>
+		<Update>
+			<Where Type="TECH_COMPASS" />
+			<Set InternationalTradeRoutesChange="0"/>
+		</Update>
+		<Update>
+			<Where Type="TECH_ASTRONOMY" />
+			<Set InternationalTradeRoutesChange="1"/>
 		</Update>
 		<Update>
 			<Where Type="TECH_METAL_CASTING" />
@@ -134,6 +142,10 @@
 		</Update>
 	</Technologies>
 	<Technology_TradeRouteDomainExtraRange>
+		<Update>
+			<Where TechType="TECH_COMPASS"/>
+			<Set TechType="TECH_ASTRONOMY"/>
+		</Update>
 		<Update>
 			<Where TechType="TECH_COMBUSTION" />
 			<Set TechType="TECH_RAILROAD"/>

@@ -4,6 +4,8 @@ UPDATE Units SET FaithCost = ROUND(FaithCost * 1.5 / 10) * 10 WHERE Class IN (
 	'UNITCLASS_MISSIONARY'	
 );
 
+UPDATE Eras SET FaithCostMultiplier = 100;
+
 /*
 UPDATE Units SET FaithCost = ROUND(FaithCost * 0.75 / 10) * 10 WHERE Class IN (
 	'UNITCLASS_INQUISITOR'	

@@ -1114,7 +1114,7 @@ function AIMilitaryHandicapPerTurn(unit)
 		unit:ChangeExperience(1)
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(player) return SafeCall(AIMilitaryHandicapPerTurn, unit) end)
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(AIMilitaryHandicapPerTurn, unit) end)
 
 function WarHandicap(humanPlayerID, aiPlayerID, isAtWar)
 	local humanPlayer = Players[humanPlayerID]

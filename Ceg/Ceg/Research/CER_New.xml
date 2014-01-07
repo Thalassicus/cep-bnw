@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Technologies>
+		<!--
 		<Row>
 			<Type>TECH_CARVEL_HULLS</Type>
 			<Description>TXT_KEY_TECH_CARVEL_HULLS</Description>
@@ -13,7 +14,6 @@
 			<AudioIntro></AudioIntro>
 			<AudioIntroHeader>TXT_KEY_TECH_CARVEL_HULLS_QUOTE</AudioIntroHeader>
 		</Row>
-		<!--
 		<Row>
 			<Type>TECH_TRAINING</Type>
 			<Description>TXT_KEY_TECH_TRAINING</Description>

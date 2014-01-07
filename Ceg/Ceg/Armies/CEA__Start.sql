@@ -103,7 +103,7 @@ UPDATE Units SET Cost = 80          , Combat = 8  , RangedCombat = 10 , Range = 
 
 UPDATE Units SET Cost = Cost * 0.500 WHERE Class = 'UNITCLASS_WORKBOAT';
 UPDATE Units SET Cost = Cost * 0.333 WHERE Class = 'UNITCLASS_CARAVAN';
-UPDATE Units SET Cost = Cost * 0.750 WHERE Class = 'UNITCLASS_CARGO_SHIP';
+UPDATE Units SET Cost = Cost * 0.250 WHERE Class = 'UNITCLASS_CARGO_SHIP';
 
 --
 -- Global Mods
@@ -148,10 +148,15 @@ WHERE Class IN (
 /*
 Mounted Archers need a combat class,
 but we cannot associate combat animations with a new combat class.
-I therefore reassigned an unused combat class to serve as mounted archers.
+I therefore reassigned the low-importance "gun" class to serve as mounted archers.
 
 -- Thalassicus
 */
+
+UPDATE Units
+SET CombatClass = 'UNITCOMBAT_MELEE'
+WHERE CombatClass = 'UNITCOMBAT_GUN';
+
 UPDATE Units
 SET CombatClass = 'UNITCOMBAT_GUN'
 WHERE CombatClass = 'UNITCOMBAT_ARCHER' AND MoveRate NOT IN (
