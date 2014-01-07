@@ -204,7 +204,7 @@ end
 
 function Game.TrigAction.PopularWarrior2(playerID, trigID, targetID, outID)
 	local unit = Players[playerID]:GetUnitByID(targetID)
-	Unit_Replace(unit, "UNITCLASS_SPEARMAN")
+	Unit_Replace(unit, "UNITCLASS_SWORDSMAN")
 end
 
 function Game.TrigAction.PopularWarrior3(playerID, trigID, targetID, outID)
@@ -226,7 +226,7 @@ end
 
 function Game.TrigAction.PopularArcher2(playerID, trigID, targetID, outID)
 	local unit = Players[playerID]:GetUnitByID(targetID)
-	Unit_Replace(unit, "UNITCLASS_CHARIOT_ARCHER")
+	Unit_Replace(unit, "UNITCLASS_COMPOSITE_BOWMAN")
 end
 
 function Game.TrigAction.PopularArcher3(playerID, trigID, targetID, outID)

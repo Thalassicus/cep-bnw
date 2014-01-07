@@ -282,7 +282,7 @@ INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_OUTCOME_2', 'Send them new weapons.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_OUTCOME_3', 'Send them fresh supplies.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_TIP_1', 'Converts to a Worker who ignores terrain costs.', '', '');
-INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_TIP_2', 'Converts to a Spearman.', '', '');
+INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_TIP_2', 'Converts to a Swordsman.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_TIP_3', 'Heals and gains 5 [ICON_WAR] Experience.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_ALERT_1', '[ICON_TEAM_3] Warriors of {1_player} returned to civilian life.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_WARRIOR_ALERT_2', '[ICON_TEAM_3] Warriors of {1_player} received new weapons.', '', '');
@@ -293,7 +293,7 @@ INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_OUTCOME_2', 'Send them new weapons.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_OUTCOME_3', 'Send them fresh supplies.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_TIP_1', 'Converts to a Worker who ignores terrain costs.', '', '');
-INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_TIP_2', 'Converts to a Chariot Archer.', '', '');
+INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_TIP_2', 'Converts to a Composite Bowman.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_TIP_3', 'Heals and gains 5 [ICON_WAR] Experience.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_ALERT_1', '[ICON_TEAM_3] Archers of {1_player} retired to civilian life.', '', '');
 INSERT INTO CEP_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRIGGER_RENOWNED_ARCHER_ALERT_2', '[ICON_TEAM_3] Archers of {1_player} received new weapons.', '', '');
