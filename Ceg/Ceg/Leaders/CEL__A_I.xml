@@ -766,7 +766,7 @@
 		<Row>
 			<BuildingType>BUILDING_STELE</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
+			<Yield>100</Yield>
 		</Row>
 	</Building_YieldChangesPerPop>
 	<Traits>
