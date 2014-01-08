@@ -1,4 +1,4 @@
--- Insert SQL Rules Here 
+-- Show promotions that are not obvious from looking at a unit.
 
 UPDATE UnitPromotions SET IsVisibleAboveFlag = 0;
 
