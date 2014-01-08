@@ -102,8 +102,8 @@ UPDATE Units SET Cost = 80          , Combat = 8  , RangedCombat = 10 , Range = 
 --
 
 UPDATE Units SET Cost = Cost * 0.500 WHERE Class = 'UNITCLASS_WORKBOAT';
-UPDATE Units SET Cost = Cost * 0.333 WHERE Class = 'UNITCLASS_CARAVAN';
-UPDATE Units SET Cost = Cost * 0.250 WHERE Class = 'UNITCLASS_CARGO_SHIP';
+UPDATE Units SET Cost = Cost * 0.200 WHERE Class = 'UNITCLASS_CARAVAN';
+UPDATE Units SET Cost = Cost * 0.500 WHERE Class = 'UNITCLASS_CARGO_SHIP';
 
 --
 -- Global Mods
