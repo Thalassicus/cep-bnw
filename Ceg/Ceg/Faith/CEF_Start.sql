@@ -1,11 +1,5 @@
 --
 
-INSERT INTO Belief_BuildingClassTourism(BeliefType, BuildingClassType, Tourism)
-SELECT 'BELIEF_DIVINE_INSPIRATION', Type, 1
-FROM BuildingClasses WHERE (
-	MaxGlobalInstances = 1
-);
-
 
 /*
 UPDATE Beliefs
