@@ -262,17 +262,14 @@ WHERE UnitType IN (
 INSERT INTO Unit_ResourceQuantityRequirements (UnitType, ResourceType)
 SELECT DISTINCT Type, 'RESOURCE_OIL'
 FROM Units WHERE Class IN (
-	'UNITCLASS_MISSILE_CRUISER'		,
-	'UNITCLASS_MACHINE_GUN'			,
-	'UNITCLASS_BAZOOKA'				
+	'UNITCLASS_MISSILE_CRUISER'		
 );
 
 INSERT INTO Unit_ResourceQuantityRequirements (UnitType, ResourceType, Cost)
 SELECT DISTINCT Type, 'RESOURCE_IRON', 1
 FROM Units WHERE Class IN (
 	'UNITCLASS_PRIVATEER'			,
-	'UNITCLASS_SHIP_OF_THE_LINE'	,
-	'UNITCLASS_GATLINGGUN'			
+	'UNITCLASS_SHIP_OF_THE_LINE'		
 );
 
 UPDATE Unit_ResourceQuantityRequirements
