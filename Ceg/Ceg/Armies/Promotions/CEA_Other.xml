@@ -146,12 +146,12 @@
 			<Where Type="PROMOTION_MORALE" />
 			<Set CombatPercent="20" />
 		</Update>
-		<!--
+		
 		<Update>
 			<Where Type="PROMOTION_CAN_MOVE_AFTER_ATTACKING" />
 			<Set FullMovesAfterAttack="true" />
 		</Update>
-		-->
+		
 		<Update>
 			<Where Type="PROMOTION_MOBILITY" />
 			<Set CannotBeChosen="true"
