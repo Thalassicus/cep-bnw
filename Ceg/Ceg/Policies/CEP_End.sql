@@ -39,6 +39,8 @@ FROM Buildings WHERE BuildingClass IN (
 	)
 );
 
+/* Commented out until the Yield Library is updated
+
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -48,6 +50,22 @@ SELECT DISTINCT
 	'POLICY_CEREMONIAL_RITES', 
 	BuildingClass, 
 	'YIELD_CULTURE',
+	1
+FROM Buildings WHERE BuildingClass IN (
+	'BUILDINGCLASS_MONUMENT'		,
+	'BUILDINGCLASS_AMPHITHEATER'	,
+	'BUILDINGCLASS_OPERA_HOUSE'		,
+	'BUILDINGCLASS_MUSEUM'			,
+	'BUILDINGCLASS_BROADCAST_TOWER'	
+);*/
+
+INSERT INTO Policy_BuildingClassCultureChanges(
+	PolicyType, 
+	BuildingClassType, 
+	CultureChange)
+SELECT DISTINCT
+	'POLICY_CEREMONIAL_RITES', 
+	BuildingClass, 
 	1
 FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_MONUMENT'		,
