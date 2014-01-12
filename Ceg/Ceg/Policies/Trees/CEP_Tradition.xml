@@ -93,4 +93,28 @@
 				 />
 		</Update>
 	</Buildings>-->
+	<Policy_BuildingClassCultureChanges>
+		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>		<Row>
+			<PolicyType>POLICY_CEREMONIAL_RITES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
 </GameData>
