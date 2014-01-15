@@ -50,6 +50,11 @@
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>1</Yield>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_CANDI</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
 		<Update>
 			<Where BuildingType="BUILDING_WATERMILL" YieldType="YIELD_FOOD" />
 			<Set Yield="1" />
