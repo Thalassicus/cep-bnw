@@ -17,6 +17,7 @@
 			<Where Type="YIELD_GOLD" />
 			<Set MinCity="1"
 				 AIWeightPercent="100"
+				 GoldenAgeYield="0"
 				 />
 		</Update>
 		<Update>
