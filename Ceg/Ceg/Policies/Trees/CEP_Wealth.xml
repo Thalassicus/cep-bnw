@@ -41,6 +41,8 @@
 			<Where Type="POLICY_TRADE_UNIONS" /> <!-- Mercenary Army -->
 			<Set GridX="2"
 				 GridY="2"
+				 OneShot="true"
+				 IncludesOneShotFreeUnits="true"
 				 />
 		</Update>
 		<Update>
