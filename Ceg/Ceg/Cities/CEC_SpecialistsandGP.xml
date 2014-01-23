@@ -68,9 +68,11 @@
 			<Where SpecialistType="SPECIALIST_SCIENTIST" YieldType="YIELD_SCIENCE" />
 			<Set Yield="3" />
 		</Update>
+		<!--
 		<Update>
 			<Where YieldType="YIELD_CULTURE" />
 			<Set Yield="3" />
 		</Update>
+		-->
 	</SpecialistYields>
 </GameData>
