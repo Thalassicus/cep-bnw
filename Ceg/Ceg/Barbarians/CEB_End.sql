@@ -1,6 +1,6 @@
 --
 
---UPDATE Worlds SET FogTilesPerBarbarianCamp = ROUND(FogTilesPerBarbarianCamp * 0.25, 0);
+UPDATE Worlds SET FogTilesPerBarbarianCamp = ROUND(FogTilesPerBarbarianCamp * 0.25, 0);
 
 /*
 INSERT INTO Unit_FreePromotions (UnitType, PromotionType)

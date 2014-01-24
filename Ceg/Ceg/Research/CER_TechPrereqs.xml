@@ -147,10 +147,6 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 			<TechType>TECH_METAL_CASTING</TechType>
 		</Row>
 		<Row>
-			<PrereqTech>TECH_COMPASS</PrereqTech>
-			<TechType>TECH_CARVEL_HULLS</TechType>
-		</Row>
-		<Row>
 			<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			<TechType>TECH_EDUCATION</TechType>
 		</Row>
@@ -179,7 +175,7 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 			<TechType>TECH_STEEL</TechType>
 		</Row>
 		<Row>
-			<PrereqTech>TECH_CARVEL_HULLS</PrereqTech>
+			<PrereqTech>TECH_COMPASS</PrereqTech>
 			<TechType>TECH_ASTRONOMY</TechType>
 		</Row>
 		<Row>

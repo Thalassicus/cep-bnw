@@ -366,7 +366,7 @@
 		</Update>
 		<Update>
 			<Where ImprovementType="IMPROVEMENT_TRADING_POST" YieldType="YIELD_GOLD" />
-			<Set Yield="2" />
+			<Set Yield="1" />
 		</Update>
 		<!--
 		<Row>
@@ -416,6 +416,12 @@
 		<Delete ImprovementType="IMPROVEMENT_ACADEMY"/>
 		<Delete ImprovementType="IMPROVEMENT_CUSTOMS_HOUSE"/>
 		<Delete ImprovementType="IMPROVEMENT_MANUFACTORY"/>
+		<Row>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<TechType>TECH_CURRENCY</TechType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
 		<!--
 		<Row>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
@@ -452,13 +458,13 @@
 	<Improvement_TechFreshWaterYieldChanges>
 		<Row>
 			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
-			<TechType>TECH_SAILING</TechType>
+			<TechType>TECH_COMPASS</TechType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
-			<TechType>TECH_IRON_WORKING</TechType>
+			<TechType>TECH_METAL_CASTING</TechType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>

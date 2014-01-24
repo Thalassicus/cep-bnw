@@ -225,9 +225,9 @@ WHERE					building.BuildingClass = 'BUILDINGCLASS_LIGHTHOUSE'
 
 INSERT OR REPLACE INTO	Building_ResourceYieldChanges
 						(BuildingType, ResourceType, YieldType, Yield) 
-SELECT					building.Type, res.Type, 'YIELD_FAITH', 2
+SELECT					building.Type, res.Type, 'YIELD_FAITH', 1
 FROM					Buildings building, Resources res
-WHERE					building.BuildingClass = 'BUILDINGCLASS_TEMPLE'
+WHERE					building.BuildingClass = 'BUILDINGCLASS_SHRINE'
 						AND res.Type IN (
 							'RESOURCE_WINE'		,
 							'RESOURCE_INCENSE'
@@ -258,7 +258,7 @@ WHERE					building.BuildingClass = 'BUILDINGCLASS_AQUEDUCT'
 
 INSERT OR REPLACE INTO	Building_ResourceYieldChanges
 						(BuildingType, ResourceType, YieldType, Yield) 
-SELECT					building.Type, res.Type, 'YIELD_CULTURE', 1
+SELECT					building.Type, res.Type, 'YIELD_CULTURE', 2
 FROM					Buildings building, Resources res
 WHERE					building.BuildingClass = 'BUILDINGCLASS_AMPHITHEATER'
 						AND res.Type IN (
@@ -443,16 +443,19 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_OXFORD_UNIVERSITY'	
 );
 
-/*
+--/*
 UPDATE Buildings
 SET SpecialistType = NULL, SpecialistCount = 0
 WHERE BuildingClass IN (
 	'BUILDINGCLASS_WINDMILL'
 );
-*/
+--*/
+
+/*
 UPDATE Buildings
 SET Flat = 0
 WHERE Type = 'BUILDING_WINDMILL';
+*/
 
 UPDATE Buildings
 SET SpecialistType = 'SPECIALIST_SCIENTIST', SpecialistCount = 2

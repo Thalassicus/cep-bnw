@@ -1228,6 +1228,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Armies/CEA_Upgrades.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Barbarians/CEB_End.sql</FileName>
       </Action>
       <Action>
@@ -1448,6 +1453,10 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="AI\Flavors\CEAI_Units.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Armies\CEA_Upgrades.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

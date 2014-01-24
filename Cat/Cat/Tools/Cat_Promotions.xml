@@ -197,9 +197,9 @@
 			<Help>TXT_KEY_PROMOTION_HANDICAP_HELP</Help>
 			<PediaEntry>TXT_KEY_PROMOTION_HANDICAP</PediaEntry>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<VisibilityChange>2</VisibilityChange>
+			<VisibilityChange>1</VisibilityChange>
 			<CityAttack>25</CityAttack>
-			<ExperiencePercent>-25</ExperiencePercent>
+			<CityDefense>25</CityDefense>
 			<FreePillageMoves>true</FreePillageMoves>
 			<PortraitIndex>58</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>

@@ -1016,6 +1016,7 @@ function AIMilitaryHandicap(  playerID,
         return
     end
 
+	--[[
 	if military then
 		local hostileMultiplier = 1
 		if player:IsMinorCiv() then
@@ -1038,6 +1039,7 @@ function AIMilitaryHandicap(  playerID,
 			unit:ChangeExperience(freeXP + freeXPPerEra * era)
 		end
 	end
+	--]]
 
 	local handicapInfo = GameInfo.HandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
 	local freePromotion = "PROMOTION_HANDICAP"--handicapInfo.AIFreePromotion
@@ -1076,6 +1078,43 @@ LuaEvents.NewUnit.Add(function(playerID, unitID, hexVec, unitType, cultureType, 
 		return SafeCall(AIMilitaryHandicap, playerID, unitID, hexVec, unitType, cultureType, civID, primaryColor, secondaryColor, unitFlagIndex, fogState, selected, military, notInvisible)
 	end
 )
+
+function AIMilitaryHandicapPerTurn(unit)
+	local player = Players[unit:GetOwner()]
+	if player:IsHuman() or player:IsBarbarian() or not unit:IsCombatUnit() then
+		return
+	end
+	
+	local handicap = Game.GetHandicapInfo()
+	
+	if handicap.AIFreeXPPerTurn == 0 then
+		return
+	end
+	
+	local hostileMultiplier = 1
+	if player:IsMinorCiv() then
+		hostileMultiplier = 0.5
+	elseif not player:IsMilitaristicLeader() then
+		if player:IsAtWarWithHuman() then
+			hostileMultiplier = 1
+		elseif player:EverAtWarWithHuman() then
+			hostileMultiplier = 0.5
+		else
+			hostileMultiplier = 0
+		end
+	end
+	
+	if unit:GetExperience() > handicap.AIFreeXPMax * hostileMultiplier then
+		return
+	end
+	
+	local odds = hostileMultiplier * handicap.AIFreeXPPerTurn
+	
+	if odds > Map.Rand(100, "AI bonus experience") then
+		unit:ChangeExperience(1)
+	end
+end
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(AIMilitaryHandicapPerTurn, unit) end)
 
 function WarHandicap(humanPlayerID, aiPlayerID, isAtWar)
 	local humanPlayer = Players[humanPlayerID]

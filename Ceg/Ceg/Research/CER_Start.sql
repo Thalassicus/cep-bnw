@@ -51,6 +51,7 @@ UPDATE Technologies SET Cost =   7700 WHERE GridX = 15;
 UPDATE Technologies SET Cost =   8800 WHERE GridX = 16;
 UPDATE Technologies SET Cost =   9500 WHERE GridX = 17;
 
+/*
 UPDATE Technologies SET Cost = ROUND(Cost * 0.75/10, 0)*10 WHERE Type IN (
 	'TECH_SAILING',
 	'TECH_OPTICS',
@@ -58,5 +59,6 @@ UPDATE Technologies SET Cost = ROUND(Cost * 0.75/10, 0)*10 WHERE Type IN (
 	'TECH_CARVEL_HULLS',
 	'TECH_ASTRONOMY'
 );
+*/
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CER_Start.sql';

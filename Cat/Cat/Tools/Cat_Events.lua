@@ -757,6 +757,16 @@ end
 LuaEvents.CityCaptureBonuses = LuaEvents.CityCaptureBonuses or function(city) end
 LuaEvents.CityCaptureBonuses.Add( DoCityCaptureBonuses )
 
+
+function DoCityHealthFix(city, player)
+	local maxHealth = city:GetMaxHitPoints()
+	local currentHealth = maxHealth * GameDefines.CITY_CAPTURE_DAMAGE_PERCENT/100
+	log:Warn("Correcting %s captured health from %3s/%-3s to %3s/%-3s", city:GetName(), city:GetMaxHitPoints() - city:GetDamage(), maxHealth, currentHealth, maxHealth)
+	city:SetDamage(currentHealth)
+end
+LuaEvents.CityCaptureBonuses = LuaEvents.CityCaptureBonuses or function(city) end
+LuaEvents.CityCaptureBonuses.Add(function(city, player) return SafeCall(DoCityHealthFix, city, player) end)
+
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 

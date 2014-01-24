@@ -22,6 +22,15 @@ Game.Stats				= Game.Stats or {}
 Game.Stats.Units		= Game.Stats.Units or {}
 Game.Stats.Buildings	= Game.Stats.Buildings or {}
 
+
+local holidayFun = {
+	["01/01"] = "TXT_KEY_HOLIDAY_NEW_YEAR"		,
+	["04/01"] = "TXT_KEY_HOLIDAY_APRIL_FOOLS"	,
+	["07/02"] = "TXT_KEY_HOLIDAY_UFO"			,
+	["10/31"] = "TXT_KEY_HOLIDAY_HALLOWEEN"		
+}
+
+--
 local holidayFun = {
 	["01/01"] = "TXT_KEY_HOLIDAY_NEW_YEAR"		,
 	["04/01"] = "TXT_KEY_HOLIDAY_APRIL_FOOLS"	,
