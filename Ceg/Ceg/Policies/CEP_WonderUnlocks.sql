@@ -1,7 +1,7 @@
 -- CEP_WonderUnlocks.sql created by Wonder_Unlocks tab of Wonders spreadsheet:
 -- https://drive.google.com/folderview?id=0B58Ehya83q19eVlvWXdmLXZ6UUE
 
-UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_TRADITION'         WHERE BuildingClass='BUILDINGCLASS_GREAT_LIBRARY';
+UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_TRADITION'         WHERE BuildingClass='BUILDINGCLASS_BANAUE_RICE_TERRACES';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_LIBERTY'           WHERE BuildingClass='BUILDINGCLASS_TERRACOTTA_ARMY';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_HONOR'             WHERE BuildingClass='BUILDINGCLASS_TEMPLE_ARTEMIS';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_PIETY'             WHERE BuildingClass='BUILDINGCLASS_STONEHENGE';
