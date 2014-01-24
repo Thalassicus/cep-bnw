@@ -1,5 +1,11 @@
 --
 
+INSERT INTO Belief_BuildingClassTourism(BeliefType, BuildingClassType, Tourism)
+SELECT 'BELIEF_DIVINE_INSPIRATION', Type, 1
+FROM BuildingClasses WHERE (
+	MaxGlobalInstances = 1
+);
+
 UPDATE Units SET FaithCost = ROUND(FaithCost * 1.5 / 10) * 10 WHERE Class IN (
 	'UNITCLASS_MISSIONARY'	
 );

@@ -165,7 +165,7 @@
 	</Traits>
 	<Trait_SpecialistYieldChanges>
 		<Delete TraitType="TRAIT_SCHOLARS_JADE_HALL" />
-		<Row>
+		<!--<Row>
 			<TraitType>TRAIT_SCHOLARS_JADE_HALL</TraitType>
 			<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
@@ -176,7 +176,7 @@
 			<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>2</Yield>
-		</Row>
+		</Row>-->
 	</Trait_SpecialistYieldChanges>
 	<Units>
 		<Update>

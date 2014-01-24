@@ -1,9 +1,9 @@
 -- 
-
+/*
 INSERT INTO SpecialistYields(SpecialistType, YieldType, Yield)
 SELECT Type, 'YIELD_CULTURE', CulturePerTurn
 FROM Specialists WHERE CulturePerTurn <> 0;
-
+*/
 --UPDATE Specialists SET CulturePerTurn = 0;
 --*/
 

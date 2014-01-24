@@ -244,7 +244,7 @@
 		</Update>
 		<Update>
 			<Where BeliefType="BELIEF_FEED_WORLD" />
-			<Set YieldChange="3"/>
+			<Set YieldChange="2"/>
 		</Update>
 		<Update>
 			<Where BeliefType="BELIEF_LITURGICAL_DRAMA" />

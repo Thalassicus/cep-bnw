@@ -331,13 +331,13 @@
 	<Controls>
 		<Delete Type="CONTROL_ADVISOR_COUNSEL" />
 	</Controls>
-	-->
 	<BuildFeatures>
 		<Update>
 			<Where BuildType="BUILD_FARM" FeatureType="FEATURE_JUNGLE" />
 			<Set PrereqTech="TECH_AGRICULTURE" />
 		</Update>
 	</BuildFeatures>
+	-->
 	<Improvements>
 		<Update>
 			<Where Type="IMPROVEMENT_CITADEL" />
