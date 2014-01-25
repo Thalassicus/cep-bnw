@@ -81,13 +81,6 @@
 		</Row>
 		-->
 	</Policy_FreeBuildingFlavor>
-	<Policy_BuildingClassHappiness>
-		<Row>
-			<PolicyType>POLICY_HUMANISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
-	</Policy_BuildingClassHappiness>
 	<Policy_BuildingClassYieldChanges>
 		<Delete PolicyType="POLICY_RATIONALISM_FINISHER" />
 		<Delete PolicyType="POLICY_SOVEREIGNTY" />
