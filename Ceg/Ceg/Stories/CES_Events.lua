@@ -144,7 +144,7 @@ end
 function Game.TrigAction.ScoutSavior1(playerID, trigID, targetID, outID)
 	local unit = Players[playerID]:GetUnitByID(targetID)
 	local newUnit = Players[playerID]:InitUnitClass("UNITCLASS_SCOUT", unit:GetPlot(), unit:GetExperience())
-	for promoInfo in GameInfo.UnitPromotions{Class = "PROMOTION_CLASS_PERSISTANT"} do
+	for promoInfo in GameInfo.UnitPromotions{Class = "PROMOTION_CLASS_PERSISTENT"} do
 		if unit:IsHasPromotion(promoInfo.ID) then
 			newUnit:SetHasPromotion(promoInfo.ID, true)
 		end
