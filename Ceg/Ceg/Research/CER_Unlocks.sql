@@ -149,5 +149,4 @@ UPDATE Units SET PrereqTech='TECH_PARTICLE_PHYSICS'         WHERE Class='UNITCLA
 UPDATE Units SET PrereqTech='TECH_NUCLEAR_FUSION'           WHERE Class='UNITCLASS_XCOM_SQUAD';
 
 
-
-
+UPDATE LoadedFile SET Value=1 WHERE Type='CER_Unlocks.sql';

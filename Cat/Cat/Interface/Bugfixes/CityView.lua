@@ -198,6 +198,11 @@ local merchantTexture = "citizenMerchant.dds";
 local scientistTexture = "citizenScientist.dds";
 local unemployedTexture = "citizenUnemployed.dds";
 local workerTexture = "citizenWorker.dds";
+--added by Gazebo
+if(Cep.USING_CSD == 1) then
+	local civilservantTexture = "citizenCivilServant.dds";
+end
+--end addition
 local emptySlotString = Locale.ConvertTextKey("TXT_KEY_CITYVIEW_EMPTY_SLOT");
 
 ---------------------------------------------------------------------------------------------------
@@ -228,7 +233,7 @@ end
 ---------------------------------------------------------------------------------------------------
 
 --cep
-local workerHeadingOpen = true--OptionsManager.IsNoCitizenWarning();
+local workerHeadingOpen = true; --OptionsManager.IsNoCitizenWarning();
 local slackerHeadingOpen = true;
 local GPHeadingOpen = true;
 local wonderHeadingOpen = true;
@@ -283,7 +288,9 @@ end
 
 function GetPedia( void1, void2, button )
 	local searchString = pediaSearchStrings[tostring(button)];
-	Events.SearchForPediaEntry( searchString );		
+	if (searchString ~= nil) then
+		Events.SearchForPediaEntry( searchString );
+	end
 end
 
 -------------------------------------------------
@@ -340,7 +347,7 @@ function AddBuildingButton( pCity, building )
 			strBuildingName = strBuildingName .. " (" .. Locale.ConvertTextKey("TXT_KEY_FREE") .. ")";
 		end
 		
-		-- Multiple copies of the building
+		-- Multiple copies of the building (cep)
 		local numCopies = City_GetNumBuilding(pCity, buildingID)
 		if numCopies ~= 1 then
 			strBuildingName = strBuildingName .. " (" .. numCopies .. ")"
@@ -487,10 +494,11 @@ function AddBuildingButton( pCity, building )
 			controlTable.BuildingFilledSpecialistSlot3:SetHide(false);
 		end
 		
+		local specialistName = nil;
 		if building.SpecialistType then
 			local iSpecialistID = GameInfoTypes[building.SpecialistType];
 			local pSpecialistInfo = GameInfo.Specialists[iSpecialistID];
-			local specialistName = Locale.ConvertTextKey(pSpecialistInfo.Description);
+			specialistName = Locale.ConvertTextKey(pSpecialistInfo.Description);
 			local ToolTipString = specialistName .. " ";						
 			-- Culture
 			local iCultureFromSpecialist = pCity:GetCultureFromSpecialist(iSpecialistID);
@@ -500,6 +508,7 @@ function AddBuildingButton( pCity, building )
 			-- Yield
 			for pYieldInfo in GameInfo.Yields() do
 				local iYieldID = pYieldInfo.ID;
+				--cep
 				local iYieldAmount = City_GetSpecialistYield(pCity, iYieldID, iSpecialistID);
 				
 				--Specialist Yield included in pCity:GetSpecialistYield();
@@ -544,6 +553,13 @@ function AddBuildingButton( pCity, building )
 				controlTable.BuildingFilledSpecialistSlot1:SetTexture(engineerTexture);
 				controlTable.BuildingFilledSpecialistSlot2:SetTexture(engineerTexture);
 				controlTable.BuildingFilledSpecialistSlot3:SetTexture(engineerTexture);
+			--added by Gazebo
+			elseif Cep.USING_CSD == 1 and building.SpecialistType == "SPECIALIST_CIVIL_SERVANT" then
+				controlTable.BuildingFilledSpecialistSlot1:SetTexture(civilservantTexture);
+				controlTable.BuildingFilledSpecialistSlot2:SetTexture(civilservantTexture);
+				controlTable.BuildingFilledSpecialistSlot3:SetTexture(civilservantTexture);
+			else
+			--end addition
 			else
 				controlTable.BuildingFilledSpecialistSlot1:SetTexture(workerTexture);
 				controlTable.BuildingFilledSpecialistSlot2:SetTexture(workerTexture);
@@ -561,13 +577,14 @@ function AddBuildingButton( pCity, building )
 			controlTable.BuildingFilledSpecialistSlot3:RegisterCallback( Mouse.eLClick, RemoveSpecialist );
 		end
 
-		pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot1)] = specialistName;
-		controlTable.BuildingFilledSpecialistSlot1:RegisterCallback( Mouse.eRClick, GetPedia );
-		pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot2)] = specialistName;
-		controlTable.BuildingFilledSpecialistSlot2:RegisterCallback( Mouse.eRClick, GetPedia );
-		pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot3)] = specialistName;
-		controlTable.BuildingFilledSpecialistSlot3:RegisterCallback( Mouse.eRClick, GetPedia );
-
+		if (specialistName ~= nil) then
+			pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot1)] = specialistName;
+			controlTable.BuildingFilledSpecialistSlot1:RegisterCallback( Mouse.eRClick, GetPedia );
+			pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot2)] = specialistName;
+			controlTable.BuildingFilledSpecialistSlot2:RegisterCallback( Mouse.eRClick, GetPedia );
+			pediaSearchStrings[tostring(controlTable.BuildingFilledSpecialistSlot3)] = specialistName;
+			controlTable.BuildingFilledSpecialistSlot3:RegisterCallback( Mouse.eRClick, GetPedia );
+		end
 		controlTable.BuildingFilledSpecialistSlot1:SetVoids( buildingID, 1 );
 		controlTable.BuildingFilledSpecialistSlot2:SetVoids( buildingID, 2 );
 		controlTable.BuildingFilledSpecialistSlot3:SetVoids( buildingID, 3 );
@@ -619,6 +636,7 @@ function AddBuildingButton( pCity, building )
 				-- Yield
 				for pYieldInfo in GameInfo.Yields() do
 					local iYieldID = pYieldInfo.ID;
+					--cep
 					local iYieldAmount = City_GetSpecialistYield(pCity, iYieldID, iSpecialistID);
 					
 					if (iYieldAmount > 0) then
@@ -700,6 +718,7 @@ function UpdateThisQueuedItem(city, queuedItemNumber, queueLength)
     elseif (queuedOrderType == OrderTypes.ORDER_CONSTRUCT) then
 		local thisBuildingInfo = GameInfo.Buildings[queuedData1];
 		IconHookup( thisBuildingInfo.PortraitIndex, 45, thisBuildingInfo.IconAtlas, Controls[controlImage] );
+		--cep
 		Controls[controlName]:SetText( Locale.ConvertTextKey( thisBuildingInfo.Description or thisBuildingInfo.Type ) );
 		if (bGeneratingProduction) then
 			Controls[controlTurns]:SetText(  Locale.ConvertTextKey("TXT_KEY_PRODUCTION_HELP_NUM_TURNS", city:GetBuildingProductionTurnsLeft(queuedData1, queuedItemNumber-1)) );
@@ -980,7 +999,7 @@ function OnCityViewUpdate()
 
 		if unitProduction ~= -1 then
 			local thisUnitInfo = GameInfo.Units[unitProduction];
-			local portraitOffset, portraitAtlas = UI.GetUnitPortraitIcon(unitProduction, pCity:GetOwner());		
+			local portraitOffset, portraitAtlas = UI.GetUnitPortraitIcon(unitProduction, pCity:GetOwner());			
 			--cep
 			szHelpText = Locale.ConvertTextKey(GetUnitTip{unitID=thisUnitInfo.ID, hideName=true, hideGoodFor=true, hideAbilities=false, hideCosts=true});
 			if IconHookup( portraitOffset, g_iPortraitSize, portraitAtlas, Controls.ProductionPortrait ) then
@@ -1187,6 +1206,13 @@ function OnCityViewUpdate()
 							if (pWorldCongress ~= nil and pWorldCongress:GetScienceyGreatPersonRateModifier() ~= 0) then
 								iWorldCongressMod = iWorldCongressMod + pWorldCongress:GetScienceyGreatPersonRateModifier();
 							end
+						--added by Gazebo
+						elseif (Cep.USING_CSD == 1 and pSpecialistInfo.GreatPeopleUnitClass == "UNITCLASS_GREAT_DIPLOMAT") then
+							iPlayerMod = iPlayerMod + pPlayer:GetGreatDiplomatRateModifier();
+							if (pWorldCongress ~= nil and pWorldCongress:GetScienceyGreatPersonRateModifier() ~= 0) then
+								iWorldCongressMod = 0;
+							end
+						--end addition
 						end
 						
 						-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
@@ -1275,6 +1301,7 @@ function OnCityViewUpdate()
 				-- Yield
 				for pYieldInfo in GameInfo.Yields() do
 					local iYieldID = pYieldInfo.ID;
+					--cep
 					local iYieldAmount = City_GetSpecialistYield(pCity, iYieldID, pSpecialistInfo.ID);
 					
 					--Specialist Yield included in pCity:GetSpecialistYield();

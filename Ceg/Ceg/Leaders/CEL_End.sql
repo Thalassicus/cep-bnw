@@ -472,3 +472,6 @@ UPDATE Builds SET PrereqTech ='TECH_CONSTRUCTION'
 WHERE Type IN (
 	'BUILD_FEITORIA'
 );
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEL_End.sql';

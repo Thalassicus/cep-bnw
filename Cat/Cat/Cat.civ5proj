@@ -703,6 +703,13 @@
         <MinVersion>0</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>City-State Diplomacy Mod (CSD)  for Brave New World</Name>
+        <Id>eead0050-1e3f-4178-a91f-26cf1881ac39</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
     </ModReferences>
     <SupportsHotSeat>true</SupportsHotSeat>
     <ModProperties>

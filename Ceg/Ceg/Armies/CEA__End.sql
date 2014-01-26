@@ -167,4 +167,5 @@ UPDATE Units SET GoodyHutUpgradeUnitClass = NULL WHERE Class IN (
 
 UPDATE Units SET ObsoleteTech = 'TECH_METAL_CASTING' WHERE Class = 'UNITCLASS_SCOUT';
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEA_End.sql';
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEA__End.sql';
