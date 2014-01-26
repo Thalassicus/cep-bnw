@@ -657,6 +657,16 @@ WHERE BuildingType IN (
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
 
+UPDATE Building_Flavors
+SET Flavor = Flavor * 2
+WHERE BuildingType IN (
+	SELECT building.Type 
+	FROM Buildings building, BuildingClasses class WHERE ( 
+		building.BuildingClass = class.Type AND NOT(
+			class.MaxGlobalInstances = 1 OR class.MaxTeamInstances = 1
+		)
+	)
+);
 
 -- Items no longer in the Buildings table
 DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildings);
