@@ -59,3 +59,6 @@ INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCL
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_SPEARMAN',            'UNIT_AZTEC_JAGUAR');
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_SPEARMAN',            'UNIT_POLYNESIAN_MAORI_WARRIOR');
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_SPEARMAN',            'UNIT_BARBARIAN_WARRIOR');
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEA_Upgrades.sql';

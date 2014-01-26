@@ -87,3 +87,5 @@ WHERE Name IN (
 	'ALLIES_FAITH_FLAT_BONUS_AMOUNT_ANCIENT'
 );
 */
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CED_Start.sql';

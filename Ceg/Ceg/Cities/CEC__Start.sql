@@ -128,4 +128,4 @@ WHERE EXISTS (SELECT * FROM Buildings WHERE Type='BUILDING_MAUSOLEUM_HALICARNASS
 
 
 -- End
-UPDATE LoadedFile SET Value=1 WHERE Type='CEC_Start.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEC__Start.sql';

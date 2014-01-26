@@ -337,4 +337,4 @@ UPDATE Eras SET EmbarkedUnitDefense = 46 WHERE ID = 7;
 
 
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEA_Start.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEA__Start.sql';

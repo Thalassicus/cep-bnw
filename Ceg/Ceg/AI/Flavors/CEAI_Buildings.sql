@@ -663,3 +663,6 @@ DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildin
 
 -- Dummy buildings automatically assigned to cities
 DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings WHERE Cost = 0 OR Cost = -1);
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Buildings.sql';

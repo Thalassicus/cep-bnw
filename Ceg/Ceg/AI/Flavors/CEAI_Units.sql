@@ -401,4 +401,5 @@ DELETE FROM SpecialistFlavors;
 INSERT INTO SpecialistFlavors (SpecialistType, FlavorType, Flavor) SELECT SpecialistType, FlavorType, Flavor FROM CEP_Collisions;
 DROP TABLE CEP_Collisions;
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEAI__End_Flavors.sql';
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Units.sql';

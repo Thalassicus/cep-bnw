@@ -298,4 +298,5 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEP_P_End.sql';
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEP_End.sql';

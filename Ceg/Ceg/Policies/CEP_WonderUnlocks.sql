@@ -13,3 +13,6 @@ UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_RATIONALISM'       WHERE Bu
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_FREEDOM'           WHERE BuildingClass='BUILDINGCLASS_STATUE_OF_LIBERTY';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_ORDER'             WHERE BuildingClass='BUILDINGCLASS_ITAIPU_DAM';
 UPDATE Buildings SET PolicyBranchType='POLICY_BRANCH_AUTOCRACY'         WHERE BuildingClass='BUILDINGCLASS_KREMLIN';
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEP_WonderUnlocks.sql';

@@ -194,3 +194,6 @@ DELETE FROM Resource_Flavors;
 INSERT INTO Resource_Flavors (ResourceType, FlavorType, Flavor) SELECT ResourceType, FlavorType, Flavor FROM CEP_Collisions;
 DROP TABLE CEP_Collisions;
 --*/
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Resources.sql';

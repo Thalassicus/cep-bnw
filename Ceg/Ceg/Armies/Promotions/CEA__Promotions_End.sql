@@ -525,4 +525,4 @@ WHERE Type IN (
 );
 
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEA_Promotions.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEA__Promotions_End.sql';

@@ -9,3 +9,6 @@ DELETE FROM Cep_Language_JA_JP;
 DELETE FROM Cep_Language_PL_PL;
 DELETE FROM Cep_Language_RU_RU;
 DELETE FROM Cep_Language_ZH_CN;
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='Language_Start.sql';
