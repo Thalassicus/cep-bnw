@@ -558,7 +558,6 @@ function AddBuildingButton( pCity, building )
 				controlTable.BuildingFilledSpecialistSlot1:SetTexture(civilservantTexture);
 				controlTable.BuildingFilledSpecialistSlot2:SetTexture(civilservantTexture);
 				controlTable.BuildingFilledSpecialistSlot3:SetTexture(civilservantTexture);
-			else
 			--end addition
 			else
 				controlTable.BuildingFilledSpecialistSlot1:SetTexture(workerTexture);
