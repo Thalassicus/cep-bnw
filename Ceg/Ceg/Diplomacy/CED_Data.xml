@@ -320,26 +320,6 @@
 			<Set Value="3"/>
 			<!-- 3 -->
 		</Update>
-		<Update>
-			<Where Name="GOLD_GIFT_FRIENDSHIP_DIVISOR"/>
-			<Set Value="9"/>
-			<!-- 6.3 -->
-		</Update>
-		<Update>
-			<Where Name="MINOR_GOLD_GIFT_SMALL"/>
-			<Set Value="250"/>
-			<!-- 250 -->
-		</Update>
-		<Update>
-			<Where Name="MINOR_GOLD_GIFT_MEDIUM"/>
-			<Set Value="500"/>
-			<!-- 500 -->
-		</Update>
-		<Update>
-			<Where Name="MINOR_GOLD_GIFT_LARGE"/>
-			<Set Value="1000"/>
-			<!-- 1000 -->
-		</Update>
 		
 		<!-- 
 		<Update>
