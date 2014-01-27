@@ -20,6 +20,7 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('CEF_Start.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEL__A_I.xml', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEL__J_Z.xml', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEL_Start.sql', 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CEL_End.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEP_Start.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEP_End.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CED_Start.sql', 0);
