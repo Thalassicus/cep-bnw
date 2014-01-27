@@ -19,6 +19,8 @@ SET ObsoleteTech = (
 UPDATE Units SET ObsoleteTech = 'TECH_CHIVALRY' WHERE Class = 'UNITCLASS_CHARIOT_ARCHER';
 UPDATE Units SET ObsoleteTech = NULL WHERE Class = 'UNITCLASS_MODERN_ARMOR';
 UPDATE Units SET ObsoleteTech = 'TECH_METAL_CASTING' WHERE Class = 'UNITCLASS_SCOUT';
+UPDATE Units SET ObsoleteTech = 'TECH_AGRICULTURE' WHERE Class = 'UNITCLASS_ANTI_TANK_GUN';
+UPDATE Units SET ObsoleteTech = 'TECH_AGRICULTURE' WHERE Class = 'UNITCLASS_MARINE';
 
 
 -- This CER_End.sql data automatically created by:										
