@@ -12,7 +12,8 @@
 			<Set GridX="1"
 				 GridY="1"
 				 NumCitiesPolicyCostDiscount="-33"
-				 GoldenAgeTurns="0"
+				 HappinessPerTradeRoute="0"
+				 UnhappinessMod="0"
 				 PortraitIndex="9"
 				 />
 		</Update>
