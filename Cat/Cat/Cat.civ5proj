@@ -710,6 +710,13 @@
         <MinVersion>0</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Beyond the future</Name>
+        <Id>0d765f42-aae7-43d9-b655-4127f9f06a0d</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
     </ModReferences>
     <SupportsHotSeat>true</SupportsHotSeat>
     <ModProperties>
