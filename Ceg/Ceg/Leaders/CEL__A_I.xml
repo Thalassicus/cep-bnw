@@ -810,7 +810,7 @@
 	<Traits>
 		<Update>
 			<Where Type="TRAIT_STRATEGIC_RICHES" />
-			<Set HanseaticLeague="BUILDINGCLASS_HANSEATIC_LEAGUE" />
+			<Set HanseaticLeague="BUILDING_HANSEATIC_LEAGUE" />
 		</Update>
 	</Traits>
 	<Leader_Traits>

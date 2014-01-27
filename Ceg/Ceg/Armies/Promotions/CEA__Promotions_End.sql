@@ -389,11 +389,11 @@ AND NOT Type IN (
 
 UPDATE UnitPromotions
 SET LostWithUpgrade = 0
-WHERE Class = 'PROMOTION_CLASS_PERSISTANT';
+WHERE Class = 'PROMOTION_CLASS_PERSISTENT';
 
 UPDATE UnitPromotions
 SET LostWithUpgrade = 1
-WHERE Class <> 'PROMOTION_CLASS_PERSISTANT';
+WHERE Class <> 'PROMOTION_CLASS_PERSISTENT';
 
 UPDATE UnitPromotions
 SET   PortraitIndex = '58'
@@ -403,7 +403,7 @@ AND   Class = 'PROMOTION_CLASS_ATTRIBUTE_POSITIVE';
 UPDATE UnitPromotions
 SET   PortraitIndex = '59'
 WHERE PortraitIndex = '58'
-AND   Class = 'PROMOTION_CLASS_PERSISTANT'
+AND   Class = 'PROMOTION_CLASS_PERSISTENT'
 AND NOT Type IN (
 	'PROMOTION_HANDICAP' 		-- handicap
 );

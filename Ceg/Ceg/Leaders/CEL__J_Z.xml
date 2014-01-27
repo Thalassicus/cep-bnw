@@ -957,15 +957,15 @@
 		</Update>
 	</Units>
 	<!-- Dummy Conquistador with no religious spreads remaining, but still alive -->
-	<!--Hotfix: Removed until fixed so it isn't buildable by all civs
+	<!--Hotfix: Removed until fixed so it isn't buildable by all civs -->
 	<Units>
 		<Row>
 			<Class>UNITCLASS_KNIGHT</Class>
 			<Type>UNIT_SPANISH_CONQUISTADOR_NO_RELIGION</Type>
 			<PrereqTech>TECH_CHIVALRY</PrereqTech>
 			<Combat>20</Combat>
-			<Cost>135</Cost>
-			<FaithCost>270</FaithCost>
+			<Cost>-1</Cost>
+			<FaithCost>-1</FaithCost>
 			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled>
 			<Moves>4</Moves>
 			<CombatClass>UNITCOMBAT_MOUNTED</CombatClass>
@@ -975,6 +975,7 @@
 			<Civilopedia>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_TEXT</Civilopedia>
 			<Strategy>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP</Help>
+			<ShowInPedia>false</ShowInPedia>
 			<MilitarySupport>true</MilitarySupport>
 			<MilitaryProduction>true</MilitaryProduction>
 			<Pillage>true</Pillage>
@@ -990,7 +991,7 @@
 			<PortraitIndex>1</PortraitIndex>
 		</Row>
 	</Units>
-	-->
+	
 
 
 

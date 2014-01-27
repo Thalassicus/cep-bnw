@@ -293,7 +293,7 @@ LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(DoReligiou
 
 function DoLeaderStartBonuses(player)
 	if Game.GetGameTurn() > 10 then
-		DoImmigration(player)
+		--DoImmigration(player)
 		DoCitystateSurrender(player)
 	end
 	DoLuxuryTradeBonus(player)
@@ -302,9 +302,9 @@ function DoLeaderStartBonuses(player)
 	local capital = player:GetCapitalCity()
 	
 	if traitInfo.HanseaticLeague then
-		building = GameInfo.Buildings[traitInfo.HanseaticLeague]
+		local building = GameInfo.Buildings[traitInfo.HanseaticLeague]
 		if building and capital then
-			capital:SetNumRealBuildings(building.ID, 1)
+			capital:SetNumRealBuilding(building.ID, 1)
 		end
 	end
 end

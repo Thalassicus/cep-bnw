@@ -19,6 +19,58 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Conquistador -- The new 'dummy' unit now correctly replaces the Conquistador once the religion spread is used
+*	Unused units -- Marine & Anti Tank Gun are now correctly removed in the Tech tree
+*	Obsolete code location -- The Scout obsolescence is handled by this code
+*	Spelling error fix
+*	Syntax error fix
+*	Handicap Modifications -- Incorporated the Google spreadsheet figures in a better format
+*	CityView.lua -- A number of 'fixes' to make CSD & CEP work nicely together
+*	DISABLE_GOLD_GIFTS -- This is now handled by the CSD mod
+*	Load order -- Rearranged the order of some files to fix certain bugs
+*	SQL load checks -- Added more checks for file loading
+*	CSD compatibility -- Changes by both sets of mod authors make using both these mods together possible
+*	Humanism -- This policy was unintentionally granting happiness from Research labs
+*	Greek words -- various texts that had Greek lettering were being corrupted
+*	Tradition wonder -- Tradition now has Banaue Rice Terraces as the wonder for its opener
+*	Modified AI promotion -- Removed the +2 visibility, removed accelerated XP gain & added garrison bonus
+*	Feed the World -- Reduced the food from 3 to 2
+*	Removed GP tweak -- the YIELD_CULTURE wasn't used by specialists so was removed to avoid possible future bugs
+*	Handicaps -- Moved various handicaps into difficulty specific sections
+*	Phalanx bonus -- This bonus should now correctly apply against MELEE units also
+*	Mercenary Army -- This policy should now grant the units it was supposed to grant
+*	Golden Age yield fix -- Effect now matches the description
+*	Candi -- This unique garden variant wasn't giving +1Food like other gardens
+*	Korean trait -- fixes the crossed over specialist yields
+*	Move after attack -- some promotions were removing the extra movement points after attacking, this is the fix
+*	Ceremonial Rites -- now gives Culture for buildings
+*	Unit resources -- removed the strategic resources from Gatling Guns, Machine Guns & Bazookas
+*	Walls -- conquest probability now at 25%
+*	Scouts upgrades -- Now obsolete at Metal Casting to allow longer periods of use
+*	spelling fix
+*	Divine Inspiration -- Should now generate Tourism for all wonders
+*	Babylonian UA text -- Only 1 Great Scientist
+*	Ranged Blitz text -- should now correctly show 90%
+*	Jungle farms -- the required tech is needed before farms may be built
+*	Caravans -- changed the value to make them more worthwhile
+*	AI updates
+*	CS information -- Text for the changed influence from removing barbarians for CS
+*	Ethiopian Stele -- Slight fix for the Stele
+*	Armies & Research -- refer to the [Releases](https://github.com/Thalassicus/cep-bnw/releases) page
+*	Renowned unit story -- Swordsman & Composite Bowman are now the units upgraded to
+*	Debug text -- Clarified the text
+*	City-state Capture -- changed the outcomes
+*	Ethiopia Fix -- The Stele is given +1Faith per pop.
+
+**3.13** -- AI Handicaps
+
+*	Possible Civilopedia crash fix -- Addresses the problem of different DLC content changing the files
+*	Ottoman Fix -- The Ottoman UA is now working as expected
+*	Armies -- Various changes to the military units
+*	Spelling fixes -- Policies had a few errors
+
+
+**3.12** -- Promotion Icons
 
 *	Stories -- Scout story updrade to 'Sentinel' error
 *	Syntax fix -- Production queue problem due to syntax error

@@ -365,13 +365,32 @@ FROM Civilizations WHERE Type IN (
 -- Dummy Conquistador with no religious spreads remaining, but still alive
 --
 
-/*
-INSERT INTO Unit_AITypes(UnitType, UnitAIType)							SELECT 'UNIT_SPANISH_CONQUISTADOR_2', UnitAIType	WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-INSERT INTO Unit_ClassUpgrades(UnitType, UnitClassType)					SELECT 'UNIT_SPANISH_CONQUISTADOR_2', UnitClassType	WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-INSERT INTO Unit_FreePromotions(UnitType, PromotionType)				SELECT 'UNIT_SPANISH_CONQUISTADOR_2', PromotionType	WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-INSERT INTO Unit_ResourceQuantityRequirements(UnitType, ResourceType)	SELECT 'UNIT_SPANISH_CONQUISTADOR_2', ResourceType	WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-INSERT INTO Unit_Flavors(UnitType, FlavorType, Flavor)					SELECT 'UNIT_SPANISH_CONQUISTADOR_2', FlavorType, Flavor WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-*/
+
+INSERT INTO Unit_AITypes(UnitType, UnitAIType)
+SELECT 'UNIT_SPANISH_CONQUISTADOR_NO_RELIGION', UnitAIType
+FROM Unit_AITypes
+WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+
+INSERT INTO Unit_ClassUpgrades(UnitType, UnitClassType)
+SELECT 'UNIT_SPANISH_CONQUISTADOR_NO_RELIGION', UnitClassType
+FROM Unit_ClassUpgrades
+WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+
+INSERT INTO Unit_FreePromotions(UnitType, PromotionType)
+SELECT 'UNIT_SPANISH_CONQUISTADOR_NO_RELIGION', PromotionType
+FROM Unit_FreePromotions
+WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+
+INSERT INTO Unit_ResourceQuantityRequirements(UnitType, ResourceType)
+SELECT 'UNIT_SPANISH_CONQUISTADOR_NO_RELIGION', ResourceType
+FROM Unit_ResourceQuantityRequirements
+WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+
+INSERT INTO Unit_Flavors(UnitType, FlavorType, Flavor)
+SELECT 'UNIT_SPANISH_CONQUISTADOR_NO_RELIGION', FlavorType, Flavor
+FROM Unit_Flavors
+WHERE UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+
 
 
 
