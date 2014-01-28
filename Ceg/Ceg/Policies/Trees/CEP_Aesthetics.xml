@@ -28,9 +28,9 @@
 			<Where Type="POLICY_ARTISTIC_GENIUS" />
 			<Set GridX="4"
 				 GridY="1"
-				 GreatWriterRateModifier="0"
-				 GreatArtistRateModifier="0"
-				 GreatMusicianRateModifier="0"
+				 GreatWriterRateModifier="25"
+				 GreatArtistRateModifier="25"
+				 GreatMusicianRateModifier="25"
 				 PortraitIndex="0"
 				 IconAtlas="POLICY_ATLAS_EXP2"
 				 IconAtlasAchieved="POLICY_A_ATLAS_EXP2"
