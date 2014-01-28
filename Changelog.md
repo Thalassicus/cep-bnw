@@ -19,6 +19,9 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	CSD visual error -- CSD civil servant was lacking a reference to an icon
+*	Reference & block -- A small reference fix for the mod 'Beyond the Future'
+*	Hanseatic League fix -- A rogue 's' corrupted the function call. grrrr!!!
 *	Conquistador -- The new 'dummy' unit now correctly replaces the Conquistador once the religion spread is used
 *	Unused units -- Marine & Anti Tank Gun are now correctly removed in the Tech tree
 *	Obsolete code location -- The Scout obsolescence is handled by this code
