@@ -24,7 +24,7 @@
 		</Update>
 		<Row>
 			<Type>BUILDING_GREAT_HALL</Type>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<BuildingClass>BUILDINGCLASS_GREAT_HALL</BuildingClass>
 			<Description>TXT_KEY_BUILDING_PALACE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PALACE_PEDIA</Civilopedia>

@@ -486,7 +486,7 @@
 		<Row>
 			<Type>BUILDING_TRIBUTE</Type>
 			<BuildingClass>BUILDINGCLASS_TRIBUTE</BuildingClass>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<Description>TXT_KEY_BUILDING_TRIBUTE</Description>
 			<Help>TXT_KEY_TRAIT_TRIBUTE</Help>
 			<AlwaysShowHelp>1</AlwaysShowHelp>

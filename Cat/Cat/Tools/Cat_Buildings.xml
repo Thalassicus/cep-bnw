@@ -130,7 +130,7 @@
 		<Row>
 			<Type>BUILDING_AI_GOLD</Type>
 			<BuildingClass>BUILDINGCLASS_AI_GOLD</BuildingClass>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<Description>TXT_KEY_BUILDING_AI_GOLD</Description>
 			<AlwaysShowHelp>true</AlwaysShowHelp>
 			<ArtDefineTag>PALACE</ArtDefineTag>
@@ -146,7 +146,7 @@
 		<Row>
 			<Type>BUILDING_AI_PRODUCTION</Type>
 			<BuildingClass>BUILDINGCLASS_AI_PRODUCTION</BuildingClass>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<Description>TXT_KEY_BUILDING_AI_PRODUCTION</Description>
 			<AlwaysShowHelp>true</AlwaysShowHelp>
 			<ArtDefineTag>PALACE</ArtDefineTag>
@@ -162,7 +162,7 @@
 		<Row>
 			<Type>BUILDING_AI_SCIENCE</Type>
 			<BuildingClass>BUILDINGCLASS_AI_SCIENCE</BuildingClass>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<Description>TXT_KEY_BUILDING_AI_SCIENCE</Description>
 			<AlwaysShowHelp>true</AlwaysShowHelp>
 			<ArtDefineTag>PALACE</ArtDefineTag>
@@ -178,7 +178,7 @@
 		<Row>
 			<Type>BUILDING_AI_CULTURE</Type>
 			<BuildingClass>BUILDINGCLASS_AI_CULTURE</BuildingClass>
-			<Cost>0</Cost>
+			<Cost>-1</Cost>
 			<Description>TXT_KEY_BUILDING_AI_CULTURE</Description>
 			<AlwaysShowHelp>true</AlwaysShowHelp>
 			<ArtDefineTag>PALACE</ArtDefineTag>
