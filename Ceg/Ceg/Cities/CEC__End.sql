@@ -521,5 +521,7 @@ UPDATE Buildings SET Description='TXT_KEY_BUILDING_SMITH',               Civilop
 
 UPDATE BuildingClasses SET Description = (SELECT Description FROM Buildings b WHERE BuildingClasses.DefaultBuilding = b.Type);
 
+UPDATE Buildings SET Cost = -1 WHERE Cost <= 0;
+
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEC__End.sql';
