@@ -31,9 +31,9 @@ UPDATE Resources SET Water = 1 WHERE Type IN (
 	  AND improve.Water = 1
 	  );
 
-UPDATE CitySpecialization_TargetYields
-SET Yield = 50
-WHERE YieldType = 'YIELD_FOOD';
+--UPDATE CitySpecialization_TargetYields
+--SET Yield = 50
+--WHERE YieldType = 'YIELD_FOOD';
 
 UPDATE UnitCombatInfos SET FlavorType = 'FLAVOR_OFFENSE';
 UPDATE UnitCombatInfos SET FlavorType = 'FLAVOR_RECON'			WHERE Type IN ('UNITCOMBAT_RECON' );
