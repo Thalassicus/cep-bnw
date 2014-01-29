@@ -5,12 +5,14 @@
 			<Where Type="YIELD_FOOD" />
 			<Set MinCity="3"
 				 AIWeightPercent="125"
+				 GoldenAgeSurplusYieldMod="20"
 				 />
 		</Update>
 		<Update>
 			<Where Type="YIELD_PRODUCTION" />
 			<Set MinCity="3"
 				 AIWeightPercent="100"
+				 GoldenAgeYieldMod="20"
 				 />
 		</Update>
 		<Update>
@@ -18,21 +20,25 @@
 			<Set MinCity="1"
 				 AIWeightPercent="100"
 				 GoldenAgeYield="0"
+				 GoldenAgeYieldMod="20"
 				 />
 		</Update>
 		<Update>
 			<Where Type="YIELD_SCIENCE" />
 			<Set AIWeightPercent="125"
+				 GoldenAgeYieldMod="20"
 				 />
 		</Update>
 		<Update>
 			<Where Type="YIELD_CULTURE" />
 			<Set AIWeightPercent="100"
+				 GoldenAgeYieldMod="20"
 				 />
 		</Update>
 		<Update>
 			<Where Type="YIELD_FAITH" />
 			<Set AIWeightPercent="100"
+				 GoldenAgeYieldMod="20"
 				 />
 		</Update>
 	</Yields>
