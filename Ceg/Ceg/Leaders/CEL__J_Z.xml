@@ -957,7 +957,6 @@
 		</Update>
 	</Units>
 	<!-- Dummy Conquistador with no religious spreads remaining, but still alive -->
-	<!--Hotfix: Removed until fixed so it isn't buildable by all civs -->
 	<Units>
 		<Row>
 			<Class>UNITCLASS_KNIGHT</Class>
