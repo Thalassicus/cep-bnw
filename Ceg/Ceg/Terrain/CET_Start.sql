@@ -63,7 +63,7 @@ UPDATE Resources SET TechCityTrade = 'TECH_ARCHERY' WHERE TechCityTrade = 'TECH_
 
 -- Buff jungles and forests
 INSERT INTO BuildFeatures (BuildType, FeatureType, PrereqTech, Time, Remove)
-VALUES ('BUILD_CAMP', 'FEATURE_MARSH', 'TECH_MASONRY', '600', 1);
+VALUES ('BUILD_CAMP', 'FEATURE_MARSH', 'TECH_BRONZE_WORKING', '600', 1);
 
 -- Polder specific code lacking in the BuildFeatures table
 INSERT INTO BuildFeatures (BuildType, FeatureType, PrereqTech, Time, Production, Remove)
