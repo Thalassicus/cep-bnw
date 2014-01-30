@@ -9,6 +9,7 @@ include( "SupportFunctions"  );
 include( "TutorialPopupScreen" );
 include( "InfoTooltipInclude" );
 
+print("CEP CityView.lua")
 
 local g_BuildingIM   = InstanceManager:new( "BuildingInstance", "BuildingButton", Controls.BuildingStack );
 local g_GPIM   = InstanceManager:new( "GPInstance", "GPBox", Controls.GPStack );
