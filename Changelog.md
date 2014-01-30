@@ -19,6 +19,9 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Policy adjustments -- Citizenship grants 1 Worker, Cultural Diplomacy gives a 10% boost to Great People production, Ethics now 25% to Tourism
+*	Artistic Genius -- Fixes the Great person rates
+*	Spelling error -- minor hang over from previous spelling fix
 *	CSD visual error -- CSD civil servant was lacking a reference to an icon
 *	Reference & block -- A small reference fix for the mod 'Beyond the Future'
 *	Hanseatic League fix -- A rogue 's' corrupted the function call. grrrr!!!

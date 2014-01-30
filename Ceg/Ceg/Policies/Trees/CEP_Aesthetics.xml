@@ -62,9 +62,9 @@
 			<Where Type="POLICY_ETHICS" />
 			<Set GridX="5"
 				 GridY="2"
-				 SharedReligionTourismModifier="15"
-				 TradeRouteTourismModifier="15"
-				 OpenBordersTourismModifier="15"
+				 SharedReligionTourismModifier="25"
+				 TradeRouteTourismModifier="25"
+				 OpenBordersTourismModifier="25"
 				 ThemingBonusMultiplier="100"
 				 PortraitIndex="16"
 				 IconAtlas="POLICY_ATLAS"

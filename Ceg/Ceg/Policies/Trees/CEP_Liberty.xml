@@ -89,7 +89,7 @@
 		<Row>
 			<PolicyType>POLICY_CITIZENSHIP</PolicyType>
 			<UnitClassType>UNITCLASS_WORKER</UnitClassType>
-			<Count>2</Count>
+			<Count>1</Count>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_COLLECTIVE_RULE</PolicyType>
