@@ -16,6 +16,10 @@ SET HurryCostModifier = -1
 WHERE Special = 'SPECIALUNIT_PEOPLE'
 AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
 
+UPDATE Buildings
+SET TradeRouteLandDistanceModifier = TradeRouteLandDistanceModifier * 2, TradeRouteLandGoldBonus = TradeRouteLandGoldBonus * 2
+WHERE BuildingClass IN ('BUILDINGCLASS_CARAVANSARY');
+
 
 UPDATE Buildings
 SET Cost = Cost * 2

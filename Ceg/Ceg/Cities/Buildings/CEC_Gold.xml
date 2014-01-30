@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Buildings>
+<!-- 		moved to CEC__Start.sql
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_CARAVANSARY"/>
 			<Set TradeRouteLandDistanceModifier="100"
-				 TradeRouteLandGoldBonus="400"
-				 />
+			TradeRouteLandGoldBonus="400"
+			/>
 		</Update>
+-->
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_HARBOR"/>
 			<Set TradeRouteSeaGoldBonus="0"
