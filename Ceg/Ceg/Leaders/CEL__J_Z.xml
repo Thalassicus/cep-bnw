@@ -346,7 +346,7 @@
 			<IsVisible>1</IsVisible>
 			<ShowInPedia>true</ShowInPedia>
 			<TradeRouteLandGoldBonus>200</TradeRouteLandGoldBonus>
-			<TradeRouteLandDistanceModifier>150</TradeRouteLandDistanceModifier>
+			<TradeRouteLandDistanceModifier>75</TradeRouteLandDistanceModifier>
 		</Row>
 	</Buildings>
 	<Building_Flavors>
