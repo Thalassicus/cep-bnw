@@ -311,7 +311,7 @@
 		<Update>
 			<Where Type="BUILDING_STONEHENGE" />
 			<Set GreatPeopleRateChange="1"
-				 Help="TXT_KEY_GENERIC"
+				 Help="TXT_KEY_WONDER_STONEHENGE_HELP"
 				 />
 		</Update>
 		<Update>
