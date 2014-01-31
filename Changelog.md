@@ -19,6 +19,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Policy adjustments 2  --  CounterIntelligence doubles anti-spy building production, Secularism increases Science from specialists
 *	Policy adjustments -- Citizenship grants 1 Worker, Cultural Diplomacy gives a 10% boost to Great People production, Ethics now 25% to Tourism
 *	Artistic Genius -- Fixes the Great person rates
 *	Spelling error -- minor hang over from previous spelling fix

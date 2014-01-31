@@ -52,6 +52,7 @@
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<StealTechFasterModifier>25</StealTechFasterModifier>
 			<StealTechSlowerModifier>25</StealTechSlowerModifier>
 			<CatchSpiesModifier>25</CatchSpiesModifier>
 		</Row>
@@ -60,7 +61,11 @@
 		
 	</Policy_SpecialistYieldChanges>
 	<Policy_SpecialistExtraYields>
-		
+		<Row>
+			<PolicyType>POLICY_SECULARISM</PolicyType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>4</Yield>
+		</Row>
 	</Policy_SpecialistExtraYields>
 	<Policy_ImprovementYieldChanges>
 		
@@ -103,7 +108,16 @@
 		-->
 	</Policy_BuildingClassYieldModifiers>
 	<Policy_BuildingClassProductionModifiers>
-		
+		<Row>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>		
 	</Policy_BuildingClassProductionModifiers>
 	<!--<Buildings>
 		<Update>
