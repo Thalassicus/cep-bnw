@@ -72,7 +72,7 @@
 	<Policy_CapitalYieldPerPopChanges>
 		<PolicyType>POLICY_LANDED_ELITE</PolicyType>
 		<YieldType>YIELD_FOOD</YieldType>
-		<Yield>50</Yield>
+		<Yield>25</Yield>
 	</Policy_CapitalYieldPerPopChanges>
 	
 	<Policy_CityYieldChanges>

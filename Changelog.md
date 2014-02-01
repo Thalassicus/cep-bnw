@@ -19,7 +19,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
-*	Policy adjustments 3  --  Landed Elite now provides 1 Food per 2 pop in the capital in addition to the already city yields
+*	Policy adjustments 3  --  Landed Elite now provides 1 Food per 4 pop in the capital, Spoils of War gives 3x the value of units.
 *	Policy adjustments 2  --  CounterIntelligence doubles anti-spy building production, Secularism increases Science from specialists
 *	Policy adjustments -- Citizenship grants 1 Worker, Cultural Diplomacy gives a 10% boost to Great People production, Ethics now 25% to Tourism
 *	Artistic Genius -- Fixes the Great person rates
