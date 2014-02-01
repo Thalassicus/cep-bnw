@@ -19,6 +19,7 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+*	Feature tweaks  --  Made reefs & isles negatively affect defense, due to limited manouverability, and made it possible to see over atolls/isles
 *	Caravansary fix -- Fixes the global caravan change that made the UB variants the same as vanilla
 *	CityView debug  --  Added a DEBUG check into the CityView.lua file
 *	Allotment  --  Added text to the Swedish trait promotion

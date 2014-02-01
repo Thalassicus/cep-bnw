@@ -78,7 +78,11 @@
 		</Update>
 		<Update>
 			<Where Type="FEATURE_ATOLL" />
-			<Set Rough="1" Defense="10" Movement="1" SeeThrough="1" />
+			<Set Rough="1" Defense="-10" Movement="2" />
+		</Update>
+		<Update>
+			<Where Type="FEATURE_REEF" />
+			<Set Defense="-10" Movement="2" />
 		</Update>
 		<Update>
 			<Where Type="FEATURE_MARSH" />
