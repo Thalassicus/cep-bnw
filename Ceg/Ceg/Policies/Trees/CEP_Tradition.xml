@@ -69,9 +69,11 @@
 		</Row>
 	</Policy_FreeBuildingFlavor>
 
-	<Policy_CapitalYieldChanges>
-		<Delete PolicyType="POLICY_LANDED_ELITE" />
-	</Policy_CapitalYieldChanges>
+	<Policy_CapitalYieldPerPopChanges>
+		<PolicyType>POLICY_LANDED_ELITE</PolicyType>
+		<YieldType>YIELD_FOOD</YieldType>
+		<Yield>50</Yield>
+	</Policy_CapitalYieldPerPopChanges>
 	
 	<Policy_CityYieldChanges>
 		<Row>
