@@ -298,5 +298,17 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
+UPDATE Policies
+SET GridX = 2, GridY = 1
+WHERE Type = 'POLICY_PHILANTHROPY';
+
+UPDATE Policies
+SET MinorGoldFriendshipMod = 0
+WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
+
+INSERT INTO Policy_BuildingClassHappiness
+(PolicyType, BuildingClassType, Happiness)
+SELECT 'POLICY_PHILANTHROPY', 'BUILDINGCLASS_SCRIBE', '1'
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEP_End.sql';
