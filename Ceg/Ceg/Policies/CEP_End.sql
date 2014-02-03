@@ -298,6 +298,12 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
+--CSD Compatibility
+
+UPDATE Policies
+SET Help = 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD'
+WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
+
 UPDATE Policies
 SET MinorGoldFriendshipMod = 0
 WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
