@@ -101,7 +101,13 @@
 			<Happiness>1</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
-	
+	<Policy_FreeUnitFlavor>
+		<Row>
+			<PolicyType>POLICY_GLADIATORS</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitFlavor>
 	<!--
 	<Policies>
 		<Update>
