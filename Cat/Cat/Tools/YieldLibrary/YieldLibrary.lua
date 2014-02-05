@@ -2244,6 +2244,14 @@ function City_UpdateModdedYields(city, player)
 		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
 	end
 	
+	yieldID = YieldTypes.YIELD_FAITH
+	vanillaYield = city:GetFaithPerTurn()
+	modYield = City_GetYieldRate(city, yieldID)
+	if modYield ~= vanillaYield then
+		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to culture)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
+		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
+	end
+	
 	--[[
 	if City_GetNumBuilding(city, GameInfo.Buildings.BUILDING_NATIONAL_EPIC.ID) >= 1 then
 		for policyInfo in GameInfo.Policy_BuildingClassYieldModifiers("YieldType = 'YIELD_GREAT_PEOPLE'") do
