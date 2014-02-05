@@ -9,6 +9,8 @@ include( "SupportFunctions"  );
 include( "TutorialPopupScreen" );
 include( "InfoTooltipInclude" );
 
+local log = Events.LuaLogger:New()
+log:SetLevel("WARN")
 
 local g_BuildingIM   = InstanceManager:new( "BuildingInstance", "BuildingButton", Controls.BuildingStack );
 local g_GPIM   = InstanceManager:new( "GPInstance", "GPBox", Controls.GPStack );
@@ -32,6 +34,11 @@ local specialistTable = {};
 local g_iBuildingToSell = -1;
 
 local g_bRazeButtonDisabled = false;
+
+function FormatYield(num)
+	num = Game.Round(num)
+	return (num >= 0) and num or string.format("[COLOR_WARNING_TEXT]%s[ENDCOLOR]", num)
+end
 
 -- Add any interface modes that need special processing to this table
 local InterfaceModeMessageHandler = 
@@ -879,29 +886,6 @@ function OnCityViewUpdate()
  		CivIconHookup( pPlayer:GetID(), 64, Controls.CivIcon, Controls.CivIconBG, Controls.CivIconShadow, false, true );
 		
 		-------------------------------------------
-		-- Growth Meter
-		-------------------------------------------
-		local iCurrentFood = pCity:GetFood();
-		local iFoodNeeded = pCity:GrowthThreshold();
-		local iFoodPerTurn = pCity:FoodDifference();
-		local iCurrentFoodPlusThisTurn = iCurrentFood + iFoodPerTurn;
-		
-		local fGrowthProgressPercent = iCurrentFood / iFoodNeeded;
-		local fGrowthProgressPlusThisTurnPercent = iCurrentFoodPlusThisTurn / iFoodNeeded;
-		if (fGrowthProgressPlusThisTurnPercent > 1) then
-			fGrowthProgressPlusThisTurnPercent = 1
-		end
-		
-		local iTurnsToGrowth = pCity:GetFoodTurnsLeft();
-		
-		local cityPopulation = math.floor(pCity:GetPopulation());
-		Controls.CityPopulationLabel:SetText(tostring(cityPopulation));
-		Controls.PeopleMeter:SetPercent( pCity:GetFood() / pCity:GrowthThreshold() );
-		
-		--Update suffix to use correct plurality.
-		Controls.CityPopulationLabelSuffix:LocalizeAndSetText("TXT_KEY_CITYVIEW_CITIZENS_TEXT", cityPopulation);
-
-		-------------------------------------------
 		-- Deal with the production queue buttons
 		-------------------------------------------
 		local qLength = pCity:GetOrderQueueLength();
@@ -1048,12 +1032,6 @@ function OnCityViewUpdate()
 			Controls.ProductionHelp:SetHide(true);
 		end
 
-		-------------------------------------------
-		-- Production
-		-------------------------------------------
-		
-		DoUpdateProductionInfo( noProduction );
-		
 		-------------------------------------------
 		-- Buildings (etc.) List
 		-------------------------------------------
@@ -1651,71 +1629,62 @@ function OnCityViewUpdate()
 		DoUpdateUpperLeftTooltips();
 		
 		-- display gold income
-		local iGoldPerTurn = pCity:GetYieldRateTimes100(YieldTypes.YIELD_GOLD) / 100;
-		Controls.GoldPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iGoldPerTurn) );
-		--Controls.ProdBox:SetToolTipString(strToolTip);
-		
+		Controls.GoldPerTurnLabel:SetText(FormatYield(City_GetYieldRate(pCity, YieldTypes.YIELD_GOLD)))
+
 		-- display science income
 		if (Game.IsOption(GameOptionTypes.GAMEOPTION_NO_SCIENCE)) then
 			Controls.SciencePerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_OFF") );
 		else
-			local iSciencePerTurn = pCity:GetYieldRateTimes100(YieldTypes.YIELD_SCIENCE) / 100;
-			Controls.SciencePerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iSciencePerTurn) );
+			Controls.SciencePerTurnLabel:SetText(FormatYield(City_GetYieldRate(pCity, YieldTypes.YIELD_SCIENCE)))
 		end
 		--Controls.ScienceBox:SetToolTipString(strToolTip);
 		
-		local iCulturePerTurn = pCity:GetJONSCulturePerTurn();
-		Controls.CulturePerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iCulturePerTurn) );
-		--Controls.CultureBox:SetToolTipString(strToolTip);
-		local cultureStored = pCity:GetJONSCultureStored();
-		local cultureNext = pCity:GetJONSCultureThreshold();
-		local cultureDiff = cultureNext - cultureStored;
-		if iCulturePerTurn > 0 then
-			local cultureTurns = math.ceil(cultureDiff / iCulturePerTurn);
-			if (cultureTurns < 1) then
-			   cultureTurns = 1
-			end
+		--display culture income
+		Controls.CulturePerTurnLabel:SetText(FormatYield(City_GetYieldRate(pCity, YieldTypes.YIELD_CULTURE)))
+		local cultureTurns = City_GetYieldTurns(pCity, YieldTypes.YIELD_CULTURE)
+		if cultureTurns ~= math.huge then
 			Controls.CultureTimeTillGrowthLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_TURNS_TILL_TILE_TEXT", cultureTurns) );
 			Controls.CultureTimeTillGrowthLabel:SetHide( false );
 		else
 			Controls.CultureTimeTillGrowthLabel:SetHide( true );
 		end
-		local percentComplete = cultureStored / cultureNext;
-		Controls.CultureMeter:SetPercent( percentComplete );
+		Controls.CultureMeter:SetPercent( City_GetYieldStored(pCity, YieldTypes.YIELD_CULTURE) / City_GetYieldNeeded(pCity, YieldTypes.YIELD_CULTURE) )
 		
+		--display faith income
 		if (Game.IsOption(GameOptionTypes.GAMEOPTION_NO_RELIGION)) then
 			Controls.FaithPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_OFF") );
 		else
-			local iFaithPerTurn = pCity:GetFaithPerTurn();
-			Controls.FaithPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iFaithPerTurn) );
+			Controls.FaithPerTurnLabel:SetText( FormatYield(City_GetYieldRate(pCity, YieldTypes.YIELD_FAITH)) )
 		end
 		
+		--display tourism income
 		local iTourismPerTurn = pCity:GetBaseTourism();
 		Controls.TourismPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iTourismPerTurn) );
 	
-
-		local cityGrowth = pCity:GetFoodTurnsLeft();			
-		if (pCity:IsFoodProduction() or pCity:FoodDifferenceTimes100() == 0) then
-			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_STAGNATION_TEXT"));
-		elseif pCity:FoodDifference() < 0 then
-			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_STARVATION_TEXT"));
-		else
-			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_TURNS_TILL_CITIZEN_TEXT", cityGrowth));
-		end
-		local iFoodPerTurn = pCity:FoodDifferenceTimes100() / 100;
+		--display food income
+		local cityPopulation			= math.floor(pCity:GetPopulation())
+		local yieldRate					= pCity:IsFoodProduction() and 0 or City_GetYieldRate(pCity, YieldTypes.YIELD_FOOD)
+		local yieldNeeded				= City_GetYieldNeeded(pCity, YieldTypes.YIELD_FOOD)
+		local yieldStored				= City_GetYieldStored(pCity, YieldTypes.YIELD_FOOD)
+		local yieldStoredPlusTurn		= yieldStored + yieldRate		
+		local yieldPercent				= yieldStored / yieldNeeded
+		local yieldPercentPlusTurn		= math.min(1, yieldStoredPlusTurn / yieldNeeded)
 		
-		if (iFoodPerTurn >= 0) then
-			Controls.FoodPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iFoodPerTurn) );
+		Controls.FoodPerTurnLabel:SetText(FormatYield(yieldRate))
+		Controls.CityPopulationLabel:SetText(cityPopulation)
+		Controls.CityPopulationLabelSuffix:LocalizeAndSetText("TXT_KEY_CITYVIEW_CITIZENS_TEXT", cityPopulation)
+		Controls.PeopleMeter:SetPercent(yieldPercent)
+		
+		if yieldRate == 0 then
+			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_STAGNATION_TEXT"))
+		elseif yieldRate < 0 then
+			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_STARVATION_TEXT"))
 		else
-			Controls.FoodPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT_NEGATIVE", iFoodPerTurn) );
+			Controls.CityGrowthLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CITYVIEW_TURNS_TILL_CITIZEN_TEXT", City_GetYieldTurns(pCity, YieldTypes.YIELD_FOOD)))
 		end
-
-		local iCurrentFood = pCity:GetFood();
-		local iFoodNeeded = pCity:GrowthThreshold();
-		local iFoodDiff = pCity:FoodDifference();
-		local iCurrentFoodPlusThisTurn = iCurrentFood + iFoodDiff;
-			
-		local fGrowthProgressPercent = iCurrentFood / iFoodNeeded;			
+		
+		--display production income
+		DoUpdateProductionInfo( noProduction )
 		
 		-- Viewing mode only
 		if (UI.IsCityScreenViewingMode()) then
@@ -1839,35 +1808,27 @@ end
 -------------------------------------------------
 function DoUpdateProductionInfo( bNoProduction )
 	
-	local pCity = UI.GetHeadSelectedCity();
-	local pPlayer = Players[pCity:GetOwner()];
+	local city = UI.GetHeadSelectedCity()
+	local player = Players[city:GetOwner()]
 
 	-- Production stored and needed
-	local iStoredProduction = pCity:GetProductionTimes100() / 100;
-	local iProductionNeeded = pCity:GetProductionNeeded();
-	if (pCity:IsProductionProcess()) then
-		iProductionNeeded = 0;
+	local yieldStored = City_GetYieldStored(city, YieldTypes.YIELD_PRODUCTION)
+	local yieldNeeded = City_GetYieldNeeded(city, YieldTypes.YIELD_PRODUCTION)
+	if (city:IsProductionProcess()) then
+		yieldNeeded = 0
 	end
 	
 	-- Base Production per turn
-	local iProductionPerTurn = pCity:GetCurrentProductionDifferenceTimes100(false, false) / 100;--pCity:GetYieldRate(YieldTypes.YIELD_PRODUCTION);
-	local iProductionModifier = pCity:GetProductionModifier() + 100;
-	--iProductionPerTurn = iProductionPerTurn * iProductionModifier;
-	--iProductionPerTurn = iProductionPerTurn / 100;
+	local yieldRate = City_GetYieldRate(city, YieldTypes.YIELD_PRODUCTION)
+	local yieldMod = city:GetProductionModifier() + 100
 	
-	-- Item being produced with food? (e.g. Settlers)
-	--if (pCity:IsFoodProduction()) then
-		--iProductionPerTurn = iProductionPerTurn + pCity:GetYieldRate(YieldTypes.YIELD_FOOD) - pCity:FoodConsumption(true);
-	--end
-	
-	local strProductionPerTurn = Locale.ConvertTextKey("TXT_KEY_CITY_SCREEN_PROD_PER_TURN", iProductionPerTurn);
-	Controls.ProductionOutput:SetText(strProductionPerTurn);
+	Controls.ProductionOutput:SetText(Locale.ConvertTextKey("TXT_KEY_CITY_SCREEN_PROD_PER_TURN", Game.Round(yieldRate)))
 	
 	-- Progress info for meter
-	local iStoredProductionPlusThisTurn = iStoredProduction + iProductionPerTurn;
+	local yieldStoredPlusThisTurn = yieldStored + yieldRate
 	
-	local fProductionProgressPercent = iStoredProduction / iProductionNeeded;
-	local fProductionProgressPlusThisTurnPercent = iStoredProductionPlusThisTurn / iProductionNeeded;
+	local fProductionProgressPercent = yieldStored / yieldNeeded
+	local fProductionProgressPlusThisTurnPercent = yieldStoredPlusThisTurn / yieldNeeded
 	if (fProductionProgressPlusThisTurnPercent > 1) then
 		fProductionProgressPlusThisTurnPercent = 1
 	end
@@ -1875,9 +1836,9 @@ function DoUpdateProductionInfo( bNoProduction )
 	Controls.ProductionMeter:SetPercents( fProductionProgressPercent, fProductionProgressPlusThisTurnPercent );
 	
 	-- Turns left
-	local productionTurnsLeft = pCity:GetProductionTurnsLeft();
+	local productionTurnsLeft = City_GetYieldTurns(city, YieldTypes.YIELD_PRODUCTION)
 	
-	--if pCity:IsOccupation() then
+	--if city:IsOccupation() then
 		--Controls.ProductionTurnsLabel:SetText(" (City in unrest)");
 	--else
 	
@@ -1890,14 +1851,14 @@ function DoUpdateProductionInfo( bNoProduction )
 	
 	
 	
-	local bGeneratingProduction = pCity:IsProductionProcess() or pCity:GetCurrentProductionDifferenceTimes100(false, false) == 0;
+	local bGeneratingProduction = city:IsProductionProcess() or City_GetYieldRate(city, YieldTypes.YIELD_PRODUCTION) == 0
 	
 	if (bGeneratingProduction) then
 		strNumTurns = "";
 	end
 	
 	-- Indicator for the fact that the empire is very unhappy
-	if (pPlayer:IsEmpireVeryUnhappy()) then
+	if (player:IsEmpireVeryUnhappy()) then
 		strNumTurns = strNumTurns .. " [ICON_HAPPINESS_4]";
 	end
 	
@@ -1925,23 +1886,23 @@ function DoUpdateProductionInfo( bNoProduction )
 	if (bNoProduction) then
 		strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_HELP_NOTHING");
 	else
-		if (not pCity:IsProductionProcess()) then
-			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_HELP_TEXT", pCity:GetProductionNameKey(), strNumTurns);
+		if (not city:IsProductionProcess()) then
+			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_HELP_TEXT", city:GetProductionNameKey(), strNumTurns)
 			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_PROGRESS", iStoredProduction, iProductionNeeded);
+			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_PROGRESS", yieldStored, yieldNeeded)
 		end
 	end
 	
-	local iBaseProductionPT = pCity:GetBaseYieldRate(YieldTypes.YIELD_PRODUCTION);
+	local iBaseProductionPT = city:GetBaseYieldRate(YieldTypes.YIELD_PRODUCTION)
 	
 	-- Output
 	local strBase = Locale.ConvertTextKey("TXT_KEY_YIELD_BASE", iBaseProductionPT, "[ICON_PRODUCTION]");
-	local strTotal = Locale.ConvertTextKey("TXT_KEY_YIELD_TOTAL", iProductionPerTurn, "[ICON_PRODUCTION]");
+	local strTotal = Locale.ConvertTextKey("TXT_KEY_YIELD_TOTAL", yieldRate, "[ICON_PRODUCTION]")
 	local strOutput = strBase .. "[NEWLINE]" .. strTotal;
 	strToolTip = strToolTip .. "[NEWLINE]";
 	
 	-- This builds the tooltip from C++
-	local strCodeToolTip = pCity:GetYieldModifierTooltip(YieldTypes.YIELD_PRODUCTION);
+	local strCodeToolTip = city:GetYieldModifierTooltip(YieldTypes.YIELD_PRODUCTION)
 	if (strCodeToolTip ~= "") then
 		strOutput = strOutput .. "[NEWLINE]----------------" .. strCodeToolTip;
 	end
@@ -1952,9 +1913,9 @@ function DoUpdateProductionInfo( bNoProduction )
 	Controls.ProductionPortraitButton:SetToolTipString(strToolTip);
 	
 	-- Info for the upper-left display
-	Controls.ProdPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iProductionPerTurn) );
+	Controls.ProdPerTurnLabel:SetText(FormatYield(yieldRate))
 	
-	local strProductionHelp = GetProductionTooltip(pCity);
+	local strProductionHelp = GetYieldTooltip(city, YieldTypes.YIELD_PRODUCTION)
 	
 	Controls.ProdBox:SetToolTipString(strProductionHelp);
 	
