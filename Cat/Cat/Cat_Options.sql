@@ -3,21 +3,19 @@
 You can change most options in this file at any time, unless indicated otherwise.
 Changes take effect the next time you start or load a game with Communitas.
 
-For example, if you are using the "Citystate Diplomacy" mod change the lines that read:
+For example, if you don't want barbarians to upgrade and earn promotions from combat change the lines that read:
 
 	INSERT INTO Cep (Type, Value)
-	VALUES ('USING_CSD', 0);
+	VALUES ('BARBARIANS_UPGRADE', 1);
 
 ...change to...
 
 	INSERT INTO Cep (Type, Value)
-	VALUES ('USING_CSD', 1);
+	VALUES ('BARBARIANS_UPGRADE', 0);
 
 Then start a new game.
 
 */
-
-
 
 -------------
 -- Options --
@@ -40,18 +38,8 @@ JA_JP	Nihongo			Japanese
 PL_PL	Polski			Polish
 RU_RU	Russkij Jazyk	Russian
 ZH_CN	Zhongwen		Chinese
-
 */
 INSERT INTO Cep (Type, Value) VALUES ('LANGUAGE', 'EN_US');
-
-
-/*
-CityState Diplomacy Mod Compatibility
-1 = using CSD and Cep
-0 = not using CSD and Cep
-*/
-INSERT INTO Cep (Type, Value) VALUES ('USING_CSD', 0);
-
 
 /*
 Good For
@@ -62,7 +50,6 @@ This is helpful for people new to the game or analyzing balance.
 1 = show Good For
 0 = hide Good For
 */
-
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_UNITS',		1);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_BUILDINGS',	1);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_POLICIES',		1);
@@ -174,7 +161,10 @@ UPDATE Technologies SET AudioIntroHeader = "" WHERE EXISTS
 UPDATE Technologies SET AudioIntro = "" WHERE EXISTS 
 (SELECT Value FROM Cep WHERE Type='PLAY_SPEECH_TECHS' AND Value=0);
 
+/*
+CityState Diplomacy Mod Compatibility
+*/
+INSERT INTO Cep (Type, Value) VALUES ('USING_CSD', 0);
 UPDATE Cep SET Value = 1 WHERE Type='USING_CSD' AND EXISTS(SELECT name FROM sqlite_master WHERE type='table' AND name='CSD');
-
 
 UPDATE LoadedFile SET Value=1 WHERE Type='Cat_Options.sql';
