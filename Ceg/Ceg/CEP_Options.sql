@@ -63,7 +63,25 @@ Ship Boarding
 0 = land units can not board military ships
 */
 INSERT INTO Cep (Type, Value)
-VALUES ('SHIP_BOARDING', 0); -- default 1
+VALUES ('SHIP_BOARDING', 0); -- default 0
+
+
+/*
+Barbarians Upgrade
+1 = barbarians upgrade in camps
+0 = barbarians do not upgrade 
+*/
+INSERT INTO Cep (Type, Value)
+VALUES ('BARBARIANS_UPGRADE', 1);
+
+
+/*
+Barbarians Heal
+1 = barbarians heal when fortified
+0 = barbarians do not heal
+*/
+INSERT INTO Cep (Type, Value)
+VALUES ('BARBARIANS_HEAL', 1);
 
 
 

@@ -3,15 +3,13 @@
 You can change most options in this file at any time, unless indicated otherwise.
 Changes take effect the next time you start or load a game with Communitas.
 
-For example, if you don't want barbarians to upgrade and earn promotions from combat change the lines that read:
+For example, if you want to hear speech when a wonder is finished:
 
-	INSERT INTO Cep (Type, Value)
-	VALUES ('BARBARIANS_UPGRADE', 1);
+INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_WONDERS'		, 0);
 
 ...change to...
 
-	INSERT INTO Cep (Type, Value)
-	VALUES ('BARBARIANS_UPGRADE', 0);
+INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_WONDERS'		, 1);
 
 Then start a new game.
 
@@ -58,24 +56,6 @@ INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_BUILDS',		1);
 
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_RAW_NUMBERS',	0);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_AI_NUMBERS',	0);
-
-
-/*
-Barbarians Upgrade
-1 = barbarians upgrade in camps
-0 = barbarians do not upgrade 
-*/
-INSERT INTO Cep (Type, Value)
-VALUES ('BARBARIANS_UPGRADE', 1);
-
-
-/*
-Barbarians Heal
-1 = barbarians heal when fortified
-0 = barbarians do not heal
-*/
-INSERT INTO Cep (Type, Value)
-VALUES ('BARBARIANS_HEAL', 1);
 
 
 /*
