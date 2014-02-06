@@ -231,11 +231,11 @@
 			<Set Value="10" />
 			<!-- 5 -->
 		</Update>
-		<Update>
+		<!--<Update>
 			<Where Name="MAXIMUM_BUY_PLOT_DISTANCE" />
 			<Set Value="4" />
-			<!-- 3 -->
-		</Update>
+			--><!-- 3 --><!--
+		</Update>-->
 		
 		
 		<Update>
