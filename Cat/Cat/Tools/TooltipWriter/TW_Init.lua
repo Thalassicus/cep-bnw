@@ -112,14 +112,17 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 		})
 		
 	elseif lineType == "Cost" then
-		if GameInfo.Buildings[objectID].Cost > 0 then
+		local prodCost = objectInfo.Cost
+		if prodCost > 0 then
 			lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
 			InsertBuildingSubStat()
+		elseif prodCost == -1 and objectInfo.FaithCost ~= -1 then
+			if city then
+				lineValue = city:GetBuildingFaithPurchaseCost(objectInfo.ID, true)
+			else
+				lineValue = objectInfo.FaithCost * Game.GetSpeedInfo().ConstructPercent
+			end
 		end
-		
-	elseif lineType == "FaithCost" then
-		lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
-		InsertBuildingSubStat()
 
 	elseif lineType == "HurryCostModifier" then
 		if objectInfo.Cost <= 0 or objectInfo[lineType] == -1 then return {} end
