@@ -101,8 +101,11 @@
 			<Happiness>1</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
-	
-	<!--
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
+	</Policy_BuildingClassProductionModifiers>
+
+		<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_HONOR" />
