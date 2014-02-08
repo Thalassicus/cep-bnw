@@ -67,6 +67,12 @@
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_SEAPORT</BuildingClassType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<YieldChange>2</YieldChange>
