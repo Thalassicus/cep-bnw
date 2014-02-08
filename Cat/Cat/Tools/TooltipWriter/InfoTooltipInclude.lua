@@ -1031,7 +1031,7 @@ function GetYieldTooltip(city, yieldID)
 			baseModString = baseModString .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_SETTLER_POLICY", settlerMod)
 		end--]]
 	elseif yieldID == YieldTypes.YIELD_CULTURE then
-		local buildingMod = City_GetBaseYieldModFromBuildings(city, yieldID)
+		local buildingMod = City_GetBaseYieldRateModifier(city, yieldID)
 		if buildingMod ~= 0 then
 			baseModString = baseModString .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_BUILDINGS", buildingMod)				
 		end

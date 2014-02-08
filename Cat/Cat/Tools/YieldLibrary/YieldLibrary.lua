@@ -899,7 +899,7 @@ function City_GetBaseYieldModifierFromGlobalBuildings(player, yieldID)
 		local buildingInfo = GameInfo.Buildings[entry.BuildingType]
 		for city in player:Cities() do
 			if City_GetNumBuilding(city, buildingInfo.ID) > 0 then
-				yieldMod = entry.Yield
+				yieldMod = yieldMod + entry.Yield
 			end
 		end
 	end
