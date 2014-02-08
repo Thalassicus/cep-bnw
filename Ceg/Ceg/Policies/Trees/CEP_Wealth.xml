@@ -77,16 +77,6 @@
 	</Policy_CapitalYieldModifiers>
 	<Policy_YieldModifiers>
 		<Row>
-			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>10</Yield>
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>10</Yield>
-		</Row>
-		<Row>
 			<PolicyType>POLICY_COMMERCE</PolicyType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>10</Yield>
