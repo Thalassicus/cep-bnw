@@ -47,7 +47,15 @@ end
 	
 	Events.SerialEventImprovementCreated	.Add(OnNewImprovement)
 	Events.SerialEventImprovementCreated	.Add(OnPlotChanged)
+	Events.SerialEventImprovementDestroyed	.Add(OnPlotChanged)
 	Events.SerialEventRoadCreated			.Add(OnPlotChanged)
+	Events.SerialEventRoadDestroyed			.Add(OnPlotChanged)
+	Events.SerialEventFeatureCreated		.Add(OnPlotChanged)
+	Events.SerialEventFeatureDestroyed		.Add(OnPlotChanged)
+	Events.SerialEventForestCreated			.Add(OnPlotChanged)
+	Events.SerialEventForestRemoved			.Add(OnPlotChanged)
+	Events.SerialEventJungleCreated			.Add(OnPlotChanged)
+	Events.SerialEventJungleRemoved			.Add(OnPlotChanged)
 
 	Events.LoadScreenClose					.Add(function() MapModData.Cep_Initialized = true end)
 --end

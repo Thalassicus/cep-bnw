@@ -423,14 +423,16 @@ function PlayerClass.GetBuildingYieldMod(player, buildingID, yieldID, city)
 			yield = yield + row.Yield
 		end--]]
 	else
-		yield = yield + Game.GetBuildingYieldModifier(buildingID, yieldID)
+		--yield = yield + Game.GetBuildingYieldModifier(buildingID, yieldID)
 	end
 
-	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
-	for row in GameInfo.Policy_BuildingClassYieldModifiers(query) do
-		if player:HasPolicy(GameInfo.Policies[row.PolicyType].ID) then
-			--log:Trace("%30s %20s %5s", buildingInfo.BuildingClass, yieldType, row.YieldMod)
-			yield = yield + row.YieldMod
+	if (yieldID == YieldTypes.YIELD_CULTURE) or (yieldID == YieldTypes.YIELD_FAITH) then
+		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
+		for row in GameInfo.Policy_BuildingClassYieldModifiers(query) do
+			if player:HasPolicy(GameInfo.Policies[row.PolicyType].ID) then
+				--log:Trace("%30s %20s %5s", buildingInfo.BuildingClass, yieldType, row.YieldMod)
+				yield = yield + row.YieldMod
+			end
 		end
 	end
 
@@ -765,16 +767,16 @@ function City_GetBaseYieldRateModifier(city, yieldID, itemTable, itemID, queueNu
 	yieldMod = yieldMod + City_GetBaseYieldModFromTraits(city, yieldID)
 	yieldMod = yieldMod + City_GetBaseYieldModFromPuppet(city, yieldID)
 	yieldMod = yieldMod + City_GetBaseYieldModifierFromPolicies(city, yieldID, itemTable, itemID, queueNum)
+	yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
+	yieldMod = yieldMod + City_GetBaseYieldModFromBuildings(city, yieldID)
 	
 	if yieldID == YieldTypes.YIELD_CULTURE then
-		yieldMod = yieldMod + City_GetBaseYieldModFromBuildings(city, yieldID) + cityOwner:GetCultureCityModifier()
-		yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
+		yieldMod = yieldMod + cityOwner:GetCultureCityModifier()
 		if city:GetNumWorldWonders() > 0 then
 			yieldMod = yieldMod + cityOwner:GetCultureWonderMultiplier()
 		end
 	else
 		yieldMod = yieldMod + city:GetYieldRateModifier(yieldID)
-		yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
 		if yieldID == YieldTypes.YIELD_FOOD then
 			yieldMod = yieldMod + City_GetCapitalSettlerModifier(city, yieldID, itemTable, itemID, queueNum)
 		elseif yieldID == YieldTypes.YIELD_PRODUCTION then
@@ -822,6 +824,10 @@ end
 function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queueNum)
 	local tooltip = ""
 	local player = Players[city:GetOwner()]
+	local cityMod = City_GetBaseYieldRateModifier(city, yieldID)
+	if cityMod ~= 0 then
+		tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_CITY_MOD", cityMod)
+	end
 	if yieldID == YieldTypes.YIELD_CULTURE then
 		-- Empire Culture modifier
 		local empireMod = player:GetCultureCityModifier()
@@ -829,11 +835,11 @@ function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queu
 			tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_PLAYER_MOD", empireMod)
 		end
 		
-		-- City Culture modifier
-		local cityMod = city:GetCultureRateModifier()
+		--[[ City Culture modifier
+		local cityMod = City_GetBaseYieldRateModifier(city, yieldID)
 		if cityMod ~= 0 then
 			tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_CITY_MOD", cityMod)
-		end
+		end--]]
 		
 		-- Wonders Culture modifier
 		local wonderMod = 0
@@ -851,7 +857,7 @@ function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queu
 			tooltip = tooltip .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_GOLDEN_AGE", yieldMod)
 		end
 	else
-		tooltip = tooltip .. (city:GetYieldModifierTooltip(yieldID) or "")
+		--tooltip = tooltip .. (city:GetYieldModifierTooltip(yieldID) or "")
 		--[[
 		local yieldMod = City_GetBaseYieldModifierFromGlobalBuildings(player, yieldID)
 		if yieldMod ~= 0 then
