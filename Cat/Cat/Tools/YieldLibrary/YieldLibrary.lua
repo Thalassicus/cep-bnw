@@ -696,6 +696,15 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	local specType	= GameInfo.Specialists[specialistID].Type
 	local query		= nil
 	
+	if (yieldID == YieldTypes.YIELD_FAITH) or (yieldID == YieldTypes.YIELD_CULTURE) then
+		query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
+		for row in GameInfo.Building_SpecialistYieldChanges(query) do
+			if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
+				yield = yield + row.Yield
+			end
+		end
+	end
+
 --[[
 	query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
 	for row in GameInfo.Policy_SpecialistYieldChanges(query) do
@@ -719,9 +728,9 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	elseif yieldID == YieldTypes.YIELD_GREAT_PEOPLE then
 		--yield = yield + GameInfo.Specialists[specialistID].GreatPeopleRateChange
 	elseif yieldID == YieldTypes.YIELD_EXPERIENCE then
-		yield = yield + GameInfo.Specialists[specialistID].Experience
+		--yield = yield + GameInfo.Specialists[specialistID].Experience
 	elseif GameInfo.Yields[yieldID].TileTexture then
-		yield = yield + city:GetSpecialistYield(specialistID, yieldID)
+		--yield = yield + city:GetSpecialistYield(specialistID, yieldID)
 	end
 	return yield
 end
