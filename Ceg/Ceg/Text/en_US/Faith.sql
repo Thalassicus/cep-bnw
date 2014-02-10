@@ -62,4 +62,4 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-11-12'), 'TXT_KEY_BELIEF_SACRED_SITES', 'Buildings only purchasable through [ICON_PEACE] Faith provide 2 [ICON_TOURISM] Tourism each.', '', '');
 
 
-UPDATE LoadedFile SET Value=1 WHERE Type='Text_Faith.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='Faith.sql';

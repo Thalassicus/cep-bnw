@@ -311,7 +311,7 @@
 	</CityWeights>
 	<LoadedFile>
 		<Update>
-			<Where Type="YL_General.xml"/>
+			<Where Type="YL_Data.xml"/>
 			<Set Value="1"/>
 		</Update>
 	</LoadedFile>
