@@ -288,7 +288,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Core.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Core.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -333,7 +333,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Flavors.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Flavors.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -378,7 +378,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Barbarians.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Barbarians.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -423,7 +423,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Stories.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Stories.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -468,7 +468,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/YieldLibrary.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/YieldLibrary.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -483,37 +483,42 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/TW_BuildingStats.sql</FileName>
+        <FileName>Text/ES_ES/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/TW_BuildingStats.sql</FileName>
+        <FileName>Text/FR_FR/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/TW_BuildingStats.sql</FileName>
+        <FileName>Text/IT_IT/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/TW_BuildingStats.sql</FileName>
+        <FileName>Text/JA_JP/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/TW_BuildingStats.sql</FileName>
+        <FileName>Text/PL_PL/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/TW_BuildingStats.sql</FileName>
+        <FileName>Text/RU_RU/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TW_BuildingStats.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Text_TW_BuildingStats.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -553,7 +558,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TW_PromotionStats.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -598,7 +603,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/TooltipWriter_Help.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -643,7 +648,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/AI.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/AI.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -761,7 +766,7 @@
     <Folder Include="Text\JA_JP" />
     <Folder Include="Text\PL_PL" />
     <Folder Include="Text\RU_RU" />
-    <Folder Include="Text\ZH_CN" />
+    <Folder Include="Text\ZH_HANT_HK" />
     <Folder Include="TunerMods" />
     <Folder Include="TunerMods\DebugFolder" />
   </ItemGroup>
