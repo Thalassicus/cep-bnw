@@ -865,7 +865,7 @@ function DoPolicyFreeUnits(player, policyID)
 				for i=1, row.Count do
 					player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))
 					if player:IsHuman() then
-						log:Debug("%45s recieved unit", " ", " ")
+						log:Debug("%45s received unit", " ", " ")
 					end
 				end
 			end
@@ -1132,7 +1132,7 @@ function PlaceBuildingID(city, buildingID)
 	MapModData.Cep_FreeBuilding[cityID][buildingID] = true
 	MapModData.Cep_PlayerFreeBuildings.Buildings[playerID][buildingID] = MapModData.Cep_PlayerFreeBuildings.Buildings[playerID][buildingID] + 1
 	if player:IsHuman() then
-		log:Warn("%45s recieved building", " ", " ")
+		log:Warn("%45s received building", " ", " ")
 	end
 end
 
@@ -1151,7 +1151,7 @@ function PlaceBuildingOfFlavor(city, flavorType)
 		MapModData.Cep_FreeFlavorBuilding[flavorType][cityID] = buildingID
 		MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] = MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] + 1
 		if player:IsHuman() then
-			log:Debug("%45s recieved building", " ", " ")
+			log:Debug("%45s received building", " ", " ")
 		end
 	end
 end
