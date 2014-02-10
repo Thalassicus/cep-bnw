@@ -5,6 +5,7 @@
  ~ [Support] (https://github.com/Thalassicus/cep-bnw/issues)
  ~ [News] (http://civmodding.wordpress.com)
  ~ [Credits] (https://github.com/Thalassicus/cep-bnw/wiki/Credits)
+ ~ [Translations] (https://github.com/Thalassicus/cep-bnw/wiki/Translations)
  ~ 
 
 This project is organized in four parts:

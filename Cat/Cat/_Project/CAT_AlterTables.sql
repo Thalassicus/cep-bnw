@@ -539,4 +539,4 @@ UPDATE Beliefs SET ListPriority = 999;
 --
 -- Done
 --
-UPDATE LoadedFile SET Value=1 WHERE Type='MT_AlterTables.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CAT_AlterTables.sql';

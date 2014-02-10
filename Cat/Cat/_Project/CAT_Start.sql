@@ -4,12 +4,12 @@
 CREATE TABLE IF NOT EXISTS Cep(Type text NOT NULL UNIQUE, Value);
 
 CREATE TABLE IF NOT EXISTS LoadedFile(Type text, Value);
-INSERT INTO LoadedFile(Type, Value) VALUES ('MT_Data.xml'			, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_Start.sql'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_Misc.sql'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Promotions.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql'		, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('MT_AlterTables.sql'	, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AlterTables.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('YL_General.xml'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_BuildingStats.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_PromoStats.sql'		, 0);
