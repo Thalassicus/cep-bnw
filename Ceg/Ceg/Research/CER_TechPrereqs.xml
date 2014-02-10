@@ -75,10 +75,6 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 			<TechType>TECH_MATHEMATICS</TechType>
 		</Row>
 		<Row>
-			<PrereqTech>TECH_ARCHERY</PrereqTech>
-			<TechType>TECH_MATHEMATICS</TechType>
-		</Row>
-		<Row>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<TechType>TECH_MATHEMATICS</TechType>
 		</Row>
