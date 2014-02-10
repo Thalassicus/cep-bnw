@@ -1,4 +1,4 @@
-/* The sql commands and text below were formulated in the Google Spreadsheet 'CAT_Language'.
+/* The sql commands and text below were formulated in the TW_BuildingStats tab of the Google Spreadsheet 'CAT_Language'.
 https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dGtjX2JldHBzdXhRbGNxVFgxT1E2OHc&usp=drive_web#gid=1
 If you make any changes be sure to update the spreadsheet also.*/
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TOOLTIP_GOOD_FOR', 'Geeignet für:', '', '');
