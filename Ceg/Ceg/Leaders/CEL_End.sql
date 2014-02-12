@@ -109,7 +109,7 @@ UPDATE Units SET	   Combat = ROUND(0.65 * (SELECT Combat FROM Units WHERE Type =
 UPDATE Units SET RangedCombat = ROUND(0.85 * (SELECT Combat FROM Units WHERE Type = 'UNIT_HORSEMAN'), 0)
 					   WHERE Type IN ('UNIT_INDIAN_WARELEPHANT');
 
-UPDATE Units SET	   Combat = ROUND(1.00 * (SELECT Combat FROM Units WHERE Type = 'UNIT_RIFLEMAN'), 0)
+UPDATE Units SET	   Combat = ROUND(1.17 * (SELECT Combat FROM Units WHERE Type = 'UNIT_LONGSWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_JAPANESE_SAMURAI');
 
 UPDATE Units SET	   Combat = ROUND(0.90 * (SELECT Combat FROM Units WHERE Type = 'UNIT_CANNON'), 0)

@@ -7465,7 +7465,7 @@ end
 function AssignStartingPlots:GetMajorStrategicResourceQuantityValues()
 	-- This function determines quantity per tile for each strategic resource's major deposit size.
 	-- Note: scripts that cannot place Oil in the sea need to increase amounts on land to compensate.
-	-- Also recieves a random factor from 0 to self.resource_setting
+	-- Also receives a random factor from 0 to self.resource_setting
 	
 	local uran_amt, horse_amt, oil_amt, iron_amt, coal_amt, alum_amt = 2, 2, 2, 2, 2, 3;
 	-- Check the resource setting.
