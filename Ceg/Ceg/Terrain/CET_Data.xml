@@ -205,7 +205,6 @@
 			<Where YieldType="YIELD_GOLD" />
 			<Set Yield="1" />
 		</Update>
-		<Delete ResourceType="RESOURCE_WHEAT" />
 		<Delete ResourceType="RESOURCE_COW" />
 		<Row>
 			<ResourceType>RESOURCE_COW</ResourceType>
