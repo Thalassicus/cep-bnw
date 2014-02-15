@@ -51,10 +51,20 @@
 			<Set GridX="4"
 				 GridY="2"
 				 EmbarkedExtraMoves="0"
+				 IncludesOneShotFreeUnits="true"
+				 OneShot="true"
 				 />
 		</Update>
 	</Policies>
 
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_ENTREPRENEURSHIP</PolicyType>
+			<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	
 	<Policy_BuildingClassYieldChanges>
 		<Delete PolicyType="POLICY_MERCANTILISM" />
 		<Row>
