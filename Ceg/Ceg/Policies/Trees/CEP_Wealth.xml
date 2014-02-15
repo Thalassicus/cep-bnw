@@ -23,7 +23,8 @@
 			<Where Type="POLICY_CARAVANS" />
 			<Set GridX="3"
 				 GridY="1"
-				 SeaTradeRouteGoldChange="100"
+				 SeaTradeRouteGoldChange="150"
+				 LandTradeRouteGoldChange="300"
 				 RouteGoldMaintenanceMod="0"
 				 />
 		</Update>
