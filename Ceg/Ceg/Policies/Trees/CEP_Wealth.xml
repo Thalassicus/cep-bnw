@@ -92,12 +92,12 @@
 		<Row>
 			<PolicyType>POLICY_COMMERCE</PolicyType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>15</Yield>
+			<Yield>10</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_COMMERCE</PolicyType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>15</Yield>
+			<Yield>10</Yield>
 		</Row>
 	</Policy_YieldModifiers>
 	<!--
