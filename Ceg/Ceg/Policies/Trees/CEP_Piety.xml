@@ -3,7 +3,7 @@
 	<Policies>
 		<Update>
 			<Where Type="POLICY_PIETY" />
-			<Set ExtraHappiness="5" />
+			<Set ExtraHappiness="0" />
 		</Update>
 		<Update>
 			<Where Type="POLICY_PIETY_FINISHER" />
@@ -130,6 +130,13 @@
 		</Row>
 		-->
 	</Policy_CityYieldChanges>
+	<Policy_BuildingClassCultureChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
 	<Policy_CapitalYieldChanges>
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
@@ -194,6 +201,11 @@
 	</Policy_BuildingClassHappiness>
 	<Policy_BuildingClassProductionModifiers>
 		<Delete PolicyType="POLICY_PIETY" />
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
 	</Policy_BuildingClassProductionModifiers>
 	<Policy_BuildingClassYieldModifiers>
 		<Row>
