@@ -200,7 +200,7 @@ local scientistTexture = "citizenScientist.dds";
 local unemployedTexture = "citizenUnemployed.dds";
 local workerTexture = "citizenWorker.dds";
 --added by Gazebo
-if(Cep.USING_CSD == 1) then
+if(Cep.USING_CSD == 2) then
 	local civilservantTexture = "citizenCivilServant.dds";
 end
 --end addition
@@ -555,7 +555,7 @@ function AddBuildingButton( pCity, building )
 				controlTable.BuildingFilledSpecialistSlot2:SetTexture(engineerTexture);
 				controlTable.BuildingFilledSpecialistSlot3:SetTexture(engineerTexture);
 			--added by Gazebo
-			elseif Cep.USING_CSD == 1 and building.SpecialistType == "SPECIALIST_CIVIL_SERVANT" then
+			elseif Cep.USING_CSD == 2 and building.SpecialistType == "SPECIALIST_CIVIL_SERVANT" then
 				controlTable.BuildingFilledSpecialistSlot1:SetTexture(civilservantTexture);
 				controlTable.BuildingFilledSpecialistSlot2:SetTexture(civilservantTexture);
 				controlTable.BuildingFilledSpecialistSlot3:SetTexture(civilservantTexture);
@@ -1207,7 +1207,7 @@ function OnCityViewUpdate()
 								iWorldCongressMod = iWorldCongressMod + pWorldCongress:GetScienceyGreatPersonRateModifier();
 							end
 						--added by Gazebo
-						elseif (Cep.USING_CSD == 1 and pSpecialistInfo.GreatPeopleUnitClass == "UNITCLASS_GREAT_DIPLOMAT") then
+						elseif (Cep.USING_CSD == 2 and pSpecialistInfo.GreatPeopleUnitClass == "UNITCLASS_GREAT_DIPLOMAT") then
 							iPlayerMod = iPlayerMod + pPlayer:GetGreatDiplomatRateModifier();
 							if (pWorldCongress ~= nil and pWorldCongress:GetScienceyGreatPersonRateModifier() ~= 0) then
 								iWorldCongressMod = 0;

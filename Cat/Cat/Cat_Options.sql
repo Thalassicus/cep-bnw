@@ -146,5 +146,6 @@ CityState Diplomacy Mod Compatibility
 */
 INSERT INTO Cep (Type, Value) VALUES ('USING_CSD', 0);
 UPDATE Cep SET Value = 1 WHERE Type='USING_CSD' AND EXISTS(SELECT name FROM sqlite_master WHERE type='table' AND name='CSD');
+UPDATE Cep SET Value = 2 WHERE Type='USING_CSD' AND EXISTS(SELECT Type FROM Specialists WHERE Type='SPECIALIST_CIVIL_SERVANT');
 
 UPDATE LoadedFile SET Value=1 WHERE Type='Cat_Options.sql';

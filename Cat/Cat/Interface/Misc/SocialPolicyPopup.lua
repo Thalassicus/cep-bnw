@@ -337,7 +337,7 @@ function UpdateDisplay()
 			--local thisEraLabel = Controls[EraLabelName];
 			
 			local helpText = Locale.ConvertTextKey(policyBranchInfo.Help or "")
-			local helpExtra = (Civup.USING_CSD == 1) and Locale.ConvertTextKey((policyBranchInfo.Description or "") .. "_HELP_EXTRA") or ""
+			local helpExtra = (Civup.USING_CSD > 0) and Locale.ConvertTextKey((policyBranchInfo.Description or "") .. "_HELP_EXTRA") or ""
 			if helpExtra == (policyBranchInfo.Description or "") .. "_HELP_EXTRA" then
 				helpExtra = ""
 			end
@@ -483,7 +483,7 @@ function UpdateDisplay()
 			
 			-- Tooltip
 			local helpText = Locale.ConvertTextKey(policyInfo.Help or "")
-			local helpExtra = (Civup.USING_CSD == 1) and Locale.ConvertTextKey((policyInfo.Description or "") .. "_HELP_EXTRA") or ""
+			local helpExtra = (Civup.USING_CSD > 0) and Locale.ConvertTextKey((policyInfo.Description or "") .. "_HELP_EXTRA") or ""
 			if helpExtra == (policyInfo.Description or "") .. "_HELP_EXTRA" then
 				helpExtra = ""
 			end

@@ -675,7 +675,7 @@ DoFlavorFunction = {
 	FLAVOR_RELIGION				= PurchaseBuildingOfFlavor
 }
 
-if Cep.USING_CSD == 1 then
+if Cep.USING_CSD > 0 then
 	DoFlavorFunction.FLAVOR_DIPLOMACY = PurchaseOneUnitOfFlavor
 end
 
