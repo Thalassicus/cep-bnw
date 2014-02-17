@@ -115,7 +115,6 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
-/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -125,7 +124,7 @@ SELECT DISTINCT
 	'POLICY_REPUBLIC', 
 	BuildingClass, 
 	'YIELD_PRODUCTION',
-	2
+	1
 FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_WALLS'			,
 	'BUILDINGCLASS_CASTLE'			,
@@ -133,6 +132,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_MILITARY_BASE'	
 );
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
