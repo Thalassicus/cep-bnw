@@ -4,9 +4,11 @@
 	<Stack Anchor="L,T" Offset="10,6" Padding="6" StackGrowth="Right" ID="TopPanelInfoStack">
 		<TextButton Anchor="C,T" Offset="0,0" String=" " Color="Science" ID="SciencePerTurn" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" Offset="-0,0" String=" " ColorLayer0="255,235,0,255" ID="GoldPerTurn" ToolTipType="TooltipTypeTopPanel"/>
+    <TextButton Anchor="C,T" Offset="-0,0" String="000,000 Turn: Total 000,000" ColorLayer0="255,235,0,255"  ID="InternationalTradeRoutes" ToolTipType="TooltipTypeTopPanel" />
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="HappinessString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,255,255" ID="GoldenAgeString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="CultureString" ToolTipType="TooltipTypeTopPanel"/>
+    <TextButton Anchor="C,T" String="Tourism!" ColorLayer0="255,255,200,255"  ID="TourismString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255"  ID="FaithString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="GreatPeopleString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="ResourceString" ToolTipType="TooltipTypeTopPanel"/>

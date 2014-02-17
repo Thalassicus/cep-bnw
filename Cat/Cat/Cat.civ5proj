@@ -878,6 +878,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\TopPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="InterferesWithBuild\InGame.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
