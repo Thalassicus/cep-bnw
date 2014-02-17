@@ -40,7 +40,7 @@
 				 GridY="2"
 				 HappinessPerTradeRoute="100"
 				 GoldenAgeTurns="0"
-				 ExtraHappiness="1"
+				 NumCitiesPolicyCostDiscount="0"
 				 UnhappinessMod="-5"
 				 PortraitIndex="29"
 				 />
