@@ -16,6 +16,10 @@ SET HurryCostModifier = -1
 WHERE Special = 'SPECIALUNIT_PEOPLE'
 AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
 
+UPDATE Buildings
+SET TradeRouteLandDistanceModifier = TradeRouteLandDistanceModifier * 2, TradeRouteLandGoldBonus = TradeRouteLandGoldBonus * 2
+WHERE BuildingClass IN ('BUILDINGCLASS_CARAVANSARY');
+
 
 UPDATE Buildings
 SET Cost = Cost * 2
@@ -121,6 +125,12 @@ INSERT INTO Building_FreeUnits
 	(BuildingType, UnitType, NumUnits)
 SELECT 'BUILDING_MAUSOLEUM_HALICARNASSUS', 'UNIT_MERCHANT', '1'
 WHERE EXISTS (SELECT * FROM Buildings WHERE Type='BUILDING_MAUSOLEUM_HALICARNASSUS' );
+
+--Compatibility with CSD for BUILDING_HAGIA_SOPHIA
+INSERT INTO Building_SpecialistYieldChanges
+	(BuildingType, SpecialistType, YieldType, Yield)
+SELECT 'BUILDING_HAGIA_SOPHIA', 'SPECIALIST_CIVIL_SERVANT', 'YIELD_FAITH', 1
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
 
 
 

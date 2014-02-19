@@ -675,7 +675,7 @@ DoFlavorFunction = {
 	FLAVOR_RELIGION				= PurchaseBuildingOfFlavor
 }
 
-if Cep.USING_CSD == 1 then
+if Cep.USING_CSD > 0 then
 	DoFlavorFunction.FLAVOR_DIPLOMACY = PurchaseOneUnitOfFlavor
 end
 
@@ -822,7 +822,7 @@ function CheckPlayerStartBonuses()
 	end
 	print("CheckPlayerStartBonuses Done")
 end
---Events.SequenceGameInitComplete.Add(CheckPlayerStartBonuses)
+Events.SequenceGameInitComplete.Add(CheckPlayerStartBonuses)
 
 function AIEarlyBonuses(player)
 	--print("AIEarlyBonuses "..player:GetName())
@@ -954,7 +954,7 @@ function CheckAIEarlyBonuses(player)
 
 	SafeCall(AIEarlyBonuses, player)
 end
---LuaEvents.ActivePlayerTurnEnd_Player.Add(CheckAIEarlyBonuses)
+LuaEvents.ActivePlayerTurnEnd_Player.Add(CheckAIEarlyBonuses)
 
 --
 function AIPerTurnBonuses(player)

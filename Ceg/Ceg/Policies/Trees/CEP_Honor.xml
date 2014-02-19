@@ -108,6 +108,10 @@
 			<Count>2</Count>
 		</Row>
 	</Policy_FreeUnitFlavor>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
+	</Policy_BuildingClassProductionModifiers>
+
 	<!--
 	<Policies>
 		<Update>

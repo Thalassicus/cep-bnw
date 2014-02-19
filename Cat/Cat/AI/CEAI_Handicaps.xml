@@ -13,10 +13,9 @@
 	<HandicapInfo_AIFreeTechs>
 		<Delete />
 	</HandicapInfo_AIFreeTechs>
-
-
-	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worls_Speeds spreadhsset
-		 https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
+	
+	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worls_Speeds spreadsheet
+	https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 
 	<HandicapInfos>
 		<Update>
@@ -77,9 +76,9 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "150"
-			EarliestBarbarianReleaseTurn   = "80"
-			BarbarianLandTargetRange       = "3"
-			BarbarianSeaTargetRange        = "6"
+			EarliestBarbarianReleaseTurn   = "100"
+			BarbarianLandTargetRange       = "5"
+			BarbarianSeaTargetRange        = "10"
 			StartingLocPercent             = "50"
 			AdvancedStartPointsMod         = "150"
 			ExtraHappinessPerLuxury        = "1"
@@ -158,9 +157,9 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "50"
-			EarliestBarbarianReleaseTurn   = "70"
-			BarbarianLandTargetRange       = "4"
-			BarbarianSeaTargetRange        = "8"
+			EarliestBarbarianReleaseTurn   = "100"
+			BarbarianLandTargetRange       = "5"
+			BarbarianSeaTargetRange        = "10"
 			StartingLocPercent             = "50"
 			AdvancedStartPointsMod         = "130"
 			ExtraHappinessPerLuxury        = "1"
@@ -239,7 +238,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "20"
-			EarliestBarbarianReleaseTurn   = "60"
+			EarliestBarbarianReleaseTurn   = "90"
 			BarbarianLandTargetRange       = "5"
 			BarbarianSeaTargetRange        = "10"
 			StartingLocPercent             = "50"
@@ -274,7 +273,7 @@
 			AIResearchPercentPerEra        = "2"
 			AITrainPercent                 = "98"
 			AIConstructPercent             = "98"
-			AIWorldConstructPercent        = "95"
+			AIWorldConstructPercent        = "75"
 			AICreatePercent                = "98"
 			AIProductionPercentPerEra      = "0"
 			AIWorldTrainPercent            = "100"
@@ -320,7 +319,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "15"
-			EarliestBarbarianReleaseTurn   = "50"
+			EarliestBarbarianReleaseTurn   = "80"
 			BarbarianLandTargetRange       = "6"
 			BarbarianSeaTargetRange        = "12"
 			StartingLocPercent             = "50"
@@ -355,7 +354,7 @@
 			AIResearchPercentPerEra        = "4"
 			AITrainPercent                 = "96"
 			AIConstructPercent             = "96"
-			AIWorldConstructPercent        = "90"
+			AIWorldConstructPercent        = "75"
 			AICreatePercent                = "96"
 			AIProductionPercentPerEra      = "0"
 			AIWorldTrainPercent            = "100"
@@ -401,7 +400,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "15"
-			EarliestBarbarianReleaseTurn   = "40"
+			EarliestBarbarianReleaseTurn   = "70"
 			BarbarianLandTargetRange       = "7"
 			BarbarianSeaTargetRange        = "14"
 			StartingLocPercent             = "50"
@@ -436,7 +435,7 @@
 			AIResearchPercentPerEra        = "6"
 			AITrainPercent                 = "94"
 			AIConstructPercent             = "94"
-			AIWorldConstructPercent        = "85"
+			AIWorldConstructPercent        = "75"
 			AICreatePercent                = "94"
 			AIProductionPercentPerEra      = "0"
 			AIWorldTrainPercent            = "100"
@@ -466,7 +465,7 @@
 
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
-			AIUnhappinessPercent           = "85"
+			AIUnhappinessPercent           = "90"
 			AIInflationPercent             = "100"
 			AIPerEraModifier               = "-6"
 			AIAdvancedStartPercent         = "160"
@@ -482,7 +481,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "15"
-			EarliestBarbarianReleaseTurn   = "30"
+			EarliestBarbarianReleaseTurn   = "60"
 			BarbarianLandTargetRange       = "8"
 			BarbarianSeaTargetRange        = "16"
 			StartingLocPercent             = "50"
@@ -517,7 +516,7 @@
 			AIResearchPercentPerEra        = "8"
 			AITrainPercent                 = "92"
 			AIConstructPercent             = "92"
-			AIWorldConstructPercent        = "80"
+			AIWorldConstructPercent        = "75"
 			AICreatePercent                = "92"
 			AIProductionPercentPerEra      = "0"
 			AIWorldTrainPercent            = "100"
@@ -547,7 +546,7 @@
 
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
-			AIUnhappinessPercent           = "80"
+			AIUnhappinessPercent           = "90"
 			AIInflationPercent             = "100"
 			AIPerEraModifier               = "-8"
 			AIAdvancedStartPercent         = "180"
@@ -563,7 +562,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "15"
-			EarliestBarbarianReleaseTurn   = "20"
+			EarliestBarbarianReleaseTurn   = "40"
 			BarbarianLandTargetRange       = "9"
 			BarbarianSeaTargetRange        = "18"
 			StartingLocPercent             = "50"
@@ -628,7 +627,7 @@
 
 			AttitudeChange                 = "-1"
 			AIDeclareWarProb               = "100"
-			AIUnhappinessPercent           = "75"
+			AIUnhappinessPercent           = "90"
 			AIInflationPercent             = "100"
 			AIPerEraModifier               = "-10"
 			AIAdvancedStartPercent         = "200"
@@ -644,7 +643,7 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "15"
-			EarliestBarbarianReleaseTurn   = "10"
+			EarliestBarbarianReleaseTurn   = "20"
 			BarbarianLandTargetRange       = "10"
 			BarbarianSeaTargetRange        = "20"
 			StartingLocPercent             = "50"
@@ -725,15 +724,15 @@
 			BarbCampGold                   = "50"
 			BarbSpawnMod                   = "0"
 			BarbarianBonus                 = "0"
-			EarliestBarbarianReleaseTurn   = "10"
+			EarliestBarbarianReleaseTurn   = "20"
 			BarbarianLandTargetRange       = "10"
 			BarbarianSeaTargetRange        = "20"
 			StartingLocPercent             = "50"
 			AdvancedStartPointsMod         = "100"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
-			ProductionFreeUnits            = "100"
-			ProductionFreeUnitsPerCity     = "2"
+			ProductionFreeUnits            = "7"
+			ProductionFreeUnitsPerCity     = "3"
 			StartingPolicyPoints           = "0"
 			ProductionFreeUnitsPopulationPercent     = "50"
 			CityProductionNumOptionsConsidered       = "2"
@@ -748,6 +747,4 @@
 />
 		</Update>
 	</HandicapInfos>
-
-
 </GameData>

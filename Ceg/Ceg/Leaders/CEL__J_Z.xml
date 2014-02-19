@@ -346,7 +346,7 @@
 			<IsVisible>1</IsVisible>
 			<ShowInPedia>true</ShowInPedia>
 			<TradeRouteLandGoldBonus>200</TradeRouteLandGoldBonus>
-			<TradeRouteLandDistanceModifier>150</TradeRouteLandDistanceModifier>
+			<TradeRouteLandDistanceModifier>75</TradeRouteLandDistanceModifier>
 		</Row>
 	</Buildings>
 	<Building_Flavors>
@@ -957,7 +957,6 @@
 		</Update>
 	</Units>
 	<!-- Dummy Conquistador with no religious spreads remaining, but still alive -->
-	<!--Hotfix: Removed until fixed so it isn't buildable by all civs -->
 	<Units>
 		<Row>
 			<Class>UNITCLASS_KNIGHT</Class>

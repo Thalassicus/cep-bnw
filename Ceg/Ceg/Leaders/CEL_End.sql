@@ -23,24 +23,8 @@ WHERE EXISTS (SELECT * FROM Traits WHERE Type='TRAIT_INGENIOUS');
 
 INSERT INTO Trait_FreeUnitAtTech
 		(TraitType, TechType, UnitClassType, PromotionType)
-SELECT	'TRAIT_ALLOTMENT', PrereqTech, Class, 'PROMOTION_ALLOTMENT'
-FROM Units WHERE Type IN (
-	'UNIT_ARCHER'				,
-	'UNIT_CATAPULT'				,
-	'UNIT_CHARIOT_ARCHER'		,
-	'UNIT_HORSEMAN'				,
-	'UNIT_SWORDSMAN'			,
-	'UNIT_SPEARMAN'				,
-	'UNIT_TRIPLANE'				,
-	'UNIT_GREAT_WAR_BOMBER'		,
-	'UNIT_ANTI_AIRCRAFT_GUN'	,
-	'UNIT_BIREME'				,
-	'UNIT_TRIREME'				,
-	'UNIT_SUBMARINE'			,
-	'UNIT_CARRIER'				,
-	'UNIT_LANCER'				,
-	'UNIT_HELICOPTER_GUNSHIP'
-);
+SELECT  DISTINCT 'TRAIT_ALLOTMENT', PrereqTech, Class, 'PROMOTION_ALLOTMENT'
+FROM Units WHERE (Combat>0 OR RangedCombat>0) AND Cost>0 AND Suicide=0 AND PurchaseOnly=0;
 
 /*
 -- This helps certain military AIs who tend to struggle in every game.
@@ -491,6 +475,12 @@ UPDATE Builds SET PrereqTech ='TECH_CONSTRUCTION'
 WHERE Type IN (
 	'BUILD_FEITORIA'
 );
+
+--Compatibility with CSD for BUILDING_JADE_HALL
+INSERT INTO Building_SpecialistYieldChanges (BuildingType, SpecialistType, YieldType, Yield)
+SELECT 'BUILDING_JADE_HALL', 'SPECIALIST_CIVIL_SERVANT', 'YIELD_SCIENCE', 1
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 )
+;
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEL_End.sql';

@@ -36,6 +36,16 @@ Newer changes are made at the top and the oldest is at the bottom.
 *	Policy adjustments -- Citizenship grants 1 Worker, Cultural Diplomacy gives a 10% boost to Great People production, Ethics now 25% to Tourism
 *	Artistic Genius -- Fixes the Great person rates
 *	Spelling error -- minor hang over from previous spelling fix
+*	Feature tweaks  --  Made reefs & isles negatively affect defense, due to limited manouevrability, and made it possible to see over atolls/isles
+*	Caravansary fix -- Fixes the global caravan change that made the UB variants the same as vanilla
+*	CityView debug  --  Added a DEBUG check into the CityView.lua file
+*	Allotment  --  Added text to the Swedish trait promotion
+*	Marsh camps  --  Changed the tech needed to build camps on marsh
+*	Partial GA fix  --  Adds back the +20% bonuses to Production, Gold & Science
+*	Barbarians, Wonders & Start bonuses
+*	AIHandicap  --  Barbarian AI tweaked
+*	CanConstruct  --  Fixes the formula so that the function to construct certain buildings chooses correctly
+*	Artistic Genius --  +25% for Great Writers, Artists & Musicians
 *	CSD visual error -- CSD civil servant was lacking a reference to an icon
 *	Reference & block -- A small reference fix for the mod 'Beyond the Future'
 *	Hanseatic League fix -- A rogue 's' corrupted the function call. grrrr!!!

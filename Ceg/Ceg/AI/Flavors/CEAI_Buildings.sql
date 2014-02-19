@@ -627,11 +627,13 @@ DROP TABLE CEP_Collisions;
 
 
 
+INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
+
+
+
 --
 -- AI specific changes
 --
-
-INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
 
 DELETE FROM Building_Flavors
 WHERE FlavorType = 'FLAVOR_WONDER'

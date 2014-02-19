@@ -80,7 +80,7 @@ function City_GetBestPlotPurchaseCity(city, plot)
 	local distance	= Map.PlotDistance(cityPlot:GetX(), cityPlot:GetY(), plot:GetX(), plot:GetY())
 	if plot:GetOwner() ~= -1 then
 		return nil, math.huge
-	elseif distance > GameDefines.MAXIMUM_BUY_PLOT_DISTANCE then
+	elseif distance > (GameDefines.MAXIMUM_BUY_PLOT_DISTANCE+Cep.MAXIMUM_BUY_PLOT_ADDITIONAL) then
 		return nil, math.huge
 	end
 	local hasAdjacentPlot = false
