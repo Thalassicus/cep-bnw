@@ -24,8 +24,8 @@
 		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
 		<TextButton Anchor="C,C" String="Clock" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="TopPanelClock" ToolTip="Click to toggle 12/24 hour clock."/>
 		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
-		<TextButton Anchor="C,C" String="Date: 2100 AD" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentDate" ToolTip="InfoAddict"/>
-		<TextButton Anchor="C,C" String="Turn: 1" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentTurn" ToolTip="InfoAddict"/>
+		<TextButton Anchor="C,C" String="Date: 2100 AD" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentDate" /><!--ToolTip="InfoAddict"-->
+		<TextButton Anchor="C,C" String="Turn: 1" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentTurn" /><!--ToolTip="InfoAddict"-->
 	</Stack>
 	<ToolTipType Name="TooltipTypeTopPanel">
 		<Grid Size="530,90" Offset="8.0" Padding="8,8" Style="GridBlack8" ID="TopPanelMouseover" NoClip="1">
