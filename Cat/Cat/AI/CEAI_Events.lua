@@ -67,6 +67,7 @@ function SpendAIGold(player)
 	if (player:IsHuman()
 			or not player:GetCapitalCity() 
 			or player:IsBudgetGone(0)
+			or Cep.USING_CSD == 2
 			--or (Game.GetAdjustedTurn() < 10)
 			) then
 		return
