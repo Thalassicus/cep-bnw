@@ -133,52 +133,52 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Air.xml</FileName>
+        <FileName>UnitPromotions/CEU_Air.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Attributes.xml</FileName>
+        <FileName>UnitPromotions/CEU_Attributes.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Mobile.xml</FileName>
+        <FileName>UnitPromotions/CEU_Mobile.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Other.xml</FileName>
+        <FileName>UnitPromotions/CEU_Other.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Ranged.xml</FileName>
+        <FileName>UnitPromotions/CEU_Ranged.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Ships.xml</FileName>
+        <FileName>UnitPromotions/CEU_Ships.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Soldiers.xml</FileName>
+        <FileName>UnitPromotions/CEU_Soldiers.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Vanguards.xml</FileName>
+        <FileName>UnitPromotions/CEU_Vanguards.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionGrid.xml</FileName>
+        <FileName>UnitPromotions/CEU_PromotionGrid.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionSwap.xml</FileName>
+        <FileName>UnitPromotions/CEU_PromotionSwap.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1228,7 +1228,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA__Promotions_End.sql</FileName>
+        <FileName>UnitPromotions/CEU__Promotions_End.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1263,7 +1263,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionReplace.sql</FileName>
+        <FileName>UnitPromotions/CEU_PromotionReplace.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1324,7 +1324,7 @@
         <Type>InGameUIAddin</Type>
         <Name>CEA_Promotions</Name>
         <Description>CEA_Promotions</Description>
-        <FileName>Armies/Promotions/CEA_Promotions.lua</FileName>
+        <FileName>UnitPromotions/CEU_Promotions.lua</FileName>
       </Content>
       <Content>
         <Type>InGameUIAddin</Type>
@@ -1398,7 +1398,7 @@
     <Folder Include="AI\Flavors" />
     <Folder Include="Armies\" />
     <Folder Include="Armies\Art\" />
-    <Folder Include="Armies\Promotions" />
+    <Folder Include="UnitPromotions" />
     <Folder Include="Barbarians\" />
     <Folder Include="Cities\" />
     <Folder Include="Cities\Buildings\" />
@@ -1424,9 +1424,10 @@
     <Folder Include="Text\FR_FR" />
     <Folder Include="Text\IT_IT" />
     <Folder Include="Text\JA_JP" />
+    <Folder Include="Text\KO_KR" />
     <Folder Include="Text\PL_PL" />
     <Folder Include="Text\RU_RU" />
-    <Folder Include="Text\ZH_CN" />
+    <Folder Include="Text\ZH_HANT_HK" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AI\CEAI_Events.lua">
@@ -1609,55 +1610,55 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Promotions.lua">
+    <Content Include="UnitPromotions\CEU_Promotions.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Air.xml">
+    <Content Include="UnitPromotions\CEU_Air.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Attributes.xml">
+    <Content Include="UnitPromotions\CEU_Attributes.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Mobile.xml">
+    <Content Include="UnitPromotions\CEU_Mobile.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Other.xml">
+    <Content Include="UnitPromotions\CEU_Other.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionGrid.xml">
+    <Content Include="UnitPromotions\CEU_PromotionGrid.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionReplace.sql">
+    <Content Include="UnitPromotions\CEU_PromotionReplace.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA__Promotions_End.sql">
+    <Content Include="UnitPromotions\CEU__Promotions_End.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionSwap.xml">
+    <Content Include="UnitPromotions\CEU_PromotionSwap.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Ranged.xml">
+    <Content Include="UnitPromotions\CEU_Ranged.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Ships.xml">
+    <Content Include="UnitPromotions\CEU_Ships.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Soldiers.xml">
+    <Content Include="UnitPromotions\CEU_Soldiers.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Vanguards.xml">
+    <Content Include="UnitPromotions\CEU_Vanguards.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
