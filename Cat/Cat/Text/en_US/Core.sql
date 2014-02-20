@@ -275,7 +275,6 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-02-06'), 'TXT_KEY_CITYSTATE_CAPTURE_BONUS', 'Capturing a citystate gives an immediate reward equal to 40 turns of alliance.', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-02-19'), 'TXT_KEY_OPSCREEN_MINUTES_FOR_AUTOSAVES', 'Minutes Between Autosaves', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-12-12'), 'TXT_KEY_GENERIC', '', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2014-02-18'), 'TXT_KEY_CLICK_TO_TRADE', 'Click to Trade[COLOR_POSITIVE_TEXT][ENDCOLOR]', '', '');
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='Cat_Core.sql';
