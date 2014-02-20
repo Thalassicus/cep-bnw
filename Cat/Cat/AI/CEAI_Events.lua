@@ -1042,7 +1042,7 @@ function AIMilitaryHandicap(  playerID,
 	end
 	--]]
 
-	local handicapInfo = GameInfo.HandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
+	local handicapInfo = GameInfo.CepHandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
 	local freePromotion = "PROMOTION_HANDICAP"--handicapInfo.AIFreePromotion
 	local unitInfo = GameInfo.Units[unit:GetUnitType()]
 

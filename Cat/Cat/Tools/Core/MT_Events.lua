@@ -646,7 +646,7 @@ function LuaEvents.PrintDebug()
 	text = string.format("%s\n\n============= Game Info =============\n\n", text)
 	text = string.format("%s%14s %-s\n", text, "Map:", PreGame.GetMapScript())
 	text = string.format("%s%14s %-s\n", text, "Leader:", GameInfo.Leaders[Players[Game.GetActivePlayer()]:GetLeaderType()].Type)
-	text = string.format("%s%14s %-s\n", text, "Difficulty:", GameInfo.HandicapInfos[Game:GetHandicapType()].Type)
+	text = string.format("%s%14s %-s\n", text, "Difficulty:", GameInfo.CepHandicapInfos[Game:GetHandicapType()].Type)
 	text = string.format("%s%14s %-s\n", text, "Size:", Game.GetWorldInfo().Type)	
 	text = string.format("%s%14s %-s%%%%\n", text, "Speed:", Game.GetSpeedInfo().VictoryDelayPercent)
 	text = string.format("%s%14s %-s\n", text, "Animations:", tostring(OptionsManager.GetSinglePlayerQuickCombatEnabled_Cached()))
@@ -705,7 +705,7 @@ function LuaEvents.PrintDebug()
 				Game.Round(player:GetYieldRate(YieldTypes.YIELD_FAITH)),
 				Game.Round(player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_NATIONAL)),
 				player:GetName(),
-				GameInfo.HandicapInfos[player:GetHandicapType()].Type
+				GameInfo.CepHandicapInfos[player:GetHandicapType()].Type
 			)
 		end
 	end

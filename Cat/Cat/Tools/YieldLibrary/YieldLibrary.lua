@@ -1529,8 +1529,8 @@ if not MapModData.Cep_Yields then
 	MapModData.Cep_Yields = {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_MILITARY]		= {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_GREAT_PEOPLE]	= {}
-	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.GameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
-	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.GameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
+	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
+	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
 	startClockTime = os.clock()
 	for playerID,player in pairs(Players) do
 		if player:IsAliveCiv() and not player:IsMinorCiv() then

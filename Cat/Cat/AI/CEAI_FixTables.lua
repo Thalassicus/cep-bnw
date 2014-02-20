@@ -8,26 +8,32 @@
 VFS lua files set their GameInfo table before the program reads database tables used on the "modding game setup" screen.
 We must therefore hardcode these data values in a Lua table.
 
+Can copy the modded tables into another set of tables that hasn't been cached before the database has been modded.
+
 --]]
 
-GameInfoCep					= {}
-GameInfoCep.Worlds			= {}
-GameInfoCep.GameSpeeds		= {}
-GameInfoCep.HandicapInfos	= {}
+--GameInfoCep					= {}
+--GameInfoCep.Worlds			= {}
+--GameInfoCep.GameSpeeds		= {}
+--GameInfoCep.HandicapInfos		= {}
 
 function Game.GetWorldInfo()
-	return GameInfoCep.Worlds[Map.GetWorldSize()]
+	local mapsize = Map.GetWorldSize(); --returns nil instead of 0 for Duel sized maps
+	if (not mapsize) then
+		return GameInfo.CepWorlds[0]
+	end
+	return GameInfo.CepWorlds[mapsize]
 end
 function Game.GetSpeedInfo()
-	return GameInfoCep.GameSpeeds[Game.GetGameSpeedType()]
+	return GameInfo.CepGameSpeeds[Game.GetGameSpeedType()]
 end
 function Game.GetHandicapInfo()
-	return GameInfoCep.HandicapInfos[Game.GetAverageHumanHandicap()]
+	return GameInfo.CepHandicapInfos[Game.GetAverageHumanHandicap()]
 end
 
 -- This MT_FixTables.lua data automatically created by:
 -- GameSpeeds tab of CEP_LeadersAI.xls
-
+--[[
 GameInfoCep.GameSpeeds[0] = {
 ID                             = 0,
 Type                           = "GAMESPEED_MARATHON",
@@ -1086,3 +1092,4 @@ NoTechTradeModifier            = 90,
 TechTradeKnownModifier         = -50,
 PortraitIndex                  = 8,
 IconAtlas                      = "DIFFICULTY_ATLAS"}
+--]]

@@ -407,7 +407,7 @@ function BuildingCreated(player, city, buildingID)
 				end
 				if row.YieldMod ~= 0 then
 					local prereqTech = buildingInfo.PrereqTech or "TECH_AGRICULTURE"
-					local yieldAdded = row.YieldMod/100 * GameInfo.Technologies[prereqTech].Cost * GameInfo.GameSpeeds[Game.GetGameSpeedType()].ResearchPercent/100
+					local yieldAdded = row.YieldMod/100 * GameInfo.Technologies[prereqTech].Cost * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].ResearchPercent/100
 					player:ChangeYieldStored(GameInfo.Yields[row.YieldType].ID, yieldAdded)
 					--log:Debug("+%s %s from science building constructed in %s", yieldAdded, GameInfo.Yields[row.YieldType].Type, city:GetName())
 				end
@@ -685,7 +685,7 @@ function CityCaptureYield(city, yieldType, yieldConstant, yieldPopulation, yield
 	local baseYield = yieldConstant
 		  baseYield = baseYield + city:GetPopulation() * yieldPopulation
 		  baseYield = baseYield + yieldEra * (1 + player:GetCurrentEra()) ^ yieldEraExponent
-		  baseYield = baseYield * GameInfo.GameSpeeds[Game.GetGameSpeedType()].CulturePercent / 100
+		  baseYield = baseYield * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].CulturePercent / 100
 		  
 	--log:Debug("CityCaptureYield baseYield = %s", baseYield)
 
