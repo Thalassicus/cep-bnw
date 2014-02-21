@@ -631,35 +631,35 @@ https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dFpPbnNDMFhmM2I2YjVXR04
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_COLONIZATION" />
+		<Delete PolicyType="POLICY_PIONEER_SPIRIT" />
 		<Row>
-			<PolicyType>POLICY_COLONIZATION</PolicyType>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_COLONIZATION</PolicyType>
+			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
-		<Delete PolicyType="POLICY_PIONEER_SPIRIT" />
+		<Delete PolicyType="POLICY_COLONIZATION" />
 		<Row>
-			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<PolicyType>POLICY_COLONIZATION</PolicyType>
 			<FlavorType>FLAVOR_DEFENSE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<PolicyType>POLICY_COLONIZATION</PolicyType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<PolicyType>POLICY_COLONIZATION</PolicyType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_PIONEER_SPIRIT</PolicyType>
+			<PolicyType>POLICY_COLONIZATION</PolicyType>
 			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
