@@ -336,7 +336,7 @@ WHERE UnitType IN (SELECT Type FROM Units WHERE Class IN (
 	'UNITCLASS_SETTLER'				
 ));
 
-UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 2, 0)
+UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 4, 0) --originally x2
 WHERE UnitType IN (SELECT Type FROM Units WHERE Class IN (
 	'UNITCLASS_WORKER'				,
 	'UNITCLASS_WORKBOAT'			,

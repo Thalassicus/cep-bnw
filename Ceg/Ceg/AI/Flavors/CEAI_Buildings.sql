@@ -659,6 +659,7 @@ WHERE BuildingType IN (
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
 
+--x2 flavor values of non-wonder buildings
 UPDATE Building_Flavors
 SET Flavor = Flavor * 2
 WHERE BuildingType IN (
