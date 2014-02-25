@@ -749,6 +749,7 @@
     <Folder Include="Interface\Icons" />
     <Folder Include="Interface\DisablePrints" />
     <Folder Include="Interface\Bugfixes" />
+    <Folder Include="Interface\Units" />
     <Folder Include="InterferesWithBuild" />
     <Folder Include="Tools" />
     <Folder Include="Tools\Core\" />
@@ -868,6 +869,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Interface\Bugfixes\TurnProcessing.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Units\EnemyUnitPanel.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
