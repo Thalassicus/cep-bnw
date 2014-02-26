@@ -479,8 +479,7 @@ WHERE Type IN (
 --Compatibility with CSD for BUILDING_JADE_HALL
 INSERT INTO Building_SpecialistYieldChanges (BuildingType, SpecialistType, YieldType, Yield)
 SELECT 'BUILDING_JADE_HALL', 'SPECIALIST_CIVIL_SERVANT', 'YIELD_SCIENCE', 1
-WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 )
-;
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type = 'USING_CSD' AND Value = 2);
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEL_End.sql';

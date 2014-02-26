@@ -130,12 +130,7 @@ WHERE EXISTS (SELECT * FROM Buildings WHERE Type='BUILDING_MAUSOLEUM_HALICARNASS
 INSERT INTO Building_SpecialistYieldChanges
 	(BuildingType, SpecialistType, YieldType, Yield)
 SELECT 'BUILDING_HAGIA_SOPHIA', 'SPECIALIST_CIVIL_SERVANT', 'YIELD_FAITH', 1
-WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 1 );
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type = 'USING_CSD' AND Value = 2);
 
 
-
-
-
-
--- End
 UPDATE LoadedFile SET Value=1 WHERE Type='CEC__Start.sql';
