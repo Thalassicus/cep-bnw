@@ -1,8 +1,17 @@
 ------------------------------------------------
 -- Unit Panel Screen 
 -------------------------------------------------
-include( "IconSupport" );
-include( "InstanceManager" );
+include("IconSupport");
+include("InstanceManager");
+include("YieldLibrary.lua");
+include("CustomMissionHandler.lua");
+
+include("AlpacaUtils")
+VERBOSITY = 1
+g_SortTable = {}
+
+local log = Events.LuaLogger:New()
+log:SetLevel("WARN")
 
 local g_PrimaryIM    = InstanceManager:new( "UnitAction",  "UnitActionButton", Controls.PrimaryStack );
 local g_SecondaryIM  = InstanceManager:new( "UnitAction",  "UnitActionButton", Controls.SecondaryStack );
@@ -24,40 +33,9 @@ local promotionsTexture = "Promotions512.dds";
 
 local unitPortraitSize = Controls.UnitPortrait:GetSize().x;
 local actionIconSize = 64;
-if OptionsManager.GetSmallUIAssets() and not UI.IsTouchScreenEnabled() then
+if OptionsManager.GetSmallUIAssets() then
 	actionIconSize = 45;
 end
-
---
--- MODS START
---
-local addinActions = {}
-local addinBuilds = {}
-
-function OnUnitPanelActionAddin(action)
-  print(string.format("Adding UnitPanel action %s (%s)", Locale.ConvertTextKey(action.Title), action.Name))
-  table.insert(addinActions, action)
-end
-LuaEvents.UnitPanelActionAddin.Add(OnUnitPanelActionAddin)
-
-function OnUnitPanelBuildAddin(build)
-  print(string.format("Adding UnitPanel build %s (%s)", Locale.ConvertTextKey(build.Title), build.Name))
-  table.insert(addinBuilds, build)
-end
-LuaEvents.UnitPanelBuildAddin.Add(OnUnitPanelBuildAddin)
-
-addins = {}
--- handle UnitPanelAddins
-for addin in Modding.GetActivatedModEntryPoints("UnitPanelAddin") do
-	local addinFile = addin.File;
-	local extension = Path.GetExtension(addinFile);
-	local path = string.sub(addinFile, 1, #addinFile - #extension);
-	ptr = ContextPtr:LoadNewContext(path)
-	table.insert(addins, ptr)
-end
---
--- MODS END
---
 
 --------------------------------------------------------------------------------
 -- this maps from the normal instance names to the build city control names
@@ -71,14 +49,6 @@ local g_BuildCityControlMap = {
     --UnitActionHelp      = Controls.BuildCityHelp,
 };
 
-local direction_types = {
-	DirectionTypes.DIRECTION_NORTHEAST,
-	DirectionTypes.DIRECTION_EAST,
-	DirectionTypes.DIRECTION_SOUTHEAST,
-	DirectionTypes.DIRECTION_SOUTHWEST,
-	DirectionTypes.DIRECTION_WEST,
-	DirectionTypes.DIRECTION_NORTHWEST
-};
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -159,6 +129,16 @@ function HookupActionIcon(action, actionIconSize, icon)
 	local f = GetActionIconIndexAndAtlas[action.SubType];
 	if(f ~= nil) then
 		local iconIndex, iconAtlas = f(action);
+		
+		-- undesirable hack to piggyback Great Work mission AI on the Hurry mission AI
+		if (GameDefines.LOADED_GEM == 1
+			and GameInfo.Units[UI.GetHeadSelectedUnit():GetUnitType()].Type == "UNIT_ARTIST"
+			and GameInfoActions[action]
+			and GameInfoActions[action].Type == "MISSION_HURRY"
+			) then
+			iconIndex = 53
+			iconAtlas = "UNIT_ACTION_ATLAS"
+		end
 		IconHookup(iconIndex, actionIconSize, iconAtlas, icon);
 	else
 		print(action.Type);
@@ -183,21 +163,12 @@ function UpdateUnitActions( unit )
     local bUnitHasMovesLeft = unit:MovesLeft() > 0;
     
     -- Text that tells the player this Unit's out of moves this turn
-    if (unit:IsTrade()) then
-		Controls.UnitStatusInfo:SetHide(true);
-		Controls.SecondaryButton:SetHide(true);
-		Controls.UnitStatMovement:SetHide(true);
-		Controls.UnitStatNameMovement:SetHide(true);
-    elseif (not bUnitHasMovesLeft) then
+    if (not bUnitHasMovesLeft) then
 		Controls.UnitStatusInfo:SetHide(false);
 		Controls.SecondaryButton:SetHide(true);
-		Controls.UnitStatMovement:SetHide(false);
-		Controls.UnitStatNameMovement:SetHide(false);
 	else
 		Controls.UnitStatusInfo:SetHide(true);
 		Controls.SecondaryButton:SetHide(false);
-		Controls.UnitStatMovement:SetHide(false);
-		Controls.UnitStatNameMovement:SetHide(false);
     end
     
     local hasPromotion = false;
@@ -218,7 +189,7 @@ function UpdateUnitActions( unit )
 	local buttonOffsetX = 16;
 	local buttonOffsetY = 40;
 	local workerPanelSizeOffsetY = 104;
-	if OptionsManager.GetSmallUIAssets() and not UI.IsTouchScreenEnabled() then
+	if OptionsManager.GetSmallUIAssets() then
 		numberOfButtonsPerRow = 6;
 		buttonSize = 40;
 		buttonPadding = 6;
@@ -259,13 +230,9 @@ function UpdateUnitActions( unit )
         end
         
 		-- test CanHandleAction w/ visible flag (ie COULD train if ... )
-        if( bShowActionButton and action.Visible and Game.CanHandleAction( iAction, 0, 1 ) ) 
+        if( bShowActionButton and action.Visible and (Game.CanHandleAction( iAction, 0, 1 ) or Game.CustomMission.CanHandleCustomMission(iAction, true))) 
         then
             local instance;
-            local extraXOffset = 0;
-			if (UI.IsTouchScreenEnabled()) then
-				extraXOffset = 44;
-			end
             if( action.Type == "MISSION_FOUND" ) then
                 instance = g_BuildCityControlMap;
                 Controls.BuildCityButton:SetHide( false );
@@ -275,16 +242,16 @@ function UpdateUnitActions( unit )
 				bPromotion = true;
                 instance = g_PromotionIM:GetInstance();
                 instance.UnitActionButton:SetAnchor( "L,B" );
-				instance.UnitActionButton:SetOffsetVal( (numBuildActions % numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetX + extraXOffset, math.floor(numBuildActions / numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetY );				
+				instance.UnitActionButton:SetOffsetVal( (numBuildActions % numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetX, math.floor(numBuildActions / numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetY );				
                 numBuildActions = numBuildActions + 1;
+                hasPromotion = true;                
                 
-            elseif( (action.SubType == ActionSubTypes.ACTIONSUBTYPE_BUILD or action.Type == "INTERFACEMODE_ROUTE_TO") and hasPromotion == false) then
-            
+            elseif( action.SubType == ActionSubTypes.ACTIONSUBTYPE_BUILD or action.Type == "INTERFACEMODE_ROUTE_TO") then
 				bBuild = true;
 				iBuildID = action.MissionData;
 				instance = g_BuildIM:GetInstance();
 				instance.UnitActionButton:SetAnchor( "L,B" );
-				instance.UnitActionButton:SetOffsetVal( (numBuildActions % numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetX + extraXOffset, math.floor(numBuildActions / numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetY );				
+				instance.UnitActionButton:SetOffsetVal( (numBuildActions % numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetX, math.floor(numBuildActions / numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetY );				
 				numBuildActions = numBuildActions + 1;
 				if recommendedBuild == nil and unit:IsActionRecommended( iAction ) then
 				
@@ -298,9 +265,7 @@ function UpdateUnitActions( unit )
 					local text = action.TextKey or action.Type or "Action"..(buttonIndex - 1);
 					local convertedKey = Locale.ConvertTextKey( text );
 
-					local foo = Locale.Lookup("TXT_KEY_UPANEL_RECOMMENDED");
-					
-					Controls.RecommendedActionLabel:SetText( foo .. "[NEWLINE]" .. convertedKey );
+					Controls.RecommendedActionLabel:SetText( convertedKey );
 				end
                
             elseif( action.OrderPriority > 100 ) then
@@ -313,13 +278,16 @@ function UpdateUnitActions( unit )
             end
             
 			-- test w/o visible flag (ie can train right now)
-			if not Game.CanHandleAction( iAction ) then
+			if GameDefines.LOADED_GEM == 1 and action.Type == "MISSION_HURRY" and GameInfo.Units[unit:GetUnitType()].Class == "UNITCLASS_ARTIST" then
+				instance.UnitActionButton:SetAlpha( 1.0 );
+				instance.UnitActionButton:SetDisabled( false );
+			elseif not Game.CanHandleAction( iAction ) and not Game.CustomMission.CanHandleCustomMission(iAction) then
 				bDisabled = true;
 				instance.UnitActionButton:SetAlpha( 0.4 );                
 				instance.UnitActionButton:SetDisabled( true );                
 			else
 				instance.UnitActionButton:SetAlpha( 1.0 );
-				instance.UnitActionButton:SetDisabled( false );                
+				instance.UnitActionButton:SetDisabled( false );
 			end
 			
             if(instance.UnitActionIcon ~= nil) then
@@ -329,125 +297,15 @@ function UpdateUnitActions( unit )
             instance.UnitActionButton:SetVoid1( iAction );
 			instance.UnitActionButton:SetToolTipCallback( TipHandler )
            
+		    if (action.Type == "COMMAND_UPGRADE") then
+                instance.UnitActionButton:RegisterCallback( Mouse.eRClick, OnUpgradeTreeButton );
+			end
+			
+			--alpaca
+			g_SortTable[tostring(instance.UnitActionButton)] = action.OrderPriority or 0
+			--/alpaca
         end
     end
-
---
--- MODS START
---
-local function SetToolTip(sTitle, sToolTip)
-  local ttTable = {}
-  TTManager:GetTypeControlTable( "TypeUnitAction", ttTable )
-  
-  ttTable.UnitActionHelp:SetText(string.format("[NEWLINE]%s", sToolTip))
-  ttTable.UnitActionText:SetText(string.format("[COLOR_POSITIVE_TEXT]%s[ENDCOLOR]", Locale.ConvertTextKey(sTitle)))
-  ttTable.UnitActionHotKey:SetText("")
-  
-  ttTable.UnitActionMouseover:DoAutoSize()
-  local mouseoverSize = ttTable.UnitActionMouseover:GetSize();
-  if (mouseoverSize.x < 350) then
-    ttTable.UnitActionMouseover:SetSizeVal(350, mouseoverSize.y)
-  end
-end
-  
-for _, action in pairs(addinActions) do
-  if (action.Condition == nil or
-      (type(action.Condition) == "function" and action.Condition(action, unit)) or
-	  (type(action.Condition) ~= "function" and action.Condition)) then
-    local instance	
-    if ((tonumber(action.OrderPriority) or 200) > 100) then
-      instance = g_PrimaryIM:GetInstance()
-      numPrimaryActions = numPrimaryActions + 1
-    else
-      instance = g_SecondaryIM:GetInstance()
-      numSecondaryActions = numSecondaryActions + 1
-    end
-	
-	if ((type(action.Disabled) == "function" and action.Disabled(action, unit)) or
-    	(type(action.Disabled) ~= "function" and action.Disabled)) then
-      instance.UnitActionButton:SetAlpha(0.4)
-      instance.UnitActionButton:SetDisabled(true)
-    else
-      instance.UnitActionButton:SetAlpha(1.0)
-      instance.UnitActionButton:SetDisabled(false)
-    end
-	
-    IconHookup(action.PortraitIndex, actionIconSize, action.IconAtlas, instance.UnitActionIcon)
-	local sToolTip
-    if (type(action.ToolTip) == "function") then
-	  sToolTip = action.ToolTip(action, unit)
-	else
-	  sToolTip = action.ToolTip
-	end
-    instance.UnitActionButton:SetToolTipCallback(function() SetToolTip(action.Title, sToolTip) end)
-
-	if (type(action.Action) == "function") then
-      instance.UnitActionButton:RegisterCallback(Mouse.eLClick, function() action.Action(action, unit, Mouse.eLClick) end)
-      instance.UnitActionButton:RegisterCallback(Mouse.eRClick, function() action.Action(action, unit, Mouse.eRClick) end)
-	else
-      instance.UnitActionButton:RegisterCallback(Mouse.eLClick, function() end)
-      instance.UnitActionButton:RegisterCallback(Mouse.eRClick, function() end)
-	end
-  end
-end
-
-for _, build in pairs(addinBuilds) do
-  if (build.Condition == nil or
-      (type(build.Condition) == "function" and build.Condition(build, unit)) or
-	  (type(build.Condition) ~= "function" and build.Condition)) then
-    local instance = g_BuildIM:GetInstance()
-	instance.UnitActionButton:SetAnchor( "L,B" )
-	instance.UnitActionButton:SetOffsetVal((numBuildActions % numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetX, math.floor(numBuildActions / numberOfButtonsPerRow) * buttonSize + buttonPadding + buttonOffsetY)
-	numBuildActions = numBuildActions + 1
-
-	if ((type(build.Disabled) == "function" and build.Disabled(build, unit)) or
-    	(type(build.Disabled) ~= "function" and build.Disabled)) then
-      instance.UnitActionButton:SetAlpha(0.4)
-      instance.UnitActionButton:SetDisabled(true)
-    else
-      instance.UnitActionButton:SetAlpha(1.0)
-      instance.UnitActionButton:SetDisabled(false)
-    end
-	
-    IconHookup(build.PortraitIndex, actionIconSize, build.IconAtlas, instance.UnitActionIcon)
-	local sToolTip
-    if (type(build.ToolTip) == "function") then
-	  sToolTip = build.ToolTip(build, unit)
-	else
-	  sToolTip = build.ToolTip
-	end
-    instance.UnitActionButton:SetToolTipCallback(function() SetToolTip(build.Title, sToolTip) end)
-
-	if (type(build.Build) == "function") then
-      instance.UnitActionButton:RegisterCallback(Mouse.eLClick, function() build.Build(build, unit, Mouse.eLClick) end)
-      instance.UnitActionButton:RegisterCallback(Mouse.eRClick, function() build.Build(build, unit, Mouse.eRClick) end)
-	else
-      instance.UnitActionButton:RegisterCallback(Mouse.eLClick, function() end)
-      instance.UnitActionButton:RegisterCallback(Mouse.eRClick, function() end)
-	end
-
-	if (recommendedBuild == nil and 
-	   ((type(build.Recommended) == "function" and build.Recommended(build, unit)) or
-    	(type(build.Recommended) ~= "function" and build.Recommended))) then
-		recommendedBuild = build;
-		IconHookup(build.PortraitIndex, actionIconSize, build.IconAtlas, Controls.RecommendedActionImage)
-
-		if (type(build.Build) == "function") then
-			Controls.RecommendedActionButton:RegisterCallback(Mouse.eLClick, function() build.Build(build, unit, Mouse.eLClick) end)
-			Controls.RecommendedActionButton:RegisterCallback(Mouse.eRClick, function() build.Build(build, unit, Mouse.eRClick) end)
-		else
-			Controls.RecommendedActionButton:RegisterCallback(Mouse.eLClick, function() end)
-			Controls.RecommendedActionButton:RegisterCallback(Mouse.eRClick, function() end)
-		end
-
-		Controls.RecommendedActionButton:SetToolTipCallback(function() SetToolTip(build.Title, sToolTip) end)
-		Controls.RecommendedActionLabel:SetText(Locale.ConvertTextKey(build.Title))
-	end
-  end
-end
---
--- MODS END
---
 
     --if hasPromotion == true then
         --Controls.PromotionButton:SetHide( false );
@@ -460,12 +318,17 @@ end
     
     Controls.PrimaryStack:CalculateSize();
     Controls.PrimaryStack:ReprocessAnchoring();
+	
+	--alpaca
+	-- sort actions
+	Controls.PrimaryStack:SortChildren( SortActionList )
+	--/alpaca
     
     local stackSize = Controls.PrimaryStack:GetSize();
     local stretchySize = Controls.PrimaryStretchy:GetSize();
     local buildCityButtonSize = 0;
     if buildCityButtonActive then
-		if OptionsManager.GetSmallUIAssets() and not UI.IsTouchScreenEnabled() then
+		if OptionsManager.GetSmallUIAssets() then
 			buildCityButtonSize = 36;
 		else
 			buildCityButtonSize = 60;
@@ -505,7 +368,7 @@ end
 		local rbOffset = 0;
 		if recommendedBuild then
 			rbOffset = 60;
-			if OptionsManager.GetSmallUIAssets() and not UI.IsTouchScreenEnabled() then
+			if OptionsManager.GetSmallUIAssets() then
 				rbOffset = 60;
 			end
 			Controls.RecommendedActionDivider:SetHide( false );
@@ -537,15 +400,17 @@ end
 		local thisBuild = GameInfo.Builds[buildType];
 		--print("thisBuild.Type:"..tostring(thisBuild.Type));
 		local civilianUnitStr = Locale.ConvertTextKey(thisBuild.Description);
-		local iTurnsLeft = unit:GetPlot():GetBuildTurnsLeft(buildType, Game.GetActivePlayer(),  0, 0) + 1;	
-		local iTurnsTotal = unit:GetPlot():GetBuildTurnsTotal(buildType);	
-		if (iTurnsLeft < 4000 and iTurnsLeft > 0) then
-			civilianUnitStr = civilianUnitStr.." ("..tostring(iTurnsLeft)..")";
+		local iTurnsLeft = PlotGetBuildTurnsLeft(unit:GetPlot(), buildType) --alpaca
+		local iTurnsTotal = unit:GetPlot():GetBuildTime(buildType) / (100 + Players[Game.GetActivePlayer()]:GetWorkerSpeedModifier()) -- alpaca
+		--local iTurnsLeft = unit:GetPlot():GetBuildTurnsLeft(buildType, 0, 0);	
+		--local iTurnsTotal = unit:GetPlot():GetBuildTurnsTotal(buildType);	
+		if (iTurnsLeft < 4000 and iTurnsLeft >= 0) then
+			civilianUnitStr = civilianUnitStr.." ("..Locale.ToNumber(iTurnsLeft, "#.#")..")"; --alpaca
+			--civilianUnitStr = civilianUnitStr.." ("..tostring(iTurnsLeft)..")";
 		end
 		IconHookup( thisBuild.IconIndex, 45, thisBuild.IconAtlas, Controls.WorkerProgressIcon ); 		
 		Controls.WorkerProgressLabel:SetText( civilianUnitStr );
-		Controls.WorkerProgressLabel:SetToolTipString(civilianUnitStr );
-		local percent = (iTurnsTotal - (iTurnsLeft - 1)) / iTurnsTotal;
+		local percent = (iTurnsTotal - iTurnsLeft) / iTurnsTotal;
 		Controls.WorkerProgressBar:SetPercent( percent );
 		Controls.WorkerProgressIconFrame:SetHide( false );
 		Controls.WorkerProgressFrame:SetHide( false );
@@ -565,19 +430,8 @@ local nullOffset = Vector2( 0, 0 );
 -- Refresh unit portrait and name
 --------------------------------------------------------------------------------
 function UpdateUnitPortrait( unit )
-  
-	local name;
-	if(unit:IsGreatPerson()) then
-		name = unit:GetNameNoDesc();
-		if(name == nil or #name == 0) then
-			name = unit:GetName();			
-		end
-	else
-		name = unit:GetName();
-	end
-	
-	name = Locale.ToUpper(name);
-  
+    local name = unit:GetName();
+    name = Locale.ToUpper(name);
     --local name = unit:GetNameKey();
     local convertedKey = Locale.ConvertTextKey(name);
     convertedKey = Locale.ToUpper(convertedKey);
@@ -602,10 +456,10 @@ function UpdateUnitPortrait( unit )
     local strToolTip = Locale.ConvertTextKey("TXT_KEY_CURRENTLY_SELECTED_UNIT");
     
     if unit:IsCombatUnit() or unit:GetDomainType() == DomainTypes.DOMAIN_AIR then
-		local iExperience = unit:GetExperience();
-	    
 		local iLevel = unit:GetLevel();
-		local iExperienceNeeded = unit:ExperienceNeeded();
+		local iExperience = Unit_GetXPStored(unit);
+		local iExperienceNeeded = Unit_GetXPNeeded(unit);
+
 		local xpString = Locale.ConvertTextKey("TXT_KEY_UNIT_EXPERIENCE_INFO", iLevel, iExperience, iExperienceNeeded);
 		Controls.XPMeter:SetToolTipString( xpString );
 		Controls.XPMeter:SetPercent( iExperience / iExperienceNeeded );
@@ -616,14 +470,14 @@ function UpdateUnitPortrait( unit )
 		Controls.XPFrame:SetHide( false );
 	else
  		Controls.XPFrame:SetHide( true );
-   end
+	end
 	
 	Controls.UnitPortrait:SetToolTipString(strToolTip);
     
     local thisUnitInfo = GameInfo.Units[unit:GetUnitType()];
-
-	local flagOffset, flagAtlas = UI.GetUnitFlagIcon(unit);	    
-    local textureOffset, textureAtlas = IconLookup( flagOffset, 32, flagAtlas );
+    local unitFlagOffset = thisUnitInfo.UnitFlagIconOffset;
+    
+    local textureOffset, textureAtlas = IconLookup( thisUnitInfo.UnitFlagIconOffset, 32, thisUnitInfo.UnitFlagAtlas );
     Controls.UnitIcon:SetTexture(textureAtlas);
     Controls.UnitIconShadow:SetTexture(textureAtlas);
     Controls.UnitIcon:SetTextureOffset(textureOffset);
@@ -641,8 +495,7 @@ function UpdateUnitPortrait( unit )
 		Controls.UnitIconBackground:SetColor( flagColor );
 	end    
     
-	local portraitOffset, portraitAtlas = UI.GetUnitPortraitIcon(unit);
-    textureOffset, textureAtlas = IconLookup( portraitOffset, unitPortraitSize, portraitAtlas );
+    textureOffset, textureAtlas = IconLookup( thisUnitInfo.PortraitIndex, unitPortraitSize, thisUnitInfo.IconAtlas );
     if textureOffset == nil then
 		textureOffset = nullOffset;
 		textureAtlas = defaultErrorTextureSheet;
@@ -731,7 +584,7 @@ function UpdateUnitPromotions(unit)
     for unitPromotion in GameInfo.UnitPromotions() do
         local unitPromotionID = unitPromotion.ID;
         
-        if (unit:IsHasPromotion(unitPromotionID) and not unit:IsTrade()) then
+        if (unit:IsHasPromotion(unitPromotionID)) then
             
             controlTable = g_EarnedPromotionIM:GetInstance();
 			IconHookup( unitPromotion.PortraitIndex, 32, unitPromotion.IconAtlas, controlTable.UnitPromotionImage );
@@ -743,6 +596,121 @@ function UpdateUnitPromotions(unit)
             
         end
     end
+end
+
+function UpdateUnitPromotionsEx(unit)
+  g_EarnedPromotionIM:ResetInstances()
+    
+  local rankedPromotions = {}
+  local groupedPromotions = {}
+
+  for unitPromotion in GameInfo.UnitPromotions() do
+    if (unit:IsHasPromotion(unitPromotion.ID)) then
+      local type = unitPromotion.Type
+      local rank = type:match("_%d+$")
+
+      if (rank ~= nil) then
+        local base = type:sub(1, type:len()-rank:len())
+        local promotions = rankedPromotions[base]
+
+        if (promotions == nil) then
+          promotions = {}
+          rankedPromotions[base] = promotions
+        end
+
+        promotions[tonumber(rank:sub(2))] = unitPromotion
+      else
+        local order = unitPromotion.OrderPriority
+        if (order == 0) then order = 10 end
+
+        -- Assumes promotion icons are in an 8x8 grid
+        local group = order * 100 + unitPromotion.PortraitIndex
+        local promotions = groupedPromotions[group]
+
+        if (promotions == nil) then
+          promotions = {}
+          groupedPromotions[group] = promotions
+        end
+
+        promotions[type] = unitPromotion
+      end
+    end
+  end
+
+  addRankedPromotions(rankedPromotions)
+  addGroupedPromotions(groupedPromotions)
+end
+
+function addRankedPromotions(rankedPromotions)
+  for _,promotions in pairs(rankedPromotions) do
+    local sToolTip = ""
+    local sPrefix = ""
+    local unitPromotion = nil
+
+    for _,promotion in ipairs(promotions) do
+      unitPromotion = promotion
+
+      local sDesc = Locale.ConvertTextKey(unitPromotion.Description)
+      local sHelp = Locale.ConvertTextKey(unitPromotion.Help)
+
+      sToolTip = sToolTip .. sPrefix .. "[COLOR_YELLOW]" .. sDesc .. "[ENDCOLOR]"
+
+      if (sHelp ~= sDesc) then
+        sToolTip = sToolTip .. ": " .. sHelp
+      end
+
+      sPrefix = "[NEWLINE]"
+    end
+
+    if (unitPromotion ~= nil) then
+      local controlTable = g_EarnedPromotionIM:GetInstance()
+      IconHookup(unitPromotion.PortraitIndex, 32, unitPromotion.IconAtlas, controlTable.UnitPromotionImage)
+      controlTable.UnitPromotionImage:SetToolTipString(sToolTip)
+    end
+  end
+end
+
+function addGroupedPromotions(groupedPromotions)
+  local groupKeys = {}
+  for group,_ in pairs(groupedPromotions) do
+    table.insert(groupKeys, group)
+  end
+
+  table.sort(groupKeys)
+
+  for _,group in ipairs(groupKeys) do
+    local promotions = groupedPromotions[group]
+
+    local sColour = "[COLOR_YELLOW]"
+    local sToolTip = ""
+    local sPrefix = ""
+    local unitPromotion = nil
+
+    for _,promotion in pairs(promotions) do
+      unitPromotion = promotion
+
+      if (unitPromotion.PortraitIndex == 57) then
+        sColour = "[COLOR_RED]"
+      end
+
+      local sDesc = Locale.ConvertTextKey(unitPromotion.Description)
+      local sHelp = Locale.ConvertTextKey(unitPromotion.Help)
+
+      sToolTip = sToolTip .. sPrefix .. sColour .. sDesc .. "[ENDCOLOR]"
+
+      if (sHelp ~= sDesc) then
+        sToolTip = sToolTip .. ": " .. sHelp
+      end
+
+      sPrefix = "[NEWLINE]"
+    end
+
+    if (unitPromotion ~= nil) then
+      local controlTable = g_EarnedPromotionIM:GetInstance()
+      IconHookup(unitPromotion.PortraitIndex, 32, unitPromotion.IconAtlas, controlTable.UnitPromotionImage)
+      controlTable.UnitPromotionImage:SetToolTipString(sToolTip)
+    end
+  end
 end
 
 ---------------------------------------------------
@@ -813,19 +781,12 @@ function UpdateUnitStats(unit)
         Controls.UnitStatNameStrength:SetToolTipString(strengthTT);
     -- Religious units
     elseif (unit:GetSpreadsLeft() > 0) then
-        strength = math.floor(unit:GetConversionStrength()/GameDefines["RELIGION_MISSIONARY_PRESSURE_MULTIPLIER"]) .. " [ICON_PEACE]";
+        strength = unit:GetConversionStrength() .. " [ICON_PEACE]";
         Controls.UnitStrengthBox:SetHide(false);
         Controls.UnitStatStrength:SetText(strength);    
         local strengthTT = Locale.ConvertTextKey( "TXT_KEY_UPANEL_RELIGIOUS_STRENGTH_TT" );
         Controls.UnitStatStrength:SetToolTipString(strengthTT);
         Controls.UnitStatNameStrength:SetToolTipString(strengthTT);
-    elseif (unit:GetTourismBlastStrength() > 0) then
-        strength = unit:GetTourismBlastStrength() .. " [ICON_TOURISM]";
-        Controls.UnitStrengthBox:SetHide(false);
-        Controls.UnitStatStrength:SetText(strength);    
-        local strengthTT = Locale.ConvertTextKey( "TXT_KEY_UPANEL_TOURISM_STRENGTH_TT" );
-        Controls.UnitStatStrength:SetToolTipString(strengthTT);
-        Controls.UnitStatNameStrength:SetToolTipString(strengthTT);    
     else
         Controls.UnitStrengthBox:SetHide(true);
     end        
@@ -863,14 +824,6 @@ function UpdateUnitStats(unit)
         Controls.UnitStatNameRangedAttack:SetText(rangeStrengthStr);
         Controls.UnitStatRangedAttack:SetText(iRangedStrength);    
         local rangeStrengthTT = Locale.ConvertTextKey( "TXT_KEY_UPANEL_REMOVE_HERESY_USES_TT" );
-        Controls.UnitStatRangedAttack:SetToolTipString(rangeStrengthTT);
-        Controls.UnitStatNameRangedAttack:SetToolTipString(rangeStrengthTT);
-    elseif (unit:CargoSpace() > 0) then
-        Controls.UnitRangedAttackBox:SetHide(false);
-        local rangeStrengthStr = Locale.ConvertTextKey( "TXT_KEY_UPANEL_CARGO_CAPACITY" );
-        Controls.UnitStatNameRangedAttack:SetText(rangeStrengthStr);
-        Controls.UnitStatRangedAttack:SetText(unit:CargoSpace() .. "     ");    
-        local rangeStrengthTT = Locale.ConvertTextKey( "TXT_KEY_UPANEL_CARGO_CAPACITY_TT", unit:GetName());
         Controls.UnitStatRangedAttack:SetToolTipString(rangeStrengthTT);
         Controls.UnitStatNameRangedAttack:SetToolTipString(rangeStrengthTT);
     else
@@ -946,7 +899,7 @@ function OnUnitNameClicked()
     -- go to this unit
     UI.LookAtSelectionPlot(0);
 end
-Controls.UnitNameButton:RegisterCallback( Mouse.eLClick, OnUnitNameClicked );
+Controls.UnitNameButton:RegisterCallback( Mouse.eRClick, OnUnitNameClicked );
 Controls.UnitPortraitButton:RegisterCallback( Mouse.eLClick, OnUnitNameClicked );
 
 
@@ -1004,7 +957,7 @@ function OnInfoPaneDirty()
     if (unit ~= nil) then
         UpdateUnitActions(unit);
         UpdateUnitPortrait(unit);
-        UpdateUnitPromotions(unit);
+        UpdateUnitPromotionsEx(unit);
         UpdateUnitStats(unit);
         UpdateUnitHealthBar(unit);
         ContextPtr:SetHide( false );
@@ -1032,12 +985,41 @@ local bOkayToProcess = true;
 --------------------------------------------------------------------------------
 -- UnitAction<idx> was clicked.
 --------------------------------------------------------------------------------
+Events.PromotionEarned = Events.PromotionEarned or function(unit, promotionType) end
+Events.UnitUpgraded = Events.UnitUpgraded or function(unit) end
+LuaEvents.UnitActionButtonClicked = LuaEvents.UnitActionButtonClicked or function(action) end
+
 function OnUnitActionClicked( action )
 	if bOkayToProcess then
-		if (GameInfoActions[action].SubType == ActionSubTypes.ACTIONSUBTYPE_PROMOTION) then
-			Events.AudioPlay2DSound("AS2D_INTERFACE_UNIT_PROMOTION");	
+		if not action then
+			log:Error("OnUnitActionClicked action=nil")
 		end
-		Game.HandleAction( action );
+		if (GameInfoActions[action].SubType == ActionSubTypes.ACTIONSUBTYPE_PROMOTION) then
+			Events.AudioPlay2DSound("AS2D_INTERFACE_UNIT_PROMOTION");
+			----log:Debug("Promotion Earned")
+			Events.PromotionEarned(UI.GetHeadSelectedUnit(), GameInfoActions[action].Type)
+		elseif (GameInfoActions[action].Type == "COMMAND_UPGRADE") then
+			Events.UnitUpgraded(UI.GetHeadSelectedUnit())
+		elseif (GameInfoActions[action].Type == "MISSION_TRADE") then
+			--UpdatePlayerRewardsFromMinorCivs(Players[Game.GetActivePlayer()])
+		end
+		-- Moriboe added
+		if (GameDefines.LOADED_GEM == 1 and GameInfoActions[action].Type == "MISSION_HURRY") then
+			local unit = UI.GetHeadSelectedUnit();
+			local city = unit:GetPlot():GetPlotCity();
+			if city and city:GetOwner() == Game.GetActivePlayer() then
+				LuaEvents.GreatWork(unit, city);
+			end
+		end
+		-- end of Moriboe's changes		
+		--alpaca
+		if Game.CustomMission.CanHandleCustomMission(action) then
+			Game.CustomMission.HandleCustomMission(action)
+		else
+			Game.HandleAction( action );
+		end
+		--/alpaca		
+		LuaEvents.UnitActionButtonClicked( action );
     end
 end
 
@@ -1150,7 +1132,7 @@ function TipHandler( control )
     local strActionHelp = "";
     
     -- Not able to perform action
-    if not Game.CanHandleAction( iAction ) then
+    if not Game.CanHandleAction( iAction ) and not Game.CustomMission.CanHandleCustomMission(iAction) then
 		bDisabled = true;
 	end
     
@@ -1277,6 +1259,18 @@ function TipHandler( control )
 
 		strActionHelp = "[NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_MISSION_ALERT_NO_FORTIFY_HELP");
 		strToolTip = strToolTip .. strActionHelp;
+		
+	-- undesirable hack to piggyback Great Work mission AI on the Hurry mission AI
+    elseif GameDefines.LOADED_GEM == 1 and action.Type == "MISSION_HURRY" and GameInfo.Units[unit:GetUnitType()].Class == "UNITCLASS_ARTIST" then
+		-- Add spacing for all entries after the first
+		if (bFirstEntry) then
+			bFirstEntry = false;
+		elseif (not bFirstEntry) then
+			strActionHelp = strActionHelp .. "[NEWLINE]";
+		end
+		
+		strActionHelp = "[NEWLINE]" .. Locale.ConvertTextKey( "TXT_KEY_MISSION_GREAT_WORK_HELP" );
+        strToolTip = strToolTip .. strActionHelp;
 
     -- Golden Age has special help text
     elseif (action.Type == "MISSION_GOLDEN_AGE") then
@@ -1290,6 +1284,13 @@ function TipHandler( control )
 		local iGALength = unit:GetGoldenAgeTurns();
 		strActionHelp = "[NEWLINE]" .. Locale.ConvertTextKey( "TXT_KEY_MISSION_START_GOLDENAGE_HELP", iGALength );
         strToolTip = strToolTip .. strActionHelp;
+		
+	-- alpaca
+	-- custom mission tooltips
+	elseif (Game.CustomMission.CanHandleCustomMission(iAction, true)) then
+		strActionHelp = Game.CustomMission.GetCustomMissionToolTipActionHelp(iAction)
+		strToolTip = strToolTip .. strActionHelp
+	-- /alpaca
 		
     -- Spread Religion has special help text
     elseif (action.Type == "MISSION_SPREAD_RELIGION") then
@@ -1310,124 +1311,6 @@ function TipHandler( control )
 			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_MISSION_MAJORITY_RELIGION", majorityReligionName);		
 		end
 
-    -- Create Great Work has special help text
-	elseif (action.Type == "MISSION_CREATE_GREAT_WORK") then
-
-		strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_MISSION_CREATE_GREAT_WORK_HELP");
-		strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-	    
-		if (not bDisabled) then
-			local pActivePlayer = Players[Game.GetActivePlayer()];
-			local eGreatWorkSlotType = unit:GetGreatWorkSlotType();
-			local iBuilding = pActivePlayer:GetBuildingOfClosestGreatWorkSlot(unit:GetX(), unit:GetY(), eGreatWorkSlotType);
-			local pCity = pActivePlayer:GetCityOfClosestGreatWorkSlot(unit:GetX(), unit:GetY(), eGreatWorkSlotType);	
-			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_MISSION_CREATE_GREAT_WORK_RESULT", GameInfo.Buildings[iBuilding].Description, pCity:GetNameKey());
-		end
-	
-	-- Paradrop
-	elseif (action.Type == "INTERFACEMODE_PARADROP") then
-		strToolTip = Locale.Lookup("TXT_KEY_INTERFACEMODE_PARADROP_HELP_WITH_RANGE", unit:GetDropRange());
-		
-	-- Sell Exotic Goods
-	elseif (action.Type == "MISSION_SELL_EXOTIC_GOODS") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_SELL_EXOTIC_GOODS_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetExoticGoodsGoldAmount() .. "[ICON_GOLD]";
-			strToolTip = strToolTip .. "[NEWLINE]";
-			strToolTip = strToolTip .. Locale.ConvertTextKey("TXT_KEY_EXPERIENCE_POPUP", unit:GetExoticGoodsXPAmount());
-		end
-	
-	-- Great Scientist
-	elseif (action.Type == "MISSION_DISCOVER") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_DISCOVER_TECH_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetDiscoverAmount() .. "[ICON_RESEARCH]";
-		end
-		
-	-- Great Engineer
-	elseif (action.Type == "MISSION_HURRY") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_HURRY_PRODUCTION_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetHurryProduction(unit:GetPlot()) .. "[ICON_PRODUCTION]";
-		end
-	
-	-- Great Merchant
-	elseif (action.Type == "MISSION_TRADE") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_CONDUCT_TRADE_MISSION_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetTradeInfluence(unit:GetPlot()) .. " [ICON_INFLUENCE]";
-			strToolTip = strToolTip .. "[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetTradeGold(unit:GetPlot()) .. "[ICON_GOLD]";
-		end
-		
-	-- Great Writer
-	elseif (action.Type == "MISSION_GIVE_POLICIES") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_GIVE_POLICIES_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetGivePoliciesCulture() .. "[ICON_CULTURE]";
-		end
-	
-	-- Great Musician
-	elseif (action.Type == "MISSION_ONE_SHOT_TOURISM") then
-		-- Add spacing for all entries after the first
-		if (bFirstEntry) then
-			bFirstEntry = false;
-		elseif (not bFirstEntry) then
-			strToolTip = strToolTip .. "[NEWLINE]";
-		end
-		
-		strToolTip = strToolTip .. "[NEWLINE]" .. Locale.Lookup("TXT_KEY_MISSION_ONE_SHOT_TOURISM_HELP");
-		
-		if (not bDisabled) then
-			strToolTip = strToolTip .. "[NEWLINE]----------------[NEWLINE]";
-			strToolTip = strToolTip .. "+" .. unit:GetBlastTourism() .. "[ICON_TOURISM]";
-		end
-		
     -- Help text
     elseif (action.Help and action.Help ~= "") then
 		
@@ -1522,28 +1405,6 @@ function TipHandler( control )
 					end
 				end
 
-			-- Trying to build something in a City-State's territory?
-			elseif (pImprovement and pImprovement.OnlyCityStateTerritory) then
-				local bCityStateTerritory = false;
-				if (pPlot:IsOwned()) then
-					local pPlotOwner = Players[pPlot:GetOwner()];
-					if (pPlotOwner and pPlotOwner:IsMinorCiv()) then
-						bCityStateTerritory = true;
-					end
-				end
-				
-				if (not bCityStateTerritory) then
-					-- Add spacing for all entries after the first
-					if (bFirstEntry) then
-						bFirstEntry = false;
-					elseif (not bFirstEntry) then
-						strDisabledString = strDisabledString .. "[NEWLINE]";
-					end
-					
-					strDisabledString = strDisabledString .. "[NEWLINE]";
-					strDisabledString = strDisabledString .. Locale.ConvertTextKey("TXT_KEY_BUILD_BLOCKED_NOT_IN_CITY_STATE_TERRITORY", strImpRouteKey);
-				end	
-
 			-- Trying to build something outside of our territory?
 			elseif (pImprovement and not pImprovement.OutsideBorders) then
 				if (pPlot:GetTeam() ~= unit:GetTeam()) then
@@ -1558,68 +1419,6 @@ function TipHandler( control )
 					
 					strDisabledString = strDisabledString .. "[NEWLINE]";
 					strDisabledString = strDisabledString .. Locale.ConvertTextKey("TXT_KEY_BUILD_BLOCKED_OUTSIDE_TERRITORY", strImpRouteKey);
-				end
-			end
-			
-			-- Trying to build something that requires an adjacent luxury?
-			if (pImprovement and pImprovement.AdjacentLuxury) then
-				local bAdjacentLuxury = false;
-
-				for loop, direction in ipairs(direction_types) do
-					local adjacentPlot = Map.PlotDirection(pPlot:GetX(), pPlot:GetY(), direction);
-					if (adjacentPlot ~= nil) then
-						local eResourceType = adjacentPlot:GetResourceType();
-						if (eResourceType ~= -1) then
-							if (Game.GetResourceUsageType(eResourceType) == ResourceUsageTypes.RESOURCEUSAGE_LUXURY) then
-								bAdjacentLuxury = true;
-							end
-						end
-					end
-				end
-				
-				if (not bAdjacentLuxury) then
-					-- Add spacing for all entries after the first
-					if (bFirstEntry) then
-						bFirstEntry = false;
-					elseif (not bFirstEntry) then
-						strDisabledString = strDisabledString .. "[NEWLINE]";
-					end
-					
-					strDisabledString = strDisabledString .. "[NEWLINE]";
-					strDisabledString = strDisabledString .. Locale.ConvertTextKey("TXT_KEY_BUILD_BLOCKED_NO_ADJACENT_LUXURY", strImpRouteKey);
-				end
-			end
-			
-			-- Trying to build something where we can't have two adjacent?
-			if (pImprovement and pImprovement.NoTwoAdjacent) then
-				local bTwoAdjacent = false;
-
-				 for loop, direction in ipairs(direction_types) do
-					local adjacentPlot = Map.PlotDirection(pPlot:GetX(), pPlot:GetY(), direction);
-					if (adjacentPlot ~= nil) then
-						local eImprovementType = adjacentPlot:GetImprovementType();
-						if (eImprovementType ~= -1) then
-							if (eImprovementType == iImprovement) then
-								bTwoAdjacent = true;
-							end
-						end
-						local iBuildProgress = adjacentPlot:GetBuildProgress(iBuildID);
-						if (iBuildProgress > 0) then
-							bTwoAdjacent = true;
-						end
-					end
-				end
-				
-				if (bTwoAdjacent) then
-					-- Add spacing for all entries after the first
-					if (bFirstEntry) then
-						bFirstEntry = false;
-					elseif (not bFirstEntry) then
-						strDisabledString = strDisabledString .. "[NEWLINE]";
-					end
-					
-					strDisabledString = strDisabledString .. "[NEWLINE]";
-					strDisabledString = strDisabledString .. Locale.ConvertTextKey("TXT_KEY_BUILD_BLOCKED_CANNOT_BE_ADJACENT", strImpRouteKey);
 				end
 			end
 			
@@ -1644,6 +1443,12 @@ function TipHandler( control )
 				strDisabledString = strDisabledString .. "[NEWLINE]";
 				strDisabledString = strDisabledString .. Locale.ConvertTextKey("TXT_KEY_BUILD_BLOCKED_BY_FEATURE", pFeatureTech.Description, pFeature.Description);
 			end
+			
+		--alpaca
+		-- custom mission disabled text
+		elseif Game.CustomMission.CanHandleCustomMission(iAction, true) then
+			strDisabledString = strDisabledString.."[NEWLINE]"..(Game.CustomMission.GetCustomMissionDisabledToolTipHelp(iAction) or Locale.ConvertTextKey(action.DisabledHelp))
+		--/alpaca
 			
 		-- Not a Worker build, use normal disabled help from XML
 		else
@@ -1689,16 +1494,18 @@ function TipHandler( control )
 	if (bBuild) then
 		
 		local iExtraBuildRate = 0;
-		
-		-- Are we building anything right now?
+		--alpaca
+		local iBuildTurns = PlotGetBuildTurnsLeft(pPlot, iBuildID, unit:WorkRate());
+		--[[-- Are we building anything right now?
 		local iCurrentBuildID = unit:GetBuildType();
 		if (iCurrentBuildID == -1 or iBuildID ~= iCurrentBuildID) then
 			iExtraBuildRate = unit:WorkRate(true, iBuildID);
 		end
 		
-		local iBuildTurns = pPlot:GetBuildTurnsLeft(iBuildID, Game.GetActivePlayer(), iExtraBuildRate, iExtraBuildRate);
+		local iBuildTurns = pPlot:GetBuildTurnsLeft(iBuildID, iExtraBuildRate, iExtraBuildRate);]]--
+		--/alpaca
 		--print("iBuildTurns: " .. iBuildTurns);
-		if (iBuildTurns > 1) then
+		if (iBuildTurns >= 0) then
 			strBuildTurnsString = " ... " .. Locale.ConvertTextKey("TXT_KEY_BUILD_NUM_TURNS", iBuildTurns);
 		end
 		
@@ -1709,8 +1516,8 @@ function TipHandler( control )
 		
 		for iYield = 0, YieldTypes.NUM_YIELD_TYPES-1, 1 
 		do
-			iYieldChange = pPlot:GetYieldWithBuild(iBuildID, iYield, false, iActivePlayer);
-			iYieldChange = iYieldChange - pPlot:CalculateYield(iYield);
+			iYieldChange = PlotGetYieldWithBuild(pPlot, iBuildID, iYield, iActivePlayer) -- alpaca pPlot:GetYieldWithBuild(iBuildID, iYield, false, iActivePlayer);
+			iYieldChange = iYieldChange - Plot_GetYield(pPlot, iYield) --alpaca pPlot:CalculateYield(iYield);
 			
 			if (iYieldChange ~= 0) then
 				
@@ -1812,6 +1619,11 @@ function TipHandler( control )
 	
 	-- Title
     local text = action.TextKey or action.Type or "Action"..(buttonIndex - 1);
+	
+    if GameDefines.LOADED_GEM == 1 and action.Type == "MISSION_HURRY" and GameInfo.Units[unit:GetUnitType()].Class == "UNITCLASS_ARTIST" then
+		-- undesirable hack to piggyback Great Work mission AI on the Hurry mission AI
+		text = "TXT_KEY_MISSION_GREAT_WORK"
+	end
     local strTitleString = "[COLOR_POSITIVE_TEXT]" .. Locale.ConvertTextKey( text ) .. "[ENDCOLOR]".. strBuildTurnsString;
     tipControlTable.UnitActionText:SetText( strTitleString );
     
@@ -1844,6 +1656,31 @@ function ShowHideHandler( bIshide, bIsInit )
 end
 ContextPtr:SetShowHideHandler( ShowHideHandler );
 
+
+function IsModActive(sModID, iModMinVersion)
+  for _, mod in pairs(Modding.GetActivatedMods()) do
+    if (mod.ID == sModID) then
+	  return (mod.Version >= iModMinVersion)
+	end
+  end
+end
+
+
+function OnUpgradeTreeButton()
+	print("UpgradeTreeDisplay A")
+	LuaEvents.UpgradeTreeDisplay(UI.GetHeadSelectedUnit():GetID())
+end
+Controls.UnitNameButton:RegisterCallback( Mouse.eLClick, OnUpgradeTreeButton );
+
+function OnPromotionTreeButton()
+	local unit = UI.GetHeadSelectedUnit()
+	local unitClass = GameInfo.Units[unit:GetUnitType()].Class
+	if unitClass ~= "UNITCLASS_RECON" and unitClass ~= "UNITCLASS_NAVAL" then
+		LuaEvents.PromotionTreeDisplay(unit:GetID())
+	end
+end
+Controls.PromotionText:RegisterCallback(Mouse.eLClick, OnPromotionTreeButton)
+
 ----------------------------------------------------------------
 -- 'Active' (local human) player has changed
 ----------------------------------------------------------------
@@ -1859,5 +1696,18 @@ function OnEnemyPanelHide( bIsEnemyPanelHide )
     end
 end
 LuaEvents.EnemyPanelHide.Add( OnEnemyPanelHide );
+
+--alpaca
+--[[
+	Sort the action list by OrderPriority
+	Arguments:
+		l, r: action buttons
+	Returns:
+		true if the left hand side is greater than the right hand side (will appear further up)
+]]--
+function SortActionList(l,r)
+	return (g_SortTable[tostring(l)] or 0) > (g_SortTable[tostring(r)] or 0)
+end
+--/alpaca
 
 OnInfoPaneDirty();
