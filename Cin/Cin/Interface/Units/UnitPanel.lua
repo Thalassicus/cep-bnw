@@ -4,6 +4,11 @@
 include( "IconSupport" );
 include( "InstanceManager" );
 
+include("MT_Events.lua");
+
+local log = Events.LuaLogger:New()
+log:SetLevel("WARN")
+
 local g_PrimaryIM    = InstanceManager:new( "UnitAction",  "UnitActionButton", Controls.PrimaryStack );
 local g_SecondaryIM  = InstanceManager:new( "UnitAction",  "UnitActionButton", Controls.SecondaryStack );
 local g_BuildIM      = InstanceManager:new( "UnitAction",  "UnitActionButton", Controls.WorkerActionPanel );
@@ -1032,10 +1037,23 @@ local bOkayToProcess = true;
 --------------------------------------------------------------------------------
 -- UnitAction<idx> was clicked.
 --------------------------------------------------------------------------------
+Events.PromotionEarned = Events.PromotionEarned or function(unit, promotionType) end
+Events.UnitUpgraded = Events.UnitUpgraded or function(unit) end
+--LuaEvents.UnitActionButtonClicked = LuaEvents.UnitActionButtonClicked or function(action) end
+
 function OnUnitActionClicked( action )
 	if bOkayToProcess then
+		if not action then
+			log:Error("OnUnitActionClicked action=nil")
+		end
 		if (GameInfoActions[action].SubType == ActionSubTypes.ACTIONSUBTYPE_PROMOTION) then
 			Events.AudioPlay2DSound("AS2D_INTERFACE_UNIT_PROMOTION");	
+			--log:Debug("Promotion Earned")
+			Events.PromotionEarned(UI.GetHeadSelectedUnit(), GameInfoActions[action].Type)
+		elseif (GameInfoActions[action].Type == "COMMAND_UPGRADE") then
+			Events.UnitUpgraded(UI.GetHeadSelectedUnit())
+		elseif (GameInfoActions[action].Type == "MISSION_TRADE") then
+			--UpdatePlayerRewardsFromMinorCivs(Players[Game.GetActivePlayer()])
 		end
 		Game.HandleAction( action );
     end
