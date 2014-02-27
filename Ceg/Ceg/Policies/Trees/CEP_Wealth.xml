@@ -71,19 +71,19 @@
 			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>2</YieldChange>
+			<YieldChange>4</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>2</YieldChange>
+			<YieldChange>4</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_SEAPORT</BuildingClassType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>2</YieldChange>
+			<YieldChange>4</YieldChange>
 		</Row>
 	</Policy_BuildingClassYieldChanges>
 	<Policy_CapitalYieldModifiers>
@@ -150,6 +150,12 @@
 			<Happiness>1</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
+	<Policy_CoastalCityYieldChanges>
+		<Update>
+			<Where PolicyType="POLICY_MARITIME_INFRASTRUCTURE" YieldType="YIELD_PRODUCTION"/>
+			<Set Yield="4" />
+		</Update>
+	</Policy_CoastalCityYieldChanges>
 	
 	<!--
 	<Policies>
