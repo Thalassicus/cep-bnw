@@ -69,7 +69,7 @@
 			<GridX>5</GridX>
 			<GridY>1</GridY>
 			<GoldenAgeTurns>10</GoldenAgeTurns>
-			<GoldenAgeMeterMod>-25</GoldenAgeMeterMod>
+			<GoldenAgeMeterMod>-50</GoldenAgeMeterMod>
 			<PortraitIndex>46</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
