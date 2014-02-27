@@ -57,7 +57,7 @@
 			<PortraitIndex>44</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-			<FaithCostModifier>-20</FaithCostModifier>
+			<FaithCostModifier>-33</FaithCostModifier>
 		</Row>
 		<Row>
 			<Type>POLICY_UNITY</Type>
