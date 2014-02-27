@@ -5,7 +5,8 @@
 --VALUES ( 'SkipFile', 'CSD.sql' )
 --WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value= 0 );
 
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2014-02-02'), 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD', '[ICON_INFLUENCE] +20 instant Influence with City-States.[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Schools of Scribes.', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2014-02-02'), 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_NODLL', '[ICON_INFLUENCE] +20 instant Influence with City-States.[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Schools of Scribes.', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2014-02-02'), 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_DLL', '[ICON_INFLUENCE] +20 instant Influence with City-States.[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Chanceries.', '', '');
 --INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-20'), 'TXT_KEY_POLICY_PHILANTHROPY_HELP_EXTRA', '[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Schools of Scribes', '', '');
 --INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-20'), 'TXT_KEY_POLICY_CULTURAL_DIPLOMACY_HELP_EXTRA', '[NEWLINE]+3 [ICON_CULTURE] Culture from Foreign Office', '', '');
 --INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-20'), 'TXT_KEY_POLICY_AESTHETICS_HELP_EXTRA', '[NEWLINE]+20% [ICON_GOLD] Gold from Gutenberg Press', '', '');
