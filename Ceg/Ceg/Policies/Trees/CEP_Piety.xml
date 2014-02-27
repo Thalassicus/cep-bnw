@@ -223,6 +223,9 @@
 			<Yield>3</Yield>
 		</Row>
 	</Policy_ImprovementYieldChanges>
+	<Policy_ImprovementCultureChanges>
+		<Delete PolicyType="POLICY_PIETY_FINISHER" />
+	</Policy_ImprovementCultureChanges>
 	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_HAGIA_SOPHIA" />
