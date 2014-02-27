@@ -166,6 +166,12 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
+		<Row>
+			<PolicyType>POLICY_CHARITY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
 	</Policy_BuildingClassYieldChanges>
 	<Policy_BuildingClassHappiness>
 		<Row>
