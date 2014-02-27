@@ -548,7 +548,7 @@ function GetPromotionTip(promoID, unit)
 	local textFoot		= ""
 	local unit			= unit
 	local textSection	= {}
-		
+	
 	textSection[TipSection.PROMO_RANGE]				= ""
 	textSection[TipSection.PROMO_RANGED_STRENGTH]	= ""
 	textSection[TipSection.PROMO_STRENGTH]			= ""

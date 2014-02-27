@@ -520,17 +520,17 @@ function InsertPromoSubStat()
 	if not lineValue or lineValue == 0 or lineValue == -1 or lineValue == "" then
 		return
 	end
-	local text = Locale.ConvertTextKey(statTextKey)
-	if text == statTextKey then
-		-- no text key, use default behavior
+	local text = ModLocale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	if text == lineTextKey then
+		-- no text key, so use fallback
 		text = string.gsub(lineType, '(%u)',  function(x) return " "..x end)
+		if type(lineValue) == "boolean" then
+			text = string.format("%s %s", linePrefix, text)
+		else
+			text = string.format("%s %s: %s", linePrefix, text, lineValue)
+		end
+		text = string.gsub(text, '  ', ' ')
 	end
-	if type(lineValue) == "boolean" then
-		text = string.format("%s %s", linePrefix, text)
-	else
-		text = string.format("%s %s: %s", linePrefix, text, lineValue)
-	end
-	text = string.gsub(text, '  ', ' ')
 	table.insert(subStats, {Type=lineType, Section=lineSection, Priority=linePriority, TextBody=text})
 end
 
@@ -541,7 +541,7 @@ function InsertBuildingSubStat(yieldInfo)
 		lineValue		= objectInfo[lineType]
 	end
 	if type(lineValue) == "function" then
-		-- not handled by a specific if-else clause, so use default behavior
+		-- not handled by a specific if-else clause, so use fallback
 		lineValue = objectInfo[lineType]
 		--log:Warn("InsertBuildingSubStat %30s value is an unhandled function!", lineType)
 		--return
@@ -549,7 +549,17 @@ function InsertBuildingSubStat(yieldInfo)
 	if not lineValue or lineValue == 0 or lineValue == -1 or lineValue == "" then
 		return
 	end
-	local text = Locale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	local text = ModLocale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	if text == lineTextKey then
+		-- no text key, so use fallback
+		text = string.gsub(lineType, '(%u)',  function(x) return " "..x end)
+		if type(lineValue) == "boolean" then
+			text = string.format("%s %s", linePrefix, text)
+		else
+			text = string.format("%s %s: %s", linePrefix, text, lineValue)
+		end
+		text = string.gsub(text, '  ', ' ')
+	end
 	table.insert(subStats, {Type=lineType, Section=lineSection, Priority=linePriority, TextBody=text, TextFoot=statFoot})
 end
 
