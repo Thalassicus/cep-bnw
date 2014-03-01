@@ -8,7 +8,6 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_Start.sql'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_Misc.sql'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Promotions.sql'	, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AlterTables.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('YL_General.xml'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_BuildingStats.sql'	, 0);

@@ -18,11 +18,7 @@ Can copy the modded tables into another set of tables that hasn't been cached be
 --GameInfoCep.HandicapInfos		= {}
 
 function Game.GetWorldInfo()
-	local mapsize = Map.GetWorldSize(); --returns nil instead of 0 for Duel sized maps
-	if (not mapsize) then
-		return GameInfo.CepWorlds[0]
-	end
-	return GameInfo.CepWorlds[mapsize]
+	return GameInfo.CepWorlds[Map.GetWorldSize()]
 end
 function Game.GetSpeedInfo()
 	return GameInfo.CepGameSpeeds[Game.GetGameSpeedType()]

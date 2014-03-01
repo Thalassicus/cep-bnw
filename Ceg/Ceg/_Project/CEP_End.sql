@@ -1,10 +1,10 @@
--- 
-DROP TABLE CepWorlds;
-DROP TABLE CepGameSpeeds;
-DROP TABLE CepHandicapInfos;
+--
+DELETE FROM CepWorlds;
+DELETE FROM CepGameSpeeds;
+DELETE FROM CepHandicapInfos;
 
-CREATE TABLE CepWorlds AS SELECT * FROM Worlds;
-CREATE TABLE CepGameSpeeds AS SELECT * FROM GameSpeeds;
-CREATE TABLE CepHandicapInfos AS SELECT * FROM HandicapInfos;
+INSERT INTO CepWorlds SELECT * FROM Worlds;
+INSERT INTO CepGameSpeeds SELECT * FROM GameSpeeds;
+INSERT INTO CepHandicapInfos SELECT * FROM HandicapInfos;
 
 UPDATE LoadedFile SET Value=1 WHERE Type='_CEP_End.sql';
