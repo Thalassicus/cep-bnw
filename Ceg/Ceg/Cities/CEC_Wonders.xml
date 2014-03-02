@@ -6,6 +6,21 @@
 			<Set Value="1" />
 		</Update>		
 	</Defines>
+	<Building_SpecialistYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_STATUE_OF_LIBERTY</BuildingType>
+			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_STATUE_OF_LIBERTY</BuildingType>
+			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>		
+	</Building_SpecialistYieldChanges>
+
 
 	<Buildings>
 		<Row>
@@ -394,7 +409,7 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_CHURCHES_LALIBELA</BuildingType>
-			<UnitType>UNIT_MISSIONARY</UnitType>
+			<UnitType>UNIT_MISSIONARY_LALIBELA</UnitType>
 			<NumUnits>1</NumUnits>
 		</Row>
 		<Row>
@@ -630,18 +645,6 @@
 			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
 			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
-		</Row>		
-		<Row>
-			<BuildingType>BUILDING_STATUE_OF_LIBERTY</BuildingType>
-			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_STATUE_OF_LIBERTY</BuildingType>
-			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>		
 	</Building_SpecialistYieldChanges>
