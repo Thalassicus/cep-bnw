@@ -72,8 +72,8 @@
 	<Policy_CapitalYieldPerPopChanges>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-		<YieldType>YIELD_FOOD</YieldType>
-		<Yield>25</Yield>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>25</Yield>
 		</Row>
 	</Policy_CapitalYieldPerPopChanges>
 	
