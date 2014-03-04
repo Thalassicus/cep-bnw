@@ -329,7 +329,7 @@ function UpdateGPT()
     end
     
     -- Maintenance mod (handicap)
-    local iUnitMaintMod = GameInfo.HandicapInfos[iHandicap].UnitCostPercent;
+    local iUnitMaintMod = GameInfo.CepHandicapInfos[iHandicap].UnitCostPercent;
     if (iUnitMaintMod ~= 100) then
 		strUnitTT = strUnitTT .. "[NEWLINE][NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_HANDICAP_MAINTENANCE_MOD", iUnitMaintMod);
 	end
@@ -337,7 +337,7 @@ function UpdateGPT()
     Controls.UnitExpense:SetToolTipString( strUnitTT );
     
     -- Buildings
-    local iBuildingMaintMod = GameInfo.HandicapInfos[iHandicap].BuildingCostPercent;
+    local iBuildingMaintMod = GameInfo.CepHandicapInfos[iHandicap].BuildingCostPercent;
     
     local strBuildingsTT = Locale.ConvertTextKey("TXT_KEY_EO_EX_BUILDINGS");
     local strBuildingsModTT = "";
@@ -382,7 +382,7 @@ function UpdateGPT()
     -- Routes
     local strRoutesTT = Locale.ConvertTextKey("TXT_KEY_EO_EX_IMPROVEMENTS");
     
-    local iRouteMaintMod = GameInfo.HandicapInfos[iHandicap].RouteCostPercent;
+    local iRouteMaintMod = GameInfo.CepHandicapInfos[iHandicap].RouteCostPercent;
     local strRoutesModTT = "";
     
     if (iRouteMaintMod ~= 100) then

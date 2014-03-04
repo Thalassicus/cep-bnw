@@ -328,7 +328,7 @@ function SetSaveInfoToCiv(civType, gameSpeed, era, turn, difficulty, mapSize, ma
 	end
 	
 	-- Sets handicap icon and tool tip
-	info = GameInfo.HandicapInfos[ difficulty ];
+	info = GameInfo.CepHandicapInfos[ difficulty ];
 	if(info ~= nil) then
 		IconHookup( info.PortraitIndex, 64, info.IconAtlas, Controls.Handicap );
 		Controls.Handicap:SetToolTipString( Locale.ConvertTextKey( info.Description ) );

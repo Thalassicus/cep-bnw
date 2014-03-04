@@ -310,7 +310,7 @@ end
 ---------------------------------------------------------------- 
 function SetDifficulty()
     -- Set Difficulty Slot
-    local info = GameInfo.HandicapInfos[ PreGame.GetHandicap( 0 ) ];
+    local info = GameInfo.CepHandicapInfos[ PreGame.GetHandicap( 0 ) ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.DifficultyIcon );
         Controls.DifficultyHelp:SetText( Locale.ConvertTextKey( info.Help ) );

@@ -49,7 +49,7 @@ ContextPtr:SetShowHideHandler( ShowHideHandler );
 ----------------------------------------------------------------        
 -- build the buttons
 ----------------------------------------------------------------  
-for info in GameInfo.HandicapInfos("Type <> 'AI_HAPPINESS'") do
+for info in GameInfo.CepHandicapInfos("Type <> 'AI_HAPPINESS'") do
     local controlTable = {};
     ContextPtr:BuildInstanceForControl( "ItemInstance", controlTable, Controls.Stack );
     IconHookup( info.PortraitIndex, 64, info.IconAtlas, controlTable.Icon );

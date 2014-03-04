@@ -252,7 +252,7 @@ function PopulateGameData()
 	end
 	
 	-- Set Difficulty
-	info = GameInfo.HandicapInfos[ Players[Game.GetActivePlayer()]:GetHandicapType() ];
+	info = GameInfo.CepHandicapInfos[ Players[Game.GetActivePlayer()]:GetHandicapType() ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 64, info.IconAtlas, Controls.DifficultyIcon );
         Controls.DifficultyFrame:SetToolTipString( Locale.ConvertTextKey( info.Description ) );
@@ -339,7 +339,7 @@ function PopulateGameOptions()
 	end
 	
 	-- Set Difficulty
-	info = GameInfo.HandicapInfos[ PreGame.GetHandicap( Game.GetActivePlayer() ) ];
+	info = GameInfo.CepHandicapInfos[ PreGame.GetHandicap( Game.GetActivePlayer() ) ];
     if ( info ~= nil ) then
 		local controlTable = g_GameOptionIM:GetInstance();
 		g_GameOptionsList[count] = controlTable;

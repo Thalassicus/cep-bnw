@@ -100,7 +100,7 @@ function UpdateScreen()
     
     --------------------------------------------------------
     -- Supply Details
-	local handicapInfo = GameInfo.HandicapInfos[Game:GetHandicapType()]
+	local handicapInfo = GameInfo.CepHandicapInfos[Game:GetHandicapType()]
     Controls.HandicapSupplyValue:SetText(   Civup.SUPPLY_BASE );
     Controls.CitiesSupplyValue:SetText(     Civup.SUPPLY_PER_CITY * pPlayer:GetNumCities() );
     Controls.PopulationSupplyValue:SetText( GetSupplyFromPopulation(pPlayer) );

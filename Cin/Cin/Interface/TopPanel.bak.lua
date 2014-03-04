@@ -757,7 +757,7 @@ function HappinessTipHandler( control )
 	local iReligionHappiness = activePlayer:GetHappinessFromReligion();
 	local iNaturalWonderHappiness = activePlayer:GetHappinessFromNaturalWonders();
 	local iExtraHappinessPerCity = activePlayer:GetExtraHappinessPerCity() * activePlayer:GetNumCities();
-	local iHandicapHappiness = GameInfo.HandicapInfos[activePlayer:GetHandicapType()].HappinessDefault;	
+	local iHandicapHappiness = GameInfo.CepHandicapInfos[activePlayer:GetHandicapType()].HappinessDefault;	
 	local iMinorCivHappiness = 0;
 	local iMiscGlobalHappiness = City_GetNumBuilding(activePlayer:GetCapitalCity(), GameInfo.Buildings.BUILDING_HAPPINESS_NATIONAL.ID);
 	
