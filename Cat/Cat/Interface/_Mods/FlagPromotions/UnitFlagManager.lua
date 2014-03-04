@@ -4,6 +4,7 @@ include("IconSupport");
 include("InstanceManager");
 include("AlpacaUtils");
 include("ModTools");
+include("MT_Events.lua")
 local g_MilitaryManager = InstanceManager:new( "NewUnitFlag", "Anchor", Controls.MilitaryFlags );
 local g_CivilianManager = InstanceManager:new( "NewUnitFlag", "Anchor", Controls.CivilianFlags );
 local g_AirCraftManager = InstanceManager:new( "NewUnitFlag", "Anchor", Controls.AirCraftFlags );

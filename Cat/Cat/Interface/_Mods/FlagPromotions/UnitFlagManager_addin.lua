@@ -10,6 +10,7 @@ include("ModTools.lua")
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")
 log:Info("Loading UnitFlagManager_addin.lua A")
+include("MT_Events.lua")
 
 include("ModUserData")
 local ModID				= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"

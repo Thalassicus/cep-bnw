@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 
 include("ModTools.lua")
+include("MT_Events.lua")
 local log = Events.LuaLogger:New()
 log:SetLevel("DEBUG")
 log:Info("Loading UnitFlagManager_addin.lua A")

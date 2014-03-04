@@ -1,6 +1,7 @@
 -- LIBERATE MINOR POPUP
 -- This popup occurs when a player captures a City that was first founded by a Minor and can liberate that Minor
 include("ModTools.lua")
+include("MT_Events.lua")
 PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_LIBERATE_MINOR] = function(popupInfo)
 
 	local eMinor		= popupInfo.Data1;
