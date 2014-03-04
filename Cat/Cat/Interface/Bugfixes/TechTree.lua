@@ -4,6 +4,7 @@
 --modchange
 include("InstanceManager");
 include("YieldLibrary.lua");
+include("MT_Events.lua");
 
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")
@@ -854,6 +855,17 @@ function RefreshDisplayOfSpecificTech( tech )
 		end
 	end
 end
+
+function RefreshDisplayWonder(player, city, buildingID)
+	local buildingInfo = GameInfo.Buildings[buildingID];
+	local techInfo = GameInfo.Technologies[buildingInfo.PrereqTech];
+	local thisTechButton = techButtons[techInfo.ID];
+	
+	if GameInfo.BuildingClasses[buildingInfo.BuildingClass].MaxGlobalInstances == 1 then
+		AddSmallButtonsToTechButton( thisTechButton, techInfo, maxSmallButtons, 45 );
+	end
+end
+LuaEvents.BuildingConstructed.Add( RefreshDisplayWonder );
 
 ----------------------------------------------------------------        
 -- Input processing

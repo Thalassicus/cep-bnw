@@ -14,6 +14,7 @@ include( "TechHelpInclude" );
 
 --cep
 include("YieldLibrary.lua");
+include("MT_Events.lua");
 
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")
@@ -464,6 +465,18 @@ local function RefreshDisplay()
 
 	g_NeedsFullRefresh = false;
 end
+
+--cep
+function RefreshDisplayWonder(player, city, buildingID)
+	local buildingInfo = GameInfo.Buildings[buildingID];
+	local techInfo = GameInfo.Technologies[buildingInfo.PrereqTech];
+	local thisTechButton = g_techButtons[techInfo.ID];
+	
+	if GameInfo.BuildingClasses[buildingInfo.BuildingClass].MaxGlobalInstances == 1 then
+		AddSmallButtonsToTechButton( thisTechButton, techInfo, g_maxSmallButtons, 45 );
+	end
+end
+LuaEvents.BuildingConstructed.Add( RefreshDisplayWonder );
 
 -------------------------------------------------
 -- Input processing
