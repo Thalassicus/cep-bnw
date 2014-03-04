@@ -341,7 +341,7 @@ function SetSaveInfoToCiv(civType, gameSpeed, era, turn, difficulty, mapSize, ma
 	end
 	
 	-- Sets game pace icon and tool tip
-	info = GameInfo.GameSpeeds[ gameSpeed ];
+	info = GameInfo.CepGameSpeeds[ gameSpeed ];
 	if(info ~= nil) then
 		IconHookup( info.PortraitIndex, 64, info.IconAtlas, Controls.SpeedIcon );
 		Controls.SpeedIcon:SetToolTipString( Locale.ConvertTextKey( info.Description ) );

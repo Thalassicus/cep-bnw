@@ -322,7 +322,7 @@ end
 ---------------------------------------------------------------- 
 function SetGamePace()
     -- Set Game Pace Slot
-    local info = GameInfo.GameSpeeds[ PreGame.GetGameSpeed() ];
+    local info = GameInfo.CepGameSpeeds[ PreGame.GetGameSpeed() ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.SpeedIcon );
         Controls.SpeedHelp:SetText( Locale.ConvertTextKey( info.Help ) );

@@ -261,7 +261,7 @@ function PopulateGameData()
     end
     
     -- Set Game Pace
-    info = GameInfo.GameSpeeds[ PreGame.GetGameSpeed() ];
+    info = GameInfo.CepGameSpeeds[ PreGame.GetGameSpeed() ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 64, info.IconAtlas, Controls.SpeedIcon );
         Controls.SpeedFrame:SetToolTipString( Locale.ConvertTextKey( info.Description )  );
@@ -348,7 +348,7 @@ function PopulateGameOptions()
     end
     
     -- Set Game Pace
-    info = GameInfo.GameSpeeds[ PreGame.GetGameSpeed() ];
+    info = GameInfo.CepGameSpeeds[ PreGame.GetGameSpeed() ];
     if ( info ~= nil ) then
 		local controlTable = g_GameOptionIM:GetInstance();
 		g_GameOptionsList[count] = controlTable;
