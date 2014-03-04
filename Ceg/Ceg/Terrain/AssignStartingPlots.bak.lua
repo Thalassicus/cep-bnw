@@ -6452,12 +6452,12 @@ function AssignStartingPlots:PlaceNaturalWonders()
 	-- Determine how many NWs to attempt to place. Target is regulated per map size.
 	-- The final number cannot exceed the number the map has locations to support.
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = 2,
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = 4,
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = 5,
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = 6,
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = 7
+		[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = 2,
+		[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = 4,
+		[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = 5,
+		[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = 6,
+		[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = 7
 		}
 	local target_number = worldsizes[Map.GetWorldSize()];
 	local iNumNWtoPlace = math.min(target_number, iNumNWCandidates);
@@ -8315,12 +8315,12 @@ end
 function AssignStartingPlots:GetCityStateLuxuriesTargetNumber()
 	-- This data was separated out to allow easy replacement in map scripts.
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = 4,
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = 4
+		[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = 4,
+		[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = 4
 		}
 	local CSluxCount = worldsizes[Map.GetWorldSize()];
 	return CSluxCount
@@ -8329,12 +8329,12 @@ end
 function AssignStartingPlots:GetDisabledLuxuriesTargetNumber()
 	-- This data was separated out to allow easy replacement in map scripts.
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = 10,
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = 7,
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = 5,
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = 3,
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = 1,
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = 0
+		[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = 10,
+		[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = 7,
+		[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = 5,
+		[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = 3,
+		[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = 1,
+		[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = 0
 		}
 	local maxToDisable = worldsizes[Map.GetWorldSize()];
 	return maxToDisable
@@ -8911,12 +8911,12 @@ function AssignStartingPlots:GetRegionLuxuryTargetNumbers()
 	local huge_values = {0, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2};
 	--
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = duel_values,
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = tiny_values,
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = small_values,
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = standard_values,
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = large_values,
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = huge_values
+		[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = duel_values,
+		[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = tiny_values,
+		[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = small_values,
+		[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = standard_values,
+		[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = large_values,
+		[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = huge_values
 		}
 	local target_list = worldsizes[Map.GetWorldSize()];
 	return target_list
@@ -8933,30 +8933,30 @@ function AssignStartingPlots:GetWorldLuxuryTargetNumbers()
 	local worldsizes = {};
 	if self.resource_setting == 1 then -- Sparse
 		worldsizes = {
-			[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {14, 3},
-			[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {24, 4},
-			[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {36, 4},
-			[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {48, 5},
-			[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {60, 5},
-			[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {76, 6}
+			[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = {14, 3},
+			[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = {24, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = {36, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = {48, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = {60, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = {76, 6}
 		}
 	elseif self.resource_setting == 3 then -- Abundant
 		worldsizes = {
-			[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {24, 3},
-			[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {40, 4},
-			[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {60, 4},
-			[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {80, 5},
-			[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {100, 5},
-			[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {128, 6}
+			[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = {24, 3},
+			[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = {40, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = {60, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = {80, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = {100, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = {128, 6}
 		}
 	else -- Standard
 		worldsizes = {
-			[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {18, 3},
-			[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {30, 4},
-			[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {45, 4},
-			[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {60, 5},
-			[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {75, 5},
-			[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {95, 6}
+			[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = {18, 3},
+			[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = {30, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = {45, 4},
+			[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = {60, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = {75, 5},
+			[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = {95, 6}
 		}
 	end
 	local world_size_data = worldsizes[Map.GetWorldSize()];
@@ -10364,7 +10364,7 @@ function AssignStartingPlots:GetResourceQuantities(resIDs)
 		if resInfo.MutuallyExclusiveGroup == -1 then
 			resNum[resID] = resInfo.NumPerTerritory * stratMultiplier * 0.01 * (resLower + Map.Rand(resUpper - resLower, "Strategic Resource Placement"))
 			if resNum[resID] < 0 then
-				resNum[resID] = -1 * resNum[resID] * GameInfo.Worlds[Map.GetWorldSize()].ResourceMod / 100
+				resNum[resID] = -1 * resNum[resID] * GameInfo.CepWorlds[Map.GetWorldSize()].ResourceMod / 100
 			end
 			resNum[resID] = Game.Round(resNum[resID])			
 		else

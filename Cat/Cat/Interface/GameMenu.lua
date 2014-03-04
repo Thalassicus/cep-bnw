@@ -242,7 +242,7 @@ function PopulateGameData()
 	Controls.TypeFrame:SetToolTipString(Locale.Lookup(mapInfo.Name));
 		
 	-- Set Map Size
-	local info = GameInfo.Worlds[ PreGame.GetWorldSize() ];
+	local info = GameInfo.CepWorlds[ PreGame.GetWorldSize() ];
 	if ( info ~= nil ) then
 		IconHookup( info.PortraitIndex, 64, info.IconAtlas, Controls.SizeIcon );
 		Controls.SizeFrame:SetToolTipString( Locale.ConvertTextKey( info.Description ) );
@@ -330,7 +330,7 @@ function PopulateGameOptions()
 	end
 	
 	-- Set Map Size
-	local info = GameInfo.Worlds[ PreGame.GetWorldSize() ];
+	local info = GameInfo.CepWorlds[ PreGame.GetWorldSize() ];
 	if ( info ~= nil ) then
 		local controlTable = g_GameOptionIM:GetInstance();
 		g_GameOptionsList[count] = controlTable;
