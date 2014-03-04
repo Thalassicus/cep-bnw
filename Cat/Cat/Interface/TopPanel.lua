@@ -5,7 +5,6 @@
 --AttilaMod+
 include("TopPanel_Clock");
 include("YieldLibrary.lua")
-include("MT_Events.lua")
 
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")

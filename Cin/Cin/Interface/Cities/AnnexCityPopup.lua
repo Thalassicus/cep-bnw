@@ -2,7 +2,6 @@
 -- ANNEX CITY POPUP
 -- This popup occurs when a player clicks on a puppeted City
 include("ModTools.lua")
-include("MT_Events.lua")
 PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_ANNEX_CITY] = function(popupInfo)
 	
 	local cityID		= popupInfo.Data1;

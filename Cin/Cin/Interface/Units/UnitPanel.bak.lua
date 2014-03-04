@@ -5,7 +5,6 @@ include("IconSupport");
 include("InstanceManager");
 include("YieldLibrary.lua");
 include("CustomMissionHandler.lua");
-include("MT_Events.lua")
 
 include("AlpacaUtils")
 VERBOSITY = 1

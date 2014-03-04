@@ -1,7 +1,6 @@
 -- CAPTURE CITY POPUP
 -- This popup occurs when a city is capture and must be annexed or puppeted.
 include("ModTools.lua")
-include("MT_Events.lua")
 
 PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_CITY_CAPTURED] = function(popupInfo)
 
