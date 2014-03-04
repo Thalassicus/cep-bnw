@@ -955,6 +955,12 @@ Controls.UnitNameButton:RegisterCallback( Mouse.eLClick, OnUnitNameClicked );
 Controls.UnitPortraitButton:RegisterCallback( Mouse.eLClick, OnUnitNameClicked );
 
 
+function OnUnitNameRClicked()
+    -- rename this unit
+    OnEditNameClick();
+end
+Controls.UnitNameButton:RegisterCallback( Mouse.eRClick, OnUnitNameRClicked );
+
 
 function OnUnitRClicked()
 	local unit = UI.GetHeadSelectedUnit();
