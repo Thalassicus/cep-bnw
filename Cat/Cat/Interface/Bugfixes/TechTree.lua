@@ -858,6 +858,9 @@ end
 
 function RefreshDisplayWonder(player, city, buildingID)
 	local buildingInfo = GameInfo.Buildings[buildingID];
+	if buildingInfo.PrereqTech == nil then
+		return;
+	end
 	local techInfo = GameInfo.Technologies[buildingInfo.PrereqTech];
 	local thisTechButton = techButtons[techInfo.ID];
 	
