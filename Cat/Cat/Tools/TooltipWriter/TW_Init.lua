@@ -591,17 +591,17 @@ end
 function GetYieldInfo(info)
 	--[[
 	
-	info contains these optional parameters:
+	This function uses several optional parameters.
 	
 	Type	Parameter		Default Value	  Description
 	-------------------------------------------------------------
 	string	table							: Name of the table to scan
-	string	yieldType		"YieldType" 	: The type of yield we alter, normally provided by a YieldType field in "table"
+	string	yieldType		"YieldType" 	: The type of yield we give
 	string	yield			"Yield" 		: The yield amount
-	string	tableReference	nil				: The yield is given for something specific in another table, like a yield bonus for a specific terrain, resource, or unit type
+	string	tableReference	nil				: The yield is given for something in another table, like a yield bonus for a specific terrain or resource type
 	string	cellReference	nil				: Type to search for in the other table
 	string	typeReference	nil				: Some tables do not store the type to search for in its table data, so we must manually give that information.
-	boolean div100			false			: divide "yield" by 100 to get the real value
+	boolean div100			false			: Divide "yield" by 100 to get the real value
 	
 	--]]
 	
