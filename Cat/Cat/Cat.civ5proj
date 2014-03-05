@@ -428,11 +428,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Trade.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>Text/DE_DE/YieldLibrary.sql</FileName>
       </Action>
       <Action>
@@ -749,7 +744,6 @@
     <Folder Include="Interface\Icons" />
     <Folder Include="Interface\DisablePrints" />
     <Folder Include="Interface\Bugfixes" />
-    <Folder Include="Interface\Units" />
     <Folder Include="InterferesWithBuild" />
     <Folder Include="Tools" />
     <Folder Include="Tools\Core\" />
@@ -872,14 +866,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Interface\Units\EnemyUnitPanel.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Interface\GameMenu.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Interface\CivilopediaScreen.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -892,18 +878,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Interface\TopPanel.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Interface\TopPanel.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Interface\TopPanel_Clock.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="InterferesWithBuild\InGame.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -913,10 +887,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Text\en_US\Flavors.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\en_US\Trade.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

@@ -45,7 +45,7 @@ INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALU
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_TERRAIN', '{1_prefix}: {3_value} for {4_extra}', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_FEATURES', '{1_prefix}: {3_value} for {4_extra}', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_RESOURCES', '{1_prefix}: {3_value} for {4_extra}', '', '');
-INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_RELIGION', '{1_prefix}: {3_value} for {4_extra}', '', '');
+INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_RELIGION', '{1_prefix}: {3_value} per religion in this city', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_TECH', '{1_prefix}: {3_value} with {4_extra}', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_SPECIALISTS', '{1_prefix}: {3_value} for {4_extra} {TXT_KEY_IN_ALL_CITIES}', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-24'), 'TXT_KEY_BUILDING_EFFECT_YIELD_FROM_BUILDINGS', '{1_prefix}: {3_value} for {4_extra}s', '', '');
