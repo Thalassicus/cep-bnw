@@ -666,4 +666,4 @@ DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings W
 
 -- Revert BNW Flavors
 DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
-INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW;
+INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);

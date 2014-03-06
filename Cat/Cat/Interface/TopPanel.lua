@@ -3,14 +3,14 @@
 -------------------------------
 
 --AttilaMod+
-include("TopPanel_Clock");
-include("YieldLibrary");
-include("MT_Events");
+include("TopPanel_Clock.lua");
+include("YieldLibrary.lua");
+include("MT_Events.lua");
 
-local log = Events.LuaLogger:New()
-log:SetLevel("WARN")
+local log = Events.LuaLogger:New();
+log:SetLevel("WARN");
 
-local showTimers = Cep.DEBUG_TIMER_LEVEL
+local showTimers = Cep.DEBUG_TIMER_LEVEL;
 
 --Great People display helper functions - from BlakeTheGreat
 
