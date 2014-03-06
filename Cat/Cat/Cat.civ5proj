@@ -218,11 +218,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_Worlds.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>AI/CEAI_Buildings.xml</FileName>
       </Action>
       <Action>
@@ -825,10 +820,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="AI\CEAI_LeaderPersonalities.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="AI\CEAI_Worlds.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
