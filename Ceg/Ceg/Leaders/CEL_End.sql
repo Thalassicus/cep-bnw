@@ -345,6 +345,13 @@ FROM Civilizations WHERE Type IN (
 	'CIVILIZATION_VENICE'		
 );
 
+--Custom Civilizations
+INSERT INTO Civilization_FreeUnits (UnitClassType, UnitAIType, Count, CivilizationType)
+SELECT 'UNITCLASS_WARRIOR', 'UNITAI_EXPLORE', 1, Type 
+FROM Civilizations WHERE Type NOT IN 
+(SELECT CivilizationType FROM Civilization_FreeUnits WHERE UnitClassType IS NOT 'UNITCLASS_SETTLER');
+
+
 --
 -- Dummy Conquistador with no religious spreads remaining, but still alive
 --
