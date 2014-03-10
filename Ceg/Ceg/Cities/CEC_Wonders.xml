@@ -6,7 +6,7 @@
 			<Set Value="1" />
 		</Update>		
 	</Defines>
-	<Building_SpecialistYieldChanges>
+<!--	<Building_SpecialistYieldChanges>
 		<Row>
 			<BuildingType>BUILDING_STATUE_OF_LIBERTY</BuildingType>
 			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
@@ -19,7 +19,7 @@
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>1</Yield>
 		</Row>		
-	</Building_SpecialistYieldChanges>
+	</Building_SpecialistYieldChanges> -->
 
 
 	<Buildings>
