@@ -1,3 +1,4 @@
+
 /* The sql commands and text below were formulated in the Armies tab of the Google Spreadsheet 'Cep_Language'.
 https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jruTs/edit#gid=742165834
 If you make any changes be sure to update the spreadsheet also.*/
@@ -55,3 +56,11 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 
 
 UPDATE Loaded File SET Value=1, en_US=1 Where Type='Armies.sql';
+--*/
+
+
+
+UPDATE Language_EN_US SET Text = REPLACE( Text, ' (', ': ' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
+
+UPDATE Language_EN_US SET Text = REPLACE( Text, ')', '' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
+

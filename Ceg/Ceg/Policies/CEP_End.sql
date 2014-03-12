@@ -115,7 +115,6 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
-/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -125,7 +124,7 @@ SELECT DISTINCT
 	'POLICY_REPUBLIC', 
 	BuildingClass, 
 	'YIELD_PRODUCTION',
-	2
+	1
 FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_WALLS'			,
 	'BUILDINGCLASS_CASTLE'			,
@@ -133,6 +132,7 @@ FROM Buildings WHERE BuildingClass IN (
 	'BUILDINGCLASS_MILITARY_BASE'	
 );
 
+/*
 INSERT INTO Policy_BuildingClassYieldChanges(
 	PolicyType, 
 	BuildingClassType, 
@@ -298,5 +298,23 @@ FROM Buildings WHERE BuildingClass IN (
 );
 */
 
+--CSD Compatibility
+
+UPDATE Policies
+SET Help = 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_NODLL'
+WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value > 0);
+
+UPDATE Policies
+SET Help = 'TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_DLL'
+WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value = 2);
+
+UPDATE Policies
+SET MinorGoldFriendshipMod = 0
+WHERE Type = 'POLICY_PHILANTHROPY' AND EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value > 0);
+
+INSERT INTO Policy_BuildingClassHappiness
+(PolicyType, BuildingClassType, Happiness)
+SELECT 'POLICY_PHILANTHROPY', 'BUILDINGCLASS_SCRIBE', '1'
+WHERE EXISTS (SELECT Value FROM Cep WHERE Type='USING_CSD' AND Value > 0);
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEP_End.sql';

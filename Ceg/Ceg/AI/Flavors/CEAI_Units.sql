@@ -336,7 +336,7 @@ WHERE UnitType IN (SELECT Type FROM Units WHERE Class IN (
 	'UNITCLASS_SETTLER'				
 ));
 
-UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 2, 0)
+UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 2, 0) --originally x2
 WHERE UnitType IN (SELECT Type FROM Units WHERE Class IN (
 	'UNITCLASS_WORKER'				,
 	'UNITCLASS_WORKBOAT'			,
@@ -401,5 +401,8 @@ DELETE FROM SpecialistFlavors;
 INSERT INTO SpecialistFlavors (SpecialistType, FlavorType, Flavor) SELECT SpecialistType, FlavorType, Flavor FROM CEP_Collisions;
 DROP TABLE CEP_Collisions;
 
+-- Revert BNW Flavors
+DELETE FROM Unit_Flavors WHERE UnitType IN (SELECT UnitType FROM Unit_Flavors_BNW);
+INSERT INTO Unit_Flavors SELECT * FROM Unit_Flavors_BNW WHERE UnitType IN (SELECT Type FROM Units);
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Units.sql';

@@ -218,11 +218,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_Worlds.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>AI/CEAI_Buildings.xml</FileName>
       </Action>
       <Action>
@@ -394,6 +389,11 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>Text/ZH_HANT_HK/Framework.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/en_US/Trade.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -694,6 +694,7 @@
     <Folder Include="Interface\Icons" />
     <Folder Include="Interface\DisablePrints" />
     <Folder Include="Interface\Bugfixes" />
+    <Folder Include="Interface\Units" />
     <Folder Include="InterferesWithBuild" />
     <Folder Include="Tools" />
     <Folder Include="Tools\Core\" />
@@ -773,10 +774,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="AI\CEAI_Worlds.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
     <Content Include="Fixes\Cat_Fixes.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -797,11 +794,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\Bugfixes\ProductionPopup.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Interface\Bugfixes\TechButtonInclude.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Interface\Bugfixes\TechHelpInclude.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Bugfixes\TechPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Bugfixes\TechPopup.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -817,6 +826,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\Units\EnemyUnitPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\GameMenu.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Interface\CivilopediaScreen.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -828,6 +845,18 @@
     <Content Include="Interface\Interface_Data.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel_Clock.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="InterferesWithBuild\InGame.lua">
       <SubType>Lua</SubType>
@@ -869,7 +898,11 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+<<<<<<< HEAD
     <Content Include="Text\en_US\Framework.sql">
+=======
+    <Content Include="Text\en_US\Trade.sql">
+>>>>>>> origin/new-features
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

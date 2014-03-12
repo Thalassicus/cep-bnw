@@ -402,6 +402,7 @@ ALTER TABLE Flavors			ADD PurchasePriority					variant default 0;
 
 ALTER TABLE GameOptions		ADD Reverse								boolean;
 
+--ALTER TABLE changes to CepHandicapInfos in CAT_Info.xml
 ALTER TABLE HandicapInfos	ADD AIFreeXPPerEra						integer default 0;
 ALTER TABLE HandicapInfos	ADD AIFreeXPPerTurn						variant default 0;
 ALTER TABLE HandicapInfos	ADD AIFreeXPMax							integer default 0;
@@ -499,6 +500,7 @@ ALTER TABLE UnitPromotions	ADD RankList							text;
 ALTER TABLE UnitPromotions	ADD RankNumber							integer default 0;
 ALTER TABLE UnitPromotions	ADD Class								text default 'PROMOTION_CLASS_PERSISTENT';
 
+--ALTER TABLE changes to CepWorlds in CAT_Info.xml
 ALTER TABLE Worlds			ADD AISearchRange						integer default 0;
 ALTER TABLE Worlds			ADD ResourceMod							integer default 100;
 UPDATE Worlds SET ResourceMod = 100;

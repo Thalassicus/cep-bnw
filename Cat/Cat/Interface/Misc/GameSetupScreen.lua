@@ -293,7 +293,7 @@ function SetMapSizeForScript()
 	Controls.MapSizeButton:SetHide(false);
 	Controls.MapSizeButton:SetDisabled(false);
 	if( not PreGame.IsRandomWorldSize() ) then
-		local info = GameInfo.Worlds[ PreGame.GetWorldSize() ];
+		local info = GameInfo.CepWorlds[ PreGame.GetWorldSize() ];
 		if ( info ~= nil ) then
 			IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.SizeIcon );
 			Controls.SizeHelp:SetText( Locale.ConvertTextKey( info.Help ) );
@@ -310,7 +310,7 @@ end
 ---------------------------------------------------------------- 
 function SetDifficulty()
     -- Set Difficulty Slot
-    local info = GameInfo.HandicapInfos[ PreGame.GetHandicap( 0 ) ];
+    local info = GameInfo.CepHandicapInfos[ PreGame.GetHandicap( 0 ) ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.DifficultyIcon );
         Controls.DifficultyHelp:SetText( Locale.ConvertTextKey( info.Help ) );
@@ -322,7 +322,7 @@ end
 ---------------------------------------------------------------- 
 function SetGamePace()
     -- Set Game Pace Slot
-    local info = GameInfo.GameSpeeds[ PreGame.GetGameSpeed() ];
+    local info = GameInfo.CepGameSpeeds[ PreGame.GetGameSpeed() ];
     if ( info ~= nil ) then
         IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.SpeedIcon );
         Controls.SpeedHelp:SetText( Locale.ConvertTextKey( info.Help ) );
@@ -363,7 +363,7 @@ function SetMapTypeSizeForMap(mapScriptFileName)
 		end
 					
 		-- Set Map Size Slot
-		local info = GameInfo.Worlds[ mapInfo.MapSize ];
+		local info = GameInfo.CepWorlds[ mapInfo.MapSize ];
 		if ( info ~= nil ) then
 			IconHookup( info.PortraitIndex, 128, info.IconAtlas, Controls.SizeIcon );
 			Controls.SizeHelp:SetText( Locale.ConvertTextKey( info.Help ) );

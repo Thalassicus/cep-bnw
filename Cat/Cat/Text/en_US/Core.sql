@@ -56,6 +56,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POSS
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_NOT_POSSIBLE', 'Not Possible', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CITY_STATE_GIFT_FIRST', 'Pleased to meet a mighty empire like yours, they provide you with a gift of [COLOR_POSITIVE_TEXT]{1_NumGold} [ICON_GOLD] Gold[ENDCOLOR].', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CITY_STATE_GIFT_OTHER', 'Pleased to meet a mighty empire like yours, they provide you with a gift of [COLOR_POSITIVE_TEXT]{1_NumGold} [ICON_GOLD] Gold[ENDCOLOR].', '', '');
+
 /*  Techs  */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TECH_RIFLING_TITLE', 'Smokeless Powder', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TECH_RIFLING_DESC', 'The invention of smokeless powder revolutionized military weapons and tactics. Older forms of gunpowder (called black powder) produced large quantities of solid soot. This smoke fouled barrels, prevented accurate shooting, and made it difficult for commanders to give orders through the battlefield haze. Smokeless powder literally cleared the way for tactics focused on accuracy, breech loading firearms, and autoloading firearms with many moving parts.', '', '');

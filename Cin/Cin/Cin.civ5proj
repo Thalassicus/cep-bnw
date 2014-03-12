@@ -93,6 +93,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\Units\UnitPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Link_Features.url">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -122,6 +126,7 @@
     <Folder Include="Interface" />
     <Folder Include="Interface\FlagPromotions" />
     <Folder Include="Interface\Sorting" />
+    <Folder Include="Interface\Units" />
     <Folder Include="Text" />
     <Folder Include="Text\EN_US" />
   </ItemGroup>

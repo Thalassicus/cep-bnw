@@ -25,7 +25,7 @@ Thalassicus		- expansion and polishing
 --
 
 DebugMode = GameInfo.Immigration["Debug"].Value == 1
-QUEUE_CAPACITY = GameInfo.Immigration["HappinessAverageTurns"].Value * GameInfo.GameSpeeds[PreGame.GetGameSpeed()].GrowthPercent / 100
+QUEUE_CAPACITY = GameInfo.Immigration["HappinessAverageTurns"].Value * GameInfo.CepGameSpeeds[PreGame.GetGameSpeed()].GrowthPercent / 100
 AverageHappiness = {}
 HappinessTable = nil
 america = nil

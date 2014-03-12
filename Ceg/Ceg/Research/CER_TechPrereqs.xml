@@ -43,6 +43,10 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 			<TechType>TECH_THE_WHEEL</TechType>
 		</Row>
 		<Row>
+			<PrereqTech>TECH_ARCHERY</PrereqTech>
+			<TechType>TECH_THE_WHEEL</TechType>
+		</Row>
+		<Row>
 			<PrereqTech>TECH_MINING</PrereqTech>
 			<TechType>TECH_BRONZE_WORKING</TechType>
 		</Row>
@@ -68,10 +72,6 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 		</Row>
 		<Row>
 			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
-			<TechType>TECH_MATHEMATICS</TechType>
-		</Row>
-		<Row>
-			<PrereqTech>TECH_ARCHERY</PrereqTech>
 			<TechType>TECH_MATHEMATICS</TechType>
 		</Row>
 		<Row>

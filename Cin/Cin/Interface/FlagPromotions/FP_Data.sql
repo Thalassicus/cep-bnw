@@ -45,6 +45,7 @@ WHERE Type IN (
 		'PROMOTION_FREE_PILLAGE_MOVES'			, --Denmark
 		'PROMOTION_OCEAN_MOVEMENT'				, --England
 		'PROMOTION_OCEAN_IMPASSABLE'			, --Korea
-		'PROMOTION_HANDICAP'
+		'PROMOTION_HANDICAP'					,
+		'PROMOTION_EMBARKATION'					  --Once Optics is researched we can conclude all units have this
 	))
 );

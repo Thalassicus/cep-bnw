@@ -3,21 +3,17 @@
 You can change most options in this file at any time, unless indicated otherwise.
 Changes take effect the next time you start or load a game with Communitas.
 
-For example, if you are using the "Citystate Diplomacy" mod change the lines that read:
+For example, if you want to hear speech when a wonder is finished:
 
-	INSERT INTO Cep (Type, Value)
-	VALUES ('USING_CSD', 0);
+INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_WONDERS'		, 0);
 
 ...change to...
 
-	INSERT INTO Cep (Type, Value)
-	VALUES ('USING_CSD', 1);
+INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_WONDERS'		, 1);
 
 Then start a new game.
 
 */
-
-
 
 -------------
 -- Options --
@@ -40,18 +36,8 @@ JA_JP	Nihongo			Japanese
 PL_PL	Polski			Polish
 RU_RU	Russkij Jazyk	Russian
 ZH_CN	Zhongwen		Chinese
-
 */
 INSERT INTO Cep (Type, Value) VALUES ('LANGUAGE', 'EN_US');
-
-
-/*
-CityState Diplomacy Mod Compatibility
-1 = using CSD and Cep
-0 = not using CSD and Cep
-*/
-INSERT INTO Cep (Type, Value) VALUES ('USING_CSD', 0);
-
 
 /*
 Good For
@@ -62,7 +48,6 @@ This is helpful for people new to the game or analyzing balance.
 1 = show Good For
 0 = hide Good For
 */
-
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_UNITS',		1);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_BUILDINGS',	1);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_POLICIES',		1);
@@ -71,24 +56,6 @@ INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_BUILDS',		1);
 
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_RAW_NUMBERS',	0);
 INSERT INTO Cep (Type, Value) VALUES ('SHOW_GOOD_FOR_AI_NUMBERS',	0);
-
-
-/*
-Barbarians Upgrade
-1 = barbarians upgrade in camps
-0 = barbarians do not upgrade 
-*/
-INSERT INTO Cep (Type, Value)
-VALUES ('BARBARIANS_UPGRADE', 1);
-
-
-/*
-Barbarians Heal
-1 = barbarians heal when fortified
-0 = barbarians do not heal
-*/
-INSERT INTO Cep (Type, Value)
-VALUES ('BARBARIANS_HEAL', 1);
 
 
 /*
@@ -173,5 +140,12 @@ UPDATE Technologies SET AudioIntroHeader = "" WHERE EXISTS
 
 UPDATE Technologies SET AudioIntro = "" WHERE EXISTS 
 (SELECT Value FROM Cep WHERE Type='PLAY_SPEECH_TECHS' AND Value=0);
+
+/*
+CityState Diplomacy Mod Compatibility
+*/
+INSERT INTO Cep (Type, Value) VALUES ('USING_CSD', 0);
+UPDATE Cep SET Value = 1 WHERE Type='USING_CSD' AND EXISTS(SELECT name FROM sqlite_master WHERE type='table' AND name='CSD');
+UPDATE Cep SET Value = 2 WHERE Type='USING_CSD' AND EXISTS(SELECT Type FROM Specialists WHERE Type='SPECIALIST_CIVIL_SERVANT');
 
 UPDATE LoadedFile SET Value=1 WHERE Type='Cat_Options.sql';

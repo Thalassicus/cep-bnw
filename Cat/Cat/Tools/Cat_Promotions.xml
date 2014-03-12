@@ -199,7 +199,6 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<VisibilityChange>1</VisibilityChange>
 			<CityAttack>25</CityAttack>
-			<CityDefense>25</CityDefense>
 			<FreePillageMoves>true</FreePillageMoves>
 			<PortraitIndex>58</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>

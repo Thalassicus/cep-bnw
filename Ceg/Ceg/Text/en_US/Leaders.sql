@@ -3,6 +3,7 @@ https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jr
 If you make any changes be sure to update the spreadsheet also.*/
 
 /* Traits */
+
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ART_OF_WAR', 'You get an extra Spy. Great Generals see farther and give more strength.[NEWLINE]Starts with a Warrior and Great General.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ALLOTMENT_SHORT', 'Allotment', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ALLOTMENT', 'Your capital gains a free strong copy of each new unit line you research.', '', '');
@@ -61,7 +62,6 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MIGR
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MIGRATE_IN', '[ICON_CITIZEN] An immigrant from the {1_fromEmpire} arrived in {2_toCity}.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MIGRATE_OUT', '[ICON_CITIZEN] A citizen emigrated from {1_fromCity} to {2_toEmpire}.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CITY_CAPTURE_YIELD', 'You gained {1_yield} {2_yieldIcon} {3_yieldName} from capturing {4_city}!', '', '');
-
 
 /* Units */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_AUSTRIAN_MOUNTAIN_TROOPS', 'Imperial-Royal Mountain Troops', '', '');

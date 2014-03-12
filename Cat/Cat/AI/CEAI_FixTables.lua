@@ -8,26 +8,28 @@
 VFS lua files set their GameInfo table before the program reads database tables used on the "modding game setup" screen.
 We must therefore hardcode these data values in a Lua table.
 
+Can copy the modded tables into another set of tables that hasn't been cached before the database has been modded.
+
 --]]
 
-GameInfoCep					= {}
-GameInfoCep.Worlds			= {}
-GameInfoCep.GameSpeeds		= {}
-GameInfoCep.HandicapInfos	= {}
+--GameInfoCep					= {}
+--GameInfoCep.Worlds			= {}
+--GameInfoCep.GameSpeeds		= {}
+--GameInfoCep.HandicapInfos		= {}
 
 function Game.GetWorldInfo()
-	return GameInfoCep.Worlds[Map.GetWorldSize()]
+	return GameInfo.CepWorlds[Map.GetWorldSize()]
 end
 function Game.GetSpeedInfo()
-	return GameInfoCep.GameSpeeds[Game.GetGameSpeedType()]
+	return GameInfo.CepGameSpeeds[Game.GetGameSpeedType()]
 end
 function Game.GetHandicapInfo()
-	return GameInfoCep.HandicapInfos[Game.GetAverageHumanHandicap()]
+	return GameInfo.CepHandicapInfos[Game.GetAverageHumanHandicap()]
 end
 
 -- This MT_FixTables.lua data automatically created by:
 -- GameSpeeds tab of CEP_LeadersAI.xls
-
+--[[
 GameInfoCep.GameSpeeds[0] = {
 ID                             = 0,
 Type                           = "GAMESPEED_MARATHON",
@@ -363,7 +365,7 @@ IconAtlas                      = "WORLDSIZE_ATLAS"}
 
 
 
--- This CEAI_FixTables.lua data created by Handicaps tab of Handicaps_Worls_Speeds spreadhsset
+-- This CEAI_FixTables.lua data created by Handicaps tab of Handicaps_Worls_Speeds spreadsheet
 -- https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE
 
  
@@ -426,9 +428,9 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 150,
-EarliestBarbarianReleaseTurn   = 80,
-BarbarianLandTargetRange       = 3,
-BarbarianSeaTargetRange        = 6,
+EarliestBarbarianReleaseTurn   = 100,
+BarbarianLandTargetRange       = 5,
+BarbarianSeaTargetRange        = 10,
 StartingLocPercent             = 50,
 AdvancedStartPointsMod         = 150,
 ExtraHappinessPerLuxury        = 1,
@@ -506,9 +508,9 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 50,
-EarliestBarbarianReleaseTurn   = 70,
-BarbarianLandTargetRange       = 4,
-BarbarianSeaTargetRange        = 8,
+EarliestBarbarianReleaseTurn   = 100,
+BarbarianLandTargetRange       = 5,
+BarbarianSeaTargetRange        = 10,
 StartingLocPercent             = 50,
 AdvancedStartPointsMod         = 130,
 ExtraHappinessPerLuxury        = 1,
@@ -586,7 +588,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 20,
-EarliestBarbarianReleaseTurn   = 60,
+EarliestBarbarianReleaseTurn   = 90,
 BarbarianLandTargetRange       = 5,
 BarbarianSeaTargetRange        = 10,
 StartingLocPercent             = 50,
@@ -620,7 +622,7 @@ AIResearchPercent              = 2,
 AIResearchPercentPerEra        = 2,
 AITrainPercent                 = 98,
 AIConstructPercent             = 98,
-AIWorldConstructPercent        = 95,
+AIWorldConstructPercent        = 75,
 AICreatePercent                = 98,
 AIProductionPercentPerEra      = 0,
 AIWorldTrainPercent            = 100,
@@ -666,7 +668,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 15,
-EarliestBarbarianReleaseTurn   = 50,
+EarliestBarbarianReleaseTurn   = 80,
 BarbarianLandTargetRange       = 6,
 BarbarianSeaTargetRange        = 12,
 StartingLocPercent             = 50,
@@ -700,7 +702,7 @@ AIResearchPercent              = 4,
 AIResearchPercentPerEra        = 4,
 AITrainPercent                 = 96,
 AIConstructPercent             = 96,
-AIWorldConstructPercent        = 90,
+AIWorldConstructPercent        = 75,
 AICreatePercent                = 96,
 AIProductionPercentPerEra      = 0,
 AIWorldTrainPercent            = 100,
@@ -746,7 +748,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 15,
-EarliestBarbarianReleaseTurn   = 40,
+EarliestBarbarianReleaseTurn   = 70,
 BarbarianLandTargetRange       = 7,
 BarbarianSeaTargetRange        = 14,
 StartingLocPercent             = 50,
@@ -780,7 +782,7 @@ AIResearchPercent              = 6,
 AIResearchPercentPerEra        = 6,
 AITrainPercent                 = 94,
 AIConstructPercent             = 94,
-AIWorldConstructPercent        = 85,
+AIWorldConstructPercent        = 75,
 AICreatePercent                = 94,
 AIProductionPercentPerEra      = 0,
 AIWorldTrainPercent            = 100,
@@ -810,7 +812,7 @@ AICapitalYieldMilitaristic     = 6,
 
 AttitudeChange                 = -1,
 AIDeclareWarProb               = 100,
-AIUnhappinessPercent           = 85,
+AIUnhappinessPercent           = 90,
 AIInflationPercent             = 100,
 AIPerEraModifier               = -6,
 AIAdvancedStartPercent         = 160,
@@ -826,7 +828,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 15,
-EarliestBarbarianReleaseTurn   = 30,
+EarliestBarbarianReleaseTurn   = 60,
 BarbarianLandTargetRange       = 8,
 BarbarianSeaTargetRange        = 16,
 StartingLocPercent             = 50,
@@ -860,7 +862,7 @@ AIResearchPercent              = 8,
 AIResearchPercentPerEra        = 8,
 AITrainPercent                 = 92,
 AIConstructPercent             = 92,
-AIWorldConstructPercent        = 80,
+AIWorldConstructPercent        = 75,
 AICreatePercent                = 92,
 AIProductionPercentPerEra      = 0,
 AIWorldTrainPercent            = 100,
@@ -890,7 +892,7 @@ AICapitalYieldMilitaristic     = 7,
 
 AttitudeChange                 = -1,
 AIDeclareWarProb               = 100,
-AIUnhappinessPercent           = 80,
+AIUnhappinessPercent           = 90,
 AIInflationPercent             = 100,
 AIPerEraModifier               = -8,
 AIAdvancedStartPercent         = 180,
@@ -906,7 +908,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 15,
-EarliestBarbarianReleaseTurn   = 20,
+EarliestBarbarianReleaseTurn   = 40,
 BarbarianLandTargetRange       = 9,
 BarbarianSeaTargetRange        = 18,
 StartingLocPercent             = 50,
@@ -970,7 +972,7 @@ AICapitalYieldMilitaristic     = 10,
 
 AttitudeChange                 = -1,
 AIDeclareWarProb               = 100,
-AIUnhappinessPercent           = 75,
+AIUnhappinessPercent           = 90,
 AIInflationPercent             = 100,
 AIPerEraModifier               = -10,
 AIAdvancedStartPercent         = 200,
@@ -986,7 +988,7 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 15,
-EarliestBarbarianReleaseTurn   = 10,
+EarliestBarbarianReleaseTurn   = 20,
 BarbarianLandTargetRange       = 10,
 BarbarianSeaTargetRange        = 20,
 StartingLocPercent             = 50,
@@ -1066,15 +1068,15 @@ StartingExploreUnits           = 0,
 BarbCampGold                   = 50,
 BarbSpawnMod                   = 0,
 BarbarianBonus                 = 0,
-EarliestBarbarianReleaseTurn   = 10,
+EarliestBarbarianReleaseTurn   = 20,
 BarbarianLandTargetRange       = 10,
 BarbarianSeaTargetRange        = 20,
 StartingLocPercent             = 50,
 AdvancedStartPointsMod         = 100,
 ExtraHappinessPerLuxury        = 0,
 GoldFreeUnits                  = 0,
-ProductionFreeUnits            = 100,
-ProductionFreeUnitsPerCity     = 2,
+ProductionFreeUnits            = 7,
+ProductionFreeUnitsPerCity     = 3,
 StartingPolicyPoints           = 0,
 ProductionFreeUnitsPopulationPercent     = 50,
 CityProductionNumOptionsConsidered       = 2,
@@ -1086,3 +1088,4 @@ NoTechTradeModifier            = 90,
 TechTradeKnownModifier         = -50,
 PortraitIndex                  = 8,
 IconAtlas                      = "DIFFICULTY_ATLAS"}
+--]]

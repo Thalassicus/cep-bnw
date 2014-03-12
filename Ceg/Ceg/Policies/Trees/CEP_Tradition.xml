@@ -70,9 +70,11 @@
 	</Policy_FreeBuildingFlavor>
 
 	<Policy_CapitalYieldPerPopChanges>
-		<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-		<YieldType>YIELD_FOOD</YieldType>
-		<Yield>25</Yield>
+		<Row>
+			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>25</Yield>
+		</Row>
 	</Policy_CapitalYieldPerPopChanges>
 	
 	<Policy_CityYieldChanges>

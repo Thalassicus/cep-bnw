@@ -1529,8 +1529,8 @@ if not MapModData.Cep_Yields then
 	MapModData.Cep_Yields = {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_MILITARY]		= {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_GREAT_PEOPLE]	= {}
-	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.GameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
-	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.GameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
+	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
+	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
 	startClockTime = os.clock()
 	for playerID,player in pairs(Players) do
 		if player:IsAliveCiv() and not player:IsMinorCiv() then
@@ -1736,8 +1736,8 @@ function PlayerClass.GetYieldFromConnectedCities(player, yieldID)
 			return yield
 		end
 		local capital = player:GetCapitalCity()
-		if capital then
-			yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
+		if capital then --Gold not balanced? +6 Gold from capital to capital trade route at start
+			--yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
 		end
 	end
 	return yield
@@ -1795,8 +1795,8 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 		yield = yield + player:VanillaCalculateGoldRate()
 		yield = yield + player:GetFreeGarrisonMaintenance()
 		local capital = player:GetCapitalCity()
-		if capital then
-			yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
+		if capital then--Gold not balanced? +6 Gold from capital to capital trade route at start
+			--yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
 		end	
 		if not skipGlobalMods then
 			yield = yield + player:GetYieldFromTradeDeals(yieldID)
@@ -2248,6 +2248,14 @@ function City_UpdateModdedYields(city, player)
 	modYield = City_GetYieldRate(city, yieldID)
 	if modYield ~= vanillaYield then
 		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to production)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
+		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
+	end
+	
+	yieldID = YieldTypes.YIELD_GOLD
+	vanillaYield = city:GetYieldRate(yieldID)
+	modYield = City_GetBaseYieldRate(city, yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100)
+	if modYield ~= vanillaYield then
+		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to gold)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
 		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
 	end
 	

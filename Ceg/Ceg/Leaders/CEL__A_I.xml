@@ -105,6 +105,8 @@
 			<Where Type="TRAIT_LAND_TRADE_GOLD" />
 			<Set LandTradeRouteRangeBonus="10"
 				 TradeReligionModifier="100"
+				 ShortDescription="TXT_KEY_TRAIT_LAND_TRADE_GOLD_SHORT"
+				 Description="TXT_KEY_TRAIT_LAND_TRADE_GOLD"
 				 />
 		</Update>
 	</Traits>

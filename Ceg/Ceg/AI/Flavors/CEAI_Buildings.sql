@@ -627,11 +627,13 @@ DROP TABLE CEP_Collisions;
 
 
 
+INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
+
+
+
 --
 -- AI specific changes
 --
-
-INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
 
 DELETE FROM Building_Flavors
 WHERE FlavorType = 'FLAVOR_WONDER'
@@ -657,7 +659,8 @@ WHERE BuildingType IN (
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
 
-UPDATE Building_Flavors
+--x2 flavor values of non-wonder buildings
+/*UPDATE Building_Flavors
 SET Flavor = Flavor * 2
 WHERE BuildingType IN (
 	SELECT building.Type 
@@ -666,7 +669,7 @@ WHERE BuildingType IN (
 			class.MaxGlobalInstances = 1 OR class.MaxTeamInstances = 1
 		)
 	)
-);
+);*/
 
 -- Items no longer in the Buildings table
 DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildings);
@@ -674,5 +677,8 @@ DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildin
 -- Dummy buildings automatically assigned to cities
 DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings WHERE Cost = 0 OR Cost = -1);
 
+-- Revert BNW Flavors
+DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
+INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Buildings.sql';

@@ -9,11 +9,12 @@
 				 RevealMinorCapitals="1"
 				 />
 		</Update>
-		<Update>
+ 		<Update>
 			<Where Type="POLICY_PHILANTHROPY" />
 			<Set GridX="2"
 				 GridY="1"
 				 MinorInfluence="20"
+				 MinorGoldFriendshipMod="33"
 				 />
 		</Update>
 		<Update>

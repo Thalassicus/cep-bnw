@@ -39,4 +39,4 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('Terrain.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Language_Start.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Language_End.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql', 0);
-
+INSERT INTO LoadedFile(Type, Value) VALUES ('_CEP_End.sql', 0);

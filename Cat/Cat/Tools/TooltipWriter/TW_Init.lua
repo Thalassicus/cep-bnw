@@ -112,14 +112,17 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 		})
 		
 	elseif lineType == "Cost" then
-		if GameInfo.Buildings[objectID].Cost > 0 then
+		local prodCost = objectInfo.Cost
+		if prodCost > 0 then
 			lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
 			InsertBuildingSubStat()
+		elseif prodCost == -1 and objectInfo.FaithCost ~= -1 then
+			if city then
+				lineValue = city:GetBuildingFaithPurchaseCost(objectInfo.ID, true)
+			else
+				lineValue = objectInfo.FaithCost * Game.GetSpeedInfo().ConstructPercent
+			end
 		end
-		
-	elseif lineType == "FaithCost" then
-		lineValue = activePlayer:GetBuildingProductionNeeded(objectID)
-		InsertBuildingSubStat()
 
 	elseif lineType == "HurryCostModifier" then
 		if objectInfo.Cost <= 0 or objectInfo[lineType] == -1 then return {} end
@@ -153,11 +156,6 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 	elseif lineType == "YieldChange" then
 		for yieldInfo in GameInfo.Yields("Type <> 'YIELD_HAPPINESS_CITY' AND Type <> 'YIELD_HAPPINESS_NATIONAL'") do
 			lineValue = activePlayer:GetBuildingYield(objectID, yieldInfo.ID, city)
-			--[[
-			if objectID == GameInfo.Buildings.BUILDING_SHRINE.ID and yieldInfo.Type == "YIELD_FOOD" then
-				log:Warn("Shrine food=%s in %s", lineValue, city:GetName())
-			end
-			--]]
 			if lineValue ~= 0 then
 				linePrefix = string.format("%s {%s}", yieldInfo.IconString or ("ICON:"..yieldInfo.Type), yieldInfo.Description or yieldInfo.Type)
 				linePriority = statPriority + (100 * yieldInfo.ListPriority)
@@ -181,6 +179,9 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 	elseif lineType == "YieldPerPop" then
 		return GetYieldInfo{table="Building_YieldChangesPerPop", div100=true}
 
+	elseif lineType == "YieldFromReligion" then
+		return GetYieldInfo{table="Building_YieldChangesPerReligion", div100=true}
+
 	elseif lineType == "YieldModSurplus" then
 		return GetYieldInfo{table="Building_YieldSurplusModifiers"}
 
@@ -191,13 +192,13 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 		return GetYieldInfo{table="Building_LakePlotYieldChanges"}
 
 	elseif lineType == "YieldFromPlots" then
-		return GetYieldInfo{table="Building_PlotYieldChanges", tableExtra="Plots", cellExtra="PlotType"}
+		return GetYieldInfo{table="Building_PlotYieldChanges", tableReference="Plots", cellReference="PlotType"}
 
 	elseif lineType == "YieldFromSea" then
-		return GetYieldInfo{table="Building_SeaPlotYieldChanges", tableExtra="Plots", typeExtra="PLOT_OCEAN"}
+		return GetYieldInfo{table="Building_SeaPlotYieldChanges", tableReference="Plots", typeReference="PLOT_OCEAN"}
 		
 	elseif lineType == "YieldFromTerrain" then
-		return GetYieldInfo{table="Building_TerrainYieldChanges", tableExtra="Terrains", cellExtra="TerrainType"}
+		return GetYieldInfo{table="Building_TerrainYieldChanges", tableReference="Terrains", cellReference="TerrainType"}
 		
 	elseif lineType == "YieldFromRivers" then
 		return GetYieldInfo{table="Building_RiverPlotYieldChanges"}
@@ -213,22 +214,22 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 		return ConvertYieldList(lineType, statSection, statPriority, lineTextKey, yieldList)
 
 	elseif lineType == "YieldFromTech" then
-		return GetYieldInfo{table="Building_TechEnhancedYieldChanges", tableExtra="Technologies", cellExtra="EnhancedYieldTech"}
+		return GetYieldInfo{table="Building_TechEnhancedYieldChanges", tableReference="Technologies", cellReference="EnhancedYieldTech"}
 
 	elseif lineType == "YieldFromBuildings" then
-		return GetYieldInfo{table="Building_BuildingClassYieldChanges", cell="YieldChange", tableExtra="BuildingClasses", cellExtra="BuildingClassType"}
+		return GetYieldInfo{table="Building_BuildingClassYieldChanges", yield="YieldChange", tableReference="BuildingClasses", cellReference="BuildingClassType"}
 
 	elseif lineType == "YieldModFromBuildings" then
-		return GetYieldInfo{table="Building_BuildingClassYieldModifiers", tableExtra="BuildingClasses", cellExtra="BuildingClassType"}
+		return GetYieldInfo{table="Building_BuildingClassYieldModifiers", tableReference="BuildingClasses", cellReference="BuildingClassType"}
 		
 	elseif lineType == "YieldModHurry" then
-		return GetYieldInfo{table="Building_HurryModifiers", cell="HurryCostModifier", yieldType=GameInfo.HurryInfos.HURRY_GOLD.YieldType}
+		return GetYieldInfo{table="Building_HurryModifiers", yield="HurryCostModifier", yieldType=GameInfo.HurryInfos.HURRY_GOLD.YieldType}
 
 	elseif lineType == "YieldModCombat" then
-		return GetYieldInfo{table="Building_UnitCombatProductionModifiers", cell="Modifier", tableExtra="UnitCombatInfos", cellExtra="UnitCombatType", yieldType="YIELD_PRODUCTION"}
+		return GetYieldInfo{table="Building_UnitCombatProductionModifiers", yield="Modifier", tableReference="UnitCombatInfos", cellReference="UnitCombatType", yieldType="YIELD_PRODUCTION"}
 
 	elseif lineType == "YieldModDomain" then
-		return GetYieldInfo{table="Building_DomainProductionModifiers", cell="Modifier", tableExtra="Domains", cellExtra="DomainType", yieldType="YIELD_PRODUCTION"}
+		return GetYieldInfo{table="Building_DomainProductionModifiers", yield="Modifier", tableReference="Domains", cellReference="DomainType", yieldType="YIELD_PRODUCTION"}
 		
 	elseif lineType == "YieldModMilitary" or lineType == "YieldModBuilding" or lineType == "YieldModWonder" or lineType == "YieldModSpace" then
 		lineType = string.gsub(lineType, "YieldMod(.*)", function(x) return x.."ProductionModifier" end)
@@ -517,17 +518,17 @@ function InsertPromoSubStat()
 	if not lineValue or lineValue == 0 or lineValue == -1 or lineValue == "" then
 		return
 	end
-	local text = Locale.ConvertTextKey(statTextKey)
-	if text == statTextKey then
-		-- no text key, use default behavior
+	local text = ModLocale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	if text == lineTextKey then
+		-- no text key, so use fallback
 		text = string.gsub(lineType, '(%u)',  function(x) return " "..x end)
+		if type(lineValue) == "boolean" then
+			text = string.format("%s %s", linePrefix, text)
+		else
+			text = string.format("%s %s: %s", linePrefix, text, lineValue)
+		end
+		text = string.gsub(text, '  ', ' ')
 	end
-	if type(lineValue) == "boolean" then
-		text = string.format("%s %s", linePrefix, text)
-	else
-		text = string.format("%s %s: %s", linePrefix, text, lineValue)
-	end
-	text = string.gsub(text, '  ', ' ')
 	table.insert(subStats, {Type=lineType, Section=lineSection, Priority=linePriority, TextBody=text})
 end
 
@@ -538,7 +539,7 @@ function InsertBuildingSubStat(yieldInfo)
 		lineValue		= objectInfo[lineType]
 	end
 	if type(lineValue) == "function" then
-		-- not handled by a specific if-else clause, so use default behavior
+		-- not handled by a specific if-else clause, so use fallback
 		lineValue = objectInfo[lineType]
 		--log:Warn("InsertBuildingSubStat %30s value is an unhandled function!", lineType)
 		--return
@@ -546,7 +547,17 @@ function InsertBuildingSubStat(yieldInfo)
 	if not lineValue or lineValue == 0 or lineValue == -1 or lineValue == "" then
 		return
 	end
-	local text = Locale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	local text = ModLocale.ConvertTextKey(lineTextKey, linePrefix, lineSign, lineValue, lineExtra)
+	if text == lineTextKey then
+		-- no text key, so use fallback
+		text = string.gsub(lineType, '(%u)',  function(x) return " "..x end)
+		if type(lineValue) == "boolean" then
+			text = string.format("%s %s", linePrefix, text)
+		else
+			text = string.format("%s %s: %s", linePrefix, text, lineValue)
+		end
+		text = string.gsub(text, '  ', ' ')
+	end
 	table.insert(subStats, {Type=lineType, Section=lineSection, Priority=linePriority, TextBody=text, TextFoot=statFoot})
 end
 
@@ -578,48 +589,92 @@ function ConvertYieldList(statType, statSection, statPriority, lineTextKey, yiel
 end
 
 function GetYieldInfo(info)
+	--[[
+	
+	This function uses several optional parameters.
+	
+	Type	Parameter		Default Value	  Description
+	-------------------------------------------------------------
+	string	table							: Name of the table to scan
+	string	yieldType		"YieldType" 	: The type of yield we give
+	string	yield			"Yield" 		: The yield amount
+	string	tableReference	nil				: The yield is given for something in another table, like a yield bonus for a specific terrain or resource type
+	string	cellReference	nil				: Type to search for in the other table
+	string	typeReference	nil				: Some tables do not store the type to search for in its table data, so we must manually give that information.
+	boolean div100			false			: Divide "yield" by 100 to get the real value
+	
+	--]]
+	
+	--[[ Usage example:
+	
+	Data:
+	<Building_UnitCombatProductionModifiers>
+		<Row>
+			<BuildingType>BUILDING_DUCAL_STABLE</BuildingType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>15</Modifier>
+		</Row>
+	</Building_UnitCombatProductionModifiers>
+	
+	Code to read the data:
+	elseif lineType == "YieldModCombat" then
+		return GetYieldInfo{
+			table="Building_UnitCombatProductionModifiers", -- Name of the table to scan
+			yield="Modifier",								-- The yield amount, normally called "Yield", but called "Modifier" in this table
+			tableReference="UnitCombatInfos",				-- The yield gets modified for a specific unit combat type.
+			cellReference="UnitCombatType",					-- Search for the UnitCombatType ("UNITCOMBAT_MOUNTED") in the UnitCombatInfos table
+			yieldType="YIELD_PRODUCTION"					-- Most tables specify a YieldType, but this table can only modify Production.
+															   The table does not give this information, so we must specify the yield type ourselves.
+		}
+		
+	--]]
+
+
+	-- Error checking
 	if not GameInfo[info.table] then
 		log:Error("GetDefaultBuildingStatText lineType=%s : GameInfo.%s does not exist", lineType, info.table)
 		return errorMsg
-	elseif info.tableExtra and not GameInfo[info.tableExtra] then
-		log:Error("GetDefaultBuildingStatText lineType=%s : GameInfo.%s does not exist", lineType, info.tableExtra)
+	elseif info.tableReference and not GameInfo[info.tableReference] then
+		log:Error("GetDefaultBuildingStatText lineType=%s : GameInfo.%s does not exist", lineType, info.tableReference)
 		return errorMsg
 	end
 	
+	-- Main loop
 	local yieldList = {}		
 	for row in GameInfo[info.table]{BuildingType = objectInfo.Type} do
-		if info.cell and not row[info.cell or "Yield"] then
-			log:Fatal("GetDefaultBuildingStatText lineType=%s : column %s does not exist in GameInfo.%s", lineType, info.cell, info.table)
+		-- More error checking
+		if info.yield and not row[info.yield or "Yield"] then
+			log:Fatal("GetDefaultBuildingStatText lineType=%s : column %s does not exist in GameInfo.%s", lineType, info.yield, info.table)
 			return errorMsg
 		end
 		if not (info.yieldType or row[info.cellYieldType or "YieldType"]) then
 			log:Fatal("GetDefaultBuildingStatText lineType=%s : column %s does not exist in GameInfo.%s", lineType, "YieldType", info.table)
 			return errorMsg
 		end
-		if info.cellExtra then
-			if not row[info.cellExtra] then
-				log:Fatal("GetDefaultBuildingStatText lineType=%s : column %s does not exist in GameInfo.%s", lineType, info.cellExtra, info.table)
+		if info.cellReference then
+			if not row[info.cellReference] then
+				log:Fatal("GetDefaultBuildingStatText lineType=%s : column %s does not exist in GameInfo.%s", lineType, info.cellReference, info.table)
 				return errorMsg
 			end
-			info.typeExtra = row[info.cellExtra]
+			info.typeReference = row[info.cellReference]
 		end				
-		if info.cellExtra and not GameInfo[info.tableExtra][info.typeExtra] then
-			log:Fatal("GetDefaultBuildingStatText lineType=%s : GameInfo.%s.%s does not exist", lineType, info.table, info.typeExtra)
+		if info.cellReference and not GameInfo[info.tableReference][info.typeReference] then
+			log:Fatal("GetDefaultBuildingStatText lineType=%s : GameInfo.%s.%s does not exist", lineType, info.table, info.typeReference)
 			return errorMsg
 			--[[
-		elseif info.cellExtra and not GameInfo[info.tableExtra][info.typeExtra].Description then
-			log:Fatal("GetDefaultBuildingStatText lineType=%s : GameInfo.%s.%s.Description is null", lineType, info.table, info.typeExtra)
+		elseif info.cellReference and not GameInfo[info.tableReference][info.typeReference].Description then
+			log:Fatal("GetDefaultBuildingStatText lineType=%s : GameInfo.%s.%s.Description is null", lineType, info.table, info.typeReference)
 			return errorMsg
 			--]]
 		end
 		
 		-- Main data
 		local yieldType = info.yieldType or row[info.cellYieldType or "YieldType"]
-		local yield = row[info.cell or "Yield"]
+		local yield = row[info.yield or "Yield"]
 		if not yieldList[yieldType] then yieldList[yieldType] = {} end		
 		
-		if info.tableExtra then
-			yieldList[yieldType][yield] = (yieldList[yieldType][yield] or "") .. Locale.ConvertTextKey(GameInfo[info.tableExtra][info.typeExtra].Description or GameInfo[info.tableExtra][info.typeExtra].Type) .. ", "
+		if info.tableReference then
+			yieldList[yieldType][yield] = (yieldList[yieldType][yield] or "") .. Locale.ConvertTextKey(GameInfo[info.tableReference][info.typeReference].Description or GameInfo[info.tableReference][info.typeReference].Type) .. ", "
 		else
 			yieldList[yieldType] = info.div100 and yield/100 or yield
 		end

@@ -55,3 +55,8 @@ REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 
 
 UPDATE Loaded File SET Value=1, ES_ES=1 Where Type='Armies.sql';
+
+UPDATE Language_ES_ES SET Text = REPLACE( Text, ' (', ': ' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
+
+UPDATE Language_ES_ES SET Text = REPLACE( Text, ')', '' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
+

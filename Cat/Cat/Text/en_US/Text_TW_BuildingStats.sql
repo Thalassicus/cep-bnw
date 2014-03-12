@@ -22,6 +22,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_POP_COST_MOD', '[ICON_PRODUCTION] Cost per [ICON_CITIZEN] Citizen: {2_sign}{3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_GOLD_MAINTENANCE', '[ICON_GOLD] Maintenance: {3_value}', '', '');
 /*  Yields  */
+
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_IN_ALL_CITIES', 'in all Cities', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MILITARY_UNITS', 'Military Units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_YIELD_INSTANT', '{1_prefix} Instantly: {2_sign}{3_value}', '', '');
@@ -54,6 +55,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_YIELD_FROM_USING_GREAT_PEOPLE', '{1_prefix} from using Great people: {3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_YIELD_MOD_HURRY', '{1_prefix} Costs: {2_sign}{3_value}% in all Cities', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_MEDIAN_TECH_PERCENT_CHANGE', '[ICON_RESEARCH] Research Agreement Reward: {2_sign}{3_value}%', '', '');
+
 /* Other */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_SPECIALIST_TYPE', '{1_prefix}: {3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_SPECIALIST_POINTS', '{1_prefix}: {3_value}', '', '');

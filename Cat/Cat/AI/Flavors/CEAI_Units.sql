@@ -31,6 +31,8 @@ DELETE FROM Unit_Flavors WHERE FlavorType IN (
 );
 */
 
+CREATE TABLE Unit_Flavors_BNW AS SELECT * FROM Unit_Flavors; --BNW Flavors
+
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_TOURISM', 1
 FROM Units WHERE Class IN (
@@ -400,5 +402,9 @@ INSERT INTO CEP_Collisions (SpecialistType, FlavorType, Flavor) SELECT Specialis
 DELETE FROM SpecialistFlavors;
 INSERT INTO SpecialistFlavors (SpecialistType, FlavorType, Flavor) SELECT SpecialistType, FlavorType, Flavor FROM CEP_Collisions;
 DROP TABLE CEP_Collisions;
+
+-- Revert BNW Flavors
+DELETE FROM Unit_Flavors WHERE UnitType IN (SELECT UnitType FROM Unit_Flavors_BNW);
+INSERT INTO Unit_Flavors SELECT * FROM Unit_Flavors_BNW WHERE UnitType IN (SELECT Type FROM Units);
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEAI__End_Flavors.sql';

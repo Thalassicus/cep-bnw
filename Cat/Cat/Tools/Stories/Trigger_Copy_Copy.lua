@@ -22,7 +22,7 @@ function TriggerHandler()
 		end
 	end
 
-	if Game.GetGameTurn() < (CiVUP.EVENTS_EARLIEST_TURN * GameInfo.GameSpeeds[Game.GetGameSpeedType()].VictoryDelayPercent / 100) then
+	if Game.GetGameTurn() < (CiVUP.EVENTS_EARLIEST_TURN * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].VictoryDelayPercent / 100) then
 		--return
 	end
 	

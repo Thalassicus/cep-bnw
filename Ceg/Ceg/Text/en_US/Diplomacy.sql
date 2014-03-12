@@ -1,3 +1,4 @@
+
 /* The sql commands and text below were formulated in the Diplomacy tab of the Google Spreadsheet 'Cep_Language'.
 https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jruTs/edit#gid=1931353934
 If you make any changes be sure to update the spreadsheet also.*/
@@ -34,9 +35,4 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_DEAL
 
 
 UPDATE Loaded File SET Value=1, en_US=1 Where Type='Diplomacy.sql';
-
-
-
-
-
 

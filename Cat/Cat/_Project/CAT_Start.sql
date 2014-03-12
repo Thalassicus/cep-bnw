@@ -33,6 +33,7 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_PromotionOrder.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AlterTables.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('YL_Data.xml'			, 0);
+
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_BuildingStats.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_PromoStats.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Text_TW_BuildingStats.sql'		, 0);

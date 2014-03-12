@@ -171,6 +171,12 @@ function FreeUnitWithTech(player, techID, changeID)
 		local unitInfo = GameInfo.Units[player:GetUniqueUnitID(row.UnitClassType)]		
 		local plot = centerPlot
 		local unit = nil
+		
+		if player:GetTraitInfo().Type == "TRAIT_ALLOTMENT" then
+			if(unitInfo.PrereqTech ~= row.TechType) then
+				return
+			end
+		end
 		if unitInfo.Domain == "DOMAIN_SEA" then		
 			plot = Plot_GetNearestOceanPlot(centerPlot, 10, 0.1 * Map.GetNumPlots())
 			if not plot then

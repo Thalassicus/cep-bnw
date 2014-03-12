@@ -40,7 +40,6 @@
 		<Update>
 			<Where Type="TECH_CURRENCY" />
 			<Set OpenBordersTradingAllowed="1"
-				 ResearchAgreementTradingAllowed="0"
 				 />
 		</Update>
 		<Update>

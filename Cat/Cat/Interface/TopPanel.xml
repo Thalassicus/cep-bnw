@@ -4,9 +4,11 @@
 	<Stack Anchor="L,T" Offset="10,6" Padding="6" StackGrowth="Right" ID="TopPanelInfoStack">
 		<TextButton Anchor="C,T" Offset="0,0" String=" " Color="Science" ID="SciencePerTurn" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" Offset="-0,0" String=" " ColorLayer0="255,235,0,255" ID="GoldPerTurn" ToolTipType="TooltipTypeTopPanel"/>
+    <TextButton Anchor="C,T" Offset="-0,0" String="000,000 Turn: Total 000,000" ColorLayer0="255,235,0,255"  ID="InternationalTradeRoutes" ToolTipType="TooltipTypeTopPanel" />
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="HappinessString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,255,255" ID="GoldenAgeString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255" ID="CultureString" ToolTipType="TooltipTypeTopPanel"/>
+    <TextButton Anchor="C,T" String="Tourism!" ColorLayer0="255,255,200,255"  ID="TourismString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,255,200,255"  ID="FaithString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="GreatPeopleString" ToolTipType="TooltipTypeTopPanel"/>
 		<TextButton Anchor="C,T" String="UI didnt load! See http://bit.ly/bugreporting for help." ColorLayer0="255,0,255,255" ID="ResourceString" ToolTipType="TooltipTypeTopPanel"/>
@@ -22,8 +24,8 @@
 		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
 		<TextButton Anchor="C,C" String="Clock" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="TopPanelClock" ToolTip="Click to toggle 12/24 hour clock."/>
 		<Image Anchor="C,C" TextureOffset="5,0" Texture="assets\UI\Art\WorldView\Divider.dds" Size="5.16"/>
-		<TextButton Anchor="C,C" String="Date: 2100 AD" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentDate" ToolTip="InfoAddict"/>
-		<TextButton Anchor="C,C" String="Turn: 1" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentTurn" ToolTip="InfoAddict"/>
+		<TextButton Anchor="C,C" String="Date: 2100 AD" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentDate" /><!--ToolTip="InfoAddict"-->
+		<TextButton Anchor="C,C" String="Turn: 1" Font="TwCenMT16" NormalState="Beige_Black" MouseOver="White_Black" ButtonDown="White_Black" ID="CurrentTurn" /><!--ToolTip="InfoAddict"-->
 	</Stack>
 	<ToolTipType Name="TooltipTypeTopPanel">
 		<Grid Size="530,90" Offset="8.0" Padding="8,8" Style="GridBlack8" ID="TopPanelMouseover" NoClip="1">

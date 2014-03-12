@@ -214,6 +214,7 @@ WHERE offense.FlavorType = 'FLAVOR_NAVAL' AND flavor.Type IN (
 
 UPDATE HurryInfos SET YieldType = 'YIELD_'||SUBSTR(Type, 7);
 
+INSERT INTO Cep (Type, Value) VALUES ('MAXIMUM_BUY_PLOT_ADDITIONAL',		1);
 
 --
 -- Done

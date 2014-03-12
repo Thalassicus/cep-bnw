@@ -4,7 +4,10 @@
 include("IconSupport");
 include("InstanceManager");
 include("InfoTooltipInclude");
+include("MT_Events");
 
+local showTimers = Civup.DEBUG_TIMER_LEVEL
+local timeStart = os.clock()
 local log = Events.LuaLogger:New()
 log:SetLevel("WARN")
 
@@ -61,128 +64,6 @@ Controls.Backdrop:SetSize( backdropSize );
 --Controls.MouseCatcher:SetSize( mouseCatcherSize );
 
 local listOfStrings = {};
-local productionList = {};
-local mainFlavor = {};
-
-productionList.Units		= {};
-productionList.Buildings	= {};
-productionList.Projects		= {};
-productionList.Processes	= {};
-
--------------------------------------------------
--- Generate the production lists
--------------------------------------------------
-local tech;
-local itemPriority = 0;
-local itemName;
-
--- Units
-for unit in GameInfo.Units() do
-	itemName = Locale.ConvertTextKey(unit.Description)
-	itemPriority = unit.ListPriority
-	if itemPriority == nil or itemPriority == -1 then
-		itemPriority = GameInfo.Domains[unit.Domain].ListPriority;
-	end
-	
-	if unit.Combat == 0 and unit.RangedCombat == 0 then
-		itemPriority = itemPriority + GameDefines.LIST_PRIORITY_NONCOMBAT;
-	end
-	
-	tech = unit.PrereqTech;
-	tech = tech and Players[Game.GetActivePlayer()]:GetResearchCost(GameInfo.Technologies[tech].ID) or 0;
-	table.insert(productionList.Units, {
-		ID=unit.ID,
-		Priority=itemPriority,
-		TechCost=tech,
-		Name=itemName
-	});
-end
-
--- Buildings
-for row in GameInfo.Building_Flavors() do
-	if row.FlavorType == nil then
-		log:Fatal("ProductionPopup Sorting: %s FlavorType is nil", row.buildingType)
-	elseif row.Flavor == nil then
-		log:Fatal("ProductionPopup Sorting: %s Flavor is nil", row.buildingType)
-	else
-		local buildingType = row.BuildingType
-		if mainFlavor[buildingType] == nil then
-			mainFlavor[buildingType] = {}
-			mainFlavor[buildingType].Flavor = row.Flavor
-			mainFlavor[buildingType].FlavorType = row.FlavorType
-		elseif row.Flavor > mainFlavor[buildingType].Flavor then
-			mainFlavor[buildingType].Flavor = row.Flavor
-			mainFlavor[buildingType].FlavorType = row.FlavorType
-		end
-	end
-end
-for building in GameInfo.Buildings() do
-	local buildingClass = GameInfo.BuildingClasses[building.BuildingClass]
-	itemName = Locale.ConvertTextKey(building.Description)
-	itemPriority = building.ListPriority
-	if itemPriority == nil or itemPriority == -1 then
-		if buildingClass.MaxGlobalInstances == 1 then
-			itemPriority = GameDefines.LIST_PRIORITY_WORLD_WONDER;
-		elseif buildingClass.MaxPlayerInstances == 1 then
-			itemPriority = GameDefines.LIST_PRIORITY_NATIONAL_WONDER;
-		else
-			local flavor = mainFlavor[building.Type]
-			if flavor then
-				itemPriority = GameInfo.Flavors[flavor.FlavorType].ListPriority
-				--print(tostring(itemPriority).." "..flavor.FlavorType.." "..itemName)
-			end
-		end
-	end	
-	tech = building.PrereqTech;
-	tech = tech and Players[Game.GetActivePlayer()]:GetResearchCost(GameInfo.Technologies[tech].ID) or 0;
-	table.insert(productionList.Buildings, {
-		ID=building.ID,
-		Priority=itemPriority,
-		TechCost=tech,
-		Name=itemName
-	});
-end
-
--- Projects
-for project in GameInfo.Projects() do
-	itemName = Locale.ConvertTextKey(project.Description)
-	itemPriority = project.ListPriority or 0
-	tech = 0
-	table.insert(productionList.Projects, {
-		ID=project.ID,
-		Priority=itemPriority,
-		TechCost=tech,
-		Name=itemName
-	});
-end
-
--- Processes
-for process in GameInfo.Processes() do
-	itemPriority = process.ListPriority or 0
-	tech = 0
-	itemName = Locale.ConvertTextKey(process.Description)
-	table.insert(productionList.Processes, {
-		ID=process.ID,
-		Priority=itemPriority,
-		TechCost=tech,
-		Name=itemName
-	});
-end
-
-function SortProductionTable(a,b)
-	if a.Priority ~= b.Priority then
-		return a.Priority > b.Priority;
-	elseif a.TechCost ~= b.TechCost then
-		return a.TechCost > b.TechCost;
-	else
-		return a.Name < b.Name;
-	end
-end
-
-table.sort(productionList.Units, SortProductionTable)
-table.sort(productionList.Buildings, SortProductionTable)
-table.sort(productionList.Projects, SortProductionTable)
-table.sort(productionList.Processes, SortProductionTable)
 
 -------------------------------------------------
 -- On Production Selected
@@ -241,15 +122,7 @@ function ProductionSelected( ePurchaseEnum, iData)
 		elseif (eOrder == OrderTypes.ORDER_CONSTRUCT) then
 			local buildingInfo = GameInfo.Buildings[iData]
 			log:Info("%25s %15s %15s %25s", "Game.CityPurchaseBuilding", " ", city:GetName(), buildingInfo.Type)
-			if buildingInfo.NoOccupiedUnhappinessFixed then
-				city:SetPuppet(false)
-				city:SetOccupied(false)
-				log:Info("Courthouse bought in %s %s", player:GetName(), city:GetName())
-			end
-			local costDiff = city:GetBuildingPurchaseCost(iData) - City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, iData)
-			if costDiff ~= 0 then
-				player:ChangeGold(costDiff)
-			end
+
 			LuaEvents.BuildingConstructed(player, city, iData)
 			if (city:IsCanPurchase(true, true, -1, iData, -1, eYield)) then
 				Game.CityPurchaseBuilding(city, iData, eYield);
@@ -268,11 +141,19 @@ function ProductionSelected( ePurchaseEnum, iData)
 			end
 		end
     end
-     
+    
 	local cityID = city:GetID();
 	local player = city:GetOwner();
     Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
     Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
+	--LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCacheCity(city)
+	--[[
+	for yieldType, yieldID in pairs(YieldTypes) do
+		City_GetYieldRate(city, yieldID)
+	end
+	--]]
+
  
 	if not g_append and g_IsProductionMode then 
 		OnClose();
@@ -453,12 +334,12 @@ function UpdateWindow( city )
 	
 	listOfStrings = {};
 	
+	if showTimers >= 1 then timeStart = os.clock() end
+	
     -- Units
     local numUnitButtons = 0;	
- 	for k,v in ipairs(productionList.Units) do
- 		local unitID = v.ID;
-		local unit = GameInfo.Units[unitID];
-		--print(v.Name.." "..v.Priority.." "..v.TechCost);
+ 	for unit in GameInfo.Units() do
+ 		local unitID = unit.ID;
  		if g_IsProductionMode then
  			-- test w/ visible (ie COULD train if ... )
 			if city:CanTrain( unitID, 0, 1 ) then
@@ -469,12 +350,12 @@ function UpdateWindow( city )
 				end
 				
 				if (bGeneratingProduction) then
-					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns( city, YieldTypes.YIELD_PRODUCTION, GameInfo.Units, unitID ));
+					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns(city, YieldTypes.YIELD_PRODUCTION, GameInfo.Units, unitID));
 				else
 					strTurnsLeft = g_strInfiniteTurns;
 				end
 				
-				AddProductionButton( YieldTypes.YIELD_PRODUCTION, unitID, unit.Description, OrderTypes.ORDER_TRAIN, strTurnsLeft, 1, isDisabled );
+				AddProductionButton( unitID, unit.Description, OrderTypes.ORDER_TRAIN, strTurnsLeft, 1, isDisabled, YieldTypes.NO_YIELD );
 				numUnitButtons = numUnitButtons + 1;
 			end
  		else
@@ -487,7 +368,7 @@ function UpdateWindow( city )
 				end
 	 			
  				local cost = city:GetUnitPurchaseCost( unitID );
-				AddProductionButton( YieldTypes.YIELD_GOLD, unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled);
+				AddProductionButton( unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled, YieldTypes.YIELD_GOLD );
 				numUnitButtons = numUnitButtons + 1;
 			end
 			if city:IsCanPurchase(false, false, unitID, -1, -1, YieldTypes.YIELD_FAITH) then
@@ -499,37 +380,9 @@ function UpdateWindow( city )
 				end
 	 			
  				local cost = city:GetUnitFaithPurchaseCost( unitID, true );
-				AddProductionButton( YieldTypes.YIELD_FAITH, unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled);
+				AddProductionButton( unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled, YieldTypes.YIELD_FAITH );
 				numUnitButtons = numUnitButtons + 1;
 			end
-			--[[
-			if City_CanPurchase(city, YieldTypes.YIELD_GOLD, GameInfo.Units, unitID, true) then
- 				local isDisabled = false;
-     			-- test w/o visible (ie can train right now)
-				
-				log:Info("City_CanPurchase YIELD_GOLD %s", unit.Description )
-    			if (not City_CanPurchase(city, YieldTypes.YIELD_GOLD, GameInfo.Units, unitID)) then
-    				isDisabled = true;
-				end
-	 			
- 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Units, unitID)
-				AddProductionButton( YieldTypes.YIELD_GOLD, unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled);
-				numUnitButtons = numUnitButtons + 1;
-			end
-			if City_CanPurchase(city, YieldTypes.YIELD_FAITH, GameInfo.Units, unitID, true) then
- 				local isDisabled = false;
-     			-- test w/o visible (ie can train right now)
-	     	
-				log:Info("City_CanPurchase YIELD_FAITH %s", unit.Description )
-    			if (not City_CanPurchase(city, YieldTypes.YIELD_FAITH, GameInfo.Units, unitID)) then
-    				isDisabled = true;
-				end
-	 			
- 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_FAITH, GameInfo.Units, unitID)
-				AddProductionButton( YieldTypes.YIELD_FAITH, unitID, unit.Description, OrderTypes.ORDER_TRAIN, cost, 1, isDisabled);
-				numUnitButtons = numUnitButtons + 1;
-			end
-			--]]
  		end
 	end
 	if unitHeadingOpen then
@@ -551,10 +404,9 @@ function UpdateWindow( city )
 
 	local numBuildingButtons = 0;
 	local numWonderButtons = 0;
-    -- Projects
- 	for k,v in ipairs(productionList.Projects) do
- 		local projectID = v.ID;
-		local project = GameInfo.Projects[projectID];
+    -- Projects	
+ 	for project in GameInfo.Projects() do
+ 		local projectID = project.ID;
  	 	if g_IsProductionMode then
  	 	 	-- test w/ visible (ie COULD train if ... )
 			if city:CanCreate( projectID, 0, 1 ) then
@@ -567,96 +419,57 @@ function UpdateWindow( city )
 				end
 				
 				if (bGeneratingProduction) then
-					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns( city, YieldTypes.YIELD_PRODUCTION, GameInfo.Projects, projectID ));
+					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns(city, YieldTypes.YIELD_PRODUCTION, GameInfo.Projects, projectID));
 				else
 					strTurnsLeft = g_strInfiniteTurns;
 				end
 				
-				AddProductionButton( YieldTypes.YIELD_PRODUCTION, projectID, project.Description, OrderTypes.ORDER_CREATE, strTurnsLeft, 3, isDisabled );
+				AddProductionButton( projectID, project.Description, OrderTypes.ORDER_CREATE, strTurnsLeft, 3, isDisabled, YieldTypes.NO_YIELD  );
 				numWonderButtons = numWonderButtons + 1;
 			end
 		else
 			if city:IsCanPurchase(false, false, -1, -1, projectID, YieldTypes.YIELD_GOLD) then
 				local isDisabled = true;		    
  				local cost = city:GetProjectPurchaseCost( projectID );
-				AddProductionButton( YieldTypes.YIELD_GOLD, projectID, project.Description, OrderTypes.ORDER_CREATE, cost, 3, isDisabled );
+				AddProductionButton( projectID, project.Description, OrderTypes.ORDER_CREATE, cost, 3, isDisabled, YieldTypes.YIELD_GOLD  );
 				numWonderButtons = numWonderButtons + 1;
 			end
-			--[[
-			if City_CanPurchase(city, YieldTypes.YIELD_GOLD, GameInfo.Projects, projectID, true) then
-				local isDisabled = true;		    
- 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Projects, projectID)
-				AddProductionButton( YieldTypes.YIELD_GOLD, projectID, project.Description, OrderTypes.ORDER_CREATE, cost, 3, isDisabled );
-				numWonderButtons = numWonderButtons + 1;
-			end
-			--]]
 		end
 	end
 
     -- Buildings	
- 	for k,v in ipairs(productionList.Buildings) do
- 		local buildingID = v.ID;
-		local building = GameInfo.Buildings[buildingID];
-		local prereq = {};
-		prereq.Info = GameInfo.Building_PrereqBuildingClassesPercentage("BuildingType = '" .. building.Type .. "'")()
-		if prereq.Info then
-			prereq.MissingCities = {};
-			prereq.BuildingClassID = GameInfo.BuildingClasses[prereq.Info.BuildingClassType].ID
-			local buildingClass = prereq.Info.BuildingClassType
-			local buildingCount = 0;
-			local cityCount = 0;
-			for testCity in player:Cities() do
-				if not (testCity:IsPuppet() or testCity:IsRazing()) then
-					cityCount = cityCount + 1
-					local buildingsInCity = 0
-					local query = string.format("BuildingClass = '%s' OR FreeBuildingThisCity = '%s'", buildingClass, buildingClass)
-					for buildingInfo in GameInfo.Buildings(query) do
-						buildingsInCity = buildingsInCity + City_GetNumBuilding(testCity, buildingInfo.ID)
-					end
-					if buildingsInCity > 0 then
-						buildingCount = buildingCount + buildingsInCity
-					else
-						table.insert(prereq.MissingCities, testCity:GetName())
-					end
-				end
-			end
-			prereq.BuildingsNeeded = math.max(0, ((buildingCount + #prereq.MissingCities) * prereq.Info.PercentBuildingNeeded / 100) - buildingCount)
-			--print(prereq.Info.BuildingType .. " "..GameInfo.BuildingClasses[prereq.BuildingClassID].Description .. " " .. math.ceil(prereq.BuildingsNeeded) .. " " .. #prereq.MissingCities)
-		else
-			prereq.BuildingsNeeded = 0
-		end
+ 	for building in GameInfo.Buildings() do
+ 		local buildingID = building.ID;
  		if g_IsProductionMode then
  			-- test w/ visible (ie COULD train if ... )
-			if City_CanBuild(city, buildingID, 0, 1 ) then
-				--log:Info("CanBuild A %s", GameInfo.Buildings[buildingID].Type)
+			if city:CanConstruct( buildingID, 0, 1 ) then
 				local isDisabled = false;
 			    
      			-- test w/o visible (ie can train right now)
-    			if not City_CanBuild(city, buildingID) or prereq.BuildingsNeeded ~= 0 then
+    			if not city:CanConstruct( buildingID ) then
     				isDisabled = true;
 				end
 
-				--log:Info("CanBuild B %s", GameInfo.Buildings[buildingID].Type)
 				local col = 2;
 				local thisBuildingClass = GameInfo.BuildingClasses[building.BuildingClass];
-				if thisBuildingClass.MaxGlobalInstances > 0 or thisBuildingClass.MaxPlayerInstances > 0 or thisBuildingClass.MaxTeamInstances > 0 then
+				if thisBuildingClass.MaxGlobalInstances > 0 or thisBuildingClass.MaxPlayerInstances == 1 or thisBuildingClass.MaxTeamInstances > 0 then
 					col = 3;
 				end
 				
 				if (bGeneratingProduction) then
-					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns( city, YieldTypes.YIELD_PRODUCTION, GameInfo.Buildings, buildingID ));
+					strTurnsLeft = Locale.ConvertTextKey( "TXT_KEY_STR_TURNS", City_GetYieldTurns(city, YieldTypes.YIELD_PRODUCTION, GameInfo.Buildings, buildingID));
 				else
 					strTurnsLeft = g_strInfiniteTurns;
 				end
 				
-				AddProductionButton( YieldTypes.YIELD_PRODUCTION, buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, strTurnsLeft, col, isDisabled, prereq );
+				AddProductionButton( buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, strTurnsLeft, col, isDisabled, YieldTypes.NO_YIELD );
 				if col == 2 then
 					numBuildingButtons = numBuildingButtons + 1;
 				else
 					numWonderButtons = numWonderButtons + 1;
 				end
 			end
-		else		
+		else
 			if city:IsCanPurchase(false, false, -1, buildingID, -1, YieldTypes.YIELD_GOLD) then
 				local col = 2;
 				local thisBuildingClass = GameInfo.BuildingClasses[building.BuildingClass];
@@ -670,7 +483,18 @@ function UpdateWindow( city )
  				end
 	 			
  				local cost = city:GetBuildingPurchaseCost( buildingID );
-				AddProductionButton( YieldTypes.YIELD_GOLD, buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, prereq );
+				--[[
+				log:Warn(
+					"%35s %5s gold = (%s production * %s) ^ %s = %s",
+					thisBuildingClass.Type,
+					cost,
+					player:GetBuildingProductionNeeded(buildingID),
+					GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION,
+					Game.Round(GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT, 2),
+					Game.Round(math.pow(player:GetBuildingProductionNeeded(buildingID) * GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION, GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT), 2)
+				)
+				--]]
+				AddProductionButton( buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, YieldTypes.YIELD_GOLD );
 				if col == 2 then
 					numBuildingButtons = numBuildingButtons + 1;
 				else
@@ -689,54 +513,13 @@ function UpdateWindow( city )
  				end
 	 			
  				local cost = city:GetBuildingFaithPurchaseCost( buildingID );
-				AddProductionButton( YieldTypes.YIELD_FAITH, buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, prereq );
+				AddProductionButton( buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, YieldTypes.YIELD_FAITH );
 				if col == 2 then
 					numBuildingButtons = numBuildingButtons + 1;
 				else
 					numWonderButtons = numWonderButtons + 1;
 				end
 			end
-			--[[
-			if City_CanPurchase(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, buildingID, true) then
-				local col = 2;
-				local thisBuildingClass = GameInfo.BuildingClasses[building.BuildingClass];
-				if thisBuildingClass.MaxGlobalInstances > 0 or thisBuildingClass.MaxPlayerInstances > 0 or thisBuildingClass.MaxTeamInstances > 0 then
-					col = 3;
-				end
-
- 				local isDisabled = false;
-    			if not City_CanPurchase(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, buildingID) then
- 					isDisabled = true;
- 				end
-	 			
- 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, buildingID)
-				AddProductionButton( YieldTypes.YIELD_GOLD, buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, prereq );
-				if col == 2 then
-					numBuildingButtons = numBuildingButtons + 1;
-				else
-					numWonderButtons = numWonderButtons + 1;
-				end
-			elseif City_CanPurchase(city, YieldTypes.YIELD_FAITH, GameInfo.Buildings, buildingID, true) then
-				local col = 2;
-				local thisBuildingClass = GameInfo.BuildingClasses[building.BuildingClass];
-				if thisBuildingClass.MaxGlobalInstances > 0 or thisBuildingClass.MaxPlayerInstances > 0 or thisBuildingClass.MaxTeamInstances > 0 then
-					col = 3;
-				end
-
- 				local isDisabled = false;
-    			if not City_CanPurchase(city, YieldTypes.YIELD_FAITH, GameInfo.Buildings, buildingID) then
- 					isDisabled = true;
- 				end
-	 			
- 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_FAITH, GameInfo.Buildings, buildingID)
-				AddProductionButton( YieldTypes.YIELD_FAITH, buildingID, building.Description, OrderTypes.ORDER_CONSTRUCT, cost, col, isDisabled, prereq );
-				if col == 2 then
-					numBuildingButtons = numBuildingButtons + 1;
-				else
-					numWonderButtons = numWonderButtons + 1;
-				end
-			end
-			--]]
 		end
 	end
 	if buildingHeadingOpen then
@@ -816,6 +599,8 @@ function UpdateWindow( city )
     	   	
 	-- Header Text
 	
+	if showTimers >= 1 then print(string.format("%3s ms for UpdateWindow: Production List", math.floor((os.clock() - timeStart)*1000))) end
+	
 	-------------------------------------------
 	-- Item under Production
 	-------------------------------------------
@@ -876,7 +661,6 @@ function UpdateWindow( city )
 
 	if unitProduction ~= -1 then
 		local thisUnitInfo = GameInfo.Units[unitProduction];
-		szHelpText = Locale.ConvertTextKey(thisUnitInfo.Help);
 		if IconHookup( thisUnitInfo.PortraitIndex, 128, thisUnitInfo.IconAtlas, Controls.ProductionPortrait ) then
 			Controls.ProductionPortrait:SetHide( false );
 			
@@ -888,12 +672,11 @@ function UpdateWindow( city )
 		end
 	elseif buildingProduction ~= -1 then
 		local thisBuildingInfo = GameInfo.Buildings[buildingProduction];
-		szHelpText = thisBuildingInfo.Help;
 		if IconHookup( thisBuildingInfo.PortraitIndex, 128, thisBuildingInfo.IconAtlas, Controls.ProductionPortrait ) then
 			Controls.ProductionPortrait:SetHide( false );
 			
 			-- Info for this thing
-			local helpText = GetHelpTextForBuilding(buildingProduction, false, false, false)
+			local helpText = GetBuildingTip{buildingID=buildingProduction, buildingCity=city}
 			if helpText then
 				strToolTip = Locale.ConvertTextKey(helpText) .. "[NEWLINE][NEWLINE]" .. strToolTip;
 			else
@@ -904,7 +687,6 @@ function UpdateWindow( city )
 		end
 	elseif projectProduction ~= -1 then
 		local thisProjectInfo = GameInfo.Projects[projectProduction];
-		szHelpText = thisProjectInfo.Help;
 		if IconHookup( thisProjectInfo.PortraitIndex, 128, thisProjectInfo.IconAtlas, Controls.ProductionPortrait ) then
 			Controls.ProductionPortrait:SetHide( false );
 			
@@ -916,7 +698,6 @@ function UpdateWindow( city )
 		end
 	elseif processProduction ~= -1 then
 		local thisProcessInfo = GameInfo.Processes[processProduction];
-		szHelpText = thisProcessInfo.Help;
 		if IconHookup( thisProcessInfo.PortraitIndex, 128, thisProcessInfo.IconAtlas, Controls.ProductionPortrait ) then
 			Controls.ProductionPortrait:SetHide( false );
 		else
@@ -1009,6 +790,7 @@ function UpdateWindow( city )
 		Controls.b6box:SetHide( true );
 				
 		local qLength = city:GetOrderQueueLength();
+		local yieldID = YieldTypes.YIELD_PRODUCTION
 		for i = 1, qLength do
 			local queuedOrderType;
 			local queuedData1;
@@ -1024,23 +806,33 @@ function UpdateWindow( city )
 			Controls[controlTurns]:SetHide( false );
 
 			queuedOrderType, queuedData1, queuedData2, queuedSave, queuedRush = city:GetOrderFromQueue( i-1 );
-			local thisTable = nil
 			if (queuedOrderType == OrderTypes.ORDER_TRAIN) then
-				thisTable = GameInfo.Units;
+				local thisUnitInfo = GameInfo.Units[queuedData1];
+				Controls[controlName]:SetText(Locale.ConvertTextKey( thisUnitInfo.Description ));
+				Controls[controlTurns]:SetText(Locale.ConvertTextKey( "TXT_KEY_PRODUCTION_HELP_NUM_TURNS", City_GetYieldTurns(city, yieldID, GameInfo.Units, queuedData1, i-1) ));
+				if (thisUnitInfo.Help ~= nil) then
+					strToolTip = thisUnitInfo.Help;
+				end
 			elseif (queuedOrderType == OrderTypes.ORDER_CONSTRUCT) then
-				thisTable = GameInfo.Buildings;
+				local thisBuildingInfo = GameInfo.Buildings[queuedData1];
+				Controls[controlName]:SetText(Locale.ConvertTextKey( thisBuildingInfo.Description ));
+				Controls[controlTurns]:SetText(Locale.ConvertTextKey( "TXT_KEY_PRODUCTION_HELP_NUM_TURNS", City_GetYieldTurns(city, yieldID, GameInfo.Buildings, queuedData1, i-1) ));
+				if (thisBuildingInfo.Help ~= nil) then
+					strToolTip = thisBuildingInfo.Help;
+				end
 			elseif (queuedOrderType == OrderTypes.ORDER_CREATE) then
-				thisTable = GameInfo.Projects;
+				local thisProjectInfo = GameInfo.Projects[queuedData1];
+				Controls[controlName]:SetText(Locale.ConvertTextKey( thisProjectInfo.Description ));
+				Controls[controlTurns]:SetText(Locale.ConvertTextKey( "TXT_KEY_PRODUCTION_HELP_NUM_TURNS", City_GetYieldTurns(city, yieldID, GameInfo.Projects, queuedData1, i-1) ));
+				if (thisProjectInfo.Help ~= nil) then
+					strToolTip = thisProjectInfo.Help;
+				end
 			elseif (queuedOrderType == OrderTypes.ORDER_MAINTAIN) then
-				thisTable = GameInfo.Processes;
-				Controls[controlTurns]:SetHide( true );				
-			end
-			if thisTable then
-				local thisItemInfo = thisTable[queuedData1];
-				Controls[controlName]:SetText( Locale.ConvertTextKey( thisItemInfo.Description ) );
-				Controls[controlTurns]:SetText( Locale.ConvertTextKey("TXT_KEY_PRODUCTION_HELP_NUM_TURNS", City_GetYieldTurns( city, YieldTypes.YIELD_PRODUCTION, thisTable, queuedData1, i-1) ) );
-				if (thisItemInfo.Help ~= nil) then
-					strToolTip = thisItemInfo.Help;
+				local thisProcessInfo = GameInfo.Processes[queuedData1];
+				Controls[controlName]:SetText( Locale.ConvertTextKey( thisProcessInfo.Description ) );
+				Controls[controlTurns]:SetHide( true );
+				if (thisProcessInfo.Help ~= nil) then
+					strToolTip = thisProcessInfo.Help;
 				end
 			end
 			Controls[controlBox]:SetToolTipString(Locale.ConvertTextKey(strToolTip));
@@ -1219,9 +1011,9 @@ local nullOffset = Vector2( 0, 0 );
 ----------------------------------------------------------------        
 -- Add a button based on the item info
 ----------------------------------------------------------------        
-function AddProductionButton( yieldID, itemID, description, orderType, turnsLeft, column, isDisabled, prereq )	
+function AddProductionButton( itemID, description, orderType, turnsLeft, column, isDisabled, yieldID )	
 	if yieldID == YieldTypes.YIELD_GOLD or yieldID == YieldTypes.YIELD_FAITH then
-		log:Info("AddProductionButton  yieldID=%s  itemID=%s  description=%s  orderType=%s  turnsLeft=%s  column=%s  isDisabled=%s  prereq=%s", yieldID, itemID, description, orderType, turnsLeft, column, isDisabled, prereq )
+		log:Debug("AddProductionButton  yieldID=%s  itemID=%s  description=%s  orderType=%s  turnsLeft=%s  column=%s  isDisabled=%s  prereq=%s", yieldID, itemID, description, orderType, turnsLeft, column, isDisabled, prereq )
 	end
 	local controlTable;
 	
@@ -1272,7 +1064,6 @@ function AddProductionButton( yieldID, itemID, description, orderType, turnsLeft
 		controlTable.Button:SetToolTipString(strToolTip);
 		
 	elseif column == 2 or column == 3 then -- we are a building, wonder, project, or process
-		log:Info("AddButton %s", description)
 		if column == 2 then
 			controlTable = g_BuildingInstanceManager:GetInstance();
 		elseif column == 3 then
@@ -1307,9 +1098,7 @@ function AddProductionButton( yieldID, itemID, description, orderType, turnsLeft
 			
 			-- Tooltip
 			if (bBuilding) then
-				local bExcludeName = false;
-				local bExcludeHeader = false;
-				strToolTip = GetHelpTextForBuilding(itemID, bExcludeName, bExcludeHeader, false, city);
+				strToolTip = GetBuildingTip{buildingID=itemID, buildingCity=city};
 			else
 				local bIncludeRequirementsInfo = false;
 				strToolTip = GetHelpTextForProject(itemID, bIncludeRequirementsInfo);
@@ -1318,22 +1107,7 @@ function AddProductionButton( yieldID, itemID, description, orderType, turnsLeft
 			-- Disabled help text
 			if (isDisabled) then
 				if (g_IsProductionMode) then
-					local strDisabledInfo;
-					if prereq and prereq.BuildingsNeeded and prereq.BuildingsNeeded > 0 then
-						--print(GameInfo.BuildingClasses[prereq.BuildingClassID].Description .. " " .. math.ceil(prereq.BuildingsNeeded) .. " " .. #prereq.MissingCities)
-						strDisabledInfo = Locale.ConvertTextKey("TXT_KEY_NO_ACTION_BUILDING_COUNT_NEEDED", math.ceil(prereq.BuildingsNeeded), GameInfo.BuildingClasses[prereq.BuildingClassID].Description);
-						player = Players[Game.GetActivePlayer()]
-						table.sort(prereq.MissingCities, function(a,b)
-							return a < b;
-						end)
-						strDisabledInfo = strDisabledInfo .. "[NEWLINE]"
-						for _,cityName in ipairs(prereq.MissingCities) do
-							strDisabledInfo = strDisabledInfo .. cityName .. ", ";
-						end
-						strDisabledInfo = string.gsub(strDisabledInfo, ", $", "")
-					else
-						strDisabledInfo = city:CanConstructTooltip(itemID);
-					end
+					local strDisabledInfo = city:CanConstructTooltip(itemID);
 					if (strDisabledInfo ~= nil and strDisabledInfo ~= "") then
 						strToolTip = strToolTip .. "[NEWLINE][COLOR_WARNING_TEXT]" .. strDisabledInfo .. "[ENDCOLOR]";
 					end
