@@ -50,7 +50,8 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CIV5
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_IRONCLAD_TEXT', '鉄壁の鉄鋼装甲板で保護されて1800年代半ばの蒸気推進軍艦だった。鉄壁のは、爆発や焼夷弾の殻に木造軍艦の脆弱性の結果として開発されました。まず鉄壁の戦艦、ラグルワールモンは、1859年11月にフランス海軍によって立ち上げられた。[NEWLINE] [NEWLINE]装甲艦が公海の戦艦、沿岸防衛船、長距離クルーザーとしてなど、いくつかの役割、のために設計された。 19世紀後半の軍艦設計の急速な進化は、鉄鋼、組み込み、小塔の戦艦と20世紀でおなじみの巡洋艦にその蒸気機関を補完するために帆を実施し、木製のハル容器から鉄壁を変形させた。この変更は、より重い海軍銃（1880の装甲艦がこれまで海に装着された最も重い銃のいくつかを実施し）、より洗練された蒸気機関、鉄鋼、造船を可能にした冶金の進歩の開発によって進められた。[NEWLINE] [NL ]アイアンクラッド期変更の急速なペースは多くの船がすぐに彼らは完了したように廃止されたようで、海軍戦術は流動的な状態にあったことをことを意味した。多くの装甲艦は海軍のデザイナーの数は海軍の戦闘の重要な武器とみなさRAMや魚雷、利用するために建設された。そこに鉄壁の期間に明確な終わりはありませんが、1890年代の終わりに向かって長期鉄壁の使用を中退。新しい船は、ますます標準パターンと指定された戦艦や装甲巡洋艦に構築した。', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER', 'ミサイル駆逐艦', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', '誘導ミサイル駆逐艦はミサイルを発射するように設計された駆逐艦である。多くは、対潜水艦、対空を実行するために装備されており、抗表面操作は[NEWLINE] [NEWLINE]駆逐艦が持つ銃に加えて、誘導ミサイル駆逐艦は通常、二つの大きなミサイル雑誌が装備されている店船のミサイル。いくつかの誘導ミサイル駆逐艦は、米国のイージス戦闘システムのように、強力な兵器システムレーダーが含まれており、対ミサイルの役割や弾道ミサイル防衛の役割で使用するために採用してもよい。他の船は、ギャップを埋めるために採用されなければならないので、これは、もはや巡洋艦を操作しないで海軍の特に当てはまります。', '', '');
-
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', '2段櫂船は漕い船の古代のタイプだった。商人と戦争船の区別がなかったとき、彼らは時代に出現した。彼らは、貨物や部隊を輸送することができる海の貿易、海賊行為や戦争のために使用される汎用性の高い、長距離船だった。帆と船体中央マストも追い風の下で船を推進することができます。', '', '');
 
 
 

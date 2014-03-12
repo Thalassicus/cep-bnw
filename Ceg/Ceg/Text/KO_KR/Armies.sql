@@ -50,7 +50,8 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CIV5
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_IRONCLAD_TEXT', '철갑는 철강 갑옷 플레이트에 의해 보호 1800 년대 중반에 증기 추진 군함이었다. 철갑는 폭발이나 방화 껍질에 나무 군함의 취약점의 결과로 개발되었다. 최초의 철갑 전함, 라 Gloire는 11 월 1859 년 프랑스 해군에 의해 시작되었다. [NEWLINE] [NEWLINE] Ironclads가 높은 바다의 전함, 해안 방어 배송, 장거리 크루저 등 여러 가지 역할을 위해 설계되었습니다. 19 세기 후반에 군함 디자인의 빠른 진화는 철강 건설, 고정식 전함과 20 세기에 익숙한 순양함으로의 증기 엔진을 보완하기 위해 돛을 실시 나무 껍질을 벗기는 용기로부터의 철갑을 바꾸었다. 이러한 변화는 무거운 해군의 총 (1880 년대의 ironclads 이제까지 바다에 장착 된 가장 무거운 총을 수행),보다 정교한 증기 기관, 가능한 철강 조선을 만든 야금의 발전의 발전에 의해 진행되었다. [NEWLINE] [NL ] 철갑 기간에 변화의 빠른 속도로 많은 배송 즉시이 완료되었습니다 사용되지 않는했고, 해군 전술 흐름의 상태에 있었다는 것을 의미. 많은 ironclads는 해군 디자이너의 수는 해군 전투의 중요한 무기로 간주 램이나 어뢰, 사용하기 위해 건설되었다. 이 철갑 기간에 명확한 끝이 없지만, 1890 년대의 끝으로 용어 철갑는 사용으로 떨어졌다. 새로운 배는 점점 표준 패턴과 지정된 전함이나 장갑 순양함에 건설되었다.', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER', '미사일 구축함', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', '유도 미사일 구축함이 미사일을 발사하기 위해 설계된 구축함입니다. 많은도 대잠, 대공을 수행하기 위해 장착되어 있습니다, 및 안티 표면 작업. [NEWLINE] [NEWLINE] 구축함이 가진 총을뿐만 아니라, 유도 미사일 구축함은 일반적으로 두 개의 큰 미사일 잡지 탑재되는 저장 배의 미사일. 일부 유도 미사일 구축함은 미국의 이지스 전투 시스템과 같은 강력한 무기 시스템 레이더를 포함하고 미사일 역할 또는 탄도 미사일 방어 역할에 사용하기 위해 채택 될 수있다. 이것은 다른 혈관을 메우기 위해 채택해야하기 때문에 더 이상 함을 작동하지 해군 특히 사실이다.', '', '');
-
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'bireme는 저어 배의 고대 유형이었다. 상인과 전쟁 선박 사이에 차이가 없을 때 그들은 시대에 등장했다. 그들은화물이나 병력을 수송 할 수 바다 무역, 불법 복제와의 전쟁에 사용 다목적 장거리 배송되었습니다. 항해와 중앙부 돛대는 유리한 바람 아래 배를 보낼 수 있었다.', '', '');
 
 
 
