@@ -24,6 +24,8 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CAPITAL_BUILDING_PEDIA', 'The seat of government is the building, complex of buildings or city from which a government exercises its authority. The seat of government is usually located in the capital. In some countries the seat of government differs from the capital, e.g. in the Netherlands where The Hague is the seat of government and Amsterdam is the de jure capital of the Netherlands. In most it is the same city, for example Moscow as the capital and seat of government of Russia. In the United Kingdom, the seat of government is London, the capital, or more specifically the City of Westminster.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CARAVANSARY_HELP', '[ICON_TRADE] Caravan Range: +50%[NEWLINE][ICON_GOLD] Gold: +2 per Caravan from here[NEWLINE][ICON_GOLD] Gold: +1 on Luxury Resources[NEWLINE][NEWLINE]Enhances luxury resources.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CASTLE_STRATEGY', 'The Castle is a Medieval-era building which increases the city''s Defensive Strength and Hit Points. The city must possess Walls before the Castle can be constructed.', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CINEMA', 'Cinema', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CINEMA_PEDIA', 'A cinema (or movie theater in North America) is a venue for viewing film.[NEWLINE][NEWLINE]Most but not all movie theaters are commercial operations catering to the general public, who attend by purchasing a ticket. The movie is projected with a movie projector onto a large projection screen at the front of the auditorium. Most movie theaters are now equipped for digital cinema projection, removing the need to create and transport a physical film print.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FACTORY_HELP', '[ICON_CULTURE] Building 3 unlocks Ideologies[NEWLINE][ICON_LOCKED] Requires: 1 [ICON_RES_COAL] Coal', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FLOATING_GARDENS_DESC', 'Chinampa', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FOATING_GARDENS_STRATEGY', 'The Chinampa is the Aztec unique building, replacing the Watermill. It increases the city''s food output, and should be built if the city is near a lake or river.', '', '');
@@ -121,4 +123,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_WOND
 
 
 UPDATE Loaded File SET Value=1, en_US=1 Where Type='Cities.sql';
+
+
+
 

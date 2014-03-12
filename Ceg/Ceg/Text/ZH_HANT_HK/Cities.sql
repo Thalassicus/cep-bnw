@@ -24,6 +24,8 @@ REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CAPITAL_BUILDING_PEDIA', '政府所在地是建築，建築或城市的複雜，它的一個政府行使其權力。政府所在地，通常位於首都。在一些國家，政府所在地不同於資本，如在荷蘭，其中海牙是政府所在地和阿姆斯特丹是法律上的資本荷蘭。在大多數的是同一個城市，例如莫斯科作為俄羅斯政府的首都和座位。在英國，政府所在地是倫敦，資本，或者更具體的威斯敏斯特市。', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CARAVANSARY_HELP', '[ICON_TRADE]大篷車範圍：+50％[NEWLINE] [ICON_GOLD]黃金：2元大篷車從這裡[NEWLINE] [ICON_GOLD]黃金：1對奢侈品資源[NEWLINE] [NEWLINE]增強奢侈品資源。', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CASTLE_STRATEGY', '該城堡是中世紀時代的建築從而增加了城市的防禦力和生命值。城市必須具備的牆壁前，城堡可以構造。', '', '');
+REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CINEMA', '電影院', '', '');
+REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_CINEMA_PEDIA', '電影院（或電影院在北美）是一個場地觀看電影。[NEWLINE] [NEWLINE]大多數但不是所有的電影院都是商業運作迎合普羅大眾，誰通過購買門票參加。這部電影預計與電影放映機到一個大型投影屏幕在觀眾席的前面。大多數電影院現在裝備的數字電影放映，無需創建和傳輸的物理膠片打印。', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FACTORY_HELP', '[ICON_CULTURE] 3號樓解鎖意識形態[NEWLINE] [ICON_LOCKED]需要：1 [ICON_RES_COAL]中煤', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FLOATING_GARDENS_DESC', 'Chinampa', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_FOATING_GARDENS_STRATEGY', '該Chinampa是阿茲台克人獨特的建築，取代了水車。它增加了城市的糧食產量，如果這個城市是靠近湖泊或河流應該建。', '', '');
