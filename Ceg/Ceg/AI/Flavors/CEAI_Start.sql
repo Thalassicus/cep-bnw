@@ -60,4 +60,4 @@ WHERE Bias >= 5 AND MajorCivApproachType = 'MAJOR_CIV_APPROACH_WAR';
 
 UPDATE Leaders SET Personality = 'PERSONALITY_EXPANSIONIST';
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEAI__Start.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEG_AI_Flavors_CEAI_Start.sql';

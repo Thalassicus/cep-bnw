@@ -529,4 +529,5 @@ ALTER TABLE GreatWorkSlots	ADD ListPriority integer default -1;
 --
 -- Done
 --
-UPDATE LoadedFile SET Value=1 WHERE Type='MT_AlterTables.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='Cin
+_AlterTables.sql';
