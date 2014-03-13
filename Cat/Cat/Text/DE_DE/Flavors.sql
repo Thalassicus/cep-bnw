@@ -68,4 +68,4 @@ REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FLAV
 
 
 
-UPDATE Loaded File SET Value=1, DE_DE=1 Where Type='Flavors.sql';
+UPDATE LoadedFile SET Value=1, DE_DE=1 Where Type='Flavors.sql';

@@ -92,4 +92,4 @@ REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 
 
 
-UPDATE Loaded File SET Value=1, FR_FR=1 Where Type='Text_TW_PromotionStats.sql';
+UPDATE LoadedFile SET Value=1, FR_FR=1 Where Type='Text_TW_PromotionStats.sql';

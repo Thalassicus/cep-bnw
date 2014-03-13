@@ -103,4 +103,4 @@ REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_NEXT
 
 
 
-UPDATE Loaded File SET Value=1, ES_ES=1 Where Type='YieldLibrary.sql';
+UPDATE LoadedFile SET Value=1, ES_ES=1 Where Type='YieldLibrary.sql';

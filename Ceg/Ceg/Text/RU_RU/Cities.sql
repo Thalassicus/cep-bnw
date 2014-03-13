@@ -122,7 +122,7 @@ REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_WOND
 
 
 
-UPDATE Loaded File SET Value=1, RU_RU=1 Where Type='Cities.sql';
+UPDATE LoadedFile SET Value=1, RU_RU=1 Where Type='Cities.sql';
 
 
 

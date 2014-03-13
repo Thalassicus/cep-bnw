@@ -21,6 +21,6 @@ REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CIV5
 
 
 
-UPDATE Loaded File SET Value=1, DE_DE=1 Where Type='Terrain.sql';
+UPDATE LoadedFile SET Value=1, DE_DE=1 Where Type='Terrain.sql';
 
 

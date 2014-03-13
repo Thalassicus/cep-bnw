@@ -19,6 +19,14 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+
+
+
+
+
+
+
+*	YieldLibrary Gold Yields - Gold yields should now display from modded sources
 *	Protectionism Policy - Removed extra +10% gold and production from policy
 *	Entrepreneurship Policy - Added free great merchant to policy 
 *	Caravans Policy - Changed from +2 gold to +3 gold per trade route

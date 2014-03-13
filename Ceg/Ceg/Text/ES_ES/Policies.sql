@@ -150,7 +150,7 @@ REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLI
 
 
 
-UPDATE Loaded File SET Value=1, ES_ES=1 Where Type='Policies.sql';
+UPDATE LoadedFile SET Value=1, ES_ES=1 Where Type='Policies.sql';
 
 
 

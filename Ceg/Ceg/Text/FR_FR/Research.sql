@@ -28,7 +28,7 @@ REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TECH
 
 
 
-UPDATE Loaded File SET Value=1, FR_FR=1 Where Type='Research.sql';
+UPDATE LoadedFile SET Value=1, FR_FR=1 Where Type='Research.sql';
 
 
 

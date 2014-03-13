@@ -55,7 +55,7 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 
 
 
-UPDATE Loaded File SET Value=1, JA_JP=1 Where Type='Armies.sql';
+UPDATE LoadedFile SET Value=1, JA_JP=1 Where Type='Armies.sql';
 
 UPDATE Language_JA_JP SET Text = REPLACE( Text, ' (', ': ' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
 

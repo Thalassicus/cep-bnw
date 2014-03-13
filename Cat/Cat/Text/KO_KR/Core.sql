@@ -283,4 +283,4 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_', '
 
 
 
-UPDATE Loaded File SET Value=1, KO_KR=1 Where Type='Core.sql';
+UPDATE LoadedFile SET Value=1, KO_KR=1 Where Type='Core.sql';

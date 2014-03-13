@@ -55,7 +55,7 @@ REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 
 
 
-UPDATE Loaded File SET Value=1, RU_RU=1 Where Type='Armies.sql';
+UPDATE LoadedFile SET Value=1, RU_RU=1 Where Type='Armies.sql';
 
 UPDATE Language_RU_RU SET Text = REPLACE( Text, ' (', ': ' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
 

@@ -53,7 +53,7 @@ REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'Il bireme era un antico tipo di nave remato. Sono emerse in un''epoca in cui non vi era alcuna distinzione tra navi mercantili e da guerra. Erano versatili, navi a lungo raggio utilizzati per il commercio marittimo, la pirateria e la guerra, in grado di trasportare merci o truppe. Un albero metà nave, con la vela potrebbe anche spingere la nave sotto vento favorevole.', '', '');
 
-UPDATE Loaded File SET Value=1, IT_IT=1 Where Type='Armies.sql';
+UPDATE LoadedFile SET Value=1, IT_IT=1 Where Type='Armies.sql';
 
 UPDATE Language_IT_IT SET Text = REPLACE( Text, ' (', ': ' )WHERE Tag LIKE 'TXT_KEY_PROMOTION_%';
 

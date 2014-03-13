@@ -21,7 +21,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLI
 
 
 
-UPDATE Loaded File SET Value=1, en_US=1 Where Type='CSD.sql';
+UPDATE LoadedFile SET Value=1, en_US=1 Where Type='CSD.sql';
 
 
 

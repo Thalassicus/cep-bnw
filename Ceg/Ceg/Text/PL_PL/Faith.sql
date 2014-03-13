@@ -67,7 +67,7 @@ REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 
 
 
-UPDATE Loaded File SET Value=1, PL_PL=1 Where Type='Faith.sql';
+UPDATE LoadedFile SET Value=1, PL_PL=1 Where Type='Faith.sql';
 
 
 

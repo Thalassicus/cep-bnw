@@ -284,4 +284,4 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_', '
 
 
 
-UPDATE Loaded File SET Value=1, en_US=1 Where Type='Core.sql';
+UPDATE LoadedFile SET Value=1, en_US=1 Where Type='Core.sql';

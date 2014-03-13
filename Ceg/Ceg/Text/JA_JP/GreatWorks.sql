@@ -55,7 +55,7 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_GREA
 
 
 
-UPDATE Loaded File SET Value=1, JA_JP=1 Where Type='Greatworks.sql';
+UPDATE LoadedFile SET Value=1, JA_JP=1 Where Type='Greatworks.sql';
 
 
 

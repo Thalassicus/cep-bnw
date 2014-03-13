@@ -21,7 +21,7 @@ REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY
 
 
 
-UPDATE Loaded File SET Value=1, ZH_HANT_HK=1 Where Type='CSD.sql';
+UPDATE LoadedFile SET Value=1, ZH_HANT_HK=1 Where Type='CSD.sql';
 
 
 
