@@ -1,4 +1,5 @@
 /* Traits */
+
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRAIT_ART_OF_WAR', 'You get an extra Spy. Great Generals see farther and give more strength.[NEWLINE]Starts with a Warrior and Great General. ', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-01-18'), 'TXT_KEY_TRAIT_ALLOTMENT_SHORT', 'Allotment', '', '');
 INSERT INTO Cep_Language_EN_US (DateModified, Tag, Text, Gender, Plurality) VALUES (date('2013-09-09'), 'TXT_KEY_TRAIT_ALLOTMENT', 'Your capital gains a free strong copy of each new unit line you research.', '', '');
