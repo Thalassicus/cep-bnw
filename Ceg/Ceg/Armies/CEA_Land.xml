@@ -171,4 +171,69 @@
 			<ResourceType>RESOURCE_COAL</ResourceType>
 		</Row>
 	</Unit_ResourceQuantityRequirements>
+	
+	<!--
+			Dummy Missionary for Lalibela fix
+	-->
+	<Units>
+		<Row>
+			<Class>UNITCLASS_MISSIONARY_LALIBELA</Class>
+			<Type>UNIT_MISSIONARY_LALIBELA</Type>
+			<Cost>-1</Cost>
+			<FaithCost>-1</FaithCost>
+			<Moves>4</Moves>
+			<Capture>UNITCLASS_MISSIONARY</Capture>
+			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_LOW</CivilianAttackPriority>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_MISSIONARY_LALIBELA</Description>
+			<Civilopedia>TXT_KEY_CIV5_MISSIONARY_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MISSIONARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_MISSIONARY</Help>
+			<ShowInPedia>false</ShowInPedia>
+			<AdvancedStartCost>-1</AdvancedStartCost>
+			<CombatLimit>0</CombatLimit>
+			<SpreadReligion>true</SpreadReligion>
+			<ReligionSpreads>3</ReligionSpreads>
+			<ReligiousStrength>1000</ReligiousStrength>
+			<UnitArtInfo>ART_DEF_UNIT_MISSIONARY</UnitArtInfo>
+			<UnitFlagAtlas>EXPANSION_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>20</UnitFlagIconOffset>
+			<IconAtlas>EXPANSION_UNIT_ATLAS_1</IconAtlas>
+			<PortraitIndex>20</PortraitIndex>
+		</Row>
+	</Units>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_MISSIONARY_LALIBELA</UnitType>
+			<UnitAIType>UNITAI_MISSIONARY</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	<UnitClasses>
+		<Row>
+			<Type>UNITCLASS_MISSIONARY_LALIBELA</Type>
+			<Description>TXT_KEY_UNIT_MISSIONARY_LALIBELA</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>-1</InstanceCostModifier>
+			<DefaultUnit>UNIT_MISSIONARY_LALIBELA</DefaultUnit>
+		</Row>
+	</UnitClasses>
+	<Unit_FreePromotions>
+				<Row>
+			<UnitType>UNIT_MISSIONARY_LALIBELA</UnitType>
+			<PromotionType>PROMOTION_RIVAL_TERRITORY</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSIONARY_LALIBELA</UnitType>
+			<PromotionType>PROMOTION_SIGHT_PENALTY</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSIONARY_LALIBELA</UnitType>
+			<PromotionType>PROMOTION_UNWELCOME_EVANGELIST</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+
+
 </GameData>
