@@ -33,6 +33,7 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_PromotionOrder.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AlterTables.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('YL_Data.xml'			, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_End.sql'			, 0);
 
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_BuildingStats.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('TW_PromoStats.sql'		, 0);
@@ -41,12 +42,16 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('Text_TW_PromotionStats.sql'	, 0);
 
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_LeaderPersonalities.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_LeaderFlavors.sql'		, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI__Start.sql'				, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI__End_Flavors.sql'			, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_Flavor_Techs.sql'			, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('AI.sql'						, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AI_Flavors_CEAI_Start.sql'				, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AI_Flavors_CEAI_Units.sql'			, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AI_Flavors_CEAI_Techs.sql'			, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('Core.sql'						, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('Flavors.sql'						, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('Framework.sql'						, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('Villages.sql'						, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('YieldLibrary.sql'						, 0);
 
 
-INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Language_End.sql', 0);
+
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CAT_Start.sql';

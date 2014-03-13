@@ -38,11 +38,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/Language_Start.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>Armies/CEA__New.xml</FileName>
       </Action>
       <Action>
@@ -1300,11 +1295,6 @@
         <Type>UpdateDatabase</Type>
         <FileName>AI/Flavors/CEAI_Techs.sql</FileName>
       </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/Language_End.sql</FileName>
-      </Action>
     </ModActions>
     <Homepage>http://civmodding.wordpress.com/</Homepage>
     <ModContent>
@@ -2439,14 +2429,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Text\en_US\Terrain.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\Language_End.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\Language_Start.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
