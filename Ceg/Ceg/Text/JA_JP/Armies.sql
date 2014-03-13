@@ -52,7 +52,8 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', '誘導ミサイル駆逐艦はミサイルを発射するように設計された駆逐艦である。多くは、対潜水艦、対空を実行するために装備されており、抗表面操作は[NEWLINE] [NEWLINE]駆逐艦が持つ銃に加えて、誘導ミサイル駆逐艦は通常、二つの大きなミサイル雑誌が装備されている店船のミサイル。いくつかの誘導ミサイル駆逐艦は、米国のイージス戦闘システムのように、強力な兵器システムレーダーが含まれており、対ミサイルの役割や弾道ミサイル防衛の役割で使用するために採用してもよい。他の船は、ギャップを埋めるために採用されなければならないので、これは、もはや巡洋艦を操作しないで海軍の特に当てはまります。', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', '2段櫂船は漕い船の古代のタイプだった。商人と戦争船の区別がなかったとき、彼らは時代に出現した。彼らは、貨物や部隊を輸送することができる海の貿易、海賊行為や戦争のために使用される汎用性の高い、長距離船だった。帆と船体中央マストも追い風の下で船を推進することができます。', '', '');
-
+/* その他 */
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', '宣教師', '', '');
 
 
 UPDATE LoadedFile SET Value=1, JA_JP=1 Where Type='Armies.sql';

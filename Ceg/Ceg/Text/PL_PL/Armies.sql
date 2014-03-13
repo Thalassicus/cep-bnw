@@ -52,7 +52,8 @@ REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'Pocisk kierowany niszczyciel niszczyciel zaprojektowany jest do pocisków. Wiele z nich jest również przygotowany do prowadzenia zwalczania okrętów podwodnych, anty-powietrze, a operacje przeciw powierzchni. [NEWLINE] [NEWLINE] Oprócz karabinów, że niszczyciele mają, niszczyciel rakietowy prowadzony jest zazwyczaj wyposażony w dwa duże magazyny rakiet, które sklep rakiety do statku. Niektóre niszczyciele rakietowe zawierają przewodnikiem potężne radary systemu broni, takich jak system walki Aegis Stanów Zjednoczonych, i mogą zostać przyjęte do stosowania w roli antyrakietowej lub balistycznej roli antyrakietowej. Jest to szczególnie prawdziwe w odniesieniu do flot, które już nie działają krążowniki, a muszą być przyjęte inne statki, aby wypełnić lukę.', '', '');
 REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'Bireme był starożytny typ wiosłował statku. Znaleźli się w czasach, gdy nie było rozróżnienia między statków handlowych i wojennych. Byli wszechstronni, statki dalekiego zasięgu stosowane do handlu morskiego, piractwa i wojny, zdolnej do przenoszenia ładunków lub wojska. Maszt z żaglem midship może też napędzania statków pod korzystnym wietrze.', '', '');
-
+/*  Inne  */
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Misjonarz', '', '');
 
 
 UPDATE LoadedFile SET Value=1, PL_PL=1 Where Type='Armies.sql';

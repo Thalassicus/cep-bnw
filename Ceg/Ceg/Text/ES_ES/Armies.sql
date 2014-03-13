@@ -52,7 +52,8 @@ REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'Un destructor de misiles guiados es un destructor diseñado para lanzar misiles. Muchos también están equipados para llevar a cabo antisubmarina, antiaérea y las operaciones contra la superficie. [NEWLINE] [NEWLINE] Además de las armas que tienen destructores, un destructor de misiles guiados es generalmente equipado con dos grandes revistas de misiles que tienda los misiles de la nave. Algunos destructores de misiles guiados contienen poderosos radares de sistemas de armas, como el sistema de combate Aegis de Estados Unidos, y podrán adoptarse para el uso en una función anti-misil o un papel de defensa de misiles balísticos. Esto es especialmente cierto de las marinas de guerra que ya no operan los cruceros, como otros buques deben adoptarse para llenar la brecha.', '', '');
 REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Birreme', '', '');
 REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'El birreme era un antiguo tipo de barco remado. Ellos surgieron en una época en que no había distinción entre mercantes y de guerra barcos. Eran barcos versátiles, de largo alcance utilizados para el comercio marítimo, la piratería y la guerra, capaz de transportar carga o tropas. Un mástil midship con la vela también podría impulsar la nave en condiciones de viento favorables.', '', '');
-
+/*  Otro  */
+REPLACE INTO Language_ES_ES (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Misionero', '', '');
 
 
 UPDATE LoadedFile SET Value=1, ES_ES=1 Where Type='Armies.sql';

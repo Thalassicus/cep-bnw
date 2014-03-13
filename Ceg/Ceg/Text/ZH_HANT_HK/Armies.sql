@@ -52,7 +52,8 @@ REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', '導彈驅逐艦是設計用來發射導彈驅逐艦。許多還配備開展反潛，防空和反水面操作。[NEWLINE] [NEWLINE]除此之外驅逐艦有槍，導彈驅逐艦，通常配有兩個大型導彈雜誌的店該導彈的船。一些導彈驅逐艦包含強大的武器系統雷達，像美國“宙斯盾作戰系統，並可能在反導彈角色或彈道導彈防禦作用，為使用通過。這是海軍不再經營巡洋艦，其他船隻必須採取填補缺口尤其如此。', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'BIREME', '', '');
 REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', '該BIREME是一個古老的劃型船舶。他們出現在一個時代，因為當時有商人和軍艦之間沒有區別。他們是用於海上貿易，海盜和戰爭，能夠運送貨物或部隊的多功能，遠距離船隻。船中部桅杆帆也可以推動下順風船。', '', '');
-
+/* 其他 */
+REPLACE INTO Language_ZH_HANT_HK (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', '傳教士', '', '');
 
 
 UPDATE LoadedFile SET Value=1, ZH_HANT_HK=1 Where Type='Armies.sql';

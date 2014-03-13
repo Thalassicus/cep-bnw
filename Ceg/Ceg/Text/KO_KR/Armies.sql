@@ -52,7 +52,8 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', '유도 미사일 구축함이 미사일을 발사하기 위해 설계된 구축함입니다. 많은도 대잠, 대공을 수행하기 위해 장착되어 있습니다, 및 안티 표면 작업. [NEWLINE] [NEWLINE] 구축함이 가진 총을뿐만 아니라, 유도 미사일 구축함은 일반적으로 두 개의 큰 미사일 잡지 탑재되는 저장 배의 미사일. 일부 유도 미사일 구축함은 미국의 이지스 전투 시스템과 같은 강력한 무기 시스템 레이더를 포함하고 미사일 역할 또는 탄도 미사일 방어 역할에 사용하기 위해 채택 될 수있다. 이것은 다른 혈관을 메우기 위해 채택해야하기 때문에 더 이상 함을 작동하지 해군 특히 사실이다.', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'bireme는 저어 배의 고대 유형이었다. 상인과 전쟁 선박 사이에 차이가 없을 때 그들은 시대에 등장했다. 그들은화물이나 병력을 수송 할 수 바다 무역, 불법 복제와의 전쟁에 사용 다목적 장거리 배송되었습니다. 항해와 중앙부 돛대는 유리한 바람 아래 배를 보낼 수 있었다.', '', '');
-
+/*  기타  */
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', '전도사', '', '');
 
 
 UPDATE LoadedFile SET Value=1, KO_KR=1 Where Type='Armies.sql';

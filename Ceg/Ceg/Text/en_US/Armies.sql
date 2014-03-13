@@ -53,7 +53,8 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'A guided missile destroyer is a destroyer designed to launch missiles. Many are also equipped to carry out anti-submarine, anti-air, and anti-surface operations.[NEWLINE][NEWLINE]In addition to the guns that destroyers have, a guided missile destroyer is usually equipped with two large missile magazines which store the missiles for the ship. Some guided missile destroyers contain powerful weapon system radars, like the United States’ Aegis combat system, and may be adopted for use in an anti-missile role or a ballistic missile defense role. This is especially true of navies that no longer operate cruisers, as other vessels must be adopted to fill in the gap.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'The bireme was an ancient type of rowed ship. They emerged in an era when there was no distinction between merchant and war ships. They were versatile, long-range ships used for sea trade, piracy and warfare, capable of transporting freight or troops. A midship mast with sail could also propel the ship under favourable wind.', '', '');
-
+/* Other */
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Missionary', '', '');
 
 
 UPDATE LoadedFile SET Value=1, en_US=1 Where Type='Armies.sql';

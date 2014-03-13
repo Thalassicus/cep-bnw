@@ -52,6 +52,9 @@ REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'Un cacciatorpediniere missile guidato è un distruttore progettato per lanciare missili. Molti sono dotati anche di effettuare anti-sommergibile, anti-aria, e le operazioni anti-superficie. [NEWLINE] [NEWLINE] Oltre alle armi che hanno cacciatorpediniere, un cacciatorpediniere missile è solitamente dotato di due grandi riviste di missili che negozio i missili per la nave. Alcuni distruttori di missili guidati contengono potenti radar dei sistemi di difesa, come sistema di combattimento Aegis ''degli Stati Uniti, e possono essere adottate per l''utilizzo in un ruolo anti-missile o un ruolo di difesa missilistica balistici. Ciò è particolarmente vero per le marine che operano non più incrociatori, come altre navi devono essere adottate per colmare il divario.', '', '');
 REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'Il bireme era un antico tipo di nave remato. Sono emerse in un''epoca in cui non vi era alcuna distinzione tra navi mercantili e da guerra. Erano versatili, navi a lungo raggio utilizzati per il commercio marittimo, la pirateria e la guerra, in grado di trasportare merci o truppe. Un albero metà nave, con la vela potrebbe anche spingere la nave sotto vento favorevole.', '', '');
+/*  Altro  */
+REPLACE INTO Language_IT_IT (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Missionario', '', '');
+
 
 UPDATE LoadedFile SET Value=1, IT_IT=1 Where Type='Armies.sql';
 

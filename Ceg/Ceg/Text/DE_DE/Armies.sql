@@ -52,7 +52,8 @@ REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'Ein Lenkwaffenzerstörer ist ein Zerstörer entwickelt, um Raketen zu starten. Viele sind auch gerüstet für die Durchführung U-Boot-, Anti-Luft-und Anti-Flächenfunktionen. [NEWLINE] [NEWLINE] Zusätzlich zu den Waffen, die Zerstörer haben, ein Lenkwaffenzerstörer ist in der Regel mit zwei großen Raketen ausgestattet, die Zeitschriften-Shop die Raketen für das Schiff. Einige Lenkwaffenzerstörer enthalten starke Waffensystem Radar, wie Aegis-Kampfsystem der Vereinigten Staaten, und kann für die Verwendung in einem Anti-Raketen-Rolle oder einer ballistischen Raketenabwehr Rolle angenommen werden. Dies gilt vor allem für Flotten, die nicht mehr arbeiten Kreuzer, wie andere Schiffe zu erlassen, um die Lücke zu füllen.', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'Die bireme war eine alte Art von Schiff gerudert. Sie entstanden in einer Zeit, als es noch keine Unterscheidung zwischen Handels-und Kriegsschiffe. Sie waren vielseitig, Langstrecken-Schiffe für den Seehandel, Piraterie und Kriegsführung, in der Lage, den Transport von Fracht oder Truppen. Ein Mittschiffsmast mit Segel könnte auch das Schiff unter günstigen Wind zu treiben.', '', '');
-
+/*  Andere  */
+REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Missionar', '', '');
 
 
 UPDATE LoadedFile SET Value=1, DE_DE=1 Where Type='Armies.sql';

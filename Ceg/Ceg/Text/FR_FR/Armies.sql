@@ -52,7 +52,8 @@ REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSILE_DESTROYER_PEDIA', 'Un destroyer lance-missiles est un destroyer conçu pour lancer des missiles. Beaucoup sont également équipés pour s''acquitter de l''anti-sous-marine, anti-aérienne et des opérations anti-surface. [NEWLINE] [NEWLINE] En plus des armes à feu qui destroyers ont, un destroyer lance-missiles est généralement équipé de deux grands magazines de missiles qui magasin les missiles pour le navire. Certains destroyers lance-missiles contiennent de puissants radars du système d''arme, comme le système de combat Aegis des États-Unis, et peuvent être adoptées pour une utilisation dans un rôle anti-missile balistique ou un rôle de défense antimissile. Cela est particulièrement vrai des marines qui exploitent plus croiseurs, comme d''autres navires doivent être prises pour combler l''écart.', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME', 'Bireme', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_BIREME_PEDIA', 'La birème était un ancien type de navire ramé. Ils ont émergé à une époque où il n''y avait pas de distinction entre marchands et de guerre navires. Ils étaient polyvalents, navires à longue portée utilisés pour le commerce maritime, la piraterie et la guerre, capable de transporter du fret ou des troupes. Un mât au milieu du navire à voile peut aussi propulser le navire sous le vent favorable.', '', '');
-
+/*  Autres  */
+REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Missionnaire', '', '');
 
 
 UPDATE LoadedFile SET Value=1, FR_FR=1 Where Type='Armies.sql';
