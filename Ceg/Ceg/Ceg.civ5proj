@@ -1338,11 +1338,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Cities.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>Policies/CEP_WonderUnlocks.sql</FileName>
       </Action>
       <Action>
@@ -2645,10 +2640,6 @@
     <Content Include="Terrain\NaturalWondersCustomMethods.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\en_US\Cities.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Link_Features.url">
       <SubType>Lua</SubType>
