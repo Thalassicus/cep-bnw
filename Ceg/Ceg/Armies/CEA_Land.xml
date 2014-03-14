@@ -9,6 +9,7 @@
 			<Where Class="UNITCLASS_GUIDED_MISSILE" />
 			<Set Range="6" />
 		</Update>
+	<!--	
 		<Update>
 			<Where Class="UNITCLASS_MACHINE_GUN" />
 			<Set Description="TXT_KEY_UNIT_AT_GUN"
@@ -20,6 +21,7 @@
 				 MoveRate="WHEELED"
 				 />
 		</Update>
+	-->
 	</Units>
 	
 
@@ -171,7 +173,7 @@
 			<ResourceType>RESOURCE_COAL</ResourceType>
 		</Row>
 	</Unit_ResourceQuantityRequirements>
-	
+
 	<!--
 			Dummy Missionary for Lalibela fix
 	-->

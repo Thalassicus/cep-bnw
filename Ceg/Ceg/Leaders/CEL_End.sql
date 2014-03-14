@@ -265,7 +265,7 @@ FROM Civilizations WHERE Type IN (
 );
 
 INSERT INTO Civilization_FreeUnits (UnitClassType, UnitAIType, Count, CivilizationType)
-SELECT 'UNITCLASS_TRIREME', 'UNITAI_EXPLORE', 1, Type 
+SELECT 'UNITCLASS_TRIREME', 'UNITAI_EXPLORE_SEA', 1, Type 
 FROM Civilizations WHERE Type IN (
 	'CIVILIZATION_ROME'
 );
