@@ -765,7 +765,7 @@
         <Type>UpdateDatabase</Type>
         <FileName>Text/JA_JP/Leaders.sql</FileName>
       </Action>
-       <Action>
+      <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>Text/KO_KR/Leaders.sql</FileName>
