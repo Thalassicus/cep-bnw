@@ -37,7 +37,7 @@ PL_PL	Polski			Polish
 RU_RU	Russkij Jazyk	Russian
 ZH_CN	Zhongwen		Chinese
 */
-INSERT INTO Cep (Type, Value) VALUES ('LANGUAGE', 'FR_FR');
+INSERT INTO Cep (Type, Value) VALUES ('LANGUAGE', 'en_US');
 
 /*
 Good For
