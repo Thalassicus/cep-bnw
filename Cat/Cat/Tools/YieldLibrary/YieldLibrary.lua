@@ -2256,7 +2256,7 @@ function City_UpdateModdedYields(city, player)
 	modYield = City_GetBaseYieldRate(city, yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100)
 	if modYield ~= vanillaYield then
 		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to gold)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
-		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
+		--City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
 	end
 	
 	yieldID = YieldTypes.YIELD_CULTURE
