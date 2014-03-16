@@ -219,7 +219,7 @@
 	</Flavors>
 	<LoadedFile>
 		<Update>
-			<Where Type="MT_Data.xml"/>
+			<Where Type="Cat_Data.xml"/>
 			<Set Value="1"/>
 		</Update>
 	</LoadedFile>

@@ -1,0 +1,95 @@
+/* The sql commands and text below were formulated in the TooltipWriter_help tab of the Google Spreadsheet 'CAT_Language'.
+https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dGtjX2JldHBzdXhRbGNxVFgxT1E2OHc&usp=drive_web#gid=0
+If you make any changes be sure to update the spreadsheet also.*/
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ATTACK', 'Atak', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_DEFENSE', 'Obrona', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_VS', 'kontra', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_SIGHT_RANGE', 'Zasięg wzroku', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGE', 'Zakres', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MOVES', 'Odeszli', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_EXPERIENCE', 'Doświadczenie', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGED_ATTACKS', 'Ataków dystansowych', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_AIR_SWEEPS', 'Sweeps powietrza', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FASTER_IN', 'Szybciej', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ROUGH_TERRAIN', '[COLOR_POSITIVE_TEXT] terenowe [ENDCOLOR] Ukształtowanie terenu (wzgórza, las lub dżungli)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_OPEN_TERRAIN', '[COLOR_POSITIVE_TEXT] OTWARTY [ENDCOLOR] Terrain (NO Hills, Las lub Jungle)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_WOUNDED_UNITS', 'Rannych Jednostki', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FRIENDLY', 'Przyjazny', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_NEUTRAL', 'Neutralny', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ENEMY', 'Wróg', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_IN_TERRITORY', 'w {1_num} Terytorium', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UPGRADE_COST', 'Upgrade koszt', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_STRENGTH', 'Siła', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CANNOT ENTER', 'Nie może wejść', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNTIL', 'do', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_HEALING', 'Gojenie', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FORTIFIED_UNITS', 'Wzbogacona Jednostki', '', '');
+/* Specjalne zdolności */
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_ENEMIES', 'do [COLOR_POSITIVE_TEXT] sąsiednich jednostek wroga [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_FRIENDLY', 'dla jednostek sąsiednich płytek', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AIR_SWEEP_CAPABLE', 'Może usunąć powietrze Sweep przechwytujących Jednostek.', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AMPHIBIOUS', 'Pełna obrażenia podczas ataku z morza lub w poprzek rzeki.', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_BLITZ', 'Może [COLOR_POSITIVE_TEXT] zaatakować dwa razy [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_HEAL', 'Może leczyć', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPITAL_BONUS', 'w [COLOR_POSITIVE_TEXT] Capital [ENDCOLOR], premia spada jako jednostka dostaje dalej', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPTURE_SHIPS', '[COLOR_POSITIVE_TEXT] Screeny [ENDCOLOR] pokonał wroga [COLOR_POSITIVE_TEXT] Statki [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CARGO', 'Może Carry [COLOR_POSITIVE_TEXT] {1_num} [ENDCOLOR] Cargo', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALLOWS_EMBARKATION', 'Można wybrać się na [COLOR_POSITIVE_TEXT] Płytki wodne [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EVASION_CHANGE', 'szansa [COLOR_POSITIVE_TEXT] Omijać [ENDCOLOR] przechwytywanie', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NUM_INTERCEPTION_CHANGE', 'dodatkowe [COLOR_POSITIVE_TEXT] Przechwytywanie [ENDCOLOR] może być wykonana na przełomie', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_AFTER_ATTACKING', 'Ataki użyć [COLOR_POSITIVE_TEXT] 1 Przesuń [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_FLAT_MOVEMENT_COST', 'Wszystko ruch używa [COLOR_PLAYER_ORANGE_TEXT] 1 Przesuń [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_UPGRADE_DISCOUNT', 'Koszt updgrade', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_ADMIRAL', 'Poprawia siłę bojową pobliskich [COLOR_POSITIVE_TEXT] statki [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL', 'Poprawia siłę bojową pobliskich [COLOR_POSITIVE_TEXT] jednostek lądowych [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_MOVEMENT', '[COLOR_POSITIVE_TEXT] Wielcy generałowie [ENDCOLOR] przenieść na szybkości tego urządzenia, jeśli zaczną kolej [COLOR_POSITIVE_TEXT] ułożone [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_RATE', 'Ogólne tempo tworzenia świetnie', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_HPHEALED_IF_DESTROY_ENEMY', '[COLOR_POSITIVE_TEXT] Heal {1_num} zdrowie [ENDCOLOR] od zabijania jednostek dla Barbarian', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_IGNORE_TERRAIN_COST', 'Ignoruje koszty terenowe', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INDIRECT_FIRE', 'Może zaatakować [COLOR_POSITIVE_TEXT] przez przeszkody [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INSTA_HEAL', '[COLOR_POSITIVE_TEXT] Heal {1_num} zdrowie [ENDCOLOR] [NEWLINE] [COLOR_NEGATIVE_TEXT] Koniec [ENDCOLOR] to okazja, aby wybrać promocji', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPT_CHANCE_CHANGE', 'szansa [COLOR_POSITIVE_TEXT] Intercept [ENDCOLOR] statku powietrznego.', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALWAYS_HEAL', 'Atakuje i nie przeszkadzają w ruchu uzdrowienia', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MOUNTAIN_PASS', 'Może przejść na [COLOR_POSITIVE_TEXT] Góry [ENDCOLOR], ale otrzymuje obrażenia, jeśli [COLOR_NEGATIVE_TEXT] kończąc swoją kolej [ENDCOLOR] na górze', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_IMPASSABLE', 'Może poruszać się [COLOR_POSITIVE_TEXT] lodu i gór [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MUST_SET_UP_TO_RANGED_ATTACK', 'Należy skonfigurować do ataku na odległość', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_CAPTURE', 'Nie Capture Miasta', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_DEFENSE_BONUS', 'Brak Obronne Bonusy terenowe', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_MELEE_ATTACK', 'Atak wręcz nie może', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_UNIT_ATTACK', 'Nie mogą atakować [COLOR_NEGATIVE_TEXT] jednostki [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_PARADROP', 'Can [COLOR_POSITIVE_TEXT] Paradrop [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY', 'Może wejść [COLOR_POSITIVE_TEXT] Rival Territory [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY_FAITH', '{PROMOTION_UNWELCOME_EVANGELIST_HELP}', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPTION_COMBAT_MODIFIER', 'silniejszy [COLOR_POSITIVE_TEXT] Przechwytywanie [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WEAK_RANGED', 'Atak kontra [COLOR_NEGATIVE_TEXT] Masa i Statki [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_MOD', 'gdy [COLOR_POSITIVE_TEXT] Obok [ENDCOLOR] na obsłudze jednostka wojskowa', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_EMBARKED', 'gdy [COLOR_POSITIVE_TEXT] rozpoczęła [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_FLANKING', 'gdy [COLOR_POSITIVE_TEXT] towarzyszące [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WITH_GREAT_GENERAL', 'z [COLOR_POSITIVE_TEXT] Wielki Generał [ENDCOLOR] w samej płytki.', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EXTRA_WITHDRAWAL', 'Szansa na wycofanie się z walce wręcz', '', '');
+/* Nazwy promocyjne */
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_FIGHTER', 'Bonus kontra Fighters (50)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_HELICOPTER', 'Bonus vs Helikoptery (100)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_TANK', 'Bonus vs Tanks (100)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', 'Arctic mocy', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', 'Kara na Defense (50)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', 'Kara na Defense (50)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DESERT_POWER', 'Pustynia zasilania', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKED_DEFENSE', 'Rozpoczęła obrony (100)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_FOREIGN_LANDS', 'Obczyźnie Bonus (20)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP', 'AI Handicap', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_1', 'Handicap I AI', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_2', 'AI Handicap II', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HILL_FIGHTER', 'Hill Fighter', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', 'Najemnik', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MOUNTED_PENALTY', 'Kara vs Mounted (50)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NAVAL_PENALTY', 'Penalty Atakowanie Statki (50)', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT', 'Nowa jednostka', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT_HELP', 'Nowa jednostka', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SEE_INVISIBLE_SUBMARINE', 'Można zobaczyć podwodne', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_INTERCEPTION_HELP', '[ICON_AIR] szansa (%) do przechwytywania [COLOR_POSITIVE_TEXT] Air Units [ENDCOLOR]', '', '');
+REPLACE INTO Language_PL_PL (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_WEAK_RANGED', 'Atak ziemia Karny (50)', '', '');
+
+
+
+UPDATE LoadedFile SET Value=1, PL_PL=1 Where Type='Text_TW_PromotionStats.sql';
