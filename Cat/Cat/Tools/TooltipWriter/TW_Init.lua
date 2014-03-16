@@ -165,7 +165,7 @@ Game.GetDefaultBuildingStatText = Game.GetDefaultBuildingStatText or function(ob
 
 	elseif lineType == "YieldMod" then
 		for yieldInfo in GameInfo.Yields() do
-			lineValue = activePlayer:GetBuildingYieldMod(objectID, yieldInfo.ID, city)
+			lineValue = activePlayer:GetBuildingYieldMod(objectID, yieldInfo.ID, city) + Game.GetBuildingYieldModifier(objectID, yieldInfo.ID)
 			if lineValue ~= 0 then
 				linePrefix = string.format("%s {%s}", yieldInfo.IconString or ("ICON:"..yieldInfo.Type), yieldInfo.Description or yieldInfo.Type)
 				linePriority = statPriority + (100 * yieldInfo.ListPriority)

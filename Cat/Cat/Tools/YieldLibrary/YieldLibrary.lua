@@ -426,14 +426,14 @@ function PlayerClass.GetBuildingYieldMod(player, buildingID, yieldID, city)
 		--yield = yield + Game.GetBuildingYieldModifier(buildingID, yieldID)
 	end
 
-	if (yieldID == YieldTypes.YIELD_CULTURE) or (yieldID == YieldTypes.YIELD_FAITH) then
+	--[[if (yieldID == YieldTypes.YIELD_CULTURE) or (yieldID == YieldTypes.YIELD_FAITH) then
 		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
 		for row in GameInfo.Policy_BuildingClassYieldModifiers(query) do
 			if player:HasPolicy(GameInfo.Policies[row.PolicyType].ID) then
 				--log:Trace("%30s %20s %5s", buildingInfo.BuildingClass, yieldType, row.YieldMod)
 				yield = yield + row.YieldMod
 			end
-		end
+		end--]]
 
 		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
 		for row in GameInfo.Building_BuildingClassYieldModifiers(query) do
@@ -441,7 +441,7 @@ function PlayerClass.GetBuildingYieldMod(player, buildingID, yieldID, city)
 				yield = yield + row.Yield
 			end
 		end
-	end
+	--end
 	
 	--if showTimers == 3 then print(string.format("%3s ms for PlayerClass.GetBuildingYieldMod", math.floor((os.clock() - timeStart)*1000))) end
 	return yield
