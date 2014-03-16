@@ -434,12 +434,12 @@ function PlayerClass.GetBuildingYieldMod(player, buildingID, yieldID, city)
 				yield = yield + row.YieldMod
 			end
 		end
-	end
 
-	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
-	for row in GameInfo.Building_BuildingClassYieldModifiers(query) do
-		if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
-			yield = yield + row.Yield
+		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
+		for row in GameInfo.Building_BuildingClassYieldModifiers(query) do
+			if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
+				yield = yield + row.Yield
+			end
 		end
 	end
 	
@@ -728,9 +728,9 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	elseif yieldID == YieldTypes.YIELD_GREAT_PEOPLE then
 		--yield = yield + GameInfo.Specialists[specialistID].GreatPeopleRateChange
 	elseif yieldID == YieldTypes.YIELD_EXPERIENCE then
-		--yield = yield + GameInfo.Specialists[specialistID].Experience
+		yield = yield + GameInfo.Specialists[specialistID].Experience
 	elseif GameInfo.Yields[yieldID].TileTexture then
-		--yield = yield + city:GetSpecialistYield(specialistID, yieldID)
+		yield = yield + city:GetSpecialistYield(specialistID, yieldID)
 	end
 	return yield
 end
