@@ -137,13 +137,6 @@ UPDATE Units SET         Cost = ROUND((Cost * 2) / 10, 0) * 10  WHERE         Co
 -- Combat Classes
 --
 
-UPDATE Units
-SET CombatClass = 'UNITCOMBAT_MELEE'
-WHERE Class IN (
-	'UNITCLASS_GATLINGGUN'	,
-	'UNITCLASS_MACHINE_GUN'	,
-	'UNITCLASS_BAZOOKA'		
-);
 
 /*
 Mounted Archers need a combat class,
