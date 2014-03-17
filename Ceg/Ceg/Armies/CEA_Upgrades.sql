@@ -50,7 +50,7 @@ INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCL
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_NUCLEAR_SUBMARINE',    Type FROM Units WHERE Class = 'UNITCLASS_SUBMARINE';
 
 
-INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_MUSKETMAN';
+--INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_MUSKETMAN';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_CROSSBOWMAN';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_HORSEMAN',             Type FROM Units WHERE Class = 'UNITCLASS_CHARIOT_ARCHER';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_GALLEASS',            'UNIT_CARTHAGINIAN_QUINQUEREME');
