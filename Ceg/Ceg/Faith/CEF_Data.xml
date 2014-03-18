@@ -239,10 +239,6 @@
 			<Set YieldChange="6"/>
 		</Update>
 		<Update>
-			<Where BeliefType="BELIEF_RELIGIOUS_ART" />
-			<Set YieldChange="16"/>
-		</Update>
-		<Update>
 			<Where BeliefType="BELIEF_FEED_WORLD" />
 			<Set YieldChange="2"/>
 		</Update>
@@ -257,14 +253,6 @@
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>10</YieldChange>
 		</Row>
-		<!--
-		<Row>
-			<BeliefType>BELIEF_RELIGIOUS_ART</BeliefType>
-			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
-			<YieldType>YIELD_TOURISM</YieldType>
-			<YieldChange>10</YieldChange>
-		</Row>
-		-->
 	</Belief_BuildingClassYieldChanges>
 	<Belief_BuildingClassTourism>
 		<!-- WHY is this a seperate table?! -->
