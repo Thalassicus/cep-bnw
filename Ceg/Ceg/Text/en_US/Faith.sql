@@ -7,7 +7,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_CHORAL_MUSIC', ' +6 [ICON_CULTURE] Culture from Temples in cities with 5+ followers', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_CHURCH_PROPERTY', ' +3 [ICON_GOLD] Gold for each city following this religion', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_GOD_OF_ABUNDANCE', ' +2 [ICON_PRODUCTION] Production from open Tundra', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_DANCE_AURORA', ' +2 [ICON_PEACE] Faith from open Tundra', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_DANCE_AURORA', '  +1 [ICON_PEACE] Faith & +1 [ICON_CULTURE] Culture from Tundra tiles without Forest', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_TRANQUIL_REFUGE_SHORT', 'Tranquil Refuge', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_TRANQUIL_REFUGE', ' +2 [ICON_FOOD][ICON_CULTURE] Food and Culture from Oasis', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_DEFENDER_FAITH', ' +40% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion', '', '');
