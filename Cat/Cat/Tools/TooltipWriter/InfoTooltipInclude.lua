@@ -30,14 +30,6 @@ local holidayFun = {
 	["10/31"] = "TXT_KEY_HOLIDAY_HALLOWEEN"		
 }
 
---
-local holidayFun = {
-	["01/01"] = "TXT_KEY_HOLIDAY_NEW_YEAR"		,
-	["04/01"] = "TXT_KEY_HOLIDAY_APRIL_FOOLS"	,
-	["07/02"] = "TXT_KEY_HOLIDAY_UFO"			,
-	["10/31"] = "TXT_KEY_HOLIDAY_HALLOWEEN"		
-}
-
 --[[
 -- these need text before adding them
 local holidayFun = {
