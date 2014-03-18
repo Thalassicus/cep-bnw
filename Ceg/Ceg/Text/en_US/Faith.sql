@@ -45,7 +45,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_RELIGIOUS_UNITY', '500% religion spread speed to friendly city-states', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_RELIQUARY', 'Gain 500 [ICON_PEACE] Faith each time a Great Person is expended', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_ISLES_SHORT', 'Sacred Isles', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_ISLES', ' +2 [ICON_CULTURE][ICON_PEACE] Culture and Faith from Isles', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_ISLES', ' +2 [ICON_CULTURE] Culture & +2 [ICON_PEACE] Faith from Isles', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SWORD_PLOWSHARES', ' +25% [ICON_FOOD] Surplus Food in all cities when not at war', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_TITHE', ' +1 [ICON_GOLD] Gold for every 4 followers of this religion', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_WORLD_CHURCH', ' +1 [ICON_CULTURE] Culture for every 3 followers of this religion in foreign civilizations', '', '');
