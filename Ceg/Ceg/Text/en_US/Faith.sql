@@ -30,7 +30,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_LITURGICAL_DRAMA', ' +4 [ICON_PEACE] Faith from Theaters in cities with 3+ followers', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MESSENGER_GODS', ' +3 [ICON_RESEARCH] Science in cities with a [ICON_CONNECTED] Trade Route', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MESSIAH', '125% strength and 75% [ICON_PEACE] Cost for Great Prophets', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MISSIONARY_ZEAL', '150% Conversion Strength for missionaries', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MISSIONARY_ZEAL', '200% Conversion Strength for missionaries', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MONASTERIES', 'Can build [ICON_RESEARCH] Monasteries with faith. (4 [ICON_RESEARCH] Science, 1 [ICON_PEACE] Faith, 1 [ICON_CULTURE] Culture)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_MONUMENT_GODS', ' +25% [ICON_PRODUCTION] Production of Ancient/Classical Wonders', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_ONE_WITH_NATURE', ' +1 [ICON_FOOD][ICON_PRODUCTION][ICON_GOLD][ICON_RESEARCH][ICON_CULTURE][ICON_PEACE] every yield from Natural Wonders', '', '');
