@@ -47,7 +47,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_ISLES_SHORT', 'Sacred Isles', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_ISLES', ' +2 [ICON_CULTURE] Culture & +2 [ICON_PEACE] Faith from Isles', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SWORD_PLOWSHARES', ' +25% [ICON_FOOD] Surplus Food in all cities when not at war', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_TITHE', ' +1 [ICON_GOLD] Gold for every 4 followers of this religion', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_TITHE', ' +1 [ICON_GOLD] Gold for every 5 followers of this religion', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_WORLD_CHURCH', ' +1 [ICON_CULTURE] Culture for every 3 followers of this religion in foreign civilizations', '', '');
 
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_CATHEDRALS', 'Can build [ICON_GREAT_WORK] Cathedrals with faith. [NEWLINE](1 [ICON_GREAT_WORK] Great Work of Art slot, 1 [ICON_PEACE] Faith, +1 [ICON_HAPPINESS_1] City Happiness)', '', '');
