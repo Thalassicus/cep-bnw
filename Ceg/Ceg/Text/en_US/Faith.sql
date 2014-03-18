@@ -13,7 +13,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_DEFENDER_FAITH', ' +40% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_DIVINE_INSPIRATION', ' +1 [ICON_TOURISM] Tourism and +2 [ICON_PEACE] Faith from each World Wonder', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_FERTILITY_RITES', ' +25% [ICON_FOOD] Surplus Food in cities', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_FEED_WORLD', ' +3 [ICON_FOOD] Food from Shrines and Temples', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_FEED_WORLD', ' +2 [ICON_FOOD] Food from Shrines and Temples', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_FORMAL_LITURGY', ' +1 [ICON_CULTURE][ICON_PEACE] Culture and Faith for each Gold and Silver', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_GOD_CRAFTSMEN', ' +3 [ICON_PRODUCTION] Production in cities with 3+ [ICON_CITIZEN] population', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_GOD_FESTIVALS', ' +1 [ICON_CULTURE][ICON_PEACE] Culture and Faith from Wine and Incense', '', '');
