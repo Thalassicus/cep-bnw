@@ -696,14 +696,14 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	local specType	= GameInfo.Specialists[specialistID].Type
 	local query		= nil
 	
-	if (yieldID == YieldTypes.YIELD_FAITH) or (yieldID == YieldTypes.YIELD_CULTURE) then
+	--[[if (yieldID == YieldTypes.YIELD_FAITH) or (yieldID == YieldTypes.YIELD_CULTURE) then
 		query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
 		for row in GameInfo.Building_SpecialistYieldChanges(query) do
 			if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
 				yield = yield + row.Yield
 			end
 		end
-	end
+	end--]]
 
 --[[
 	query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
@@ -790,7 +790,7 @@ function City_GetBaseYieldRateModifier(city, yieldID, itemTable, itemID, queueNu
 			yieldMod = yieldMod + City_GetCapitalSettlerModifier(city, yieldID, itemTable, itemID, queueNum)
 		elseif yieldID == YieldTypes.YIELD_PRODUCTION then
 			local happiness = Game.Round(cityOwner:GetYieldRate(YieldTypes.YIELD_HAPPINESS_NATIONAL))
-			if happiness <= 0 then--GameDefines.VERY_UNHAPPY_THRESHOLD then
+			if happiness < 0 then--GameDefines.VERY_UNHAPPY_THRESHOLD then
 				yieldMod = yieldMod + happiness * GameDefines.VERY_UNHAPPY_PRODUCTION_PENALTY_PER_UNHAPPY
 			end
 			if city:IsCapital() and cityOwner:HasTech("TECH_RAILROAD") then
