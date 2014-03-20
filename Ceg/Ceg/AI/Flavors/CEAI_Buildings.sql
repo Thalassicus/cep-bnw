@@ -71,7 +71,7 @@ FROM Projects WHERE AllowsNukes = 1;
 -- Building Priorities
 --
 
-DELETE FROM Building_Flavors;
+/*DELETE FROM Building_Flavors;*/
 DELETE FROM Building_Flavors_Human;
 
 /*
@@ -79,7 +79,7 @@ INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_INFRASTRUCTURE', 8
 FROM Buildings;
 */
-
+/*
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_TILE_IMPROVEMENT', 8
 FROM Buildings WHERE (
@@ -228,7 +228,7 @@ FROM Buildings WHERE (
 
 
 
-
+/*
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_GREAT_PEOPLE', 8
 FROM Buildings WHERE (
@@ -440,7 +440,7 @@ WHERE (building.BuildingClass = class.Type AND (
 	OR class.MaxTeamInstances = 1
 )));
 */
-
+/*
 -- Unique Buildings
 UPDATE Building_Flavors SET Flavor = Flavor * 2
 WHERE BuildingType IN (SELECT building.Type FROM Buildings building, BuildingClasses class WHERE (
@@ -579,7 +579,7 @@ INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_CULTURE',                  32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_TOURISM',                  32);
 
 
-
+*/
 /*
 INSERT OR IGNORE INTO Building_Flavors(BuildingType, FlavorType, Flavor)
 SELECT building.Type, flavor.FlavorType, 2 * flavor.Flavor
@@ -644,7 +644,7 @@ AND BuildingType IN (
 		'FLAVOR_MILITARY_TRAINING'	
 	)
 );
-
+/*
 UPDATE Building_Flavors
 SET Flavor = Flavor * 2
 WHERE BuildingType IN (
@@ -669,7 +669,8 @@ WHERE BuildingType IN (
 			class.MaxGlobalInstances = 1 OR class.MaxTeamInstances = 1
 		)
 	)
-);*/
+);
+*/
 
 -- Items no longer in the Buildings table
 DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildings);

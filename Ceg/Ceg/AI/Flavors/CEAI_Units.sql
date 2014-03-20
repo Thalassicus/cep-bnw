@@ -45,7 +45,7 @@ FROM Units WHERE Class IN (
 	'UNITCLASS_MISSIONARY' ,
 	'UNITCLASS_INQUISITOR'			
 );
-
+/*
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_RECON'	AND UnitType = 'UNIT_WARRIOR';
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_GOLD'	AND UnitType = 'UNIT_PRIVATEER';
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_AIR'	AND UnitType = 'UNIT_PARATROOPER';
@@ -71,7 +71,7 @@ FROM Units WHERE Class IN (
 	'UNITCLASS_WARRIOR'				,
 	'UNITCLASS_SWORDSMAN'			,
 	'UNITCLASS_LONGSWORDSMAN'		
-);
+);*/
 
 /*
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
@@ -87,7 +87,7 @@ FROM Units WHERE Class IN (
 	'UNITCLASS_MECHANIZED_INFANTRY'	
 );
 */
-
+/*
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_SIEGE', 1
 FROM Units WHERE CombatClass IN (
@@ -176,7 +176,7 @@ WHERE unit.CombatClass IN (
 	'FLAVOR_CONQUEST'				,
 	--'FLAVOR_CITY_DEFENSE'			,
 	'FLAVOR_ANTI_MOBILE'			
-);
+);*/
 
 /*
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
@@ -206,12 +206,12 @@ WHERE unit.Class IN (
 --
 -- Unit Flavors: update flavor values
 --
-
+/*
 UPDATE Unit_Flavors SET Flavor = 4;
 
 UPDATE Unit_Flavors SET Flavor = Flavor * 2
 WHERE FlavorType IN ('FLAVOR_NAVAL', 'FLAVOR_NAVAL_RECON', 'FLAVOR_RELIGION', 'FLAVOR_I_LAND_TRADE_ROUTE', 'FLAVOR_I_SEA_TRADE_ROUTE', 'FLAVOR_ARCHAEOLOGY' );
-
+*/
 
 -- Great People and Specialists
 UPDATE Unit_Flavors SET Flavor = 8
@@ -231,7 +231,7 @@ INSERT INTO SpecialistFlavors (SpecialistType, FlavorType, Flavor)
 	WHERE class.Type = spec.GreatPeopleUnitClass
 	AND unitFlavor.UnitType = class.DefaultUnit
 	;
-
+/*
 -- The "mobile" role involves flanking, which ranged units do not get a bonus for
 UPDATE Unit_Flavors SET Flavor = ROUND(Flavor / 2, 0)
 WHERE (FlavorType = 'FLAVOR_MOBILE')
@@ -316,11 +316,11 @@ WHERE (	unit.Class = class.Type AND class.DefaultUnit IN (SELECT UnitType FROM U
 UPDATE Unit_Flavors SET Flavor = ROUND(Flavor / 2, 0)
 WHERE FlavorType IN ('FLAVOR_DEFENSE', 'FLAVOR_CITY_DEFENSE')
 AND UnitType IN (SELECT UnitType FROM Unit_ResourceQuantityRequirements);
-
+*/
 -- Spaceship parts
 UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 2, 0)
 WHERE FlavorType = 'FLAVOR_SPACESHIP';
-
+/*
 -- Fighters
 UPDATE Unit_Flavors SET Flavor = ROUND(Flavor / 2, 0)
 WHERE FlavorType = 'FLAVOR_AIR'
@@ -375,7 +375,7 @@ AND UnitType IN (SELECT Type FROM Units WHERE Class IN (
 	'UNITCLASS_CONSCRIPT',
 	'UNITCLASS_PARATROOPER'
 ));
-
+*/
 /*
 UPDATE Unit_Flavors SET Flavor = ROUND(Flavor * 0.5, 0)
 WHERE FlavorType = 'FLAVOR_DEFENSE' 
