@@ -1842,7 +1842,8 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_FAITH)
 		end
 	elseif yieldID == YieldTypes.YIELD_HAPPINESS_NATIONAL then
-		yield = yield + Game.GetHandicapInfo(player).HappinessDefault
+		yield = yield + player:GetExcessHappiness();
+		--[[yield = yield + Game.GetHandicapInfo(player).HappinessDefault
 		for city in player:Cities() do
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_HAPPINESS_CITY)
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_HAPPINESS_NATIONAL)
@@ -1859,7 +1860,7 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			yield = yield + player:GetExtraHappinessPerCity() * player:GetNumCities()
 			yield = yield + player:GetYieldsFromCitystates()[yieldID]
 			yield = yield - City_GetNumBuilding(player:GetCapitalCity(), GameInfo.Buildings.BUILDING_HAPPINESS_NATIONAL.ID)
-		end
+		end--]]
 		
 		--[[
 		for city in player:Cities() do
