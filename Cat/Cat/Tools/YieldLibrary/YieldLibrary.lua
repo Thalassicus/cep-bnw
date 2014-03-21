@@ -309,6 +309,8 @@ function City_GetBaseYieldRate(city, yieldID, itemTable, itemID, queueNum)
 	end
 	if yieldID == YieldTypes.YIELD_HAPPINESS_CITY then	
 		baseRate = math.min(baseRate, city:GetPopulation())
+	elseif yieldID == YieldTypes.YIELD_CULTURE then	
+		baseRate = baseRate + city:GetJONSCulturePerTurnFromGreatWorks();
 	end
 	SetYieldCache(city, "baseRate", yieldID, baseRate, itemTable, itemID, queueNum)
 	if showTimers == 3 then print(string.format("%3s ms for City_GetBaseYieldRate", math.floor((os.clock() - timeStart)*1000))) end
@@ -345,6 +347,7 @@ function PlayerClass.GetBuildingYield(player, buildingID, yieldID, city)
 		end
 	else
 		yield = yield + Game.GetBuildingYieldChange(buildingID, yieldID)
+		yield = yield + city:GetLeagueBuildingClassYieldChange(GameInfo.BuildingClasses[buildingInfo.BuildingClass].ID, yieldID)
 	end
 	
 	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)

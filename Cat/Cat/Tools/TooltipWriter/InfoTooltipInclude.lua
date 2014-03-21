@@ -901,6 +901,21 @@ function GetYieldTooltip(city, yieldID)
 	--print(string.format("%3s ms for %s GetYieldTooltip City_GetBaseYieldFromProcesses", math.floor((os.clock() - timeStart) * 1000), yieldInfo.Type))
 	--timeStart = os.clock()
 	
+	-- Base Yield from BNW Culture Sources
+	if (yieldID == YieldTypes.YIELD_CULTURE){
+		local iCultureFromGreatWorks = city:GetJONSCulturePerTurnFromGreatWorks();
+		if (iCultureFromGreatWorks ~= 0) then
+			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_GREAT_WORKS", iCultureFromGreatWorks)
+			strTooltip = strTooltip .. "[NEWLINE]"
+		end
+		
+		local iCultureFromLeagues = city:GetJONSCulturePerTurnFromLeagues();
+		if (iCultureFromLeagues ~= 0) then
+			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_LEAGUES", iCultureFromLeagues)
+			strTooltip = strTooltip .. "[NEWLINE]"
+		end
+	}
+	
 	-- Base Yield from Misc
 	local iYieldFromMisc = Game.Round(City_GetBaseYieldFromMisc(city, yieldID))
 	if (iYieldFromMisc ~= 0) and (yieldID ~= YieldTypes.YIELD_SCIENCE) then
