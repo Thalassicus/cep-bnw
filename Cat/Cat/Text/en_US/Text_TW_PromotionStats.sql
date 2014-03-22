@@ -39,7 +39,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NUM_INTERCEPTION_CHANGE', 'extra [COLOR_POSITIVE_TEXT]Interception[ENDCOLOR] may be made per turn', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_AFTER_ATTACKING', 'Attacks use [COLOR_POSITIVE_TEXT]1 Move[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_FLAT_MOVEMENT_COST', 'All movement uses [COLOR_PLAYER_ORANGE_TEXT]1 Move[ENDCOLOR]', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_UPGRADE_DISCOUNT', 'updgrade cost', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_UPGRADE_DISCOUNT', 'Upgrade Cost', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_ADMIRAL', 'Improves combat strength of nearby [COLOR_POSITIVE_TEXT]Ships[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL', 'Improves combat strength of nearby [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_MOVEMENT', '[COLOR_POSITIVE_TEXT]Great Generals[ENDCOLOR] move at rate of this unit if they start the turn [COLOR_POSITIVE_TEXT]stacked[ENDCOLOR]', '', '');
