@@ -902,7 +902,7 @@ function GetYieldTooltip(city, yieldID)
 	--timeStart = os.clock()
 	
 	-- Base Yield from BNW Culture Sources
-	if (yieldID == YieldTypes.YIELD_CULTURE){
+	if (yieldID == YieldTypes.YIELD_CULTURE) then
 		local iCultureFromGreatWorks = city:GetJONSCulturePerTurnFromGreatWorks();
 		if (iCultureFromGreatWorks ~= 0) then
 			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_GREAT_WORKS", iCultureFromGreatWorks)
@@ -914,7 +914,7 @@ function GetYieldTooltip(city, yieldID)
 			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_LEAGUES", iCultureFromLeagues)
 			strTooltip = strTooltip .. "[NEWLINE]"
 		end
-	}
+	end
 	
 	-- Base Yield from Misc
 	local iYieldFromMisc = Game.Round(City_GetBaseYieldFromMisc(city, yieldID))
