@@ -347,7 +347,10 @@ function PlayerClass.GetBuildingYield(player, buildingID, yieldID, city)
 		end
 	else
 		yield = yield + Game.GetBuildingYieldChange(buildingID, yieldID)
-		yield = yield + city:GetLeagueBuildingClassYieldChange(GameInfo.BuildingClasses[buildingInfo.BuildingClass].ID, yieldID)
+		--yield changes from world congress proposals
+		if city then
+			yield = yield + city:GetLeagueBuildingClassYieldChange(GameInfo.BuildingClasses[buildingInfo.BuildingClass].ID, yieldID)
+		end
 	end
 	
 	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
