@@ -131,11 +131,13 @@
 		-->
 	</Policy_CityYieldChanges>
 	<Policy_BuildingClassCultureChanges>
+		<!--
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 			<CultureChange>1</CultureChange>
 		</Row>
+		-->
 	</Policy_BuildingClassCultureChanges>
 	<Policy_CapitalYieldChanges>
 		<Row>

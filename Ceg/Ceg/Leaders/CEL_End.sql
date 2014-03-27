@@ -107,9 +107,9 @@ UPDATE Units SET	   Combat = ROUND(1.15 * (SELECT Combat FROM Units WHERE Type =
 UPDATE Units SET	   Combat = ROUND(1.25 * (SELECT Combat FROM Units WHERE Type = 'UNIT_WARRIOR'), 0)
 					   WHERE Type IN ('UNIT_POLYNESIAN_MAORI_WARRIOR');
 
-UPDATE Units SET	   Cost   = ROUND(1.15 * (SELECT Cost   FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
+UPDATE Units SET	   Cost   = ROUND(1.2 * (SELECT Cost   FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
-UPDATE Units SET	   Combat = ROUND(1.15 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
+UPDATE Units SET	   Combat = ROUND(1.2 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
 
 
