@@ -3,7 +3,7 @@
 	<Policies>
 		<Update>
 			<Where Type="POLICY_PIETY" />
-			<Set ExtraHappiness="0" />
+			<Set ExtraHappiness="4" />
 		</Update>
 		<Update>
 			<Where Type="POLICY_PIETY_FINISHER" />
@@ -38,7 +38,7 @@
 			<Civilopedia>TXT_KEY_POLICY_TOLERANCE_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_TOLERANCE_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>1</GridX>
+			<GridX>3</GridX>
 			<GridY>1</GridY>
 			<PortraitIndex>43</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -52,7 +52,7 @@
 			<Civilopedia>TXT_KEY_POLICY_MEDITATION_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_MEDITATION_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>3</GridX>
+			<GridX>5</GridX>
 			<GridY>1</GridY>
 			<PortraitIndex>44</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -66,7 +66,7 @@
 			<Civilopedia>TXT_KEY_POLICY_UNITY_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_UNITY_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>5</GridX>
+			<GridX>1</GridX>
 			<GridY>1</GridY>
 			<GoldenAgeTurns>10</GoldenAgeTurns>
 			<GoldenAgeMeterMod>-50</GoldenAgeMeterMod>
@@ -81,7 +81,7 @@
 			<Civilopedia>TXT_KEY_POLICY_INSPIRATION_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_INSPIRATION_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>2</GridX>
+			<GridX>4</GridX>
 			<GridY>2</GridY>
 			<PortraitIndex>45</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -96,7 +96,7 @@
 			<Civilopedia>TXT_KEY_POLICY_CHARITY_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_CHARITY_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>4</GridX>
+			<GridX>2</GridX>
 			<GridY>2</GridY>
 			<PortraitIndex>11</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -141,7 +141,7 @@
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 	<Policy_InstantYield>

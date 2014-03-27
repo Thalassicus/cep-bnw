@@ -1111,7 +1111,7 @@ function AIMilitaryHandicapPerTurn(unit)
 	
 	local odds = hostileMultiplier * handicap.AIFreeXPPerTurn
 	
-	if odds > Map.Rand(100, "AI bonus experience") then
+	if odds * 100 > Map.Rand(100, "AI bonus experience") then
 		unit:ChangeExperience(1)
 	end
 end
