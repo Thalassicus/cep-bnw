@@ -70,8 +70,8 @@ FROM Projects WHERE AllowsNukes = 1;
 --
 -- Building Priorities
 --
-
-/*DELETE FROM Building_Flavors;*/
+--CREATE TABLE Building_Flavors_BNW AS SELECT * FROM Building_Flavors; --BNW Flavors
+DELETE FROM Building_Flavors;
 DELETE FROM Building_Flavors_Human;
 
 /*
@@ -79,7 +79,7 @@ INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_INFRASTRUCTURE', 8
 FROM Buildings;
 */
-/*
+
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_TILE_IMPROVEMENT', 8
 FROM Buildings WHERE (
@@ -228,7 +228,7 @@ FROM Buildings WHERE (
 
 
 
-/*
+
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_GREAT_PEOPLE', 8
 FROM Buildings WHERE (
@@ -440,7 +440,7 @@ WHERE (building.BuildingClass = class.Type AND (
 	OR class.MaxTeamInstances = 1
 )));
 */
-/*
+
 -- Unique Buildings
 UPDATE Building_Flavors SET Flavor = Flavor * 2
 WHERE BuildingType IN (SELECT building.Type FROM Buildings building, BuildingClasses class WHERE (
@@ -579,7 +579,7 @@ INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_CULTURE',                  32);INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CRISTO_REDENTOR',          'FLAVOR_TOURISM',                  32);
 
 
-*/
+
 /*
 INSERT OR IGNORE INTO Building_Flavors(BuildingType, FlavorType, Flavor)
 SELECT building.Type, flavor.FlavorType, 2 * flavor.Flavor
@@ -627,13 +627,11 @@ DROP TABLE CEP_Collisions;
 
 
 
-INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
-
-
-
 --
 -- AI specific changes
 --
+
+INSERT INTO Building_Flavors_Human (BuildingType, FlavorType, Flavor) SELECT BuildingType, FlavorType, MAX(Flavor) FROM Building_Flavors GROUP BY BuildingType, FlavorType;
 
 DELETE FROM Building_Flavors
 WHERE FlavorType = 'FLAVOR_WONDER'
@@ -644,7 +642,7 @@ AND BuildingType IN (
 		'FLAVOR_MILITARY_TRAINING'	
 	)
 );
-/*
+
 UPDATE Building_Flavors
 SET Flavor = Flavor * 2
 WHERE BuildingType IN (
@@ -659,18 +657,6 @@ WHERE BuildingType IN (
 	'BUILDING_TEMPLE_ARTEMIS'	
 );
 
---x2 flavor values of non-wonder buildings
-/*UPDATE Building_Flavors
-SET Flavor = Flavor * 2
-WHERE BuildingType IN (
-	SELECT building.Type 
-	FROM Buildings building, BuildingClasses class WHERE ( 
-		building.BuildingClass = class.Type AND NOT(
-			class.MaxGlobalInstances = 1 OR class.MaxTeamInstances = 1
-		)
-	)
-);
-*/
 
 -- Items no longer in the Buildings table
 DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildings);
@@ -679,7 +665,5 @@ DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildin
 DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings WHERE Cost = 0 OR Cost = -1);
 
 -- Revert BNW Flavors
-DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
-INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);
-
-UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Buildings.sql';
+--DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
+--INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);

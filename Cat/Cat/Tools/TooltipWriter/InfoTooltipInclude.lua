@@ -67,7 +67,7 @@ function GetUnitTip(args)
 	-- Optional arguments: hideName, hideGoodFor, hideAbilities, hideCosts
 	
 	if Game == nil then
-		print("GetBuildingTip: Game is nil")
+		print("GetUnitTip: Game is nil")
 		return ""
 	end
 	if not Game.InitializedStats then
@@ -418,7 +418,7 @@ function GetBuildingTip(args)
 	}
 	
 	if Cep.SHOW_GOOD_FOR_BUILDINGS == 1 and showGood and not showName and not showAbil and not showCost then
-		return Game.RemoveExtraNewlines(Game.GetFlavors("Building_Flavors", "BuildingType", objectInfo.Type, 1, true))
+		return Game.RemoveExtraNewlines(Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type, 1, true))
 	end
 
 	if Game.Stats.Buildings[buildingID] == nil then

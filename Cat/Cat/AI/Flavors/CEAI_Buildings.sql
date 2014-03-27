@@ -70,7 +70,7 @@ FROM Projects WHERE AllowsNukes = 1;
 --
 -- Building Priorities
 --
-CREATE TABLE Building_Flavors_BNW AS SELECT * FROM Building_Flavors; --BNW Flavors
+--CREATE TABLE Building_Flavors_BNW AS SELECT * FROM Building_Flavors; --BNW Flavors
 DELETE FROM Building_Flavors;
 DELETE FROM Building_Flavors_Human;
 
@@ -665,5 +665,5 @@ DELETE FROM Building_Flavors WHERE BuildingType NOT IN (SELECT Type FROM Buildin
 DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings WHERE Cost = 0 OR Cost = -1);
 
 -- Revert BNW Flavors
-DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
-INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);
+--DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
+--INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);
