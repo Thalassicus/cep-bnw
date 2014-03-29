@@ -298,6 +298,7 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_WALLS'
 );
 
+/*
 UPDATE Buildings
 SET ConquestProb = 50
 WHERE BuildingClass IN (
@@ -312,6 +313,7 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_HARBOR',
 	'BUILDINGCLASS_WAREHOUSE'
 );
+*/
 
 --
 -- Other

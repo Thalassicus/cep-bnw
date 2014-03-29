@@ -93,6 +93,7 @@ UPDATE Buildings SET Cost = Cost * 0.741, GoldMaintenance = 1  WHERE BuildingCla
 
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_CARAVANSARY';
+UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_COURTHOUSE';
 
 --
 -- Unique Buildings

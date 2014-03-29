@@ -84,43 +84,7 @@ UPDATE Units SET FaithCost = 1 * Cost WHERE FaithCost > 0 AND Cost > 0;
 -- Conquest
 --
 
-UPDATE Improvements SET PillageGold = PillageGold * 4 WHERE PillageGold <> 0;
-
-UPDATE Buildings
-SET ConquestProb = 100
-WHERE HurryCostModifier != -1;
-
-UPDATE Buildings
-SET ConquestProb = 0
-WHERE BuildingClass IN (
-	'BUILDINGCLASS_COURTHOUSE',
-	'BUILDINGCLASS_CASTLE',
-	'BUILDINGCLASS_ARSENAL',
-	'BUILDINGCLASS_MILITARY_BASE',
-	'BUILDINGCLASS_COLOSSEUM',
-	'BUILDINGCLASS_THEATRE',
-	'BUILDINGCLASS_STADIUM'
-);
-
-UPDATE Buildings
-SET ConquestProb = 25
-WHERE BuildingClass IN (
-	'BUILDINGCLASS_WALLS'
-);
-
-/*
-UPDATE Buildings
-SET ConquestProb = 50
-WHERE BuildingClass IN (
-	'BUILDINGCLASS_LIBRARY',
-	'BUILDINGCLASS_MARKET',
-	'BUILDINGCLASS_BANK',
-	'BUILDINGCLASS_STOCK_EXCHANGE',
-	'BUILDINGCLASS_MINT',
-	'BUILDINGCLASS_HARBOR',
-	'BUILDINGCLASS_WAREHOUSE'
-);
-*/
+UPDATE Improvements SET PillageGold = PillageGold * 5 WHERE PillageGold <> 0;
 
 
 --
