@@ -323,7 +323,8 @@ function ProductionSelected( ePurchaseEnum, iData)
     Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
     Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
  
-	if not g_append or not g_IsProductionMode then 
+	--modchange
+	if not g_append and g_IsProductionMode then 
 		OnClose();
 	end
 end

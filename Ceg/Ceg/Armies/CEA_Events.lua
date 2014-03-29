@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 
 include("MT_Events.lua")
+include("YieldLibrary.lua")
 
 local log = Events.LuaLogger:New()
 log:SetLevel("INFO")
