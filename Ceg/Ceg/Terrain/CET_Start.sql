@@ -60,6 +60,7 @@ WHERE (
 );
 */
 
+/*
 INSERT OR REPLACE INTO Improvement_ResourceType_Yields(ImprovementType, ResourceType, YieldType, Yield) 
 SELECT improve.Type, resTypes.ResourceType, resYields.YieldType, resYields.Yield 
 FROM Improvements improve, Improvement_ResourceTypes resTypes, Improvement_ResourceType_Yields resYields, Improvements impBasic
@@ -68,6 +69,7 @@ AND resTypes.ImprovementType = improve.Type
 AND resTypes.ResourceType = resYields.ResourceType
 AND resYields.ImprovementType = impBasic.Type
 AND NOT impBasic.Water = 1;
+*/
 
 
 -- This CET_Start.sql data created by:

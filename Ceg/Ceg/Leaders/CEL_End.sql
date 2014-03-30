@@ -80,7 +80,7 @@ UPDATE Units SET	   Cost   = ROUND(0.75 * (SELECT Cost   FROM Units WHERE Type =
 UPDATE Units SET	   Cost   = ROUND(0.80 * (SELECT Cost   FROM Units WHERE Type = 'UNIT_PIKEMAN'), 0)
 					   WHERE Type IN ('UNIT_GERMAN_LANDSKNECHT');
 
-UPDATE Units SET	   Combat = ROUND(1.00 * (SELECT Combat FROM Units WHERE Type = 'UNIT_MODERN_ARMOR'), 0)
+UPDATE Units SET	   Combat = ROUND(1.30 * (SELECT Combat FROM Units WHERE Type = 'UNIT_TANK'), 0)
 					   WHERE Type IN ('UNIT_GERMAN_PANZER');
 
 UPDATE Units SET	   Combat = ROUND(1.10 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SPEARMAN'), 0)
@@ -96,9 +96,9 @@ UPDATE Units SET RangedCombat = ROUND(0.85 * (SELECT Combat FROM Units WHERE Typ
 UPDATE Units SET	   Combat = ROUND(1.17 * (SELECT Combat FROM Units WHERE Type = 'UNIT_LONGSWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_JAPANESE_SAMURAI');
 
-UPDATE Units SET	   Combat = ROUND(0.90 * (SELECT Combat FROM Units WHERE Type = 'UNIT_CANNON'), 0)
+UPDATE Units SET	   Combat = ROUND(1.30 * (SELECT Combat FROM Units WHERE Type = 'UNIT_TREBUCHET'), 0)
 					   WHERE Type IN ('UNIT_KOREAN_HWACHA');
-UPDATE Units SET RangedCombat = ROUND(0.90 * (SELECT RangedCombat FROM Units WHERE Type = 'UNIT_CANNON'), 0)
+UPDATE Units SET RangedCombat = ROUND(1.30 * (SELECT RangedCombat FROM Units WHERE Type = 'UNIT_TREBUCHET'), 0)
 					   WHERE Type IN ('UNIT_KOREAN_HWACHA');
 
 UPDATE Units SET	   Combat = ROUND(1.15 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SPEARMAN'), 0)
@@ -107,9 +107,9 @@ UPDATE Units SET	   Combat = ROUND(1.15 * (SELECT Combat FROM Units WHERE Type =
 UPDATE Units SET	   Combat = ROUND(1.25 * (SELECT Combat FROM Units WHERE Type = 'UNIT_WARRIOR'), 0)
 					   WHERE Type IN ('UNIT_POLYNESIAN_MAORI_WARRIOR');
 
-UPDATE Units SET	   Cost   = ROUND(1.2 * (SELECT Cost   FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
+UPDATE Units SET	   Cost   = ROUND(1.20 * (SELECT Cost   FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
-UPDATE Units SET	   Combat = ROUND(1.2 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
+UPDATE Units SET	   Combat = ROUND(1.20 * (SELECT Combat FROM Units WHERE Type = 'UNIT_SWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
 
 
