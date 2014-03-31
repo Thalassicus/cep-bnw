@@ -354,17 +354,17 @@ end
 --
 function PlayerClass.GetPersonalityInfo(player)
 	local leaderInfo = GameInfo.Leaders[player:GetLeaderType()]
+	local personality = GameInfo.Personalities.PERSONALITY_DIPLOMAT
+
 	if not leaderInfo then
 		log:Error("%s is not a leader", player:GetName())
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
-	elseif not leaderInfo.Personality then
-		log:Error("%s has no personality", player:GetName())
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
-	elseif not GameInfo.Personalities[leaderInfo.Personality] then
+	elseif not leaderInfo.Personality or not GameInfo.Personalities[leaderInfo.Personality] then
 		log:Error("%s %s is not a personality type", player:GetName(), leaderInfo.Personality)
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
+	else
+		personality = GameInfo.Personalities[leaderInfo.Personality]
 	end
-	return GameInfo.Personalities[leaderInfo.Personality]
+
+	return personality
 end
 
 ---------------------------------------------------------------------
@@ -856,8 +856,8 @@ function PlayerClass.IsMilitaristicLeader(player)
 	if player:IsMinorCiv() then
 		return player:GetMinorCivTrait() == MinorCivTraitTypes.MINOR_CIV_TRAIT_MILITARISTIC
 	end
-	return GameInfo.Leaders[player:GetLeaderType()].Boldness >= 5
-	--[[
+	--return GameInfo.Leaders[player:GetLeaderType()].Boldness >= 5
+	--
 	local personality = player:GetPersonalityInfo().Type
 	return (personality == "PERSONALITY_CONQUEROR" or personality == "PERSONALITY_COALITION")
 	--]]
