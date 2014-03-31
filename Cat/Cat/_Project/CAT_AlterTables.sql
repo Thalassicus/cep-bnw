@@ -146,6 +146,13 @@ CREATE TABLE IF NOT EXISTS
 );
 	
 CREATE TABLE IF NOT EXISTS
+	Trait_FreeUnitFromCapitalBuilding (
+	TraitType		text REFERENCES Traits(Type),
+	BuildingClass	text REFERENCES BuildingClasses(Type),
+	UnitClass		text REFERENCES UnitClasses(Type)
+);
+	
+CREATE TABLE IF NOT EXISTS
 	Trait_GoldenAgeYieldModifier (
 	TraitType		text REFERENCES Traits(Type),
 	YieldType		text,

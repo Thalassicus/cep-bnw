@@ -415,6 +415,18 @@ function BuildingCreated(player, city, buildingID)
 		end
 	end
 	
+	if city:IsCapital() then
+		for row in GameInfo.Trait_FreeUnitFromCapitalBuilding() do
+			log:Error("Trait_FreeUnitFromCapitalBuilding: %s=%s %s=%s UnitClass=%s", trait.Type, row.TraitType, buildingInfo.BuildingClass, row.BuildingClass, row.UnitClass)
+			if trait.Type == row.TraitType and buildingInfo.BuildingClass == row.BuildingClass then
+				local itemID = player:GetUniqueUnitID(row.UnitClass)
+				local unit = player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))
+				log:Error("Unit = %s %s", GameInfo.Units[itemID].Type, unit)
+				return
+			end
+		end
+	end
+	
 	for row in GameInfo.Trait_YieldFromConstruction() do
 		if trait.Type == row.TraitType and buildingInfo.Type == row.BuildingType then
 			local yieldInfo = GameInfo.Yields[row.YieldType]

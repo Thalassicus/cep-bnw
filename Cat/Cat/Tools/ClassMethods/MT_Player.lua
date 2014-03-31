@@ -819,6 +819,7 @@ function PlayerClass.InitUnitClass(player, unititemClass, plot, exp)
 	local newUnit = player:InitUnit( player:GetUniqueUnitID(unititemClass), plot:GetX(), plot:GetY() )
 	if exp then
 		newUnit:ChangeExperience(exp)
+		newUnit:SetPromotionReady(newUnit:GetExperience() >= newUnit:ExperienceNeeded())
 	end
 	return newUnit
 end
