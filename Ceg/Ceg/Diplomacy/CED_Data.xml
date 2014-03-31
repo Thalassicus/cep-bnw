@@ -9,6 +9,11 @@
 			<Set Value="0" />
 		</Update>
 		<Update>
+			<Where Type="RESEARCH_AGREEMENT_BOOST_DIVISOR" />
+			<Set Value="2" />
+			<!-- 3 -->
+		</Update>
+		<Update>
 			<Where Type="RESEARCH_AGREEMENT_SCIENCE_RATE_PERCENT" />
 			<Set Value="0" />
 		</Update>
