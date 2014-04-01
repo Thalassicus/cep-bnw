@@ -119,6 +119,23 @@
 			<ProductionModifier>100</ProductionModifier>
 		</Row>		
 	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
 	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_GREAT_FIREWALL" />
