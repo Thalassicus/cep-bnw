@@ -644,6 +644,16 @@
 
 	<!--	Portugal
 	-->
+	<!--
+	<Improvements>
+		<Update>
+			<Where Type="IMPROVEMENT_FEITORIA" />
+			<Set OutsideBorders="1"
+				 OnlyCityStateTerritory="0"
+				 />
+		</Update>
+	</Improvements>
+	-->
 
 
 

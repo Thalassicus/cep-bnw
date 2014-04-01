@@ -44,11 +44,6 @@ UPDATE Natural_Wonder_Placement SET OccurrenceFrequency = 20 WHERE NaturalWonder
 
 -- Great Improvements and Unique Improvements can build on resources, and recieve yields like the basic improvement they replace
 
-INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType) 
-SELECT improve.Type, res.Type
-FROM Improvements improve, Resources res
-WHERE improve.CreatedByGreatPerson = 1;
-
 /*
 INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType) 
 SELECT improve.Type, res.Type
@@ -59,6 +54,33 @@ WHERE (
 	AND NOT improve.Type = 'IMPROVEMENT_POLDER'
 );
 */
+
+INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType) 
+SELECT improve.Type, res.Type
+FROM Improvements improve, Resources res
+WHERE ( improve.CreatedByGreatPerson = 1
+	AND res.OnlyMinorCivs = 0
+	AND res.TechCityTrade <> 'TECH_SAILING'
+	AND NOT res.CivilizationType
+);
+
+INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType) 
+SELECT improve.Type, res.Type
+FROM Improvements improve, Resources res
+WHERE ( improve.Type = 'IMPROVEMENT_FORT'
+	    res.OnlyMinorCivs = 0
+	AND res.TechCityTrade <> 'TECH_SAILING'
+	AND NOT res.CivilizationType
+);
+
+INSERT OR REPLACE INTO Improvement_ResourceType_Yields(ImprovementType, ResourceType, YieldType, Yield) 
+SELECT improve.Type, resTypes.ResourceType, resYields.YieldType, resYields.Yield 
+FROM Improvements improve, Improvement_ResourceTypes resTypes, Improvement_ResourceType_Yields resYields, Improvements impBasic
+WHERE improve.Type = 'IMPROVEMENT_FORT'
+AND resTypes.ImprovementType = improve.Type
+AND resTypes.ResourceType = resYields.ResourceType
+AND resYields.ImprovementType = impBasic.Type
+AND NOT impBasic.Water = 1;
 
 /*
 INSERT OR REPLACE INTO Improvement_ResourceType_Yields(ImprovementType, ResourceType, YieldType, Yield) 

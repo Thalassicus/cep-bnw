@@ -431,6 +431,20 @@ SELECT 'TRAIT_SCHOLARS_JADE_HALL', 'IMPROVEMENT_FARM', 'YIELD_SCIENCE', 2
 WHERE EXISTS (SELECT * FROM Traits WHERE Type='TRAIT_SCHOLARS_JADE_HALL');
 
 /*
+-- Incompatible with OnlyCityStateTerritory=1
+INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType) 
+SELECT improve.Type, res.Type
+FROM Improvements improve, Resources res
+WHERE ( improve.Type = 'IMPROVEMENT_FEITORIA'
+	    res.OnlyMinorCivs = 0
+	AND res.TechCityTrade <> 'TECH_SAILING'
+	AND NOT res.CivilizationType
+);
+*/
+
+
+
+/*
 INSERT INTO Trait_ImprovementYieldChanges
 		(TraitType, ImprovementType, YieldType, Yield)
 SELECT 'TRAIT_ALLOTMENT', 'IMPROVEMENT_FARM', 'YIELD_PRODUCTION', 1;
