@@ -1,6 +1,6 @@
-"/* The sql commands and text below were formulated in the Leaders tab of the Google Spreadsheet 'CEP_Language'.
+/* The sql commands and text below were formulated in the Leaders tab of the Google Spreadsheet 'CEP_Language'.
 https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dHhmOUdwN0VCT1Nma2ZjY3k1bGhNZXc&usp=drive_web#gid=8
-If you make any changes be sure to update the spreadsheet also.*/"
+If you make any changes be sure to update the spreadsheet also.*/
 /* Traits */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ART_OF_WAR', 'You get an extra Spy. Great Generals see farther and give more strength.[NEWLINE]Starts with a Warrior and Great General. ', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ALLOTMENT_SHORT', 'Allotment', '', '');
@@ -15,7 +15,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_CITY_STATE_FRIENDSHIP', '+2 [ICON_CULTURE] Culture in every city. City-State [ICON_INFLUENCE] Influence degrades at half and recovers at twice the normal rate.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_CONVERTS_SEA_BARBARIANS', 'Internal trade routes provide 10 [ICON_GOLD] Gold to the destination.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_CULTURE_FROM_KILLS', 'Gains [ICON_CULTURE] Culture from killing enemy units.', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ENHANCED_CULTURE', '+50% [ICON_CULTURE] Culture and +1[ICON_MOVES] Movement during [ICON_GOLDEN_AGE] Golden Ages.[NEWLINE]Starts with a unique Spearman.', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ENHANCED_CULTURE', '[ICON_GREAT_PEOPLE] Gain a cultural Great Person with each culture building constructed in Paris.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_ENHANCED_GOLDEN_AGES', '+50% [ICON_CULTURE] Culture and +1[ICON_MOVES] Movement during [ICON_GOLDEN_AGE] Golden Ages.[NEWLINE]Starts with a unique Spearman.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_FAITH_FROM_NATURE', '+1 [ICON_PEACE] Faith from unimproved Forests and Jungle, and 150% yields from Natural Wonders.[NEWLINE]Starts with a unique Spearman.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_FIGHT_WELL_DAMAGED', 'Damaged units fight at full strength. Fishing Boats and Isles give [ICON_CULTURE] Culture.', '', '');
@@ -154,4 +154,4 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 
 
 
-UPDATE Loaded File SET Value=1, en_US=1 Where Type='Leaders.sql';
+UPDATE LoadedFile SET Value=1, en_US=1 Where Type='Leaders.sql';

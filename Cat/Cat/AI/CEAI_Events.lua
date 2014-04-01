@@ -109,10 +109,10 @@ function SpendAIGold(player)
 		goldMin
 	)
 	--]]
-	
+	--[[
 	if goldStored < goldHigh then
 		return
-	end
+	end --]]
 	
 	--
 	-- Create lists
@@ -179,7 +179,8 @@ function SpendAIGold(player)
 	end
 	
 	-- Severe negative happiness
-	if player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY) <= -10 then
+	local happiness = player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY)
+	if (happiness <= -10) or (isWarAny and happiness <= -10) then
 		local attempt = 0
 		while PurchaseBuildingOfFlavor(player, cities, 0, "FLAVOR_HAPPINESS") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
@@ -329,7 +330,7 @@ function SpendAIGold(player)
 		FLAVOR_DIPLOMACY			= GetCitystateMod(player),
 		FLAVOR_NAVAL				= player:HasTech("TECH_SAILING") and 1 or 0,
 		FLAVOR_AIR					= player:HasTech("TECH_FLIGHT") and 1 or 0,
-		FLAVOR_EXPANSION			= isWarAny and 0 or 5 / #cities,
+		FLAVOR_EXPANSION			= isWarHuman and 0 or 5 / #cities,
 		FLAVOR_TILE_IMPROVEMENT		= 0, --numWorkers - #cities and 1 or 0,
 		FLAVOR_GROWTH				= 1.1 ^ (10 - citiesReverse[1].pop),
 		FLAVOR_HAPPINESS			= 1.1 ^ (10 - player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY)),
@@ -733,7 +734,7 @@ function PlayerStartBonuses(player)
 			if unit:GetUnitType() == settlerID then
 				startPlot = unit:GetPlot()
 				if player:IsHuman() then-- and trait.NoWarrior and trait.FreeUnit == "UNITCLASS_WORKER" then
-					for nearPlot in Plot_GetPlotsInCircle(startPlot, 2, 3) do
+					for nearPlot in Plot_GetPlotsInCircle(startPlot, 2, 4) do
 						nearPlot:SetRevealed(teamID, true)
 					end
 					UI.SelectUnit(unit)
@@ -1083,6 +1084,10 @@ LuaEvents.NewUnit.Add(function(playerID, unitID, hexVec, unitType, cultureType, 
 function AIMilitaryHandicapPerTurn(unit)
 	local player = Players[unit:GetOwner()]
 	if player:IsHuman() or player:IsBarbarian() or not unit:IsCombatUnit() then
+		return
+	end
+	if unit:GetPlot():IsVisibleToWatchingHuman() and (unit:GetExperience() + 1 == unit:ExperienceNeeded()) then
+		-- Don't promote without a source of experience when visible
 		return
 	end
 	

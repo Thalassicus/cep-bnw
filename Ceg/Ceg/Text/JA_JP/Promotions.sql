@@ -106,8 +106,8 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_1_HELP', '[ICON_RANGE_STRENGTH] 33パーセント[COLOR_POSITIVE_TEXT]空気スイープ[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_2_HELP', '[ICON_RANGE_STRENGTH] 33パーセント[COLOR_POSITIVE_TEXT]空気スイープ[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_3_HELP', '[ICON_RANGE_STRENGTH] 34パーセント[COLOR_POSITIVE_TEXT]空気スイープ[ENDCOLOR]', '', '');
-REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED_HELP', '[ICON_WORKER] 100パーセント速く改善を構築します', '', '');
-REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED', '重作業速度', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP', '[ICON_WORKER] 100パーセント速く改善を構築します', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS', '重作業速度', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH] 15パーセント[COLOR_POSITIVE_TEXT]ラフ[ENDCOLOR]地形（ヒルズ、森やジャングル）', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH] 15パーセント[COLOR_POSITIVE_TEXT]ラフ[ENDCOLOR]地形（ヒルズ、森やジャングル）', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH] 15パーセント[COLOR_POSITIVE_TEXT]ラフ[ENDCOLOR]地形（ヒルズ、森やジャングル）', '', '');

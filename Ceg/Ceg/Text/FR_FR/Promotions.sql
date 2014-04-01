@@ -106,8 +106,8 @@ REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_1_HELP', '[ICON_RANGE_STRENGTH] 33% [COLOR_POSITIVE_TEXT] balayages aériens [ENDCOLOR]', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_2_HELP', '[ICON_RANGE_STRENGTH] 33% [COLOR_POSITIVE_TEXT] balayages aériens [ENDCOLOR]', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_3_HELP', '[ICON_RANGE_STRENGTH] 34% [COLOR_POSITIVE_TEXT] balayages aériens [ENDCOLOR]', '', '');
-REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED_HELP', '[ICON_WORKER] Construit améliorations 100% plus rapide', '', '');
-REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED', 'Double vitesse de travail', '', '');
+REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP', '[ICON_WORKER] Construit améliorations 100% plus rapide', '', '');
+REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS', 'Double vitesse de travail', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH] 15% dans [COLOR_POSITIVE_TEXT] BRUT [ENDCOLOR] terrain (collines, des forêts ou Jungle)', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH] 15% dans [COLOR_POSITIVE_TEXT] BRUT [ENDCOLOR] terrain (collines, des forêts ou Jungle)', '', '');
 REPLACE INTO Language_FR_FR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH] 15% dans [COLOR_POSITIVE_TEXT] BRUT [ENDCOLOR] terrain (collines, des forêts ou Jungle)', '', '');

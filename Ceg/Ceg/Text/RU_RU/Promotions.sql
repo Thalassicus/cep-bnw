@@ -106,8 +106,8 @@ REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_1_HELP', '[ICON_RANGE_STRENGTH] +33% [COLOR_POSITIVE_TEXT] Воздушные Сметающих [ENDCOLOR]', '', '');
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_2_HELP', '[ICON_RANGE_STRENGTH] +33% [COLOR_POSITIVE_TEXT] Воздушные Сметающих [ENDCOLOR]', '', '');
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_3_HELP', '[ICON_RANGE_STRENGTH] +34% [COLOR_POSITIVE_TEXT] Воздушные Сметающих [ENDCOLOR]', '', '');
-REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED_HELP', '[ICON_WORKER] Строит улучшения +100% быстрее', '', '');
-REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED', 'Двойная скорость работы', '', '');
+REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP', '[ICON_WORKER] Строит улучшения +100% быстрее', '', '');
+REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS', 'Двойная скорость работы', '', '');
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH] +15% в [COLOR_POSITIVE_TEXT] ROUGH [ENDCOLOR] Ландшафт (Холмы, лес или джунгли)', '', '');
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH] +15% в [COLOR_POSITIVE_TEXT] ROUGH [ENDCOLOR] Ландшафт (Холмы, лес или джунгли)', '', '');
 REPLACE INTO Language_RU_RU (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH] +15% в [COLOR_POSITIVE_TEXT] ROUGH [ENDCOLOR] Ландшафт (Холмы, лес или джунгли)', '', '');

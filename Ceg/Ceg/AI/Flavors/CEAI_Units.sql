@@ -48,6 +48,12 @@ FROM Units WHERE Class IN (
 	'UNITCLASS_INQUISITOR'			
 );
 
+INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
+SELECT Type, 'FLAVOR_GOLD', 1
+FROM Units WHERE (
+	Trade = 1
+);
+
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_RECON'	AND UnitType = 'UNIT_WARRIOR';
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_GOLD'	AND UnitType = 'UNIT_PRIVATEER';
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_AIR'	AND UnitType = 'UNIT_PARATROOPER';
@@ -212,7 +218,15 @@ WHERE unit.Class IN (
 UPDATE Unit_Flavors SET Flavor = 4;
 
 UPDATE Unit_Flavors SET Flavor = Flavor * 2
-WHERE FlavorType IN ('FLAVOR_NAVAL', 'FLAVOR_NAVAL_RECON', 'FLAVOR_RELIGION', 'FLAVOR_I_LAND_TRADE_ROUTE', 'FLAVOR_I_SEA_TRADE_ROUTE', 'FLAVOR_ARCHAEOLOGY' );
+WHERE FlavorType IN (
+	'FLAVOR_NAVAL'				,
+	'FLAVOR_NAVAL_RECON'		,
+	'FLAVOR_RELIGION'			,
+	'FLAVOR_I_LAND_TRADE_ROUTE'	,
+	'FLAVOR_I_SEA_TRADE_ROUTE'	,
+	'FLAVOR_GOLD'				,
+	'FLAVOR_ARCHAEOLOGY'
+);
 
 
 -- Great People and Specialists

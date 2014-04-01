@@ -138,10 +138,10 @@
 			<PediaEntry>TXT_KEY_PROMOTION_CITY_BONUS_III</PediaEntry>
 		</Row>
 		<Row>
-			<Type>PROMOTION_DOUBLE_WORK_SPEED</Type>
-			<Description>TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED</Description>
-			<PediaEntry>TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED</PediaEntry>
-			<Help>TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED_HELP</Help>
+			<Type>CONSTRUCT_ROADS_FORTS</Type>
+			<Description>TXT_KEY_CONSTRUCT_ROADS_FORTS</Description>
+			<PediaEntry>TXT_KEY_CONSTRUCT_ROADS_FORTS</PediaEntry>
+			<Help>TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>true</LostWithUpgrade>

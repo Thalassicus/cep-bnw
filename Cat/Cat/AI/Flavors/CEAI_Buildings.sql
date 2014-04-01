@@ -123,6 +123,12 @@ FROM Buildings WHERE (
 	OR Gold <> 0
 	OR MinorFriendshipChange <> 0
 	OR TradeDealModifier <> 0
+	OR TradeRouteLandDistanceModifier <> 0
+	OR TradeRouteLandGoldBonus <> 0
+	OR TradeRouteSeaDistanceModifier <> 0
+	OR TradeRouteSeaGoldBonus <> 0
+	OR TradeRouteTargetBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
@@ -354,6 +360,8 @@ SELECT Type, 'FLAVOR_I_LAND_TRADE_ROUTE', 8
 FROM Buildings WHERE (
 	   TradeRouteLandDistanceModifier <> 0
 	OR TradeRouteLandGoldBonus <> 0
+	OR TradeRouteTargetBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
@@ -361,6 +369,8 @@ SELECT Type, 'FLAVOR_I_SEA_TRADE_ROUTE', 8
 FROM Buildings WHERE (
 	   TradeRouteSeaDistanceModifier <> 0
 	OR TradeRouteSeaGoldBonus <> 0
+	OR TradeRouteTargetBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)

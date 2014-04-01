@@ -106,8 +106,8 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_1_HELP', '[ICON_RANGE_STRENGTH] 33퍼센트 [COLOR_POSITIVE_TEXT] 에어 스윕 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_2_HELP', '[ICON_RANGE_STRENGTH] 33퍼센트 [COLOR_POSITIVE_TEXT] 에어 스윕 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_3_HELP', '[ICON_RANGE_STRENGTH] 34퍼센트 [COLOR_POSITIVE_TEXT] 에어 스윕 [ENDCOLOR]', '', '');
-REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED_HELP', '[ICON_WORKER] +100 % 빠르게 개선 구축', '', '');
-REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOUBLE_WORK_SPEED', '두 배의 작업 속도', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP', '[ICON_WORKER] +100 % 빠르게 개선 구축', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS', '두 배의 작업 속도', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH] 15 % [COLOR_POSITIVE_TEXT] 거칠게 [ENDCOLOR] 지형 (언덕, 숲이나 정글)', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH] 15 % [COLOR_POSITIVE_TEXT] 거칠게 [ENDCOLOR] 지형 (언덕, 숲이나 정글)', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH] 15 % [COLOR_POSITIVE_TEXT] 거칠게 [ENDCOLOR] 지형 (언덕, 숲이나 정글)', '', '');

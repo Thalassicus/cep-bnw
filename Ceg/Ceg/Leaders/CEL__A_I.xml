@@ -1053,13 +1053,6 @@
 
 	<!--	Inca
 	-->
-	<Builds>
-		<Update>
-			<Where Type="BUILD_TERRACE_FARM" />
-			<Set PrereqTech="TECH_AGRICULTURE"
-				/>
-		</Update>
-	</Builds>
 
 
 

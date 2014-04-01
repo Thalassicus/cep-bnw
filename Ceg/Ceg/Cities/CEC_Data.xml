@@ -155,7 +155,7 @@
 		</Update>		
 		<Update>
 			<Where Name="TRADE_ROUTE_BASE_GOLD"/>
-			<Set Value="10"/>
+			<Set Value="1000"/>
 			<!-- -130 -->
 		</Update>
 		<Update>

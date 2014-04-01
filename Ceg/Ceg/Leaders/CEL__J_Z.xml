@@ -710,7 +710,7 @@
 	<Unit_FreePromotions>
 		<Row>
 			<UnitType>UNIT_ROMAN_LEGION</UnitType>
-			<PromotionType>PROMOTION_DOUBLE_WORK_SPEED</PromotionType>
+			<PromotionType>CONSTRUCT_ROADS_FORTS</PromotionType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_ROMAN_LEGION</UnitType>

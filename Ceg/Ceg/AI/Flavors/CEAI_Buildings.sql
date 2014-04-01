@@ -123,6 +123,11 @@ FROM Buildings WHERE (
 	OR Gold <> 0
 	OR MinorFriendshipChange <> 0
 	OR TradeDealModifier <> 0
+	OR TradeRouteLandDistanceModifier <> 0
+	OR TradeRouteLandGoldBonus <> 0
+	OR TradeRouteSeaDistanceModifier <> 0
+	OR TradeRouteSeaGoldBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
@@ -354,6 +359,8 @@ SELECT Type, 'FLAVOR_I_LAND_TRADE_ROUTE', 8
 FROM Buildings WHERE (
 	   TradeRouteLandDistanceModifier <> 0
 	OR TradeRouteLandGoldBonus <> 0
+	OR TradeRouteTargetBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
@@ -361,6 +368,8 @@ SELECT Type, 'FLAVOR_I_SEA_TRADE_ROUTE', 8
 FROM Buildings WHERE (
 	   TradeRouteSeaDistanceModifier <> 0
 	OR TradeRouteSeaGoldBonus <> 0
+	OR TradeRouteTargetBonus <> 0
+	OR NumTradeRouteBonus <> 0
 );
 
 INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
@@ -554,6 +563,25 @@ INSERT INTO Building_Flavors (BuildingType, FlavorType, Flavor)
 	;
 
 -- Specific buildings
+
+UPDATE Building_Flavors SET Flavor = 32
+	WHERE FlavorType = 'FLAVOR_CULTURE'
+	AND BuildingType IN (SELECT building.Type
+	FROM Buildings building, BuildingClasses class
+	WHERE (building.BuildingClass = class.Type
+	AND   (class.MaxPlayerInstances = 1
+	)
+	AND   (building.InstantHappiness <> 0
+		OR building.CultureRateModifier <> 0
+		OR building.GlobalCultureRateModifier <> 0
+		OR building.PolicyCostModifier <> 0
+		OR building.FreePolicies <> 0
+		OR building.XBuiltTriggersIdeologyChoice <> 0
+		OR building.GreatWorkSlotType <> 0
+		OR building.FreeGreatWork <> 0
+		OR building.SpecialistExtraCulture <> 0
+	)));
+
 UPDATE Building_Flavors SET Flavor = Flavor * 2
 	WHERE BuildingType = 'BUILDING_GREAT_LIBRARY'
 	AND FlavorType = 'FLAVOR_SCIENCE';
@@ -667,3 +695,7 @@ DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT Type FROM Buildings W
 -- Revert BNW Flavors
 --DELETE FROM Building_Flavors WHERE BuildingType IN (SELECT BuildingType FROM Building_Flavors_BNW);
 --INSERT INTO Building_Flavors SELECT * FROM Building_Flavors_BNW WHERE BuildingType IN (SELECT Type FROM Buildings);
+
+
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Buildings.sql';
