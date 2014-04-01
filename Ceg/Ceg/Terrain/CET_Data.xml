@@ -78,8 +78,8 @@
 		</Update>
 		<Update>
 			<Where Type="FEATURE_ATOLL" />
-			<Set Rough="1" Defense="0" Movement="1" />
-			<!-- Rough=1 makes atolls a line-of-sight blocker for ships -->
+			<Set SeeThrough="1" Rough="0" Defense="0" Movement="1" />
+			<!-- SeeThrough=1 makes atolls a line-of-sight blocker for ships -->
 		</Update>
 		<Update>
 			<Where Type="FEATURE_REEF" />

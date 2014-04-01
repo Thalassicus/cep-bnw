@@ -381,7 +381,7 @@ function Game.GetWeightedTable(list, size)
 	
 	for key, weight in pairs(list) do
 		if type(weight) == "number" then
-			totalWeight = totalWeight + weight
+			totalWeight = totalWeight + math.max(0, weight)
 		else
 			log:Error("Game.GetWeightedTable: weight[%s]='%s'  type(%s)=%s", key, weight, weight, type(weight))
 		end
@@ -400,7 +400,7 @@ function Game.GetWeightedTable(list, size)
 	end
 	
 	for key, weight in pairs(list) do
-		local positionNext = position + size * weight / totalWeight
+		local positionNext = position + size * math.max(0, weight) / totalWeight
 		--log:Debug("%25s weight=%-4s totalWeight=%-4s position=%-3s positionNext=%-3s size=%-3s", key, Game.Round(weight), Game.Round(totalWeight), Game.Round(position), Game.Round(positionNext), size)
 		for i = math.floor(position), math.floor(positionNext) do
 			chanceIDs[i] = key

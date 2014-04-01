@@ -2,13 +2,13 @@
 <GameData>
 	<Eras>
 		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
 	</Eras>
 	<Triggers>
 		<Row><Type>COMMERCIAL_FARMING</Type>		<ImprovementType>IMPROVEMENT_FARM</ImprovementType>				</Row>
