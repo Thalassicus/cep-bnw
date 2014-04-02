@@ -102,4 +102,12 @@
 			<Set PolicyReveal="POLICY_AESTHETICS_FINISHER" />
 		</Update>
 	</Resources>
+	<Policy_ImprovementYieldChanges>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
 </GameData>

@@ -1,7 +1,7 @@
 -- 
 
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_Techs.sql', 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_Units.sql', 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CEG_AI_Flavors_CEAI_Units.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_Buildings.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_LeaderFlavors.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEAI_Resources.sql', 0);

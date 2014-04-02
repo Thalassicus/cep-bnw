@@ -109,10 +109,7 @@ function SpendAIGold(player)
 		goldMin
 	)
 	--]]
-	--[[
-	if goldStored < goldHigh then
-		return
-	end --]]
+	if player:IsBudgetGone(50) then return end
 	
 	--
 	-- Create lists
@@ -168,17 +165,21 @@ function SpendAIGold(player)
 	--
 	-- Critical priorities
 	--
+	log:Info("%15s %20s %3s %-4s critical priorities", "AIPurchase", player:GetName(), " ", " ")
 	
-	-- Negative income
-	if player:GetYieldRate(YieldTypes.YIELD_GOLD) < 0 then
+	-- Severely low income
+	if player:GetYieldRate(YieldTypes.YIELD_GOLD) < 7 then
 		local attempt = 0
 		while PurchaseBuildingOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
+			attempt = attempt + 1
+		end
+		while PurchaseUnitOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
 		end
 		if player:IsBudgetGone(0) then return end
 	end
 	
-	-- Severe negative happiness
+	-- Severely low happiness
 	local happiness = player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY)
 	if (happiness <= -10) or (isWarAny and happiness <= -10) then
 		local attempt = 0
@@ -216,11 +217,12 @@ function SpendAIGold(player)
 		end
 	end
 	
+	if player:IsBudgetGone(goldHigh) then return end
+	
 	--
 	-- Moderate priorities
 	--
-
-	if player:IsBudgetGone(goldLow) then return end
+	log:Info("%15s %20s %3s %-4s moderate priorities", "AIPurchase", player:GetName(), " ", " ")
 	
 	-- City Defense
 	local numBuy = 0
@@ -313,13 +315,14 @@ function SpendAIGold(player)
 		if player:IsBudgetGone(goldLow) then return end
 	end
 	
-	--log:Debug("goldStored=%s goldHigh=%s goldMin=%s", player:GetYieldStored(YieldTypes.YIELD_GOLD), goldHigh, goldMin)
+	log:Debug("goldStored=%s goldHigh=%s goldMin=%s", player:GetYieldStored(YieldTypes.YIELD_GOLD), goldHigh, goldMin)
 	if player:IsBudgetGone(goldLow) then return end
 	
 	
 	-- 
 	-- Low priorities
 	-- 
+	log:Info("%15s %20s %3s %-4s low priorities", "AIPurchase", player:GetName(), " ", " ")
 	
 	local leaderInfo	= GameInfo.Leaders[player:GetLeaderType()]
 	local unitMod		= 0
@@ -353,7 +356,7 @@ function SpendAIGold(player)
 			end
 			if flavorValue > 0 and priority > 0 then
 				if doUnits or DoFlavorFunction[flavorType] ~= PurchaseOneUnitOfFlavor then
-					--log:Info("%-15s %20s %3s/%-4s %-20s priority=%-3s", "AIPurchase", player:GetName(), " ", string.gsub(flavorType, "FLAVOR_", ""), flavorValue)
+					log:Debug("%-15s %20s %3s/%-4s %-20s priority=%-3s", "AIPurchase", player:GetName(), " ", "", string.gsub(flavorType, "FLAVOR_", ""), flavorValue)
 					flavorWeights[flavorType] = flavorValue * priority
 				end
 			end
@@ -458,13 +461,14 @@ end
 function PurchaseOneUnitOfFlavor(player, cities, goldMin, flavorType)
 	for _,cityInfo in ipairs(cities) do
 		local city = Map_GetCity(cityInfo.id)
-		local units = City_GetUnitsOfFlavor(city, flavorType, goldMin)
-		if #units > 0 then
+		local units, numUnits = City_GetUnitsOfFlavor(city, flavorType, goldMin)
+		log:Debug("%-15s %20s %3s %-4s %-2s units of                   %-25s in %s", "", player:GetName(), " ", " ", numUnits, flavorType, city:GetName())
+		if numUnits > 0 then
 			local itemID = Game.GetRandomWeighted(units)
 			if itemID ~= -1 then
 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Units, itemID)
 				local unit = player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))				
-				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Units[itemID].Type)
+				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %-25s in %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Units[itemID].Type, city:GetName())
 				player:ChangeYieldStored(YieldTypes.YIELD_GOLD, -1 * cost)
 				return unit
 			end
@@ -481,13 +485,14 @@ function PurchaseBuildingOfFlavor(player, cities, goldMin, flavorType)
 	end
 	for _,cityInfo in ipairs(cities) do
 		local city = Map_GetCity(cityInfo.id)
-		local buildings = City_GetBuildingsOfFlavor(city, flavorType, goldMin)
-		if #buildings > 0 then
+		local buildings, numBuildings = City_GetBuildingsOfFlavor(city, flavorType, goldMin)
+		log:Debug("%-15s %20s %3s %-4s %-2s buildings of               %-25s in %s", "", player:GetName(), " ", " ", numBuildings, flavorType, city:GetName())
+		if numBuildings > 0 then
 			local itemID = Game.GetRandomWeighted(buildings)
 			if itemID ~= -1 then
 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, itemID)
 				city:SetNumRealBuilding(itemID, 1)	
-				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Buildings[itemID].Type)
+				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %-25s in %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Buildings[itemID].Type, city:GetName())
 				player:ChangeYieldStored(YieldTypes.YIELD_GOLD, -1 * cost)
 				return true
 			end

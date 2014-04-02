@@ -68,7 +68,7 @@ INSERT OR REPLACE INTO Improvement_ResourceTypes(ImprovementType, ResourceType)
 SELECT improve.Type, res.Type
 FROM Improvements improve, Resources res
 WHERE ( improve.Type = 'IMPROVEMENT_FORT'
-	    res.OnlyMinorCivs = 0
+	AND res.OnlyMinorCivs = 0
 	AND res.TechCityTrade <> 'TECH_SAILING'
 	AND NOT res.CivilizationType
 );
