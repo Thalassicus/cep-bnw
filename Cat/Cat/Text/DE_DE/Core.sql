@@ -223,7 +223,7 @@ REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_MONASTERY', 'Kloster', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TOPIC_EXPERIENCE', 'Erfahrung', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_SUBMARINE', 'U-Boot-Einheiten', '', '');
-REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_MOUNTED_ARCHER', 'Mounted Archers', '', '');
+REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_MOUNTED_ARCHER', 'Skirmish Units', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_CIVILIAN', 'Zivileinheiten', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_COMMAND', 'Support-Einheiten', '', '');
 REPLACE INTO Language_DE_DE (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_MELEE', 'Soldat Einheiten', '', '');
