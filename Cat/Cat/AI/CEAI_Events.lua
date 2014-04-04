@@ -1294,7 +1294,21 @@ LuaEvents.AICaptureDecision.Add(function(city, player) return SafeCall(DoAICaptu
 
 
 
--- Manually clear barbarian camps
+--[[ Manually clear barbarian camps
+
+The unmodded game code does not encourage AIs to clear camps or escort their settlers.
+
+This causes the AI to have too little gold in the early game,
+and can permanently cripple their settlement efforts.
+
+These bugs are in the c++ core, so we can't directly fix the issue.
+
+Our easy solution (if imperfect) is to periodically clear the camps for the AI.
+It only does this if the camp is closer to an AI city than a human city,
+and the camp is not visible to a human.
+
+--]]
+
 
 function ClearCamps()
 	if Game.GetAdjustedTurn() <= 20 or Game.GetGameTurn() % 3 ~= 0 then
@@ -1316,7 +1330,7 @@ function ClearCamps()
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
+LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
 
 function ClearCampsCity(city, player)
 	if player:IsHuman() or player:IsMinorCiv() then
@@ -1345,7 +1359,6 @@ function ClearCampsCity(city, player)
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
 
 function ClearCampsUnit(unit)
 	local player = Players[unit:GetOwner()]
@@ -1378,7 +1391,6 @@ function ClearCampsUnit(unit)
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
 
 function ClearCamp(player, plot)
 	local campGold = Game.GetHandicapInfo().BarbCampGold
