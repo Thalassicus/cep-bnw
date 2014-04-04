@@ -1301,7 +1301,7 @@ The unmodded game code does not encourage AIs to clear camps or escort their set
 This causes the AI to have too little gold in the early game,
 and can permanently cripple their settlement efforts.
 
-These bugs are in the c++ core, so we can't directly fix the issue.
+These bugs are in the c++ core, so directly fixing the issue is not possible with our current mod structure.
 
 Our easy solution (if imperfect) is to periodically clear the camps for the AI.
 It only does this if the camp is closer to an AI city than a human city,
@@ -1350,9 +1350,10 @@ function ClearCampsCity(city, player)
 			log:Debug("ClearCampsCity %s %s distance=%s", player:GetName(), city:GetName(), distance)
 			local campUnit = nearPlot:GetUnit(0)
 			if Plot_IsNearHuman(nearPlot, 2 * distance) then
-				log:Debug("ClearCampsCity aborting: near human", player:GetName(), city:GetName())
+				log:Info("ClearCampsCity aborting: near human", player:GetName(), city:GetName())
 			elseif (not campUnit) or campUnit:FortifyModifier() > GameDefines.FORTIFY_MODIFIER_PER_TURN then  -- barb has been here a while
 				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
+					log:Info("%s cleared camp near %s", player:GetName(), city:GetName())
 					ClearCamp(player, nearPlot)
 				end
 			end
@@ -1372,7 +1373,7 @@ function ClearCampsUnit(unit)
 	for nearPlot in Plot_GetPlotsInCircle(unit:GetPlot(), 1, 1) do
 		if nearPlot:GetImprovementType() == campID then
 			if nearPlot:IsVisibleToWatchingHuman() then
-				log:Info("ClearCampsUnit aborting: visible to human", player:GetName(), unit:GetName())
+				log:Debug("ClearCampsUnit aborting: visible to human", player:GetName(), unit:GetName())
 			else
 				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
 					log:Debug("ClearCampsUnit %s %s", player:GetName(), unit:GetName())
@@ -1382,7 +1383,7 @@ function ClearCampsUnit(unit)
 						if Players[nearUnit:GetOwner()]:IsBarbarian() and nearUnit:IsCombatUnit() then
 							nearUnit:Kill()
 							unit:ChangeExperience(10)
-							log:Info("Killed barbarian %s with 10 experience for %s", nearUnit:GetName(), unit:GetName())
+							log:Info("%s killed barbarian %s with 10 experience for %s", player:GetName(), nearUnit:GetName(), unit:GetName())
 							break
 						end
 					end
