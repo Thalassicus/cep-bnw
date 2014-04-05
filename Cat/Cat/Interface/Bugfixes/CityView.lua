@@ -1593,7 +1593,7 @@ function OnCityViewUpdate()
 		if pCity:IsPuppet() and not pPlayer:MayNotAnnex() then	
 			Controls.AnnexCityButton:SetHide(false);
 			Controls.AnnexCityButton:SetDisabled(false);
-			Controls.AnnexCityButton:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_POPUP_CITY_CAPTURE_INFO_ANNEX", pPlayer:GetUnhappinessForecast(city, nil) - pPlayer:GetUnhappiness()))
+			Controls.AnnexCityButton:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_POPUP_CITY_CAPTURE_INFO_ANNEX", pPlayer:GetUnhappinessForecast(pCity, nil) - pPlayer:GetUnhappiness()))
 		else
 			Controls.AnnexCityButton:SetHide(true);
 		end
