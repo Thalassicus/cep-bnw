@@ -2479,8 +2479,6 @@ function OnAnnexButton()
 		return;
 	end;
 	
-	--
-	print("TaskTypes.TASK_ANNEX_PUPPET = " .. tostring(TaskTypes.TASK_ANNEX_PUPPET))
 	local popupInfo = {
 		Type = ButtonPopupTypes.BUTTONPOPUP_CONFIRM_CITY_TASK,
 		Data1 = pCity:GetID(),
@@ -2488,7 +2486,6 @@ function OnAnnexButton()
 		}
     
 	Events.SerialEventGameMessagePopup( popupInfo );
-	--
 end
 Controls.AnnexCityButton:RegisterCallback( Mouse.eLClick, OnAnnexButton);
 
