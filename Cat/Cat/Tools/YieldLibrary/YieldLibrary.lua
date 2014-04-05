@@ -173,7 +173,7 @@ function ResetYieldCacheAll(force)
 	for playerID, player in pairs(Players) do
 		ResetYieldCachePlayer(player, force, player:IsMinorCiv())
 	end
-	print(string.format("%3s ms for ResetYieldCacheAll force=%s", math.floor((os.clock() - timeStart) * 1000), force))
+	print(string.format("%3s ms for ResetYieldCacheAll force=%s", math.floor((os.clock() - timeStart) * 1000), tostring(force)))
 end
 
 function InitYieldCacheLevel(yieldLevel, yieldID)

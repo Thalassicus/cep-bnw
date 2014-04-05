@@ -37,7 +37,6 @@ local g_iBuildingToSell = -1;
 
 local g_bRazeButtonDisabled = false;
 --modchange
-local g_bAnnexButtonDisabled = false;
 
 function FormatYield(num)
 	num = Game.Round(num)
@@ -1591,13 +1590,12 @@ function OnCityViewUpdate()
 		-------------------------------------------
 		-- Annex City Button (Puppet Cities only)
 		-------------------------------------------
-		if pCity:IsPuppet() and not pPlayer:MayNotAnnex() then		
-			g_bAnnexButtonDisabled = true;
-			Controls.AnnexCityButton:SetHide(true);
-		else
-			g_bAnnexButtonDisabled = false;
+		if pCity:IsPuppet() and not pPlayer:MayNotAnnex() then	
 			Controls.AnnexCityButton:SetHide(false);
-			Controls.AnnexCityButton:SetDisabled(false);		
+			Controls.AnnexCityButton:SetDisabled(false);
+			Controls.AnnexCityButton:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_POPUP_CITY_CAPTURE_INFO_ANNEX", pPlayer:GetUnhappinessForecast(city, nil) - pPlayer:GetUnhappiness()))
+		else
+			Controls.AnnexCityButton:SetHide(true);
 		end
 		
 		-------------------------------------------
@@ -1727,6 +1725,7 @@ function OnCityViewUpdate()
 			Controls.NoAutoSpecialistCheckbox2:SetDisabled( true );
 			
 			-- Other
+			--Controls.AnnexCityButton:SetDisabled( true );
 			Controls.RazeCityButton:SetDisabled( true );
 			Controls.UnrazeCityButton:SetDisabled( true );
 			
@@ -1753,6 +1752,7 @@ function OnCityViewUpdate()
 			Controls.BoxOSlackers:SetDisabled( false );
 			Controls.NoAutoSpecialistCheckbox:SetDisabled( false );
 			Controls.NoAutoSpecialistCheckbox2:SetDisabled( false );
+			Controls.AnnexCityButton:SetDisabled( false );
 			
 			-- Other
 			if (not g_bRazeButtonDisabled) then
@@ -2468,6 +2468,29 @@ function OnReturnToMapButton()
 	Events.SerialEventExitCityScreen();
 end
 Controls.ReturnToMapButton:RegisterCallback( Mouse.eLClick, OnReturnToMapButton);
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAnnexButton()
+
+	local pCity = UI.GetHeadSelectedCity();
+	
+	if (pCity == nil) then
+		return;
+	end;
+	
+	--
+	print("TaskTypes.TASK_ANNEX_PUPPET = " .. tostring(TaskTypes.TASK_ANNEX_PUPPET))
+	local popupInfo = {
+		Type = ButtonPopupTypes.BUTTONPOPUP_CONFIRM_CITY_TASK,
+		Data1 = pCity:GetID(),
+		Data2 = TaskTypes.TASK_ANNEX_PUPPET,
+		}
+    
+	Events.SerialEventGameMessagePopup( popupInfo );
+	--
+end
+Controls.AnnexCityButton:RegisterCallback( Mouse.eLClick, OnAnnexButton);
 
 -------------------------------------------------
 -------------------------------------------------
