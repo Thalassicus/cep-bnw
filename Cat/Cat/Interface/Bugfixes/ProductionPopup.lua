@@ -318,10 +318,11 @@ function ProductionSelected( ePurchaseEnum, iData)
 		end
     end
      
+	--modchange
 	local cityID = city:GetID();
-	local player = city:GetOwner();
-    Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
-    Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
+	local playerID = city:GetOwner();
+    Events.SpecificCityInfoDirty( playerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
+    Events.SpecificCityInfoDirty( playerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
  
 	--modchange
 	if not g_append and g_IsProductionMode then 

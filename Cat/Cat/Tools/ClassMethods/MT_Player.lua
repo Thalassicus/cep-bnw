@@ -31,11 +31,58 @@ end
 
 ---------------------------------------------------------------------
 function PlayerClass.GetCivName(player)
+	if not player:HasMet(Players[Game.GetActivePlayer()]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	end
 	if player:IsMinorCiv() then
 		return Locale.ConvertTextKey(GameInfo.MinorCivilizations[player:GetMinorCivType()].Description)
 	end
 	local civInfo = GameInfo.Civilizations[player:GetCivilizationType()]			
 	return (Locale.ConvertTextKey(civInfo.Description))
+end
+
+function CivName(player)
+	return player:GetCivName()
+end
+
+---------------------------------------------------------------------
+function PlayerClass.GetCivName(player)
+	if not player:HasMet(Players[Game.GetActivePlayer()]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	end
+	if player:IsMinorCiv() then
+		return Locale.ConvertTextKey(GameInfo.MinorCivilizations[player:GetMinorCivType()].Description)
+	end
+	local civInfo = GameInfo.Civilizations[player:GetCivilizationType()]			
+	return (Locale.ConvertTextKey(civInfo.Description))
+end
+
+function CivName(player)
+	return player:GetCivName()
+end
+
+---------------------------------------------------------------------
+function PlayerClass.GetLeaderName(player)
+	if player:GetID() == Game.GetActivePlayer() then
+		return Locale.ConvertTextKey("TXT_KEY_YOU")
+	elseif not player:HasMet(Players[Game.GetActivePlayer]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	elseif player:IsHuman() then
+		local playerName = player:GetNickName()
+		if playerName and playerName ~= "" then
+			return playerName
+		end
+	end
+	local playerName = PreGame.GetLeaderName(player:GetID())
+	if playerName and playerName ~= "" then
+		return Locale.ConvertTextKey( playerName )
+	end
+	
+	return Locale.ConvertTextKey( GameInfo.Leaders[player:GetLeaderType()].Description )
+end
+
+function LeaderName(player)
+	return player:GetLeaderName()
 end
 
 ---------------------------------------------------------------------
@@ -897,7 +944,7 @@ function PlayerClass.EverAtWarWithHuman(player)
 end
 
 ---------------------------------------------------------------------
---[[ player:Is
+--[[ player:HasMet
 
 ]]
 function PlayerClass.HasMet(player, otherPlayer)

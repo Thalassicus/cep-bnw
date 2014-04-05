@@ -36,6 +36,8 @@ local specialistTable = {};
 local g_iBuildingToSell = -1;
 
 local g_bRazeButtonDisabled = false;
+--modchange
+local g_bAnnexButtonDisabled = false;
 
 function FormatYield(num)
 	num = Game.Round(num)
@@ -1584,6 +1586,19 @@ function OnCityViewUpdate()
 		
 		Controls.NotificationStack:CalculateSize();
 		Controls.NotificationStack:ReprocessAnchoring();
+		
+		--modchange
+		-------------------------------------------
+		-- Annex City Button (Puppet Cities only)
+		-------------------------------------------
+		if pCity:IsPuppet() and not pPlayer:MayNotAnnex() then		
+			g_bAnnexButtonDisabled = true;
+			Controls.AnnexCityButton:SetHide(true);
+		else
+			g_bAnnexButtonDisabled = false;
+			Controls.AnnexCityButton:SetHide(false);
+			Controls.AnnexCityButton:SetDisabled(false);		
+		end
 		
 		-------------------------------------------
 		-- Raze City Button (Occupied Cities only)

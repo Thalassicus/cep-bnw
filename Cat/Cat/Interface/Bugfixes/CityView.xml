@@ -300,8 +300,13 @@
 		</Image>
 		<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_CITYVIEW_BUY_TILE" Color0="255.255.200.255" Color1="0.0.0.128" Color2="255.255.200.255" Font="TwCenMT18" FontStyle="Shadow" ID="BuyPlotText"/>
 	</GridButton>
+	<!-- ModChange -->
+	<!-- ANNEX CITY BUTTON -->
+	<GridButton Anchor="C,B" Size="160,45" Offset="0,200" ID="AnnexCityButton" Style="BaseButton" ToolTip="TXT_KEY_POPUP_ANNEX_PUPPET" Hidden="1">
+		<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_POPUP_ANNEX_CITY" Color0="255.255.200.255" Color1="0.0.0.128" Color2="255.255.200.255" Font="TwCenMT24" FontStyle="SoftShadow"/>
+	</GridButton>
 	<!-- RAZE CITY BUTTON -->
-	<GridButton Anchor="C,B" Size="160,45" Offset="0,200" ID="RazeCityButton" Style="BaseButton" ToolTip="TXT_KEY_CITYVIEW_RAZE_BUTTON_TT" Hidden="1">
+	<GridButton Anchor="C,B" Size="160,45" Offset="0,200" ID="RazeCityButton" Style="BaseButton" ToolTip="TXT_KEY_POPUP_ANNEX_CITY" Hidden="1">
 		<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_CITYVIEW_RAZE_BUTTON_TEXT" Color0="255.255.200.255" Color1="0.0.0.128" Color2="255.255.200.255" Font="TwCenMT24" FontStyle="SoftShadow"/>
 	</GridButton>
 	<!-- STOP RAZING CITY BUTTON -->

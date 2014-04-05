@@ -250,6 +250,7 @@ function UpdateData()
 	-----------------------------
 	-- Update Culture
 	-----------------------------
+	
 
 	local strCultureStr;
 	
@@ -260,6 +261,7 @@ function UpdateData()
 	end
 	
 	Controls.CultureString:SetText(strCultureStr);
+	
 	
 	-----------------------------
 	-- Update Tourism

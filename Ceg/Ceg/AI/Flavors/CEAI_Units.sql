@@ -421,4 +421,4 @@ DROP TABLE CEP_Collisions;
 --DELETE FROM Unit_Flavors WHERE UnitType IN (SELECT UnitType FROM Unit_Flavors_BNW);
 --INSERT INTO Unit_Flavors SELECT * FROM Unit_Flavors_BNW WHERE UnitType IN (SELECT Type FROM Units);
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CAT_AI_Flavors_CEAI_Units.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEG_AI_Flavors_CEAI_Units.sql';

@@ -20,7 +20,7 @@ LuaEvents.NewTech						.Add(ResetYieldCacheAll)
 LuaEvents.PlotChanged					.Add(ResetYieldCacheAll)
 LuaEvents.BuildingConstructed			.Add(ResetYieldCacheAll)
 Events.SpecificCityInfoDirty			.Add(ResetYieldCacheCityRedirect)
---Events.SerialEventCityInfoDirty			.Add(ResetYieldCacheAll)
+Events.SerialEventCityInfoDirty			.Add(ResetYieldCacheAll)
 Events.SerialEventCityPopulationChanged	.Add(ResetYieldCacheAll)
 LuaEvents.ActivePlayerTurnEnd_Player	.Add(ResetYieldCacheAll)
 LuaEvents.ActivePlayerTurnEnd_City		.Add(City_UpdateModdedYields)
@@ -28,11 +28,6 @@ LuaEvents.ActivePlayerTurnEnd_City		.Add(City_UpdateModdedYields)
 --LuaEvents.ActivePlayerTurnEnd_Player	.Add(PlayerClass.UpdateModdedYieldsEnd)
 --LuaEvents.ActivePlayerTurnStart_Player	.Add(PlayerClass.UpdateModdedYieldsStart)
 
-MapModData.lastResetYieldCacheCity		= {}
-MapModData.lastResetYieldCachePlayer	= {}
-MapModData.lastResetYieldCacheAll		= 0
-MapModData.lastGetAvoidModifier			= {}
-MapModData.lastCity_GetWeight			= {}
 
 
 --[[

@@ -5,7 +5,7 @@
 
 include("ModTools.lua")
 local log = Events.LuaLogger:New()
-log:SetLevel("DEBUG")
+log:SetLevel("INFO")
 log:Debug("Loading UnitFlagManager_addin.lua A")
 
 --local ModID			= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
