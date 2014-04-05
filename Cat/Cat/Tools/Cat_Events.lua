@@ -1,4 +1,4 @@
--- BC - General.lua
+-- Cat_Events.lua
 -- Author: Thalassicus
 -- DateCreated: 10/29/2010 12:44:28 AM
 --------------------------------------------------------------

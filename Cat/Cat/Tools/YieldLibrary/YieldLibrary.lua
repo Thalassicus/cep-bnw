@@ -16,6 +16,7 @@ end
 
 local showTimers = Cep.DEBUG_TIMER_LEVEL
 local timeStart = os.clock()
+local updateDelay = 1 --seconds
 
 local log = Events.LuaLogger:New()
 log:SetLevel("DEBUG")
@@ -93,46 +94,81 @@ for k, yieldLevel in pairs(yieldLevels) do
 	end
 end
 
-function ResetYieldCacheCity(city)
+function ResetYieldCacheCity(city, force, hideTime)
 	if not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	
 	if not city then
-		log:Error("ResetYieldCacheCity city=nil")
+		log:Error("ResetYieldCacheCity city=%s", city)
 		return
 	end
-	--log:Info("ResetYieldCacheCity %s", city:GetName())
-	cityID = City_GetID(city)
+	
+	local cityID = City_GetID(city)
+	local timeStart = os.clock()	
+	if MapModData.lastResetYieldCacheCity[cityID] and not force and timeStart - MapModData.lastResetYieldCacheCity[cityID] < updateDelay then
+		return
+	end	
+	MapModData.lastResetYieldCacheCity[cityID] = timeStart
+	
+	--log:Info("ResetYieldCacheCity %s", city:GetName())	
 	for k, yieldLevel in pairs(yieldLevels) do
 		for yieldType, yieldID in pairs(YieldTypes) do
 			MapModData.YieldCache[yieldLevel][yieldID][cityID] = false
 		end
 	end	
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCacheCity %s", math.floor((os.clock() - timeStart) * 1000), city:GetName())) end
 end
 
-function ResetYieldCachePlayer(player)
-	if not player or not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+function ResetYieldCacheCityRedirect(playerID, cityID, updateType)
+	if not Players[playerID] then return end
+	if not Players[playerID]:GetCityByID(cityID) then return end
+	ResetYieldCacheCity(Players[playerID]:GetCityByID(cityID), false, true)
+end
+
+function ResetYieldCachePlayer(player, force, hideTime)
+	if not player or not player:IsAliveCiv() or not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	local playerID = player:GetID()
+	local timeStart = os.clock()
+	if MapModData.lastResetYieldCachePlayer[playerID] and not force and timeStart - MapModData.lastResetYieldCachePlayer[playerID] < updateDelay then
+		return
+	end	
+	MapModData.lastResetYieldCachePlayer[playerID] = timeStart
+	
 	player:GetYieldsFromCitystates(true)
 	player:UpdateModdedHappiness()
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer A %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
+	--timeStart = os.clock()
 	for yieldInfo in GameInfo.Yields() do
 		player:GetSupplyModifier(yieldInfo.ID, true)
 		for city in player:Cities() do
 			City_GetWeight(city, yieldInfo.ID, true)
 		end
 	end
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer B %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
+	--timeStart = os.clock()
 	for k, yieldLevel in pairs(yieldLevels) do
 		for yieldType, yieldID in pairs(YieldTypes) do
 			MapModData.YieldCache[yieldLevel][yieldID][player:GetID()] = false
 		end
 	end	
 	for city in player:Cities() do
-		ResetYieldCacheCity(city)
+		ResetYieldCacheCity(city, force, true)
 	end
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer C %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
 end
 
-function ResetYieldCacheAll()
+function ResetYieldCacheAll(force)
 	if not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	local timeStart = os.clock()
+	if MapModData.lastResetYieldCacheAll and (force ~= true) and timeStart - MapModData.lastResetYieldCacheAll < updateDelay then
+		return
+	end	
+	MapModData.lastResetYieldCacheAll = timeStart
+	log:Info("ResetYieldCacheAll force=%s", force)
+	
 	for playerID, player in pairs(Players) do
-		ResetYieldCachePlayer(player)
+		ResetYieldCachePlayer(player, force, player:IsMinorCiv())
 	end
+	print(string.format("%3s ms for ResetYieldCacheAll", math.floor((os.clock() - timeStart) * 1000)))
 end
 
 function InitYieldCacheLevel(yieldLevel, yieldID)
@@ -1681,7 +1717,7 @@ function PlayerClass.ChangeYieldStored(player, yieldID, yield, itemID)
 	end
 	if player == Players[Game.GetActivePlayer()] then
 		player:UpdateModdedHappiness()
-		--LuaEvents.DirtyYieldCachePlayer(player)
+		--LuaEvents.DirtyYieldCachePlayer(player, true)
 	end
 	if showTimers == 3 then print(string.format("%3s ms for PlayerClass.ChangeYieldStored", math.floor((os.clock() - timeStart)*1000))) end
 end
@@ -2136,7 +2172,7 @@ function Plot_ChangeYield(plot, yieldID, yield)
 		end
 		return
 	end
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 	MapModData.Cep_PlotYields[yieldID][plotID] = newYield
 	SaveValue(newYield, "MapModData.Cep_PlotYields[%s][%s]", yieldID, plotID)
 	Events.HexYieldMightHaveChanged(plot:GetX(), plot:GetY())
@@ -2162,7 +2198,7 @@ function Plot_SetYield(plot, yieldID, yield)
 	elseif yieldID == YieldTypes.YIELD_HAPPINESS_NATIONAL then
 		-- todo
 	end
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 	MapModData.Cep_PlotYields[yieldID][Plot_GetID(plot)] = newYield
 	SaveValue(newYield, "MapModData.Cep_PlotYields[%s][%s]", yieldID, Plot_GetID(plot))
 	Events.HexYieldMightHaveChanged(plot:GetX(), plot:GetY())
@@ -2238,7 +2274,7 @@ function City_UpdateModdedYields(city, player)
 				City_SetNumBuildingClass(city, "BUILDINGCLASS_AI_CULTURE", yield)
 			end
 			--log:Debug("Set AI Buildings %3s %25s %25s", City_GetNumBuilding(city, GameInfo.Buildings.BUILDING_AI_PRODUCTION.ID), player:GetName(), city:GetName())
-			LuaEvents.DirtyYieldCacheCity(city)
+			LuaEvents.DirtyYieldCacheCity(city, true)
 		end
 	end
 
@@ -2300,7 +2336,7 @@ function PlayerClass.UpdateModdedYieldsEnd(player)
 	end
 	--log:Info("%-25s %15s", "UpdateModdedYieldsEnd", player:GetName())
 
-	--LuaEvents.DirtyYieldCachePlayer(player)
+	--LuaEvents.DirtyYieldCachePlayer(player, true)
 
 	GetCurrentUnitSupply(player, true)
 	player:UpdateModdedHappiness()
@@ -2360,7 +2396,7 @@ function PlayerClass.UpdateModdedYieldsStart(player)
 	--log:Info("%-25s %15s", "UpdateModdedYieldsStart", player:GetName())
 	local playerID = player:GetID()
 
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 
 	GetCurrentUnitSupply(player, true)
 	player:UpdateModdedHappiness()
@@ -2640,6 +2676,12 @@ function PlayerClass.GetAvoidModifier(player, doUpdate)
 	end
 	
 	local playerID = player:GetID()
+	local timeStart = os.clock()
+	if MapModData.lastGetAvoidModifier[playerID] and timeStart - MapModData.lastGetAvoidModifier[playerID] < updateDelay then
+		return MapModData.Cep_AvoidModifier[playerID] or 0
+	end	
+	MapModData.lastGetAvoidModifier[playerID] = timeStart
+	
 	if true then --doUpdate then
 		--log:Debug("Recalculate Avoid Modifier ", player)
 		local player = Players[playerID]
@@ -2683,13 +2725,21 @@ function City_GetWeight(city, yieldID, doUpdate)
 	elseif yieldID == nil then
 		log:Fatal("City_GetWeight yieldID=nil")
 	end
-	--log:Error(string.format("City_GetWeight %s %s %s", city:GetName(), GameInfo.Yields[yieldID].Description, tostring(doUpdate)))
-	local ownerID = city:GetOwner()
-	local owner = Players[ownerID]
-	if doUpdate or not (MapModData.Cep_CityWeights[ownerID] and MapModData.Cep_CityWeights[ownerID][yieldID] and MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()]) then
-		MapModData.Cep_CityWeights[ownerID] = MapModData.Cep_CityWeights[ownerID] or {}
-		MapModData.Cep_CityWeights[ownerID][yieldID] = MapModData.Cep_CityWeights[ownerID][yieldID] or {}
-
+	--log:Info(string.format("City_GetWeight %s %s %s", city:GetName(), GameInfo.Yields[yieldID].Description, tostring(doUpdate)))
+	local playerID = city:GetOwner()
+	local player = Players[playerID]
+	local cityID = City_GetID(city)
+	
+	if not MapModData.Cep_CityWeights[playerID] then MapModData.Cep_CityWeights[playerID] = {} end
+	if not MapModData.Cep_CityWeights[playerID][yieldID] then MapModData.Cep_CityWeights[playerID][yieldID] = {} end
+	
+	local timeStart = os.clock()	
+	if MapModData.lastCity_GetWeight[cityID] and timeStart - MapModData.lastCity_GetWeight[cityID] < updateDelay then
+		--return MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()] or 0
+	end	
+	MapModData.lastCity_GetWeight[cityID] = timeStart
+	
+	if true then--doUpdate or not (MapModData.Cep_CityWeights[playerID] and MapModData.Cep_CityWeights[playerID][yieldID] and MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]) then
 		local weight = 1
 		for v in GameInfo.CityWeights() do
 			if v.IsCityStatus == true and city[v.Type](city) then
@@ -2700,16 +2750,16 @@ function City_GetWeight(city, yieldID, doUpdate)
 		if city:GetFocusType() == CityYieldFocusTypes[yieldID] then
 			weight = weight * GameInfo.CityWeights.CityFocus.Value
 		end
-		if not Players[ownerID]:IsCapitalConnectedToCity(city) then
+		if not player:IsCapitalConnectedToCity(city) then
 			weight = weight * GameInfo.CityWeights.NotConnected.Value
 		end
 		if yieldID == YieldTypes.YIELD_FOOD and city:IsForcedAvoidGrowth() then
-			weight = weight * owner:GetAvoidModifier(doUpdate)
+			weight = weight * player:GetAvoidModifier(doUpdate)
 		end	
-		MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()] = math.max(0, weight)
+		MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()] = math.max(0, weight)
 	end
-	--log:Error("Weight = "..MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()])
-	return MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()]
+	--log:Info("Weight = "..MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()])
+	return MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]
 end
 
 ---------------------------------------------------------------------

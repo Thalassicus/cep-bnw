@@ -6,7 +6,7 @@
 include("ModTools.lua")
 local log = Events.LuaLogger:New()
 log:SetLevel("DEBUG")
-log:Info("Loading UnitFlagManager_addin.lua A")
+log:Debug("Loading UnitFlagManager_addin.lua A")
 
 --local ModID			= ModID --"44311931-9c7a-4f55-b465-7dc8d814e24d"
 --local ModVersion		= ModVersion --Modding.GetActivatedModVersion(modID) or 1
@@ -78,7 +78,7 @@ g_UnitFlagClass.IsFlagDisplayed = function( self )
 	return self.m_IsUnitIconDisplayed
 end
 
-log:Info("Loading UnitFlagManager_addin.lua B")
+log:Debug("Loading UnitFlagManager_addin.lua B")
 
 -- Options
 local iPromotionsStackMax = 9
@@ -113,7 +113,7 @@ Currently a hardcoded 9 promo slots are available in 2 horizontal stacks of fixe
 Ideally, the display would have horizontal and vertical stacks of adjustable size.
 --]]
 
-log:Info("Loading UnitFlagManager_addin.lua C")
+log:Debug("Loading UnitFlagManager_addin.lua C")
 
 ------------------------------------------------------------------
 ------------------------------------------------------------------
@@ -331,7 +331,7 @@ g_UnitFlagClass.UpdatePromotions = function( self, promoType )
 end
 --]]
 
-log:Info("Loading UnitFlagManager_addin.lua D")
+log:Debug("Loading UnitFlagManager_addin.lua D")
 
 function OnNewUnitRefresh( playerID, unitID, hexVec, unitType, cultureType, civID, primaryColor, secondaryColor, unitFlagIndex, fogState, selected, military, notInvisible )
 	local flag = g_MasterList[ playerID ][ unitID ]
@@ -343,7 +343,7 @@ function OnNewUnitRefresh( playerID, unitID, hexVec, unitType, cultureType, civI
 end
 Events.SerialEventUnitCreated.Add( OnNewUnitRefresh )
 
-log:Info("Loading UnitFlagManager_addin.lua E")
+log:Debug("Loading UnitFlagManager_addin.lua E")
 
 
 g_UnitFlagClass.SetHideAllPromotions = function (self, isHidden)
@@ -355,7 +355,7 @@ g_UnitFlagClass.SetHideAllPromotions = function (self, isHidden)
 	end
 end
 
-log:Info("Loading UnitFlagManager_addin.lua F")
+log:Debug("Loading UnitFlagManager_addin.lua F")
 
 --[[
 local OldInitialize = g_UnitFlagClass.Initialize
@@ -375,7 +375,7 @@ g_UnitFlagClass.Initialize = function( o, playerID, unitID, fogState, invisible 
 end
 --]]
 
-log:Info("Loading UnitFlagManager_addin.lua G")
+log:Debug("Loading UnitFlagManager_addin.lua G")
 
 --[[
 local OldUpdateFlagOffset = g_UnitFlagClass.UpdateFlagOffset
@@ -439,7 +439,7 @@ end
 
 
 
-log:Info("Loading UnitFlagManager_addin.lua H")
+log:Debug("Loading UnitFlagManager_addin.lua H")
 
 -- Independent Events
 
@@ -499,4 +499,4 @@ LuaEvents.UpdateIgnoredFlagPromotions.Add(
 ---------------------------------------
 
 
-log:Info("Loading UnitFlagManager_addin.lua I")
+log:Debug("Loading UnitFlagManager_addin.lua I")

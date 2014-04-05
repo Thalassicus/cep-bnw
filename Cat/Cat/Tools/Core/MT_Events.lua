@@ -8,7 +8,7 @@ include("ModTools.lua")
 --print("Init MT_Events.lua")
 
 local log = Events.LuaLogger:New()
-log:SetLevel("WARN")
+log:SetLevel("INFO")
 
 --
 -- Initialize data
@@ -163,12 +163,12 @@ function OnTurnStart()
 		log:Info("OnTurnStart")
 	end
 	
-	log:Debug("OnTurnStart")
+	log:Info("OnTurnStart")
 	local startClockTime = os.clock()
 	local stepClockTime = os.clock()
 	LuaEvents.ActivePlayerTurnStart_Turn()
 	MapModData.Cep_StartTurnTimes.Turn = MapModData.Cep_StartTurnTimes.Turn + (os.clock() - stepClockTime)
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Turn", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Turn", os.clock() - stepClockTime)
 	stepClockTime = os.clock()
 	for playerID, player in pairs(Players) do
 		if player:IsAliveCiv() then
@@ -176,7 +176,7 @@ function OnTurnStart()
 			MapModData.Cep_TotalPlayers = MapModData.Cep_TotalPlayers + 1
 		end
 	end
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Players", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Players", os.clock() - stepClockTime)
 	MapModData.Cep_StartTurnTimes.Players = MapModData.Cep_StartTurnTimes.Players + (os.clock() - stepClockTime)
 	stepClockTime = os.clock()
 	for playerID, player in pairs(Players) do
@@ -189,7 +189,7 @@ function OnTurnStart()
 			end
 		end
 	end
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Cities", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Cities", os.clock() - stepClockTime)
 	MapModData.Cep_StartTurnTimes.Cities = MapModData.Cep_StartTurnTimes.Cities + (os.clock() - stepClockTime)
 	stepClockTime = os.clock()
 	for playerID, player in pairs(Players) do
@@ -202,7 +202,7 @@ function OnTurnStart()
 			end
 		end
 	end
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Units", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Units", os.clock() - stepClockTime)
 	MapModData.Cep_StartTurnTimes.Units = MapModData.Cep_StartTurnTimes.Units + (os.clock() - stepClockTime)
 	stepClockTime = os.clock()
 	for playerID, player in pairs(Players) do
@@ -218,14 +218,14 @@ function OnTurnStart()
 			end
 		end
 	end
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Policies", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Policies", os.clock() - stepClockTime)
 	MapModData.Cep_StartTurnTimes.Policies = MapModData.Cep_StartTurnTimes.Policies + (os.clock() - stepClockTime)
 	stepClockTime = os.clock()
 	for plotID = 0, Map.GetNumPlots() - 1, 1 do
 		local plot = Map.GetPlotByIndex(plotID)
 		LuaEvents.ActivePlayerTurnStart_Plot(plot)
 	end
-	log:Debug("OnTurnStart %10s %10.3f seconds", "Plots", os.clock() - stepClockTime)
+	log:Info("OnTurnStart %10s %10.3f seconds", "Plots", os.clock() - stepClockTime)
 	MapModData.Cep_StartTurnTimes.Plots = MapModData.Cep_StartTurnTimes.Plots + (os.clock() - stepClockTime)
 	log:Info("OnTurnStart  %10s %10.3f seconds", "Total", os.clock() - startClockTime)
 	MapModData.Cep_StartTurnTimes.Total = MapModData.Cep_StartTurnTimes.Total + (os.clock() - startClockTime)
