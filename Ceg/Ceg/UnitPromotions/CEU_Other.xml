@@ -2,41 +2,61 @@
 <GameData>
 	<UnitPromotions>
 		<!--
+		Consolidate the 5 promotions into 2. Ideally we'd have just one.
+		
 		PromotionPrereqOr should be a table allowing any number of prerequisites,
 		removing the need for redundant promotions.
 		-->
 		<Update>
-			<Where Type="PROMOTION_MARCH" />
-			<Set HealOutsideFriendly="true"
-				 PromotionPrereqOr1="PROMOTION_SHOCK_3"
-				 PromotionPrereqOr2="PROMOTION_DRILL_3"
-				 PromotionPrereqOr3="PROMOTION_BLITZ"
-				 PromotionPrereqOr4="NULL"
-				 PromotionPrereqOr5="NULL"
-				 PromotionPrereqOr6="NULL"
-				 />
+			<Where Type="PROMOTION_MARCH"/>
+			<Set PediaType="NULL"
+				 CannotBeChosen="true" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_SUPPLY"/>
+			<Set PediaType="NULL"
+				 CannotBeChosen="true" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_REPAIR"/>
+			<Set PediaType="NULL"
+				 CannotBeChosen="true" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_HELI_REPAIR"/>
+			<Set PediaType="NULL"
+				 CannotBeChosen="true" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_AIR_REPAIR"/>
+			<Set PediaType="NULL"
+				 CannotBeChosen="true" />
 		</Update>
 		<Row>
-			<Type>PROMOTION_MARCH_II</Type>
-			<Description>TXT_KEY_PROMOTION_MARCH</Description>
-			<Help>TXT_KEY_PROMOTION_MARCH_HELP</Help>
+			<Type>PROMOTION_SUPPLY_I</Type>
+			<Description>TXT_KEY_PROMOTION_SUPPLY</Description>
+			<Help>TXT_KEY_PROMOTION_SUPPLY_I_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_ACCURACY_2</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_BARRAGE_2</PromotionPrereqOr2>
 			<PromotionPrereqOr3>PROMOTION_SIEGE</PromotionPrereqOr3>
 			<PromotionPrereqOr4>PROMOTION_VOLLEY</PromotionPrereqOr4>
 			<PromotionPrereqOr5>PROMOTION_INDIRECT_FIRE</PromotionPrereqOr5>
+			<PromotionPrereqOr6>PROMOTION_SHOCK_3</PromotionPrereqOr6>
+			<PromotionPrereqOr7>PROMOTION_DRILL_3</PromotionPrereqOr7>
+			<PromotionPrereqOr8>PROMOTION_BLITZ</PromotionPrereqOr8>
 			<OrderPriority>7</OrderPriority>
 			<AlwaysHeal>true</AlwaysHeal>
+			<HealOutsideFriendly>true</HealOutsideFriendly>
 			<PortraitIndex>31</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_HEAL</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_MARCH</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY</PediaEntry>
 		</Row>
 		<Row>
-			<Type>PROMOTION_MARCH_III</Type>
-			<Description>TXT_KEY_PROMOTION_MARCH</Description>
-			<Help>TXT_KEY_PROMOTION_MARCH_HELP</Help>
+			<Type>PROMOTION_SUPPLY_II</Type>
+			<Description>TXT_KEY_PROMOTION_SUPPLY</Description>
+			<Help>TXT_KEY_PROMOTION_SUPPLY_I_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_INTERCEPTION_2</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_DOGFIGHTING_2</PromotionPrereqOr2>
@@ -44,32 +64,14 @@
 			<PromotionPrereqOr4>PROMOTION_AIR_BOMBARDMENT_3</PromotionPrereqOr4>
 			<PromotionPrereqOr5>PROMOTION_AMBUSH_2</PromotionPrereqOr5>
 			<PromotionPrereqOr6>PROMOTION_MOBILITY_2</PromotionPrereqOr6>
+			<PromotionPrereqOr7>PROMOTION_COVER_VANGUARD_1</PromotionPrereqOr7>
+			<PromotionPrereqOr8>PROMOTION_AMBUSH_VANGUARD_1</PromotionPrereqOr8>
 			<OrderPriority>7</OrderPriority>
 			<AlwaysHeal>true</AlwaysHeal>
 			<PortraitIndex>31</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_HEAL</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_MARCH</PediaEntry>
-		</Row>
-		<Row>
-			<Type>PROMOTION_MARCH_IV</Type>
-			<Description>TXT_KEY_PROMOTION_MARCH</Description>
-			<Help>TXT_KEY_PROMOTION_MARCH_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_TRENCHES_3</PromotionPrereqOr1>
-			<PromotionPrereqOr2>PROMOTION_GUERRILLA_3</PromotionPrereqOr2>
-			<PromotionPrereqOr3>PROMOTION_COVER_VANGUARD_1</PromotionPrereqOr3>
-			<PromotionPrereqOr4>PROMOTION_AMBUSH_VANGUARD_1</PromotionPrereqOr4>
-			<!--
-			<PromotionPrereqOr4>PROMOTION_MEDIC</PromotionPrereqOr4>
-			<PromotionPrereqOr5>PROMOTION_SCOUTING_2</PromotionPrereqOr5>
-			-->
-			<OrderPriority>15</OrderPriority>
-			<AlwaysHeal>true</AlwaysHeal>
-			<PortraitIndex>31</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
-			<PediaType>PEDIA_SCOUTING</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_MARCH</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY</PediaEntry>
 		</Row>
 		<Update>
 			<Where Type="PROMOTION_BLITZ" />
@@ -172,31 +174,31 @@
 		</Update>
 	</UnitPromotions>
 	<UnitPromotions_UnitCombats>
-		<Delete PromotionType="PROMOTION_MARCH" UnitCombatType="UNITCOMBAT_ARCHER" />
-		<Delete PromotionType="PROMOTION_MARCH" UnitCombatType="UNITCOMBAT_GUN" />
-		<Delete PromotionType="PROMOTION_MARCH" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_ARCHER" />
+		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_GUN" />
+		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_SIEGE" />
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_II</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
 		<Row>
@@ -297,11 +299,11 @@
 			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_III</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_III</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
 		</Row>
 		<Row>

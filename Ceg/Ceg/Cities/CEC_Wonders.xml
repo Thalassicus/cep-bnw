@@ -293,7 +293,7 @@
 		</Update>
 		<Update>
 			<Where Type="BUILDING_PENTAGON" />
-			<Set FreePromotionAllCombatUnits="PROMOTION_MARCH" />
+			<Set FreePromotionAllCombatUnits="PROMOTION_SUPPLY_I" />
 		</Update>
 		<Update>
 			<Where Type="BUILDING_PORCELAIN_TOWER" />

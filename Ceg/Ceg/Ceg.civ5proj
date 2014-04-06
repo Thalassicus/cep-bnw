@@ -33,7 +33,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>CEP_Options.sql</FileName>
+        <FileName>CEG_Options.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -2641,7 +2641,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="CEP_Options.sql">
+    <Content Include="CEG_Options.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

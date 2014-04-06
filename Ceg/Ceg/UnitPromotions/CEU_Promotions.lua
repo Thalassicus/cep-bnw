@@ -43,7 +43,7 @@ function UpdatePromotions(unit, isUpgrading)
 	if GameInfo.UnitPromotions.PROMOTION_REPAIR and (unitInfo.CombatClass == "_UNITCOMBAT_ARMOR" or unitInfo.CombatClass == "UNITCOMBAT_ARMOR") then
 		CheckReplacePromotion(
 			unit,
-			GameInfo.UnitPromotions.PROMOTION_MARCH.ID,
+			GameInfo.UnitPromotions.PROMOTION_SUPPLY.ID,
 			GameInfo.UnitPromotions.PROMOTION_REPAIR.ID
 			)
 	end

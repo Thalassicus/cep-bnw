@@ -35,7 +35,7 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('CER_Unlocks.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Research.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Stories.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Terrain.sql', 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql', 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CEG_Options.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('_Project_CEP_End.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Armies.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Barbarians.sql', 0);

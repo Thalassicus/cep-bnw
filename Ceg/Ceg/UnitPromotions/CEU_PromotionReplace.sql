@@ -13,8 +13,8 @@ UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_ATTACK_BONU
 UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_IGNORE_TERRAIN_COST_NOUPGRADE'    WHERE PromotionType = 'PROMOTION_FLAT_MOVEMENT_COST';
 UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_LOGISTICS'                        WHERE PromotionType = 'PROMOTION_SECOND_ATTACK';
 UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_AMBUSH_1'                         WHERE PromotionType = 'PROMOTION_FORMATION_1';
-UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_MARCH_III'                        WHERE PromotionType = 'PROMOTION_AIR_REPAIR';
-UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_MARCH_III'                        WHERE PromotionType = 'PROMOTION_HELI_REPAIR';
+UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_SUPPLY_II'                        WHERE PromotionType = 'PROMOTION_AIR_REPAIR';
+UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_SUPPLY_II'                        WHERE PromotionType = 'PROMOTION_HELI_REPAIR';
 UPDATE Unit_FreePromotions            SET PromotionType = 'PROMOTION_AMPHIBIOUS'                       WHERE PromotionType = 'PROMOTION_DEFENSIVE_EMBARKATION';
 
 

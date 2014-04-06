@@ -174,7 +174,7 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_BONUS_II_HELP', '[ICON_STRENGTH] 50퍼센트 [COLOR_POSITIVE_TEXT] 토지 [ENDCOLOR] 단위 대', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II', '토지 대 페널티 (50)', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II_HELP', '[ICON_STRENGTH] -50 % [COLOR_NEGATIVE_TEXT] 토지 [ENDCOLOR] 단위 대', '', '');
-REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MARCH_HELP', '[ICON_HEAL] 공​​격 및 이동하는 치유를 방지하지 않습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL] 공​​격 및 이동하는 치유를 방지하지 않습니다', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT] +10 치유 [ENDCOLOR] 1 타일 내에서 단위', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_II_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT 인접한 타일 단위 턴에 +5 치유 [ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT]이 유닛의 턴에 +5 치유 [ENDCOLOR] 할 때 [COLOR_POSITIVE_TEXT] 친절한 지역의 외부 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', '용병', '', '');
@@ -247,7 +247,7 @@ REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SPAWN_GENERALS_II_HELP', '[ICON_WAR] 전투 [COLOR_POSITIVE_TEXT] 위대한 장군을 만들 수있는 가능성이 매우 높다 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STATUE_ZEUS_HELP', '[ICON_STRENGTH] 15 %는 [COLOR_POSITIVE_TEXT] 도시를 공격 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STRONGER_VS_DAMAGED_HELP', '[ICON_STRENGTH] 50퍼센트 [COLOR_POSITIVE_TEXT] [ENDCOLOR] 부상 단위 대', '', '');
-REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_HELP', '[ICON_HEAL] [ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT] +20 치유 [ENDCOLOR] 턴에 [COLOR_POSITIVE_TEXT] 외부 친절한 지역을 치유 수', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL] [ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT] +20 치유 [ENDCOLOR] 턴에 [COLOR_POSITIVE_TEXT] 외부 친절한 지역을 치유 수', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_2_HELP', '[ICON_HEAL] +5 [COLOR_POSITIVE_TEXT] [ENDCOLOR] 외부 친화적 인 영토를 치유 [NEWLINE] [ICON_STRENGTH] 25퍼센트 [COLOR_POSITIVE_TEXT] 국방 [ENDCOLOR]', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_3_HELP', '[ICON_HEAL] 단위는 [COLOR_POSITIVE_TEXT]은 [NEWLINE] [ICON_MOVES] 단위는 근접 공격에 직면했을 때 인출을 시도합니다 작업을 수행하는 경우에도, 각 회전 [ENDCOLOR]을 치유합니다', '', '');
 REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPRESSION', '억압', '', '');

@@ -174,7 +174,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_BONUS_II_HELP', '[ICON_STRENGTH] +50% vs [COLOR_POSITIVE_TEXT]Land[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II', 'Penalty vs Land (50)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II_HELP', '[ICON_STRENGTH] -50% vs [COLOR_NEGATIVE_TEXT]Land[ENDCOLOR] units', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MARCH_HELP', '[ICON_HEAL] Attacking and moving do not prevent healing', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL] Attacking and moving do not prevent healing', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT]+10 Healing[ENDCOLOR] for units within 1 tile', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_II_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT]+5 Healing[ENDCOLOR] per turn for units in adjacent tiles[NEWLINE][ICON_HEAL] [COLOR_POSITIVE_TEXT]+5 Healing[ENDCOLOR] per turn for this unit when [COLOR_POSITIVE_TEXT]Outside of Friendly Territory[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', 'Mercenary', '', '');
@@ -247,7 +247,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SPAWN_GENERALS_II_HELP', '[ICON_WAR] Combat Very Likely To Create [COLOR_POSITIVE_TEXT]Great Generals[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STATUE_ZEUS_HELP', '[ICON_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]Cities[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STRONGER_VS_DAMAGED_HELP', '[ICON_STRENGTH] +50% vs [COLOR_POSITIVE_TEXT]Wounded[ENDCOLOR] units', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_HELP', '[ICON_HEAL] May heal [COLOR_POSITIVE_TEXT]Outside Friendly Territory[ENDCOLOR][NEWLINE][ICON_HEAL] [COLOR_POSITIVE_TEXT]+20 Healing[ENDCOLOR] per turn', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL] May heal [COLOR_POSITIVE_TEXT]Outside Friendly Territory[ENDCOLOR][NEWLINE][ICON_HEAL] [COLOR_POSITIVE_TEXT]+20 Healing[ENDCOLOR] per turn', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_2_HELP', '[ICON_HEAL] +5 [COLOR_POSITIVE_TEXT]healing[ENDCOLOR] outside friendly territory[NEWLINE][ICON_STRENGTH] +25% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_3_HELP', '[ICON_HEAL] Unit will [COLOR_POSITIVE_TEXT]Heal Every Turn[ENDCOLOR], even if it performs an action[NEWLINE][ICON_MOVES] Unit will attempt to withdraw when faced with a melee attack', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPRESSION', 'Suppression', '', '');

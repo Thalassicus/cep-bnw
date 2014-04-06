@@ -24,8 +24,22 @@ Then start a new game.
 
 
 /*
-Human-vs-barbarian combat bonus.
+Barbarian Balance
 */
+
+-- Civilized territory is invulnerable from barbarians for X turns
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 100 WHERE Type = 'HANDICAP_SETTLER';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 100 WHERE Type = 'HANDICAP_CHIEFTAIN';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  90 WHERE Type = 'HANDICAP_WARLORD';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  80 WHERE Type = 'HANDICAP_PRINCE';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  70 WHERE Type = 'HANDICAP_KING';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  60 WHERE Type = 'HANDICAP_EMPEROR';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  40 WHERE Type = 'HANDICAP_IMMORTAL';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  20 WHERE Type = 'HANDICAP_DEITY';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 1.0 * EarliestBarbarianReleaseTurn; -- default 1.0
+
+
+-- Human vs barbarian combat bonus
 UPDATE HandicapInfos SET BarbarianBonus = 150 WHERE Type = 'HANDICAP_SETTLER';
 UPDATE HandicapInfos SET BarbarianBonus =  50 WHERE Type = 'HANDICAP_CHIEFTAIN';
 UPDATE HandicapInfos SET BarbarianBonus =  20 WHERE Type = 'HANDICAP_WARLORD';
@@ -34,8 +48,17 @@ UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_KING';
 UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_EMPEROR';
 UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_IMMORTAL';
 UPDATE HandicapInfos SET BarbarianBonus =  15 WHERE Type = 'HANDICAP_DEITY';
+UPDATE HandicapInfos SET BarbarianBonus = 1.0 * BarbarianBonus; -- default 1.0
 
+/* Maximum experience from killing barbarians
+10  = level 1
+30  = level 2
+60  = level 3
+100 = level 4
+999 = basically unlimited
+*/
 UPDATE Defines SET Value = 90 WHERE Name = 'BARBARIAN_MAX_XP_VALUE'; -- default 90
+
 
 
 /*
@@ -102,4 +125,4 @@ VALUES ('BARBARIANS_HEAL', 1);
 --
 -- Do not change items below
 
-UPDATE LoadedFile SET Value=1 WHERE Type='Cep_Options.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CEG_Options.sql';

@@ -9,25 +9,6 @@
 				 PromotionPrereqOr2="PROMOTION_DRILL_3"
 				 />
 		</Update>
-		<!--
-		<Update>
-			<Where Type="PROMOTION_REPAIR" />
-			<Set PromotionPrereqOr1="PROMOTION_SHOCK_3"
-				 PromotionPrereqOr2="PROMOTION_DRILL_3"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_HELI_REPAIR" />
-			<Set PromotionPrereqOr1="PROMOTION_AMBUSH_2"
-				 />
-		</Update>
-		-->
-		<Update>
-			<Where Type="PROMOTION_AIR_REPAIR" />
-			<Set PromotionPrereqOr3="PROMOTION_AIR_SIEGE_3"
-				 PromotionPrereqOr4="PROMOTION_AIR_BOMBARDMENT_3"
-				 />
-		</Update>
 		<Row>
 			<Type>PROMOTION_MOBILITY_1</Type>
 			<Description>TXT_KEY_PROMOTION_MOBILITY_1</Description>

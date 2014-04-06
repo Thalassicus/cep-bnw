@@ -255,7 +255,7 @@
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_MARCH_IV</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 		</Row>
 		<Row>

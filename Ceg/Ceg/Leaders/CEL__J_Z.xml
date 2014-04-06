@@ -558,7 +558,7 @@
 	<Unit_FreePromotions>
 		<Row>
 			<UnitType>UNIT_OTTOMAN_JANISSARY</UnitType>
-			<PromotionType>PROMOTION_MARCH</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
 		</Row>
 		<Update>
 			<Where UnitType="UNIT_OTTOMAN_JANISSARY" PromotionType="PROMOTION_HEAL_IF_DESTROY_ENEMY" />
@@ -1131,7 +1131,7 @@
 			<UnitType>UNIT_SWEDISH_CAROLEAN</UnitType>
 			<PromotionType>PROMOTION_HEAL_IF_DESTROY_ENEMY</PromotionType>
 		</Row>
-		<Delete UnitType="UNIT_SWEDISH_CAROLEAN" PromotionType="PROMOTION_MARCH"/>
+		<Delete UnitType="UNIT_SWEDISH_CAROLEAN" PromotionType="PROMOTION_SUPPLY_I"/>
 	</Unit_FreePromotions>
 
 	<!--	Venice

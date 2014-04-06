@@ -84,9 +84,9 @@
 			<Vanguard>PROMOTION_COVER_VANGUARD_1</Vanguard>
 		</Row>
 		<Row>
-			<Melee>PROMOTION_MARCH</Melee>
-			<Ranged>PROMOTION_MARCH_II</Ranged>
-			<Vanguard>PROMOTION_MARCH_IV</Vanguard>
+			<Melee>PROMOTION_SUPPLY_I</Melee>
+			<Ranged>PROMOTION_SUPPLY_I</Ranged>
+			<Vanguard>PROMOTION_SUPPLY_II</Vanguard>
 		</Row>
 		<Row>
 			<Melee>PROMOTION_BLITZ</Melee>

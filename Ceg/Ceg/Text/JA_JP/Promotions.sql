@@ -174,7 +174,7 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_BONUS_II_HELP', '[COLOR_POSITIVE_TEXT]ランド[ENDCOLOR]単位VS [ICON_STRENGTH] 50パーセント', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II', 'ランドVSペナルティ（50）', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_LAND_PENALTY_II_HELP', '[ICON_STRENGTH] -50％対[COLOR_NEGATIVE_TEXT]ランド[ENDCOLOR]単位', '', '');
-REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MARCH_HELP', '[ICON_HEAL]攻撃し、移動すると、治癒が妨げられることはありません', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL]攻撃し、移動すると、治癒が妨げられることはありません', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT] 10ヒーリング[ENDCOLOR] 1タイル内のユニットのための', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MEDIC_II_HELP', '[ICON_HEAL] [COLOR_POSITIVE_TEXT]隣接するタイルのユニットのためのターンに5ヒーリング[ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT]このユニットのターンに5ヒーリング[ENDCOLOR]とき[COLOR_POSITIVE_TEXT]フレンドリーテリトリーの外[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', '傭兵', '', '');
@@ -247,7 +247,7 @@ REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SPAWN_GENERALS_II_HELP', '[COLOR_POSITIVE_TEXT]グレート将軍を作成する可能性が非常に高い[ICON_WAR]コンバット[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STATUE_ZEUS_HELP', '[ICON_STRENGTH] 15パーセントは、[COLOR_POSITIVE_TEXT]都市を攻撃して[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_STRONGER_VS_DAMAGED_HELP', '[ICON_STRENGTH] 50パーセント[COLOR_POSITIVE_TEXT] [ENDCOLOR]傷ついたユニットVS', '', '');
-REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_HELP', '[ICON_HEAL] [ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT] 20ヒーリング[ENDCOLOR]ターン[COLOR_POSITIVE_TEXT]外側にやさしい地域を癒すことがある', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPLY_I_HELP', '[ICON_HEAL] [ENDCOLOR] [NEWLINE] [ICON_HEAL] [COLOR_POSITIVE_TEXT] 20ヒーリング[ENDCOLOR]ターン[COLOR_POSITIVE_TEXT]外側にやさしい地域を癒すことがある', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_2_HELP', '[ICON_HEAL] 5 [COLOR_POSITIVE_TEXT] [ENDCOLOR]外に優しい領土を癒し[NEWLINE] [ICON_STRENGTH] 25パーセント[COLOR_POSITIVE_TEXT]防衛[ENDCOLOR]', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SURVIVALISM_3_HELP', '[ICON_HEAL]単位は[COLOR_POSITIVE_TEXT]それは[NEWLINE] [ICON_MOVES]単位は近接攻撃に直面したときに撤退しようとしたアクションを実行している場合でも、毎ターン[ENDCOLOR]を癒してくれる', '', '');
 REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SUPPRESSION', '抑制', '', '');
