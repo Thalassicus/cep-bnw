@@ -335,7 +335,7 @@
 			<Description>TXT_KEY_PROMOTION_CAMARADERIE</Description>
 			<Help>TXT_KEY_PROMOTION_CAMARADERIE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<LostWithUpgrade>true</LostWithUpgrade>
+			<LostWithUpgrade>false</LostWithUpgrade>
 			<CannotBeChosen>true</CannotBeChosen>
 			<AdjacentMod>15</AdjacentMod>
 			<PortraitIndex>58</PortraitIndex>
