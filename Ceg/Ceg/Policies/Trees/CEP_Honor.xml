@@ -12,7 +12,7 @@
 			<Set GridX="1"
 				 GridY="1"
 				 HappinessPerGarrisonedUnit="1"
-				 CulturePerGarrisonedUnit="2"
+				 CulturePerGarrisonedUnit="3"
 				 />
 		</Update>
 		<Row>
@@ -27,6 +27,7 @@
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<BaseFreeMilitaryUnits>2</BaseFreeMilitaryUnits>
 		</Row>
 		<Row>
 			<Type>POLICY_SPOILS_OF_WAR</Type>
@@ -72,6 +73,7 @@
 		<Update>
 			<Where Type="POLICY_HONOR_FINISHER" />
 			<Set GoldFromKills="0"
+				 MovePurchasedUnits="1"
 				 />
 		</Update>
 	</Policies>

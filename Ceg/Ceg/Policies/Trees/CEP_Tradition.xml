@@ -92,6 +92,10 @@
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>25</Yield>
 		</Row>
+		<Update>
+			<Where PolicyType="POLICY_MONARCHY" YieldType="YIELD_GOLD" />
+			<Set Yield="100" />
+		</Update>
 	</Policy_CapitalYieldPerPopChanges>
 	
 	<Policy_CityYieldChanges>
@@ -110,25 +114,25 @@
 	</Policy_CapitalYieldChanges>
 	<Policy_BuildingClassYieldModifiers>
 		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
+			<PolicyType>POLICY_MENTORS</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldMod>5</YieldMod>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
+			<PolicyType>POLICY_MENTORS</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldMod>5</YieldMod>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
+			<PolicyType>POLICY_MENTORS</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldMod>5</YieldMod>
 		</Row>
 		<Row>
-			<PolicyType>POLICY_MONARCHY</PolicyType>
+			<PolicyType>POLICY_MENTORS</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldMod>5</YieldMod>

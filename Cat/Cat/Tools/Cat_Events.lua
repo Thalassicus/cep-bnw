@@ -663,6 +663,12 @@ function UnitCreatedChecks( playerID,
 		end
 	end
 
+	for policyInfo in GameInfo.Policies("MovePurchasedUnits = 1") do
+		if player:HasPolicy(policyInfo.ID) then
+			unit:SetMoves(unit:MaxMoves())
+		end
+	end
+
 	query = "(FreePromotionAllCombatUnits IS NOT NULL) OR (GlobalExperience != 0)"
 	for buildingInfo in GameInfo.Buildings(query) do
 		local promo = buildingInfo.FreePromotionAllCombatUnits
