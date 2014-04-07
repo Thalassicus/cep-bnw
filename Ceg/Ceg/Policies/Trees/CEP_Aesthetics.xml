@@ -103,11 +103,20 @@
 		</Update>
 	</Resources>
 	<Policy_ImprovementYieldChanges>
+		<!-- This table doesn't work for culture like it should
 		<Row>
 			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
 			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>1</Yield>
 		</Row>
+		-->
 	</Policy_ImprovementYieldChanges>
+	<Policy_ImprovementCultureChanges>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<CultureChange>1</CultureChange>
+		</Row>
+	</Policy_ImprovementCultureChanges>
 </GameData>

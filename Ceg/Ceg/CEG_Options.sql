@@ -28,11 +28,11 @@ Barbarian Balance
 */
 
 -- Civilized territory is invulnerable from barbarians for X turns
-UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 100 WHERE Type = 'HANDICAP_SETTLER';
-UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 100 WHERE Type = 'HANDICAP_CHIEFTAIN';
-UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  90 WHERE Type = 'HANDICAP_WARLORD';
-UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  80 WHERE Type = 'HANDICAP_PRINCE';
-UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  70 WHERE Type = 'HANDICAP_KING';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 160 WHERE Type = 'HANDICAP_SETTLER';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 140 WHERE Type = 'HANDICAP_CHIEFTAIN';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 120 WHERE Type = 'HANDICAP_WARLORD';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn = 100 WHERE Type = 'HANDICAP_PRINCE';
+UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  80 WHERE Type = 'HANDICAP_KING';
 UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  60 WHERE Type = 'HANDICAP_EMPEROR';
 UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  40 WHERE Type = 'HANDICAP_IMMORTAL';
 UPDATE HandicapInfos SET EarliestBarbarianReleaseTurn =  20 WHERE Type = 'HANDICAP_DEITY';

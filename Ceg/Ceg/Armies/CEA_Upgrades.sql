@@ -1,6 +1,6 @@
 -- This CEA_Upgrades.sql data automatically created by
--- Unit_Formulas tab of "Armies" spreadsheet
--- https://drive.google.com/folderview?id=0B58Ehya83q19eVlvWXdmLXZ6UUE
+-- Upgrades tab of 'Armies' spreadsheet
+-- https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dGdOZWk5OS0xamFFQlBqYUthYnVQR2c&usp=drive_web#gid=10
 
 DELETE FROM Unit_ClassUpgrades;
 
@@ -45,12 +45,11 @@ INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCL
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_CARAVEL',              Type FROM Units WHERE Class = 'UNITCLASS_TRIREME';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_FRIGATE',              Type FROM Units WHERE Class = 'UNITCLASS_CARAVEL';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_DESTROYER',            Type FROM Units WHERE Class = 'UNITCLASS_FRIGATE';
--- INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_CARRIER',              Type FROM Units WHERE Class = 'UNITCLASS_DESTROYER';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_MISSILE_DESTROYER',    Type FROM Units WHERE Class = 'UNITCLASS_DESTROYER';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_NUCLEAR_SUBMARINE',    Type FROM Units WHERE Class = 'UNITCLASS_SUBMARINE';
 
 
---INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_MUSKETMAN';
+INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_MUSKETMAN';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_GATLINGGUN',           Type FROM Units WHERE Class = 'UNITCLASS_CROSSBOWMAN';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_HORSEMAN',             Type FROM Units WHERE Class = 'UNITCLASS_CHARIOT_ARCHER';
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_GALLEASS',            'UNIT_CARTHAGINIAN_QUINQUEREME');

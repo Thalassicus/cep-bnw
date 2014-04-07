@@ -1425,14 +1425,23 @@ LuaEvents.PromotionEarned.Add(DoPromotionHeal)
 
 function CheckForAILevelup(unit)
 	local playerID = unit:GetOwner()
-	MapModData.Cep_UnitLevel[playerID][unit:GetID()] = MapModData.Cep_UnitLevel[playerID][unit:GetID()] or unit:GetLevel()
-	for i = MapModData.Cep_UnitLevel[playerID][unit:GetID()], unit:GetLevel() - 1 do
-		--log:Warn("%15s %15s old=%s new=%s", Players[playerID]:GetName(), unit:GetName(), MapModData.Cep_UnitLevel[playerID][unit:GetID()], unit:GetLevel())
+	local unitID = unit:GetID()
+	if not unitID then
+		log:Error("CheckForAILevelup unitID=%s", unitID)
+		return
+	end
+	if not playerID then
+		log:Error("CheckForAILevelup playerID=%s", playerID)
+		return
+	end
+	if not MapModData.Cep_UnitLevel[playerID][unit:GetID() then MapModData.Cep_UnitLevel[playerID][unit:GetID() = unit:GetLevel() end
+	for i = MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel() - 1 do
+		--log:Warn("%15s %15s old=%s new=%s", Players[playerID]:GetName(), unit:GetName(), MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel())
 		DoPromotionHeal(unit)
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_Unit.Add(CheckForAILevelup)
-LuaEvents.ActivePlayerTurnStart_Unit.Add(CheckForAILevelup)
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(CheckForAILevelup, unit) end)
+LuaEvents.ActivePlayerTurnStart_Unit.Add(function(unit) return SafeCall(CheckForAILevelup, unit) end)
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
