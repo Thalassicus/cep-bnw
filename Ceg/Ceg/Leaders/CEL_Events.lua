@@ -203,7 +203,8 @@ function FreeUnitWithTech(player, techID, changeID)
 		end
 	end
 end
-LuaEvents.NewTech.Add(FreeUnitWithTech)
+LuaEvents.NewTech.Add(function(player, techID, changeID) return SafeCall(FreeUnitWithTech, player, techID, changeID) end)
+
 --]]
 
 --[[

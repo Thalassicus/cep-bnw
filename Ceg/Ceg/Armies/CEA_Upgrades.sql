@@ -59,7 +59,7 @@ INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCL
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_SPEARMAN',            'UNIT_POLYNESIAN_MAORI_WARRIOR');
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_SPEARMAN',            'UNIT_BARBARIAN_WARRIOR');
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_COMPOSITE_BOWMAN',    'UNIT_BARBARIAN_AXMAN');
-
+INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) VALUES         ('UNITCLASS_MUSKETMAN',           'UNIT_GERMAN_LANDSKNECHT');
 
 
 

@@ -479,7 +479,11 @@ function PlayerClass.GetUniqueUnitID(player, itemClass)
 	if civType ~= "CIVILIZATION_MINOR" and civType ~= "CIVILIZATION_BARBARIAN" then
 		local query = string.format("CivilizationType = '%s' AND UnitClassType = '%s'", civType, itemClass)
 		for itemInfo in GameInfo.Civilization_UnitClassOverrides(query) do
-			itemType = itemInfo.UnitType
+			if GameInfo.Units[itemInfo.UnitType] then
+				itemType = itemInfo.UnitType
+			else
+				log:Error("GetUniqueUnitID: %s is not a valid unit type!", itemType)
+			end
 			break
 		end
 	end

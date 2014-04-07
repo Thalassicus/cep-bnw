@@ -14,7 +14,12 @@
 				 GoodyHutUpgradeUnitClass="UNITCLASS_COMPOSITE_BOWMAN"
 				 ObsoleteTech="TECH_MATHEMATICS"
 				 />
-		</Update>		
+		</Update>
+		<Update>
+			<Where Type="UNIT_GERMAN_LANDSKNECHT" />
+			<Set GoodyHutUpgradeUnitClass="UNITCLASS_MUSKETMAN"
+				 />
+		</Update>	
 	</Units>
 	<Civilization_UnitClassOverrides>
 		<Row>
