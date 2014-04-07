@@ -191,6 +191,9 @@ WHERE Class IN (
 -- Upgrades
 --
 
+/*
+-- Moved to CEA_Upgrades.sql
+
 DELETE FROM Unit_ClassUpgrades WHERE UnitType IN (SELECT Type FROM Units WHERE Domain = 'DOMAIN_SEA');
 
 INSERT INTO Unit_ClassUpgrades (UnitClassType, UnitType) SELECT DISTINCT 'UNITCLASS_CARAVEL',              Type FROM Units WHERE Class = 'UNITCLASS_TRIREME';
@@ -215,6 +218,8 @@ SELECT DISTINCT Type FROM Units WHERE Class IN (
 
 INSERT INTO Unit_ClassUpgrades (UnitType, UnitClassType) SELECT DISTINCT Type, 'UNITCLASS_SPEARMAN'		FROM Units WHERE Class = 'UNITCLASS_SCOUT';
 INSERT INTO Unit_ClassUpgrades (UnitType, UnitClassType) SELECT DISTINCT Type, 'UNITCLASS_MUSKETMAN'	FROM Units WHERE Class = 'UNITCLASS_PIKEMAN';
+
+*/
 
 --
 -- Resources
