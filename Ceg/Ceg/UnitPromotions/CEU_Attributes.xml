@@ -391,11 +391,6 @@
 			<DomainType>DOMAIN_LAND</DomainType>
 			<Modifier>-50</Modifier>
 		</Row>
-		<Row>
-			<PromotionType>PROMOTION_CITY_ASSAULT</PromotionType>
-			<DomainType>DOMAIN_LAND</DomainType>
-			<Modifier>-50</Modifier>
-		</Row>
 	</UnitPromotions_Domains>
 	<UnitPromotions_UnitCombatMods>
 		<Row>

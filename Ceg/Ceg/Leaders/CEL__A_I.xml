@@ -1037,6 +1037,7 @@
 			<Where Type="UNIT_HUN_BATTERING_RAM" />
 			<Set Moves="3"
 				 Combat="11"
+				 CombatClass="UNITCOMBAT_MELEE"
 				 />
 		</Update>
 	</Units>
