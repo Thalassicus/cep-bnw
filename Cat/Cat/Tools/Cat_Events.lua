@@ -683,6 +683,10 @@ function UnitCreatedChecks( playerID,
 			end
 		end
 	end
+	
+	if player:MayNotAnnex() and unitInfo.Found then
+		Unit_Replace(unit, "UNITCLASS_MERCHANT")
+	then
 end
 
 LuaEvents.NewUnit.Add(UnitCreatedChecks)
