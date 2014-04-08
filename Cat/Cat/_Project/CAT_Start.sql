@@ -30,7 +30,7 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_Misc.sql'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_Promotions.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cat_PromotionOrder.sql'	, 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('Cep_Options.sql'		, 0);
+INSERT INTO LoadedFile(Type, Value) VALUES ('CEG_Options.sql'		, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_AlterTables.sql'	, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('YL_Data.xml'			, 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CAT_End.sql'			, 0);
