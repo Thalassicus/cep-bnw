@@ -44,7 +44,12 @@
 		</Update>
 	</Cep>
 	<Defines>
-		<!--Spy Steal-->
+		<!-- Spies -->
+		<Update>
+			<Where Name="TOURISM_MODIFIER_DIPLOMAT"/>
+			<Set Value="50" />
+			<!-- 25 -->
+		</Update>
 		<Update>
 			<Where Name="ESPIONAGE_GATHERING_INTEL_COST_PERCENT"/>
 			<Set Value="50" />
