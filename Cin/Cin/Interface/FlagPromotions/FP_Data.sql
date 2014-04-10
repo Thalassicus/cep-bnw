@@ -22,11 +22,11 @@ WHERE Type IN (
 	'PROMOTION_SKIRMISH' 						, --earned
 	'PROMOTION_MORALE' 							, --not on all units
 	'PROMOTION_STATUE_ZEUS' 					, --not on all units
-	'PROMOTION_BOMBARDMENT_1'					, --
-	'PROMOTION_BOMBARDMENT_2'					, --
-	'PROMOTION_BOMBARDMENT_3'					, --
-	'PROMOTION_BLITZ'							, --
-	'PROMOTION_LOGISTICS'						, --
+	'PROMOTION_BOMBARDMENT_1'					, --earned
+	'PROMOTION_BOMBARDMENT_2'					, --earned
+	'PROMOTION_BOMBARDMENT_3'					, --earned
+	'PROMOTION_BLITZ'							, --earned
+	'PROMOTION_LOGISTICS'						, --earned
 	'PROMOTION_EXTRA_MOVES_I'					, --
 	'PROMOTION_DESERT_POWER'					, --barbarians
 	'PROMOTION_ARCTIC_POWER'					, --barbarians
@@ -51,14 +51,16 @@ OR (Class = 'PROMOTION_CLASS_PERSISTENT'
 			'PROMOTION_MUST_SET_UP'					, --penalty
 			'PROMOTION_CITY_SIEGE'					, --demolish
 			'PROMOTION_CITY_ASSAULT'				, --demolish
-			'PROMOTION_NEW_UNIT'					, --
-			'PROMOTION_DEFENSE_1'					, --
-			'PROMOTION_DEFENSE_2'					, --
-			'PROMOTION_CAN_MOVE_AFTER_ATTACKING'	, --
-			'PROMOTION_GREAT_GENERAL'				, --
-			'PROMOTION_ADJACENT_BONUS'				, --discipline
-			'PROMOTION_INDIRECT_FIRE'				, --
-			'PROMOTION_FREE_UPGRADES'				, --citystates
+			'PROMOTION_NEW_UNIT'					, --all new units
+			'PROMOTION_DEFENSE_1'					, --all vanguards
+			'PROMOTION_CAN_MOVE_AFTER_ATTACKING'	, --all horses
+			'PROMOTION_GREAT_GENERAL'				, --all generals
+			'PROMOTION_INDIRECT_FIRE'				, --all artillery
+			'PROMOTION_PANAMA_CANAL'				, --all ships
+			'PROMOTION_NAVAL_TRADITION'				, --all ships
+			'PROMOTION_ADJACENT_BONUS'				, --all military
+			'PROMOTION_FREE_UPGRADES'				, --all citystates
+			'PROMOTION_HANDICAP'					, --all AI units
 			'PROMOTION_ANTI_CAVALRY'				, --Ottomans
 			'PROMOTION_MEDIC_GENERAL'				, --Mongolia
 			'PROMOTION_SENTRY'						, --America
@@ -66,7 +68,6 @@ OR (Class = 'PROMOTION_CLASS_PERSISTENT'
 			'PROMOTION_FREE_PILLAGE_MOVES'			, --Denmark
 			'PROMOTION_OCEAN_MOVEMENT'				, --England
 			'PROMOTION_OCEAN_IMPASSABLE'			, --Korea
-			'PROMOTION_HANDICAP'					,
 			'PROMOTION_EMBARKATION'					  --Once Optics is researched we can conclude all units have this
 		)
 	)

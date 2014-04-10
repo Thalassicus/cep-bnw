@@ -52,7 +52,7 @@
 		</Update>
 		<Update>
 			<Where Name="ESPIONAGE_GATHERING_INTEL_COST_PERCENT"/>
-			<Set Value="50" />
+			<Set Value="25" />
 			<!-- 125 -->
 		</Update>
 		<Update>
