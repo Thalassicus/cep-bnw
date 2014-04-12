@@ -22,6 +22,7 @@
 			<Set GridX="2"
 				 GridY="1" 
 				 PortraitIndex="4"
+				 HappinessToCulture="100"
 				 />
 		</Update>
 		<Update>

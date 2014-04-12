@@ -1444,7 +1444,7 @@ function CheckForAILevelup(unit)
 		log:Error("CheckForAILevelup playerID=%s", playerID)
 		return
 	end
-	if not MapModData.Cep_UnitLevel[playerID][unit:GetID() then MapModData.Cep_UnitLevel[playerID][unit:GetID() = unit:GetLevel() end
+	if not MapModData.Cep_UnitLevel[playerID][unit:GetID()] then MapModData.Cep_UnitLevel[playerID][unit:GetID()] = unit:GetLevel() end
 	for i = MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel() - 1 do
 		--log:Warn("%15s %15s old=%s new=%s", Players[playerID]:GetName(), unit:GetName(), MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel())
 		DoPromotionHeal(unit)
