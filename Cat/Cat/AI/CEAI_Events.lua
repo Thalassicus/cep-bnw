@@ -173,7 +173,7 @@ function SpendAIGold(player)
 		while PurchaseBuildingOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
 		end
-		while PurchaseUnitOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
+		while PurchaseOneUnitOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
 		end
 		if player:IsBudgetGone(0) then return end
