@@ -195,6 +195,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUIL
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_TRADE_ROUTE_SEA_GOLD_BONUS', '[ICON_GOLD] Sea Trade Gold: {3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_TRADE_ROUTE_LAND_DISTANCE_MODIFIER', '[ICON_INTERNATIONAL_TRADE] Land Trade Distance: {2_sign}{3_value}%', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_TRADE_ROUTE_LAND_GOLD_BONUS', '[ICON_GOLD] Land Trade Gold: {3_value}', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_CITY_STATE_TRADE_ROUTE_PRODUCTION_MODIFIER', '[ICON_PRODUCTION] Production: {3_value} from City-State Trade routes', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_GREAT_SCIENTIST_BEAKER_MODIFIER', '[ICON_RESEARCH] Great Scientist Beaker Modifier: {3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_TECH_ENHANCED_TOURISM', '[ICON_TOURISM] Tourism: {3_value}', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BUILDING_EFFECT_POLICY_BRANCH_TYPE', '[ICON_LOCKED] Requires Policy: {3_value}', '', '');

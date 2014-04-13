@@ -138,15 +138,16 @@ INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  1
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  2, 0, 'TradeRouteSeaDistanceModifier'      , 'cepObjectInfo.TradeRouteSeaDistanceModifier');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  3, 0, 'TradeRouteRecipientBonus'    , 'cepObjectInfo.TradeRouteRecipientBonus');
 INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  4, 0, 'TradeRouteTargetBonus'       , 'cepObjectInfo.TradeRouteTargetBonus');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  5, 0, 'NumTradeRouteBonus'          , 'cepObjectInfo.NumTradeRouteBonus');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  6, 0, 'GreatWorkSlotType'           , 'cepObjectInfo.GreatWorkSlotType');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  7, 0, 'GreatWorksTourismModifier'   , 'cepObjectInfo.GreatWorksTourismModifier');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  8, 0, 'FreeGreatWork'               , 'cepObjectInfo.FreeGreatWork');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  9, 0, 'ExperiencePerGreatWork'      , 'Game.HasValue({BuildingType=cepObjectInfo.Type}, GameInfo.Building_DomainFreeExperiencePerGreatWork)');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 10, 0, 'TechEnhancedTourism'         , 'cepObjectInfo.TechEnhancedTourism');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 11, 0, 'LandmarksTourismPercent'     , 'cepObjectInfo.LandmarksTourismPercent');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 12, 0, 'ThemingBonusHelp'            , 'cepObjectInfo.ThemingBonusHelp');
-INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 13, 1, 'Replaces'                    , 'Game.GetDefaultBuildingStatText');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  5, 0, 'CityStateTradeRouteProductionModifier'       , 'cepObjectInfo.CityStateTradeRouteProductionModifier');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  6, 0, 'NumTradeRouteBonus'          , 'cepObjectInfo.NumTradeRouteBonus');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  7, 0, 'GreatWorkSlotType'           , 'cepObjectInfo.GreatWorkSlotType');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  8, 0, 'GreatWorksTourismModifier'   , 'cepObjectInfo.GreatWorksTourismModifier');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  9, 0, 'FreeGreatWork'               , 'cepObjectInfo.FreeGreatWork');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4,  10, 0, 'ExperiencePerGreatWork'      , 'Game.HasValue({BuildingType=cepObjectInfo.Type}, GameInfo.Building_DomainFreeExperiencePerGreatWork)');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 11, 0, 'TechEnhancedTourism'         , 'cepObjectInfo.TechEnhancedTourism');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 12, 0, 'LandmarksTourismPercent'     , 'cepObjectInfo.LandmarksTourismPercent');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 13, 0, 'ThemingBonusHelp'            , 'cepObjectInfo.ThemingBonusHelp');
+INSERT INTO BuildingStats(Section, Priority, Dynamic, Type, Value) VALUES (4, 14, 1, 'Replaces'                    , 'Game.GetDefaultBuildingStatText');
 
 
 -- Requirements --
