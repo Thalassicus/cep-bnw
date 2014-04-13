@@ -527,7 +527,7 @@ UPDATE BuildingClasses SET Description = (SELECT Description FROM Buildings b WH
 
 UPDATE Buildings SET Cost = -1 WHERE Cost <= 0;
 
-UPDATE Buildings SET Help = 'TXT_KEY_GENERIC';
+UPDATE Buildings SET Help = 'TXT_KEY_GENERIC' WHERE AlwaysShowHelp <> 1;
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEC__End.sql';

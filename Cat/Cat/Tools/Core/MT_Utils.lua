@@ -109,6 +109,15 @@ function Game.Literalize(str)
 	return str:gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]", function(c) return "%" .. c end)
 end
 
+----------------------------------------------------------------
+function Game.GetCumulativeTechCost(techType)
+	
+end
+
+function Game.GetPrereqTechs(techType)
+	
+end
+
 ---------------------------------------------------------------------
 --[[ GetName(itemInfo, itemTable) usage example:
 

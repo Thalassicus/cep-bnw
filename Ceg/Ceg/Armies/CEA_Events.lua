@@ -216,7 +216,7 @@ function City_DoRefugees(cityPlot, city, cityName, lostPlayer, wonPlayer)
 		-- no capital for refugees to flee to
 		return
 	end
-
+	
 	if popFlee > 0 then
 		capitalCity:ChangePopulation(popFlee, true)
 	end
@@ -465,7 +465,7 @@ function CityCaptured (plot, lostPlayerID, cityID, wonPlayerID)
 		return
 	end
 
-	log:Info("%s captured %s from %s: %s capital city", wonPlayer:GetName(), lostCityName, lostPlayer:GetName(), capitalCity and capitalCity:GetName() or "no")
+	log:Info("%s captured %s from %s (whose capital is %s)", wonPlayer:GetName(), lostCityName, lostPlayer:GetName(), capitalCity and capitalCity:GetName() or "no")
 	
 	City_DoRefugees(lostCityPlot, lostCity, lostCityName, lostPlayer, wonPlayer)
 	

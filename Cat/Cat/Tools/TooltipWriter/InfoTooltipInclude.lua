@@ -473,7 +473,12 @@ function GetBuildingTip(args)
 				textBody = textBody .. "[NEWLINE]----------------"
 			end
 			if Cep.SHOW_GOOD_FOR_BUILDINGS == 1 and showGood then
-				local textFlavors = Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type)
+				local textFlavors = ""
+				if Cep.SHOW_GOOD_FOR_AI_NUMBERS == 1 then
+					textFlavors = Game.GetFlavors("Building_Flavors", "BuildingType", objectInfo.Type)
+				else
+					textFlavors = Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type)
+				end
 				if textFlavors ~= "" then
 					textBody = textBody .. textFlavors .. "[NEWLINE]"
 				end
