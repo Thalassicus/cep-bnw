@@ -3,7 +3,7 @@
 https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jruTs/edit#gid=742165834
 If you make any changes be sure to update the spreadsheet also.*/
 
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_GUN', 'Mounted archers', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_GUN', 'Skirmish units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_CIVILIAN', 'Civilian units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_COMMAND', 'Support units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNITCOMBAT_MELEE', 'Soldier units', '', '');

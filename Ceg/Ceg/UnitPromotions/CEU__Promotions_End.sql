@@ -71,11 +71,13 @@ FROM Units WHERE Class IN (
 	'UNITCLASS_LANCER'
 ));
 
+/*
 INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
 SELECT DISTINCT Type, 'PROMOTION_ANTI_CAVALRY'
 FROM Units WHERE Class IN (
 	'UNITCLASS_LANCER'
 );
+*/
 
 DELETE FROM Unit_FreePromotions
 WHERE PromotionType = 'PROMOTION_DEFENSIVE_EMBARKATION';
