@@ -99,6 +99,7 @@ UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_CO
 -- Unique Buildings
 --
 
+-- Set unique building cost to the same as the regular building it replaces
 UPDATE Buildings SET Cost = (SELECT b.Cost FROM Buildings b, BuildingClasses class WHERE (
 	Buildings.BuildingClass = b.BuildingClass
 	AND class.Type = b.BuildingClass
