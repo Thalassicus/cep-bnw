@@ -56,7 +56,6 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT
 /* Other */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_MISSIONARY_LALIBELA', 'Missionary', '', '');
 
-
 UPDATE LoadedFile SET Value=1, en_US=1 Where Type='Armies.sql';
 --*/
 

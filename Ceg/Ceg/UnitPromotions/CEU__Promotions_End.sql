@@ -1,5 +1,48 @@
 -- Insert SQL Rules Here 
 
+-- 
+-- Promotion Updates
+-- 
+
+/*
+OpenAttack and OpenDefense only affect MELEE combat,
+but incorrectly show on the UnitPanel for ranged attacks (with no actual effect).
+*/
+
+--/*
+UPDATE UnitPromotions
+SET OpenRangedAttackMod = 15
+WHERE Type IN (
+	'PROMOTION_SHOCK_1'	,
+	'PROMOTION_SHOCK_2'	,
+	'PROMOTION_SHOCK_3'	
+);
+
+UPDATE UnitPromotions
+SET RoughRangedAttackMod = 15
+WHERE Type IN (
+	'PROMOTION_DRILL_1'	,
+	'PROMOTION_DRILL_2'	,
+	'PROMOTION_DRILL_3'	
+);
+--*/
+
+UPDATE UnitPromotions
+SET OpenAttack = 15, OpenDefense = 15
+WHERE Type IN (
+	'PROMOTION_ACCURACY_1'	,
+	'PROMOTION_ACCURACY_2'	,
+	'PROMOTION_ACCURACY_3'	
+);
+
+UPDATE UnitPromotions
+SET RoughAttack = 15, RoughDefense = 15
+WHERE Type IN (
+	'PROMOTION_BARRAGE_1'	,
+	'PROMOTION_BARRAGE_2'	,
+	'PROMOTION_BARRAGE_3'	
+);
+
 --
 -- Free Land Promotions
 --

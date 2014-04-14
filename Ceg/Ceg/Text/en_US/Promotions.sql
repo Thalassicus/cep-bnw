@@ -3,9 +3,9 @@ https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jr
 If you make any changes be sure to update the spreadsheet also.*/
 
 /* PROMOTIONS */
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_1_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_2_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_3_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_1_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_2_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_3_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AIR_AMBUSH_1_HELP', '[ICON_STRENGTH] +33% vs [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', 'Artic Power', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER_HELP', '[ICON_MOVES] Faster in [COLOR_POSITIVE_TEXT]Snow and Tundra[ENDCOLOR]', '', '');
@@ -49,9 +49,9 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ATTACK_BONUS_I_HELP', '[ICON_STRENGTH] +25% [COLOR_POSITIVE_TEXT]Attack[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ATTACK_BONUS_II', 'Bonus on Attack (50)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ATTACK_BONUS_II_HELP', '[ICON_STRENGTH] +50% [COLOR_POSITIVE_TEXT]Attack[ENDCOLOR]', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_1_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_2_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_3_HELP', '[ICON_RANGE_STRENGTH] +15% attacking [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_1_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_2_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BARRAGE_3_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BLITZ_HELP', '[ICON_WAR] Can attack twice', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BOARDING_PARTY_1_HELP', '[ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Ships[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_BOARDING_PARTY_2_HELP', '[ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Ships[ENDCOLOR]', '', '');
@@ -108,9 +108,9 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DOGFIGHTING_3_HELP', '[ICON_RANGE_STRENGTH] +34% [COLOR_POSITIVE_TEXT]Air Sweeps[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS_HELP', '[ICON_WORKER] Can build roads and forts.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CONSTRUCT_ROADS_FORTS', 'Can build roads and forts', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_1_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_2_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DRILL_3_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]ROUGH[ENDCOLOR] Terrain (Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKATION_HELP', '[ICON_MOVES] Can embark onto [COLOR_POSITIVE_TEXT]Water Tiles[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKED_DEFENSE', 'Embarked Defense (100)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKED_DEFENSE_HELP', '[ICON_STRENGTH] +100% when [COLOR_POSITIVE_TEXT]Embarked[ENDCOLOR]', '', '');
@@ -235,9 +235,9 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SEE_INVISIBLE_SUBMARINE', 'Sonar', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SEE_INVISIBLE_SUBMARINE_HELP', '[ICON_DETECT] Can see [COLOR_POSITIVE_TEXT]Submarines[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SENTRY_HELP', '[ICON_DETECT] +1 [COLOR_POSITIVE_TEXT]Sight Range[ENDCOLOR]', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_1_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_2_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_3_HELP', '[ICON_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_1_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_2_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SHOCK_3_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SIEGE_HELP', '[ICON_STRENGTH] +50% vs [COLOR_POSITIVE_TEXT]Cities[ENDCOLOR][NEWLINE][ICON_STRENGTH] +30% vs [COLOR_POSITIVE_TEXT]Fortified Units[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SIGHT_PENALTY_HELP', '[ICON_MINUS] -1 [COLOR_NEGATIVE_TEXT]Sight Range[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SKIRMISH', 'Skirmish', '', '');

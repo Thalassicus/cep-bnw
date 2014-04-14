@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<UnitPromotions>
-		<!--
-		<Update>
-			<Where Type="PROMOTION_DRILL_1" />
-			<Set RoughRangedAttackMod="15"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_DRILL_2" />
-			<Set RoughRangedAttackMod="15"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_DRILL_3" />
-			<Set RoughRangedAttackMod="15"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_SHOCK_1" />
-			<Set OpenRangedAttackMod="15"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_SHOCK_2" />
-			<Set OpenRangedAttackMod="15"
-				 />
-		</Update>
-		<Update>
-			<Where Type="PROMOTION_SHOCK_3" />
-			<Set OpenRangedAttackMod="15"
-				 />
-		</Update>
-		-->
 		<Update>
 			<Where Type="PROMOTION_SIEGE" />
 			<Set CityAttack="50"

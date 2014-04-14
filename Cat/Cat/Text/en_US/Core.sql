@@ -61,6 +61,8 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CITY
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TECH_RIFLING_TITLE', 'Smokeless Powder', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TECH_RIFLING_DESC', 'The invention of smokeless powder revolutionized military weapons and tactics. Older forms of gunpowder (called black powder) produced large quantities of solid soot. This smoke fouled barrels, prevented accurate shooting, and made it difficult for commanders to give orders through the battlefield haze. Smokeless powder literally cleared the way for tactics focused on accuracy, breech loading firearms, and autoloading firearms with many moving parts.', '', '');
 /*  Units  */
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_EUPANEL_OPEN_TERRAIN_BONUS', 'Open Terrain Melee Attack Bonus', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_EUPANEL_ROUGH_TERRAIN_BONUS', 'Rough Terrain Melee Attack Bonus', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_HELP_WARRIOR', 'Basic soldier of the Ancient Era.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_SIAMESE_WARELEPHANT', 'Chang Suek', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_HELP_SIAMESE_WARELEPHANT', 'Unique Siamese unit vulnerable to Pikemen. Elephants require no resources, receive a bonus against mounted units, and have more [ICON_STRENGTH] Strength than the Knights they replace.', '', '');
