@@ -38,7 +38,6 @@ INSERT INTO LoadedFile(Type, Value) VALUES ('Terrain.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CEG_Options.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('_Project_CEP_End.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Armies.sql', 0);
-INSERT INTO LoadedFile(Type, Value) VALUES ('Barbarians.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Cities.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('CSD.sql', 0);
 INSERT INTO LoadedFile(Type, Value) VALUES ('Diplomacy.sql', 0);
