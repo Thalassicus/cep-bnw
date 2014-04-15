@@ -903,7 +903,7 @@
 			<NeverCapture>true</NeverCapture>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>TECH_ATLAS_1</IconAtlas>
-			<IsVisible>1</IsVisible>
+			<IsVisible>0</IsVisible>
 			<ShowInPedia>0</ShowInPedia>
 		</Row>
 	</Buildings>
