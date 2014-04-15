@@ -134,8 +134,8 @@ INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('F
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_SPACESHIP',                LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ESPIONAGE',                LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_CULTURE',                  LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
-INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_TOURISM',                  LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
-INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ARCHAEOLOGY',              LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
+INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_TOURISM',                  LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
+INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ARCHAEOLOGY',              LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_RELIGION',                 LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_GREAT_PEOPLE',             LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_HAPPINESS',                LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_DIPLOMAT';
@@ -182,8 +182,8 @@ INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('F
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_SPACESHIP',                LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ESPIONAGE',                LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_CULTURE',                  LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
-INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_TOURISM',                  LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
-INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ARCHAEOLOGY',              LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
+INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_TOURISM',                  LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
+INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_ARCHAEOLOGY',              LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_RELIGION',                 LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_GREAT_PEOPLE',             LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_HAPPINESS',                LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
@@ -198,6 +198,7 @@ INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('F
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_I_TRADE_DESTINATION',      LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_WONDER',                   LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_DIPLOMACY',                LeaderType, 2) FROM Leaders WHERE Personality = 'PERSONALITY_EXPANSIONIST';
+
 
 
 -- Leader Overrides
@@ -256,6 +257,7 @@ UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_SOLDIER'     
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_VANGUARD'                  AND LeaderType = 'LEADER_SHAKA');
 
 
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_GROWTH'                    AND LeaderType = 'LEADER_MONTEZUMA');
 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_RANGED'                    AND LeaderType = 'LEADER_WU_ZETIAN');
 
@@ -325,6 +327,11 @@ UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_ARCHAEOLOGY' 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_RELIGION'                  AND LeaderType = 'LEADER_GANDHI');
 
 UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_GROWTH'                    AND LeaderType = 'LEADER_SEJONG');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_SCIENCE'                   AND LeaderType = 'LEADER_SEJONG');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_SPACESHIP'                 AND LeaderType = 'LEADER_SEJONG');
+UPDATE Leader_Flavors SET (Flavor =   4 WHERE FlavorType = 'FLAVOR_TOURISM'                   AND LeaderType = 'LEADER_SEJONG');
+UPDATE Leader_Flavors SET (Flavor =   4 WHERE FlavorType = 'FLAVOR_ARCHAEOLOGY'               AND LeaderType = 'LEADER_SEJONG');
+UPDATE Leader_Flavors SET (Flavor =   2 WHERE FlavorType = 'FLAVOR_RELIGION'                  AND LeaderType = 'LEADER_SEJONG');
 UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_GREAT_PEOPLE'              AND LeaderType = 'LEADER_SEJONG');
 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_TOURISM'                   AND LeaderType = 'LEADER_PACAL');
@@ -347,7 +354,7 @@ UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_MOBILE'      
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_SCIENCE'                   AND LeaderType = 'LEADER_RAMKHAMHAENG');
 
 
-
+UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_HAPPINESS'                 AND LeaderType = 'LEADER_WASHINGTON');
 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_MOBILE'                    AND LeaderType = 'LEADER_HARUN_AL_RASHID');
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_TOURISM'                   AND LeaderType = 'LEADER_HARUN_AL_RASHID');
@@ -395,6 +402,10 @@ UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_GREAT_PEOPLE'
 UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_HAPPINESS'                 AND LeaderType = 'LEADER_DARIUS');
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_GOLDEN_AGE'                AND LeaderType = 'LEADER_DARIUS');
 
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_I_LAND_TRADE_ROUTE'        AND LeaderType = 'LEADER_MARIA_I');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_I_SEA_TRADE_ROUTE'         AND LeaderType = 'LEADER_MARIA_I');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_I_TRADE_ORIGIN'            AND LeaderType = 'LEADER_MARIA_I');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_I_TRADE_DESTINATION'       AND LeaderType = 'LEADER_MARIA_I');
 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_MOBILE'                    AND LeaderType = 'LEADER_POCATELLO');
 UPDATE Leader_Flavors SET (Flavor =  16 WHERE FlavorType = 'FLAVOR_EXPANSION'                 AND LeaderType = 'LEADER_POCATELLO');
