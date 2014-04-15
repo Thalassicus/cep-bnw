@@ -1,0 +1,95 @@
+/* The sql commands and text below were formulated in the TW_PromotionStats tab of the Google Spreadsheet 'CAT_Language'.
+https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dGtjX2JldHBzdXhRbGNxVFgxT1E2OHc&usp=drive_web#gid=2
+If you make any changes be sure to update the spreadsheet also.*/
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ATTACK', '攻撃', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_DEFENSE', '防衛', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_VS', '対', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_SIGHT_RANGE', '視界範囲', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGE', 'レンジ', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MOVES', '移動', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_EXPERIENCE', '経験', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGED_ATTACKS', '遠隔攻撃', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_AIR_SWEEPS', '空気スイープ', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FASTER_IN', 'より高速での', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ROUGH_TERRAIN', '[COLOR_POSITIVE_TEXT] ROUGH [ENDCOLOR]地形（ヒルズ、森やジャングル）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_OPEN_TERRAIN', '[COLOR_POSITIVE_TEXT]オープン[ENDCOLOR]地形（NOヒルズ、森やジャングル）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_WOUNDED_UNITS', '負傷単位', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FRIENDLY', '優しい', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_NEUTRAL', 'ニュートラル', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ENEMY', '敵', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_IN_TERRITORY', '{1_num}テリトリー', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UPGRADE_COST', 'アップグレード費用', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_STRENGTH', '強さ', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CANNOT ENTER', '入力することはできません', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNTIL', 'まで、', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_HEALING', '治癒', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FORTIFIED_UNITS', '要塞化された単位', '', '');
+/*特殊能力*/
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_ENEMIES', '隣接する敵ユニット[COLOR_POSITIVE_TEXT]で[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_FRIENDLY', '隣接するタイルのユニットのために', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AIR_SWEEP_CAPABLE', '傍受単位をクリアするためにスイープ干せます。', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AMPHIBIOUS', '海からや河川越しに攻撃フルダメージ。', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_BLITZ', '[COLOR_POSITIVE_TEXT]を2回攻撃する事ができる[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_HEAL', '癒すことができる', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPITAL_BONUS', '[COLOR_POSITIVE_TEXT]キャピタル中[ENDCOLOR];単位はさらに遠くなるほどボーナスが落ちる', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPTURE_SHIPS', '[COLOR_POSITIVE_TEXT]キャプチャ[ENDCOLOR]敗北の敵[COLOR_POSITIVE_TEXT]船[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CARGO', '[COLOR_POSITIVE_TEXT] {1_num} [ENDCOLOR]貨物を運ぶことができます', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALLOWS_EMBARKATION', '[COLOR_POSITIVE_TEXT】水タイルに着手することができます[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EVASION_CHANGE', '[COLOR_POSITIVE_TEXT]イベイド[ENDCOLOR]傍受する可能性', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NUM_INTERCEPTION_CHANGE', '余分な[COLOR_POSITIVE_TEXT]傍受は[ENDCOLOR]ターン作ることができる', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_AFTER_ATTACKING', '攻撃は[COLOR_POSITIVE_TEXT] 1移動を使用する[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_FLAT_MOVEMENT_COST', 'すべての動きは、[COLOR_PLAYER_ORANGE_TEXT] 1移動[ENDCOLOR]を使用しています', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_UPGRADE_DISCOUNT', 'updgradeコスト', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_ADMIRAL', '近くの[COLOR_POSITIVE_TEXT]船[ENDCOLOR]の戦闘力を向上させる', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL', '近くの[COLOR_POSITIVE_TEXT]陸上ユニットの戦闘力を向上させる[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_MOVEMENT', '彼らは[COLOR_POSITIVE_TEXT]スタック[ENDCOLOR]ターンを開始した場合、[COLOR_POSITIVE_TEXT]グレート将軍は[ENDCOLOR]本機の割合で移動する', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_RATE', '大将軍の作成率', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_HPHEALED_IF_DESTROY_ENEMY', '[COLOR_POSITIVE_TEXT】非野蛮人のユニットを殺すから[ENDCOLOR] {1_num}健康を癒す', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_IGNORE_TERRAIN_COST', '地形コストを無視します', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INDIRECT_FIRE', '障害物を[COLOR_POSITIVE_TEXT]攻撃することができます[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INSTA_HEAL', '[COLOR_POSITIVE_TEXT]ヒール{1_num}健康が[ENDCOLOR] [NEWLINE] [COLOR_NEGATIVE_TEXT]即決[ENDCOLOR]プロモーションを選択するには、この機会に', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPT_CHANCE_CHANGE', '[COLOR_POSITIVE_TEXT]インターセプト[ENDCOLOR]航空機のチャンス。', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALWAYS_HEAL', '攻撃と移動すると、治癒が妨げられることはありません', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MOUNTAIN_PASS', '[COLOR_POSITIVE_TEXT]山脈[ENDCOLOR]上を通過するが、山に[ENDCOLOR]そのターンを終了する[COLOR_NEGATIVE_TEXT]場合は、ダメージを受けることができます', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_IMPASSABLE', '[COLOR_POSITIVE_TEXT]氷と山の間を移動することができます[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MUST_SET_UP_TO_RANGED_ATTACK', '遠隔攻撃をセットアップする必要があります', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_CAPTURE', '都市をキャプチャすることができません。', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_DEFENSE_BONUS', 'いいえ守備地形ボーナスん', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_MELEE_ATTACK', '攻撃乱闘することはできません', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_UNIT_ATTACK', '攻撃できない[COLOR_NEGATIVE_TEXT]ユニット[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_PARADROP', 'ことができます[COLOR_POSITIVE_TEXT] Paradrop [ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY', '[COLOR_POSITIVE_TEXT]ライバルの領域に入ることができます[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY_FAITH', '{PROMOTION_UNWELCOME_EVANGELIST_HELP}', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPTION_COMBAT_MODIFIER', '[COLOR_POSITIVE_TEXT]強いインターセプト[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WEAK_RANGED', '[COLOR_NEGATIVE_TEXT]地上や船舶[ENDCOLOR] VS攻撃', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_MOD', 'とき[COLOR_POSITIVE_TEXT] [ENDCOLOR]フレンドリー軍事ユニットに隣接', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_EMBARKED', 'とき[COLOR_POSITIVE_TEXT]乗り出し[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_FLANKING', '[COLOR_POSITIVE_TEXT]フランキングするとき[ENDCOLOR]', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WITH_GREAT_GENERAL', '[COLOR_POSITIVE_TEXT]と同じタイルにある大将軍[ENDCOLOR]。', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EXTRA_WITHDRAWAL', '近接攻撃から撤退するチャンス', '', '');
+/*プロモーション名*/
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_FIGHTER', 'ボーナスファイターズVS（50）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_HELICOPTER', 'ヘリコプターVSボーナス（100）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_TANK', '戦車VSボーナス（100）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', '北極パワー', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', '防衛上のペナルティ（50）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', '防衛上のペナルティ（50）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DESERT_POWER', '砂漠のパワー', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKED_DEFENSE', '着手防衛（100）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_FOREIGN_LANDS', '外国ボーナス（20）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP', 'AIのハンディキャップ', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_1', 'AIハンディキャップI', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_2', 'AIハンディキャップII', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HILL_FIGHTER', 'ヒルファイター', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', '傭兵', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MOUNTED_PENALTY', 'マウントされたペナルティVS（50）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NAVAL_PENALTY', '船を攻撃ペナルティ（50）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT', '新ユニット', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT_HELP', '新ユニット', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SEE_INVISIBLE_SUBMARINE', '潜水艦を見ることができます', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_INTERCEPTION_HELP', '[COLOR_POSITIVE_TEXT]航空ユニット[ENDCOLOR]を傍受する[ICON_AIR]確率（％）', '', '');
+REPLACE INTO Language_JA_JP (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_WEAK_RANGED', '地上攻撃ペナルティ（50）', '', '');
+
+
+
+UPDATE LoadedFile SET Value=1, JA_JP=1 Where Type='Text_TW_PromotionStats.sql';

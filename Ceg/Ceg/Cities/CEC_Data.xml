@@ -155,7 +155,7 @@
 		</Update>		
 		<Update>
 			<Where Name="TRADE_ROUTE_BASE_GOLD"/>
-			<Set Value="500"/>
+			<Set Value="1000"/>
 			<!-- -130 -->
 		</Update>
 		<Update>
@@ -165,7 +165,7 @@
 		</Update>
 		<Update>
 			<Where Name="TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER"/>
-			<Set Value="50"/>
+			<Set Value="25"/>
 			<!-- 120 -->
 		</Update>
 		<Update>
@@ -180,12 +180,12 @@
 		</Update>
 		<Update>
 			<Where Name="PUPPET_SCIENCE_MODIFIER" />
-			<Set Value="-50" />
+			<Set Value="-25" />
 			<!-- -25 -->
 		</Update>
 		<Update>
 			<Where Name="PUPPET_CULTURE_MODIFIER" />
-			<Set Value="-25" />
+			<Set Value="-0" />
 			<!-- -25 -->
 		</Update>
 		<Update>

@@ -385,5 +385,7 @@ DELETE FROM Technology_Flavors_Human;
 
 	--UPDATE Technology_Flavors_Human SET Flavor = POWER( ROUND(LOG(Flavor)/LOG(2)), 1 ) -- Sqlite does not have power or log functions?!
 
+	DELETE FROM Technology_Flavors WHERE TechType IS NULL;
+	DELETE FROM Technology_Flavors_Human WHERE TechType IS NULL;
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_Flavor_Techs.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CAT_AI_Flavors_CEAI_Techs.sql';

@@ -13,4 +13,160 @@
 			<Value>0</Value>
 		</Row>
 	</Cep>
+	
+	<!-- Copy of Worlds Table -->
+	<Table name="CepWorlds">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Description" type="text"/>
+		<Column name="Help" type="text"/>
+		<Column name="DefaultPlayers" type="integer"/>
+		<Column name="DefaultMinorCivs" type="integer"/>
+		<Column name="FogTilesPerBarbarianCamp" type="integer"/>
+		<Column name="NumNaturalWonders" type="integer"/>
+		<Column name="UnitNameModifier" type="integer"/>
+		<Column name="TargetNumCities" type="integer"/>
+		<Column name="NumFreeBuildingResources" type="integer"/>
+		<Column name="BuildingClassPrereqModifier" type="integer"/>
+		<Column name="MaxConscriptModifier" type="integer"/>
+		<Column name="GridWidth" type="integer"/>
+		<Column name="GridHeight" type="integer"/>
+		<Column name="MaxActiveReligions" type="integer"/>
+		<Column name="TerrainGrainChange" type="integer"/>
+		<Column name="FeatureGrainChange" type="integer"/>
+		<Column name="ResearchPercent" type="integer"/>
+		<Column name="NumCitiesUnhappinessPercent" type="integer"/>
+		<Column name="NumCitiesPolicyCostMod" type="integer"/>
+		<Column name="NumCitiesTechCostMod" type="integer"/>
+		<Column name="AdvancedStartPointsMod" type="integer"/>
+		<Column name="EstimatedNumCities" type="integer"/>
+		<Column name="PortraitIndex" type="integer" default="-1"/>
+		<Column name="IconAtlas" type="text" default="NULL" reference="IconTextureAtlases(Atlas)"/>
+		
+		<!-- Custom Worlds Columns -->
+		<Column name="AISearchRange" type="integer" default="0"/>
+		<Column name="ResourceMod" type="integer" default="100"/>
+	</Table>
+	
+	<!-- Copy of GameSpeeds Table -->
+	<Table name="CepGameSpeeds">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Description" type="text"/>
+		<Column name="Help" type="text"/>
+		<Column name="DealDuration" type="integer" default="0"/>
+		<Column name="GrowthPercent" type="integer" default="0"/>
+		<Column name="TrainPercent" type="integer" default="0"/>
+		<Column name="ConstructPercent" type="integer" default="0"/>
+		<Column name="CreatePercent" type="integer" default="0"/>
+		<Column name="ResearchPercent" type="integer" default="0"/>
+		<Column name="GoldPercent" type="integer" default="0"/>
+		<Column name="GoldGiftMod" type="integer" default="0"/>
+		<Column name="BuildPercent" type="integer" default="0"/>
+		<Column name="ImprovementPercent" type="integer" default="0"/>
+		<Column name="GreatPeoplePercent" type="integer" default="0"/>
+		<Column name="CulturePercent" type="integer" default="0"/>
+		<Column name="FaithPercent" type="integer" default="0"/>
+		<Column name="BarbPercent" type="integer" default="0"/>
+		<Column name="FeatureProductionPercent" type="integer" default="0"/>
+		<Column name="UnitDiscoverPercent" type="integer" default="0"/>
+		<Column name="UnitHurryPercent" type="integer" default="0"/>
+		<Column name="UnitTradePercent" type="integer" default="0"/>
+		<Column name="GoldenAgePercent" type="integer" default="0"/>
+		<Column name="HurryPercent" type="integer" default="0"/>
+		<Column name="InflationPercent" type="integer" default="0"/>
+		<Column name="InflationOffset" type="integer" default="0"/>
+		<Column name="ReligiousPressureAdjacentCity" type="integer" default="0"/>
+		<Column name="VictoryDelayPercent" type="integer" default="0"/>
+		<Column name="MinorCivElectionFreqMod" type="integer" default="0"/>
+		<Column name="OpinionDurationPercent" type="integer" default="0"/>
+		<Column name="SpyRatePercent" type="integer" default="0"/>
+		<Column name="PeaceDealDuration" type="integer" default="0"/>
+		<Column name="RelationshipDuration" type="integer" default="0"/>
+		<Column name="LeaguePercent" type="integer" default="0"/>
+		<Column name="PortraitIndex" type="integer" default="-1"/>
+		<Column name="IconAtlas" type="text" default="NULL" reference="IconTextureAtlases(Atlas)"/>
+	</Table>
+	
+	<!-- Copy of HandicapInfos Table -->
+	<Table name="CepHandicapInfos">
+		<Column name="ID" type="integer" primarykey="true" autoincrement="true"/>
+		<Column name="Type" type="text" notnull="true" unique="true"/>
+		<Column name="Description" type="text"/>
+		<Column name="Help" type="text"/>
+		<Column name="StartingLocPercent" type="integer" default="0"/>
+		<Column name="AdvancedStartPointsMod" type="integer" default="0"/>
+		<Column name="StartingPolicyPoints" type="integer" default="0"/>
+		<Column name="HappinessDefault" type="integer" default="0"/>
+		<Column name="ExtraHappinessPerLuxury" type="integer" default="0"/>
+		<Column name="NumCitiesUnhappinessMod" type="integer" default="0"/>
+		<Column name="PopulationUnhappinessMod" type="integer" default="0"/>
+		<Column name="Gold" type="integer" default="0"/>
+		<Column name="GoldFreeUnits" type="integer" default="0"/>
+		<Column name="ProductionFreeUnits" type="integer" default="0"/>
+		<Column name="ProductionFreeUnitsPerCity" type="integer" default="0"/>
+		<Column name="ProductionFreeUnitsPopulationPercent" type="integer" default="0"/>
+		<Column name="RouteCostPercent" type="integer" default="0"/>
+		<Column name="UnitCostPercent" type="integer" default="0"/>
+		<Column name="BuildingCostPercent" type="integer" default="0"/>
+		<Column name="ResearchPercent" type="integer" default="0"/>
+		<Column name="PolicyPercent" type="integer" default="0"/>
+		<Column name="ImprovementCostPercent" type="integer" default="0"/>
+		<Column name="CityProductionNumOptionsConsidered" type="integer" default="0"/>
+		<Column name="TechNumOptionsConsidered" type="integer" default="0"/>
+		<Column name="PolicyNumOptionsConsidered" type="integer" default="0"/>
+		<Column name="InflationPercent" type="integer" default="100"/>
+		<Column name="FreeCulturePerTurn" type="integer" default="0"/>
+		<Column name="AttitudeChange" type="integer" default="0"/>
+		<Column name="NoTechTradeModifier" type="integer" default="0"/>
+		<Column name="TechTradeKnownModifier" type="integer" default="0"/>
+		<Column name="BarbCampGold" type="integer" default="0"/>
+		<Column name="BarbSpawnMod" type="integer" default="0"/>
+		<Column name="BarbarianBonus" type="integer" default="0"/>
+		<Column name="AIBarbarianBonus" type="integer" default="0"/>
+		<Column name="EarliestBarbarianReleaseTurn" type="integer" default="0"/>
+		<Column name="BarbarianLandTargetRange" type="integer" default="0"/>
+		<Column name="BarbarianSeaTargetRange" type="integer" default="0"/>
+		<Column name="StartingDefenseUnits" type="integer" default="0"/>
+		<Column name="StartingWorkerUnits" type="integer" default="0"/>
+		<Column name="StartingExploreUnits" type="integer" default="0"/>
+		<Column name="AIStartingUnitMultiplier" type="integer" default="0"/>
+		<Column name="AIStartingDefenseUnits" type="integer" default="0"/>
+		<Column name="AIStartingWorkerUnits" type="integer" default="0"/>
+		<Column name="AIStartingExploreUnits" type="integer" default="0"/>
+		<Column name="AIDeclareWarProb" type="integer" default="0"/>
+		<Column name="AIWorkRateModifier" type="integer" default="0"/>
+		<Column name="AIUnhappinessPercent" type="integer" default="0"/>
+		<Column name="AIGrowthPercent" type="integer" default="0"/>
+		<Column name="AITrainPercent" type="integer" default="0"/>
+		<Column name="AIWorldTrainPercent" type="integer" default="0"/>
+		<Column name="AIConstructPercent" type="integer" default="0"/>
+		<Column name="AIWorldConstructPercent" type="integer" default="0"/>
+		<Column name="AICreatePercent" type="integer" default="0"/>
+		<Column name="AIWorldCreatePercent" type="integer" default="0"/>
+		<Column name="AIBuildingCostPercent" type="integer" default="0"/>
+		<Column name="AIUnitCostPercent" type="integer" default="0"/>
+		<Column name="AIUnitSupplyPercent" type="integer" default="0"/>
+		<Column name="AIUnitUpgradePercent" type="integer" default="0"/>
+		<Column name="AIInflationPercent" type="integer" default="100"/>
+		<Column name="AIPerEraModifier" type="integer" default="0"/>
+		<Column name="AIAdvancedStartPercent" type="integer" default="0"/>
+		<Column name="AIFreeXP" type="integer" default="0"/>
+		<Column name="AIFreeXPPercent" type="integer" default="0"/>
+		<Column name="PortraitIndex" type="integer" default="-1"/>
+		<Column name="IconAtlas" type="text" default="NULL" reference="IconTextureAtlases(Atlas)"/>
+		
+		<!-- Custom Worlds Columns -->
+		<Column name="AIFreeXPPerEra" type="integer" default="0"/>
+		<Column name="AIFreeXPPerTurn" type="variant" default="0"/>
+		<Column name="AIFreeXPMax" type="integer" default="0"/>
+		<Column name="AIFreePromotion" type="text"/>
+		<Column name="AIResearchPercent" type="variant" default="0"/>
+		<Column name="AIResearchPercentPerEra" type="variant" default="0"/>
+		<Column name="AIProductionPercentPerEra" type="variant" default="0"/>
+		<Column name="AIGold" type="integer" default="0"/>
+		<Column name="AISearchRange" type="integer" default="0"/>
+		<Column name="AICapitalYieldPeaceful" type="integer" default="0"/>
+		<Column name="AICapitalYieldMilitaristic" type="integer" default="0"/>
+	</Table>
 </GameData>

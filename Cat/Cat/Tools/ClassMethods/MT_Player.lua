@@ -31,11 +31,58 @@ end
 
 ---------------------------------------------------------------------
 function PlayerClass.GetCivName(player)
+	if not player:HasMet(Players[Game.GetActivePlayer()]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	end
 	if player:IsMinorCiv() then
 		return Locale.ConvertTextKey(GameInfo.MinorCivilizations[player:GetMinorCivType()].Description)
 	end
 	local civInfo = GameInfo.Civilizations[player:GetCivilizationType()]			
 	return (Locale.ConvertTextKey(civInfo.Description))
+end
+
+function CivName(player)
+	return player:GetCivName()
+end
+
+---------------------------------------------------------------------
+function PlayerClass.GetCivName(player)
+	if not player:HasMet(Players[Game.GetActivePlayer()]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	end
+	if player:IsMinorCiv() then
+		return Locale.ConvertTextKey(GameInfo.MinorCivilizations[player:GetMinorCivType()].Description)
+	end
+	local civInfo = GameInfo.Civilizations[player:GetCivilizationType()]			
+	return (Locale.ConvertTextKey(civInfo.Description))
+end
+
+function CivName(player)
+	return player:GetCivName()
+end
+
+---------------------------------------------------------------------
+function PlayerClass.GetLeaderName(player)
+	if player:GetID() == Game.GetActivePlayer() then
+		return Locale.ConvertTextKey("TXT_KEY_YOU")
+	elseif not player:HasMet(Players[Game.GetActivePlayer]) then
+		return Locale.ConvertTextKey("TXT_KEY_UNMET_PLAYER")
+	elseif player:IsHuman() then
+		local playerName = player:GetNickName()
+		if playerName and playerName ~= "" then
+			return playerName
+		end
+	end
+	local playerName = PreGame.GetLeaderName(player:GetID())
+	if playerName and playerName ~= "" then
+		return Locale.ConvertTextKey( playerName )
+	end
+	
+	return Locale.ConvertTextKey( GameInfo.Leaders[player:GetLeaderType()].Description )
+end
+
+function LeaderName(player)
+	return player:GetLeaderName()
 end
 
 ---------------------------------------------------------------------
@@ -354,17 +401,17 @@ end
 --
 function PlayerClass.GetPersonalityInfo(player)
 	local leaderInfo = GameInfo.Leaders[player:GetLeaderType()]
+	local personality = GameInfo.Personalities.PERSONALITY_DIPLOMAT
+
 	if not leaderInfo then
 		log:Error("%s is not a leader", player:GetName())
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
-	elseif not leaderInfo.Personality then
-		log:Error("%s has no personality", player:GetName())
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
-	elseif not GameInfo.Personalities[leaderInfo.Personality] then
+	elseif not leaderInfo.Personality or not GameInfo.Personalities[leaderInfo.Personality] then
 		log:Error("%s %s is not a personality type", player:GetName(), leaderInfo.Personality)
-		return GameInfo.Personalities.PERSONALITY_DIPLOMAT
+	else
+		personality = GameInfo.Personalities[leaderInfo.Personality]
 	end
-	return GameInfo.Personalities[leaderInfo.Personality]
+
+	return personality
 end
 
 ---------------------------------------------------------------------
@@ -432,7 +479,11 @@ function PlayerClass.GetUniqueUnitID(player, itemClass)
 	if civType ~= "CIVILIZATION_MINOR" and civType ~= "CIVILIZATION_BARBARIAN" then
 		local query = string.format("CivilizationType = '%s' AND UnitClassType = '%s'", civType, itemClass)
 		for itemInfo in GameInfo.Civilization_UnitClassOverrides(query) do
-			itemType = itemInfo.UnitType
+			if GameInfo.Units[itemInfo.UnitType] then
+				itemType = itemInfo.UnitType
+			else
+				log:Error("GetUniqueUnitID: %s is not a valid unit type!", itemType)
+			end
 			break
 		end
 	end
@@ -819,6 +870,7 @@ function PlayerClass.InitUnitClass(player, unititemClass, plot, exp)
 	local newUnit = player:InitUnit( player:GetUniqueUnitID(unititemClass), plot:GetX(), plot:GetY() )
 	if exp then
 		newUnit:ChangeExperience(exp)
+		newUnit:SetPromotionReady(newUnit:GetExperience() >= newUnit:ExperienceNeeded())
 	end
 	return newUnit
 end
@@ -855,8 +907,8 @@ function PlayerClass.IsMilitaristicLeader(player)
 	if player:IsMinorCiv() then
 		return player:GetMinorCivTrait() == MinorCivTraitTypes.MINOR_CIV_TRAIT_MILITARISTIC
 	end
-	return GameInfo.Leaders[player:GetLeaderType()].Boldness >= 5
-	--[[
+	--return GameInfo.Leaders[player:GetLeaderType()].Boldness >= 5
+	--
 	local personality = player:GetPersonalityInfo().Type
 	return (personality == "PERSONALITY_CONQUEROR" or personality == "PERSONALITY_COALITION")
 	--]]
@@ -896,7 +948,7 @@ function PlayerClass.EverAtWarWithHuman(player)
 end
 
 ---------------------------------------------------------------------
---[[ player:Is
+--[[ player:HasMet
 
 ]]
 function PlayerClass.HasMet(player, otherPlayer)

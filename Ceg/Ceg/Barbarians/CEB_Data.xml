@@ -5,7 +5,7 @@
 			<Value>5</Value>
 		</Row>
 		<Row Type="BARBARIAN_HEAL_SEA">
-			<Value>5</Value>
+			<Value>2</Value>
 		</Row>
 		<Row Type="BARBARIAN_HEAL_CAMP">
 			<Value>10</Value>
@@ -55,7 +55,7 @@
 		</Update>
 		<Update>
 			<Where Name="BARBARIAN_NAVAL_UNIT_START_TURN_SPAWN" />
-			<Set Value="10" />
+			<Set Value="15" />
 			<!-- 30 -->
 		</Update>
 

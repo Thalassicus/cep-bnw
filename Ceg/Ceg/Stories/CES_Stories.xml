@@ -2,13 +2,13 @@
 <GameData>
 	<Eras>
 		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_MODERN"/>		<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_POSTMODERN"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_FUTURE"/>		<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
 	</Eras>
 	<Triggers>
 		<Row><Type>COMMERCIAL_FARMING</Type>		<ImprovementType>IMPROVEMENT_FARM</ImprovementType>				</Row>
@@ -139,8 +139,8 @@
 		<Row><Type>RENOWNED_WARRIOR_1</Type>		 <Action>Game.TrigAction.PopularWarrior1</Action>      	   <GoldCost>100</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>	        <Order>1</Order><TriggerType>RENOWNED_WARRIOR</TriggerType></Row>
 		<Row><Type>RENOWNED_WARRIOR_2</Type>		 <Action>Game.TrigAction.PopularWarrior2</Action>     	   <GoldCost>100</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>2</Order><TriggerType>RENOWNED_WARRIOR</TriggerType></Row>
 		<Row><Type>RENOWNED_WARRIOR_3</Type>		 <Action>Game.TrigAction.PopularWarrior3</Action>      	   <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>3</Order><TriggerType>RENOWNED_WARRIOR</TriggerType></Row>
-		<Row><Type>RENOWNED_ARCHER_1</Type>			 <Action>Game.TrigAction.PopularArcher1</Action>      	   <GoldCost>100</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>1</Order><TriggerType>RENOWNED_ARCHER</TriggerType></Row>
-		<Row><Type>RENOWNED_ARCHER_2</Type>			 <Action>Game.TrigAction.PopularArcher2</Action>     	   <GoldCost>100</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>2</Order><TriggerType>RENOWNED_ARCHER</TriggerType></Row>
+		<Row><Type>RENOWNED_ARCHER_1</Type>			 <Action>Game.TrigAction.PopularArcher1</Action>      	   <GoldCost>50</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>1</Order><TriggerType>RENOWNED_ARCHER</TriggerType></Row>
+		<Row><Type>RENOWNED_ARCHER_2</Type>			 <Action>Game.TrigAction.PopularArcher2</Action>     	   <GoldCost>50</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>2</Order><TriggerType>RENOWNED_ARCHER</TriggerType></Row>
 		<Row><Type>RENOWNED_ARCHER_3</Type>			 <Action>Game.TrigAction.PopularArcher3</Action>      	   <GoldCost>  0</GoldCost><Condition>Game.TrigCondition.IsNotLevel3</Condition>			<Order>3</Order><TriggerType>RENOWNED_ARCHER</TriggerType></Row>
 		
 		<!-- Citystates -->

@@ -10,6 +10,40 @@
 			<Set TechPrereq="NULL" />
 		</Update>
 	</Processes>
+	<Eras>
+		<Update>
+			<Where Type="ERA_ANCIENT"/>
+			<Set ResearchAgreementCost="100" />
+		</Update>
+		<Update>
+			<Where Type="ERA_CLASSICAL"/>
+			<Set ResearchAgreementCost="150" />
+		</Update>
+		<Update>
+			<Where Type="ERA_MEDIEVAL"/>
+			<Set ResearchAgreementCost="200" />
+		</Update>
+		<Update>
+			<Where Type="ERA_RENAISSANCE"/>
+			<Set ResearchAgreementCost="250" />
+		</Update>
+		<Update>
+			<Where Type="ERA_INDUSTRIAL"/>
+			<Set ResearchAgreementCost="300" />
+		</Update>
+		<Update>
+			<Where Type="ERA_MODERN"/>
+			<Set ResearchAgreementCost="350" />
+		</Update>
+		<Update>
+			<Where Type="ERA_POSTMODERN"/>
+			<Set ResearchAgreementCost="400" />
+		</Update>
+		<Update>
+			<Where Type="ERA_FUTURE"/>
+			<Set ResearchAgreementCost="400" />
+		</Update>
+	</Eras>
 	<Technologies>
 		<!--
 		<Update>
@@ -40,7 +74,6 @@
 		<Update>
 			<Where Type="TECH_CURRENCY" />
 			<Set OpenBordersTradingAllowed="1"
-				 ResearchAgreementTradingAllowed="0"
 				 />
 		</Update>
 		<Update>

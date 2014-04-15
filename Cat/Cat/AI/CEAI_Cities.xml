@@ -24,19 +24,24 @@
 	</Building_YieldChanges>
 	<Defines>
 		<Update>
+			<Where name="AI_STRATEGY_MINIMUM_SETTLE_FERTILITY" />
+			<Set Value="5000" />
+			<!-- 20000 -->
+		</Update>
+		<Update>
 			<Where name="SETTLER_EVALUATION_DISTANCE" />
 			<Set Value="30" />
-			<!-- 20 -->
+			<!-- 24 -->
 		</Update>
 		<Update>
 			<Where name="SETTLER_DISTANCE_DROPOFF_MODIFIER" />
 			<Set Value="50" />
-			<!-- 75 -->
+			<!-- 67 -->
 		</Update>
 		<Update>
 			<Where name="SETTLER_BUILD_ON_COAST_PERCENT" />
-			<Set Value="50" />
-			<!-- 25 -->
+			<Set Value="100" />
+			<!-- 40 -->
 		</Update>
 		<Update>
 			<Where name="BUILD_ON_RESOURCE_PERCENT" />
@@ -66,7 +71,7 @@
 		<Update>
 			<Where name="SETTLER_GOLD_MULTIPLIER" />
 			<Set Value="5" />
-			<!-- 2 -->
+			<!-- 3 -->
 		</Update>
 		<Update>
 			<Where name="SETTLER_SCIENCE_MULTIPLIER" />
@@ -85,7 +90,7 @@
 		</Update>
 		<Update>
 			<Where name="ALREADY_OWNED_STRATEGIC_VALUE" />
-			<Set Value="5" />
+			<Set Value="0" />
 			<!-- -1000 -->
 		</Update>
 	</Defines>

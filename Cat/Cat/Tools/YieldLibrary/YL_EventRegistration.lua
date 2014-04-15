@@ -5,6 +5,7 @@
 
 --include("CustomNotification.lua")
 include("YieldLibrary.lua")
+include("MT_Events.lua")
 
 local log = Events.LuaLogger:New()
 log:SetLevel("INFO")
@@ -17,11 +18,17 @@ LuaEvents.DirtyYieldCacheAll			.Add(ResetYieldCacheAll)
 LuaEvents.NewPolicy						.Add(ResetYieldCacheAll)
 LuaEvents.NewTech						.Add(ResetYieldCacheAll)
 LuaEvents.PlotChanged					.Add(ResetYieldCacheAll)
+LuaEvents.BuildingConstructed			.Add(ResetYieldCacheAll)
+Events.SpecificCityInfoDirty			.Add(ResetYieldCacheCityRedirect)
+--Events.SerialEventCityInfoDirty			.Add(ResetYieldCacheAll)
+Events.SerialEventCityPopulationChanged	.Add(ResetYieldCacheAll)
 LuaEvents.ActivePlayerTurnEnd_Player	.Add(ResetYieldCacheAll)
---LuaEvents.ActivePlayerTurnEnd_City		.Add(City_UpdateModdedYields)
+LuaEvents.ActivePlayerTurnEnd_City		.Add(City_UpdateModdedYields)
 --LuaEvents.ActivePlayerTurnStart_Player	.Add(PlayerClass.UpdateModdedHappiness)
 --LuaEvents.ActivePlayerTurnEnd_Player	.Add(PlayerClass.UpdateModdedYieldsEnd)
 --LuaEvents.ActivePlayerTurnStart_Player	.Add(PlayerClass.UpdateModdedYieldsStart)
+
+
 
 --[[
 Events.SerialEventGameDataDirty.Add(function()

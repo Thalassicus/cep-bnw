@@ -7,17 +7,6 @@
 CREATE TABLE IF NOT EXISTS Cep(Type text NOT NULL UNIQUE, Value);
 INSERT INTO Cep (Type, Value) VALUES ('SkipFile', 1);
 
-CREATE TABLE IF NOT EXISTS Cep_Language_EN_US (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_DE_DE (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_ES_ES (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_FR_FR (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_IT_IT (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_JA_JP (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_PL_PL (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_RU_RU (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Cep_Language_ZH_CN (DateModified integer, Tag text, Text text, Gender text, Plurality text);
-CREATE TABLE IF NOT EXISTS Language_ZH_CN (ID integer PRIMARY KEY, Tag text, Text text, Gender text, Plurality text);
-
 CREATE TABLE IF NOT EXISTS
 	Personalities (
 	Type			text NOT NULL UNIQUE
@@ -154,6 +143,13 @@ CREATE TABLE IF NOT EXISTS
 	TechType		text REFERENCES Technologies(Type),
 	UnitClassType	text REFERENCES UnitClasses(Type),
 	PromotionType	text REFERENCES UnitPromotions(Type)
+);
+	
+CREATE TABLE IF NOT EXISTS
+	Trait_FreeUnitFromCapitalBuilding (
+	TraitType		text REFERENCES Traits(Type),
+	BuildingClass	text REFERENCES BuildingClasses(Type),
+	UnitClass		text REFERENCES UnitClasses(Type)
 );
 	
 CREATE TABLE IF NOT EXISTS
@@ -402,6 +398,7 @@ ALTER TABLE Flavors			ADD PurchasePriority					variant default 0;
 
 ALTER TABLE GameOptions		ADD Reverse								boolean;
 
+--ALTER TABLE changes to CepHandicapInfos in CAT_Info.xml
 ALTER TABLE HandicapInfos	ADD AIFreeXPPerEra						integer default 0;
 ALTER TABLE HandicapInfos	ADD AIFreeXPPerTurn						variant default 0;
 ALTER TABLE HandicapInfos	ADD AIFreeXPMax							integer default 0;
@@ -448,6 +445,7 @@ ALTER TABLE Policies		ADD CityResistTimeMod					integer default 0;
 ALTER TABLE Policies		ADD CitystateCaptureYieldTurns			integer default 0;
 ALTER TABLE Policies		ADD RevealMap							boolean;
 ALTER TABLE Policies		ADD RevealMinorCapitals					boolean;
+ALTER TABLE Policies		ADD MovePurchasedUnits					boolean;
 
 ALTER TABLE Resources		ADD NumPerTerritory						variant default 0;
 ALTER TABLE Resources		ADD MutuallyExclusiveGroup				integer default -1;
@@ -499,6 +497,7 @@ ALTER TABLE UnitPromotions	ADD RankList							text;
 ALTER TABLE UnitPromotions	ADD RankNumber							integer default 0;
 ALTER TABLE UnitPromotions	ADD Class								text default 'PROMOTION_CLASS_PERSISTENT';
 
+--ALTER TABLE changes to CepWorlds in CAT_Info.xml
 ALTER TABLE Worlds			ADD AISearchRange						integer default 0;
 ALTER TABLE Worlds			ADD ResourceMod							integer default 100;
 UPDATE Worlds SET ResourceMod = 100;
@@ -539,4 +538,4 @@ UPDATE Beliefs SET ListPriority = 999;
 --
 -- Done
 --
-UPDATE LoadedFile SET Value=1 WHERE Type='MT_AlterTables.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='CAT_AlterTables.sql';

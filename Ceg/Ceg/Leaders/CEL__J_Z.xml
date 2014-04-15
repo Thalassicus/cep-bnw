@@ -514,17 +514,16 @@
 		</Row>
 		<Row>
 			<Type>BUILDING_BARBARY_PORT</Type>
-			<BuildingClass>BUILDINGCLASS_HARBOR</BuildingClass>
-			<Cost>120</Cost>
-			<GoldMaintenance>3</GoldMaintenance>
-			<PrereqTech>TECH_COMPASS</PrereqTech>
+			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
+			<Cost>75</Cost>
+			<GoldMaintenance>0</GoldMaintenance>
+			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<Description>TXT_KEY_BUILDING_BARBARY_PORT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BARBARY_PORT_PEDIA</Civilopedia>
-			<ArtDefineTag>HARBOR</ArtDefineTag>
+			<ArtDefineTag>LIGHTHOUSE</ArtDefineTag>
 			<Water>true</Water>
-			<AllowsWaterRoutes>true</AllowsWaterRoutes>
 			<MinAreaSize>10</MinAreaSize>
-			<ConquestProb>66</ConquestProb>
+			<ConquestProb>100</ConquestProb>
 			<HurryCostModifier>25</HurryCostModifier>
 			<ArtInfoEraVariation>true</ArtInfoEraVariation>
 			<DisplayPosition>16</DisplayPosition>
@@ -543,7 +542,7 @@
 	<Civilization_BuildingClassOverrides>
 		<Row>
 			<CivilizationType>CIVILIZATION_OTTOMAN</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 			<BuildingType>BUILDING_BARBARY_PORT</BuildingType>
 		</Row>
 	</Civilization_BuildingClassOverrides>
@@ -559,7 +558,7 @@
 	<Unit_FreePromotions>
 		<Row>
 			<UnitType>UNIT_OTTOMAN_JANISSARY</UnitType>
-			<PromotionType>PROMOTION_MARCH</PromotionType>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
 		</Row>
 		<Update>
 			<Where UnitType="UNIT_OTTOMAN_JANISSARY" PromotionType="PROMOTION_HEAL_IF_DESTROY_ENEMY" />
@@ -645,6 +644,16 @@
 
 	<!--	Portugal
 	-->
+	<!--
+	<Improvements>
+		<Update>
+			<Where Type="IMPROVEMENT_FEITORIA" />
+			<Set OutsideBorders="1"
+				 OnlyCityStateTerritory="0"
+				 />
+		</Update>
+	</Improvements>
+	-->
 
 
 
@@ -711,7 +720,7 @@
 	<Unit_FreePromotions>
 		<Row>
 			<UnitType>UNIT_ROMAN_LEGION</UnitType>
-			<PromotionType>PROMOTION_DOUBLE_WORK_SPEED</PromotionType>
+			<PromotionType>CONSTRUCT_ROADS_FORTS</PromotionType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_ROMAN_LEGION</UnitType>
@@ -817,14 +826,14 @@
 	<Building_YieldChanges>
 		<Update>
 			<Where BuildingType="BUILDING_WAT" YieldType="YIELD_CULTURE" />
-			<Set Yield="2"/>
+			<Set Yield="3"/>
 		</Update>
 	</Building_YieldChanges>
 	<Building_YieldModifiers>
 		<Row>
 			<BuildingType>BUILDING_WAT</BuildingType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>10</Yield>
+			<Yield>25</Yield>
 		</Row>
 	</Building_YieldModifiers>
 	<Civilization_Start_Region_Avoid>
@@ -916,10 +925,33 @@
 		</Row>
 	</Trait_MovesChangeUnitCombats>
 	-->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_MUD_PYRAMID_MOSQUE" />
+			<Set BuildingClass="BUILDINGCLASS_MARKET"
+				 PrereqTech="TECH_CURRENCY"
+				 Cost="200"
+				 ArtDefineTag="ART_DEF_BUILDING_MARKET"
+				 />
+		</Update>
+	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Delete BuildingType="BUILDING_MUD_PYRAMID_MOSQUE" />
+	</Building_ClassesNeededInCity>
+	<Civilization_BuildingClassOverrides>
+		<Update>
+			<Where BuildingType="BUILDING_MUD_PYRAMID_MOSQUE"/>
+			<Set BuildingClassType="BUILDINGCLASS_SHRINE"/>
+		</Update>
+	</Civilization_BuildingClassOverrides>
 	<Building_YieldChanges>
 		<Update>
+			<Where BuildingType="BUILDING_MUD_PYRAMID_MOSQUE" YieldType="YIELD_FAITH" />
+			<Set Yield="1"/>
+		</Update>
+		<Update>
 			<Where BuildingType="BUILDING_MUD_PYRAMID_MOSQUE" YieldType="YIELD_CULTURE" />
-			<Set Yield="5"/>
+			<Set Yield="2"/>
 		</Update>
 	</Building_YieldChanges>
 	<Unit_FreePromotions>
@@ -1099,7 +1131,7 @@
 			<UnitType>UNIT_SWEDISH_CAROLEAN</UnitType>
 			<PromotionType>PROMOTION_HEAL_IF_DESTROY_ENEMY</PromotionType>
 		</Row>
-		<Delete UnitType="UNIT_SWEDISH_CAROLEAN" PromotionType="PROMOTION_MARCH"/>
+		<Delete UnitType="UNIT_SWEDISH_CAROLEAN" PromotionType="PROMOTION_SUPPLY_I"/>
 	</Unit_FreePromotions>
 
 	<!--	Venice

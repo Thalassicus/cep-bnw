@@ -7,7 +7,7 @@
     <Guid>828b5b4b-7c62-4afb-a43f-034b596ef5e4</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Beta</Stability>
-    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.14.1[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.16[NEWLINE][ENDCOLOR]   Improves the fun and strategic balance of BNW</Teaser>
     <Description>We believe Civilization is a fantastic game, and aim to perfect it while remaining as close to the core experience as possible. We think games should be intuitive to learn, challenging to master, and rewards should match the difficulty to complete tasks. We also believe in finding balanced middle ground between extremes.  We set a high bar for adding new things to the game, and attempt to first improve or replace existing objects when possible.[NEWLINE][NEWLINE]If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE]Requires: Communitas AI and Tools (Cat)[NEWLINE][NEWLINE][NEWLINE]Expansion Pack Parts:[NEWLINE][NEWLINE][ICON_BULLET]Communitas Map[NEWLINE]This map creates several continents with realistic climate, and numerous offshore islands.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas AI and Tools (Cat)[NEWLINE]Expands the AI and mod tools of Civ V: Brave New World. Both the expansion pack and interface changes below require the tools.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Enhanced Gameplay (Ceg)[NEWLINE]Improves the fun and strategic balance of BNW gameplay.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Interface (Cin)[NEWLINE]Improves the visual interface of the game.[NEWLINE][NEWLINE][NEWLINE][NEWLINE]Features - Discuss - Bugs - News - Credits[NEWLINE][NEWLINE]The expansion is a collaboration of work from over 40 main authors, and an incredible community of forumgoers on CivFanatics.com.[NEWLINE][NEWLINE]If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links.[NEWLINE][NEWLINE]Please glance at the Common Checklist, which has important information about using Civ 5 mods.</Description>
     <Authors>[COLOR_CYAN]Thalassicus</Authors>
     <SpecialThanks>Check the readme in the mod folder for credits.</SpecialThanks>
@@ -33,12 +33,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>CEP_Options.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/Language_Start.sql</FileName>
+        <FileName>CEG_Options.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -133,52 +128,52 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Air.xml</FileName>
+        <FileName>UnitPromotions/CEU_Air.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Attributes.xml</FileName>
+        <FileName>UnitPromotions/CEU_Attributes.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Mobile.xml</FileName>
+        <FileName>UnitPromotions/CEU_Mobile.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Other.xml</FileName>
+        <FileName>UnitPromotions/CEU_Other.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Ranged.xml</FileName>
+        <FileName>UnitPromotions/CEU_Ranged.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Ships.xml</FileName>
+        <FileName>UnitPromotions/CEU_Ships.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Soldiers.xml</FileName>
+        <FileName>UnitPromotions/CEU_Soldiers.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_Vanguards.xml</FileName>
+        <FileName>UnitPromotions/CEU_Vanguards.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionGrid.xml</FileName>
+        <FileName>UnitPromotions/CEU_PromotionGrid.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionSwap.xml</FileName>
+        <FileName>UnitPromotions/CEU_PromotionSwap.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -523,6 +518,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Core.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Core.sql</FileName>
       </Action>
       <Action>
@@ -533,7 +533,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Core.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Core.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -568,6 +568,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Armies.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Armies.sql</FileName>
       </Action>
       <Action>
@@ -578,7 +583,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Armies.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Armies.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -613,6 +618,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Barbarians.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Barbarians.sql</FileName>
       </Action>
       <Action>
@@ -623,7 +633,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Barbarians.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Barbarians.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -658,6 +668,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Cities.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Cities.sql</FileName>
       </Action>
       <Action>
@@ -668,7 +683,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Cities.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Cities.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -703,6 +718,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Diplomacy.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Diplomacy.sql</FileName>
       </Action>
       <Action>
@@ -713,7 +733,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Diplomacy.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Diplomacy.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -748,6 +768,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Leaders.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Leaders.sql</FileName>
       </Action>
       <Action>
@@ -758,7 +783,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Leaders.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Leaders.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -793,6 +818,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Policies.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Policies.sql</FileName>
       </Action>
       <Action>
@@ -803,7 +833,57 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Policies.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Policies.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/DE_DE/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/en_US/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/ES_ES/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/FR_FR/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/IT_IT/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/JA_JP/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/PL_PL/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/RU_RU/Promotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/ZH_HANT_HK/Promotions.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -838,6 +918,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/CSD.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/CSD.sql</FileName>
       </Action>
       <Action>
@@ -848,7 +933,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/CSD.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/CSD.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -883,6 +968,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Faith.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Faith.sql</FileName>
       </Action>
       <Action>
@@ -893,7 +983,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Faith.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Faith.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -928,6 +1018,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Research.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Research.sql</FileName>
       </Action>
       <Action>
@@ -938,7 +1033,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Research.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Research.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -973,6 +1068,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Stories.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text\PL_PL\Stories.sql</FileName>
       </Action>
       <Action>
@@ -983,7 +1083,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text\ZH_CN\Stories.sql</FileName>
+        <FileName>Text\ZH_HANT_HK\Stories.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1018,6 +1118,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Terrain.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Terrain.sql</FileName>
       </Action>
       <Action>
@@ -1028,7 +1133,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Terrain.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Terrain.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1063,6 +1168,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/YieldLibrary.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/YieldLibrary.sql</FileName>
       </Action>
       <Action>
@@ -1073,7 +1183,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/YieldLibrary.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/YieldLibrary.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1108,6 +1218,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/TooltipWriter_Tips.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/TooltipWriter_Tips.sql</FileName>
       </Action>
       <Action>
@@ -1118,7 +1233,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TooltipWriter_Tips.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/TooltipWriter_Tips.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1153,6 +1268,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/TooltipWriter_Help.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/TooltipWriter_Help.sql</FileName>
       </Action>
       <Action>
@@ -1163,7 +1283,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/TooltipWriter_Help.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1198,6 +1318,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/AI.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/AI.sql</FileName>
       </Action>
       <Action>
@@ -1208,12 +1333,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Cities.xml</FileName>
+        <FileName>Text/ZH_HANT_HK/AI.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1228,7 +1348,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA__Promotions_End.sql</FileName>
+        <FileName>UnitPromotions/CEU__Promotions_End.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1263,7 +1383,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Armies/Promotions/CEA_PromotionReplace.sql</FileName>
+        <FileName>UnitPromotions/CEU_PromotionReplace.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -1303,6 +1423,81 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Ancient - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Ancient - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Classical - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Classical - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Medieval - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Medieval - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Renaissance - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Renaissance - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Industrial - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Industrial - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Modern - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Modern - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Atomic - Early.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Atomic - Late.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>AI/Flavors/Custom AI Flavors/Information.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/Language_End.sql</FileName>
       </Action>
     </ModActions>
@@ -1324,7 +1519,7 @@
         <Type>InGameUIAddin</Type>
         <Name>CEA_Promotions</Name>
         <Description>CEA_Promotions</Description>
-        <FileName>Armies/Promotions/CEA_Promotions.lua</FileName>
+        <FileName>UnitPromotions/CEU_Promotions.lua</FileName>
       </Content>
       <Content>
         <Type>InGameUIAddin</Type>
@@ -1398,7 +1593,7 @@
     <Folder Include="AI\Flavors" />
     <Folder Include="Armies\" />
     <Folder Include="Armies\Art\" />
-    <Folder Include="Armies\Promotions" />
+    <Folder Include="UnitPromotions" />
     <Folder Include="Barbarians\" />
     <Folder Include="Cities\" />
     <Folder Include="Cities\Buildings\" />
@@ -1418,15 +1613,7 @@
     <Folder Include="Terrain\" />
     <Folder Include="Stories" />
     <Folder Include="Text" />
-    <Folder Include="Text\DE_DE" />
     <Folder Include="Text\en_US" />
-    <Folder Include="Text\ES_ES" />
-    <Folder Include="Text\FR_FR" />
-    <Folder Include="Text\IT_IT" />
-    <Folder Include="Text\JA_JP" />
-    <Folder Include="Text\PL_PL" />
-    <Folder Include="Text\RU_RU" />
-    <Folder Include="Text\ZH_CN" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AI\CEAI_Events.lua">
@@ -1609,55 +1796,55 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Promotions.lua">
+    <Content Include="UnitPromotions\CEU_Promotions.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Air.xml">
+    <Content Include="UnitPromotions\CEU_Air.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Attributes.xml">
+    <Content Include="UnitPromotions\CEU_Attributes.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Mobile.xml">
+    <Content Include="UnitPromotions\CEU_Mobile.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Other.xml">
+    <Content Include="UnitPromotions\CEU_Other.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionGrid.xml">
+    <Content Include="UnitPromotions\CEU_PromotionGrid.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionReplace.sql">
+    <Content Include="UnitPromotions\CEU_PromotionReplace.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA__Promotions_End.sql">
+    <Content Include="UnitPromotions\CEU__Promotions_End.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_PromotionSwap.xml">
+    <Content Include="UnitPromotions\CEU_PromotionSwap.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Ranged.xml">
+    <Content Include="UnitPromotions\CEU_Ranged.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Ships.xml">
+    <Content Include="UnitPromotions\CEU_Ships.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Soldiers.xml">
+    <Content Include="UnitPromotions\CEU_Soldiers.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Armies\Promotions\CEA_Vanguards.xml">
+    <Content Include="UnitPromotions\CEU_Vanguards.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -1889,11 +2076,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Text\FR_FR\Armies.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\FR_FR\Leaders.sql">
+    <Content Include="Text\en_US\Promotions.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -1925,6 +2108,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="Text\en_US\Diplomacy.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="Text\en_US\Faith.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -1941,15 +2128,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Text\Language_End.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\Language_Start.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="CEP_Options.sql">
+    <Content Include="CEG_Options.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -2028,10 +2207,6 @@
     <Content Include="Terrain\NaturalWondersCustomMethods.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\en_US\Cities.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Link_Features.url">
       <SubType>Lua</SubType>

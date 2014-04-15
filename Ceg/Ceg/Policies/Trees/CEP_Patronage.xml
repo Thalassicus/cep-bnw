@@ -51,6 +51,7 @@
 				 GridY="2"
 				 MinorResourceBonus="0"
 				 MinorGreatPeopleAllies="1"
+				 GreatPeopleRateModifier="10"
 				 />
 		</Update>
 		<Update>

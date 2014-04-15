@@ -32,4 +32,4 @@ Then start a new game.
 
 
 
-UPDATE LoadedFile SET Value=1 WHERE Type='Cat_Options.sql';
+UPDATE LoadedFile SET Value=1 WHERE Type='Cin_Options.sql';

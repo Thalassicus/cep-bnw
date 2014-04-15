@@ -3,7 +3,7 @@
 	<Policies>
 		<Update>
 			<Where Type="POLICY_PIETY" />
-			<Set ExtraHappiness="5" />
+			<Set ExtraHappiness="4" />
 		</Update>
 		<Update>
 			<Where Type="POLICY_PIETY_FINISHER" />
@@ -38,7 +38,7 @@
 			<Civilopedia>TXT_KEY_POLICY_TOLERANCE_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_TOLERANCE_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>1</GridX>
+			<GridX>3</GridX>
 			<GridY>1</GridY>
 			<PortraitIndex>43</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -52,12 +52,12 @@
 			<Civilopedia>TXT_KEY_POLICY_MEDITATION_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_MEDITATION_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>3</GridX>
+			<GridX>5</GridX>
 			<GridY>1</GridY>
 			<PortraitIndex>44</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-			<FaithCostModifier>-20</FaithCostModifier>
+			<FaithCostModifier>-33</FaithCostModifier>
 		</Row>
 		<Row>
 			<Type>POLICY_UNITY</Type>
@@ -66,10 +66,10 @@
 			<Civilopedia>TXT_KEY_POLICY_UNITY_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_UNITY_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>5</GridX>
+			<GridX>1</GridX>
 			<GridY>1</GridY>
 			<GoldenAgeTurns>10</GoldenAgeTurns>
-			<GoldenAgeMeterMod>-25</GoldenAgeMeterMod>
+			<GoldenAgeMeterMod>-50</GoldenAgeMeterMod>
 			<PortraitIndex>46</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
@@ -81,7 +81,7 @@
 			<Civilopedia>TXT_KEY_POLICY_INSPIRATION_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_INSPIRATION_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>2</GridX>
+			<GridX>4</GridX>
 			<GridY>2</GridY>
 			<PortraitIndex>45</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -96,7 +96,7 @@
 			<Civilopedia>TXT_KEY_POLICY_CHARITY_PEDIA</Civilopedia>
 			<Help>TXT_KEY_POLICY_CHARITY_HELP</Help>
 			<CultureCost>10</CultureCost>
-			<GridX>4</GridX>
+			<GridX>2</GridX>
 			<GridY>2</GridY>
 			<PortraitIndex>11</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
@@ -130,11 +130,20 @@
 		</Row>
 		-->
 	</Policy_CityYieldChanges>
+	<Policy_BuildingClassCultureChanges>
+		<!--
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+		-->
+	</Policy_BuildingClassCultureChanges>
 	<Policy_CapitalYieldChanges>
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>1</Yield>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 	<Policy_InstantYield>
@@ -158,6 +167,12 @@
 			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
 			<YieldType>YIELD_FAITH</YieldType>
 			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CHARITY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>2</YieldChange>
 		</Row>
 	</Policy_BuildingClassYieldChanges>
 	<Policy_BuildingClassHappiness>
@@ -194,6 +209,11 @@
 	</Policy_BuildingClassHappiness>
 	<Policy_BuildingClassProductionModifiers>
 		<Delete PolicyType="POLICY_PIETY" />
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
 	</Policy_BuildingClassProductionModifiers>
 	<Policy_BuildingClassYieldModifiers>
 		<Row>
@@ -211,6 +231,9 @@
 			<Yield>3</Yield>
 		</Row>
 	</Policy_ImprovementYieldChanges>
+	<Policy_ImprovementCultureChanges>
+		<Delete PolicyType="POLICY_PIETY_FINISHER" />
+	</Policy_ImprovementCultureChanges>
 	<!--<Buildings>
 		<Update>
 			<Where Type="BUILDING_HAGIA_SOPHIA" />

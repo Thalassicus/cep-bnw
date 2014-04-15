@@ -19,6 +19,31 @@ Newer changes are made at the top and the oldest is at the bottom.
 ==================================================================
 
 
+
+
+
+
+
+
+
+*	YieldLibrary Gold Yields - Gold yields should now display from modded sources
+*	Protectionism Policy - Removed extra +10% gold and production from policy
+*	Entrepreneurship Policy - Added free great merchant to policy 
+*	Caravans Policy - Changed from +2 gold to +3 gold per trade route
+*	Wealth Opener Policy - Lowered from +15% gold and production to +10%
+*	Maritime Infrastructure Policy - Added Harbors to yield +2 gold. Updated text to show +3 production per coastal city which the effect was already doing.
+*	Representation Policy - Changed text of the policy to match its effects.
+*	Piety Opener Change - Piety grants +1 culture, +1 faith, double production for shrines. No happiness.
+*	Removed Tech Prereq - Removed Archery as a requirement for Mathematics
+*	Archery Prereq for the Wheel - Archery required for the Wheel tech
+*	Spelling Corrections - Fixed spelling errors on 'recieve' to 'receive'
+*	Typo Correction - Changed the text from Smithy to Smith
+* 	Samurai Update - Changed strength from 37 to 28 for the Samurai unit.
+*	Policy adjustments 3  --  Landed Elite now provides 1 Food per 4 pop in the capital, Spoils of War gives 3x the value of units.
+*	Policy adjustments 2  --  CounterIntelligence doubles anti-spy building production, Secularism increases Science from specialists
+*	Policy adjustments -- Citizenship grants 1 Worker, Cultural Diplomacy gives a 10% boost to Great People production, Ethics now 25% to Tourism
+*	Artistic Genius -- Fixes the Great person rates
+*	Spelling error -- minor hang over from previous spelling fix
 *	Feature tweaks  --  Made reefs & isles negatively affect defense, due to limited manouevrability, and made it possible to see over atolls/isles
 *	Caravansary fix -- Fixes the global caravan change that made the UB variants the same as vanilla
 *	CityView debug  --  Added a DEBUG check into the CityView.lua file

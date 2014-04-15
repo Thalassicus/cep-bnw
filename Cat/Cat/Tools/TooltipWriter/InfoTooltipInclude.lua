@@ -67,7 +67,7 @@ function GetUnitTip(args)
 	-- Optional arguments: hideName, hideGoodFor, hideAbilities, hideCosts
 	
 	if Game == nil then
-		print("GetBuildingTip: Game is nil")
+		print("GetUnitTip: Game is nil")
 		return ""
 	end
 	if not Game.InitializedStats then
@@ -418,7 +418,7 @@ function GetBuildingTip(args)
 	}
 	
 	if Cep.SHOW_GOOD_FOR_BUILDINGS == 1 and showGood and not showName and not showAbil and not showCost then
-		return Game.RemoveExtraNewlines(Game.GetFlavors("Building_Flavors", "BuildingType", objectInfo.Type, 1, true))
+		return Game.RemoveExtraNewlines(Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type, 1, true))
 	end
 
 	if Game.Stats.Buildings[buildingID] == nil then
@@ -473,7 +473,12 @@ function GetBuildingTip(args)
 				textBody = textBody .. "[NEWLINE]----------------"
 			end
 			if Cep.SHOW_GOOD_FOR_BUILDINGS == 1 and showGood then
-				local textFlavors = Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type)
+				local textFlavors = ""
+				if Cep.SHOW_GOOD_FOR_AI_NUMBERS == 1 then
+					textFlavors = Game.GetFlavors("Building_Flavors", "BuildingType", objectInfo.Type)
+				else
+					textFlavors = Game.GetFlavors("Building_Flavors_Human", "BuildingType", objectInfo.Type)
+				end
 				if textFlavors ~= "" then
 					textBody = textBody .. textFlavors .. "[NEWLINE]"
 				end
@@ -540,7 +545,7 @@ function GetPromotionTip(promoID, unit)
 	local textFoot		= ""
 	local unit			= unit
 	local textSection	= {}
-		
+	
 	textSection[TipSection.PROMO_RANGE]				= ""
 	textSection[TipSection.PROMO_RANGED_STRENGTH]	= ""
 	textSection[TipSection.PROMO_STRENGTH]			= ""
@@ -901,6 +906,21 @@ function GetYieldTooltip(city, yieldID)
 	--print(string.format("%3s ms for %s GetYieldTooltip City_GetBaseYieldFromProcesses", math.floor((os.clock() - timeStart) * 1000), yieldInfo.Type))
 	--timeStart = os.clock()
 	
+	-- Base Yield from BNW Culture Sources
+	if (yieldID == YieldTypes.YIELD_CULTURE) then
+		local iCultureFromGreatWorks = city:GetJONSCulturePerTurnFromGreatWorks();
+		if (iCultureFromGreatWorks ~= 0) then
+			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_GREAT_WORKS", iCultureFromGreatWorks)
+			strTooltip = strTooltip .. "[NEWLINE]"
+		end
+		
+		local iCultureFromLeagues = city:GetJONSCulturePerTurnFromLeagues();
+		if (iCultureFromLeagues ~= 0) then
+			strTooltip = strTooltip .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_FROM_LEAGUES", iCultureFromLeagues)
+			strTooltip = strTooltip .. "[NEWLINE]"
+		end
+	end
+	
 	-- Base Yield from Misc
 	local iYieldFromMisc = Game.Round(City_GetBaseYieldFromMisc(city, yieldID))
 	if (iYieldFromMisc ~= 0) and (yieldID ~= YieldTypes.YIELD_SCIENCE) then
@@ -1022,11 +1042,11 @@ function GetYieldTooltip(city, yieldID)
 		if settlerMod ~= 0 then
 			baseModString = baseModString .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_SETTLER_POLICY", settlerMod)
 		end--]]
-	elseif yieldID == YieldTypes.YIELD_CULTURE then
-		local buildingMod = City_GetBaseYieldModFromBuildings(city, yieldID)
+	--[[elseif yieldID == YieldTypes.YIELD_CULTURE then
+		local buildingMod = City_GetBaseYieldRateModifier(city, yieldID)
 		if buildingMod ~= 0 then
 			baseModString = baseModString .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_BUILDINGS", buildingMod)				
-		end
+		end--]]
 	end
 	
 	local baseModFromPuppet = City_GetBaseYieldModFromPuppet(city, yieldID)

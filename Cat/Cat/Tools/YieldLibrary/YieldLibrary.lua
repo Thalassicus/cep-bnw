@@ -16,9 +16,10 @@ end
 
 local showTimers = Cep.DEBUG_TIMER_LEVEL
 local timeStart = os.clock()
+local updateDelay = 1 --seconds
 
 local log = Events.LuaLogger:New()
-log:SetLevel("DEBUG")
+log:SetLevel("INFO")
 
 PlayerClass	= getmetatable(Players[0]).__index
 --PlotClass	= getmetatable(Map.GetPlotByIndex(0)).__index
@@ -31,6 +32,12 @@ do -- globals
 	MapModData.Cep_PlayerCityWeights	= MapModData.Cep_PlayerCityWeights	or {}
 	MapModData.Cep_UnitSupplyCurrent	= MapModData.Cep_UnitSupplyCurrent	or {}
 	MapModData.Cep_UnitSupplyMax		= MapModData.Cep_UnitSupplyMax		or {}
+	
+	MapModData.Cep_TimeResetYieldCacheCity		= {}
+	MapModData.Cep_TimeResetYieldCachePlayer	= {}
+	MapModData.Cep_TimeResetYieldCacheAll		= 0
+	MapModData.Cep_TimeGetAvoidModifier			= {}
+	MapModData.Cep_TimeCity_GetWeight			= {}
 
 	YieldTypes.YIELD_FOOD				= YieldTypes.YIELD_FOOD
 	YieldTypes.YIELD_PRODUCTION			= YieldTypes.YIELD_PRODUCTION
@@ -93,46 +100,80 @@ for k, yieldLevel in pairs(yieldLevels) do
 	end
 end
 
-function ResetYieldCacheCity(city)
+function ResetYieldCacheCity(city, force, hideTime)
 	if not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	
 	if not city then
-		log:Error("ResetYieldCacheCity city=nil")
+		log:Error("ResetYieldCacheCity city=%s", city)
 		return
 	end
-	--log:Info("ResetYieldCacheCity %s", city:GetName())
-	cityID = City_GetID(city)
+	
+	local cityID = City_GetID(city)
+	local timeStart = os.clock()	
+	if MapModData.Cep_TimeResetYieldCacheCity[cityID] and not force and timeStart - MapModData.Cep_TimeResetYieldCacheCity[cityID] < updateDelay then
+		return
+	end	
+	MapModData.Cep_TimeResetYieldCacheCity[cityID] = timeStart
+	
+	--log:Info("ResetYieldCacheCity %s", city:GetName())	
 	for k, yieldLevel in pairs(yieldLevels) do
 		for yieldType, yieldID in pairs(YieldTypes) do
 			MapModData.YieldCache[yieldLevel][yieldID][cityID] = false
 		end
 	end	
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCacheCity %s", math.floor((os.clock() - timeStart) * 1000), city:GetName())) end
 end
 
-function ResetYieldCachePlayer(player)
-	if not player or not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+function ResetYieldCacheCityRedirect(playerID, cityID, updateType)
+	if not Players[playerID] then return end
+	if not Players[playerID]:GetCityByID(cityID) then return end
+	ResetYieldCacheCity(Players[playerID]:GetCityByID(cityID), false, true)
+end
+
+function ResetYieldCachePlayer(player, force, hideTime)
+	if not player or not player:IsAliveCiv() or not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	local playerID = player:GetID()
+	local timeStart = os.clock()
+	if MapModData.Cep_TimeResetYieldCachePlayer[playerID] and not force and timeStart - MapModData.Cep_TimeResetYieldCachePlayer[playerID] < updateDelay then
+		return
+	end	
+	MapModData.Cep_TimeResetYieldCachePlayer[playerID] = timeStart
+	
 	player:GetYieldsFromCitystates(true)
 	player:UpdateModdedHappiness()
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer A %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
+	--timeStart = os.clock()
 	for yieldInfo in GameInfo.Yields() do
 		player:GetSupplyModifier(yieldInfo.ID, true)
 		for city in player:Cities() do
 			City_GetWeight(city, yieldInfo.ID, true)
 		end
 	end
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer B %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
+	--timeStart = os.clock()
 	for k, yieldLevel in pairs(yieldLevels) do
 		for yieldType, yieldID in pairs(YieldTypes) do
 			MapModData.YieldCache[yieldLevel][yieldID][player:GetID()] = false
 		end
 	end	
 	for city in player:Cities() do
-		ResetYieldCacheCity(city)
+		ResetYieldCacheCity(city, force, true)
 	end
+	--if not hideTime then print(string.format("%3s ms for ResetYieldCachePlayer C %s", math.floor((os.clock() - timeStart) * 1000), player:GetName())) end
 end
 
-function ResetYieldCacheAll()
+function ResetYieldCacheAll(force)
 	if not Players[Game.GetActivePlayer()]:IsTurnActive() then return end
+	local timeStart = os.clock()
+	if MapModData.Cep_TimeResetYieldCacheAll and (force ~= true) and timeStart - MapModData.Cep_TimeResetYieldCacheAll < updateDelay then
+		return
+	end	
+	MapModData.Cep_TimeResetYieldCacheAll = timeStart
+	
 	for playerID, player in pairs(Players) do
-		ResetYieldCachePlayer(player)
+		ResetYieldCachePlayer(player, force, player:IsMinorCiv())
 	end
+	print(string.format("%3s ms for ResetYieldCacheAll force=%s", math.floor((os.clock() - timeStart) * 1000), tostring(force)))
 end
 
 function InitYieldCacheLevel(yieldLevel, yieldID)
@@ -309,6 +350,8 @@ function City_GetBaseYieldRate(city, yieldID, itemTable, itemID, queueNum)
 	end
 	if yieldID == YieldTypes.YIELD_HAPPINESS_CITY then	
 		baseRate = math.min(baseRate, city:GetPopulation())
+	elseif yieldID == YieldTypes.YIELD_CULTURE then	
+		baseRate = baseRate + city:GetJONSCulturePerTurnFromGreatWorks();
 	end
 	SetYieldCache(city, "baseRate", yieldID, baseRate, itemTable, itemID, queueNum)
 	if showTimers == 3 then print(string.format("%3s ms for City_GetBaseYieldRate", math.floor((os.clock() - timeStart)*1000))) end
@@ -345,6 +388,10 @@ function PlayerClass.GetBuildingYield(player, buildingID, yieldID, city)
 		end
 	else
 		yield = yield + Game.GetBuildingYieldChange(buildingID, yieldID)
+		--yield changes from world congress proposals
+		if city then
+			yield = yield + city:GetLeagueBuildingClassYieldChange(GameInfo.BuildingClasses[buildingInfo.BuildingClass].ID, yieldID)
+		end
 	end
 	
 	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
@@ -423,23 +470,25 @@ function PlayerClass.GetBuildingYieldMod(player, buildingID, yieldID, city)
 			yield = yield + row.Yield
 		end--]]
 	else
-		yield = yield + Game.GetBuildingYieldModifier(buildingID, yieldID)
+		--yield = yield + Game.GetBuildingYieldModifier(buildingID, yieldID)
 	end
 
-	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
-	for row in GameInfo.Policy_BuildingClassYieldModifiers(query) do
-		if player:HasPolicy(GameInfo.Policies[row.PolicyType].ID) then
-			--log:Trace("%30s %20s %5s", buildingInfo.BuildingClass, yieldType, row.YieldMod)
-			yield = yield + row.YieldMod
-		end
-	end
+	--[[if (yieldID == YieldTypes.YIELD_CULTURE) or (yieldID == YieldTypes.YIELD_FAITH) then
+		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
+		for row in GameInfo.Policy_BuildingClassYieldModifiers(query) do
+			if player:HasPolicy(GameInfo.Policies[row.PolicyType].ID) then
+				--log:Trace("%30s %20s %5s", buildingInfo.BuildingClass, yieldType, row.YieldMod)
+				yield = yield + row.YieldMod
+			end
+		end--]]
 
-	query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
-	for row in GameInfo.Building_BuildingClassYieldModifiers(query) do
-		if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
-			yield = yield + row.Yield
+		query = string.format("BuildingClassType = '%s' AND YieldType = '%s'", buildingInfo.BuildingClass, yieldType)
+		for row in GameInfo.Building_BuildingClassYieldModifiers(query) do
+			if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
+				yield = yield + row.Yield
+			end
 		end
-	end
+	--end
 	
 	--if showTimers == 3 then print(string.format("%3s ms for PlayerClass.GetBuildingYieldMod", math.floor((os.clock() - timeStart)*1000))) end
 	return yield
@@ -694,6 +743,15 @@ function City_GetSpecialistYield(city, yieldID, specialistID)
 	local specType	= GameInfo.Specialists[specialistID].Type
 	local query		= nil
 	
+	--[[if (yieldID == YieldTypes.YIELD_FAITH) or (yieldID == YieldTypes.YIELD_CULTURE) then
+		query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
+		for row in GameInfo.Building_SpecialistYieldChanges(query) do
+			if player:HasBuilding(GameInfo.Buildings[row.BuildingType].ID) then
+				yield = yield + row.Yield
+			end
+		end
+	end--]]
+
 --[[
 	query = string.format("YieldType = '%s' AND SpecialistType = '%s'", yieldInfo.Type, specType)
 	for row in GameInfo.Policy_SpecialistYieldChanges(query) do
@@ -765,21 +823,21 @@ function City_GetBaseYieldRateModifier(city, yieldID, itemTable, itemID, queueNu
 	yieldMod = yieldMod + City_GetBaseYieldModFromTraits(city, yieldID)
 	yieldMod = yieldMod + City_GetBaseYieldModFromPuppet(city, yieldID)
 	yieldMod = yieldMod + City_GetBaseYieldModifierFromPolicies(city, yieldID, itemTable, itemID, queueNum)
+	yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
+	yieldMod = yieldMod + City_GetBaseYieldModFromBuildings(city, yieldID)
 	
 	if yieldID == YieldTypes.YIELD_CULTURE then
-		yieldMod = yieldMod + City_GetBaseYieldModFromBuildings(city, yieldID) + cityOwner:GetCultureCityModifier()
-		yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
+		yieldMod = yieldMod + cityOwner:GetCultureCityModifier()
 		if city:GetNumWorldWonders() > 0 then
 			yieldMod = yieldMod + cityOwner:GetCultureWonderMultiplier()
 		end
 	else
 		yieldMod = yieldMod + city:GetYieldRateModifier(yieldID)
-		yieldMod = yieldMod + City_GetBaseYieldModifierFromGlobalBuildings(cityOwner, yieldID)
 		if yieldID == YieldTypes.YIELD_FOOD then
 			yieldMod = yieldMod + City_GetCapitalSettlerModifier(city, yieldID, itemTable, itemID, queueNum)
 		elseif yieldID == YieldTypes.YIELD_PRODUCTION then
 			local happiness = Game.Round(cityOwner:GetYieldRate(YieldTypes.YIELD_HAPPINESS_NATIONAL))
-			if happiness <= 0 then--GameDefines.VERY_UNHAPPY_THRESHOLD then
+			if happiness < 0 then--GameDefines.VERY_UNHAPPY_THRESHOLD then
 				yieldMod = yieldMod + happiness * GameDefines.VERY_UNHAPPY_PRODUCTION_PENALTY_PER_UNHAPPY
 			end
 			if city:IsCapital() and cityOwner:HasTech("TECH_RAILROAD") then
@@ -822,6 +880,10 @@ end
 function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queueNum)
 	local tooltip = ""
 	local player = Players[city:GetOwner()]
+	local cityMod = City_GetBaseYieldRateModifier(city, yieldID)
+	if cityMod ~= 0 then
+		tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_CITY_MOD", cityMod)
+	end
 	if yieldID == YieldTypes.YIELD_CULTURE then
 		-- Empire Culture modifier
 		local empireMod = player:GetCultureCityModifier()
@@ -829,11 +891,11 @@ function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queu
 			tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_PLAYER_MOD", empireMod)
 		end
 		
-		-- City Culture modifier
-		local cityMod = city:GetCultureRateModifier()
+		--[[ City Culture modifier
+		local cityMod = City_GetBaseYieldRateModifier(city, yieldID)
 		if cityMod ~= 0 then
 			tooltip = tooltip .. "[NEWLINE][ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_CULTURE_CITY_MOD", cityMod)
-		end
+		end--]]
 		
 		-- Wonders Culture modifier
 		local wonderMod = 0
@@ -851,7 +913,7 @@ function City_GetBaseYieldModifierTooltip(city, yieldID, itemTable, itemID, queu
 			tooltip = tooltip .. Locale.ConvertTextKey("TXT_KEY_PRODMOD_YIELD_GOLDEN_AGE", yieldMod)
 		end
 	else
-		tooltip = tooltip .. (city:GetYieldModifierTooltip(yieldID) or "")
+		--tooltip = tooltip .. (city:GetYieldModifierTooltip(yieldID) or "")
 		--[[
 		local yieldMod = City_GetBaseYieldModifierFromGlobalBuildings(player, yieldID)
 		if yieldMod ~= 0 then
@@ -899,7 +961,7 @@ function City_GetBaseYieldModifierFromGlobalBuildings(player, yieldID)
 		local buildingInfo = GameInfo.Buildings[entry.BuildingType]
 		for city in player:Cities() do
 			if City_GetNumBuilding(city, buildingInfo.ID) > 0 then
-				yieldMod = entry.Yield
+				yieldMod = yieldMod + entry.Yield
 			end
 		end
 	end
@@ -1514,8 +1576,8 @@ if not MapModData.Cep_Yields then
 	MapModData.Cep_Yields = {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_MILITARY]		= {}
 	MapModData.Cep_Yields[YieldTypes.YIELD_CS_GREAT_PEOPLE]	= {}
-	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.GameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
-	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.GameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
+	local milBaseThreshold = Cep.MINOR_CIV_MILITARISTIC_REWARD_NEEDED * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].TrainPercent / 100
+	local gpBaseThreshold = GameDefines.GREAT_PERSON_THRESHOLD_BASE	* GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].GreatPeoplePercent / 100
 	startClockTime = os.clock()
 	for playerID,player in pairs(Players) do
 		if player:IsAliveCiv() and not player:IsMinorCiv() then
@@ -1660,7 +1722,7 @@ function PlayerClass.ChangeYieldStored(player, yieldID, yield, itemID)
 	end
 	if player == Players[Game.GetActivePlayer()] then
 		player:UpdateModdedHappiness()
-		--LuaEvents.DirtyYieldCachePlayer(player)
+		--LuaEvents.DirtyYieldCachePlayer(player, true)
 	end
 	if showTimers == 3 then print(string.format("%3s ms for PlayerClass.ChangeYieldStored", math.floor((os.clock() - timeStart)*1000))) end
 end
@@ -1721,8 +1783,8 @@ function PlayerClass.GetYieldFromConnectedCities(player, yieldID)
 			return yield
 		end
 		local capital = player:GetCapitalCity()
-		if capital then
-			yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
+		if capital then --Gold not balanced? +6 Gold from capital to capital trade route at start
+			--yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
 		end
 	end
 	return yield
@@ -1767,8 +1829,13 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 	--local yield = 0
 	--
 	local yield = GetYieldCache(player, "playerRate", yieldID)
-	if yield and player:GetID() == Game.GetActivePlayer() then
-		return yield
+	if player:GetID() == Game.GetActivePlayer() then
+		if not yield then
+			--ResetYieldCachePlayer(player, true)
+		end
+		if yield then
+			return yield
+		end
 	end
 	--]]
 	
@@ -1780,8 +1847,8 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 		yield = yield + player:VanillaCalculateGoldRate()
 		yield = yield + player:GetFreeGarrisonMaintenance()
 		local capital = player:GetCapitalCity()
-		if capital then
-			yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
+		if capital then--Gold not balanced? +6 Gold from capital to capital trade route at start
+			--yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
 		end	
 		if not skipGlobalMods then
 			yield = yield + player:GetYieldFromTradeDeals(yieldID)
@@ -1806,7 +1873,7 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			yield = yield * (1 + player:GetYieldHappinessMod(yieldID) / 100)
 		end
 		yield = math.max(0, yield)
-	elseif yieldID == YieldTypes.YIELD_CULTURE then
+	elseif yieldID == YieldTypes.YIELD_CULTURE then	
 		yield = (yield
 			+ player:GetJONSCulturePerTurnForFree()
 			+ player:GetJONSCulturePerTurnFromExcessHappiness()
@@ -1815,7 +1882,7 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 		)
 		for city in player:Cities() do
 			yield = yield + City_GetYieldRate(city, yieldID)
-		end
+		end	
 	elseif yieldID == YieldTypes.YIELD_FAITH then
 		--yield = yield + player:GetTotalFaithPerTurn()
 		yield = (yield
@@ -1827,7 +1894,8 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_FAITH)
 		end
 	elseif yieldID == YieldTypes.YIELD_HAPPINESS_NATIONAL then
-		yield = yield + Game.GetHandicapInfo(player).HappinessDefault
+		yield = yield + player:GetExcessHappiness();
+		--[[yield = yield + Game.GetHandicapInfo(player).HappinessDefault
 		for city in player:Cities() do
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_HAPPINESS_CITY)
 			yield = yield + City_GetYieldRate(city, YieldTypes.YIELD_HAPPINESS_NATIONAL)
@@ -1844,7 +1912,7 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			yield = yield + player:GetExtraHappinessPerCity() * player:GetNumCities()
 			yield = yield + player:GetYieldsFromCitystates()[yieldID]
 			yield = yield - City_GetNumBuilding(player:GetCapitalCity(), GameInfo.Buildings.BUILDING_HAPPINESS_NATIONAL.ID)
-		end
+		end--]]
 		
 		--[[
 		for city in player:Cities() do
@@ -1880,6 +1948,7 @@ function PlayerClass.GetYieldRate(player, yieldID, skipGlobalMods)
 			end
 		end
 	end
+	
 	SetYieldCache(player, "playerRate", yieldID, yield)
 	if showTimers == 3 then print(string.format("%3s ms for PlayerClass.GetYieldRate", math.floor((os.clock() - timeStart)*1000))) end
 	return yield
@@ -2114,7 +2183,7 @@ function Plot_ChangeYield(plot, yieldID, yield)
 		end
 		return
 	end
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 	MapModData.Cep_PlotYields[yieldID][plotID] = newYield
 	SaveValue(newYield, "MapModData.Cep_PlotYields[%s][%s]", yieldID, plotID)
 	Events.HexYieldMightHaveChanged(plot:GetX(), plot:GetY())
@@ -2140,7 +2209,7 @@ function Plot_SetYield(plot, yieldID, yield)
 	elseif yieldID == YieldTypes.YIELD_HAPPINESS_NATIONAL then
 		-- todo
 	end
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 	MapModData.Cep_PlotYields[yieldID][Plot_GetID(plot)] = newYield
 	SaveValue(newYield, "MapModData.Cep_PlotYields[%s][%s]", yieldID, Plot_GetID(plot))
 	Events.HexYieldMightHaveChanged(plot:GetX(), plot:GetY())
@@ -2216,7 +2285,7 @@ function City_UpdateModdedYields(city, player)
 				City_SetNumBuildingClass(city, "BUILDINGCLASS_AI_CULTURE", yield)
 			end
 			--log:Debug("Set AI Buildings %3s %25s %25s", City_GetNumBuilding(city, GameInfo.Buildings.BUILDING_AI_PRODUCTION.ID), player:GetName(), city:GetName())
-			LuaEvents.DirtyYieldCacheCity(city)
+			LuaEvents.DirtyYieldCacheCity(city, true)
 		end
 	end
 
@@ -2236,8 +2305,24 @@ function City_UpdateModdedYields(city, player)
 		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
 	end
 	
+	yieldID = YieldTypes.YIELD_GOLD
+	vanillaYield = city:GetYieldRate(yieldID)
+	modYield = City_GetBaseYieldRate(city, yieldID) * (1 + City_GetBaseYieldRateModifier(city, yieldID)/100)
+	if modYield ~= vanillaYield then
+		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to gold)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
+		--City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
+	end
+	
 	yieldID = YieldTypes.YIELD_CULTURE
 	vanillaYield = city:GetJONSCulturePerTurn()
+	modYield = City_GetYieldRate(city, yieldID)
+	if modYield ~= vanillaYield then
+		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to culture)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
+		City_ChangeYieldStored(city, yieldID, modYield-vanillaYield)
+	end
+	
+	yieldID = YieldTypes.YIELD_FAITH
+	vanillaYield = city:GetFaithPerTurn()
 	modYield = City_GetYieldRate(city, yieldID)
 	if modYield ~= vanillaYield then
 		--log:Debug("%20s %15s vanillaYield:%3s modYield:%3s (to culture)", player:GetName(), city:GetName(), Game.Round(vanillaYield), Game.Round(modYield))
@@ -2262,7 +2347,7 @@ function PlayerClass.UpdateModdedYieldsEnd(player)
 	end
 	--log:Info("%-25s %15s", "UpdateModdedYieldsEnd", player:GetName())
 
-	--LuaEvents.DirtyYieldCachePlayer(player)
+	--LuaEvents.DirtyYieldCachePlayer(player, true)
 
 	GetCurrentUnitSupply(player, true)
 	player:UpdateModdedHappiness()
@@ -2322,7 +2407,7 @@ function PlayerClass.UpdateModdedYieldsStart(player)
 	--log:Info("%-25s %15s", "UpdateModdedYieldsStart", player:GetName())
 	local playerID = player:GetID()
 
-	LuaEvents.DirtyYieldCachePlayer(player)
+	LuaEvents.DirtyYieldCachePlayer(player, true)
 
 	GetCurrentUnitSupply(player, true)
 	player:UpdateModdedHappiness()
@@ -2597,11 +2682,18 @@ function PlayerClass.GetCitystateYields(player, traitID, friendLevel)
 end
 
 function PlayerClass.GetAvoidModifier(player, doUpdate)
+	--return 0
 	if type(player) ~= "table" then
 		log:Fatal("player:GetAvoidModifier player=%s", player)
 	end
 	
 	local playerID = player:GetID()
+	local timeStart = os.clock()
+	if MapModData.Cep_TimeGetAvoidModifier and MapModData.Cep_TimeGetAvoidModifier[playerID] and timeStart - MapModData.Cep_TimeGetAvoidModifier[playerID] < updateDelay then
+		return MapModData.Cep_AvoidModifier[playerID] or 0
+	end	
+	MapModData.Cep_TimeGetAvoidModifier[playerID] = timeStart
+	
 	if true then --doUpdate then
 		--log:Debug("Recalculate Avoid Modifier ", player)
 		local player = Players[playerID]
@@ -2617,6 +2709,7 @@ function PlayerClass.GetAvoidModifier(player, doUpdate)
 end
 
 function PlayerClass.GetTotalWeight(player, yieldID, doUpdate)
+	--return 1
 	if player == nil then
 		log:Fatal("player:GetTotalWeight: Invalid player")
 	end
@@ -2640,18 +2733,48 @@ function PlayerClass.GetTotalWeight(player, yieldID, doUpdate)
 end
 
 function City_GetWeight(city, yieldID, doUpdate)
+	--return 1
 	if city == nil then
 		log:Fatal("City_GetWeight city=nil")
 	elseif yieldID == nil then
 		log:Fatal("City_GetWeight yieldID=nil")
 	end
-	--log:Error(string.format("City_GetWeight %s %s %s", city:GetName(), GameInfo.Yields[yieldID].Description, tostring(doUpdate)))
-	local ownerID = city:GetOwner()
-	local owner = Players[ownerID]
-	if doUpdate or not (MapModData.Cep_CityWeights[ownerID] and MapModData.Cep_CityWeights[ownerID][yieldID] and MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()]) then
-		MapModData.Cep_CityWeights[ownerID] = MapModData.Cep_CityWeights[ownerID] or {}
-		MapModData.Cep_CityWeights[ownerID][yieldID] = MapModData.Cep_CityWeights[ownerID][yieldID] or {}
-
+	--log:Info(string.format("City_GetWeight %s %s %s", city:GetName(), GameInfo.Yields[yieldID].Description, tostring(doUpdate)))
+	local playerID = city:GetOwner()
+	local player = Players[playerID]
+	local cityID = City_GetID(city)
+	
+	if not player then
+		log:Error("City_GetWeight city=%s city:GetOwner()=%s player=%s", city:GetName(), city:GetOwner(), player)
+		return 1
+	end
+	
+	if not MapModData.Cep_CityWeights[playerID] then MapModData.Cep_CityWeights[playerID] = {} end
+	if not MapModData.Cep_CityWeights[playerID][yieldID] then MapModData.Cep_CityWeights[playerID][yieldID] = {} end
+	
+	--log:Error("City_GetWeight C")
+	
+	--[[
+	log:Error("MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()] = %s", MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()])
+	log:Error("MapModData.Cep_TimeCity_GetWeight = %s", MapModData.Cep_TimeCity_GetWeight)
+	log:Error("MapModData.Cep_TimeCity_GetWeight[cityID] = %s", MapModData.Cep_TimeCity_GetWeight[cityID])
+	log:Error("timeStart - MapModData.Cep_TimeCity_GetWeight[cityID] < updateDelay = %s", timeStart - MapModData.Cep_TimeCity_GetWeight[cityID] < updateDelay)
+	log:Error("MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()] = %s", MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()])
+	--]]
+	
+	local timeStart = os.clock()	
+	if (    MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]
+		and MapModData.Cep_TimeCity_GetWeight
+		and MapModData.Cep_TimeCity_GetWeight[cityID]
+		and timeStart - MapModData.Cep_TimeCity_GetWeight[cityID] < updateDelay
+		) then
+		return MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]
+	end	
+	MapModData.Cep_TimeCity_GetWeight[cityID] = timeStart
+	
+	--log:Error("City_GetWeight D")
+	
+	if doUpdate or not (MapModData.Cep_CityWeights[playerID] and MapModData.Cep_CityWeights[playerID][yieldID] and MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]) then
 		local weight = 1
 		for v in GameInfo.CityWeights() do
 			if v.IsCityStatus == true and city[v.Type](city) then
@@ -2662,16 +2785,16 @@ function City_GetWeight(city, yieldID, doUpdate)
 		if city:GetFocusType() == CityYieldFocusTypes[yieldID] then
 			weight = weight * GameInfo.CityWeights.CityFocus.Value
 		end
-		if not Players[ownerID]:IsCapitalConnectedToCity(city) then
+		if not player:IsCapitalConnectedToCity(city) then
 			weight = weight * GameInfo.CityWeights.NotConnected.Value
 		end
 		if yieldID == YieldTypes.YIELD_FOOD and city:IsForcedAvoidGrowth() then
-			weight = weight * owner:GetAvoidModifier(doUpdate)
+			weight = weight * player:GetAvoidModifier(doUpdate)
 		end	
-		MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()] = math.max(0, weight)
+		MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()] = math.max(0, weight)
 	end
-	--log:Error("Weight = "..MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()])
-	return MapModData.Cep_CityWeights[ownerID][yieldID][city:GetID()]
+	--log:Info("Weight = "..MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()])
+	return MapModData.Cep_CityWeights[playerID][yieldID][city:GetID()]
 end
 
 ---------------------------------------------------------------------

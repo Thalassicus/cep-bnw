@@ -9,6 +9,11 @@
 			<Set Value="0" />
 		</Update>
 		<Update>
+			<Where Type="RESEARCH_AGREEMENT_BOOST_DIVISOR" />
+			<Set Value="2" />
+			<!-- 3 -->
+		</Update>
+		<Update>
 			<Where Type="RESEARCH_AGREEMENT_SCIENCE_RATE_PERCENT" />
 			<Set Value="0" />
 		</Update>
@@ -38,6 +43,79 @@
 			<Set Value="100" />
 		</Update>
 	</Cep>
+	<Defines>
+		<!-- Spies -->
+		<Update>
+			<Where Name="TOURISM_MODIFIER_DIPLOMAT"/>
+			<Set Value="50" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_GATHERING_INTEL_COST_PERCENT"/>
+			<Set Value="25" />
+			<!-- 125 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_GATHERING_INTEL_RATE_BASE_PERCENT"/>
+			<Set Value="100" />
+			<!-- 100 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_GATHERING_INTEL_RATE_BY_SPY_RANK_PERCENT"/>
+			<Set Value="25" />
+			<!-- 25 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_TURNS_BETWEEN_CITY_STATE_ELECTIONS"/>
+			<Set Value="15" />
+			<!-- 15 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_INFLUENCE_GAINED_FOR_RIGGED_ELECTION"/>
+			<Set Value="70" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_INFLUENCE_LOST_FOR_RIGGED_ELECTION"/>
+			<Set Value="10" />
+			<!-- 5 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_SURVEILLANCE_SIGHT_RANGE"/>
+			<Set Value="3" />
+			<!-- 1 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_OTHER_PLAYERS_INFLUENCE_DROP"/>
+			<Set Value="20" />
+			<!-- 20 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_NOBODY_BONUS"/>
+			<Set Value="0.5" />
+			<!-- 0.5 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_MULTIPLY_CONSTANT"/>
+			<Set Value="3.0" />
+			<!-- 3.0 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_SPY_LEVEL_DELTA_ZERO"/>
+			<Set Value="0.0" />
+			<!-- 0.0 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_SPY_LEVEL_DELTA_ONE"/>
+			<Set Value="1.5" />
+			<!-- 1.5 -->
+		</Update>
+		<Update>
+			<Where Name="ESPIONAGE_COUP_SPY_LEVEL_DELTA_TWO"/>
+			<Set Value="2.25" />
+			<!-- 2.25 -->
+		</Update>
+	</Defines>
 	<!--
 	<Technologies>
 		<Update>

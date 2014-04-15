@@ -1,4 +1,4 @@
--- BC - General.lua
+-- Cat_Events.lua
 -- Author: Thalassicus
 -- DateCreated: 10/29/2010 12:44:28 AM
 --------------------------------------------------------------
@@ -407,10 +407,22 @@ function BuildingCreated(player, city, buildingID)
 				end
 				if row.YieldMod ~= 0 then
 					local prereqTech = buildingInfo.PrereqTech or "TECH_AGRICULTURE"
-					local yieldAdded = row.YieldMod/100 * GameInfo.Technologies[prereqTech].Cost * GameInfo.GameSpeeds[Game.GetGameSpeedType()].ResearchPercent/100
+					local yieldAdded = row.YieldMod/100 * GameInfo.Technologies[prereqTech].Cost * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].ResearchPercent/100
 					player:ChangeYieldStored(GameInfo.Yields[row.YieldType].ID, yieldAdded)
 					--log:Debug("+%s %s from science building constructed in %s", yieldAdded, GameInfo.Yields[row.YieldType].Type, city:GetName())
 				end
+			end
+		end
+	end
+	
+	if city:IsCapital() then
+		for row in GameInfo.Trait_FreeUnitFromCapitalBuilding() do
+			log:Trace("Trait_FreeUnitFromCapitalBuilding: %s=%s %s=%s UnitClass=%s", trait.Type, row.TraitType, buildingInfo.BuildingClass, row.BuildingClass, row.UnitClass)
+			if trait.Type == row.TraitType and buildingInfo.BuildingClass == row.BuildingClass then
+				local itemID = player:GetUniqueUnitID(row.UnitClass)
+				local unit = player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))
+				log:Debug("Trait_FreeUnitFromCapitalBuilding: %s %s %s", player:GetName(), buildingInfo.BuildingClass, GameInfo.Units[itemID].Type)
+				return
 			end
 		end
 	end
@@ -651,6 +663,12 @@ function UnitCreatedChecks( playerID,
 		end
 	end
 
+	for policyInfo in GameInfo.Policies("MovePurchasedUnits = 1") do
+		if player:HasPolicy(policyInfo.ID) then
+			unit:SetMoves(unit:MaxMoves())
+		end
+	end
+
 	query = "(FreePromotionAllCombatUnits IS NOT NULL) OR (GlobalExperience != 0)"
 	for buildingInfo in GameInfo.Buildings(query) do
 		local promo = buildingInfo.FreePromotionAllCombatUnits
@@ -671,6 +689,10 @@ function UnitCreatedChecks( playerID,
 			end
 		end
 	end
+	
+	if player:MayNotAnnex() and unitInfo.Found then
+		Unit_Replace(unit, "UNITCLASS_MERCHANT")
+	end
 end
 
 LuaEvents.NewUnit.Add(UnitCreatedChecks)
@@ -685,7 +707,7 @@ function CityCaptureYield(city, yieldType, yieldConstant, yieldPopulation, yield
 	local baseYield = yieldConstant
 		  baseYield = baseYield + city:GetPopulation() * yieldPopulation
 		  baseYield = baseYield + yieldEra * (1 + player:GetCurrentEra()) ^ yieldEraExponent
-		  baseYield = baseYield * GameInfo.GameSpeeds[Game.GetGameSpeedType()].CulturePercent / 100
+		  baseYield = baseYield * GameInfo.CepGameSpeeds[Game.GetGameSpeedType()].CulturePercent / 100
 		  
 	--log:Debug("CityCaptureYield baseYield = %s", baseYield)
 
@@ -865,7 +887,7 @@ function DoPolicyFreeUnits(player, policyID)
 				for i=1, row.Count do
 					player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))
 					if player:IsHuman() then
-						log:Debug("%45s recieved unit", " ", " ")
+						log:Debug("%45s received unit", " ", " ")
 					end
 				end
 			end
@@ -1132,7 +1154,7 @@ function PlaceBuildingID(city, buildingID)
 	MapModData.Cep_FreeBuilding[cityID][buildingID] = true
 	MapModData.Cep_PlayerFreeBuildings.Buildings[playerID][buildingID] = MapModData.Cep_PlayerFreeBuildings.Buildings[playerID][buildingID] + 1
 	if player:IsHuman() then
-		log:Warn("%45s recieved building", " ", " ")
+		log:Warn("%45s received building", " ", " ")
 	end
 end
 
@@ -1151,7 +1173,7 @@ function PlaceBuildingOfFlavor(city, flavorType)
 		MapModData.Cep_FreeFlavorBuilding[flavorType][cityID] = buildingID
 		MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] = MapModData.Cep_PlayerFreeBuildings.Flavors[flavorType][playerID] + 1
 		if player:IsHuman() then
-			log:Debug("%45s recieved building", " ", " ")
+			log:Debug("%45s received building", " ", " ")
 		end
 	end
 end
@@ -1413,14 +1435,23 @@ LuaEvents.PromotionEarned.Add(DoPromotionHeal)
 
 function CheckForAILevelup(unit)
 	local playerID = unit:GetOwner()
-	MapModData.Cep_UnitLevel[playerID][unit:GetID()] = MapModData.Cep_UnitLevel[playerID][unit:GetID()] or unit:GetLevel()
-	for i = MapModData.Cep_UnitLevel[playerID][unit:GetID()], unit:GetLevel() - 1 do
-		--log:Warn("%15s %15s old=%s new=%s", Players[playerID]:GetName(), unit:GetName(), MapModData.Cep_UnitLevel[playerID][unit:GetID()], unit:GetLevel())
+	local unitID = unit:GetID()
+	if not unitID then
+		log:Error("CheckForAILevelup unitID=%s", unitID)
+		return
+	end
+	if not playerID then
+		log:Error("CheckForAILevelup playerID=%s", playerID)
+		return
+	end
+	if not MapModData.Cep_UnitLevel[playerID][unit:GetID()] then MapModData.Cep_UnitLevel[playerID][unit:GetID()] = unit:GetLevel() end
+	for i = MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel() - 1 do
+		--log:Warn("%15s %15s old=%s new=%s", Players[playerID]:GetName(), unit:GetName(), MapModData.Cep_UnitLevel[playerID][unitID], unit:GetLevel())
 		DoPromotionHeal(unit)
 	end
 end
-LuaEvents.ActivePlayerTurnEnd_Unit.Add(CheckForAILevelup)
-LuaEvents.ActivePlayerTurnStart_Unit.Add(CheckForAILevelup)
+LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(CheckForAILevelup, unit) end)
+LuaEvents.ActivePlayerTurnStart_Unit.Add(function(unit) return SafeCall(CheckForAILevelup, unit) end)
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------

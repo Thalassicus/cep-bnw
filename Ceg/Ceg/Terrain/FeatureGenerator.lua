@@ -453,12 +453,12 @@ function FeatureGenerator:AddAtolls()
 	end
 	--[[
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = 2,
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = 4,
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = 5,
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = 7,
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = 9,
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = 12,
+		[GameInfo.CepWorlds.WORLDSIZE_DUEL.ID] = 2,
+		[GameInfo.CepWorlds.WORLDSIZE_TINY.ID] = 4,
+		[GameInfo.CepWorlds.WORLDSIZE_SMALL.ID] = 5,
+		[GameInfo.CepWorlds.WORLDSIZE_STANDARD.ID] = 7,
+		[GameInfo.CepWorlds.WORLDSIZE_LARGE.ID] = 9,
+		[GameInfo.CepWorlds.WORLDSIZE_HUGE.ID] = 12,
 	};
 	--]]
 	local atoll_target = numCoast * 0.10;

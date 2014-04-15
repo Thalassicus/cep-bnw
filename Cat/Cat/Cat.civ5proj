@@ -7,7 +7,7 @@
     <Guid>faae7417-d08c-49ec-8a2c-8f00c17fa056</Guid>
     <ModVersion>3</ModVersion>
     <Stability>Beta</Stability>
-    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.14.1[NEWLINE][ENDCOLOR]   Expands the AI and mod tools of BNW</Teaser>
+    <Teaser>[COLOR_CYAN]   by Thalassicus - v3.16[NEWLINE][ENDCOLOR]   Expands the AI and mod tools of BNW</Teaser>
     <Description>We believe Civilization is a fantastic game, and want to perfect it while remaining as close to the core experience as possible.[NEWLINE][NEWLINE]CAT makes the AI "smarter not harder." It improves the intelligence of the AI, while reducing its bonuses. Cat also adds many tools essential for modders. The other parts of the Communitas Expansion Pack (Ceg and Cin) use these tools. [NEWLINE][NEWLINE]If you believe in these goals, try this expansion pack![NEWLINE][NEWLINE]Expansion Pack Parts:[NEWLINE][NEWLINE][ICON_BULLET]Communitas Map[NEWLINE]This map creates several continents with realistic climate, and numerous offshore islands.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas AI and Tools (Cat)[NEWLINE]Expands the AI and mod tools of Civ V: Brave New World. Both the expansion pack and interface changes below require the tools.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Enhanced Gameplay (Ceg)[NEWLINE]Improves the fun and strategic balance of BNW gameplay.[NEWLINE][NEWLINE][ICON_BULLET]    Communitas Interface (Cin)[NEWLINE]Improves the visual interface of the game.[NEWLINE][NEWLINE][NEWLINE]The expansion is a collaboration of work from over 40 main authors, and an incredible community of forumgoers on CivFanatics.com.[NEWLINE][NEWLINE]If you want to discuss the project, or you encounter a problem while playing, please visit the Discuss or Bugs links.[NEWLINE][NEWLINE]Please glance at the Common Checklist, which has important information about using Civ 5 mods.</Description>
     <Authors>[COLOR_CYAN]Thalassicus</Authors>
     <SpecialThanks>Please see [COLOR_YELLOW]readme[/COLOR] included in mod folder.</SpecialThanks>
@@ -153,11 +153,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/Language_Start.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>Interface/Icons/Cep_Icons.xml</FileName>
       </Action>
       <Action>
@@ -173,12 +168,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
+        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
+        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -208,17 +203,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Data.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>AI/CEAI_Handicaps.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_Worlds.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -228,12 +213,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Cities.xml</FileName>
+        <FileName>AI/CEAI_Cities.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Policies.xml</FileName>
+        <FileName>AI/CEAI_Policies.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -278,6 +263,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Core.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Core.sql</FileName>
       </Action>
       <Action>
@@ -288,7 +278,7 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Core.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Core.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -323,6 +313,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/Flavors.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/Flavors.sql</FileName>
       </Action>
       <Action>
@@ -333,97 +328,62 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Flavors.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Flavors.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/DE_DE/Barbarians.sql</FileName>
+        <FileName>Text/DE_DE/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Barbarians.sql</FileName>
+        <FileName>Text/en_US/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/Barbarians.sql</FileName>
+        <FileName>Text/ES_ES/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/Barbarians.sql</FileName>
+        <FileName>Text/FR_FR/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/Barbarians.sql</FileName>
+        <FileName>Text/IT_IT/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/Barbarians.sql</FileName>
+        <FileName>Text/JA_JP/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/Barbarians.sql</FileName>
+        <FileName>Text/KO_KR/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/Barbarians.sql</FileName>
+        <FileName>Text/PL_PL/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Barbarians.sql</FileName>
+        <FileName>Text/RU_RU/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/DE_DE/Stories.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Framework.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/Stories.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/Stories.sql</FileName>
+        <FileName>Text/en_US/Trade.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -458,6 +418,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>Text/KO_KR/YieldLibrary.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>Text/PL_PL/YieldLibrary.sql</FileName>
       </Action>
       <Action>
@@ -468,12 +433,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/YieldLibrary.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/YieldLibrary.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/DE_DE/TooltipWriter_Tips.sql</FileName>
+        <FileName>Text/DE_DE/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -483,37 +448,47 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/TW_BuildingStats.sql</FileName>
+        <FileName>Text/ES_ES/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/TW_BuildingStats.sql</FileName>
+        <FileName>Text/FR_FR/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/TW_BuildingStats.sql</FileName>
+        <FileName>Text/IT_IT/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/TW_BuildingStats.sql</FileName>
+        <FileName>Text/JA_JP/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/TW_BuildingStats.sql</FileName>
+        <FileName>Text/KO_KR/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/TW_BuildingStats.sql</FileName>
+        <FileName>Text/PL_PL/Text_TW_BuildingStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TW_BuildingStats.sql</FileName>
+        <FileName>Text/RU_RU/Text_TW_BuildingStats.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/ZH_HANT_HK/Text_TW_BuildingStats.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Text/DE_DE/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -523,132 +498,92 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/TW_PromotionStats.sql</FileName>
+        <FileName>Text/ES_ES/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/TW_PromotionStats.sql</FileName>
+        <FileName>Text/FR_FR/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/TW_PromotionStats.sql</FileName>
+        <FileName>Text/IT_IT/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/TW_PromotionStats.sql</FileName>
+        <FileName>Text/JA_JP/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/TW_PromotionStats.sql</FileName>
+        <FileName>Text/KO_KR/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/TW_PromotionStats.sql</FileName>
+        <FileName>Text/PL_PL/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TW_PromotionStats.sql</FileName>
+        <FileName>Text/RU_RU/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/DE_DE/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Text_TW_PromotionStats.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/DE_DE/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/en_US/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/ES_ES/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/FR_FR/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/IT_IT/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/JA_JP/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/KO_KR/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/TooltipWriter_Help.sql</FileName>
+        <FileName>Text/PL_PL/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/DE_DE/AI.sql</FileName>
+        <FileName>Text/RU_RU/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Text/en_US/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/ES_ES/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/FR_FR/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/IT_IT/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/JA_JP/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/PL_PL/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/RU_RU/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/ZH_CN/AI.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>Text/Language_End.sql</FileName>
+        <FileName>Text/ZH_HANT_HK/Villages.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -744,6 +679,7 @@
     <Folder Include="Interface\Icons" />
     <Folder Include="Interface\DisablePrints" />
     <Folder Include="Interface\Bugfixes" />
+    <Folder Include="Interface\Units" />
     <Folder Include="InterferesWithBuild" />
     <Folder Include="Tools" />
     <Folder Include="Tools\Core\" />
@@ -761,11 +697,16 @@
     <Folder Include="Text\JA_JP" />
     <Folder Include="Text\PL_PL" />
     <Folder Include="Text\RU_RU" />
-    <Folder Include="Text\ZH_CN" />
+    <Folder Include="Text\ZH_HANT_HK" />
+    <Folder Include="Text\KO_KR" />
     <Folder Include="TunerMods" />
     <Folder Include="TunerMods\DebugFolder" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AI\CEAI_Cities.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="AI\CEAI_Data.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -822,10 +763,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="AI\CEAI_Worlds.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
     <Content Include="Fixes\Cat_Fixes.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -846,11 +783,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\Bugfixes\ProductionPopup.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Interface\Bugfixes\TechButtonInclude.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Interface\Bugfixes\TechHelpInclude.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Bugfixes\TechPopup.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\Bugfixes\TechPopup.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -866,6 +815,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\Units\EnemyUnitPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\GameMenu.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Interface\CivilopediaScreen.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -878,6 +835,18 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="Interface\TopPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Interface\TopPanel_Clock.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="InterferesWithBuild\InGame.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
@@ -887,6 +856,14 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Text\en_US\Flavors.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Text\en_US\Framework.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Text\en_US\Trade.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -991,14 +968,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Text\en_US\Text_TW_BuildingStats.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\Language_End.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\Language_Start.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -1191,10 +1160,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Tools\Stories\StoryPopup.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Text\en_US\Stories.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

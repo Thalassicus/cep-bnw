@@ -6,6 +6,10 @@
 			<Set GoodyHutUpgradeUnitClass="UNITCLASS_MUSKETMAN" />
 		</Update>
 		<Update>
+			<Where Class="UNITCLASS_LANCER" />
+			<Set GoodyHutUpgradeUnitClass="UNITCLASS_WWI_TANK" />
+		</Update>
+		<Update>
 			<Where Class="UNITCLASS_GUIDED_MISSILE" />
 			<Set Range="6" />
 		</Update>
@@ -24,7 +28,7 @@
 	-->
 	</Units>
 	
-
+	
 
 
 

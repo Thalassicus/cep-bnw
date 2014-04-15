@@ -1,0 +1,95 @@
+/* The sql commands and text below were formulated in the TooltipWriter_help tab of the Google Spreadsheet 'CAT_Language'.
+https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dGtjX2JldHBzdXhRbGNxVFgxT1E2OHc&usp=drive_web#gid=0
+If you make any changes be sure to update the spreadsheet also.*/
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ATTACK', '공격', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_DEFENSE', '방어', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_VS', '대', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_SIGHT_RANGE', '시력 범위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGE', '범위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_MOVES', '이동', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_EXPERIENCE', '경험', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_RANGED_ATTACKS', '원거리 공격', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_AIR_SWEEPS', '공기 스윕', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FASTER_IN', '빠른에', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ROUGH_TERRAIN', '[COLOR_POSITIVE_TEXT] 러프 [ENDCOLOR] 지형 (언덕, 숲이나 정글)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_OPEN_TERRAIN', '[COLOR_POSITIVE_TEXT] OPEN [ENDCOLOR] 지형 (NO 언덕, 숲이나 정글)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_WOUNDED_UNITS', '부상 단위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FRIENDLY', '친한', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_NEUTRAL', '중립국', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_ENEMY', '적', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_IN_TERRITORY', '{1_num] 테리토리', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UPGRADE_COST', '비용 업그레이드', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_STRENGTH', '힘', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CANNOT ENTER', '입력 할 수 없습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNTIL', '까지', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_HEALING', '치료', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_FORTIFIED_UNITS', '강화 단위', '', '');
+/* 특수 능력 */
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_ENEMIES', '인접한 적 유닛 [COLOR_POSITIVE_TEXT]에 대한 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_FRIENDLY', '인접한 타일 단위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AIR_SWEEP_CAPABLE', '차단 장치를 취소 스윕을 말릴 수 있습니다.', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_AMPHIBIOUS', '전체 피해 바다 나 강에 걸쳐 공격 때.', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_BLITZ', '[COLOR_POSITIVE_TEXT]를 두 번 공격 할 수있다 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_HEAL', '치유 할 수', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPITAL_BONUS', '의 [COLOR_POSITIVE_TEXT] 자본금 [ENDCOLOR] 장치가 떨어져 추가수록 보너스가 떨어진다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAPTURE_SHIPS', '[COLOR_POSITIVE_TEXT] 캡처 [ENDCOLOR] 패배 적 [COLOR_POSITIVE_TEXT] 선박 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CARGO', '수행 할 수 있습니다 [COLOR_POSITIVE_TEXT] {1_num] [ENDCOLOR 카고', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALLOWS_EMBARKATION', '[COLOR_POSITIVE_TEXT] 물 타일에 착수 할 수 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EVASION_CHANGE', '기회에 [COLOR_POSITIVE_TEXT] 피하다 [ENDCOLOR] 차단', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NUM_INTERCEPTION_CHANGE', '추가 [COLOR_POSITIVE_TEXT] 차단은 [ENDCOLOR] 턴에 만들어 질 수있다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_AFTER_ATTACKING', '공격은 [COLOR_POSITIVE_TEXT] 1 이동을 사용하여 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_FLAT_MOVEMENT_COST', '모든 운동은 [COLOR_PLAYER_ORANGE_TEXT] 1 이동을 사용하여 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_UPGRADE_DISCOUNT', 'updgrade 비용', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_ADMIRAL', '근처 [COLOR_POSITIVE_TEXT] 선박 [ENDCOLOR]의 전투 강도를 향상', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL', '근처 [COLOR_POSITIVE_TEXT] 지상 유닛의 전투 강도를 향상 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_MOVEMENT', '그들은 [COLOR_POSITIVE_TEXT] 쌓인 [ENDCOLOR] 회전을 시작하면 [COLOR_POSITIVE_TEXT] 위대한 장군은 [ENDCOLOR] 본 기기의 속도로 이동', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_GREAT_GENERAL_RATE', '위대한 장군 창출률', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_HPHEALED_IF_DESTROY_ENEMY', '[COLOR_POSITIVE_TEXT] 힐 {1_num] 건강​​ [ENDCOLOR] 비 야만인 단위를 죽이는', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_IGNORE_TERRAIN_COST', '지형 비용을 무시', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INDIRECT_FIRE', '장애물 [COLOR_POSITIVE_TEXT] 공격 할 수있다 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INSTA_HEAL', '[COLOR_POSITIVE_TEXT] 힐 {1_num] 건강​​ [ENDCOLOR] [NEWLINE] [COLOR_NEGATIVE_TEXT] 끝은 [ENDCOLOR]이 기회가 승진을 선택할 수', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPT_CHANCE_CHANGE', '[COLOR_POSITIVE_TEXT] 차단 [ENDCOLOR] 항공기 기회.', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ALWAYS_HEAL', '공격과 이동하는 치유를 방지하지 않습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MOUNTAIN_PASS', '[COLOR_POSITIVE_TEXT] 산 [ENDCOLOR]에 전달하지만, 산에 [ENDCOLOR]의 차례를 종료 [COLOR_NEGATIVE_TEXT] 경우의 피해를 할 수 있습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_CAN_MOVE_IMPASSABLE', '[COLOR_POSITIVE_TEXT] 얼음과 산을 통해 이동할 수 있습니다 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_MUST_SET_UP_TO_RANGED_ATTACK', '원거리 공격을 설정해야합니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_CAPTURE', '도시를 캡처 할 수 없습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_DEFENSE_BONUS', '더 방어 지형 보너스 없음', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_MELEE_ATTACK', '공격을 근접 공격 할 수 없습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_NO_UNIT_ATTACK', '공격 할 수 없다 [COLOR_NEGATIVE_TEXT] 단위 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_PARADROP', '수 [COLOR_POSITIVE_TEXT] Paradrop [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY', '[COLOR_POSITIVE_TEXT] 라이벌 지역을 입력 할 수 있습니다 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_RIVAL_TERRITORY_FAITH', '{PROMOTION_UNWELCOME_EVANGELIST_HELP]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_INTERCEPTION_COMBAT_MODIFIER', '강한 [COLOR_POSITIVE_TEXT] 도청 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WEAK_RANGED', '[COLOR_NEGATIVE_TEXT] 지상과 선박 [ENDCOLOR] 대 공격', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_ADJACENT_MOD', '[COLOR_POSITIVE_TEXT] 인접 [ENDCOLOR] 친절한 군사 유닛에', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_EMBARKED', '때 [COLOR_POSITIVE_TEXT] 나섰다 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WHEN_FLANKING', '때 [COLOR_POSITIVE_TEXT]의 측면에 [ENDCOLOR]', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_WITH_GREAT_GENERAL', '[COLOR_POSITIVE_TEXT] 위대한 장군 [ENDCOLOR] 같은 타일과 함께.', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EFFECT_EXTRA_WITHDRAWAL', '근접 공격을 철회 할 수있는 기회', '', '');
+/* 프로모션 이름 */
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_FIGHTER', '보너스 전투기 대 (50)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_HELICOPTER', '헬리콥터 대 보너스 (100)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_TANK', '탱크 대 보너스 (100)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', '북극의 힘', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', '국방에 대한 페널티 (50)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DEFENSE_PENALTY_50', '국방에 대한 페널티 (50)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_DESERT_POWER', '사막 전원', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_EMBARKED_DEFENSE', '착수 국방 (100)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_FOREIGN_LANDS', '외국 땅 보너스 (20)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP', 'AI 핸디캡', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_1', 'AI 핸디캡 I', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_2', 'AI 핸디캡 II', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HILL_FIGHTER', '힐 파이터', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MERCENARY', '용병', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_MOUNTED_PENALTY', '마운트 페널티 대 (50)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NAVAL_PENALTY', '페널티 킥 공격 배 (50)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT', '새로운 단위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_NEW_UNIT_HELP', '새로운 단위', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_SEE_INVISIBLE_SUBMARINE', '잠수함을 볼 수 있습니다', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_INTERCEPTION_HELP', '[COLOR_POSITIVE_TEXT] 공기 단위 [ENDCOLOR]를 가로 챌 수 [ICON_AIR] 확률 (%)', '', '');
+REPLACE INTO Language_KO_KR (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_WEAK_RANGED', '지상 공격 페널티 (50)', '', '');
+
+
+
+UPDATE LoadedFile SET Value=1, KO_KR=1 Where Type='Text_TW_PromotionStats.sql';

@@ -61,9 +61,9 @@ UPDATE Units SET Cost = Cost * 0.873, Combat = Combat * 0.917                   
 UPDATE Units SET Cost = Cost * 0.747, Combat = Combat * 0.86                                        WHERE Class = 'UNITCLASS_GREAT_WAR_INFANTRY';
 UPDATE Units SET Cost = Cost * 1    , Combat = Combat * 1.429, RangedCombat = RangedCombat * 1.607  WHERE Class = 'UNITCLASS_ARTILLERY';
 UPDATE Units SET Cost = Cost * 0.667, Combat = Combat * 1.333, RangedCombat = RangedCombat * 1      WHERE Class = 'UNITCLASS_GATLINGGUN';
-UPDATE Units SET Cost = Cost * 0.988, Combat = Combat * 1.176                                       WHERE Class = 'UNITCLASS_CAVALRY';
+UPDATE Units SET Cost = Cost * 0.642, Combat = Combat * 0.882, RangedCombat =       Combat * 1.029  WHERE Class = 'UNITCLASS_CAVALRY';
 UPDATE Units SET Cost = Cost * 0.914, Combat = Combat * 1.088                                       WHERE Class = 'UNITCLASS_RIFLEMAN';
-UPDATE Units SET Cost = Cost * 0.721, Combat = Combat * 0.96 , RangedCombat =       Combat * 1.28   WHERE Class = 'UNITCLASS_LANCER';
+UPDATE Units SET Cost = Cost * 1.171, Combat = Combat * 1.56                                        WHERE Class = 'UNITCLASS_LANCER';
 UPDATE Units SET Cost = Cost * 0.991, Combat = Combat * 1.571, RangedCombat = RangedCombat * 1.65   WHERE Class = 'UNITCLASS_CANNON';
 UPDATE Units SET Cost = Cost * 1.204, Combat = Combat * 1.3                                         WHERE Class = 'UNITCLASS_KNIGHT';
 UPDATE Units SET Cost = Cost * 1.111, Combat = Combat * 1.143                                       WHERE Class = 'UNITCLASS_LONGSWORDSMAN';
@@ -87,7 +87,7 @@ UPDATE Units SET Cost = Cost * 1.037, Combat = 70 , RangedCombat = 0  , Range = 
 UPDATE Units SET Cost = Cost * 1.037, Combat = 50 , RangedCombat = 70 , Range = 3, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 6  WHERE Class = 'UNITCLASS_BATTLESHIP';
 UPDATE Units SET Cost = Cost * 0.741, Combat = 50 , RangedCombat = 0  , Range = 0, CombatClass = 'UNITCOMBAT_NAVALMELEE' , Moves = 7  WHERE Class = 'UNITCLASS_DESTROYER';
 UPDATE Units SET Cost = Cost * 0.957, Combat = 25 , RangedCombat = 75 , Range = 1, CombatClass = 'UNITCOMBAT_SUBMARINE'  , Moves = 6  WHERE Class = 'UNITCLASS_SUBMARINE';
-UPDATE Units SET Cost = Cost * 0.956, Combat = 32 , RangedCombat = 43 , Range = 2, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 5  WHERE Class = 'UNITCLASS_IRONCLAD';
+UPDATE Units SET Cost = Cost * 0.956, Combat = 32 , RangedCombat = 43 , Range = 2, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 4  WHERE Class = 'UNITCLASS_IRONCLAD';
 UPDATE Units SET Cost = Cost * 1.185, Combat = 32 , RangedCombat = 0  , Range = 0, CombatClass = 'UNITCOMBAT_NAVALMELEE' , Moves = 5  WHERE Class = 'UNITCLASS_FRIGATE';
 UPDATE Units SET Cost = Cost * 0.961, Combat = 24 , RangedCombat = 32 , Range = 2, CombatClass = 'UNITCOMBAT_NAVALRANGED', Moves = 4  WHERE Class = 'UNITCLASS_PRIVATEER';
 UPDATE Units SET Cost = Cost * 0.972, Combat = 21 , RangedCombat = 0  , Range = 0, CombatClass = 'UNITCOMBAT_NAVALMELEE' , Moves = 4  WHERE Class = 'UNITCLASS_CARAVEL';
@@ -137,13 +137,6 @@ UPDATE Units SET         Cost = ROUND((Cost * 2) / 10, 0) * 10  WHERE         Co
 -- Combat Classes
 --
 
-UPDATE Units
-SET CombatClass = 'UNITCOMBAT_MELEE'
-WHERE Class IN (
-	'UNITCLASS_GATLINGGUN'	,
-	'UNITCLASS_MACHINE_GUN'	,
-	'UNITCLASS_BAZOOKA'		
-);
 
 /*
 Mounted Archers need a combat class,
@@ -167,20 +160,20 @@ WHERE CombatClass = 'UNITCOMBAT_ARCHER' AND MoveRate NOT IN (
 UPDATE Units
 SET CombatClass = 'UNITCOMBAT_GUN'	
 WHERE Class IN (
-	'UNITCLASS_LANCER'				
+	'UNITCLASS_CAVALRY'				
 );
 
 UPDATE Units SET Range = 1 WHERE Class IN (
 	'UNITCLASS_HELICOPTER_GUNSHIP'	,
 	'UNITCLASS_CHARIOT_ARCHER'		,
-	'UNITCLASS_LANCER'				
+	'UNITCLASS_CAVALRY'				
 );
 
 INSERT INTO Unit_FreePromotions (UnitType, PromotionType)
 SELECT DISTINCT Type, 'PROMOTION_ONLY_DEFENSIVE'
 FROM Units WHERE Class IN (
 	'UNITCLASS_HELICOPTER_GUNSHIP'	,
-	'UNITCLASS_LANCER'
+	'UNITCLASS_CAVALRY'
 );
 
 UPDATE Units
@@ -197,6 +190,9 @@ WHERE Class IN (
 --
 -- Upgrades
 --
+
+/*
+-- Moved to CEA_Upgrades.sql
 
 DELETE FROM Unit_ClassUpgrades WHERE UnitType IN (SELECT Type FROM Units WHERE Domain = 'DOMAIN_SEA');
 
@@ -222,6 +218,8 @@ SELECT DISTINCT Type FROM Units WHERE Class IN (
 
 INSERT INTO Unit_ClassUpgrades (UnitType, UnitClassType) SELECT DISTINCT Type, 'UNITCLASS_SPEARMAN'		FROM Units WHERE Class = 'UNITCLASS_SCOUT';
 INSERT INTO Unit_ClassUpgrades (UnitType, UnitClassType) SELECT DISTINCT Type, 'UNITCLASS_MUSKETMAN'	FROM Units WHERE Class = 'UNITCLASS_PIKEMAN';
+
+*/
 
 --
 -- Resources
@@ -305,6 +303,7 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_WALLS'
 );
 
+/*
 UPDATE Buildings
 SET ConquestProb = 50
 WHERE BuildingClass IN (
@@ -319,6 +318,7 @@ WHERE BuildingClass IN (
 	'BUILDINGCLASS_HARBOR',
 	'BUILDINGCLASS_WAREHOUSE'
 );
+*/
 
 --
 -- Other

@@ -153,7 +153,7 @@ function City_GetBuildingsOfFlavor(city, flavorType, goldMin, includeWonders)
 	local player = Players[city:GetOwner()]
 	local itemFlavors = {}
 	local numItems = 0
-	for flavorInfo in GameInfo.Building_Flavors(string.format("FlavorType = '%s'", flavorType)) do
+	for flavorInfo in GameInfo.Building_Flavors{FlavorType = flavorType} do
 		if not flavorInfo.BuildingType then
 			log:Error("BuildingType=%s FlavorType=%s", flavorInfo.BuildingType, flavorType)
 		else
@@ -196,8 +196,15 @@ function City_GetUnitsOfFlavor(city, flavorType, goldMin)
 	local player = Players[city:GetOwner()]
 	local itemFlavors = {}
 	local numItems = 0
-	for flavorInfo in GameInfo.Unit_Flavors(string.format("FlavorType = '%s'", flavorType)) do
+	log:Debug("%20s %25s %s", city:GetName(), flavorType, goldMin)
+	for flavorInfo in GameInfo.Unit_Flavors{FlavorType = flavorType} do
 		local itemInfo = GameInfo.Units[flavorInfo.UnitType]
+		log:Debug("%25s CanTrain=%5s PurchaseCost=%3s BudgetGone=%s",
+			itemInfo.Type,
+			city:CanTrain(itemInfo.ID, 0, 1),
+			City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Units, itemInfo.ID),
+			(goldMin and player:IsBudgetGone(goldMin + City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Units, itemInfo.ID), itemInfo.ExtraMaintenanceCost))
+		)
 		if not itemInfo then
 			log:Error("City_GetUnitsOfFlavor: %s does not exist in GameInfo.Units  (FlavorType=%s)", flavorInfo.UnitType, flavorType)
 				

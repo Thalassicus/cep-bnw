@@ -12,7 +12,7 @@
 			<Set GridX="1"
 				 GridY="1"
 				 HappinessPerGarrisonedUnit="1"
-				 CulturePerGarrisonedUnit="2"
+				 CulturePerGarrisonedUnit="3"
 				 />
 		</Update>
 		<Row>
@@ -27,6 +27,7 @@
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
+			<BaseFreeMilitaryUnits>2</BaseFreeMilitaryUnits>
 		</Row>
 		<Row>
 			<Type>POLICY_SPOILS_OF_WAR</Type>
@@ -40,7 +41,7 @@
 			<PortraitIndex>7</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-			<GoldFromKills>200</GoldFromKills>
+			<GoldFromKills>300</GoldFromKills>
 			<CitystateCaptureYieldTurns>10</CitystateCaptureYieldTurns>
 		</Row>
 		<Update>
@@ -72,6 +73,7 @@
 		<Update>
 			<Where Type="POLICY_HONOR_FINISHER" />
 			<Set GoldFromKills="0"
+				 MovePurchasedUnits="1"
 				 />
 		</Update>
 	</Policies>
@@ -101,11 +103,18 @@
 			<Happiness>1</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
+	<Policy_FreeUnitFlavor>
+		<Row>
+			<PolicyType>POLICY_GLADIATORS</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitFlavor>
 	<Policy_BuildingClassProductionModifiers>
 		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
 	</Policy_BuildingClassProductionModifiers>
 
-		<!--
+	<!--
 	<Policies>
 		<Update>
 			<Where Type="POLICY_HONOR" />

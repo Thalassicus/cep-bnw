@@ -93,11 +93,13 @@ UPDATE Buildings SET Cost = Cost * 0.741, GoldMaintenance = 1  WHERE BuildingCla
 
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_CARAVANSARY';
+UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_COURTHOUSE';
 
 --
 -- Unique Buildings
 --
 
+-- Set unique building cost to the same as the regular building it replaces
 UPDATE Buildings SET Cost = (SELECT b.Cost FROM Buildings b, BuildingClasses class WHERE (
 	Buildings.BuildingClass = b.BuildingClass
 	AND class.Type = b.BuildingClass
@@ -518,10 +520,15 @@ UPDATE Buildings SET Description='TXT_KEY_BUILDING_SUPERMAX_PRISON',     Civilop
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_CAPITAL_BUILDING',    Civilopedia='TXT_KEY_BUILDING_CAPITAL_BUILDING_PEDIA'     WHERE Type = 'BUILDING_PALACE';
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_WORKSHOP',            Civilopedia='TXT_KEY_CIV5_BUILDINGS_WORKSHOP_TEXT'             WHERE Type = 'BUILDING_WINDMILL';
 UPDATE Buildings SET Description='TXT_KEY_BUILDING_SMITH',               Civilopedia='TXT_KEY_BUILDING_SMITH_PEDIA'                WHERE Type = 'BUILDING_WORKSHOP';
+UPDATE Buildings SET Help='TXT_KEY_BUILDING_TEMPLE_HELP'		WHERE Type='BUILDING_TEMPLE';
+UPDATE Buildings SET Help='TXT_KEY_BUILDING_AMPHITHEATER_HELP'	WHERE Type='BUILDING_AMPHITHEATER';
+UPDATE Buildings SET Help='TXT_KEY_BUILDING_MARKET_HELP'		WHERE Type='BUILDING_MARKET';
 
 UPDATE BuildingClasses SET Description = (SELECT Description FROM Buildings b WHERE BuildingClasses.DefaultBuilding = b.Type);
 
 UPDATE Buildings SET Cost = -1 WHERE Cost <= 0;
+
+UPDATE Buildings SET Help = 'TXT_KEY_GENERIC' WHERE AlwaysShowHelp <> 1;
 
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CEC__End.sql';

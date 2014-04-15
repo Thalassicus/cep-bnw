@@ -105,6 +105,8 @@
 			<Where Type="TRAIT_LAND_TRADE_GOLD" />
 			<Set LandTradeRouteRangeBonus="10"
 				 TradeReligionModifier="100"
+				 ShortDescription="TXT_KEY_TRAIT_LAND_TRADE_GOLD_SHORT"
+				 Description="TXT_KEY_TRAIT_LAND_TRADE_GOLD"
 				 />
 		</Update>
 	</Traits>
@@ -227,6 +229,15 @@
 
 	<!--	Brazil
 	-->
+	<Traits>
+		<Update>
+			<Where Type="TRAIT_CARNIVAL" />
+			<Set GoldenAgeGreatArtistRateModifier="100"
+				 GoldenAgeGreatMusicianRateModifier="100"
+				 GoldenAgeGreatWriterRateModifier="100"
+				 />
+		</Update>
+	</Traits>
 	<Improvement_TechYieldChanges>
 		<Update>
 			<Where ImprovementType="IMPROVEMENT_BRAZILWOOD_CAMP" TechType="TECH_ACOUSTICS" />
@@ -526,13 +537,6 @@
 
 	<!--	Denmark
 	-->
-	<Building_YieldModifiers>
-		<Row>
-			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>10</Yield>
-		</Row>
-	</Building_YieldModifiers>
 	<Buildings>
 		<Row>
 			<Type>BUILDING_JELLING_STONES</Type>
@@ -759,7 +763,7 @@
 	<Building_YieldChanges>
 		<Update>
 			<Where BuildingType="BUILDING_STELE" YieldType="YIELD_FAITH" />
-			<Set Yield="1"/>
+			<Set Yield="2"/>
 		</Update>
 	</Building_YieldChanges>
 	<Building_YieldChangesPerPop>
@@ -772,7 +776,7 @@
 	<Traits>
 		<Update>
 			<Where Type="TRAIT_BONUS_AGAINST_TECH" />
-			<Set DOFGreatPersonModifier="10" />
+			<Set DOFGreatPersonModifier="25" />
 		</Update>
 	</Traits>
 
@@ -785,6 +789,40 @@
 			<PromotionType>PROMOTION_FOREIGN_LANDS</PromotionType>
 		</Row>
 	</Unit_FreePromotions>
+	<Traits>
+		<Update>
+			<Where Type="TRAIT_ENHANCED_CULTURE" />
+			<Set CapitalThemingBonusModifier="0"
+				 />
+		</Update>
+	</Traits>
+	<Trait_FreeUnitFromCapitalBuilding>
+		<Row>
+			<TraitType>TRAIT_ENHANCED_CULTURE</TraitType>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<UnitClass>UNITCLASS_ARTIST</UnitClass>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ENHANCED_CULTURE</TraitType>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATER</BuildingClass>
+			<UnitClass>UNITCLASS_WRITER</UnitClass>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ENHANCED_CULTURE</TraitType>
+			<BuildingClass>BUILDINGCLASS_OPERA_HOUSE</BuildingClass>
+			<UnitClass>UNITCLASS_MUSICIAN</UnitClass>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ENHANCED_CULTURE</TraitType>
+			<BuildingClass>BUILDINGCLASS_MUSEUM</BuildingClass>
+			<UnitClass>UNITCLASS_ARTIST</UnitClass>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ENHANCED_CULTURE</TraitType>
+			<BuildingClass>BUILDINGCLASS_BROADCAST_TOWER</BuildingClass>
+			<UnitClass>UNITCLASS_MUSICIAN</UnitClass>
+		</Row>
+	</Trait_FreeUnitFromCapitalBuilding>
 
 
 
@@ -865,7 +903,7 @@
 			<NeverCapture>true</NeverCapture>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>TECH_ATLAS_1</IconAtlas>
-			<IsVisible>1</IsVisible>
+			<IsVisible>0</IsVisible>
 			<ShowInPedia>0</ShowInPedia>
 		</Row>
 	</Buildings>
@@ -977,7 +1015,7 @@
 		<Update>
 			<Where Type="TRAIT_CONVERTS_LAND_BARBARIANS" />
 			<Set LandBarbarianConversionPercent="100"
-				 LandUnitMaintenanceModifier="-25"
+				 LandUnitMaintenanceModifier="-50"
 				 />
 		</Update>
 	</Traits>
@@ -999,6 +1037,7 @@
 			<Where Type="UNIT_HUN_BATTERING_RAM" />
 			<Set Moves="3"
 				 Combat="11"
+				 CombatClass="UNITCOMBAT_MELEE"
 				 />
 		</Update>
 	</Units>
@@ -1151,18 +1190,55 @@
 
 	<!--	Indonesia
 	-->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_CANDI" />
+			<Set BuildingClass="BUILDINGCLASS_TEMPLE"
+				 PrereqTech="TECH_PHILOSOPHY"
+				 Cost="100"
+				 ArtDefineTag="ART_DEF_BUILDING_TEMPLE"
+				 GreatPeopleRateModifier="0"
+				 />
+		</Update>
+	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Row>
+			<BuildingType>BUILDING_CANDI</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+		</Row>
+	</Building_ClassesNeededInCity>
+	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_CANDI" YieldType="YIELD_FAITH"/>
+			<Set Yield="4" />
+		</Update>
+	</Building_YieldChanges>
+	<Building_YieldChangesPerReligion>
+		<Row>
+			<BuildingType>BUILDING_CANDI</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>200</Yield>
+		</Row>
+	</Building_YieldChangesPerReligion>
+	<Civilization_BuildingClassOverrides>
+		<Update>
+			<Where BuildingType="BUILDING_SATRAPS_COURT" />
+			<Set BuildingClassType="BUILDINGCLASS_MARKET" />
+		</Update>
+	</Civilization_BuildingClassOverrides>
 
 
 
 
 	<!--	Iroquois
 	-->
-	<Traits>
-		<Update>
-			<Where Type="TRAIT_IGNORE_TERRAIN_IN_FOREST" />
-			<Set NoWarrior="true" />
-		</Update>
-	</Traits>
+	<Building_YieldModifiers>
+		<Row>
+			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>10</Yield>
+		</Row>
+	</Building_YieldModifiers>
 
 
 

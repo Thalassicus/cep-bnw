@@ -31,6 +31,8 @@ DELETE FROM Unit_Flavors WHERE FlavorType IN (
 );
 */
 
+--CREATE TABLE Unit_Flavors_BNW AS SELECT * FROM Unit_Flavors; --BNW Flavors
+
 INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
 SELECT Type, 'FLAVOR_TOURISM', 1
 FROM Units WHERE Class IN (
@@ -44,6 +46,12 @@ SELECT Type, 'FLAVOR_RELIGION', 1
 FROM Units WHERE Class IN (
 	'UNITCLASS_MISSIONARY' ,
 	'UNITCLASS_INQUISITOR'			
+);
+
+INSERT INTO Unit_Flavors (UnitType, FlavorType, Flavor)
+SELECT Type, 'FLAVOR_GOLD', 1
+FROM Units WHERE (
+	Trade = 1
 );
 
 DELETE FROM Unit_Flavors WHERE FlavorType = 'FLAVOR_RECON'	AND UnitType = 'UNIT_WARRIOR';
@@ -210,7 +218,15 @@ WHERE unit.Class IN (
 UPDATE Unit_Flavors SET Flavor = 4;
 
 UPDATE Unit_Flavors SET Flavor = Flavor * 2
-WHERE FlavorType IN ('FLAVOR_NAVAL', 'FLAVOR_NAVAL_RECON', 'FLAVOR_RELIGION', 'FLAVOR_I_LAND_TRADE_ROUTE', 'FLAVOR_I_SEA_TRADE_ROUTE', 'FLAVOR_ARCHAEOLOGY' );
+WHERE FlavorType IN (
+	'FLAVOR_NAVAL'				,
+	'FLAVOR_NAVAL_RECON'		,
+	'FLAVOR_RELIGION'			,
+	'FLAVOR_I_LAND_TRADE_ROUTE'	,
+	'FLAVOR_I_SEA_TRADE_ROUTE'	,
+	'FLAVOR_GOLD'				,
+	'FLAVOR_ARCHAEOLOGY'
+);
 
 
 -- Great People and Specialists
@@ -401,4 +417,8 @@ DELETE FROM SpecialistFlavors;
 INSERT INTO SpecialistFlavors (SpecialistType, FlavorType, Flavor) SELECT SpecialistType, FlavorType, Flavor FROM CEP_Collisions;
 DROP TABLE CEP_Collisions;
 
-UPDATE LoadedFile SET Value=1 WHERE Type='CEAI__End_Flavors.sql';
+-- Revert BNW Flavors
+--DELETE FROM Unit_Flavors WHERE UnitType IN (SELECT UnitType FROM Unit_Flavors_BNW);
+--INSERT INTO Unit_Flavors SELECT * FROM Unit_Flavors_BNW WHERE UnitType IN (SELECT Type FROM Units);
+
+UPDATE LoadedFile SET Value=1 WHERE Type='CAT_AI_Flavors_CEAI_Units.sql';

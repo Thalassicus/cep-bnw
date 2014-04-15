@@ -67,6 +67,7 @@ function SpendAIGold(player)
 	if (player:IsHuman()
 			or not player:GetCapitalCity() 
 			or player:IsBudgetGone(0)
+			or Cep.USING_CSD == 2
 			--or (Game.GetAdjustedTurn() < 10)
 			) then
 		return
@@ -108,10 +109,7 @@ function SpendAIGold(player)
 		goldMin
 	)
 	--]]
-	
-	if goldStored < goldHigh then
-		return
-	end
+	if player:IsBudgetGone(50) then return end
 	
 	--
 	-- Create lists
@@ -167,18 +165,23 @@ function SpendAIGold(player)
 	--
 	-- Critical priorities
 	--
+	log:Info("%15s %20s %3s %-4s critical priorities", "AIPurchase", player:GetName(), " ", " ")
 	
-	-- Negative income
-	if player:GetYieldRate(YieldTypes.YIELD_GOLD) < 0 then
+	-- Severely low income
+	if player:GetYieldRate(YieldTypes.YIELD_GOLD) < 7 then
 		local attempt = 0
 		while PurchaseBuildingOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
+			attempt = attempt + 1
+		end
+		while PurchaseOneUnitOfFlavor(player, cities, 0, "FLAVOR_GOLD") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
 		end
 		if player:IsBudgetGone(0) then return end
 	end
 	
-	-- Severe negative happiness
-	if player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY) <= -10 then
+	-- Severely low happiness
+	local happiness = player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY)
+	if (happiness <= -10) or (isWarAny and happiness <= -10) then
 		local attempt = 0
 		while PurchaseBuildingOfFlavor(player, cities, 0, "FLAVOR_HAPPINESS") and attempt <= Cep.AI_PURCHASE_FLAVOR_MAX_ATTEMPTS do
 			attempt = attempt + 1
@@ -214,11 +217,12 @@ function SpendAIGold(player)
 		end
 	end
 	
+	if player:IsBudgetGone(goldHigh) then return end
+	
 	--
 	-- Moderate priorities
 	--
-
-	if player:IsBudgetGone(goldLow) then return end
+	log:Info("%15s %20s %3s %-4s moderate priorities", "AIPurchase", player:GetName(), " ", " ")
 	
 	-- City Defense
 	local numBuy = 0
@@ -311,13 +315,14 @@ function SpendAIGold(player)
 		if player:IsBudgetGone(goldLow) then return end
 	end
 	
-	--log:Debug("goldStored=%s goldHigh=%s goldMin=%s", player:GetYieldStored(YieldTypes.YIELD_GOLD), goldHigh, goldMin)
+	log:Debug("goldStored=%s goldHigh=%s goldMin=%s", player:GetYieldStored(YieldTypes.YIELD_GOLD), goldHigh, goldMin)
 	if player:IsBudgetGone(goldLow) then return end
 	
 	
 	-- 
 	-- Low priorities
 	-- 
+	log:Info("%15s %20s %3s %-4s low priorities", "AIPurchase", player:GetName(), " ", " ")
 	
 	local leaderInfo	= GameInfo.Leaders[player:GetLeaderType()]
 	local unitMod		= 0
@@ -328,7 +333,7 @@ function SpendAIGold(player)
 		FLAVOR_DIPLOMACY			= GetCitystateMod(player),
 		FLAVOR_NAVAL				= player:HasTech("TECH_SAILING") and 1 or 0,
 		FLAVOR_AIR					= player:HasTech("TECH_FLIGHT") and 1 or 0,
-		FLAVOR_EXPANSION			= isWarAny and 0 or 5 / #cities,
+		FLAVOR_EXPANSION			= isWarHuman and 0 or 5 / #cities,
 		FLAVOR_TILE_IMPROVEMENT		= 0, --numWorkers - #cities and 1 or 0,
 		FLAVOR_GROWTH				= 1.1 ^ (10 - citiesReverse[1].pop),
 		FLAVOR_HAPPINESS			= 1.1 ^ (10 - player:GetYieldRate(YieldTypes.YIELD_HAPPINESS_CITY)),
@@ -351,7 +356,7 @@ function SpendAIGold(player)
 			end
 			if flavorValue > 0 and priority > 0 then
 				if doUnits or DoFlavorFunction[flavorType] ~= PurchaseOneUnitOfFlavor then
-					--log:Info("%-15s %20s %3s/%-4s %-20s priority=%-3s", "AIPurchase", player:GetName(), " ", string.gsub(flavorType, "FLAVOR_", ""), flavorValue)
+					log:Debug("%-15s %20s %3s/%-4s %-20s priority=%-3s", "AIPurchase", player:GetName(), " ", "", string.gsub(flavorType, "FLAVOR_", ""), flavorValue)
 					flavorWeights[flavorType] = flavorValue * priority
 				end
 			end
@@ -456,13 +461,14 @@ end
 function PurchaseOneUnitOfFlavor(player, cities, goldMin, flavorType)
 	for _,cityInfo in ipairs(cities) do
 		local city = Map_GetCity(cityInfo.id)
-		local units = City_GetUnitsOfFlavor(city, flavorType, goldMin)
-		if #units > 0 then
+		local units, numUnits = City_GetUnitsOfFlavor(city, flavorType, goldMin)
+		log:Debug("%-15s %20s %3s %-4s %-2s units of                   %-25s in %s", "", player:GetName(), " ", " ", numUnits, flavorType, city:GetName())
+		if numUnits > 0 then
 			local itemID = Game.GetRandomWeighted(units)
 			if itemID ~= -1 then
 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Units, itemID)
 				local unit = player:InitUnitType(itemID, city:Plot(), City_GetUnitExperience(city, itemID))				
-				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Units[itemID].Type)
+				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %-25s in %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Units[itemID].Type, city:GetName())
 				player:ChangeYieldStored(YieldTypes.YIELD_GOLD, -1 * cost)
 				return unit
 			end
@@ -479,13 +485,14 @@ function PurchaseBuildingOfFlavor(player, cities, goldMin, flavorType)
 	end
 	for _,cityInfo in ipairs(cities) do
 		local city = Map_GetCity(cityInfo.id)
-		local buildings = City_GetBuildingsOfFlavor(city, flavorType, goldMin)
-		if #buildings > 0 then
+		local buildings, numBuildings = City_GetBuildingsOfFlavor(city, flavorType, goldMin)
+		log:Debug("%-15s %20s %3s %-4s %-2s buildings of               %-25s in %s", "", player:GetName(), " ", " ", numBuildings, flavorType, city:GetName())
+		if numBuildings > 0 then
 			local itemID = Game.GetRandomWeighted(buildings)
 			if itemID ~= -1 then
 				local cost = City_GetPurchaseCost(city, YieldTypes.YIELD_GOLD, GameInfo.Buildings, itemID)
 				city:SetNumRealBuilding(itemID, 1)	
-				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Buildings[itemID].Type)
+				log:Info("%-15s %20s %3s/%-4s PAID for                      %-25s %-25s in %s", "AIPurchase", player:GetName(), cost, player:GetYieldStored(YieldTypes.YIELD_GOLD), flavorType, GameInfo.Buildings[itemID].Type, city:GetName())
 				player:ChangeYieldStored(YieldTypes.YIELD_GOLD, -1 * cost)
 				return true
 			end
@@ -732,7 +739,7 @@ function PlayerStartBonuses(player)
 			if unit:GetUnitType() == settlerID then
 				startPlot = unit:GetPlot()
 				if player:IsHuman() then-- and trait.NoWarrior and trait.FreeUnit == "UNITCLASS_WORKER" then
-					for nearPlot in Plot_GetPlotsInCircle(startPlot, 2, 3) do
+					for nearPlot in Plot_GetPlotsInCircle(startPlot, 2, 4) do
 						nearPlot:SetRevealed(teamID, true)
 					end
 					UI.SelectUnit(unit)
@@ -1041,7 +1048,7 @@ function AIMilitaryHandicap(  playerID,
 	end
 	--]]
 
-	local handicapInfo = GameInfo.HandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
+	local handicapInfo = GameInfo.CepHandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
 	local freePromotion = "PROMOTION_HANDICAP"--handicapInfo.AIFreePromotion
 	local unitInfo = GameInfo.Units[unit:GetUnitType()]
 
@@ -1084,6 +1091,10 @@ function AIMilitaryHandicapPerTurn(unit)
 	if player:IsHuman() or player:IsBarbarian() or not unit:IsCombatUnit() then
 		return
 	end
+	if unit:GetPlot():IsVisibleToWatchingHuman() and (unit:GetExperience() + 1 == unit:ExperienceNeeded()) then
+		-- Don't promote without a source of experience when visible
+		return
+	end
 	
 	local handicap = Game.GetHandicapInfo()
 	
@@ -1110,7 +1121,7 @@ function AIMilitaryHandicapPerTurn(unit)
 	
 	local odds = hostileMultiplier * handicap.AIFreeXPPerTurn
 	
-	if odds > Map.Rand(100, "AI bonus experience") then
+	if odds * 100 > Map.Rand(100, "AI bonus experience") then
 		unit:ChangeExperience(1)
 	end
 end
@@ -1283,7 +1294,21 @@ LuaEvents.AICaptureDecision.Add(function(city, player) return SafeCall(DoAICaptu
 
 
 
--- Manually clear barbarian camps
+--[[ Manually clear barbarian camps
+
+The unmodded game code does not encourage AIs to clear camps or escort their settlers.
+
+This causes the AI to have too little gold in the early game,
+and can permanently cripple their settlement efforts.
+
+These bugs are in the c++ core, so directly fixing the issue is not possible with our current mod structure.
+
+Our easy solution (if imperfect) is to periodically clear the camps for the AI.
+It only does this if the camp is closer to an AI city than a human city,
+and the camp is not visible to a human.
+
+--]]
+
 
 function ClearCamps()
 	if Game.GetAdjustedTurn() <= 20 or Game.GetGameTurn() % 3 ~= 0 then
@@ -1305,7 +1330,7 @@ function ClearCamps()
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
+LuaEvents.ActivePlayerTurnEnd_Turn.Add(function() return SafeCall(ClearCamps) end)
 
 function ClearCampsCity(city, player)
 	if player:IsHuman() or player:IsMinorCiv() then
@@ -1325,16 +1350,16 @@ function ClearCampsCity(city, player)
 			log:Debug("ClearCampsCity %s %s distance=%s", player:GetName(), city:GetName(), distance)
 			local campUnit = nearPlot:GetUnit(0)
 			if Plot_IsNearHuman(nearPlot, 2 * distance) then
-				log:Debug("ClearCampsCity aborting: near human", player:GetName(), city:GetName())
+				log:Info("ClearCampsCity aborting: near human", player:GetName(), city:GetName())
 			elseif (not campUnit) or campUnit:FortifyModifier() > GameDefines.FORTIFY_MODIFIER_PER_TURN then  -- barb has been here a while
 				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
+					log:Info("%s cleared camp near %s", player:GetName(), city:GetName())
 					ClearCamp(player, nearPlot)
 				end
 			end
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_City.Add(function(city, player) return SafeCall(ClearCampsCity, city, player) end)
 
 function ClearCampsUnit(unit)
 	local player = Players[unit:GetOwner()]
@@ -1348,7 +1373,7 @@ function ClearCampsUnit(unit)
 	for nearPlot in Plot_GetPlotsInCircle(unit:GetPlot(), 1, 1) do
 		if nearPlot:GetImprovementType() == campID then
 			if nearPlot:IsVisibleToWatchingHuman() then
-				log:Info("ClearCampsUnit aborting: visible to human", player:GetName(), unit:GetName())
+				log:Debug("ClearCampsUnit aborting: visible to human", player:GetName(), unit:GetName())
 			else
 				if clearOdds > Map.Rand(100, "Clear barb camp near AI") then
 					log:Debug("ClearCampsUnit %s %s", player:GetName(), unit:GetName())
@@ -1358,7 +1383,7 @@ function ClearCampsUnit(unit)
 						if Players[nearUnit:GetOwner()]:IsBarbarian() and nearUnit:IsCombatUnit() then
 							nearUnit:Kill()
 							unit:ChangeExperience(10)
-							log:Info("Killed barbarian %s with 10 experience for %s", nearUnit:GetName(), unit:GetName())
+							log:Info("%s killed barbarian %s with 10 experience for %s", player:GetName(), nearUnit:GetName(), unit:GetName())
 							break
 						end
 					end
@@ -1367,7 +1392,6 @@ function ClearCampsUnit(unit)
 		end
 	end
 end
---LuaEvents.ActivePlayerTurnEnd_Unit.Add(function(unit) return SafeCall(ClearCampsUnit, unit) end)
 
 function ClearCamp(player, plot)
 	local campGold = Game.GetHandicapInfo().BarbCampGold

@@ -203,7 +203,8 @@ function FreeUnitWithTech(player, techID, changeID)
 		end
 	end
 end
-LuaEvents.NewTech.Add(FreeUnitWithTech)
+LuaEvents.NewTech.Add(function(player, techID, changeID) return SafeCall(FreeUnitWithTech, player, techID, changeID) end)
+
 --]]
 
 --[[
@@ -425,7 +426,7 @@ function UpdateTribute(player)
 		if route.FromID == route.ToID then
 			-- domestic route
 			local cityID = City_GetID(route.ToCity)
-			tributeCities[cityID] = (tributeCities[cityID] or 0) + 5 + 2 * player:GetCurrentEra()
+			tributeCities[cityID] = (tributeCities[cityID] or 0) + 10 + 4 * player:GetCurrentEra()
 		end
 	end
 

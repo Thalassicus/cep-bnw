@@ -4,6 +4,7 @@
 include("IconSupport");
 include("InstanceManager");
 include("InfoTooltipInclude");
+include("MT_Events");
 
 
 local timeStart = os.clock()
@@ -317,12 +318,14 @@ function ProductionSelected( ePurchaseEnum, iData)
 		end
     end
      
+	--modchange
 	local cityID = city:GetID();
-	local player = city:GetOwner();
-    Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
-    Events.SpecificCityInfoDirty( player, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
+	local playerID = city:GetOwner();
+    Events.SpecificCityInfoDirty( playerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
+    Events.SpecificCityInfoDirty( playerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
  
-	if not g_append or not g_IsProductionMode then 
+	--modchange
+	if not g_append and g_IsProductionMode then 
 		OnClose();
 	end
 end

@@ -103,7 +103,7 @@
 		<Update>
 			<Where Type="YIELD_FOOD" />
 			<Set Color="COLOR_YIELD_FOOD"
-				 AIWeightPercent="150"
+				 AIWeightPercent="100"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas.dds"
 				 FlavorType="FLAVOR_GROWTH"
@@ -112,6 +112,7 @@
 		<Update>
 			<Where Type="YIELD_PRODUCTION" />
 			<Set Color="COLOR_YIELD_PRODUCTION"
+				 AIWeightPercent="100"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas.dds"
 				 FlavorType="FLAVOR_PRODUCTION"
@@ -120,6 +121,7 @@
 		<Update>
 			<Where Type="YIELD_GOLD" />
 			<Set Color="COLOR_YIELD_GOLD"
+				 AIWeightPercent="150"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas.dds"
 				 FlavorType="FLAVOR_GOLD"
@@ -128,6 +130,7 @@
 		<Update>
 			<Where Type="YIELD_SCIENCE" />
 			<Set Color="COLOR_RESEARCH_STORED"
+				 AIWeightPercent="100"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas.dds"
 				 FlavorType="FLAVOR_SCIENCE"
@@ -136,6 +139,7 @@
 		<Update>
 			<Where Type="YIELD_CULTURE" />
 			<Set Color="COLOR_MAGENTA"
+				 AIWeightPercent="100"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas_128_Culture.dds"
 				 FlavorType="FLAVOR_CULTURE"
@@ -144,6 +148,7 @@
 		<Update>
 			<Where Type="YIELD_FAITH" />
 			<Set Color="COLOR_WHITE"
+				 AIWeightPercent="100"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas_128_Faith.dds"
 				 FlavorType="FLAVOR_RELIGION"
@@ -311,7 +316,7 @@
 	</CityWeights>
 	<LoadedFile>
 		<Update>
-			<Where Type="YL_General.xml"/>
+			<Where Type="YL_Data.xml"/>
 			<Set Value="1"/>
 		</Update>
 	</LoadedFile>

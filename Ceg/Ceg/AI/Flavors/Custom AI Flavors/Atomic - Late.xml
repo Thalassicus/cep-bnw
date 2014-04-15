@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Flavors are numbered between 1-10 (10 being highest) for how a particular building, wonder, or unit helps with a certain strategy -->
+<GameData>
+	<!-- Late Atomic Era Units -->
+	<Unit_Flavors>
+		<!-- Missile Sub -->
+		<Delete UnitType="UNIT_NUCLEAR_SUBMARINE" />
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		
+		<!-- Mobile SAM -->
+		<Delete UnitType="UNIT_MOBILE_SAM" />
+		<Row>
+			<UnitType>UNIT_MOBILE_SAM</UnitType>
+			<FlavorType>FLAVOR_ANTIAIR</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MOBILE_SAM</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		
+		<!-- Bazooka -->
+		<Delete UnitType="UNIT_BAZOOKA" />
+		<Row>
+			<UnitType>UNIT_BAZOOKA</UnitType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_BAZOOKA</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		
+		<!-- Missile Destroyer -->
+		<Delete UnitType="UNIT_MISSILE_DESTROYER" />
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		
+		<!-- Atomic Bomb -->
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+		<Row>
+			<UnitType>UNIT_ATOMIC_BOMB</UnitType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ATOMIC_BOMB</UnitType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ATOMIC_BOMB</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		
+		<!-- Missile Cruiser -->
+		<Delete UnitType="UNIT_MISSILE_CRUISER" />
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>9</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<FlavorType>FLAVOR_SIEGE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		
+		<!-- Helicopter Gunship -->
+		<Delete UnitType="UNIT_HELICOPTER_GUNSHIP" />
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>9</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		
+		<!-- Mechanized Infantry -->
+		<Delete UnitType="UNIT_MECHANIZED_INFANTRY" />
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+	</Unit_Flavors>
+	
+	<!-- AI Unit Missions -->
+	<Unit_AITypes>
+		<!-- Missile Sub -->
+		<Delete UnitType="UNIT_NUCLEAR_SUBMARINE" />
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_NUCLEAR_SUBMARINE</UnitType>
+			<UnitAIType>UNITAI_MISSILE_CARRIER_SEA</UnitAIType>
+		</Row>
+
+		<!-- Mobile SAM -->
+		<Delete UnitType="UNIT_MOBILE_SAM" />
+		<Row>
+			<UnitType>UNIT_MOBILE_SAM</UnitType>
+			<UnitAIType>UNITAI_CITY_SPECIAL</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MOBILE_SAM</UnitType>
+			<UnitAIType>UNITAI_COUNTER</UnitAIType>
+		</Row>
+
+		<!-- Bazooka -->
+		<Delete UnitType="UNIT_BAZOOKA" />
+		<Row>
+			<UnitType>UNIT_BAZOOKA</UnitType>
+			<UnitAIType>UNITAI_RANGED</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_BAZOOKA</UnitType>
+			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
+		</Row>
+
+		<!-- Missile Destroyer -->
+		<Delete UnitType="UNIT_MISSILE_DESTROYER" />
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_DESTROYER</UnitType>
+			<UnitAIType>UNITAI_MISSILE_CARRIER_SEA</UnitAIType>
+		</Row>
+
+		<!-- Atomic Bomb -->
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+		<Row>
+			<UnitType>UNIT_ATOMIC_BOMB</UnitType>
+			<UnitAIType>UNITAI_ICBM</UnitAIType>
+		</Row>
+
+		<!-- Missile Cruiser -->
+		<Delete UnitType="UNIT_MISSILE_CRUISER" />
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MISSILE_CRUISER</UnitType>
+			<UnitAIType>UNITAI_MISSILE_CARRIER_SEA</UnitAIType>
+		</Row>		
+
+		<!-- Helicopter Gunship -->
+		<Delete UnitType="UNIT_HELICOPTER_GUNSHIP" />
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<UnitAIType>UNITAI_RANGED</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<UnitAIType>UNITAI_FAST_ATTACK</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_HELICOPTER_GUNSHIP</UnitType>
+			<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+		</Row>
+
+		<!-- Mechanized Infantry -->
+		<Delete UnitType="UNIT_MECHANIZED_INFANTRY" />
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_ATTACK</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	
+	<!-- Late Atomic Era Buildings -->
+	<Building_Flavors>
+		<!-- Spaceship Factory -->
+		<Delete BuildingType="BUILDING_SPACESHIP_FACTORY" />
+		<Row>
+			<BuildingType>BUILDING_SPACESHIP_FACTORY</BuildingType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_SPACESHIP_FACTORY</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		
+		<!-- Nuclear Plant -->
+		<Delete BuildingType="BUILDING_NUCLEAR_PLANT" />
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		
+	<!-- Late Atomic Era World Wonders -->
+		
+		<!-- Great Firewall -->
+		<Delete BuildingType="BUILDING_GREAT_FIREWALL" />
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+			<Flavor>9</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_FIREWALL</BuildingType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>1</Flavor>
+		</Row>
+	</Building_Flavors>
+</GameData>
