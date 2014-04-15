@@ -168,12 +168,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
+        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
+        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -203,11 +203,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Data.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>AI/CEAI_Handicaps.xml</FileName>
       </Action>
       <Action>
@@ -218,12 +213,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Cities.xml</FileName>
+        <FileName>AI/CEAI_Cities.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEP_AI_Policies.xml</FileName>
+        <FileName>AI/CEAI_Policies.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -708,6 +703,10 @@
     <Folder Include="TunerMods\DebugFolder" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AI\CEAI_Cities.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="AI\CEAI_Data.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>

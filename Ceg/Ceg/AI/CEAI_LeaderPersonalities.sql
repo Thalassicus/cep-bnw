@@ -1,6 +1,16 @@
 -- CEAI_LeaderPersonalities.sql created by Personalities tab of:
 -- https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dHlBVGdUV0doVGlVU3dGLWt3LS1YRHc
 
+-- Defaults
+UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR' WHERE MinorCivCompetitiveness <  6 and WarmongerHate <  5;
+UPDATE Leaders SET Personality='PERSONALITY_COALITION' WHERE MinorCivCompetitiveness >= 6 and WarmongerHate <  5;
+UPDATE Leaders SET Personality='PERSONALITY_DIPLOMAT'  WHERE MinorCivCompetitiveness >= 6 and WarmongerHate >= 5;
+UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR' WHERE MinorCivCompetitiveness <  6 and WarmongerHate >= 5;
+
+
+
+-- Leaders
+
 UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR'    , WonderCompetitiveness=2, MinorCivCompetitiveness=2, Boldness=8, WarmongerHate=0, DenounceWillingness=7, DoFWillingness=5, VictoryCompetitiveness=4, DiploBalance=4, Loyalty=2, Neediness=8, Forgiveness=4, Chattiness=4, Meanness=8 WHERE Type = 'LEADER_ASHURBANIPAL';
 UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR'    , WonderCompetitiveness=2, MinorCivCompetitiveness=2, Boldness=8, WarmongerHate=0, DenounceWillingness=6, DoFWillingness=6, VictoryCompetitiveness=0, DiploBalance=0, Loyalty=2, Neediness=8, Forgiveness=8, Chattiness=0, Meanness=4 WHERE Type = 'LEADER_HARALD';
 UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR'    , WonderCompetitiveness=2, MinorCivCompetitiveness=2, Boldness=8, WarmongerHate=0, DenounceWillingness=6, DoFWillingness=6, VictoryCompetitiveness=0, DiploBalance=0, Loyalty=2, Neediness=8, Forgiveness=8, Chattiness=0, Meanness=4 WHERE Type = 'LEADER_ATTILA';
