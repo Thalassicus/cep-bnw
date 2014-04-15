@@ -44,7 +44,7 @@ INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('F
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_GREAT_PEOPLE',             LeaderType, 2) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_HAPPINESS',                LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_GOLDEN_AGE',               LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
-INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_EXPANSION',                LeaderType, 9) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
+INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_EXPANSION',                LeaderType, 8) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_TILE_IMPROVEMENT',         LeaderType, 6) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_INFRASTRUCTURE',           LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
 INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('FLAVOR_WATER_CONNECTION',         LeaderType, 4) FROM Leaders WHERE Personality = 'PERSONALITY_CONQUEROR';
@@ -203,7 +203,7 @@ INSERT OR REPLACE INTO Leader_Flavors(FlavorType, LeaderType, Flavor) SELECT ('F
 
 -- Leader Overrides
 
-UPDATE Leader_Flavors SET (Flavor =   9 WHERE FlavorType = 'FLAVOR_SCIENCE'                   AND LeaderType = 'LEADER_ASHURBANIPAL');
+UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_SCIENCE'                   AND LeaderType = 'LEADER_ASHURBANIPAL');
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_TILE_IMPROVEMENT'          AND LeaderType = 'LEADER_ASHURBANIPAL');
 
 UPDATE Leader_Flavors SET (Flavor =   8 WHERE FlavorType = 'FLAVOR_NAVAL'                     AND LeaderType = 'LEADER_HARALD');

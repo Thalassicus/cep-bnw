@@ -423,12 +423,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
+        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>AI/CEAI_LeaderPersonalities.sql</FileName>
+        <FileName>AI/CEAI_LeaderFlavors.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
