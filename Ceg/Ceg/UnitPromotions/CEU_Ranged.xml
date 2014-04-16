@@ -60,23 +60,6 @@
 			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType>
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
 		</Row>
-		<!--
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_ARCHER" />
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_GUN" />
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_SIEGE" />
-		<Row>
-			<PromotionType>PROMOTION_SUPPLY_RANGED</PromotionType>
-			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_SUPPLY_RANGED</PromotionType>
-			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_SUPPLY_RANGED</PromotionType>
-			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-		</Row>
-		-->
 	</UnitPromotions_UnitCombats>
 	<UnitPromotions_Terrains>
 		<!--

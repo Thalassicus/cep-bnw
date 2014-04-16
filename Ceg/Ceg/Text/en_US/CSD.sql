@@ -3,7 +3,8 @@ https://docs.google.com/spreadsheets/d/1ptQRfVsW7UT_8gPexioizS31sM7K_3eBT3tjr4jr
 If you make any changes be sure to update the spreadsheet also.*/
 
 
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_PHILANTHROPY_HELP_EXTRA', '[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Schools of Scribes.', '', '');
+INSERT INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_DLL', '[ICON_INFLUENCE] +20 instant Influence with City-States.[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Chanceries.', '', '');
+INSERT INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_PHILANTHROPY_HELP_CSD_NODLL', '[ICON_INFLUENCE] +20 instant Influence with City-States.[NEWLINE]+1 [ICON_HAPPINESS_1] City Happiness from Schools of Scribes.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_CULTURAL_DIPLOMACY_HELP_EXTRA', '[NEWLINE]+3 [ICON_CULTURE] Culture from Foreign Office.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_AESTHETICS_HELP_EXTRA', '[NEWLINE]+20% [ICON_GOLD] Gold from Gutenberg Press.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_POLICY_SCHOLASTICISM_HELP_EXTRA', '[NEWLINE]+10% [ICON_RESEARCH] Science from Postal Services.', '', '');

@@ -680,7 +680,7 @@ WHERE FlavorType IN (
 	'FLAVOR_RES_CURRENCY'             
 );
 
--- AI is horrible at using these effects
+-- AI is ineffective at using these effects
 UPDATE Building_Flavors SET Flavor = Flavor / 8
 	WHERE BuildingType IN (SELECT building.Type
 	FROM Buildings building, BuildingClasses class
@@ -712,11 +712,12 @@ AND BuildingType IN (
 	)
 );
 
--- AI is horrible at using these
+-- AI is ineffective at using these
 UPDATE Building_Flavors
 SET Flavor = Flavor / 8
 WHERE BuildingType IN (
-	'BUILDING_TEMPLE_ARTEMIS'	
+	'BUILDING_TEMPLE_ARTEMIS'	,
+	'BUILDING_PYRAMID'	
 );
 
 
