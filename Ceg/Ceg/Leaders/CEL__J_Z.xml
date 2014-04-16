@@ -928,10 +928,10 @@
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_MUD_PYRAMID_MOSQUE" />
-			<Set BuildingClass="BUILDINGCLASS_MARKET"
+			<Set BuildingClass="BUILDINGCLASS_SHRINE"
 				 PrereqTech="TECH_CURRENCY"
 				 Cost="200"
-				 ArtDefineTag="ART_DEF_BUILDING_MARKET"
+				 ArtDefineTag="TEMPLE"
 				 />
 		</Update>
 	</Buildings>
