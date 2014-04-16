@@ -1783,8 +1783,8 @@ function PlayerClass.GetYieldFromConnectedCities(player, yieldID)
 			return yield
 		end
 		local capital = player:GetCapitalCity()
-		if capital then --Gold not balanced? +6 Gold from capital to capital trade route at start
-			--yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
+		if capital then --Gold not balanced? +6 Gold from capital to capital trade route at start --intended by Thalassicus
+			yield = yield + GameDefines.TRADE_ROUTE_BASE_GOLD/100 + capital:GetPopulation() * GameDefines.TRADE_ROUTE_CITY_POP_GOLD_MULTIPLIER/100
 		end
 	end
 	return yield

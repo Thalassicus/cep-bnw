@@ -32,19 +32,19 @@
 			<Set PediaType="NULL"
 				 CannotBeChosen="true" />
 		</Update>
+		<!-- Soldiers, vanguard, automatics -->
 		<Row>
 			<Type>PROMOTION_SUPPLY_I</Type>
 			<Description>TXT_KEY_PROMOTION_SUPPLY</Description>
 			<Help>TXT_KEY_PROMOTION_SUPPLY_I_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_ACCURACY_2</PromotionPrereqOr1>
-			<PromotionPrereqOr2>PROMOTION_BARRAGE_2</PromotionPrereqOr2>
-			<PromotionPrereqOr3>PROMOTION_SIEGE</PromotionPrereqOr3>
-			<PromotionPrereqOr4>PROMOTION_VOLLEY</PromotionPrereqOr4>
-			<PromotionPrereqOr5>PROMOTION_INDIRECT_FIRE</PromotionPrereqOr5>
-			<PromotionPrereqOr6>PROMOTION_SHOCK_3</PromotionPrereqOr6>
-			<PromotionPrereqOr7>PROMOTION_DRILL_3</PromotionPrereqOr7>
-			<PromotionPrereqOr8>PROMOTION_BLITZ</PromotionPrereqOr8>
+			<PromotionPrereqOr1>PROMOTION_SHOCK_3</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL_3</PromotionPrereqOr2>
+			<PromotionPrereqOr3>PROMOTION_BLITZ</PromotionPrereqOr3>
+			<PromotionPrereqOr4>PROMOTION_AMBUSH_2</PromotionPrereqOr4>
+			<PromotionPrereqOr5>PROMOTION_MOBILITY_2</PromotionPrereqOr5>
+			<PromotionPrereqOr6>PROMOTION_COVER_VANGUARD_1</PromotionPrereqOr6>
+			<PromotionPrereqOr7>PROMOTION_AMBUSH_VANGUARD_1</PromotionPrereqOr7>
 			<OrderPriority>7</OrderPriority>
 			<AlwaysHeal>true</AlwaysHeal>
 			<HealOutsideFriendly>true</HealOutsideFriendly>
@@ -53,19 +53,21 @@
 			<PediaType>PEDIA_HEAL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY</PediaEntry>
 		</Row>
+		<!-- Archers, aircraft -->
 		<Row>
 			<Type>PROMOTION_SUPPLY_II</Type>
 			<Description>TXT_KEY_PROMOTION_SUPPLY</Description>
 			<Help>TXT_KEY_PROMOTION_SUPPLY_I_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_INTERCEPTION_2</PromotionPrereqOr1>
-			<PromotionPrereqOr2>PROMOTION_DOGFIGHTING_2</PromotionPrereqOr2>
-			<PromotionPrereqOr3>PROMOTION_AIR_SIEGE_3</PromotionPrereqOr3>
-			<PromotionPrereqOr4>PROMOTION_AIR_BOMBARDMENT_3</PromotionPrereqOr4>
-			<PromotionPrereqOr5>PROMOTION_AMBUSH_2</PromotionPrereqOr5>
-			<PromotionPrereqOr6>PROMOTION_MOBILITY_2</PromotionPrereqOr6>
-			<PromotionPrereqOr7>PROMOTION_COVER_VANGUARD_1</PromotionPrereqOr7>
-			<PromotionPrereqOr8>PROMOTION_AMBUSH_VANGUARD_1</PromotionPrereqOr8>
+			<PromotionPrereqOr1>PROMOTION_ACCURACY_2</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_BARRAGE_2</PromotionPrereqOr2>
+			<PromotionPrereqOr3>PROMOTION_SIEGE</PromotionPrereqOr3>
+			<PromotionPrereqOr4>PROMOTION_VOLLEY</PromotionPrereqOr4>
+			<PromotionPrereqOr5>PROMOTION_INDIRECT_FIRE</PromotionPrereqOr5>
+			<PromotionPrereqOr6>PROMOTION_INTERCEPTION_2</PromotionPrereqOr6>
+			<PromotionPrereqOr7>PROMOTION_DOGFIGHTING_2</PromotionPrereqOr7>
+			<PromotionPrereqOr8>PROMOTION_AIR_SIEGE_3</PromotionPrereqOr8>
+			<PromotionPrereqOr9>PROMOTION_AIR_BOMBARDMENT_3</PromotionPrereqOr9>
 			<OrderPriority>7</OrderPriority>
 			<AlwaysHeal>true</AlwaysHeal>
 			<PortraitIndex>31</PortraitIndex>
@@ -174,16 +176,28 @@
 		</Update>
 	</UnitPromotions>
 	<UnitPromotions_UnitCombats>
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_ARCHER" />
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_GUN" />
-		<Delete PromotionType="PROMOTION_SUPPLY" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_MEDIC" UnitCombatType="UNITCOMBAT_ARCHER" />
+		<Delete PromotionType="PROMOTION_MEDIC" UnitCombatType="UNITCOMBAT_GUN" />
+		<Delete PromotionType="PROMOTION_MEDIC" UnitCombatType="UNITCOMBAT_SIEGE" />
 		<Row>
-			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SUPPLY_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
@@ -196,10 +210,6 @@
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
 			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_HILL_FIGHTER</PromotionType>

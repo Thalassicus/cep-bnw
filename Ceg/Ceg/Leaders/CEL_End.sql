@@ -128,6 +128,9 @@ UPDATE Units SET	   Cost   = ROUND(0.80 * (SELECT Cost   FROM Units WHERE Type =
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
 UPDATE Units SET	   Combat = ROUND(0.80 * (SELECT Combat FROM Units WHERE Type = 'UNIT_LONGSWORDSMAN'), 0)
 					   WHERE Type IN ('UNIT_ROMAN_LEGION');
+					   
+UPDATE Units SET	   Combat = ROUND(1.25 * (SELECT Combat FROM Units WHERE Type = 'UNIT_CAVALRY'), 0)
+					   WHERE Type IN ('UNIT_RUSSIAN_COSSACK');
 
 --
 -- Unique Buildings

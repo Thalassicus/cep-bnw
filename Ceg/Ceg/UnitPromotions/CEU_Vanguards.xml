@@ -255,10 +255,6 @@
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-		</Row>
-		<Row>
 			<PromotionType>PROMOTION_COVER_VANGUARD_1</PromotionType>
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 		</Row>

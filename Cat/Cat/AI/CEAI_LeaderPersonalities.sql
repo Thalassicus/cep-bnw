@@ -2,10 +2,10 @@
 -- https://docs.google.com/spreadsheet/ccc?key=0Ap8Ehya83q19dHlBVGdUV0doVGlVU3dGLWt3LS1YRHc
 
 -- Defaults
-UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR'    WHERE MinorCivCompetitiveness <  6 and WarmongerHate <  5;
-UPDATE Leaders SET Personality='PERSONALITY_COALITION'    WHERE MinorCivCompetitiveness >= 6 and WarmongerHate <  5;
-UPDATE Leaders SET Personality='PERSONALITY_DIPLOMAT'     WHERE MinorCivCompetitiveness >= 6 and WarmongerHate >= 5;
-UPDATE Leaders SET Personality='PERSONALITY_EXPANSIONIST' WHERE MinorCivCompetitiveness <  6 and WarmongerHate >= 5;
+UPDATE Leaders SET Personality='PERSONALITY_CONQUEROR'; -- basic default
+UPDATE Leaders SET Personality='PERSONALITY_COALITION'    WHERE  MinorCivCompetitiveness >= 6 AND WarmongerHate <  5;
+UPDATE Leaders SET Personality='PERSONALITY_DIPLOMAT'     WHERE  MinorCivCompetitiveness >= 6 AND WarmongerHate >= 5;
+UPDATE Leaders SET Personality='PERSONALITY_EXPANSIONIST' WHERE  MinorCivCompetitiveness <  6 AND WarmongerHate >= 5;
 
 
 
