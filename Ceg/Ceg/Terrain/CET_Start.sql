@@ -27,6 +27,14 @@ UPDATE Natural_Wonder_Placement SET ChangeCoreTileToMountain=0 WHERE NaturalWond
 	'FEATURE_ULURU'				
 );
 
+UPDATE Features SET Impassable=1 WHERE Type IN (
+	'FEATURE_LAKE_VICTORIA'		
+);
+
+UPDATE Natural_Wonder_Placement SET ChangeCoreTileToMountain=1 WHERE NaturalWonderType IN (
+	'FEATURE_LAKE_VICTORIA'		
+);
+
 
 UPDATE Natural_Wonder_Placement SET OccurrenceFrequency = 10 WHERE OccurrenceFrequency <> 0;
 
@@ -114,6 +122,7 @@ VALUES ('BUILD_POLDER', 'FEATURE_FOREST', 'TECH_ANIMAL_HUSBANDRY', '400', '40', 
 
 UPDATE BuildFeatures SET Remove = 1 WHERE  FeatureType = 'FEATURE_MARSH'  AND BuildType NOT IN ('BUILD_POLDER');
 UPDATE BuildFeatures SET Remove = 0 WHERE  FeatureType = 'FEATURE_JUNGLE' AND BuildType IN ('BUILD_PLANTATION');
+UPDATE BuildFeatures SET Remove = 0 WHERE  FeatureType = 'FEATURE_JUNGLE' AND BuildType IN ('BUILD_FARM');
 UPDATE BuildFeatures SET Time = 400 WHERE (FeatureType = 'FEATURE_JUNGLE' AND Time <> 0 AND Remove = 0);
 UPDATE BuildFeatures SET Time = 600 WHERE (FeatureType = 'FEATURE_JUNGLE' AND Time <> 0 AND Remove = 1);
 UPDATE BuildFeatures SET Time = 200 WHERE  BuildType   = 'BUILD_REMOVE_JUNGLE';
