@@ -350,12 +350,12 @@ function SpendAIGold(player)
 		local flavorType = row.FlavorType
 		local flavorValue = row.Flavor
 		local priority = 1
-		if GameInfo.Flavors[flavorType] then
-			priority = GameInfo.Flavors[flavorType].PurchasePriority * (flavorMod[flavorType] or 1)
-		else
+		if not GameInfo.Flavors[flavorType] then
 			log:Error("%s is not a flavor type", flavorType)
-		end
-		if DoFlavorFunction[flavorType] then
+		elseif not DoFlavorFunction[flavorType] then
+			log:Error("%s has no flavor function", flavorType)
+		else
+			priority = GameInfo.Flavors[flavorType].PurchasePriority * (flavorMod[flavorType] or 1)
 			if DoFlavorFunction[flavorType] == PurchaseOneUnitOfFlavor then
 				priority = priority * unitMod
 			end

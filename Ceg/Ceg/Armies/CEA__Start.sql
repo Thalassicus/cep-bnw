@@ -43,7 +43,7 @@ UPDATE Units SET Cost = Cost * 0.784,                          RangedCombat = Ra
 UPDATE Units SET Cost = Cost * 1.373, Combat = Combat * 1.05                                        WHERE Class = 'UNITCLASS_MODERN_ARMOR';
 UPDATE Units SET Cost = Cost * 1.481, Combat = Combat * 1.111                                       WHERE Class = 'UNITCLASS_MECHANIZED_INFANTRY';
 UPDATE Units SET Cost = Cost * 0.889, Combat = Combat * 1.059, RangedCombat = RangedCombat * 0.824  WHERE Class = 'UNITCLASS_BAZOOKA';
-UPDATE Units SET Cost = Cost * 0.837, Combat = Combat * 1.083, RangedCombat =       Combat * 1.417  WHERE Class = 'UNITCLASS_HELICOPTER_GUNSHIP';
+UPDATE Units SET Cost = Cost * 1.033, Combat = Combat * 0.833, RangedCombat =       Combat * 1.75   WHERE Class = 'UNITCLASS_HELICOPTER_GUNSHIP';
 UPDATE Units SET Cost = Cost * 0.575, Combat = Combat * 1                                           WHERE Class = 'UNITCLASS_MOBILE_SAM';
 UPDATE Units SET Cost = Cost * 0.98 , Combat = Combat * 1.111, RangedCombat = RangedCombat * 1.25   WHERE Class = 'UNITCLASS_ROCKET_ARTILLERY';
 UPDATE Units SET Cost = Cost * 0.607,                          RangedCombat = RangedCombat * 0.846  WHERE Class = 'UNITCLASS_BOMBER';
@@ -61,7 +61,7 @@ UPDATE Units SET Cost = Cost * 0.873, Combat = Combat * 0.917                   
 UPDATE Units SET Cost = Cost * 0.747, Combat = Combat * 0.86                                        WHERE Class = 'UNITCLASS_GREAT_WAR_INFANTRY';
 UPDATE Units SET Cost = Cost * 1    , Combat = Combat * 1.429, RangedCombat = RangedCombat * 1.607  WHERE Class = 'UNITCLASS_ARTILLERY';
 UPDATE Units SET Cost = Cost * 0.667, Combat = Combat * 1.333, RangedCombat = RangedCombat * 1      WHERE Class = 'UNITCLASS_GATLINGGUN';
-UPDATE Units SET Cost = Cost * 0.642, Combat = Combat * 0.882, RangedCombat =       Combat * 1.029  WHERE Class = 'UNITCLASS_CAVALRY';
+UPDATE Units SET Cost = Cost * 0.84 , Combat = Combat * 0.588, RangedCombat =       Combat * 1.324  WHERE Class = 'UNITCLASS_CAVALRY';
 UPDATE Units SET Cost = Cost * 0.914, Combat = Combat * 1.088                                       WHERE Class = 'UNITCLASS_RIFLEMAN';
 UPDATE Units SET Cost = Cost * 1.171, Combat = Combat * 1.56                                        WHERE Class = 'UNITCLASS_LANCER';
 UPDATE Units SET Cost = Cost * 0.991, Combat = Combat * 1.571, RangedCombat = RangedCombat * 1.65   WHERE Class = 'UNITCLASS_CANNON';
@@ -75,7 +75,7 @@ UPDATE Units SET Cost = Cost * 1.185, Combat = Combat * 1.333                   
 UPDATE Units SET Cost = Cost * 1.111, Combat = Combat * 1.071                                       WHERE Class = 'UNITCLASS_SWORDSMAN';
 UPDATE Units SET Cost = Cost * 0.815, Combat = Combat * 1.143, RangedCombat = RangedCombat * 1      WHERE Class = 'UNITCLASS_COMPOSITE_BOWMAN';
 UPDATE Units SET Cost = Cost * 1.037, Combat = Combat * 1.286, RangedCombat = RangedCombat * 1.75   WHERE Class = 'UNITCLASS_CATAPULT';
-UPDATE Units SET Cost = Cost * 0.992, Combat = Combat * 1.667, RangedCombat =       Combat * 2.167  WHERE Class = 'UNITCLASS_CHARIOT_ARCHER';
+UPDATE Units SET Cost = Cost * 1.19 , Combat = Combat * 1.333, RangedCombat =       Combat * 2.667  WHERE Class = 'UNITCLASS_CHARIOT_ARCHER';
 UPDATE Units SET Cost = Cost * 0.694, Combat = Combat * 1                                           WHERE Class = 'UNITCLASS_SPEARMAN';
 UPDATE Units SET Cost = Cost * 0.972, Combat = Combat * 1                                           WHERE Class = 'UNITCLASS_WARRIOR';
 UPDATE Units SET Cost = Cost * 1.111, Combat = Combat * 1    , RangedCombat = RangedCombat * 1      WHERE Class = 'UNITCLASS_ARCHER';
