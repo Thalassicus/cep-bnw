@@ -1193,20 +1193,13 @@
 	<Buildings>
 		<Update>
 			<Where Type="BUILDING_CANDI" />
-			<Set BuildingClass="BUILDINGCLASS_TEMPLE"
-				 PrereqTech="TECH_PHILOSOPHY"
-				 Cost="100"
-				 ArtDefineTag="ART_DEF_BUILDING_TEMPLE"
+			<Set BuildingClass="BUILDINGCLASS_SHRINE"
+				 Cost="40"
+				 ArtDefineTag="TEMPLE"
 				 GreatPeopleRateModifier="0"
 				 />
 		</Update>
 	</Buildings>
-	<Building_ClassesNeededInCity>
-		<Row>
-			<BuildingType>BUILDING_CANDI</BuildingType>
-			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
-		</Row>
-	</Building_ClassesNeededInCity>
 	<Building_YieldChanges>
 		<Update>
 			<Where BuildingType="BUILDING_CANDI" YieldType="YIELD_FAITH"/>
@@ -1216,16 +1209,11 @@
 	<Building_YieldChangesPerReligion>
 		<Row>
 			<BuildingType>BUILDING_CANDI</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
+			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>200</Yield>
 		</Row>
 	</Building_YieldChangesPerReligion>
-	<Civilization_BuildingClassOverrides>
-		<Update>
-			<Where BuildingType="BUILDING_SATRAPS_COURT" />
-			<Set BuildingClassType="BUILDINGCLASS_MARKET" />
-		</Update>
-	</Civilization_BuildingClassOverrides>
+
 
 
 
