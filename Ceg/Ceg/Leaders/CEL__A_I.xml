@@ -760,17 +760,17 @@
 
 	<!--	Ethiopia
 	-->
-	<Building_YieldChanges>
-		<Update>
-			<Where BuildingType="BUILDING_STELE" YieldType="YIELD_FAITH" />
-			<Set Yield="2"/>
-		</Update>
-	</Building_YieldChanges>
+<!-- 	<Building_YieldChanges>
+	<Update>
+		<Where BuildingType="BUILDING_STELE" YieldType="YIELD_FAITH" />
+		<Set Yield="2"/>
+	</Update>
+</Building_YieldChanges> -->
 	<Building_YieldChangesPerPop>
 		<Row>
 			<BuildingType>BUILDING_STELE</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>100</Yield>
+			<Yield>50</Yield>
 		</Row>
 	</Building_YieldChangesPerPop>
 	<Traits>
