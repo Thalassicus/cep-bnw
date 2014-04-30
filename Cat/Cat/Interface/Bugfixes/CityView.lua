@@ -1991,6 +1991,7 @@ function PlotButtonClicked( iPlotIndex )
 		if iPlotIndex > 0 then
 			local pCity = UI.GetHeadSelectedCity();
 			Network.SendDoTask(pCity:GetID(), TaskTypes.TASK_CHANGE_WORKING_PLOT, iPlotIndex, -1, false, bAlt, bShift, bCtrl);
+			LuaEvents.DirtyYieldCachePlayer(Players[Game.GetActivePlayer()], true) -- recalculate yields after change working plot
 		end
 	end
 end
@@ -2600,6 +2601,7 @@ function FocusChanged( focus )
 	if Players[Game.GetActivePlayer()]:IsTurnActive() then
 		local pCity = UI.GetHeadSelectedCity();
 		Network.SendSetCityAIFocus( pCity:GetID(), focus );
+		LuaEvents.DirtyYieldCachePlayer(Players[Game.GetActivePlayer()], true) -- recalculate yields after changing focu
 	end
 end
 Controls.BalancedFocusButton:SetVoid1( CityAIFocusTypes.NO_CITY_AI_FOCUS_TYPE )
@@ -2633,6 +2635,7 @@ function OnAvoidGrowth( )
 	if Players[Game.GetActivePlayer()]:IsTurnActive() then
 		local pCity = UI.GetHeadSelectedCity();
 		Network.SendSetCityAvoidGrowth( pCity:GetID(), not pCity:IsForcedAvoidGrowth() );
+		LuaEvents.DirtyYieldCachePlayer(Players[Game.GetActivePlayer()], true) -- recalculate yields after changing focu
 	end		
 end
 Controls.AvoidGrowthButton:RegisterCallback( Mouse.eLClick, OnAvoidGrowth );
@@ -2646,6 +2649,7 @@ function OnResetForcedTiles( )
 		if pCity ~= nil then
 			-- calling this with the city center (0 in the third param) causes it to reset all forced tiles
 			Network.SendDoTask(pCity:GetID(), TaskTypes.TASK_CHANGE_WORKING_PLOT, 0, -1, false, bAlt, bShift, bCtrl);
+			LuaEvents.DirtyYieldCachePlayer(Players[Game.GetActivePlayer()], true) -- recalculate yields after changing focu
 		end
 	end
 end
