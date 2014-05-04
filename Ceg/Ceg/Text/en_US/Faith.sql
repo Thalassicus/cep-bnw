@@ -61,7 +61,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_THRIFT_SHORT', 'Thrift', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_THRIFT', '[ICON_GOLD] Can build Economic buildings with faith (caravansary, market, bank, stock exchange).', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_COURAGE_SHORT', 'Courage', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_COURAGE', '[ICON_WAR] Can build Military and [ICON_NAVAL] Naval buildings with faith (barracks, armory, military academy, lighthouse, harbor, seaport).', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_COURAGE', '[ICON_NAVAL] Can build Naval buildings with faith (lighthouse, harbor, seaport).', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_BELIEF_SACRED_SITES', '[ICON_TOURISM] +2 Tourism from buildings only purchasable through [ICON_FAITH] Faith.', '', '');
 
 
