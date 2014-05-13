@@ -66,6 +66,7 @@ Speech
 INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_START'		, 0);
 INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_WONDERS'		, 0);
 INSERT INTO Cep (Type, Value) VALUES ('PLAY_SPEECH_TECHS'		, 0);
+INSERT INTO Cep (Type, Value) VALUES ('PLAY_ERA_VOS'			, 0);
 
 
 /*
@@ -140,6 +141,9 @@ UPDATE Technologies SET AudioIntroHeader = "" WHERE EXISTS
 
 UPDATE Technologies SET AudioIntro = "" WHERE EXISTS 
 (SELECT Value FROM Cep WHERE Type='PLAY_SPEECH_TECHS' AND Value=0);
+
+UPDATE Era_NewEraVOs SET VOScript = "" WHERE EXISTS 
+(SELECT Value FROM Cep WHERE Type='PLAY_ERA_VOS' AND Value=0);
 
 /*
 CityState Diplomacy Mod Compatibility
