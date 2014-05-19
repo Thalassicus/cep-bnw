@@ -658,7 +658,35 @@ function ScienceTipHandler( control )
 			strText = strText .. "[NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_TP_YIELD_FROM_UNHAPPINESS", -yieldFromHappiness, yieldIcon);
 		end
 	end
+
+	-- Science from Allies (CSD MOD)
+	local iScienceFromAllies = pPlayer:GetScienceRateFromMinorAllies();
+	if (iScienceFromAllies ~= 0) then
+		
+		-- Add separator for non-initial entries
+		if (bFirstEntry) then
+			bFirstEntry = false;
+		else
+			strText = strText .. "[NEWLINE]";
+		end
 	
+		strText = strText .. Locale.ConvertTextKey("TXT_KEY_MINOR_SCIENCE_FROM_LEAGUE_ALLIES", iScienceFromAllies);
+	end
+
+	-- Science from Funding from League (CSD MOD)
+	local iScienceFromLeague = pPlayer:GetScienceRateFromLeagueAid();
+	if (iScienceFromLeague ~= 0) then
+		
+		-- Add separator for non-initial entries
+		if (bFirstEntry) then
+			bFirstEntry = false;
+		else
+			strText = strText .. "[NEWLINE]";
+		end
+	
+		strText = strText .. Locale.ConvertTextKey("TXT_KEY_SCIENCE_FUNDING_FROM_LEAGUE", iScienceFromLeague);
+	end
+		
 	-- Let people know that building more cities makes techs harder to get
 	if not OptionsManager.IsNoBasicHelp() then
 		strText = strText .. "[NEWLINE]" .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE");		
