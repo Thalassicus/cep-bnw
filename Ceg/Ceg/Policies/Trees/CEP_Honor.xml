@@ -28,6 +28,7 @@
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
 			<BaseFreeMilitaryUnits>2</BaseFreeMilitaryUnits>
+			<IncludesOneShotFreeUnits>true</IncludesOneShotFreeUnits>
 		</Row>
 		<Row>
 			<Type>POLICY_SPOILS_OF_WAR</Type>
