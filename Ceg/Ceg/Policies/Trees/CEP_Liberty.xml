@@ -50,7 +50,8 @@
 			<Set GridX="4"
 				 GridY="2"
 				 PortraitIndex="31"
-				 BuildingProductionModifier="0"
+				 BuildingProductionModifier="10"				 
+				 ExtraHappiness="4"
 				 />
 		</Update>
 		<Update>
@@ -97,14 +98,5 @@
 			<Count>1</Count>
 		</Row>
 	</Policy_FreeUnitClasses>
-	<!--<Buildings>
-		<Update>
-			<Where Type="BUILDING_PYRAMID" />
-			<Set PolicyBranchType="POLICY_MERITOCRACY" />
-		</Update>
-		<Update>
-			<Where Type="BUILDING_GREAT_WALL" />
-			<Set PolicyBranchType="POLICY_REPUBLIC" />
-		</Update>
-	</Buildings>-->
+	
 </GameData>

@@ -91,24 +91,10 @@ UPDATE Improvements SET PillageGold = PillageGold * 5 WHERE PillageGold <> 0;
 -- Merge units
 --
 
-/*
-INSERT INTO Unit_AITypes(UnitType, UnitAIType)
-SELECT UnitType, 'UNITAI_PARADROP'
-FROM Civilization_UnitClassOverrides
-WHERE UnitClassType IN (
-	'UNITCLASS_GREAT_WAR_INFANTRY'	,
-	'UNITCLASS_INFANTRY'			,
-	'UNITCLASS_MECHANIZED_INFANTRY'	
-);
-
-UPDATE Units SET UnitArtInfo = 'ART_DEF_UNIT_PARATROOPER'
-WHERE Class = 'UNITCLASS_INFANTRY';
-*/
 
 --Must also set ObsoleteTech = 'TECH_AGRICULTURE' in CER_End.sql
 UPDATE Units SET Cost = -1, ShowInPedia = 0, PrereqTech = NULL WHERE Class IN (
 	'UNITCLASS_ANTI_TANK_GUN'		,
-	--'UNITCLASS_PARATROOPER'			,
 	'UNITCLASS_MARINE'				
 );
 

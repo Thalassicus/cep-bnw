@@ -58,7 +58,7 @@
 	<SpecialistYields>
 		<Update>
 			<Where SpecialistType="SPECIALIST_ENGINEER" YieldType="YIELD_PRODUCTION" />
-			<Set Yield="3" />
+			<Set Yield="2" />
 		</Update>
 		<Update>
 			<Where SpecialistType="SPECIALIST_MERCHANT" YieldType="YIELD_GOLD" />
@@ -66,13 +66,7 @@
 		</Update>
 		<Update>
 			<Where SpecialistType="SPECIALIST_SCIENTIST" YieldType="YIELD_SCIENCE" />
-			<Set Yield="3" />
+			<Set Yield="2" />
 		</Update>
-		<!--
-		<Update>
-			<Where YieldType="YIELD_CULTURE" />
-			<Set Yield="3" />
-		</Update>
-		-->
 	</SpecialistYields>
 </GameData>

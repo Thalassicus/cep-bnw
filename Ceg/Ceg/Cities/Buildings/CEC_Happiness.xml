@@ -7,9 +7,25 @@
 				 HurryCostModifier="100"
 				 />
 		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_CIRCUS" />
+			<Set GoldMaintenance="2" />
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_COLOSSEUM" />
+			<Set GoldMaintenance="3" />
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_STADIUM" />
+			<Set GoldMaintenance="4" />
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_THEATRE" />
+			<Set GoldMaintenance="4" />
+		</Update>
 	</Buildings>
 	<Building_ResourceYieldChanges>
-		<!--
+		
 		<Row>
 			<BuildingType>BUILDING_CIRCUS</BuildingType>
 			<ResourceType>RESOURCE_HORSE</ResourceType>
@@ -22,6 +38,6 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		-->
+		
 	</Building_ResourceYieldChanges>
 </GameData>

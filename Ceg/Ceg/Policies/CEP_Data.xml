@@ -3,22 +3,22 @@
 	<Defines>
 		<Update>
 			<Where Name="BASE_POLICY_COST" />
-			<Set Value="100" />
+			<Set Value="50" />
 			<!-- 25 -->
 		</Update>
 		<Update>
 			<Where Name="POLICY_COST_INCREASE_TO_BE_EXPONENTED" />
-			<Set Value="1" />
+			<Set Value="1.5" />
 			<!-- 3 -->
 		</Update>
 		<Update>
 			<Where Name="POLICY_COST_EXPONENT" />
-			<Set Value="2.5" />
+			<Set Value="2.25" />
 			<!-- 2.01 -->
 		</Update>
 		<Update>
 			<Where Name="POLICY_COST_VISIBLE_DIVISOR" />
-			<Set Value="10" />
+			<Set Value="5" />
 			<!-- 5 -->
 		</Update>
 	</Defines>

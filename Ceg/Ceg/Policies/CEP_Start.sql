@@ -20,7 +20,8 @@ SET CultureAdjacentSameType = 1 * CultureAdjacentSameType;
 UPDATE Policies
 SET CulturePerGarrisonedUnit = 1 * CulturePerGarrisonedUnit;
 
-UPDATE Buildings SET PolicyBranchType = NULL;
+UPDATE Buildings SET PolicyBranchType = NULL
+WHERE NOT IconAtlas = 'CSDBUILDINGS_ATLAS';
 
 UPDATE Defines SET Value = 4 WHERE Name = 'NUM_POLICY_BRANCHES_ALLOWED'; --2
 

@@ -7,7 +7,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_2_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ACCURACY_3_HELP', '[ICON_STRENGTH][ICON_RANGE_STRENGTH] +15% in [COLOR_POSITIVE_TEXT]OPEN[ENDCOLOR] Terrain (NO Hills, Forest or Jungle)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AIR_AMBUSH_1_HELP', '[ICON_STRENGTH] +33% vs [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', 'Artic Power', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER', 'Arctic Power', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ARCTIC_POWER_HELP', '[ICON_MOVES] Faster in [COLOR_POSITIVE_TEXT]Snow and Tundra[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AIR_BOMBARDMENT_1', 'Bombardment I', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AIR_BOMBARDMENT_1_HELP', '[ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Land[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Sea[ENDCOLOR] units', '', '');
@@ -27,8 +27,8 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AMPHIBIOUS_HELP', '[ICON_STRENGTH] Full damage attacking across sea or rivers[NEWLINE][ICON_STRENGTH] +100% when [COLOR_POSITIVE_TEXT]Embarked[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AMBUSH_1_HELP', '[ICON_STRENGTH] +25% Strength vs [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_AMBUSH_2_HELP', '[ICON_STRENGTH] +25% Strength vs [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_AIR', 'Bonus vs Air (50)', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_AIR_HELP', '[ICON_STRENGTH] +50% vs [COLOR_POSITIVE_TEXT]Air[ENDCOLOR]', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_AIR', 'Bonus vs Air (100)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_AIR_HELP', '[ICON_STRENGTH] +100% vs [COLOR_POSITIVE_TEXT]Air[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_AIR_II_HELP', '[ICON_RANGE_STRENGTH] +150% vs [COLOR_POSITIVE_TEXT]Bombers and Helicopters[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_CAVALRY', 'Bonus vs Dragoons (50)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_ANTI_CAVALRY_HELP', '[ICON_STRENGTH] +50% vs [COLOR_POSITIVE_TEXT]Dragoons[ENDCOLOR]', '', '');
@@ -136,12 +136,6 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GOLDEN_HELP', '[ICON_GOLDEN_AGE] Golden Age points from combat', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GREAT_ADMIRAL_HELP', '[ICON_STRENGTH] Improves combat effectiveness of nearby [COLOR_POSITIVE_TEXT]Ships[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GREAT_GENERAL_HELP', '[ICON_STRENGTH] Improves combat effectiveness of nearby [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR]', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_1', 'Guerrilla I', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_1_HELP', '[ICON_STRENGTH] +15% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Rough Terrain[NEWLINE][ICON_DETECT] +1 Sight', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_2', 'Guerrilla II', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_2_HELP', '[ICON_STRENGTH] +15% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Rough Terrain', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_3', 'Guerrilla III', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_GUERRILLA_3_HELP', '[ICON_STRENGTH] +20% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Rough Terrain', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP', 'AI Handicap', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_1', 'AI Handicap I', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_HANDICAP_1_HELP', '[ICON_DETECT] +1 Visibility[NEWLINE][ICON_WAR] +10% Experience[NEWLINE][ICON_STRENGTH] +10% vs [COLOR_POSITIVE_TEXT]Cities[ENDCOLOR]', '', '');
@@ -219,6 +213,8 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_PRIZE_SHIPS_HELP', '[ICON_WAR] [COLOR_POSITIVE_TEXT]Captures[ENDCOLOR] defeated enemy [COLOR_POSITIVE_TEXT]Ships[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGE_HELP', '[ICON_RANGE_STRENGTH] +1 [COLOR_POSITIVE_TEXT]Range[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGED_BLITZ_HELP', '[ICON_WAR] Can [COLOR_POSITIVE_TEXT]attack twice[ENDCOLOR] at 90% [ICON_RANGE_STRENGTH] ranged strength', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGED_DEFENSE_I', 'Defense vs Ranged (25)', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGED_DEFENSE_I_HELP', '[ICON_STRENGTH] +25% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] vs [COLOR_POSITIVE_TEXT]Ranged Damage[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGED_DEFENSE_II', 'Defense vs Ranged (50)', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RANGED_DEFENSE_II_HELP', '[ICON_STRENGTH] +50% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] vs [COLOR_POSITIVE_TEXT]Ranged Damage[ENDCOLOR]', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_RIVAL_TERRITORY_HELP', '[ICON_MOVES] Can enter [COLOR_POSITIVE_TEXT]Rival Territory[ENDCOLOR]', '', '');
@@ -257,12 +253,6 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROM
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TARGETING_1_HELP', '[ICON_DETECT] +1 Sight[NEWLINE][ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Naval[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TARGETING_2_HELP', '[ICON_MOVES] +1 Movement[NEWLINE][ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Naval[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TARGETING_3_HELP', '[ICON_DETECT] +1 Sight[NEWLINE][ICON_STRENGTH] +15% vs [COLOR_POSITIVE_TEXT]Naval[ENDCOLOR] units', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_1', 'Trenches I', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_1_HELP', '[ICON_STRENGTH] +15% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Open Terrain[NEWLINE][ICON_DETECT] +1 Sight', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_2', 'Trenches II', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_2_HELP', '[ICON_STRENGTH] +15% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Open Terrain', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_3', 'Trenches III', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_TRENCHES_3_HELP', '[ICON_STRENGTH] +20% [COLOR_POSITIVE_TEXT]Defense[ENDCOLOR] on Open Terrain', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_UNWELCOME_EVANGELIST_HELP', 'Can enter rival territory without open borders, but loses 25% of original religious strength for each turn they end on such a tile. Unit is eliminated when religious strength is 0.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_VOLLEY_HELP', '[ICON_STRENGTH] +30% vs [COLOR_POSITIVE_TEXT]Fortified[ENDCOLOR] units', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_PROMOTION_WAR_CANOES_HELP', '[ICON_STRENGTH] +100% when [COLOR_POSITIVE_TEXT]Embarked[ENDCOLOR][NEWLINE]+1 [COLOR_POSITIVE_TEXT]Sight Range[ENDCOLOR] when [COLOR_POSITIVE_TEXT]Embarked[ENDCOLOR]', '', '');
