@@ -3,7 +3,7 @@
 	<Buildings>
 		<Update>
 			<Where BuildingClass="BUILDINGCLASS_HARBOR" />
-			<Set GoldMaintenance="1"
+			<Set GoldMaintenance="2"
 				 TradeRouteSeaDistanceModifier="100"
 				 />
 		</Update>
@@ -36,7 +36,7 @@
 		<Row>
 			<BuildingType>BUILDING_SEAPORT</BuildingType>
 			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>50</Modifier>
+			<Modifier>25</Modifier>
 		</Row>
 	</Building_DomainProductionModifiers>
 	<Building_ClassesNeededInCity>

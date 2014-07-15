@@ -8,6 +8,49 @@
 	</PolicyBranchTypes>
 	<Policies>
 		<Update>
+			<Where Type="POLICY_OPEN_SOCIETY" />
+			<Set GreatPeopleRateModifier="75"		
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_TREATY_ORGANIZATION" />
+			<Set SharedIdeologyTradeGoldChange="5"		
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_ECONOMIC_UNION" />
+			<Set SharedIdeologyTradeGoldChange="0"		
+				 />
+		</Update>		
+		<Update>
+			<Where Type="POLICY_HERO_OF_THE_PEOPLE" />
+			<Set IncludesOneShotFreeUnits="true"
+				 NumFreeGreatPeople="1"
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_RESETTLEMENT" />
+			<Set NewCityExtraPopulation="0"		
+				 />
+		</Update>		
+		<Update>
+			<Where Type="POLICY_RESETTLEMENT" />
+			<Set BuildingGoldMaintenanceMod="-20"		
+				 />
+		</Update>
+		<Update>
+			<Where Type="POLICY_UNIVERSAL_HEALTHCARE_A" />
+			<Set Help="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_A_HELP"/>
+		</Update>		
+		<Update>
+			<Where Type="POLICY_UNIVERSAL_HEALTHCARE_F" />
+			<Set Help="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_F_HELP"/>
+		</Update>	
+		<Update>
+			<Where Type="POLICY_UNIVERSAL_HEALTHCARE_A" />
+			<Set Help="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_O_HELP"/>
+		</Update>	
+		<Update>
 			<Where Type="POLICY_AESTHETICS" />
 			<Set GreatWriterRateModifier="0"
 				 GreatArtistRateModifier="0"
@@ -73,6 +116,12 @@
 				 />
 		</Update>
 	</Policies>
+	<Policy_CityYieldChanges>
+		<Update>
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" />
+			<Set PolicyType="POLICY_RESETTLEMENT" />
+		</Update>
+	</Policy_CityYieldChanges>
 	<Policy_PrereqPolicies>
 		<Row>
 			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
@@ -102,17 +151,8 @@
 			<Where PolicyReveal="POLICY_EXPLORATION_FINISHER" />
 			<Set PolicyReveal="POLICY_AESTHETICS_FINISHER" />
 		</Update>
-	</Resources>
-	<Policy_ImprovementYieldChanges>
-		<!-- This table doesn't work for culture like it should
-		<Row>
-			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
-			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		-->
-	</Policy_ImprovementYieldChanges>
+	</Resources>	
+	
 	<Policy_ImprovementCultureChanges>
 		<Row>
 			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
@@ -120,4 +160,310 @@
 			<CultureChange>1</CultureChange>
 		</Row>
 	</Policy_ImprovementCultureChanges>
+	<Policy_BuildingClassYieldChanges>
+		
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>8</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CREATIVE_EXPRESSION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CREATIVE_EXPRESSION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WRITERS_GUILD</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CREATIVE_EXPRESSION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARTISTS_GUILD</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CREATIVE_EXPRESSION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSICIANS_GUILD</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_IRON_WORKS</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HERO_EPIC</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<!--<Row>
+			<PolicyType>POLICY_WORKER_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKER_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SOLAR_PLANT</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKER_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NUCLEAR_PLANT</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>-->
+	</Policy_BuildingClassYieldChanges>	
+	<Policy_BuildingClassCultureChanges>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
+			<CultureChange>5</CultureChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
+			<CultureChange>5</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
+	<Policy_YieldModifiers>
+		<Row>
+			<PolicyType>POLICY_PARTY_LEADERSHIP</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>15</Yield>
+		</Row>
+	</Policy_YieldModifiers>
+	<Policy_UnitCombatFreeExperiences>
+		<Row>
+			<PolicyType>POLICY_ELITE_FORCES</PolicyType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+			<FreeExperience>15</FreeExperience>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ELITE_FORCES</PolicyType>
+			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
+			<FreeExperience>15</FreeExperience>
+		</Row>
+	</Policy_UnitCombatFreeExperiences>
+			
+	<Policy_BuildingClassYieldModifiers>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>15</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_AIRPORT</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>10</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_STOCK_EXCHANGE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>10</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HOTEL</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldMod>10</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>25</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>25</YieldMod>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_IRON_WORKS</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldMod>25</YieldMod>
+		</Row>
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_BuildingClassProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NUCLEAR_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SOLAR_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HYDRO_PLANT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_DOUBLE_AGENTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_DOUBLE_AGENTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_UNIVERSAL_HEALTHCARE_F" />
+		<Delete PolicyType="POLICY_UNIVERSAL_HEALTHCARE_O" />
+		<Delete PolicyType="POLICY_UNIVERSAL_HEALTHCARE_A" />
+		<Update>
+			<Where BuildingClassType="BUILDINGCLASS_WATERMILL" />
+			<Set BuildingClassType="BUILDINGCLASS_AQUEDUCT" />
+		</Update>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HOSPITAL</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MEDICAL_LAB</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<Happiness>3</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_INDUSTRIAL_ESPIONAGE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_POLICE_STATION</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_INDUSTRIAL_ESPIONAGE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Policy_ImprovementYieldChanges>
+		<Delete PolicyType="POLICY_NEW_DEAL" />
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>	
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<ImprovementType>IMPROVEMENT_TERRACE_FARM</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>	
+		<Row>
+			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
+			<ImprovementType>IMPROVEMENT_POLDER</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>			
+		<Row>
+			<PolicyType>POLICY_NEW_ORDER</PolicyType>
+			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NEW_ORDER</PolicyType>
+			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
+			<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
+			<ImprovementType>IMPROVEMENT_OFFSHORE_PLATFORM</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
+			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<ImprovementType>IMPROVEMENT_MANUFACTORY</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>6</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NEW_DEAL</PolicyType>
+			<ImprovementType>IMPROVEMENT_ACADEMY</ImprovementType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>6</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NEW_DEAL</PolicyType>
+			<ImprovementType>IMPROVEMENT_CUSTOMS_HOUSE</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>6</Yield>
+		</Row>		
+	</Policy_ImprovementYieldChanges>
+	<Policy_ImprovementCultureChanges>
+		<Update>
+			<Where Type="POLICY_NEW_DEAL" />
+			<Set CultureChange="9"		
+				 />
+		</Update>
+	</Policy_ImprovementCultureChanges>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_ELITE_FORCES</PolicyType>
+			<PromotionType>PROMOTION_CONSCRIPTION</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
 </GameData>

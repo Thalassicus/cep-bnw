@@ -255,6 +255,7 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_ATTACK_BONUS</PediaEntry>
 		</Row>
+		
 		<Row>
 			<Type>PROMOTION_ATTACK_BONUS_NOUPGRADE_II</Type>
 			<Description>TXT_KEY_PROMOTION_ATTACK_BONUS_II</Description>
@@ -342,6 +343,7 @@
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 		</Row>
+		
 	</UnitPromotions>
 	<UnitPromotions_UnitClasses>
 		<Row>
@@ -436,7 +438,7 @@
 		</Update>
 		<Update>
 			<Where PromotionType="PROMOTION_ANTI_HELICOPTER" UnitCombatType="UNITCOMBAT_HELICOPTER" />
-			<Set Modifier="100" />
+			<Set Modifier="50" />
 		</Update>
 		<Update>
 			<Where PromotionType="PROMOTION_ANTI_TANK" UnitCombatType="UNITCOMBAT_ARMOR" />

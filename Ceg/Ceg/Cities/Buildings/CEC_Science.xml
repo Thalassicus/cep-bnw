@@ -5,6 +5,18 @@
 			<Where BuildingClass="BUILDINGCLASS_OBSERVATORY" />
 			<Set Mountain="0" NearbyMountainRequired="1" />
 		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_PUBLIC_SCHOOL"/>
+			<Set GoldMaintenance="5"/>
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_UNIVERSITY"/>
+			<Set GoldMaintenance="3"/>
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_LABORATORY"/>
+			<Set GoldMaintenance="8"/>
+		</Update>
 	</Buildings>
 	<Building_YieldChanges>
 		<Row>
@@ -17,6 +29,14 @@
 		<Update>
 			<Where BuildingType="BUILDING_OBSERVATORY" YieldType="YIELD_SCIENCE" />
 			<Set Yield="10" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_UNIVERSITY" YieldType="YIELD_SCIENCE" />
+			<Set Yield="30" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_WAT" YieldType="YIELD_SCIENCE" />
+			<Set Yield="30" />
 		</Update>
 	</Building_YieldModifiers>
 </GameData>

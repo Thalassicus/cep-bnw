@@ -2,7 +2,7 @@
 
 -- This CER_Start.sql data automatically created by:
 -- TechPrereqs tab of CEP_PoliciesTechsBeliefs.xls spreadsheet (in mod folder).
-UPDATE Technologies SET GridY=0 WHERE Type IN ('TECH_SAILING', 'TECH_OPTICS', 'TECH_COMPASS', 'TECH_CARVEL_HULLS', 'TECH_ASTRONOMY', 'TECH_NAVIGATION', 'none');
+UPDATE Technologies SET GridY=0 WHERE Type IN ('TECH_SAILING', 'TECH_OPTICS', 'TECH_COMPASS', 'TECH_ASTRONOMY', 'TECH_NAVIGATION', 'none');
 UPDATE Technologies SET GridY=1 WHERE Type IN ('TECH_POTTERY', 'TECH_CALENDAR', 'TECH_ACOUSTICS', 'none');
 UPDATE Technologies SET GridY=2 WHERE Type IN ('TECH_WRITING', 'TECH_DRAMA', 'TECH_PHILOSOPHY', 'TECH_THEOLOGY', 'TECH_EDUCATION', 'TECH_ARCHITECTURE', 'TECH_ARCHAEOLOGY', 'TECH_BIOLOGY', 'TECH_REFRIGERATION', 'TECH_ECOLOGY', 'TECH_INTERNET', 'TECH_GLOBALIZATION', 'TECH_BALLISTICS', 'none');
 UPDATE Technologies SET GridY=3 WHERE Type IN ('TECH_TRAPPING', 'TECH_CURRENCY', 'TECH_GUILDS', 'TECH_BANKING', 'TECH_ECONOMICS', 'TECH_SCIENTIFIC_THEORY', 'TECH_ELECTRICITY', 'TECH_RADIO', 'TECH_PLASTIC', 'TECH_ROCKETRY', 'TECH_COMPUTERS', 'TECH_SATELLITES', 'TECH_NANOTECHNOLOGY', 'TECH_TELECOM', 'none');
@@ -17,7 +17,7 @@ UPDATE Technologies SET GridX=2, Era='ERA_ANCIENT' WHERE Type IN ('TECH_SAILING'
 UPDATE Technologies SET GridX=3, Era='ERA_CLASSICAL' WHERE Type IN ('TECH_OPTICS', 'TECH_DRAMA', 'TECH_HORSEBACK_RIDING', 'TECH_MATHEMATICS', 'TECH_IRON_WORKING', 'TECH_CONSTRUCTION', 'none');
 UPDATE Technologies SET GridX=4, Era='ERA_CLASSICAL' WHERE Type IN ('TECH_PHILOSOPHY', 'TECH_CURRENCY', 'TECH_ENGINEERING', 'none');
 UPDATE Technologies SET GridX=5, Era='ERA_MEDIEVAL' WHERE Type IN ('TECH_COMPASS', 'TECH_THEOLOGY', 'TECH_GUILDS', 'TECH_CIVIL_SERVICE', 'TECH_METAL_CASTING', 'none');
-UPDATE Technologies SET GridX=6, Era='ERA_MEDIEVAL' WHERE Type IN ('TECH_CARVEL_HULLS', 'TECH_EDUCATION', 'TECH_CHIVALRY', 'TECH_MACHINERY', 'TECH_PHYSICS', 'TECH_STEEL', 'none');
+UPDATE Technologies SET GridX=6, Era='ERA_MEDIEVAL' WHERE Type IN ('TECH_EDUCATION', 'TECH_CHIVALRY', 'TECH_MACHINERY', 'TECH_PHYSICS', 'TECH_STEEL', 'none');
 UPDATE Technologies SET GridX=7, Era='ERA_RENAISSANCE' WHERE Type IN ('TECH_ASTRONOMY', 'TECH_ACOUSTICS', 'TECH_ARCHITECTURE', 'TECH_BANKING', 'TECH_PRINTING_PRESS', 'TECH_GUNPOWDER', 'none');
 UPDATE Technologies SET GridX=8, Era='ERA_RENAISSANCE' WHERE Type IN ('TECH_NAVIGATION', 'TECH_ARCHAEOLOGY', 'TECH_ECONOMICS', 'TECH_METALLURGY', 'TECH_CHEMISTRY', 'none');
 UPDATE Technologies SET GridX=9, Era='ERA_INDUSTRIAL' WHERE Type IN ('TECH_SCIENTIFIC_THEORY', 'TECH_MILITARY_SCIENCE', 'TECH_STEAM_POWER', 'TECH_RIFLING', 'TECH_FERTILIZER', 'none');
@@ -33,32 +33,23 @@ UPDATE Technologies SET GridX=17, Era='ERA_FUTURE' WHERE Type IN ('TECH_BALLISTI
 
 -- This CER_Start.sql data from:
 -- Tech_Costs tab of CEP_PoliciesTechsBeliefs.xls spreadsheet (in mod folder).
-UPDATE Technologies SET Cost =     45 WHERE GridX =  1;
-UPDATE Technologies SET Cost =     65 WHERE GridX =  2;
-UPDATE Technologies SET Cost =    115 WHERE GridX =  3;
-UPDATE Technologies SET Cost =    185 WHERE GridX =  4;
-UPDATE Technologies SET Cost =    285 WHERE GridX =  5;
-UPDATE Technologies SET Cost =    385 WHERE GridX =  6;
-UPDATE Technologies SET Cost =    790 WHERE GridX =  7;
-UPDATE Technologies SET Cost =   1150 WHERE GridX =  8;
-UPDATE Technologies SET Cost =   1600 WHERE GridX =  9;
-UPDATE Technologies SET Cost =   2350 WHERE GridX = 10;
-UPDATE Technologies SET Cost =   3100 WHERE GridX = 11;
-UPDATE Technologies SET Cost =   4100 WHERE GridX = 12;
-UPDATE Technologies SET Cost =   5100 WHERE GridX = 13;
-UPDATE Technologies SET Cost =   6400 WHERE GridX = 14;
-UPDATE Technologies SET Cost =   7700 WHERE GridX = 15;
-UPDATE Technologies SET Cost =   8800 WHERE GridX = 16;
-UPDATE Technologies SET Cost =   9500 WHERE GridX = 17;
+UPDATE Technologies SET Cost =     40 WHERE GridX =  1; --35
+UPDATE Technologies SET Cost =     65 WHERE GridX =  2; --55
+UPDATE Technologies SET Cost =    120 WHERE GridX =  3; --105
+UPDATE Technologies SET Cost =    210 WHERE GridX =  4; --175
+UPDATE Technologies SET Cost =    320 WHERE GridX =  5; --275
+UPDATE Technologies SET Cost =    560 WHERE GridX =  6; --485
+UPDATE Technologies SET Cost =    900 WHERE GridX =  7; --780
+UPDATE Technologies SET Cost =   1310 WHERE GridX =  8; --1150
+UPDATE Technologies SET Cost =   1840 WHERE GridX =  9; --1600
+UPDATE Technologies SET Cost =   2700 WHERE GridX = 10; --2350
+UPDATE Technologies SET Cost =   3570 WHERE GridX = 11; --3100
+UPDATE Technologies SET Cost =   4700 WHERE GridX = 12; --4100
+UPDATE Technologies SET Cost =   5860 WHERE GridX = 13; --5100
+UPDATE Technologies SET Cost =   7350 WHERE GridX = 14; --6400
+UPDATE Technologies SET Cost =   8850 WHERE GridX = 15; --7700
+UPDATE Technologies SET Cost =  10100 WHERE GridX = 16; --8800
+UPDATE Technologies SET Cost =  11000 WHERE GridX = 17; --9500
 
-/*
-UPDATE Technologies SET Cost = ROUND(Cost * 0.75/10, 0)*10 WHERE Type IN (
-	'TECH_SAILING',
-	'TECH_OPTICS',
-	'TECH_COMPASS',
-	'TECH_CARVEL_HULLS',
-	'TECH_ASTRONOMY'
-);
-*/
 
 UPDATE LoadedFile SET Value=1 WHERE Type='CER_Start.sql';

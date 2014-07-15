@@ -91,6 +91,19 @@
 			<PediaType>PEDIA_SCOUTING</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_AMBUSH_1</PediaEntry>
 		</Row>
+		<Row>
+			<Type>PROMOTION_MERCENARY</Type>
+			<Description>TXT_KEY_PROMOTION_MERCENARY</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_MERCENARY</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_MERCENARY_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<UpgradeDiscount>50</UpgradeDiscount>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+		</Row>
 		<!--
 		<Row>
 			<Type>PROMOTION_COVER_VANGUARD_2</Type>
@@ -105,20 +118,8 @@
 			<PediaType>PEDIA_SCOUTING</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_COVER_2</PediaEntry>
 		</Row>
-		-->
-		<Row>
-			<Type>PROMOTION_MERCENARY</Type>
-			<Description>TXT_KEY_PROMOTION_MERCENARY</Description>
-			<PediaEntry>TXT_KEY_PROMOTION_MERCENARY</PediaEntry>
-			<Help>TXT_KEY_PROMOTION_MERCENARY_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<UpgradeDiscount>50</UpgradeDiscount>
-			<LostWithUpgrade>true</LostWithUpgrade>
-			<CannotBeChosen>true</CannotBeChosen>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-		</Row>
+		
+		
 		<Row>
 			<Type>PROMOTION_TRENCHES_1</Type>
 			<Description>TXT_KEY_PROMOTION_TRENCHES_1</Description>
@@ -213,7 +214,7 @@
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>NULL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SKIRMISH</PediaEntry>
-		</Row>
+		</Row>-->
 	</UnitPromotions>
 	<UnitPromotions_UnitCombatMods>
 
@@ -225,6 +226,10 @@
 		<Row>
 			<PromotionType>PROMOTION_MEDIC</PromotionType>
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MEDIC</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SHOCK_1</PromotionType>
