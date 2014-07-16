@@ -207,7 +207,7 @@ FROM UnitCombatInfos WHERE Type IN (
 
 INSERT INTO Trait_FreePromotionUnitCombats
 		(TraitType, UnitCombatType, PromotionType)
-SELECT	'TRAIT_PLANNED_ECONOMY', Type, 'PROMOTION_SENTRY'
+SELECT	'TRAIT_AMERICAN_DREAM', Type, 'PROMOTION_SENTRY'
 FROM UnitCombatInfos WHERE Type IN (
 	'UNITCOMBAT_CIVILIAN'		,
 	'UNITCOMBAT_COMMAND'		,

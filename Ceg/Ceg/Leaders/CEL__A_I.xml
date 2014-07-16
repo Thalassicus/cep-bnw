@@ -3,21 +3,32 @@
 	<!--	America
 	-->
 	<Leader_Traits>
-		<!--
 		<Update>
 			<Where LeaderType="LEADER_WASHINGTON" />
 			<Set TraitType="TRAIT_AMERICAN_DREAM" />
 		</Update>
-		-->
 	</Leader_Traits>
 	<Traits>
 		<Row>
 			<Type>TRAIT_AMERICAN_DREAM</Type>
 			<Description>TXT_KEY_TRAIT_AMERICAN_DREAM</Description>
 			<ShortDescription>TXT_KEY_TRAIT_AMERICAN_DREAM_SHORT</ShortDescription>
-			<ImmigrationFrequency>10</ImmigrationFrequency>
+			<CityUnhappinessModifier>-25</CityUnhappinessModifier>
+			<!-- <ImmigrationFrequency>10</ImmigrationFrequency> -->
 		</Row>
 	</Traits>
+	<Trait_MovesChangeUnitCombats>
+		<Row>
+			<TraitType>TRAIT_AMERICAN_DREAM</TraitType>
+			<UnitCombatType>UNITCOMBAT_CIVILIAN</UnitCombatType>
+			<MovesChange>1</MovesChange>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_AMERICAN_DREAM</TraitType>
+			<UnitCombatType>UNITCOMBAT_DIPLOMACY</UnitCombatType>
+			<MovesChange>1</MovesChange>
+		</Row>
+	</Trait_MovesChangeUnitCombats>
 	<Buildings>
 		<Row>
 			<Type>BUILDING_NASA_CENTER</Type>

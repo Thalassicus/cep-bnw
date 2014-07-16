@@ -34,11 +34,11 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_EXTRA_BELIEF', 'Choose one more Belief than normal when you found a Religion.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PHOENICIAN_HERITAGE', 'Ports get a free Harbor, and units may cross mountains. Starts with Sailing, a Bireme, and a Warrior.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY_SHORT', 'Planned Economy', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY', 'Units see farther, civilians move faster, and you gain 1 less [ICON_HAPPINESS_4] National Unhappiness per city.', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY', '+1 [ICON_PRODUCTION] Production from Farms.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_POPULATION_GROWTH', 'Food buildings add 1 [ICON_CITIZEN] Population when constructed.[NEWLINE]Starts with a Worker.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_RAZE_AND_HORSES', 'Barbarian camps surrender when defeated for double [ICON_GOLD] Gold.[NEWLINE]Starts with unique Chariot.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_AMERICAN_DREAM_SHORT', 'American Dream', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_AMERICAN_DREAM', 'Immigrants move here from civilizations with low happiness and high American cultural influence. Your citizens migrate along internal [ICON_FOOD] Food trade routes.', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_AMERICAN_DREAM', 'Units see farther, civilians move faster, and you gain +1 [ICON_HAPPINESS_1] National Happiness per city.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_SCHOLARS_JADE_HALL_SHORT', 'Joseon Dynasty', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_SCHOLARS_JADE_HALL', '+2 [ICON_RESEARCH] Science from Farms.[NEWLINE]Starts with a Worker.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_SEVEN_CITIES', 'Double yields from Natural Wonders, plus 100 [ICON_GOLD] when discovered.[NEWLINE]Starts with a Scout, and receives a Caravel at Compass.', '', '');
