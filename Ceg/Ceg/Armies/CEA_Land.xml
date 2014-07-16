@@ -23,6 +23,11 @@
 				 GoodyHutUpgradeUnitClass="NULL"
 				 />
 		</Update>
+		<Update>
+			<Where Type="UNIT_MONGOLIAN_KESHIK" />
+			<Set Moves="5"
+				/>
+		</Update>
 		
 		<Update>
 			<Where Class="UNITCLASS_PARATROOPER" />

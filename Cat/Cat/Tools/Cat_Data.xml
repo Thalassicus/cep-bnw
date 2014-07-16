@@ -114,10 +114,6 @@
 		</Update>
 		-->
 		<Update>
-			<Where Type="UNIT_MONGOLIAN_KESHIK"/>
-			<Set Moves="4"/>
-		</Update>
-		<Update>
 			<Where Type="UNIT_MUSKETMAN"/>
 			<Set Description="TXT_KEY_UNIT_ARQUEBUSIER"
 				 Help="TXT_KEY_UNIT_ARQUEBUSIER_HELP"
