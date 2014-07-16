@@ -778,21 +778,16 @@
 			<Type>TRAIT_PLANNED_ECONOMY</Type>
 			<Description>TXT_KEY_TRAIT_PLANNED_ECONOMY</Description>
 			<ShortDescription>TXT_KEY_TRAIT_PLANNED_ECONOMY_SHORT</ShortDescription>
-			<CityUnhappinessModifier>-25</CityUnhappinessModifier>
 		</Row>
 	</Traits>
-	<Trait_MovesChangeUnitCombats>
+	<Trait_ImprovementYieldChanges>
 		<Row>
 			<TraitType>TRAIT_PLANNED_ECONOMY</TraitType>
-			<UnitCombatType>UNITCOMBAT_CIVILIAN</UnitCombatType>
-			<MovesChange>1</MovesChange>
+			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
 		</Row>
-		<Row>
-			<TraitType>TRAIT_PLANNED_ECONOMY</TraitType>
-			<UnitCombatType>UNITCOMBAT_DIPLOMACY</UnitCombatType>
-			<MovesChange>1</MovesChange>
-		</Row>
-	</Trait_MovesChangeUnitCombats>
+	</Trait_ImprovementYieldChanges>
 	<Civilization_Start_Region_Priority>
 		<Delete CivilizationType="CIVILIZATION_RUSSIA"/>
 	</Civilization_Start_Region_Priority>

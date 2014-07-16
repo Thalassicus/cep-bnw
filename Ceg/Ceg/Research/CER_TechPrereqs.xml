@@ -44,7 +44,7 @@ TechPrereqs tab of GEM_Details.xlsspreadsheet (in mod folder).
 		</Row>
 		<Row>
 			<PrereqTech>TECH_ARCHERY</PrereqTech>
-			<TechType>TECH_THE_WHEEL</TechType>
+			<TechType>TECH_MATHEMATICS</TechType>
 		</Row>
 		<Row>
 			<PrereqTech>TECH_MINING</PrereqTech>
