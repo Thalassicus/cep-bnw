@@ -48,7 +48,7 @@
 		<Update>
 			<Where Type="POLICY_LANDED_ELITE" />
 			<Set CapitalGrowthMod="0"
-				 CityGrowthMod="25"
+				 CityGrowthMod="15"
 				 GridX="5"
 				 GridY="1"
 				 />
@@ -58,6 +58,7 @@
 			<Set GridX="2"
 				 GridY="2"
 				 PortraitIndex="28"
+				 CulturePerGarrisonedUnit="2"
 				 />
 		</Update>
 		<Update>
@@ -71,7 +72,7 @@
 			<Set CityGrowthMod="0"
 				 NumCitiesFreeFoodBuilding="0"
 				 PlotCultureExponentModifier="-25"
-				 GreatPeopleRateModifier="50"
+				 GreatPeopleRateModifier="25"
 				 />
 		</Update>
 	</Policies>
@@ -90,7 +91,7 @@
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>25</Yield>
+			<Yield>20</Yield>
 		</Row>
 		<Update>
 			<Where PolicyType="POLICY_MONARCHY" YieldType="YIELD_GOLD" />
@@ -110,6 +111,11 @@
 			<PolicyType>POLICY_MENTORS</PolicyType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>5</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 	<Policy_BuildingClassYieldModifiers>
@@ -139,16 +145,5 @@
 		</Row>
 	</Policy_BuildingClassYieldModifiers>
 	
-	<!--<Buildings>
-		<Update>
-			<Where Type="BUILDING_ORACLE" />
-			<Set PolicyBranchType="POLICY_CEREMONIAL_RITES"
-				 />
-		</Update>
-		<Update>
-			<Where Type="BUILDING_BANAUE_RICE_TERRACES" />
-			<Set PolicyBranchType="POLICY_LANDED_ELITE"
-				 />
-		</Update>
-	</Buildings>-->
+	
 </GameData>

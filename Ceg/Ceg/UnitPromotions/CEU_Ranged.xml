@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<UnitPromotions>
-		<Update>
-			<Where Type="PROMOTION_AIR_LOGISTICS" />
-			<Set RangedAttackModifier="-25"
-				 Description="TXT_KEY_PROMOTION_BLITZ"
-				 PediaEntry="TXT_KEY_PROMOTION_BLITZ"
-				 Help="TXT_KEY_PROMOTION_RANGED_BLITZ_HELP"
-				 PortraitIndex="9"
-				 PediaType="PEDIA_AIR"
-				 PromotionPrereqOr3="PROMOTION_AMBUSH_2"
-				 />
-		</Update>
+		
 		<Update>
 			<Where Type="PROMOTION_VOLLEY" />
 			<Set AttackFortifiedMod="30"
@@ -25,6 +15,20 @@
 				 PromotionPrereqOr4="PROMOTION_BARRAGE_1"
 				 />
 		</Update>
+		<Row>
+			<Type>PROMOTION_RANGED_DEFENSE_I</Type>
+			<Description>TXT_KEY_PROMOTION_RANGED_DEFENSE_I</Description>
+			<Help>TXT_KEY_PROMOTION_RANGED_DEFENSE_I_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<OrderPriority>2</OrderPriority>
+			<PortraitIndex>58</PortraitIndex>
+			<RangedDefenseMod>25</RangedDefenseMod>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_RANGED_DEFENSE_II</PediaEntry>
+		</Row>
 		<Row>
 			<Type>PROMOTION_RANGED_DEFENSE_II</Type>
 			<Description>TXT_KEY_PROMOTION_RANGED_DEFENSE_II</Description>
@@ -61,21 +65,7 @@
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
 		</Row>
 	</UnitPromotions_UnitCombats>
-	<UnitPromotions_Terrains>
-		<!--
-		Does not appear to work.
-		<Row>
-			<PromotionType>PROMOTION_NAVAL_PENALTY</PromotionType>
-			<TerrainType>TERRAIN_COAST</TerrainType>
-			<Attack>-50</Attack>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_NAVAL_PENALTY</PromotionType>
-			<TerrainType>TERRAIN_OCEAN</TerrainType>
-			<Attack>-50</Attack>
-		</Row>
-		-->
-	</UnitPromotions_Terrains>
+	
 	<UnitPromotions_UnitCombatMods>
 		<Delete PromotionType="PROMOTION_NAVAL_PENALTY" />
 	</UnitPromotions_UnitCombatMods>

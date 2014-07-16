@@ -26,7 +26,51 @@
 			<Where BuildingClass="BUILDINGCLASS_WATERMILL" />
 			<Set GoldMaintenance="1" />
 		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_WORKSHOP" />
+			<Set GoldMaintenance="1" />
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_HYDRO_PLANT" />
+			<Set GoldMaintenance="2" />
+		</Update>
+		<Update>
+			<Where BuildingClass="BUILDINGCLASS_MILITARY_ACADEMY" />
+			<Set GoldMaintenance="2" />
+		</Update>
 	</Buildings>
+	<Building_YieldModifiers>
+		<!--<Delete BuildingType="BUILDING_SOLAR_PLANT"/>
+		<Delete BuildingType="BUILDING_NUCLEAR_PLANT"/>
+		<Delete BuildingType="BUILDING_FACTORY"/>
+		<Row>
+			<BuildingType>BUILDING_SOLAR_PLANT</BuildingType> 
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>25</Yield >		
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NUCLEAR_PLANT</BuildingType> 
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>25</Yield >		
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_FACTORY</BuildingType> 
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>15</Yield >		
+		</Row>-->
+		<Update>
+			<Where BuildingType="BUILDING_SOLAR_PLANT" YieldType="YIELD_PRODUCTION" />
+			<Set Yield="25" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_NUCLEAR_PLANT" YieldType="YIELD_PRODUCTION" />
+			<Set Yield="25" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_FACTORY" YieldType="YIELD_PRODUCTION" />
+			<Set Yield="15" />
+		</Update>
+	</Building_YieldModifiers>
 	<Building_DomainProductionModifiers>
 		<Row>
 			<BuildingType>BUILDING_ARMORY</BuildingType>
@@ -42,9 +86,6 @@
 	<Building_ResourceQuantityRequirements>
 		<Delete BuildingType="BUILDING_HYDRO_PLANT" />
 	</Building_ResourceQuantityRequirements>
-	<Building_YieldChanges>
-		<Delete BuildingType="BUILDING_STONE_WORKS" />
-	</Building_YieldChanges>
 	<Building_LocalResourceOrs>
 		<Delete BuildingType="BUILDING_SEAPORT" />
 		<Row>

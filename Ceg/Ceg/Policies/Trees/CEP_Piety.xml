@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Policies>
-		<Update>
-			<Where Type="POLICY_PIETY" />
-			<Set ExtraHappiness="4" />
-		</Update>
+		
 		<Update>
 			<Where Type="POLICY_PIETY_FINISHER" />
 			<Set AddReformationBelief="1"
@@ -57,7 +54,7 @@
 			<PortraitIndex>44</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS</IconAtlasAchieved>
-			<FaithCostModifier>-33</FaithCostModifier>
+			<FaithCostModifier>-25</FaithCostModifier>
 		</Row>
 		<Row>
 			<Type>POLICY_UNITY</Type>
@@ -121,24 +118,8 @@
 		</Row>
 		<Delete PolicyType="POLICY_PIETY_FINISHER" />
 	</Policy_FreeUnitClasses>
-	<Policy_CityYieldChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_DEVOTION</PolicyType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		-->
-	</Policy_CityYieldChanges>
-	<Policy_BuildingClassCultureChanges>
-		<!--
-		<Row>
-			<PolicyType>POLICY_PIETY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
-			<CultureChange>1</CultureChange>
-		</Row>
-		-->
-	</Policy_BuildingClassCultureChanges>
+	
+	
 	<Policy_CapitalYieldChanges>
 		<Row>
 			<PolicyType>POLICY_PIETY</PolicyType>
@@ -146,15 +127,7 @@
 			<Yield>2</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
-	<Policy_InstantYield>
-	<!--
-		<Row>
-			<PolicyType>POLICY_PIETY</PolicyType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>50</Yield>
-		</Row>
-	-->
-	</Policy_InstantYield>
+	
 	<Policy_BuildingClassYieldChanges>
 		<Row>
 			<PolicyType>POLICY_MEDITATION</PolicyType>
@@ -175,12 +148,7 @@
 			<YieldChange>2</YieldChange>
 		</Row>
 	</Policy_BuildingClassYieldChanges>
-	<Policy_BuildingClassHappiness>
-		<Row>
-			<PolicyType>POLICY_TOLERANCE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
-			<Happiness>1</Happiness>
-		</Row>
+	<Policy_BuildingClassHappiness>		
 		<Row>
 			<PolicyType>POLICY_TOLERANCE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
@@ -214,6 +182,11 @@
 			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
 			<ProductionModifier>100</ProductionModifier>
 		</Row>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
 	</Policy_BuildingClassProductionModifiers>
 	<Policy_BuildingClassYieldModifiers>
 		<Row>
@@ -234,14 +207,5 @@
 	<Policy_ImprovementCultureChanges>
 		<Delete PolicyType="POLICY_PIETY_FINISHER" />
 	</Policy_ImprovementCultureChanges>
-	<!--<Buildings>
-		<Update>
-			<Where Type="BUILDING_HAGIA_SOPHIA" />
-			<Set PolicyBranchType="POLICY_TOLERANCE" />
-		</Update>
-		<Update>
-			<Where Type="BUILDING_STONEHENGE" />
-			<Set PolicyBranchType="POLICY_PIETY" />
-		</Update>
-	</Buildings>-->
+	
 </GameData>

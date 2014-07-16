@@ -185,6 +185,11 @@
 			<WonderSplashAnchor>L,T</WonderSplashAnchor>
 		</Row>
 		<Update>
+			<Where Type="BUILDING_NATIONAL_TREASURY" />
+			<Set CityConnectionTradeRouteModifier="25"
+				 />
+		</Update>
+		<Update>
 			<Where Type="BUILDING_ANGKOR_WAT" />
 			<Set MinorFriendshipFlatChange="40"
 				 GlobalPlotCultureCostModifier="0"
@@ -521,6 +526,22 @@
 	</Building_PlotYieldChanges>
 
 	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_TREASURY" YieldType="YIELD_GOLD" />
+			<Set Yield="6" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_COLLEGE" YieldType="YIELD_SCIENCE" />
+			<Set Yield="4" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_OXFORD_UNIVERSITY" YieldType="YIELD_SCIENCE" />
+			<Set Yield="4" />
+		</Update>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_EPIC" YieldType="YIELD_CULTURE" />
+			<Set Yield="2" />
+		</Update>
 		<Delete BuildingType="BUILDING_GREAT_LIBRARY" />
 		<Delete BuildingType="BUILDING_HANGING_GARDEN" />
 		<Row>
@@ -584,19 +605,33 @@
 			<Yield>1</Yield>
 		</Row>
 	</Building_YieldChanges>
+	<Building_YieldModifiers>
+		<Row>
+			<BuildingType>BUILDING_NATIONAL_TREASURY</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>15</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>25</Yield>
+		</Row>		
+		<Row>
+			<BuildingType>BUILDING_GRAND_TEMPLE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>25</Yield>
+		</Row>
+		<Update>
+			<Where BuildingType="BUILDING_NATIONAL_COLLEGE" YieldType="YIELD_SCIENCE" />
+			<Set Yield="25" />
+		</Update>
+	</Building_YieldModifiers>
 	<Building_GlobalYieldModifiers>
 		<Row>
 			<BuildingType>BUILDING_ITAIPU_DAM</BuildingType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>15</Yield>
 		</Row>
-		<!--
-		<Row>
-			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>25</Yield>
-		</Row>
-		-->
 	</Building_GlobalYieldModifiers>
 	<Building_HurryModifiers>
 		<Update>

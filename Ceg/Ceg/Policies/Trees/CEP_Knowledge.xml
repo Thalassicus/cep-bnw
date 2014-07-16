@@ -10,29 +10,32 @@
 		</Update>
 		<Update>
 			<Where Type="POLICY_SCIENTIFIC_REVOLUTION" />
-			<Set GridX="5" GridY="2"
+			<Set GridX="3" GridY="1"
 				 HappinessToScience="0"
+				 GreatScientistRateModifier="25"
+				 OneShot="1"
+				 IncludesOneShotFreeUnits="1"
 				 />
 		</Update>
 		<Update>
 			<Where Type="POLICY_HUMANISM" />
-			<Set GridX="4" GridY="1"
+			<Set GridX="1" GridY="1"
 				 HappinessToScience="10"
 				 GreatScientistRateModifier="0"
 				 PortraitIndex="50"
 				 />
-		</Update>
-		<Update>
-			<Where Type="POLICY_SOVEREIGNTY" />
-			<Set PolicyBranchType="NULL" />
-		</Update>
+		</Update>		
 		<Update>
 			<Where Type="POLICY_FREE_THOUGHT" />
-			<Set GridX="2" GridY="1" />
+			<Set GridX="2" GridY="2" />
 		</Update>
 		<Update>
 			<Where Type="POLICY_SECULARISM" />
-			<Set GridX="3" GridY="2"  />
+			<Set GridX="4" GridY="2"  />
+		</Update>
+		<Update>
+			<Where Type="POLICY_SOVEREIGNTY" />
+			<Set GridX="5" GridY="1"  />
 		</Update>
 		<Update>
 			<Where Type="POLICY_RATIONALISM_FINISHER" />
@@ -40,7 +43,7 @@
 				 NumFreeTechs="1"
 				 />
 		</Update>
-		<Row>
+		<!--<Row>
 			<Type>POLICY_COUNTERINTELLIGENCE</Type>
 			<Description>TXT_KEY_POLICY_COUNTERINTELLIGENCE</Description>
 			<Civilopedia>TXT_KEY_POLICY_COUNTERINTELLIGENCE_TEXT</Civilopedia>
@@ -55,7 +58,7 @@
 			<StealTechFasterModifier>25</StealTechFasterModifier>
 			<StealTechSlowerModifier>25</StealTechSlowerModifier>
 			<CatchSpiesModifier>25</CatchSpiesModifier>
-		</Row>
+		</Row>-->
 	</Policies>
 	<Policy_SpecialistYieldChanges>
 		
@@ -64,11 +67,16 @@
 		<Row>
 			<PolicyType>POLICY_SECULARISM</PolicyType>
 			<YieldType>YIELD_SCIENCE</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_SpecialistExtraYields>
 	<Policy_ImprovementYieldChanges>
-		
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<ImprovementType>IMPROVEMENT_ACADEMY</ImprovementType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
 	</Policy_ImprovementYieldChanges>
 	<Policy_FreeUnitClasses>
 		<Row>
@@ -76,38 +84,28 @@
 			<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
 			<Count>1</Count>
 		</Row>
-	</Policy_FreeUnitClasses>
-	<Policy_FreeBuildingFlavor>
-		<!--
 		<Row>
 			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<FlavorType>FLAVOR_SCIENCE</FlavorType>
-			<NumCities>4</NumCities>
+			<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+			<Count>1</Count>
 		</Row>
-		-->
-	</Policy_FreeBuildingFlavor>
+	</Policy_FreeUnitClasses>
+	
 	<Policy_BuildingClassYieldChanges>
 		<Delete PolicyType="POLICY_RATIONALISM_FINISHER" />
 		<Delete PolicyType="POLICY_SOVEREIGNTY" />
-		<Row>
-			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldChange>2</YieldChange>
-		</Row>
+		
 	</Policy_BuildingClassYieldChanges>
 	<Policy_BuildingClassYieldModifiers>
-		<Delete BuildingClassType="BUILDINGCLASS_UNIVERSITY" />
-		<!--
+		<Delete BuildingClassType="BUILDINGCLASS_UNIVERSITY" />		
 		<Row>
-			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType>
+			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldMod>15</YieldMod>
 		</Row>
-		-->
 	</Policy_BuildingClassYieldModifiers>
-	<Policy_BuildingClassProductionModifiers>
+	<!--<Policy_BuildingClassProductionModifiers>
 		<Row>
 			<PolicyType>POLICY_COUNTERINTELLIGENCE</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
@@ -136,7 +134,7 @@
 			<Happiness>2</Happiness>
 		</Row>
 	</Policy_BuildingClassHappiness>
-	<!--<Buildings>
+	<Buildings>
 		<Update>
 			<Where Type="BUILDING_GREAT_FIREWALL" />
 			<Set PolicyBranchType="POLICY_COUNTERINTELLIGENCE" />

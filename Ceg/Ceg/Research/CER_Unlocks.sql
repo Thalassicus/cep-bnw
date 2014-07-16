@@ -98,6 +98,7 @@ UPDATE Buildings SET PrereqTech='TECH_ARCHITECTURE'             WHERE BuildingCl
 
 
 UPDATE Buildings SET PrereqTech='TECH_STEAM_POWER'              WHERE Type='BUILDING_ENGLISH_STEAM_MILL';
+UPDATE Buildings SET PrereqTech='TECH_PRINTING_PRESS'           WHERE Type='BUILDING_FOLKSKOLA';
 
 
 

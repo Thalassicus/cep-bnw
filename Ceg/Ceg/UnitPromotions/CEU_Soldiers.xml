@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_LEGENDS</Type>
+			<Description>TXT_KEY_PROMOTION_LEGENDS</Description>
+			<PediaEntry>TXT_KEY_PROMOTION_LEGENDS</PediaEntry>
+			<Help>TXT_KEY_PROMOTION_LEGENDS_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<AttackMod>15</AttackMod>
+			<DefenseMod>15</DefenseMod>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+		</Row>
 		<Update>
 			<Where Type="PROMOTION_SIEGE" />
 			<Set CityAttack="50"
@@ -20,10 +33,6 @@
 				 PromotionPrereqOr2="PROMOTION_ANTI_MOUNTED_NOUPGRADE_I"
 				 />
 		</Update>
-		<!--
-				 PromotionPrereqOr2="PROMOTION_SHOCK_1"
-				 PromotionPrereqOr3="PROMOTION_DRILL_1"
-				 -->
 		<Update>
 			<Where Type="PROMOTION_AMBUSH_2" />
 			<Set PortraitIndex="25"
@@ -54,32 +63,17 @@
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
 			<Modifier>25</Modifier>
 		</Row>
-		<!--
-		<Row>
-			<PromotionType>PROMOTION_AMBUSH_2</PromotionType>
-			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-			<Modifier>25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AMBUSH_2</PromotionType>
-			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
-			<Modifier>25</Modifier>
-		</Row>
-		<Update>
-			<Where PromotionType="PROMOTION_AMBUSH_2" />
-			<Set Modifier="25" />
-		</Update>
-		<Update>
-			<Where PromotionType="PROMOTION_HELI_AMBUSH_2" />
-			<Set Modifier="25" />
-		</Update>
-		-->
 			<Update>
 				<Where PromotionType="PROMOTION_AIR_AMBUSH_2" />
 				<Set Modifier="25" />
 			</Update>
 	</UnitPromotions_UnitCombatMods>
-	<UnitPromotions_UnitCombats>
+	
 		
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_LEGENDS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>		
 	</UnitPromotions_UnitCombats>	
 </GameData>

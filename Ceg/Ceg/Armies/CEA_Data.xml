@@ -45,14 +45,7 @@
 			<Value>1000</Value>
 		</Row>
 	</Cep>
-	<!--
-	<UnitCombatInfosEx>
-		<Update>
-			<Where CombatClass="UNITCOMBAT_NAVALMELEE"/>
-			<Set DefaultUnitType="UNIT_BIREME" />
-		</Update>
-	</UnitCombatInfosEx>
-	-->
+	
 	<Defines>
 		<Update>
 			<Where Name="MINOR_BULLY_GOLD" />
@@ -125,12 +118,12 @@
 		</Update>
 		<Update>
 			<Where Name="CITY_STRENGTH_TECH_BASE" />
-			<Set Value="5.5" />
+			<Set Value="4.8" />
 			<!-- 5.5 -->
 		</Update>
 		<Update>
 			<Where Name="CITY_STRENGTH_TECH_EXPONENT" />
-			<Set Value="1" />
+			<Set Value="2.8" />
 			<!-- 2.8 -->
 		</Update>
 		<Update>
@@ -154,7 +147,7 @@
 		</Update>
 		<Update>
 			<Where Name="BONUS_PER_ADJACENT_FRIEND" />
-			<Set Value="20" />
+			<Set Value="15" />
 			<!-- 10 -->
 		</Update>
 		

@@ -2,18 +2,12 @@
 <GameData>
 	<Buildings>
 		<Update>
-			<Where BuildingClass="BUILDINGCLASS_OPERA_HOUSE"/>
-			<Set GoldMaintenance="0"/>
+			<Where BuildingClass="BUILDINGCLASS_BROADCAST_TOWER"/>
+			<Set GoldMaintenance="4"
+				 CultureRateModifier="50"
+				/>
 		</Update>
 	</Buildings>
-	<Building_YieldChanges>
-		<!--
-		<Update>
-			<Where BuildingType="BUILDING_AMPHITHEATER" />
-			<Set Yield="2" />
-		</Update>
-		-->
-	</Building_YieldChanges>
 	<Building_ClassesNeededInCity>
 		<Delete BuildingClassType="BUILDINGCLASS_MONUMENT" />
 		<Delete BuildingClassType="BUILDINGCLASS_AMPHITHEATER" />

@@ -49,7 +49,7 @@
 		</Row>
 		<Update>
 			<Where Type="BELIEF_FERTILITY_RITES" />
-			<Set CityGrowthModifier="25"/>
+			<Set CityGrowthModifier="15"/>
 		</Update>
 		<Update>
 			<Where Type="BELIEF_GODDESS_STRATEGY" />
@@ -89,7 +89,7 @@
 		</Update>
 		<Update>
 			<Where Type="BELIEF_SWORD_PLOWSHARES" />
-			<Set CityGrowthModifier="25"/>
+			<Set CityGrowthModifier="15"/>
 		</Update>
 		<!--
 		<Update>
@@ -102,8 +102,8 @@
 		<Delete Type="BELIEF_DEFENDER_FAITH" />
 		<Update>
 			<Where Type="BELIEF_JUST_WAR" />
-			<Set CombatModifierFriendlyCities="40"
-				 CombatModifierEnemyCities="40"
+			<Set CombatModifierFriendlyCities="25"
+				 CombatModifierEnemyCities="25"
 				 />
 		</Update>
 		<Update>
@@ -128,7 +128,7 @@
 		</Update>
 		<Update>
 			<Where Type="BELIEF_RELIGIOUS_UNITY" />
-			<Set FriendlyCityStateSpreadModifier="500"/>
+			<Set FriendlyCityStateSpreadModifier="400"/>
 		</Update>
 		<Update>
 			<Where Type="BELIEF_RELIQUARY" />
@@ -140,7 +140,7 @@
 		</Update>
 		<Update>
 			<Where Type="BELIEF_PEACE_LOVING" />
-			<Set HappinessPerXPeacefulForeignFollowers="3"/>
+			<Set HappinessPerXPeacefulForeignFollowers="5"/>
 		</Update>
 		<Row>
 			<Type>BELIEF_WORK_ETHIC</Type>
@@ -232,11 +232,11 @@
 	<Belief_BuildingClassYieldChanges>
 		<Update>
 			<Where BeliefType="BELIEF_ANCESTOR_WORSHIP" />
-			<Set YieldChange="2"/>
+			<Set YieldChange="1"/>
 		</Update>
 		<Update>
 			<Where BeliefType="BELIEF_CHORAL_MUSIC" />
-			<Set YieldChange="6"/>
+			<Set YieldChange="3"/>
 		</Update>
 		<Update>
 			<Where BeliefType="BELIEF_FEED_WORLD" />
@@ -263,13 +263,7 @@
 	</Belief_BuildingClassTourism>
 	<Belief_YieldChangeWorldWonder>
 		<Delete BeliefType="BELIEF_DIVINE_INSPIRATION"/>
-		<!--
-		<Row>
-			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
-			<YieldType>YIELD_TOURISM</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		-->
+		
 		<Row>
 			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
 			<YieldType>YIELD_FAITH</YieldType>
@@ -295,25 +289,25 @@
 			<BeliefType>BELIEF_SACRED_ISLES</BeliefType>
 			<FeatureType>FEATURE_ATOLL</FeatureType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_SACRED_ISLES</BeliefType>
 			<FeatureType>FEATURE_ATOLL</FeatureType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_TRANQUIL_REFUGE</BeliefType>
 			<FeatureType>FEATURE_OASIS</FeatureType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_TRANQUIL_REFUGE</BeliefType>
 			<FeatureType>FEATURE_OASIS</FeatureType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
+			<Yield>1</Yield>
 		</Row>
 	</Belief_FeatureYieldChanges>
 	<Belief_ResourceYieldChanges>
@@ -326,22 +320,7 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<Update>
-			<Where BeliefType="BELIEF_GODDESS_HUNT" />
-			<Set Yield="2"/>
-		</Update>
-		<Update>
-			<Where BeliefType="BELIEF_GOD_SEA" />
-			<Set Yield="2" YieldType="YIELD_PRODUCTION" />
-		</Update>
-		<Update>
-			<Where BeliefType="BELIEF_ORAL_TRADITION" />
-			<Set Yield="2"/>
-		</Update>
-		<Update>
-			<Where BeliefType="BELIEF_OPEN_SKY" />
-			<Set Yield="2"/>
-		</Update>
+		
 	</Belief_ImprovementYieldChanges>
 	<Belief_YieldChangeNaturalWonder>
 		<Delete BeliefType="BELIEF_ONE_WITH_NATURE"/>
@@ -394,7 +373,7 @@
 		<Row>
 			<BeliefType>BELIEF_PILGRIMAGE</BeliefType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>5</Yield>
+			<Yield>4</Yield>
 		</Row>
 	</Belief_YieldChangePerForeignCity>
 	<Belief_MaxYieldModifierPerFollower>
@@ -406,7 +385,7 @@
 	<Belief_YieldChangePerXForeignFollowers>
 		<Update>
 			<Where BeliefType="BELIEF_WORLD_CHURCH" />
-			<Set ForeignFollowers="3"/>
+			<Set ForeignFollowers="5"/>
 		</Update>
 	</Belief_YieldChangePerXForeignFollowers>
 </GameData>

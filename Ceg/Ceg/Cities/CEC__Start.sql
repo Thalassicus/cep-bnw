@@ -17,8 +17,12 @@ WHERE Special = 'SPECIALUNIT_PEOPLE'
 AND NOT CombatClass = 'UNITCOMBAT_DIPLOMACY';
 
 UPDATE Buildings
-SET TradeRouteLandDistanceModifier = TradeRouteLandDistanceModifier * 2, TradeRouteLandGoldBonus = 600
+SET TradeRouteLandDistanceModifier = TradeRouteLandDistanceModifier * 2, TradeRouteLandGoldBonus = 400
 WHERE BuildingClass IN ('BUILDINGCLASS_CARAVANSARY');
+
+UPDATE Buildings
+SET TradeRouteSeaGoldBonus = 200
+WHERE BuildingClass IN ('BUILDINGCLASS_HARBOR');
 
 
 UPDATE Buildings
