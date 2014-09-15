@@ -7,7 +7,7 @@
 		</Update>
 		<Row>
 			<Type>BUILDINGCLASS_GREAT_HALL</Type>
-			<DefaultBuilding>BUILDING_GREAT_HALL</DefaultBuilding>
+			<DefaultBuilding>BUILDING_CAPITAL</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_PALACE</Description>
 			<MaxPlayerInstances>3</MaxPlayerInstances>
 		</Row>
@@ -23,7 +23,7 @@
 				 />
 		</Update>
 		<Row>
-			<Type>BUILDING_GREAT_HALL</Type>
+			<Type>BUILDING_CAPITAL</Type>
 			<Cost>-1</Cost>
 			<BuildingClass>BUILDINGCLASS_GREAT_HALL</BuildingClass>
 			<Description>TXT_KEY_BUILDING_PALACE</Description>
@@ -86,7 +86,7 @@
 		<Row>
 			<BuildingType>BUILDING_PALACE</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>2</Yield>
+			<Yield>7</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_PALACE</BuildingType>
@@ -100,22 +100,22 @@
 		</Row>
 		
 		<Row>
-			<BuildingType>BUILDING_GREAT_HALL</BuildingType>
+			<BuildingType>BUILDING_CAPITAL</BuildingType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>2</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GREAT_HALL</BuildingType>
+			<BuildingType>BUILDING_CAPITAL</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>2</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GREAT_HALL</BuildingType>
+			<BuildingType>BUILDING_CAPITAL</BuildingType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>2</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GREAT_HALL</BuildingType>
+			<BuildingType>BUILDING_CAPITAL</BuildingType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>2</Yield>
 		</Row>

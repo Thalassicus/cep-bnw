@@ -371,7 +371,7 @@
 		</Update>
 		<Update>
 			<Where ImprovementType="IMPROVEMENT_TRADING_POST" YieldType="YIELD_GOLD" />
-			<Set Yield="1" />
+			<Set Yield="2" />
 		</Update>
 		<!--
 		<Row>

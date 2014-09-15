@@ -596,7 +596,7 @@ INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_LIGHTHOUSE',               'FLAVOR_RES_SEA',                  8);
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_CARAVANSARY',              'FLAVOR_RES_LUXURY',               8);
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_BARRACKS',                 'FLAVOR_RES_STRATEGIC',            8);
-INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_TEMPLE',                   'FLAVOR_RES_RELIGIOUS',            8);
+INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_SHRINE',                   'FLAVOR_RES_RELIGIOUS',            8);
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_AQUEDUCT',                 'FLAVOR_RES_EXOTIC',               8);
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_AMPHITHEATER',             'FLAVOR_RES_COSTUME',              8);
 INSERT INTO Building_Flavors(BuildingType, FlavorType, Flavor) VALUES ('BUILDING_STONE_WORKS',              'FLAVOR_RES_ORE',                  8);

@@ -15,7 +15,7 @@ function FirstFewCitiesBonus(hexPos, playerID, cityID, newPlayerID)
 	end
 	local city = player:GetCityByID(cityID);
 	if Game.IsBetween(1, player:GetNumCities(), 3) then
-		city:SetNumRealBuilding(GameInfo.Buildings.BUILDING_GREAT_HALL.ID, 1)
+		city:SetNumRealBuilding(GameInfo.Buildings.BUILDING_CAPITAL.ID, 1)
 	end
 end
 LuaEvents.NewCity.Add(function(hexPos, playerID, cityID, newPlayerID) return SafeCall(FirstFewCitiesBonus, hexPos, playerID, cityID, newPlayerID) end)

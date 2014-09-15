@@ -783,8 +783,8 @@
 	<Trait_ImprovementYieldChanges>
 		<Row>
 			<TraitType>TRAIT_PLANNED_ECONOMY</TraitType>
-			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
+			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
 	</Trait_ImprovementYieldChanges>

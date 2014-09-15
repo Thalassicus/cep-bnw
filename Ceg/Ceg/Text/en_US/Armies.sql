@@ -33,7 +33,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CAPT
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_CAPTURE_RAZE_HELP', 'Immediately kill half the population, then burn the city to the ground. Your happiness temporarily drops by [ICON_HAPPINESS_4] {1_num}, then slowly recovers as you raze the city.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_PARATROOPER', 'Airborne', '', '');
 /* UNITS */
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_CHARIOR_ARCHER', 'Chariot', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_CHARIOT_ARCHER', 'Chariot', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_HELP_CHARIOR_ARCHER', 'A fast mounted archer who is not vulnerable to spearmen, unlike Horsemen.', '', '');
 /* Footsoldiers */
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_UNIT_HELP_HOPLITE', 'Soldier unique to the Greeks. Hoplites start with the Phalanx promotion, unlike the Spearmen they replace.', '', '');

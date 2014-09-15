@@ -121,7 +121,7 @@
 		<Update>
 			<Where Type="YIELD_GOLD" />
 			<Set Color="COLOR_YIELD_GOLD"
-				 AIWeightPercent="150"
+				 AIWeightPercent="200"
 				 IsTileYield="1"
 				 TileTexture="YieldAtlas.dds"
 				 FlavorType="FLAVOR_GOLD"

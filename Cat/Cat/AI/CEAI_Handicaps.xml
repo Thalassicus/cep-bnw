@@ -13,7 +13,7 @@
 	<HandicapInfo_AIFreeTechs>
 		<Delete />
 	</HandicapInfo_AIFreeTechs>
-
+	
 	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worls_Speeds spreadhseet
 https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 
@@ -278,7 +278,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AIProductionPercentPerEra      = "1"
 			AIWorldTrainPercent            = "100"
 			AIWorldCreatePercent           = "100"
-			AIBuildingCostPercent          = "100"
+			AIBuildingCostPercent          = "83"
 			AIUnitCostPercent              = "83"
 			AIUnitUpgradePercent           = "60"
 			AIUnitSupplyPercent            = "5"
@@ -359,7 +359,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AIProductionPercentPerEra      = "2"
 			AIWorldTrainPercent            = "100"
 			AIWorldCreatePercent           = "100"
-			AIBuildingCostPercent          = "100"
+			AIBuildingCostPercent          = "71"
 			AIUnitCostPercent              = "71"
 			AIUnitUpgradePercent           = "50"
 			AIUnitSupplyPercent            = "10"
@@ -440,7 +440,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AIProductionPercentPerEra      = "3"
 			AIWorldTrainPercent            = "100"
 			AIWorldCreatePercent           = "100"
-			AIBuildingCostPercent          = "100"
+			AIBuildingCostPercent          = "63"
 			AIUnitCostPercent              = "63"
 			AIUnitUpgradePercent           = "50"
 			AIUnitSupplyPercent            = "15"
@@ -521,7 +521,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AIProductionPercentPerEra      = "4"
 			AIWorldTrainPercent            = "100"
 			AIWorldCreatePercent           = "100"
-			AIBuildingCostPercent          = "100"
+			AIBuildingCostPercent          = "56"
 			AIUnitCostPercent              = "56"
 			AIUnitUpgradePercent           = "50"
 			AIUnitSupplyPercent            = "20"
@@ -602,7 +602,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AIProductionPercentPerEra      = "5"
 			AIWorldTrainPercent            = "100"
 			AIWorldCreatePercent           = "100"
-			AIBuildingCostPercent          = "100"
+			AIBuildingCostPercent          = "25"
 			AIUnitCostPercent              = "25"
 			AIUnitUpgradePercent           = "25"
 			AIUnitSupplyPercent            = "25"

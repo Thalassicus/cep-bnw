@@ -34,7 +34,7 @@ REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAI
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_EXTRA_BELIEF', 'Choose one more Belief than normal when you found a Religion.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PHOENICIAN_HERITAGE', 'Ports get a free Harbor, and units may cross mountains. Starts with Sailing, a Bireme, and a Warrior.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY_SHORT', 'Planned Economy', '', '');
-REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY', '+1 [ICON_PRODUCTION] Production from Farms.', '', '');
+REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_PLANNED_ECONOMY', '+1 [ICON_GOLD] Gold from Villages.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_POPULATION_GROWTH', 'Food buildings add 1 [ICON_CITIZEN] Population when constructed.[NEWLINE]Starts with a Worker.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_RAZE_AND_HORSES', 'Barbarian camps surrender when defeated for double [ICON_GOLD] Gold.[NEWLINE]Starts with unique Chariot.', '', '');
 REPLACE INTO Language_en_US (Tag, Text, Gender, Plurality) VALUES ('TXT_KEY_TRAIT_AMERICAN_DREAM_SHORT', 'American Dream', '', '');

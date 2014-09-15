@@ -63,13 +63,15 @@
 		</Row>
 		-->
 	</Building_YieldModifiers>
-	<!--
 	<Building_YieldChangesPerPop>
 		<Row>
 			<BuildingType>BUILDING_TEMPLE</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>10</Yield>
 		</Row>
+	</Building_YieldChangesPerPop>
+	<!--
+	<Building_YieldChangesPerPop>
 		<Row>
 			<BuildingType>BUILDING_HAGIA_SOPHIA</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>

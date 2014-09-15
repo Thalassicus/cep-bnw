@@ -1,4 +1,4 @@
-/*
+--/*
 
 -- This CEAI_LeaderFlavors.sql data automatically created by:
 -- Leader_Priorities tab of Leaders spreadsheet
@@ -412,7 +412,7 @@ UPDATE Leader_Flavors SET Flavor =   0 WHERE FlavorType = 'FLAVOR_I_TRADE_ORIGIN
 UPDATE Leader_Flavors SET Flavor =   0 WHERE FlavorType = 'FLAVOR_I_TRADE_DESTINATION'       AND LeaderType = 'LEADER_BARBARIAN';
 UPDATE Leader_Flavors SET Flavor =   0 WHERE FlavorType = 'FLAVOR_WONDER'                    AND LeaderType = 'LEADER_BARBARIAN';
 UPDATE Leader_Flavors SET Flavor =   0 WHERE FlavorType = 'FLAVOR_DIPLOMACY'                 AND LeaderType = 'LEADER_BARBARIAN';
-*/
+--*/
 UPDATE LoadedFile SET Value=1 WHERE Type='CEAI_LeaderFlavors.sql';
 
 

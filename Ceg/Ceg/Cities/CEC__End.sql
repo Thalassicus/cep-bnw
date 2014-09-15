@@ -27,69 +27,76 @@ UPDATE sqlite_sequence SET seq = (SELECT COUNT(ID) FROM Buildings)-1 WHERE name 
 -- Cost: Buildings
 --
 
-/*
 -- Set maintenance for buildings not included in the table
 UPDATE Buildings SET GoldMaintenance = Cost / 100 WHERE GoldMaintenance <> 0;
 
-
--- This GEC_End.sql data from:
--- Buildings tab of GEM_Details.xls spreadsheet (in mod folder).
-UPDATE Buildings SET Cost = Cost * 1.056, GoldMaintenance = 7  WHERE BuildingClass = 'BUILDINGCLASS_STADIUM';
-UPDATE Buildings SET Cost = Cost * 1.806, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_THEATRE';
-UPDATE Buildings SET Cost = Cost * 2.5  , GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_COLOSSEUM';
-UPDATE Buildings SET Cost = 50          , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_GEM_PALACE';
-UPDATE Buildings SET Cost = Cost * 1.667, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_COURTHOUSE';
-UPDATE Buildings SET Cost = Cost * 2.431, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_CIRCUS';
-UPDATE Buildings SET Cost = Cost * 1.333, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_SEAPORT';
-UPDATE Buildings SET Cost = 400         , GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_WAREHOUSE';
-UPDATE Buildings SET Cost = Cost * 1.481, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_LIGHTHOUSE';
-UPDATE Buildings SET Cost = Cost * 0.926, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_HARBOR';
-UPDATE Buildings SET Cost = Cost * 0.889, GoldMaintenance = 6  WHERE BuildingClass = 'BUILDINGCLASS_MEDICAL_LAB';
-UPDATE Buildings SET Cost = Cost * 0.926, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_HOSPITAL';
-UPDATE Buildings SET Cost = Cost * 1.944, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_AQUEDUCT';
-UPDATE Buildings SET Cost = Cost * 1.389, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_GRANARY';
+/* This CEC_End.sql generated from the BUILDINGS tab of th Cities spreadsheet:
+-- https://docs.google.com/spreadsheets/d/1YtJQpO91qq4GsXZ_r8Gt81-bg1PbBokDYkZ7FydOzy8/edit#gid=272063554
+UPDATE Buildings SET Cost = Cost * 1.063, GoldMaintenance = 10 WHERE BuildingClass = 'BUILDINGCLASS_AIRPORT';
+UPDATE Buildings SET Cost = Cost * 4.25 , GoldMaintenance = 10 WHERE BuildingClass = 'BUILDINGCLASS_AMPHITHEATER';
+UPDATE Buildings SET Cost = Cost * 1.25 , GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_AQUEDUCT';
+UPDATE Buildings SET Cost = Cost * 0.938, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_ARMORY';
+UPDATE Buildings SET Cost = Cost * 0.667, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_ARSENAL';
+UPDATE Buildings SET Cost = Cost * 2.75 , GoldMaintenance = 12 WHERE BuildingClass = 'BUILDINGCLASS_BANK';
+UPDATE Buildings SET Cost = Cost * 0.667, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_BARRACKS';
+UPDATE Buildings SET Cost = Cost * 2.7  , GoldMaintenance = 31 WHERE BuildingClass = 'BUILDINGCLASS_BROADCAST_TOWER';
+UPDATE Buildings SET Cost = Cost * 4.167, GoldMaintenance = 10 WHERE BuildingClass = 'BUILDINGCLASS_CARAVANSARY';
+UPDATE Buildings SET Cost = Cost * 0.938, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_CASTLE';
+UPDATE Buildings SET Cost = Cost * 2.333, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_CIRCUS';
 UPDATE Buildings SET Cost = 150         , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_CITY_HALL';
-UPDATE Buildings SET Cost = Cost * 1.466, GoldMaintenance = 7  WHERE BuildingClass = 'BUILDINGCLASS_STOCK_EXCHANGE';
-UPDATE Buildings SET Cost = Cost * 1.389, GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_BANK';
-UPDATE Buildings SET Cost = Cost * 1.389, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_MINT';
-UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_MARKET';
-UPDATE Buildings SET Cost = Cost * 1.056, GoldMaintenance = 7  WHERE BuildingClass = 'BUILDINGCLASS_SPACESHIP_FACTORY';
-UPDATE Buildings SET Cost = Cost * 0.944, GoldMaintenance = 6  WHERE BuildingClass = 'BUILDINGCLASS_NUCLEAR_PLANT';
-UPDATE Buildings SET Cost = Cost * 0.722, GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_SOLAR_PLANT';
-UPDATE Buildings SET Cost = Cost * 1.08 , GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_FACTORY';
-UPDATE Buildings SET Cost = Cost * 0.926, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_WORKSHOP';
-UPDATE Buildings SET Cost = Cost * 0.694, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_HYDRO_PLANT';
-UPDATE Buildings SET Cost = Cost * 0.667, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
-UPDATE Buildings SET Cost = Cost * 0.926, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_FORGE';
-UPDATE Buildings SET Cost = Cost * 1.111, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_STONEWORKS';
-UPDATE Buildings SET Cost = Cost * 1.481, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_WATERMILL';
-UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_STABLE';
-UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_BROADCAST_TOWER';
-UPDATE Buildings SET Cost = Cost * 1.296, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_MUSEUM';
-UPDATE Buildings SET Cost = Cost * 0.972, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_OPERA_HOUSE';
-UPDATE Buildings SET Cost = Cost * 1.111, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_AMPHITHEATER';
-UPDATE Buildings SET Cost = Cost * 1.389, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_MONUMENT';
-UPDATE Buildings SET Cost = Cost * 0.944, GoldMaintenance = 6  WHERE BuildingClass = 'BUILDINGCLASS_LABORATORY';
-UPDATE Buildings SET Cost = Cost * 1.204, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_PUBLIC_SCHOOL';
-UPDATE Buildings SET Cost = Cost * 1.215, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_UNIVERSITY';
-UPDATE Buildings SET Cost = Cost * 1.111, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_LIBRARY';
-UPDATE Buildings SET Cost = 100         , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_MENTORS_HALL';
+UPDATE Buildings SET Cost = Cost * 2.25 , GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_COLOSSEUM';
+UPDATE Buildings SET Cost = Cost * 0.938, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_CONSTABLE';
+UPDATE Buildings SET Cost = Cost * 1.5  , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_COURTHOUSE';
+UPDATE Buildings SET Cost = Cost * 1.597, GoldMaintenance = 11 WHERE BuildingClass = 'BUILDINGCLASS_FACTORY';
+UPDATE Buildings SET Cost = Cost * 1.042, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_FORGE';
+UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_GARDEN';
+UPDATE Buildings SET Cost = 50          , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_GEM_PALACE';
+UPDATE Buildings SET Cost = Cost * 1.25 , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_GRANARY';
+UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_HARBOR';
+UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_HOSPITAL';
+UPDATE Buildings SET Cost = 50          , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_GEM_PALACE';
+UPDATE Buildings SET Cost = Cost * 0.583, GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_HOTEL';
+UPDATE Buildings SET Cost = Cost * 0.764, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_HYDRO_PLANT';
 UPDATE Buildings SET Cost = 700         , GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_INTELLIGENCE_AGENCY';
+UPDATE Buildings SET Cost = Cost * 2.9  , GoldMaintenance = 33 WHERE BuildingClass = 'BUILDINGCLASS_LABORATORY';
+UPDATE Buildings SET Cost = Cost * 2.667, GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_LIBRARY';
+UPDATE Buildings SET Cost = Cost * 1.333, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_LIGHTHOUSE';
+UPDATE Buildings SET Cost = Cost * 1.25 , GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_MARKET';
+UPDATE Buildings SET Cost = Cost * 0.65 , GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_MEDICAL_LAB';
+UPDATE Buildings SET Cost = 750         , GoldMaintenance = 10 WHERE BuildingClass = 'BUILDINGCLASS_MENTORS_HALL';
+UPDATE Buildings SET Cost = Cost * 0.75 , GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_MILITARY_ACADEMY';
+UPDATE Buildings SET Cost = Cost * 0.55 , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_MILITARY_BASE';
+UPDATE Buildings SET Cost = Cost * 2.25 , GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_MINT';
+UPDATE Buildings SET Cost = Cost * 2.5  , GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_MONUMENT';
+UPDATE Buildings SET Cost = Cost * 1.417, GoldMaintenance = 8  WHERE BuildingClass = 'BUILDINGCLASS_MUSEUM';
+UPDATE Buildings SET Cost = Cost * 1.1  , GoldMaintenance = 9  WHERE BuildingClass = 'BUILDINGCLASS_NUCLEAR_PLANT';
+UPDATE Buildings SET Cost = Cost * 2.75 , GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_OBSERVATORY';
+UPDATE Buildings SET Cost = Cost * 1.25 , GoldMaintenance = 4  WHERE BuildingClass = 'BUILDINGCLASS_OPERA_HOUSE';
 UPDATE Buildings SET Cost = 700         , GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_POLICE_STATION';
-UPDATE Buildings SET Cost = Cost * 1.042, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_CONSTABLE';
-UPDATE Buildings SET Cost = Cost * 0.926, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_GARDEN';
-UPDATE Buildings SET Cost = Cost * 1.111, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_TEMPLE';
-UPDATE Buildings SET Cost = Cost * 0.694, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_SHRINE';
-UPDATE Buildings SET Cost = Cost * 0.611, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_MILITARY_BASE';
-UPDATE Buildings SET Cost = Cost * 0.741, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_ARSENAL';
-UPDATE Buildings SET Cost = Cost * 1.042, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_CASTLE';
-UPDATE Buildings SET Cost = Cost * 1.111, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_WALLS';
-UPDATE Buildings SET Cost = Cost * 0.833, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_MILITARY_ACADEMY';
-UPDATE Buildings SET Cost = Cost * 1.042, GoldMaintenance = 2  WHERE BuildingClass = 'BUILDINGCLASS_ARMORY';
-UPDATE Buildings SET Cost = Cost * 0.741, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_BARRACKS';
+UPDATE Buildings SET Cost = Cost * 1.833, GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_PUBLIC_SCHOOL';
+UPDATE Buildings SET Cost = Cost * 1.2  , GoldMaintenance = 5  WHERE BuildingClass = 'BUILDINGCLASS_SEAPORT';
+UPDATE Buildings SET Cost = Cost * 0.625, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_SHRINE';
+UPDATE Buildings SET Cost = Cost * 1.1  , GoldMaintenance = 10 WHERE BuildingClass = 'BUILDINGCLASS_SOLAR_PLANT';
 
 
-*/
+
+
+
+UPDATE Buildings SET Cost = Cost * 2.917, GoldMaintenance = 23 WHERE BuildingClass = 'BUILDINGCLASS_SPACESHIP_FACTORY';
+UPDATE Buildings SET Cost = Cost * 1    , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_STABLE';
+UPDATE Buildings SET Cost = Cost * 0.4  , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_STADIUM';
+UPDATE Buildings SET Cost = Cost * 2.917, GoldMaintenance = 23 WHERE BuildingClass = 'BUILDINGCLASS_STOCK_EXCHANGE';
+UPDATE Buildings SET Cost = Cost * 1    , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_STONEWORKS';
+UPDATE Buildings SET Cost = Cost * 1    , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_TEMPLE';
+UPDATE Buildings SET Cost = Cost * 0.625, GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_THEATRE';
+UPDATE Buildings SET Cost = Cost * 0.625, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_UNIVERSITY';
+UPDATE Buildings SET Cost = Cost * 1    , GoldMaintenance = 0  WHERE BuildingClass = 'BUILDINGCLASS_WALLS';
+UPDATE Buildings SET Cost = 450         , GoldMaintenance = 3  WHERE BuildingClass = 'BUILDINGCLASS_WAREHOUSE';
+UPDATE Buildings SET Cost = Cost * 1.667, GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_WATERMILL';
+UPDATE Buildings SET Cost = Cost * 0.7  , GoldMaintenance = 1  WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
+UPDATE Buildings SET Cost = Cost * 4.583, GoldMaintenance = 14 WHERE BuildingClass = 'BUILDINGCLASS_WORKSHOP';
+
+--*/
 
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_WINDMILL';
 UPDATE Buildings SET Cost = Cost * 0.500 WHERE BuildingClass = 'BUILDINGCLASS_CARAVANSARY';

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<Eras>
-		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>3</TriggerRatePercent></Set></Update>
-		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>4</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_ANCIENT"/>		<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
+		<Update><Where Type="ERA_CLASSICAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
 		<Update><Where Type="ERA_MEDIEVAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
 		<Update><Where Type="ERA_RENAISSANCE"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
 		<Update><Where Type="ERA_INDUSTRIAL"/>	<Set><TriggerRatePercent>5</TriggerRatePercent></Set></Update>
