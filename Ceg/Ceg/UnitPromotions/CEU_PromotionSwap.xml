@@ -27,7 +27,7 @@
 		</Update>
 		<Update>
 			<Where Type="UNITCOMBAT_SIEGE" />
-			<Set PromotionCategory="Ranged" />
+			<Set PromotionCategory="Siege" />
 		</Update>
 		<Update>
 			<Where Type="UNITCOMBAT_RECON" />

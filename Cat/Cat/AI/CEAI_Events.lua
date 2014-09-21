@@ -66,18 +66,18 @@ local warUnitFlavorsLate = {
 function SpendAIGold(player)
 	if player:IsHuman() then return end
 	
-	if (player:CalculateGoldRate() < 0.5 * Game.GetAdjustedTurn()) then
-		-- ensure failsafe minimum gold income in case of AI flaws
-		local goldRate = Game.Round(0.5 * Game.GetAdjustedTurn())
+	-- ensure failsafe minimum gold income to protect from remaining AI design flaws
+	local targetIncome = Game.Round(Game.GetAdjustedTurn() * Game.GetHandicapInfo().AIMinIncomePercent / 100)
+	if (player:CalculateGoldRate() < targetIncome) then
 		if (player:CalculateGoldRate() < 0) then
-			goldRate = goldRate + math.abs(player:CalculateGoldRate())
+			targetIncome = targetIncome + math.abs(player:CalculateGoldRate())
 		end
-		goldRate = goldRate
-		player:ChangeYieldStored(YieldTypes.YIELD_GOLD, goldRate)
-		log:Warn("Failsafe: refunding %s+%s=%s gold to %s, who now has %s",
+		targetIncome = targetIncome
+		player:ChangeYieldStored(YieldTypes.YIELD_GOLD, targetIncome)
+		log:Info("Failsafe: %s+%s=%s gold to %s, who now has %s",
 			Game.Round(0.5 * Game.GetAdjustedTurn()),
 			(player:CalculateGoldRate() < 0) and math.abs(player:CalculateGoldRate()) or 0,
-			goldRate,
+			targetIncome,
 			player:GetName(), 
 			player:GetGold()
 		)

@@ -53,7 +53,7 @@
 			<PediaType>PEDIA_HEAL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY</PediaEntry>
 		</Row>
-		<!-- Archers, aircraft -->
+		<!-- Archers, aircraft, siege -->
 		<Row>
 			<Type>PROMOTION_SUPPLY_II</Type>
 			<Description>TXT_KEY_PROMOTION_SUPPLY</Description>
@@ -78,7 +78,7 @@
 		<Update>
 			<Where Type="PROMOTION_BLITZ" />
 			<Set Blitz="0"
-				 RangedAttackModifier="-10"
+				 RangedAttackModifier="-25"
 				 ExtraAttacks="1"
 				 CanMoveAfterAttacking="true"
 				 PortraitIndex="9"
@@ -92,7 +92,7 @@
 		</Update>
 		<Update>
 			<Where Type="PROMOTION_LOGISTICS" />
-			<Set RangedAttackModifier="-10"
+			<Set RangedAttackModifier="-25"
 				 PromotionPrereqOr1="PROMOTION_ACCURACY_3"
 				 PromotionPrereqOr2="PROMOTION_BARRAGE_3"
 				 PromotionPrereqOr3="PROMOTION_TARGETING_3"
@@ -106,7 +106,7 @@
 		</Update>
 		<Update>
 			<Where Type="PROMOTION_AIR_LOGISTICS" />
-			<Set RangedAttackModifier="-10"
+			<Set RangedAttackModifier="-25"
 				 PromotionPrereqOr1="PROMOTION_AIR_SIEGE_2"
 				 PromotionPrereqOr2="PROMOTION_AIR_BOMBARDMENT_2"
 				 PromotionPrereqOr3="PROMOTION_AMBUSH_2"
@@ -197,11 +197,11 @@
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>
-			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_SUPPLY_II</PromotionType>

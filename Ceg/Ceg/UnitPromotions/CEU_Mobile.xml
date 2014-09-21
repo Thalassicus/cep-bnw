@@ -52,21 +52,6 @@
 			<PromotionType>PROMOTION_AMBUSH_2</PromotionType>
 			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
-		<Delete PromotionType="PROMOTION_BOMBARDMENT_1" UnitCombatType="UNITCOMBAT_BOMBER" />
-		<Delete PromotionType="PROMOTION_BOMBARDMENT_2" UnitCombatType="UNITCOMBAT_BOMBER" />
-		<Delete PromotionType="PROMOTION_BOMBARDMENT_3" UnitCombatType="UNITCOMBAT_BOMBER" />
-		<Row>
-			<PromotionType>PROMOTION_AIR_BOMBARDMENT_1</PromotionType>
-			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AIR_BOMBARDMENT_2</PromotionType>
-			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AIR_BOMBARDMENT_3</PromotionType>
-			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
-		</Row>
 	</UnitPromotions_UnitCombats>
 	<Unit_FreePromotions>
 		<Delete UnitType="UNIT_CAVALRY" PromotionType="PROMOTION_MOUNTED_PENALTY" />

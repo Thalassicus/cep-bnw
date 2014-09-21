@@ -455,6 +455,37 @@ AND NOT Type IN (
 	'PROMOTION_HANDICAP' 		-- handicap
 );
 
+/*
+-- REGEXP not available in this version of SQLite Spy?
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type REGEXP '.*\d';
+*/
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_1';
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_2';
+
+UPDATE UnitPromotions
+SET RankList = SUBSTR(Type, 1, LENGTH(Type)-2), RankNumber = SUBSTR(Type, -1)
+WHERE Type LIKE '%_3';
+
+UPDATE UnitPromotions
+SET RankList = 'BUFFALO', RankNumber = 1
+WHERE Type = 'PROMOTION_BUFFALO_HORNS';
+
+UPDATE UnitPromotions
+SET RankList = 'BUFFALO', RankNumber = 2
+WHERE Type = 'PROMOTION_BUFFALO_CHEST';
+
+UPDATE UnitPromotions
+SET RankList = 'BUFFALO', RankNumber = 3
+WHERE Type = 'PROMOTION_BUFFALO_LOINS';
+
 --
 -- Promotion icon order
 --
@@ -511,6 +542,9 @@ WHERE Type IN (
 	'PROMOTION_BOMBARDMENT_1',
 	'PROMOTION_BOMBARDMENT_2',
 	'PROMOTION_BOMBARDMENT_3',
+	'PROMOTION_AIR_BOMBARDMENT_1',
+	'PROMOTION_AIR_BOMBARDMENT_2',
+	'PROMOTION_AIR_BOMBARDMENT_3',
 	'PROMOTION_DOGFIGHTING_1',
 	'PROMOTION_DOGFIGHTING_2',
 	'PROMOTION_DOGFIGHTING_3',

@@ -15,6 +15,8 @@
 		<Update>
 			<Where Type="PROMOTION_VOLLEY" />
 			<Set AttackFortifiedMod="30"
+				 PromotionPrereqOr3="PROMOTION_AIR_SIEGE_1"
+				 PromotionPrereqOr4="PROMOTION_AIR_BOMBARDMENT_1"
 				 />
 		</Update>
 		<Update>
@@ -23,7 +25,19 @@
 				 PromotionPrereqOr2="PROMOTION_BOMBARDMENT_1"
 				 PromotionPrereqOr3="PROMOTION_ACCURACY_1"
 				 PromotionPrereqOr4="PROMOTION_BARRAGE_1"
+				 PromotionPrereqOr5="PROMOTION_AIR_SIEGE_1"
+				 PromotionPrereqOr6="PROMOTION_AIR_BOMBARDMENT_1"
 				 />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_RANGE" />
+			<Set PromotionPrereqOr5="PROMOTION_AIR_SIEGE_3"
+				 PromotionPrereqOr6="PROMOTION_AIR_BOMBARDMENT_3" />
+		</Update>
+		<Update>
+			<Where Type="PROMOTION_LOGISTICS" />
+			<Set PromotionPrereqOr5="PROMOTION_AIR_SIEGE_3"
+				 PromotionPrereqOr6="PROMOTION_AIR_BOMBARDMENT_3" />
 		</Update>
 		<Row>
 			<Type>PROMOTION_RANGED_DEFENSE_II</Type>
@@ -59,6 +73,44 @@
 		<Row>
 			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType>
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Delete PromotionType="PROMOTION_ACCURACY_1" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_ACCURACY_2" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_ACCURACY_3" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_BARRAGE_1" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_BARRAGE_2" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Delete PromotionType="PROMOTION_BARRAGE_3" UnitCombatType="UNITCOMBAT_SIEGE" />
+		<Row>
+			<PromotionType>PROMOTION_AIR_SIEGE_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_SIEGE_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_SIEGE_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_BOMBARDMENT_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_BOMBARDMENT_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_BOMBARDMENT_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_VOLLEY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 		</Row>
 	</UnitPromotions_UnitCombats>
 	<UnitPromotions_Terrains>

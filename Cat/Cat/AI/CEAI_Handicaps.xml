@@ -13,8 +13,8 @@
 	<HandicapInfo_AIFreeTechs>
 		<Delete />
 	</HandicapInfo_AIFreeTechs>
-	
-	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worls_Speeds spreadhseet
+
+	<!-- This CEAI_Handicaps.xml created by Handicaps tab of Handicaps_Worlds_Speeds spreadsheet
 https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 
 	<HandicapInfos>
@@ -83,6 +83,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "150"
 			ExtraHappinessPerLuxury        = "1"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "0"
 			ProductionFreeUnits            = "10"
 			ProductionFreeUnitsPerCity     = "3"
 			StartingPolicyPoints           = "0"
@@ -164,6 +165,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "130"
 			ExtraHappinessPerLuxury        = "1"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "0"
 			ProductionFreeUnits            = "7"
 			ProductionFreeUnitsPerCity     = "3"
 			StartingPolicyPoints           = "0"
@@ -245,6 +247,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "100"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "20"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -326,6 +329,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "90"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "40"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -407,6 +411,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "85"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "80"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -488,6 +493,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "80"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "120"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -569,6 +575,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "75"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "160"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -650,6 +657,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "70"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "200"
 			ProductionFreeUnits            = "100"
 			ProductionFreeUnitsPerCity     = "2"
 			StartingPolicyPoints           = "0"
@@ -731,6 +739,7 @@ https://drive.google.com/#folders/0B58Ehya83q19eVlvWXdmLXZ6UUE -->
 			AdvancedStartPointsMod         = "130"
 			ExtraHappinessPerLuxury        = "0"
 			GoldFreeUnits                  = "0"
+			AIMinIncomePercent             = "0"
 			ProductionFreeUnits            = "7"
 			ProductionFreeUnitsPerCity     = "3"
 			StartingPolicyPoints           = "0"
