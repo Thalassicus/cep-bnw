@@ -165,6 +165,7 @@
 		<Column name="AIResearchPercentPerEra" type="variant" default="0"/>
 		<Column name="AIProductionPercentPerEra" type="variant" default="0"/>
 		<Column name="AIGold" type="integer" default="0"/>
+		<Column name="AIMinIncomePercent" type="integer" default="0"/>
 		<Column name="AISearchRange" type="integer" default="0"/>
 		<Column name="AICapitalYieldPeaceful" type="integer" default="0"/>
 		<Column name="AICapitalYieldMilitaristic" type="integer" default="0"/>

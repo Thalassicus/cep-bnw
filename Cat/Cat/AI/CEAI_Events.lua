@@ -64,35 +64,30 @@ local warUnitFlavorsLate = {
 }
 
 function SpendAIGold(player)
-	if player:IsHuman() then return end
-	
-	-- ensure failsafe minimum gold income to protect from remaining AI design flaws
-	local targetIncome = Game.Round(Game.GetAdjustedTurn() * Game.GetHandicapInfo().AIMinIncomePercent / 100)
-	if (player:CalculateGoldRate() < targetIncome) then
-		if (player:CalculateGoldRate() < 0) then
-			targetIncome = targetIncome + math.abs(player:CalculateGoldRate())
-		end
-		targetIncome = targetIncome
-		player:ChangeYieldStored(YieldTypes.YIELD_GOLD, targetIncome)
-		log:Info("Failsafe: %s+%s=%s gold to %s, who now has %s",
-			Game.Round(0.5 * Game.GetAdjustedTurn()),
-			(player:CalculateGoldRate() < 0) and math.abs(player:CalculateGoldRate()) or 0,
-			targetIncome,
-			player:GetName(), 
-			player:GetGold()
-		)
-	end
-	
-	if (not player:GetCapitalCity() 
-		or Cep.USING_CSD == 2
-		--or (Game.GetAdjustedTurn() < 10)
-		) then
-		return
-	end
+	if player:IsHuman() or not player:GetCapitalCity() then return end
 	
 	if player:IsMinorCiv() then
 		return UpgradeSomeUnit(player, player:GetYieldStored(YieldTypes.YIELD_GOLD))
+	else
+		-- ensure failsafe minimum gold income to protect from undiscovered AI design flaws
+		local targetIncome = Game.Round(Game.GetAdjustedTurn() * Game.GetHandicapInfo().AIMinIncomePercent / 100)
+		if player:CalculateGoldRate() < targetIncome then
+			if (player:CalculateGoldRate() < 0) then
+				targetIncome = targetIncome + math.abs(player:CalculateGoldRate())
+			end
+			targetIncome = targetIncome
+			player:ChangeYieldStored(YieldTypes.YIELD_GOLD, targetIncome)
+			log:Info("Failsafe: %s+%s=%s gold to %s, who now has %s",
+				Game.Round(0.5 * Game.GetAdjustedTurn()),
+				(player:CalculateGoldRate() < 0) and math.abs(player:CalculateGoldRate()) or 0,
+				targetIncome,
+				player:GetName(), 
+				player:GetGold()
+			)
+		end
 	end
+	
+	if Cep.USING_CSD == 2 then return end
 
 	local capital			= player:GetCapitalCity()	
 	local playerID			= player:GetID()
@@ -1070,7 +1065,7 @@ function AIMilitaryHandicap(  playerID,
 	end
 	--]]
 
-	local handicapInfo = GameInfo.CepHandicapInfos[Players[Game.GetActivePlayer()]:GetHandicapType()]
+	local handicapInfo = Game.GetHandicapInfo()
 	local freePromotion = "PROMOTION_HANDICAP"--handicapInfo.AIFreePromotion
 	local unitInfo = GameInfo.Units[unit:GetUnitType()]
 

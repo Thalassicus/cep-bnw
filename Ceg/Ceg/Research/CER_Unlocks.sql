@@ -12,7 +12,7 @@ UPDATE Builds SET PrereqTech='TECH_ARCHERY'                  WHERE Type='BUILD_C
 UPDATE Builds SET PrereqTech='TECH_ANIMAL_HUSBANDRY'         WHERE Type='BUILD_REMOVE_FOREST';
 UPDATE Builds SET PrereqTech='TECH_THE_WHEEL'                WHERE Type='BUILD_REMOVE_JUNGLE';
 UPDATE Builds SET PrereqTech='TECH_BRONZE_WORKING'           WHERE Type='BUILD_REMOVE_MARSH';
-UPDATE Builds SET PrereqTech='TECH_TRAPPING'                 WHERE Type='BUILD_TRADING_POST';
+UPDATE Builds SET PrereqTech='TECH_POTTERY'                  WHERE Type='BUILD_TRADING_POST';
 UPDATE Builds SET PrereqTech='TECH_TRAPPING'                 WHERE Type='BUILD_ROAD';
 UPDATE Builds SET PrereqTech='TECH_IRON_WORKING'             WHERE Type='BUILD_LUMBERMILL';
 UPDATE Builds SET PrereqTech='TECH_DYNAMITE'                 WHERE Type='BUILD_WELL';

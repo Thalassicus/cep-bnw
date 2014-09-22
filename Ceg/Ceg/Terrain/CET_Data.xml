@@ -326,7 +326,6 @@
 			<FeatureType>FEATURE_ICE</FeatureType>
 		</Row>
 	</Improvement_ValidFeatures>
-	<!--
 	<Builds>
 		<Update>
 			<Where Type="BUILD_TRADING_POST" />
@@ -336,6 +335,7 @@
 	<Controls>
 		<Delete Type="CONTROL_ADVISOR_COUNSEL" />
 	</Controls>
+	<!--
 	<BuildFeatures>
 		<Update>
 			<Where BuildType="BUILD_FARM" FeatureType="FEATURE_JUNGLE" />
@@ -371,7 +371,7 @@
 		</Update>
 		<Update>
 			<Where ImprovementType="IMPROVEMENT_TRADING_POST" YieldType="YIELD_GOLD" />
-			<Set Yield="2" />
+			<Set Yield="1" />
 		</Update>
 		<!--
 		<Row>
@@ -423,7 +423,7 @@
 		<Delete ImprovementType="IMPROVEMENT_MANUFACTORY"/>
 		<Row>
 			<ImprovementType>IMPROVEMENT_TRADING_POST</ImprovementType>
-			<TechType>TECH_CURRENCY</TechType>
+			<TechType>TECH_TRAPPING</TechType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
